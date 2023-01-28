@@ -4,6 +4,12 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+
+    //Para trabalhar com dados json, precisei adicionar
+    //dois arquivos de configurção para ler json:
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

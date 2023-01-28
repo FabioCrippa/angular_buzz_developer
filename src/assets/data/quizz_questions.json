@@ -1,0 +1,47 @@
+
+{
+    "title":"O quanto você sabe sobre programação web ?",
+    "questions":[
+      {
+        "id":1,
+        "question": "O que é Angular?",
+        "options":[
+          {"id": 1, "name":"Angular é uma plataforma de desenvolvimento, construída sobre TypeScript.", "alias":"X"},
+          {"id": 2, "name":"Angular é uma plataforma de desenvolvimento, construída sobre JavaScript.", "alias":"Y"},
+          {"id": 3, "name":"Angular é uma plataforma de desenvolvimento, construída sobre CSS.", "alias":"Y"}
+        ]
+      },
+      {
+        "id":2,
+        "question": "O que são componentes Angular?",
+        "options":[
+          {"id": 1, "name":"São os blocos do javaScript que compõem um aplicativo.", "alias":"Y"},
+          {"id": 2, "name":"São os blocos de construção que compõem um aplicativo.", "alias":"X"},
+          {"id": 3, "name":"São os blocos de um decorator que compõem um aplicativo.", "alias":"Y"}
+        ]
+      },
+      {
+        "id":3,
+        "question": "Qual é a função da injeção de dependência?",
+        "options":[
+          {"id": 1, "name":"Permite declarar as dependências das classes TypeScript.", "alias":"X"},
+          {"id": 2, "name":"Permite declarar as classes nos componentes.", "alias":"Y"},
+          {"id": 3, "name":"Permite declarar os estilos no arquivo css.", "alias":"Y"}
+        ]
+      },
+      {
+        "id":4,
+        "question": "O que é Angular CLI?",
+        "options":[
+          {"id": 1, "name":"É a maneira mais demorada para desenvolver aplicativos Angular.", "alias":"Y"},
+          {"id": 2, "name":"É a maneira mais rápida, direta e recomendada de desenvolver aplicativos Angular.", "alias":"X"},
+          {"id": 3, "name":"É a maneira mais rápida, indireta e recomendada de desenvolver aplicativos Angular.", "alias":"Y"}
+        ]
+      }
+
+    ],
+    "results":{
+      "X": "Parabéns! Você possui muito conhecimento em programação!",
+      "Y": "Infelizmente, você deve estudar mais!"
+    }
+  }
