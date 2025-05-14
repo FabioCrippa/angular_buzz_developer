@@ -2,6 +2,7 @@
     width: 80%;
     margin: auto;
     margin-top: 20px;
+    text-align: center;
 }
 
 .logo__quizz {
@@ -61,6 +62,16 @@
     text-shadow: 0px 1px 0px #2f6627;
 }
 
+.btn-options__quizz.correct {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-options__quizz.incorrect {
+  background-color: #dc3545;
+  color: white;
+}
+
 .btn-options__quizz:hover {
     background-color: #5cbf2a;
 }
@@ -80,4 +91,116 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+  .container__quizz {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .btn-options__quizz {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}
+
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+button.correct {
+  background-color: #28a745; /* Verde para resposta correta */
+  color: white;
+}
+
+button.incorrect {
+  background-color: #dc3545; /* Vermelho para resposta incorreta */
+  color: white;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.timer {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.finalize-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.finalize-btn:hover {
+    background-color: #b02a37;
+}
+
+.restart-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restart-btn:hover {
+    background-color: #0056b3;
+}
+
+.audio-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.audio-controls button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.audio-controls button:hover {
+    background-color: #0056b3;
+}
+
+.youtube-audio {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }

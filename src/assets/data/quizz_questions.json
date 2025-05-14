@@ -1,47 +1,647 @@
-
 {
-    "title":"O quanto você sabe sobre programação web ?",
-    "questions":[
-      {
-        "id":1,
-        "question": "O que é Angular?",
-        "options":[
-          {"id": 1, "name":"Angular é uma plataforma de desenvolvimento, construída sobre TypeScript.", "alias":"X"},
-          {"id": 2, "name":"Angular é uma plataforma de desenvolvimento, construída sobre JavaScript.", "alias":"Y"},
-          {"id": 3, "name":"Angular é uma plataforma de desenvolvimento, construída sobre CSS.", "alias":"Y"}
-        ]
-      },
-      {
-        "id":2,
-        "question": "O que são componentes Angular?",
-        "options":[
-          {"id": 1, "name":"São os blocos do javaScript que compõem um aplicativo.", "alias":"Y"},
-          {"id": 2, "name":"São os blocos de construção que compõem um aplicativo.", "alias":"X"},
-          {"id": 3, "name":"São os blocos de um decorator que compõem um aplicativo.", "alias":"Y"}
-        ]
-      },
-      {
-        "id":3,
-        "question": "Qual é a função da injeção de dependência?",
-        "options":[
-          {"id": 1, "name":"Permite declarar as dependências das classes TypeScript.", "alias":"X"},
-          {"id": 2, "name":"Permite declarar as classes nos componentes.", "alias":"Y"},
-          {"id": 3, "name":"Permite declarar os estilos no arquivo css.", "alias":"Y"}
-        ]
-      },
-      {
-        "id":4,
-        "question": "O que é Angular CLI?",
-        "options":[
-          {"id": 1, "name":"É a maneira mais demorada para desenvolver aplicativos Angular.", "alias":"Y"},
-          {"id": 2, "name":"É a maneira mais rápida, direta e recomendada de desenvolver aplicativos Angular.", "alias":"X"},
-          {"id": 3, "name":"É a maneira mais rápida, indireta e recomendada de desenvolver aplicativos Angular.", "alias":"Y"}
-        ]
-      }
-
-    ],
-    "results":{
-      "X": "Parabéns! Você possui muito conhecimento em programação!",
-      "Y": "Infelizmente, você deve estudar mais!"
+  "title": "Quiz de Front-End Avançado",
+  "questions": [
+    {
+      "id": 1,
+      "question": "O que significa HTML?",
+      "options": [
+        { "id": 1, "name": "HyperText Markup Language", "alias": "a" },
+        { "id": 2, "name": "HyperText Machine Language", "alias": "b" },
+        { "id": 3, "name": "HyperTool Markup Language", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 2,
+      "question": "Qual tag HTML é usada para criar um link?",
+      "options": [
+        { "id": 1, "name": "<a>", "alias": "a" },
+        { "id": 2, "name": "<link>", "alias": "b" },
+        { "id": 3, "name": "<href>", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 3,
+      "question": "Qual atributo é usado para abrir um link em uma nova aba?",
+      "options": [
+        { "id": 1, "name": "target='_blank'", "alias": "a" },
+        { "id": 2, "name": "rel='new-tab'", "alias": "b" },
+        { "id": 3, "name": "open='new'", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 4,
+      "question": "Qual é a função da tag <meta> no HTML?",
+      "options": [
+        { "id": 1, "name": "Definir metadados sobre o documento", "alias": "a" },
+        { "id": 2, "name": "Adicionar estilos ao documento", "alias": "b" },
+        { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 5,
+      "question": "Qual é o propósito do atributo 'alt' em uma tag <img>?",
+      "options": [
+        { "id": 1, "name": "Definir o texto alternativo para a imagem", "alias": "a" },
+        { "id": 2, "name": "Alterar o tamanho da imagem", "alias": "b" },
+        { "id": 3, "name": "Definir a URL da imagem", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 6,
+      "question": "Qual é a diferença entre <section> e <div> no HTML5?",
+      "options": [
+        { "id": 1, "name": "<section> é semântica, enquanto <div> não é", "alias": "a" },
+        { "id": 2, "name": "<div> é semântica, enquanto <section> não é", "alias": "b" },
+        { "id": 3, "name": "Ambas são semânticas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 7,
+      "question": "Qual é o propósito do atributo 'defer' em uma tag <script>?",
+      "options": [
+        { "id": 1, "name": "Carregar o script após o HTML ser completamente analisado", "alias": "a" },
+        { "id": 2, "name": "Carregar o script antes do HTML ser analisado", "alias": "b" },
+        { "id": 3, "name": "Carregar o script de forma síncrona", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 8,
+      "question": "Qual é o propósito da tag <template> no HTML5?",
+      "options": [
+        { "id": 1, "name": "Definir conteúdo que não será renderizado até ser usado via JavaScript", "alias": "a" },
+        { "id": 2, "name": "Adicionar estilos ao documento", "alias": "b" },
+        { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 9,
+      "question": "Qual é o propósito do atributo 'contenteditable' no HTML?",
+      "options": [
+        { "id": 1, "name": "Permitir que o conteúdo de um elemento seja editado pelo usuário", "alias": "a" },
+        { "id": 2, "name": "Adicionar estilos ao documento", "alias": "b" },
+        { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 10,
+      "question": "Qual é o propósito do atributo 'aria-label' no HTML?",
+      "options": [
+        { "id": 1, "name": "Melhorar a acessibilidade ao fornecer uma descrição para leitores de tela", "alias": "a" },
+        { "id": 2, "name": "Adicionar estilos ao documento", "alias": "b" },
+        { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 11,
+      "question": "Qual propriedade CSS é usada para alterar a cor do texto?",
+      "options": [
+        { "id": 1, "name": "color", "alias": "a" },
+        { "id": 2, "name": "text-color", "alias": "b" },
+        { "id": 3, "name": "font-color", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "css"
+    },
+    {
+      "id": 12,
+      "question": "Qual é o propósito do método 'filter()' em JavaScript?",
+      "options": [
+        { "id": 1, "name": "Filtrar elementos de um array com base em uma condição", "alias": "a" },
+        { "id": 2, "name": "Adicionar elementos a um array", "alias": "b" },
+        { "id": 3, "name": "Remover elementos de um array", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "javascript"
+    },
+    {
+      "id": 13,
+      "question": "Qual é o comando para criar um branch no Git?",
+      "options": [
+        { "id": 1, "name": "git branch <nome>", "alias": "a" },
+        { "id": 2, "name": "git create <nome>", "alias": "b" },
+        { "id": 3, "name": "git new <nome>", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "versionamento"
+    },
+    {
+      "id": 14,
+      "question": "Qual é o propósito do atributo 'media' em uma tag <link> no CSS?",
+      "options": [
+        { "id": 1, "name": "Aplicar estilos com base no tipo de dispositivo", "alias": "a" },
+        { "id": 2, "name": "Adicionar metadados ao documento", "alias": "b" },
+        { "id": 3, "name": "Definir o caminho para o arquivo CSS", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "responsividade"
+    },
+    {
+      "id": 15,
+      "question": "O que é um 'sprint' no Scrum?",
+      "options": [
+        { "id": 1, "name": "Um período de tempo para completar um conjunto de tarefas", "alias": "a" },
+        { "id": 2, "name": "Uma reunião para revisar o progresso do projeto", "alias": "b" },
+        { "id": 3, "name": "Um documento que descreve os requisitos do projeto", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "scrum"
+    },
+    {
+      "id": 16,
+      "question": "Qual é o comando para fazer deploy em um pipeline DevOps?",
+      "options": [
+        { "id": 1, "name": "dep deploy", "alias": "a" },
+        { "id": 2, "name": "git deploy", "alias": "b" },
+        { "id": 3, "name": "dep push", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "devops"
+    },
+    {
+      "id": 17,
+      "question": "Qual é o propósito de um certificado SSL em um ambiente criptografado?",
+      "options": [
+        { "id": 1, "name": "Garantir a comunicação segura entre cliente e servidor", "alias": "a" },
+        { "id": 2, "name": "Aumentar a velocidade de carregamento do site", "alias": "b" },
+        { "id": 3, "name": "Adicionar estilos ao site", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "criptografia"
+    },
+    {
+      "id": 18,
+      "question": "Qual é o principal benefício de usar micro front-ends?",
+      "options": [
+        { "id": 1, "name": "Permitir que diferentes equipes trabalhem em partes independentes do front-end", "alias": "a" },
+        { "id": 2, "name": "Reduzir o tamanho do código JavaScript", "alias": "b" },
+        { "id": 3, "name": "Melhorar a acessibilidade do site", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "micro front-end"
+    },
+    {
+      "id": 19,
+      "question": "Qual é o comando para rodar testes unitários no Angular?",
+      "options": [
+        { "id": 1, "name": "ng test", "alias": "a" },
+        { "id": 2, "name": "ng run tests", "alias": "b" },
+        { "id": 3, "name": "ng unit", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "testes unitários"
+    },
+    {
+      "id": 20,
+      "question": "Qual é o propósito do método 'toBe()' no Jasmine?",
+      "options": [
+        { "id": 1, "name": "Comparar valores esperados e reais", "alias": "a" },
+        { "id": 2, "name": "Executar uma função assíncrona", "alias": "b" },
+        { "id": 3, "name": "Criar um mock de uma função", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "testes unitários"
+    },
+    {
+      "id": 21,
+      "question": "Qual comando é usado para criar um novo componente no Angular CLI?",
+      "options": [
+        { "id": 1, "name": "ng generate component", "alias": "a" },
+        { "id": 2, "name": "ng create component", "alias": "b" },
+        { "id": 3, "name": "ng new component", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 22,
+      "question": "Qual é o propósito do arquivo `angular.json` em um projeto Angular?",
+      "options": [
+        { "id": 1, "name": "Configurar o build e as configurações do projeto", "alias": "a" },
+        { "id": 2, "name": "Definir os estilos globais do projeto", "alias": "b" },
+        { "id": 3, "name": "Gerenciar dependências do projeto", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 23,
+      "question": "Qual decorator é usado para definir um componente no Angular?",
+      "options": [
+        { "id": 1, "name": "@Component", "alias": "a" },
+        { "id": 2, "name": "@NgModule", "alias": "b" },
+        { "id": 3, "name": "@Injectable", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 24,
+      "question": "Qual é o propósito do `RouterModule` no Angular?",
+      "options": [
+        { "id": 1, "name": "Configurar rotas no aplicativo", "alias": "a" },
+        { "id": 2, "name": "Gerenciar dependências", "alias": "b" },
+        { "id": 3, "name": "Definir serviços globais", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 25,
+      "question": "Qual é o ciclo de vida do Angular que é chamado após a criação do componente?",
+      "options": [
+        { "id": 1, "name": "ngOnInit", "alias": "a" },
+        { "id": 2, "name": "ngAfterViewInit", "alias": "b" },
+        { "id": 3, "name": "ngOnDestroy", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 26,
+      "question": "Qual é o propósito do `HttpClientModule` no Angular?",
+      "options": [
+        { "id": 1, "name": "Realizar requisições HTTP", "alias": "a" },
+        { "id": 2, "name": "Gerenciar rotas", "alias": "b" },
+        { "id": 3, "name": "Definir componentes", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 27,
+      "question": "Qual é o comando para rodar um projeto Angular localmente?",
+      "options": [
+        { "id": 1, "name": "ng serve", "alias": "a" },
+        { "id": 2, "name": "ng start", "alias": "b" },
+        { "id": 3, "name": "ng run", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 28,
+      "question": "Qual é o propósito do `@Input` no Angular?",
+      "options": [
+        { "id": 1, "name": "Permitir que um componente receba dados de um componente pai", "alias": "a" },
+        { "id": 2, "name": "Enviar dados para um componente filho", "alias": "b" },
+        { "id": 3, "name": "Definir um serviço global", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 29,
+      "question": "Qual é o propósito do `@Output` no Angular?",
+      "options": [
+        { "id": 1, "name": "Emitir eventos de um componente filho para o pai", "alias": "a" },
+        { "id": 2, "name": "Receber dados de um componente pai", "alias": "b" },
+        { "id": 3, "name": "Definir um serviço global", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 30,
+      "question": "Qual é o propósito do `ngFor` no Angular?",
+      "options": [
+        { "id": 1, "name": "Iterar sobre uma lista e renderizar elementos dinamicamente", "alias": "a" },
+        { "id": 2, "name": "Condicionalmente renderizar elementos", "alias": "b" },
+        { "id": 3, "name": "Definir um serviço global", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 31,
+      "question": "Qual é o propósito do `ngIf` no Angular?",
+      "options": [
+        { "id": 1, "name": "Condicionalmente renderizar elementos", "alias": "a" },
+        { "id": 2, "name": "Iterar sobre uma lista", "alias": "b" },
+        { "id": 3, "name": "Definir um serviço global", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 32,
+      "question": "Qual é o propósito do `@Injectable` no Angular?",
+      "options": [
+        { "id": 1, "name": "Definir uma classe como um serviço que pode ser injetado", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 33,
+      "question": "Qual é o propósito do `ngOnDestroy` no Angular?",
+      "options": [
+        { "id": 1, "name": "Executar lógica antes de destruir um componente", "alias": "a" },
+        { "id": 2, "name": "Inicializar um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 34,
+      "question": "Qual é o propósito do `@NgModule` no Angular?",
+      "options": [
+        { "id": 1, "name": "Definir um módulo no Angular", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 35,
+      "question": "Qual é o propósito do `ngClass` no Angular?",
+      "options": [
+        { "id": 1, "name": "Adicionar ou remover classes dinamicamente", "alias": "a" },
+        { "id": 2, "name": "Iterar sobre uma lista", "alias": "b" },
+        { "id": 3, "name": "Definir um serviço global", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 36,
+      "question": "Qual é o propósito do `ngStyle` no Angular?",
+      "options": [
+        { "id": 1, "name": "Adicionar ou remover estilos dinamicamente", "alias": "a" },
+        { "id": 2, "name": "Iterar sobre uma lista", "alias": "b" },
+        { "id": 3, "name": "Definir um serviço global", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 37,
+      "question": "Qual é o propósito do `async` no Angular?",
+      "options": [
+        { "id": 1, "name": "Trabalhar com observáveis e promessas de forma assíncrona", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 38,
+      "question": "Qual é o propósito do `FormGroup` no Angular?",
+      "options": [
+        { "id": 1, "name": "Gerenciar um grupo de controles de formulário", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 39,
+      "question": "Qual é o propósito do `FormControl` no Angular?",
+      "options": [
+        { "id": 1, "name": "Gerenciar o estado de um controle de formulário", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 40,
+      "question": "Qual é o propósito do `ReactiveFormsModule` no Angular?",
+      "options": [
+        { "id": 1, "name": "Trabalhar com formulários reativos", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "angular"
+    },
+    {
+      "id": 41,
+      "question": "Qual é a diferença entre `inline`, `block` e `inline-block` no CSS?",
+      "options": [
+        { "id": 1, "name": "Define como os elementos são renderizados na página", "alias": "a" },
+        { "id": 2, "name": "Define a cor do texto", "alias": "b" },
+        { "id": 3, "name": "Define o tamanho do elemento", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "css"
+    },
+    {
+      "id": 42,
+      "question": "Explique o conceito de 'hoisting' no JavaScript.",
+      "options": [
+        { "id": 1, "name": "É o comportamento de mover declarações para o topo do escopo", "alias": "a" },
+        { "id": 2, "name": "É o processo de otimização de código", "alias": "b" },
+        { "id": 3, "name": "É o método de chamar funções assíncronas", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "javascript"
+    },
+    {
+      "id": 43,
+      "question": "Qual é a diferença entre `let`, `var` e `const` no JavaScript?",
+      "options": [
+        { "id": 1, "name": "`let` e `const` têm escopo de bloco, enquanto `var` tem escopo de função", "alias": "a" },
+        { "id": 2, "name": "`var` e `const` têm escopo global, enquanto `let` tem escopo de bloco", "alias": "b" },
+        { "id": 3, "name": "Não há diferença entre eles", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "javascript"
+    },
+    {
+      "id": 44,
+      "question": "O que é o DOM (Document Object Model)?",
+      "options": [
+        { "id": 1, "name": "É a representação em árvore de um documento HTML ou XML", "alias": "a" },
+        { "id": 2, "name": "É o modelo de design de um site", "alias": "b" },
+        { "id": 3, "name": "É o método de estilização de elementos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 45,
+      "question": "Qual é a diferença entre `==` e `===` no JavaScript?",
+      "options": [
+        { "id": 1, "name": "`==` compara valores, enquanto `===` compara valores e tipos", "alias": "a" },
+        { "id": 2, "name": "`==` compara valores e tipos, enquanto `===` compara apenas valores", "alias": "b" },
+        { "id": 3, "name": "Ambos comparam apenas valores", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "javascript"
+    },
+    {
+      "id": 46,
+      "question": "O que é o conceito de 'responsividade' no design web?",
+      "options": [
+        { "id": 1, "name": "É a capacidade de um site se ajustar a diferentes tamanhos de tela", "alias": "a" },
+        { "id": 2, "name": "É a velocidade de carregamento de um site", "alias": "b" },
+        { "id": 3, "name": "É a capacidade de um site responder a eventos do usuário", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "responsividade"
+    },
+    {
+      "id": 47,
+      "question": "Explique o conceito de 'promises' no JavaScript.",
+      "options": [
+        { "id": 1, "name": "É um objeto que representa a eventual conclusão ou falha de uma operação assíncrona", "alias": "a" },
+        { "id": 2, "name": "É um método para criar funções síncronas", "alias": "b" },
+        { "id": 3, "name": "É uma função que retorna valores imediatamente", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "javascript"
+    },
+    {
+      "id": 48,
+      "question": "Qual é o propósito do atributo `viewport` em uma tag `<meta>`?",
+      "options": [
+        { "id": 1, "name": "Controlar como o conteúdo é exibido em dispositivos móveis", "alias": "a" },
+        { "id": 2, "name": "Definir o idioma do documento", "alias": "b" },
+        { "id": 3, "name": "Adicionar estilos ao documento", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 49,
+      "question": "O que é um 'polyfill' no desenvolvimento web?",
+      "options": [
+        { "id": 1, "name": "É um código que adiciona suporte a funcionalidades não disponíveis em navegadores antigos", "alias": "a" },
+        { "id": 2, "name": "É um método para otimizar o carregamento de páginas", "alias": "b" },
+        { "id": 3, "name": "É uma biblioteca para criar animações", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "javascript"
+    },
+    {
+      "id": 50,
+      "question": "Qual é o propósito do `box-sizing` no CSS?",
+      "options": [
+        { "id": 1, "name": "Controlar como o tamanho total de um elemento é calculado", "alias": "a" },
+        { "id": 2, "name": "Definir o espaçamento interno de um elemento", "alias": "b" },
+        { "id": 3, "name": "Definir a largura de um elemento", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "css"
+    },
+    {
+      "id": 51,
+      "question": "Qual é o propósito da tag <header> no HTML5?",
+      "options": [
+        { "id": 1, "name": "Definir o cabeçalho de uma página ou seção", "alias": "a" },
+        { "id": 2, "name": "Adicionar um rodapé à página", "alias": "b" },
+        { "id": 3, "name": "Criar um link para outro documento", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 52,
+      "question": "Qual é o propósito da tag <footer> no HTML5?",
+      "options": [
+        { "id": 1, "name": "Definir o rodapé de uma página ou seção", "alias": "a" },
+        { "id": 2, "name": "Adicionar um cabeçalho à página", "alias": "b" },
+        { "id": 3, "name": "Criar um link para outro documento", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 53,
+      "question": "Qual é o propósito do atributo 'lang' na tag <html>?",
+      "options": [
+        { "id": 1, "name": "Definir o idioma do documento", "alias": "a" },
+        { "id": 2, "name": "Adicionar estilos ao documento", "alias": "b" },
+        { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 54,
+      "question": "Qual é o propósito do atributo 'charset' na tag <meta>?",
+      "options": [
+        { "id": 1, "name": "Definir a codificação de caracteres do documento", "alias": "a" },
+        { "id": 2, "name": "Adicionar estilos ao documento", "alias": "b" },
+        { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 55,
+      "question": "Qual é o propósito da tag <aside> no HTML5?",
+      "options": [
+        { "id": 1, "name": "Definir conteúdo relacionado, como barras laterais", "alias": "a" },
+        { "id": 2, "name": "Adicionar um cabeçalho à página", "alias": "b" },
+        { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "html"
+    },
+    {
+      "id": 56,
+      "question": "Qual propriedade CSS é usada para alterar o tamanho da fonte?",
+      "options": [
+        { "id": 1, "name": "font-size", "alias": "a" },
+        { "id": 2, "name": "text-size", "alias": "b" },
+        { "id": 3, "name": "size", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "css"
+    },
+    {
+      "id": 57,
+      "question": "Qual propriedade CSS é usada para alterar a cor de fundo?",
+      "options": [
+        { "id": 1, "name": "background-color", "alias": "a" },
+        { "id": 2, "name": "color", "alias": "b" },
+        { "id": 3, "name": "bg-color", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "css"
+    },
+    {
+      "id": 58,
+      "question": "Qual propriedade CSS é usada para centralizar texto?",
+      "options": [
+        { "id": 1, "name": "text-align", "alias": "a" },
+        { "id": 2, "name": "align", "alias": "b" },
+        { "id": 3, "name": "center", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "css"
     }
+  ],
+  "results": {
+    "X": "Parabéns! Você possui muito conhecimento em front-end!",
+    "Y": "Continue estudando para melhorar suas habilidades!"
   }
+}

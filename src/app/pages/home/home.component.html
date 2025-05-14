@@ -1,4 +1,13 @@
-<div class="container__home">
-    <app-quizz></app-quizz>
+<div class="home-container">
+  <h1>Bem-vindo ao Quiz</h1>
+  <p>Escolha uma categoria para começar:</p>
+
+  <ul class="categories-menu">
+    <li *ngFor="let category of categories">
+      <a [routerLink]="['/quizz']" [queryParams]="{ category: category }">
+        {{ category | titlecase }}
+      </a>
+    </li>
+  </ul>
 </div>
 

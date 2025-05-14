@@ -5,22 +5,46 @@
         <h3>{{ title }}</h3>
     </div>
 
-    <div *ngIf="!finished" class="questions__quizz">
-        <h3>{{ questionSelected.question }}</h3>
+    <div class="youtube-audio">
+        <div id="youtube-player"></div>
     </div>
 
-    <div *ngIf="!finished" class="options__quizz">
-        <button 
-            *ngFor="let option of questionSelected.options; let i = index" 
-            (click) = "playerChoose(option.alias)"
-            class="btn-options__quizz">
-            {{ option.name }}
-        </button>
+    <div class="audio-controls">
+        <button (click)="playMusic()">Tocar Música</button>
+        <button (click)="pauseMusic()">Pausar Música</button>
     </div>
 
-    <div *ngIf="finished" class="results__quizz">
-        <h1>RESULTADO:</h1>
-        <p>{{ answerSelected }}</p>
+    <div *ngIf="!finished">
+        <!-- Exibe a pergunta -->
+        <h2>{{ questionSelected?.question }}</h2>
+
+        <!-- Exibe as opções de resposta -->
+        <div *ngFor="let option of questionSelected?.options">
+            <button 
+                [ngClass]="{
+                    'correct': showCorrect && option.alias === questionSelected?.correct,
+                    'incorrect': showCorrect && option.alias !== questionSelected?.correct && option.alias === selectedAnswer
+                }"
+                (click)="playerChoose(option.alias)"
+                [disabled]="showCorrect"
+            >
+                {{ option.name }}
+            </button>
+        </div>
+
+        <!-- Botão para avançar manualmente -->
+        <button *ngIf="showCorrect" (click)="nextStep()">Avançar</button>
+
+        <!-- Botão para finalizar o quiz -->
+        <button class="finalize-btn" (click)="finishQuiz()">Finalizar</button>
+    </div>
+
+    <div *ngIf="finished">
+        <!-- Exibe o resultado final -->
+        <h2>Quiz Finalizado!</h2>
+        <p>Sua pontuação: {{ score }}%</p>
+        <p>Respostas corretas: {{ correctAnswers }}</p>
+        <p>Respostas erradas: {{ wrongAnswers }}</p>
     </div>
 </div>
 
