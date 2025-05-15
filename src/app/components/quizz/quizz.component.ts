@@ -75,7 +75,7 @@ export class QuizzComponent implements OnInit {
 
       if (this.questions.length === 0) {
         console.warn('Nenhuma pergunta encontrada. Carregando todas as perguntas como fallback.');
-        this.questions = quizz_questions.questions.filter((q: any) => q.category === this.category);
+        this.questions = quizz_questions.questions;
         this.questionIndex = 0;
         this.questionMaxIndex = this.questions.length;
         this.questionSelected = this.questions[this.questionIndex];
@@ -87,6 +87,10 @@ export class QuizzComponent implements OnInit {
     // Opcional: Iniciar a música automaticamente
     this.playMusic();
 
+    this.initPlayer();    
+  }
+
+  private initPlayer(): void {
     // Inicializar o player do YouTube quando a API estiver carregada
     (window as any).onYouTubeIframeAPIReady = () => {
       if (!this.player) {
@@ -111,6 +115,13 @@ export class QuizzComponent implements OnInit {
         });
       }
     };
+  }
+
+  public shuffle(options: any[]): any[] {
+    return options
+      .map(value => ({ value, sort: Math.random() })) // Cria um array com valores e um número aleatório
+      .sort((a, b) => a.sort - b.sort) // Ordena pelo número aleatório
+      .map(({ value }) => value); // Retorna o array embaralhado
   }
 
   // Método (click)
