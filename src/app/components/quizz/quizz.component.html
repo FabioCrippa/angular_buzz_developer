@@ -19,18 +19,20 @@
         <h2>{{ questionSelected?.question }}</h2>
 
         <!-- Exibe as opções de resposta -->
-        <div *ngFor="let option of questionSelected?.options">
-            <button 
-                [ngClass]="{
-                    'correct': showCorrect && option.alias === questionSelected?.correct,
-                    'incorrect': showCorrect && option.alias !== questionSelected?.correct && option.alias === selectedAnswer
-                }"
-                (click)="playerChoose(option.alias)"
-                [disabled]="showCorrect"
-            >
-                {{ option.name }}
-            </button>
-        </div>
+        <ng-container *ngIf="questionSelected?.options">
+            <div *ngFor="let option of shuffle(questionSelected!.options)">
+                <button 
+                    [ngClass]="{
+                        'correct': showCorrect && option.alias === questionSelected?.correct,
+                        'incorrect': showCorrect && option.alias !== questionSelected?.correct && option.alias === selectedAnswer
+                    }"
+                    (click)="playerChoose(option.alias)"
+                    [disabled]="showCorrect"
+                >
+                    {{ option.name }}
+                </button>
+            </div>     
+        </ng-container>
 
         <!-- Botão para avançar manualmente -->
         <button *ngIf="showCorrect" (click)="nextStep()">Avançar</button>
