@@ -15,8 +15,15 @@
     </div>
 
     <div *ngIf="!finished">
-        <!-- Exibe a pergunta -->
-        <h2>{{ questionSelected?.question }}</h2>
+        <!-- Exibe a pergunta com botão de ouvir ao lado -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-bottom: 24px;">
+            <h2 style="margin: 0;">{{ questionSelected?.question }}</h2>
+            <button 
+                (click)="readQuestion(questionSelected?.question!)" 
+                style="padding: 4px 8px; font-size: 1rem; height: 32px; min-width: 32px; border-radius: 50%;"
+                title="Ouvir Pergunta"
+            >🔊</button>
+        </div>
 
         <!-- Exibe as opções de resposta -->
         <div *ngFor="let option of questionSelected?.options">

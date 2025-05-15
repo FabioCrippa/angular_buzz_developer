@@ -145,6 +145,8 @@ export class QuizzComponent implements OnInit {
       this.questionSelected = this.questions[this.questionIndex];
       console.log('Avançando para a próxima pergunta:', this.questionSelected); // Debug
       this.showCorrect = false; // Reseta o feedback visual
+      // Após selecionar a nova pergunta
+      this.readQuestion(this.questionSelected.question);
     } else {
       const finalAnswer: string = await this.checkResult(this.answers);
       this.finished = true;
@@ -206,5 +208,11 @@ export class QuizzComponent implements OnInit {
     } else {
       console.error('Player do YouTube não está inicializado ou não está pronto.');
     }
+  }
+
+  readQuestion(text: string) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'pt-BR'; // ou 'en-US' para inglês
+    window.speechSynthesis.speak(utterance);
   }
 }
