@@ -3,7 +3,7 @@
   <p>Escolha uma categoria para começar:</p>
 
   <ul class="categories-menu">
-    <li *ngFor="let category of categories">
+    <li *ngFor="let category of categories"> 
       <a [routerLink]="['/quizz']" [queryParams]="{ category: category }">
         {{ category | titlecase }}
       </a>
