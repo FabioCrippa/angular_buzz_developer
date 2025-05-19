@@ -190,36 +190,36 @@
     },
     {
       "id": 18,
-      "question": "Qual é o principal benefício de usar micro front-ends?",
+      "question": "Qual é o propósito do `ngFor` no Angular?",
       "options": [
-        { "id": 1, "name": "Permitir que diferentes equipes trabalhem em partes independentes do front-end", "alias": "a" },
-        { "id": 2, "name": "Reduzir o tamanho do código JavaScript", "alias": "b" },
-        { "id": 3, "name": "Melhorar a acessibilidade do site", "alias": "c" }
+        { "id": 1, "name": "Iterar sobre uma lista e renderizar elementos dinamicamente", "alias": "a" },
+        { "id": 2, "name": "Condicionalmente renderizar elementos", "alias": "b" },
+        { "id": 3, "name": "Definir um serviço global", "alias": "c" }
       ],
       "correct": "a",
-      "category": "micro front-end"
+      "category": "angular"
     },
     {
       "id": 19,
-      "question": "Qual é o comando para rodar testes unitários no Angular?",
+      "question": "Qual é o propósito do `ngModel` no Angular?",
       "options": [
-        { "id": 1, "name": "ng test", "alias": "a" },
-        { "id": 2, "name": "ng run tests", "alias": "b" },
-        { "id": 3, "name": "ng unit", "alias": "c" }
+        { "id": 1, "name": "Criar uma ligação bidirecional entre o modelo e a visão", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
       ],
       "correct": "a",
-      "category": "testes unitários"
+      "category": "angular"
     },
     {
       "id": 20,
-      "question": "Qual é o propósito do método 'toBe()' no Jasmine?",
+      "question": "Qual é o propósito do `ng-content` no Angular?",
       "options": [
-        { "id": 1, "name": "Comparar valores esperados e reais", "alias": "a" },
-        { "id": 2, "name": "Executar uma função assíncrona", "alias": "b" },
-        { "id": 3, "name": "Criar um mock de uma função", "alias": "c" }
+        { "id": 1, "name": "Permitir a projeção de conteúdo em componentes", "alias": "a" },
+        { "id": 2, "name": "Definir um componente", "alias": "b" },
+        { "id": 3, "name": "Configurar rotas", "alias": "c" }
       ],
       "correct": "a",
-      "category": "testes unitários"
+      "category": "angular"
     },
     {
       "id": 21,
