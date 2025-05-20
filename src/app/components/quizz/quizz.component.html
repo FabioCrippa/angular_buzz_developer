@@ -2,16 +2,15 @@
     <div class="logo__quizz">
         <img src="assets/img/logo.png" alt="logo" srcset="">
         <h1>DESENVOLVEDOR WEB</h1>
+        <div class="audio-controls">
+            <button (click)="playMusic()">Tocar Música</button>
+            <button (click)="pauseMusic()">Pausar Música</button>
+        </div>
         <h3>{{ title }}</h3>
     </div>
 
     <div class="youtube-audio">
         <div id="youtube-player"></div>
-    </div>
-
-    <div class="audio-controls">
-        <button (click)="playMusic()">Tocar Música</button>
-        <button (click)="pauseMusic()">Pausar Música</button>
     </div>
 
     <div *ngIf="!finished">
