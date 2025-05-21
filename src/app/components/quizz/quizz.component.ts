@@ -8,6 +8,7 @@ export interface Question {
   options: { id: number; name: string; alias: string }[];
   correct: string;
   category: string;
+  explanation?: string; // <-- Adicione esta linha
 }
 
 @Component({
@@ -115,23 +116,23 @@ export class QuizzComponent implements OnInit {
 
   // Método (click)
   playerChoose(value: string) {
-    this.selectedAnswer = value; // Armazena a resposta escolhida
+    this.selectedAnswer = value;
     this.answers.push(value);
-    console.log('Resposta escolhida:', value);
-    console.log('Respostas até agora:', this.answers);
 
     if (this.questionSelected) {
       if (value === this.questionSelected.correct) {
-        this.correctAnswers++; // Incrementa o número de respostas corretas
+        this.correctAnswers++;
       } else {
-        this.wrongAnswers++; // Incrementa o número de respostas incorretas
+        this.wrongAnswers++;
+        // Ler explicação se errar
+        if (this.questionSelected.explanation) {
+          this.readText(this.questionSelected.explanation);
+        }
       }
     }
 
-    // Atualiza a pontuação como porcentagem
     this.score = Math.round((this.correctAnswers / this.questions.length) * 100);
-
-    this.showCorrect = true; // Exibe o feedback visual e o botão "Avançar"
+    this.showCorrect = true;
   }
 
   // Método para mudar para próxima questão
@@ -211,6 +212,13 @@ export class QuizzComponent implements OnInit {
   }
 
   readQuestion(text: string) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'pt-BR'; // ou 'en-US' para inglês
+    window.speechSynthesis.speak(utterance);
+  }
+
+  readText(text: string) {
+    if (!text) return;
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'pt-BR'; // ou 'en-US' para inglês
     window.speechSynthesis.speak(utterance);

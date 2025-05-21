@@ -10,6 +10,7 @@
         { "id": 3, "name": "HyperTool Markup Language", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "HTML significa HyperText Markup Language, a linguagem de marcação usada para estruturar páginas web.",
       "category": "html"
     },
     {
@@ -21,6 +22,7 @@
         { "id": 3, "name": "<href>", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "A tag <a> é usada para criar links em HTML.",
       "category": "html"
     },
     {
@@ -32,6 +34,7 @@
         { "id": 3, "name": "open='new'", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "O atributo target='_blank' faz com que o link seja aberto em uma nova aba.",
       "category": "html"
     },
     {
@@ -43,6 +46,7 @@
         { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "A tag <meta> define metadados como charset, autor e descrição do documento.",
       "category": "html"
     },
     {
@@ -54,6 +58,7 @@
         { "id": 3, "name": "Definir a URL da imagem", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "O atributo 'alt' fornece uma descrição alternativa para a imagem, importante para acessibilidade.",
       "category": "html"
     },
     {
@@ -65,6 +70,7 @@
         { "id": 3, "name": "Ambas são semânticas", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "<section> é uma tag semântica usada para dividir o conteúdo em seções temáticas, enquanto <div> é apenas um contêiner genérico.",
       "category": "html"
     },
     {
@@ -76,6 +82,7 @@
         { "id": 3, "name": "Carregar o script de forma síncrona", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "O atributo 'defer' faz com que o script seja executado somente após o HTML ter sido totalmente carregado.",
       "category": "html"
     },
     {
@@ -87,6 +94,7 @@
         { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "A tag <template> permite definir blocos de HTML que só serão renderizados quando manipulados via JavaScript.",
       "category": "html"
     },
     {
@@ -98,6 +106,7 @@
         { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "O atributo 'contenteditable' permite que o usuário edite o conteúdo do elemento diretamente na página.",
       "category": "html"
     },
     {
@@ -109,6 +118,7 @@
         { "id": 3, "name": "Criar links para outros documentos", "alias": "c" }
       ],
       "correct": "a",
+      "explanation": "O atributo 'aria-label' fornece uma descrição acessível para leitores de tela, melhorando a acessibilidade.",
       "category": "html"
     },
     {
@@ -1260,7 +1270,7 @@
         "question": "O que é a técnica de 'lazy loading' e como ela impacta a responsividade?",
         "options": [
           { "id": 1, "name": "Carrega imagens e conteúdos apenas quando necessários, melhorando o desempenho", "alias": "a" },
-          { "id": 2, "name": "Cria animações automáticas", "alias": "b" },
+          { "id": 2, "name": "Cria animações responsivas", "alias": "b" },
           { "id": 3, "name": "Aumenta o tamanho das imagens para telas maiores", "alias": "c" }
         ],
         "correct": "a",
@@ -1697,130 +1707,20 @@
       },
       {
         "id": 155,
-        "question": "Qual é a diferença entre criptografia e hashing?",
+        "question": "O que é um ataque de replay na criptografia?",
         "options": [
-          { "id": 1, "name": "Criptografia pode ser revertida com uma chave, enquanto hashing é irreversível", "alias": "a" },
-          { "id": 2, "name": "Hashing é usado para compactação de arquivos", "alias": "b" },
-          { "id": 3, "name": "Criptografia não usa chaves para proteger dados", "alias": "c" }
+          { "id": 1, "name": "Uma técnica onde um invasor intercepta e retransmite dados para enganar o sistema", "alias": "a" },
+          { "id": 2, "name": "Um método para acelerar a criptografia de dados", "alias": "b" },
+          { "id": 3, "name": "Uma técnica para compactar arquivos criptografados", "alias": "c" }
         ],
         "correct": "a",
         "category": "criptografia"
-      },      
+      },
       {
         "id": 156,
-        "question": "O que é um ambiente de desenvolvimento no contexto de DevOps?",
+        "question": "O que é um hash criptográfico?",
         "options": [
-          { "id": 1, "name": "Um ambiente onde os desenvolvedores escrevem e testam código antes da produção", "alias": "a" },
-          { "id": 2, "name": "Um servidor dedicado para armazenar logs", "alias": "b" },
-          { "id": 3, "name": "Uma ferramenta de monitoramento de redes", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 157,
-        "question": "Qual é a importância do versionamento de código no DevOps?",
-        "options": [
-          { "id": 1, "name": "Permite rastrear mudanças e colaborar de forma eficiente", "alias": "a" },
-          { "id": 2, "name": "Acelera a execução de testes automatizados", "alias": "b" },
-          { "id": 3, "name": "Elimina a necessidade de revisão de código", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 158,
-        "question": "O que é um container no DevOps?",
-        "options": [
-          { "id": 1, "name": "Uma unidade de software que empacota código e dependências para execução consistente", "alias": "a" },
-          { "id": 2, "name": "Um banco de dados usado para armazenar logs", "alias": "b" },
-          { "id": 3, "name": "Uma ferramenta de monitoramento de redes", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 159,
-        "question": "Qual é a função do Kubernetes no DevOps?",
-        "options": [
-          { "id": 1, "name": "Orquestrar e gerenciar containers em ambientes distribuídos", "alias": "a" },
-          { "id": 2, "name": "Criar interfaces gráficas para aplicações web", "alias": "b" },
-          { "id": 3, "name": "Gerenciar bancos de dados relacionais", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 160,
-        "question": "O que é um microserviço no DevOps?",
-        "options": [
-          { "id": 1, "name": "Uma abordagem de arquitetura onde aplicações são divididas em serviços independentes", "alias": "a" },
-          { "id": 2, "name": "Um banco de dados usado para armazenar logs", "alias": "b" },
-          { "id": 3, "name": "Uma ferramenta de monitoramento de redes", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 161,
-        "question": "Qual é a importância da observabilidade no DevOps?",
-        "options": [
-          { "id": 1, "name": "Permite monitorar e entender o comportamento dos sistemas em tempo real", "alias": "a" },
-          { "id": 2, "name": "Acelera a execução de testes automatizados", "alias": "b" },
-          { "id": 3, "name": "Elimina a necessidade de revisão de código", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 162,
-        "question": "O que é um rollback no DevOps?",
-        "options": [
-          { "id": 1, "name": "Reverter uma versão de software para um estado anterior devido a problemas", "alias": "a" },
-          { "id": 2, "name": "Criar um novo branch no repositório", "alias": "b" },
-          { "id": 3, "name": "Executar testes automatizados em produção", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 163,
-        "question": "Qual é a função do Ansible no DevOps?",
-        "options": [
-          { "id": 1, "name": "Automatizar a configuração e gerenciamento de infraestrutura", "alias": "a" },
-          { "id": 2, "name": "Criar interfaces gráficas para aplicações web", "alias": "b" },
-          { "id": 3, "name": "Gerenciar bancos de dados relacionais", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 164,
-        "question": "O que é um teste de carga no DevOps?",
-        "options": [
-          { "id": 1, "name": "Avaliar o desempenho de um sistema sob alta demanda", "alias": "a" },
-          { "id": 2, "name": "Criar um novo branch no repositório", "alias": "b" },
-          { "id": 3, "name": "Executar testes automatizados em produção", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },
-      {
-        "id": 165,
-        "question": "Qual é a importância da cultura DevOps em uma organização?",
-        "options": [
-          { "id": 1, "name": "Promove colaboração entre equipes, acelera entregas e melhora a qualidade do software", "alias": "a" },
-          { "id": 2, "name": "Elimina a necessidade de testes automatizados", "alias": "b" },
-          { "id": 3, "name": "Substitui completamente os desenvolvedores", "alias": "c" }
-        ],
-        "correct": "a",
-        "category": "devops"
-      },      
-      {
-        "id": 156,
-        "question": "O que é um algoritmo de criptografia?",
-        "options": [
-          { "id": 1, "name": "Um conjunto de regras matemáticas usadas para codificar e decodificar informações", "alias": "a" },
+          { "id": 1, "name": "Uma função que transforma dados em um valor fixo e irreversível", "alias": "a" },
           { "id": 2, "name": "Um método para compactar arquivos", "alias": "b" },
           { "id": 3, "name": "Uma técnica de armazenamento de dados", "alias": "c" }
         ],
@@ -1829,11 +1729,11 @@
       },
       {
         "id": 157,
-        "question": "Qual é a diferença entre criptografia simétrica e assimétrica?",
+        "question": "Qual é a função da criptografia em blockchain?",
         "options": [
-          { "id": 1, "name": "A criptografia simétrica usa uma única chave, enquanto a assimétrica usa um par de chaves (pública e privada)", "alias": "a" },
-          { "id": 2, "name": "A criptografia assimétrica é mais rápida que a simétrica", "alias": "b" },
-          { "id": 3, "name": "A criptografia simétrica não usa chaves", "alias": "c" }
+          { "id": 1, "name": "Garantir a segurança e integridade das transações registradas", "alias": "a" },
+          { "id": 2, "name": "Compactar os blocos de dados", "alias": "b" },
+          { "id": 3, "name": "Acelerar a transmissão de informações", "alias": "c" }
         ],
         "correct": "a",
         "category": "criptografia"
@@ -2365,8 +2265,227 @@
         ],
         "correct": "a",
         "category": "testes-unitarios"
-      }
-
+      },
+      {
+        "id": 206,
+        "question": "O que geralmente causa o erro 'Uncaught TypeError: Cannot read property' em JavaScript?",
+        "options": [
+          { "id": 1, "name": "Tentar acessar uma propriedade de um valor undefined ou null", "alias": "a" },
+          { "id": 2, "name": "Erro de sintaxe no HTML", "alias": "b" },
+          { "id": 3, "name": "Falta de ponto e vírgula", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 207,
+        "question": "O que significa o erro '404 Not Found' ao acessar uma página web?",
+        "options": [
+          { "id": 1, "name": "A página requisitada não foi encontrada no servidor", "alias": "a" },
+          { "id": 2, "name": "O servidor está fora do ar", "alias": "b" },
+          { "id": 3, "name": "O site está sem conexão com a internet", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 208,
+        "question": "O que pode causar o erro 'CORS policy: No 'Access-Control-Allow-Origin''?",
+        "options": [
+          { "id": 1, "name": "Fazer requisição para um domínio diferente sem permissões adequadas", "alias": "a" },
+          { "id": 2, "name": "Erro de sintaxe no CSS", "alias": "b" },
+          { "id": 3, "name": "Falta de ponto e vírgula no JavaScript", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 209,
+        "question": "O que significa o erro 'ReferenceError: x is not defined'?",
+        "options": [
+          { "id": 1, "name": "A variável x foi usada antes de ser declarada", "alias": "a" },
+          { "id": 2, "name": "A variável x foi declarada duas vezes", "alias": "b" },
+          { "id": 3, "name": "A variável x é uma palavra reservada", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 210,
+        "question": "O que pode causar o erro 'Unexpected token' em JavaScript?",
+        "options": [
+          { "id": 1, "name": "Erro de sintaxe, como falta de parênteses ou chaves", "alias": "a" },
+          { "id": 2, "name": "Falta de conexão com o banco de dados", "alias": "b" },
+          { "id": 3, "name": "Erro de permissão no servidor", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 211,
+        "question": "O que pode causar o erro 'Maximum call stack size exceeded'?",
+        "options": [
+          { "id": 1, "name": "Recursão infinita em uma função", "alias": "a" },
+          { "id": 2, "name": "Falta de ponto e vírgula", "alias": "b" },
+          { "id": 3, "name": "Erro de sintaxe no HTML", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 212,
+        "question": "O que significa o erro 'SyntaxError: Unexpected end of input'?",
+        "options": [
+          { "id": 1, "name": "O código terminou antes de fechar todos os blocos ou parênteses", "alias": "a" },
+          { "id": 2, "name": "Falta de ponto e vírgula", "alias": "b" },
+          { "id": 3, "name": "Erro de permissão no servidor", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 213,
+        "question": "O que pode causar o erro 'Failed to fetch' ao fazer uma requisição fetch?",
+        "options": [
+          { "id": 1, "name": "Problemas de rede ou URL incorreta", "alias": "a" },
+          { "id": 2, "name": "Erro de sintaxe no CSS", "alias": "b" },
+          { "id": 3, "name": "Falta de ponto e vírgula no JavaScript", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 214,
+        "question": "O que significa o erro 'TypeError: x is not a function'?",
+        "options": [
+          { "id": 1, "name": "Tentar chamar uma variável que não é uma função", "alias": "a" },
+          { "id": 2, "name": "A função x não foi importada", "alias": "b" },
+          { "id": 3, "name": "A função x foi declarada duas vezes", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+      {
+        "id": 215,
+        "question": "O que pode causar o erro 'Cannot set property of undefined'?",
+        "options": [
+          { "id": 1, "name": "Tentar atribuir um valor a uma propriedade de um objeto que não existe", "alias": "a" },
+          { "id": 2, "name": "Erro de sintaxe no CSS", "alias": "b" },
+          { "id": 3, "name": "Falta de ponto e vírgula no JavaScript", "alias": "c" }
+        ],
+        "correct": "a",
+        "category": "front-end"
+      },
+    {
+      "id": 216,
+      "question": "O que é o Virtual DOM em frameworks como React?",
+      "options": [
+        { "id": 1, "name": "Uma representação leve do DOM real usada para otimizar atualizações", "alias": "a" },
+        { "id": 2, "name": "Um novo tipo de navegador", "alias": "b" },
+        { "id": 3, "name": "Uma biblioteca para manipular CSS", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 217,
+      "question": "Qual propriedade CSS é usada para criar sombras em elementos?",
+      "options": [
+        { "id": 1, "name": "box-shadow", "alias": "a" },
+        { "id": 2, "name": "shadow", "alias": "b" },
+        { "id": 3, "name": "element-shadow", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 218,
+      "question": "O que faz a propriedade CSS 'position: sticky'?",
+      "options": [
+        { "id": 1, "name": "Mantém o elemento fixo até atingir um determinado ponto de rolagem", "alias": "a" },
+        { "id": 2, "name": "Deixa o elemento sempre fixo na tela", "alias": "b" },
+        { "id": 3, "name": "Centraliza o elemento na tela", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 219,
+      "question": "O que é o conceito de 'componentização' em frameworks modernos?",
+      "options": [
+        { "id": 1, "name": "Dividir a interface em partes reutilizáveis chamadas componentes", "alias": "a" },
+        { "id": 2, "name": "Criar apenas uma página para toda a aplicação", "alias": "b" },
+        { "id": 3, "name": "Usar apenas funções globais", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 220,
+      "question": "Qual evento JavaScript é disparado quando um formulário é enviado?",
+      "options": [
+        { "id": 1, "name": "submit", "alias": "a" },
+        { "id": 2, "name": "send", "alias": "b" },
+        { "id": 3, "name": "post", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 221,
+      "question": "O que é o conceito de 'mobile first' no desenvolvimento front-end?",
+      "options": [
+        { "id": 1, "name": "Desenvolver primeiro para dispositivos móveis e depois adaptar para telas maiores", "alias": "a" },
+        { "id": 2, "name": "Desenvolver apenas para desktop", "alias": "b" },
+        { "id": 3, "name": "Priorizar animações em dispositivos móveis", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 222,
+      "question": "Qual propriedade CSS é usada para arredondar os cantos de um elemento?",
+      "options": [
+        { "id": 1, "name": "border-radius", "alias": "a" },
+        { "id": 2, "name": "corner-radius", "alias": "b" },
+        { "id": 3, "name": "round-corner", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 223,
+      "question": "O que é o atributo 'tabindex' em HTML?",
+      "options": [
+        { "id": 1, "name": "Define a ordem de navegação por tabulação entre elementos", "alias": "a" },
+        { "id": 2, "name": "Define o tamanho da aba do navegador", "alias": "b" },
+        { "id": 3, "name": "Define o título da aba", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 224,
+      "question": "Qual é a função do atributo 'autofocus' em um input HTML?",
+      "options": [
+        { "id": 1, "name": "Faz o campo receber foco automaticamente ao carregar a página", "alias": "a" },
+        { "id": 2, "name": "Deixa o campo em negrito", "alias": "b" },
+        { "id": 3, "name": "Desabilita o campo", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    },
+    {
+      "id": 225,
+      "question": "O que é o atributo 'placeholder' em um input HTML?",
+      "options": [
+        { "id": 1, "name": "Exibe um texto de dica dentro do campo até que o usuário digite algo", "alias": "a" },
+        { "id": 2, "name": "Define o valor inicial do campo", "alias": "b" },
+        { "id": 3, "name": "Define o tipo do campo", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "front-end"
+    }
   ],
   "results": {
     "X": "Parabéns! Você possui muito conhecimento em front-end!",

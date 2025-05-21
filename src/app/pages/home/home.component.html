@@ -2,12 +2,12 @@
   <h1>Bem-vindo ao Quiz</h1>
   <p>Escolha uma categoria para começar:</p>
 
-  <ul class="categories-menu">
-    <li *ngFor="let category of categories"> 
+  <div class="categories-grid">
+    <div class="category-card" *ngFor="let category of categories">
       <a [routerLink]="['/quizz']" [queryParams]="{ category: category }">
-        {{ category | titlecase }}
+        <span class="category-title">{{ category | titlecase }}</span>
       </a>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 
