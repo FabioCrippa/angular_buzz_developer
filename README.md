@@ -1,13 +1,36 @@
-# BuzzDevelopter
+# BuzzDeveloper
 
-Sobre o Projeto
-BuzzDeveloper é um aplicativo de quiz interativo desenvolvido com Angular. Ele foi projetado para testar e aprimorar os conhecimentos dos usuários em diversas áreas do desenvolvimento front-end, como HTML, CSS, JavaScript, Angular, e muito mais. O projeto inclui as seguintes funcionalidades:
+![Tela do Quiz](./src/assets/img/tela-home.png.png)
+## Resumo do Projeto
 
-Pontuação em Porcentagem: Avalia o desempenho do usuário com base nas respostas corretas, exibindo a pontuação final em porcentagem.
-Player de Música Integrado: Reproduz música de fundo diretamente do YouTube, proporcionando uma experiência mais imersiva durante o quiz.
-Interface Dinâmica e Responsiva: Atualiza automaticamente as perguntas e respostas com base nas interações do usuário, garantindo uma experiência fluida.
-Categorias de Perguntas: Organiza as perguntas por categorias, permitindo que o usuário explore tópicos específicos.
-Feedback Visual: Indica respostas corretas e incorretas após cada interação, ajudando o usuário a aprender com os erros.
-Reinício do Quiz: Permite que o usuário reinicie o quiz a qualquer momento, redefinindo a pontuação e as respostas.
-Resultados Detalhados: Exibe o número de respostas corretas, erradas e a pontuação final ao término do quiz.
-Este projeto é ideal para desenvolvedores que desejam aprender ou revisar conceitos fundamentais de front-end de forma divertida e interativa. Além disso, ele serve como um excelente exemplo de como criar aplicativos dinâmicos e interativos com Angular.
+BuzzDeveloper é um quiz interativo desenvolvido em **Angular** para testar e aprimorar conhecimentos em front-end. O projeto abrange temas como HTML, CSS, JavaScript, Angular, DevOps, Scrum, criptografia, micro front-end, testes unitários e mais.
+
+## Funcionalidades
+
+- **Quiz por Categorias:** Perguntas organizadas por temas, incluindo uma categoria "todas" que reúne questões de todas as áreas.
+- **Feedback Visual e por Voz:** O usuário recebe feedback visual e explicações por voz usando a Web Speech API, tornando o aprendizado mais dinâmico.
+- **Explicação das Respostas:** Cada pergunta possui uma explicação exibida e lida pela IA quando o usuário erra.
+- **Pontuação em Porcentagem:** O desempenho é mostrado em tempo real e ao final do quiz.
+- **Player de Música Integrado:** Música de fundo via YouTube para uma experiência mais imersiva.
+- **Interface Responsiva:** Layout adaptável para desktop e dispositivos móveis.
+- **Reinício e Resultados Detalhados:** O usuário pode reiniciar o quiz e visualizar o número de acertos, erros e a pontuação final.
+
+## Tecnologias Utilizadas
+
+- **Angular** (framework principal)
+- **TypeScript**
+- **HTML5 e CSS3**
+- **Web Speech API** (leitura de perguntas e explicações)
+- **YouTube IFrame API** (player de música)
+- **JSON** (banco de perguntas)
+
+## Como usar
+
+1. Clone o repositório e instale as dependências com `npm install`.
+2. Execute o projeto com `ng serve`.
+3. Acesse `http://localhost:4200` no navegador.
+4. Escolha uma categoria e inicie o quiz!
+
+---
+
+Este projeto é ideal para quem deseja aprender, revisar ou ensinar conceitos de front-end de forma divertida, interativa e moderna.
