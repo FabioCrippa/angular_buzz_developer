@@ -1,31 +1,60 @@
+<!--
+  Container principal do quiz. Utiliza uma classe para facilitar a estilização e garantir responsividade.
+-->
 <div class="container__quizz">
     <div class="logo__quizz">
+        <!-- Imagem do logo do projeto -->
         <img src="assets/img/logo.png" alt="logo" srcset="">
+        <!-- Título principal -->
         <h1>DESENVOLVEDOR WEB</h1>
+        <!-- Controles de áudio para música de fundo -->
         <div class="audio-controls">
+            <!-- Botão para tocar música de fundo -->
             <button (click)="playMusic()">Tocar Música</button>
+            <!-- Botão para pausar música de fundo -->
             <button (click)="pauseMusic()">Pausar Música</button>
         </div>
+        <!-- Título dinâmico do quiz (pode ser o nome da categoria) -->
         <h3>{{ title }}</h3>
     </div>
 
+    <!--
+      Seção para player de áudio do YouTube (caso usado).
+      O id 'youtube-player' pode ser manipulado via JS/TS.
+    -->
     <div class="youtube-audio">
         <div id="youtube-player"></div>
     </div>
 
+    <!--
+      Exibe o quiz enquanto não estiver finalizado.
+      Usa *ngIf para condicionalmente mostrar esta parte.
+    -->
     <div *ngIf="!finished">
-        <!-- Exibe a pergunta com botão de ouvir ao lado -->
+        <!--
+          Exibe a pergunta atual.
+          - Flexbox para alinhar pergunta e botão de ouvir.
+          - O botão de ouvir usa a Web Speech API para acessibilidade.
+        -->
         <div style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-bottom: 24px;">
             <h2 style="margin: 0;">{{ questionSelected?.question }}</h2>
+            <!-- Botão para ler a pergunta em voz alta -->
             <button 
                 (click)="readQuestion(questionSelected?.question!)" 
                 style="padding: 4px 8px; font-size: 1rem; height: 32px; min-width: 32px; border-radius: 50%;"
                 title="Ouvir Pergunta"
+                aria-label="Ouvir Pergunta"
             >🔊</button>
         </div>
 
-        <!-- Exibe as opções de resposta -->
+        <!--
+          Lista as opções de resposta.
+          - Usa *ngFor para iterar sobre as opções.
+          - ngClass aplica estilos para respostas corretas/incorretas.
+          - O botão é desabilitado após resposta.
+        -->
         <div *ngFor="let option of questionSelected?.options">
+            <!-- Botão de opção, com classes dinâmicas para mostrar resposta correta/incorreta -->
             <button 
                 [ngClass]="{
                     'correct': showCorrect && option.alias === questionSelected?.correct,
@@ -33,20 +62,29 @@
                 }"
                 (click)="playerChoose(option.alias)"
                 [disabled]="showCorrect"
+                [attr.aria-label]="'Escolher resposta ' + option.name"
             >
                 {{ option.name }}
             </button>
         </div>
 
-        <!-- Botão para avançar manualmente -->
+        <!--
+          Botão para avançar para a próxima pergunta.
+          Só aparece após mostrar a resposta correta.
+        -->
         <button *ngIf="showCorrect" (click)="nextStep()">Avançar</button>
 
-        <!-- Botão para finalizar o quiz -->
+        <!--
+          Botão para finalizar o quiz a qualquer momento.
+        -->
         <button class="finalize-btn" (click)="finishQuiz()">Finalizar</button>
     </div>
 
+    <!--
+      Exibe o resultado final quando o quiz termina.
+      Mostra pontuação, acertos e erros.
+    -->
     <div *ngIf="finished">
-        <!-- Exibe o resultado final -->
         <h2>Quiz Finalizado!</h2>
         <p>Sua pontuação: {{ score }}%</p>
         <p>Respostas corretas: {{ correctAnswers }}</p>
