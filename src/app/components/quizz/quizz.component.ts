@@ -101,11 +101,11 @@ export class QuizzComponent implements OnInit {
     (window as any).onYouTubeIframeAPIReady = () => {
       if (!this.player) {
         this.player = new (window as any).YT.Player('youtube-player', {
-          videoId: 'DfSkKYQiwoU', // ID do vídeo do YouTube
+          videoId: 'wiE0qjpBsbo', // ID do vídeo do YouTube
           playerVars: {
             autoplay: 1, // Reprodução automática
             loop: 1, // Loop infinito
-            playlist: 'DfSkKYQiwoU', // Necessário para o loop
+            playlist: 'wiE0qjpBsbo', // Necessário para o loop
             controls: 0, // Esconde controles
             mute: 0 // Inicia com som
           },
