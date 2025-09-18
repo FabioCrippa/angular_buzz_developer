@@ -2485,7 +2485,1570 @@
       ],
       "correct": "a",
       "category": "front-end"
-    }
+    },
+    {
+      "id": 226,
+      "question": "Qual é a diferença entre 'interface' e 'type' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Interfaces são usadas apenas para classes, enquanto types são usados para funções", "alias": "a" },
+        { "id": 2, "name": "Interfaces podem ser estendidas múltiplas vezes, enquanto types não", "alias": "b" },
+        { "id": 3, "name": "Types são exclusivos para definir tipos primitivos", "alias": "c" }
+      ],
+    "correct": "b",
+    "category": "typescript"
+  },    {
+      "id": 227,
+      "question": "O que é um 'union type' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Um tipo que pode ser um de vários tipos especificados", "alias": "a" },
+        { "id": 2, "name": "Um tipo que combina dois tipos em um só", "alias": "b" },
+        { "id": 3, "name": "Um tipo exclusivo para arrays", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    {
+      "id": 228,
+      "question": "O que é um 'intersection type' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Um tipo que combina múltiplos tipos em um só", "alias": "a" },
+        { "id": 2, "name": "Um tipo que pode ser um de vários tipos especificados", "alias": "b" },
+        { "id": 3, "name": "Um tipo exclusivo para funções", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    {
+      "id": 229,
+      "question": "O que é o operador 'as' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Um operador de asserção de tipo que informa ao compilador para tratar uma variável como um tipo específico", "alias": "a" },
+        { "id": 2, "name": "Um operador para definir variáveis constantes", "alias": "b" },
+        { "id": 3, "name": "Um operador para criar arrays", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    {
+      "id": 230,
+      "question": "O que é o 'type assertion' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Uma forma de informar ao compilador sobre o tipo de uma variável quando ele não consegue inferir automaticamente", "alias": "a" },
+        { "id": 2, "name": "Uma técnica para criar tipos genéricos", "alias": "b" },
+        { "id": 3, "name": "Uma maneira de definir interfaces", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    {
+      "id": 231,
+      "question": "O que é o 'strict mode' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Um conjunto de opções de compilação que tornam a verificação de tipos mais rigorosa", "alias": "a" },
+        { "id": 2, "name": "Um modo para executar o código mais rapidamente", "alias": "b" },
+        { "id": 3, "name": "Um modo para desabilitar a verificação de tipos", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    {
+      "id": 232,
+      "question": "O que é um 'generic type' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Um tipo que pode ser reutilizado com diferentes tipos de dados", "alias": "a" },
+        { "id": 2, "name": "Um tipo exclusivo para strings", "alias": "b" },
+        { "id": 3, "name": "Um tipo que combina dois tipos em um só", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    {
+      "id": 233,
+      "question": "O que é o 'never type' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Um tipo que representa valores que nunca ocorrem, como funções que lançam erros ou loops infinitos", "alias": "a" },
+        { "id": 2, "name": "Um tipo exclusivo para números", "alias": "b" },
+        { "id": 3, "name": "Um tipo que pode ser um de vários tipos especificados", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    {
+      "id": 234,
+      "question": "O que é o 'unknown type' em TypeScript?",
+      "options": [
+        { "id": 1, "name": "Um tipo que representa um valor cujo tipo é desconhecido até o momento da verificação", "alias": "a" },
+        { "id": 2, "name": "Um tipo exclusivo para booleanos", "alias": "b" },
+        { "id": 3, "name": "Um tipo que combina múltiplos tipos em um só", "alias": "c" }
+      ],
+      "correct": "a",
+      "category": "typescript"
+    },
+    
+  {
+    "id": 231,
+    "question": "Qual é a principal função do Jasmine em testes unitários?",
+    "options": [
+      { "id": 1, "name": "Executar testes em múltiplos navegadores", "alias": "a" },
+      { "id": 2, "name": "Fornecer uma estrutura para escrever testes com assertions", "alias": "b" },
+      { "id": 3, "name": "Compilar arquivos TypeScript", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 232,
+    "question": "O que o Karma faz em um ambiente de testes?",
+    "options": [
+      { "id": 1, "name": "Executa os testes em navegadores reais", "alias": "a" },
+      { "id": 2, "name": "Cria mocks para funções assíncronas", "alias": "b" },
+      { "id": 3, "name": "Define os tipos de variáveis", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 233,
+    "question": "Qual comando geralmente inicia os testes com Karma e Jasmine em projetos Angular?",
+    "options": [
+      { "id": 1, "name": "ng test", "alias": "a" },
+      { "id": 2, "name": "npm run jasmine", "alias": "b" },
+      { "id": 3, "name": "karma start", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 234,
+    "question": "Em Jasmine, qual função é usada para agrupar testes relacionados?",
+    "options": [
+      { "id": 1, "name": "group()", "alias": "a" },
+      { "id": 2, "name": "describe()", "alias": "b" },
+      { "id": 3, "name": "testSuite()", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 235,
+    "question": "Qual função do Jasmine verifica se um valor é igual ao esperado?",
+    "options": [
+      { "id": 1, "name": "check()", "alias": "a" },
+      { "id": 2, "name": "expect().toBe()", "alias": "b" },
+      { "id": 3, "name": "assertEqual()", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 236,
+    "question": "Qual comando do Karma é usado para rodar os testes em modo contínuo?",
+    "options": [
+      { "id": 1, "name": "karma continuous", "alias": "a" },
+      { "id": 2, "name": "karma start --watch", "alias": "b" },
+      { "id": 3, "name": "karma run --loop", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 237,
+    "question": "Qual é a função do 'beforeEach()' em Jasmine?",
+    "options": [
+      { "id": 1, "name": "Executar código antes de cada teste dentro de um bloco describe", "alias": "a" },
+      { "id": 2, "name": "Definir variáveis globais para todos os testes", "alias": "b" },
+      { "id": 3, "name": "Finalizar todos os testes após a execução", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 238,
+    "question": "Como você pode testar funções assíncronas em Jasmine?",
+    "options": [
+      { "id": 1, "name": "Usando callbacks ou Promises dentro dos testes", "alias": "a" },
+      { "id": 2, "name": "Chamando a função diretamente sem esperar o resultado", "alias": "b" },
+      { "id": 3, "name": "Ignorando o teste para funções assíncronas", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 239,
+    "question": "O que é um 'spy' em Jasmine?",
+    "options": [
+      { "id": 1, "name": "Uma ferramenta para monitorar chamadas de funções e seus argumentos", "alias": "a" },
+      { "id": 2, "name": "Um tipo especial de teste unitário", "alias": "b" },
+      { "id": 3, "name": "Um comando para rodar testes em paralelo", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 240,
+    "question": "Qual comando instala o Karma em um projeto Node.js?",
+    "options": [
+      { "id": 1, "name": "npm install karma --save-dev", "alias": "a" },
+      { "id": 2, "name": "npm install jasmine --save-dev", "alias": "b" },
+      { "id": 3, "name": "npm install test --save-dev", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "testes-unitarios"
+  },
+  {
+    "id": 241,
+    "question": "O que significa o termo REST em APIs REST?",
+    "options": [
+      { "id": 1, "name": "Remote Execution of Services and Transactions", "alias": "a" },
+      { "id": 2, "name": "Representational State Transfer", "alias": "b" },
+      { "id": 3, "name": "Request and Send Technology", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "apis-rest"
+  },
+  {
+    "id": 242,
+    "question": "Qual método HTTP é usado para atualizar parcialmente um recurso?",
+    "options": [
+      { "id": 1, "name": "PUT", "alias": "a" },
+      { "id": 2, "name": "PATCH", "alias": "b" },
+      { "id": 3, "name": "POST", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "apis-rest"
+  },
+  {
+    "id": 243,
+    "question": "Qual código de status HTTP indica que um recurso foi criado com sucesso?",
+    "options": [
+      { "id": 1, "name": "200", "alias": "a" },
+      { "id": 2, "name": "201", "alias": "b" },
+      { "id": 3, "name": "204", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "apis-rest"
+  },
+  {
+    "id": 244,
+    "question": "Em uma API RESTful, qual é a função do método DELETE?",
+    "options": [
+      { "id": 1, "name": "Remover um recurso do servidor", "alias": "a" },
+      { "id": 2, "name": "Desconectar o cliente da API", "alias": "b" },
+      { "id": 3, "name": "Limpar o cache do navegador", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "apis-rest"
+  },
+  {
+    "id": 245,
+    "question": "Qual é a principal vantagem de usar APIs REST?",
+    "options": [
+      { "id": 1, "name": "Permite comunicação assíncrona entre servidores", "alias": "a" },
+      { "id": 2, "name": "Facilita a integração entre sistemas usando padrões simples e HTTP", "alias": "b" },
+      { "id": 3, "name": "Garante criptografia automática dos dados", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "apis-rest"
+  },
+  {
+    "id": 246,
+    "question": "O que é CORS (Cross-Origin Resource Sharing)?",
+    "options": [
+      { "id": 1, "name": "Um protocolo para compartilhar recursos entre diferentes domínios", "alias": "a" },
+      { "id": 2, "name": "Um método de autenticação para APIs", "alias": "b" },
+      { "id": 3, "name": "Um tipo de banco de dados", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "apis-rest"
+  },
+  {
+    "id": 247,
+    "question": "Qual cabeçalho HTTP é usado para autenticação em APIs REST?",
+    "options": [
+      { "id": 1, "name": "Authorization", "alias": "a" },
+      { "id": 2, "name": "Auth-Token", "alias": "b" },
+      { "id": 3, "name": "Access-Control", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "apis-rest"
+  },
+  {
+    "id": 248,
+    "question": "Qual é a diferença entre os métodos PUT e PATCH em APIs REST?",
+    "options": [
+      { "id": 1, "name": "PUT substitui o recurso inteiro, enquanto PATCH atualiza apenas partes do recurso", "alias": "a" },
+      { "id": 2, "name": "PUT é usado para criar recursos, enquanto PATCH é usado para deletar", "alias": "b" },
+      { "id": 3, "name": "Não há diferença; ambos fazem a mesma coisa", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "apis-rest"
+  },
+  {
+    "id": 249,
+    "question": "O que é uma API RESTful?",
+    "options": [
+      { "id": 1, "name": "Uma API que segue os princípios REST para comunicação entre cliente e servidor", "alias": "a" },
+      { "id": 2, "name": "Uma API que usa apenas o método GET", "alias": "b" },
+      { "id": 3, "name": "Uma API que não requer autenticação", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "apis-rest"
+  },
+  {
+    "id": 250,
+    "question": "Qual formato de dados é comumente usado para trocar informações em APIs REST?",
+    "options": [
+      { "id": 1, "name": "XML", "alias": "a" },
+      { "id": 2, "name": "JSON", "alias": "b" },
+      { "id": 3, "name": "CSV", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "apis-rest"
+  },
+  {
+    "id": 246,
+    "question": "Qual comando Git é usado para clonar um repositório remoto?",
+    "options": [
+      { "id": 1, "name": "git copy", "alias": "a" },
+      { "id": 2, "name": "git clone", "alias": "b" },
+      { "id": 3, "name": "git pull", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "git"
+  },
+  {
+    "id": 247,
+    "question": "O que o comando 'git status' exibe?",
+    "options": [
+      { "id": 1, "name": "Lista os commits anteriores", "alias": "a" },
+      { "id": 2, "name": "Mostra os arquivos modificados e o estado atual do repositório", "alias": "b" },
+      { "id": 3, "name": "Exibe o histórico de branches", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "git"
+  },
+  {
+    "id": 248,
+    "question": "Qual comando é usado para enviar alterações locais para o repositório remoto?",
+    "options": [
+      { "id": 1, "name": "git push", "alias": "a" },
+      { "id": 2, "name": "git commit", "alias": "b" },
+      { "id": 3, "name": "git merge", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "git"
+  },
+  {
+    "id": 249,
+    "question": "O que o comando 'git pull' faz?",
+    "options": [
+      { "id": 1, "name": "Remove arquivos do repositório remoto", "alias": "a" },
+      { "id": 2, "name": "Baixa e mescla alterações do repositório remoto", "alias": "b" },
+      { "id": 3, "name": "Cria um novo branch", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "git"
+  },
+  {
+    "id": 250,
+    "question": "Qual comando cria um novo branch em Git?",
+    "options": [
+      { "id": 1, "name": "git branch nome-do-branch", "alias": "a" },
+      { "id": 2, "name": "git create nome-do-branch", "alias": "b" },
+      { "id": 3, "name": "git new nome-do-branch", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "git"
+  },
+  {
+    "id": 251,
+    "question": "O que o comando 'git merge' faz?",
+    "options": [
+      { "id": 1, "name": "Combina mudanças de um branch em outro", "alias": "a" },
+      { "id": 2, "name": "Cria um novo commit", "alias": "b" },
+      { "id": 3, "name": "Exclui um branch", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "git"
+  },
+  {
+    "id": 252,
+    "question": "Qual comando desfaz as alterações locais em um arquivo específico?",
+    "options": [
+      { "id": 1, "name": "git reset arquivo", "alias": "a" },
+      { "id": 2, "name": "git checkout -- arquivo", "alias": "b" },
+      { "id": 3, "name": "git revert arquivo", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "git"
+  },
+  {
+    "id": 253,
+    "question": "O que o comando 'git log' exibe?",
+    "options": [
+      { "id": 1, "name": "Mostra o histórico de commits do repositório", "alias": "a" },
+      { "id": 2, "name": "Lista os arquivos no diretório atual", "alias": "b" },
+      { "id": 3, "name": "Exibe o status dos arquivos modificados", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "git"
+  },
+  {
+    "id": 254,
+    "question": "Qual comando desfaz o último commit mantendo as alterações no diretório de trabalho?",
+    "options": [
+      { "id": 1, "name": "git revert HEAD", "alias": "a" },
+      { "id": 2, "name": "git reset --soft HEAD~1", "alias": "b" },
+      { "id": 3, "name": "git checkout HEAD~1", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "git"
+  },
+  {
+    "id": 251,
+    "question": "Qual é o principal benefício de aplicar o princípio DRY (Don't Repeat Yourself)?",
+    "options": [
+      { "id": 1, "name": "Melhorar a performance do código", "alias": "a" },
+      { "id": 2, "name": "Evitar duplicação e facilitar manutenção", "alias": "b" },
+      { "id": 3, "name": "Aumentar a complexidade do sistema", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 252,
+    "question": "Por que é importante nomear variáveis de forma clara e descritiva?",
+    "options": [
+      { "id": 1, "name": "Para que o código fique mais difícil de entender", "alias": "a" },
+      { "id": 2, "name": "Para facilitar a leitura e manutenção do código", "alias": "b" },
+      { "id": 3, "name": "Para reduzir o tempo de compilação", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 253,
+    "question": "O que significa o princípio KISS (Keep It Simple, Stupid)?",
+    "options": [
+      { "id": 1, "name": "Evitar comentários no código", "alias": "a" },
+      { "id": 2, "name": "Manter o código o mais simples e direto possível", "alias": "b" },
+      { "id": 3, "name": "Utilizar apenas variáveis globais", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 254,
+    "question": "Qual é a vantagem de dividir o código em módulos ou componentes?",
+    "options": [
+      { "id": 1, "name": "Facilita a reutilização e a manutenção", "alias": "a" },
+      { "id": 2, "name": "Dificulta a leitura do código", "alias": "b" },
+      { "id": 3, "name": "Aumenta o tempo de execução", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 255,
+    "question": "Por que é importante escrever testes automatizados?",
+    "options": [
+      { "id": 1, "name": "Para aumentar a complexidade do projeto", "alias": "a" },
+      { "id": 2, "name": "Para garantir que o código funcione como esperado e facilitar refatorações", "alias": "b" },
+      { "id": 3, "name": "Para evitar o uso de comentários", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 256,
+    "question": "O que é um 'code smell'?",
+    "options": [
+      { "id": 1, "name": "Um erro de sintaxe no código", "alias": "a" },
+      { "id": 2, "name": "Um indicativo de que o código pode ser melhorado", "alias": "b" },
+      { "id": 3, "name": "Um tipo de variável", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 257,
+    "question": "Qual é a importância de seguir um padrão de codificação (coding style)?",
+    "options": [
+      { "id": 1, "name": "Para tornar o código mais difícil de entender", "alias": "a" },
+      { "id": 2, "name": "Para garantir consistência e facilitar a colaboração entre desenvolvedores", "alias": "b" },
+      { "id": 3, "name": "Para aumentar o tamanho do arquivo", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 258,
+    "question": "O que é refatoração de código?",
+    "options": [
+      { "id": 1, "name": "Adicionar novas funcionalidades ao código", "alias": "a" },
+      { "id": 2, "name": "Modificar o código para melhorar sua estrutura sem alterar seu comportamento", "alias": "b" },
+      { "id": 3, "name": "Remover comentários do código", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 259,
+    "question": "Por que é importante documentar o código?",
+    "options": [
+      { "id": 1, "name": "Para dificultar a leitura do código", "alias": "a" },
+      { "id": 2, "name": "Para ajudar outros desenvolvedores (e você mesmo) a entenderem o propósito e funcionamento do código", "alias": "b"},
+      { "id": 3, "name": "Para aumentar o tamanho do arquivo", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "boas-praticas"
+  },
+  {
+    "id": 256,
+    "question": "O que significa CI no contexto de desenvolvimento de software?",
+    "options": [
+      { "id": 1, "name": "Continuous Integration", "alias": "a" },
+      { "id": 2, "name": "Code Injection", "alias": "b" },
+      { "id": 3, "name": "Centralized Infrastructure", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "ci-cd"
+  },
+  {
+    "id": 257,
+    "question": "Qual é o objetivo principal da entrega contínua (CD)?",
+    "options": [
+      { "id": 1, "name": "Executar testes manuais", "alias": "a" },
+      { "id": 2, "name": "Automatizar o processo de deploy com segurança e frequência", "alias": "b" },
+      { "id": 3, "name": "Evitar atualizações no sistema", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "ci-cd"
+  },
+  {
+    "id": 258,
+    "question": "Qual ferramenta é comumente usada para pipelines de CI/CD?",
+    "options": [
+      { "id": 1, "name": "Jenkins", "alias": "a" },
+      { "id": 2, "name": "Photoshop", "alias": "b" },
+      { "id": 3, "name": "Excel", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "ci-cd"
+  },
+  {
+    "id": 259,
+    "question": "Em um pipeline CI/CD, o que geralmente acontece após o commit de código?",
+    "options": [
+      { "id": 1, "name": "O código é ignorado até o próximo deploy manual", "alias": "a" },
+      { "id": 2, "name": "O pipeline é disparado para compilar, testar e preparar o deploy", "alias": "b" },
+      { "id": 3, "name": "O código é enviado diretamente para produção", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "ci-cd"
+  },
+  {
+    "id": 260,
+    "question": "Qual é uma vantagem do uso de CI/CD em projetos de software?",
+    "options": [
+      { "id": 1, "name": "Redução da frequência de deploys", "alias": "a" },
+      { "id": 2, "name": "Maior agilidade e confiabilidade nas entregas", "alias": "b" },
+      { "id": 3, "name": "Eliminação completa de bugs", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "ci-cd"
+  },
+  {
+    "id": 261,
+    "question": "O que é um pipeline de CI/CD?",
+    "options": [
+      { "id": 1, "name": "Um conjunto de comandos para estilizar o código", "alias": "a" },
+      { "id": 2, "name": "Uma sequência automatizada de etapas para compilar, testar e implantar software", "alias": "b" },
+      { "id": 3, "name": "Um script para limpar o cache do servidor", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "ci-cd"
+  },
+  {
+    "id": 262,
+    "question": "Qual prática ajuda a evitar conflitos durante a integração contínua?",
+    "options": [
+      { "id": 1, "name": "Commits frequentes e pequenos", "alias": "a" },
+      { "id": 2, "name": "Deploy manual em produção", "alias": "b" },
+      { "id": 3, "name": "Uso exclusivo de branches longos", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "ci-cd"
+  },
+  {
+    "id": 263,
+    "question": "O que é um artefato em um processo de CI/CD?",
+    "options": [
+      { "id": 1, "name": "Um arquivo gerado durante o build que pode ser implantado", "alias": "a" },
+      { "id": 2, "name": "Um erro de compilação", "alias": "b" },
+      { "id": 3, "name": "Um script de teste automatizado", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "ci-cd"
+  },
+  {
+    "id": 264,
+    "question": "Qual é o papel dos testes automatizados em CI/CD?",
+    "options": [
+      { "id": 1, "name": "Verificar se o código está formatado corretamente", "alias": "a" },
+      { "id": 2, "name": "Garantir que novas alterações não quebrem funcionalidades existentes", "alias": "b" },
+      { "id": 3, "name": "Reduzir o tempo de deploy manual", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "ci-cd"
+  },
+  {
+    "id": 265,
+    "question": "O que é um ambiente de staging em CI/CD?",
+    "options": [
+      { "id": 1, "name": "Um ambiente de produção com dados reais", "alias": "a" },
+      { "id": 2, "name": "Um ambiente de testes que simula a produção", "alias": "b" },
+      { "id": 3, "name": "Um ambiente usado apenas para desenvolvimento local", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "ci-cd"
+  },
+  {
+    "id": 266,
+    "question": "Qual é o principal objetivo de um code review?",
+    "options": [
+      { "id": 1, "name": "Criticar o estilo pessoal do desenvolvedor", "alias": "a" },
+      { "id": 2, "name": "Garantir qualidade, legibilidade e detectar possíveis erros", "alias": "b" },
+      { "id": 3, "name": "Reduzir o número de commits no projeto", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "code-review"
+  },
+  {
+    "id": 267,
+    "question": "O que deve ser evitado durante um code review?",
+    "options": [
+      { "id": 1, "name": "Comentários construtivos e sugestões", "alias": "a" },
+      { "id": 2, "name": "Discussões sobre boas práticas", "alias": "b" },
+      { "id": 3, "name": "Críticas pessoais e subjetivas", "alias": "c" }
+    ],
+    "correct": "c",
+    "category": "code-review"
+  },
+  {
+    "id": 268,
+    "question": "Qual é uma boa prática ao revisar código de outra pessoa?",
+    "options": [
+      { "id": 1, "name": "Testar o código antes de aprovar", "alias": "a" },
+      { "id": 2, "name": "Ignorar os testes automatizados", "alias": "b" },
+      { "id": 3, "name": "Aprovar sem ler se o autor é experiente", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "code-review"
+  },
+  {
+    "id": 269,
+    "question": "Por que é importante manter o escopo pequeno em um pull request?",
+    "options": [
+      { "id": 1, "name": "Facilita a revisão e reduz chances de erros", "alias": "a" },
+      { "id": 2, "name": "Permite adicionar mais funcionalidades de uma vez", "alias": "b" },
+      { "id": 3, "name": "Evita que outros desenvolvedores vejam o código", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "code-review"
+  },
+  {
+    "id": 270,
+    "question": "Qual ferramenta é comumente usada para realizar code reviews em projetos Git?",
+    "options": [
+      { "id": 1, "name": "GitHub", "alias": "a" },
+      { "id": 2, "name": "Photoshop", "alias": "b" },
+      { "id": 3, "name": "Excel", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "code-review"
+  },
+  {
+    "id": 271,
+    "question": "Por que é importante revisar testes automatizados durante o code review?",
+    "options": [
+      { "id": 1, "name": "Para garantir que o código esteja bem documentado", "alias": "a" },
+      { "id": 2, "name": "Para verificar se os testes cobrem os cenários esperados", "alias": "b" },
+      { "id": 3, "name": "Para remover todos os testes do projeto", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "code-review"
+  },
+  {
+    "id": 272,
+    "question": "Qual é uma boa prática ao escrever comentários em um code review?",
+    "options": [
+      { "id": 1, "name": "Ser claro, objetivo e respeitoso", "alias": "a" },
+      { "id": 2, "name": "Usar linguagem agressiva para reforçar pontos", "alias": "b" },
+      { "id": 3, "name": "Evitar qualquer tipo de comentário", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "code-review"
+  },
+  {
+    "id": 273,
+    "question": "O que significa aprovar um pull request?",
+    "options": [
+      { "id": 1, "name": "Que o código foi revisado e está pronto para ser mesclado", "alias": "a" },
+      { "id": 2, "name": "Que o código será deletado", "alias": "b" },
+      { "id": 3, "name": "Que o autor deve reescrever tudo", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "code-review"
+  },
+  {
+    "id": 274,
+    "question": "Qual é o impacto de um code review bem feito na qualidade do software?",
+    "options": [
+      { "id": 1, "name": "Reduz bugs e melhora a legibilidade do código", "alias": "a" },
+      { "id": 2, "name": "Aumenta o tempo de desenvolvimento sem benefícios", "alias": "b" },
+      { "id": 3, "name": "Impede que o código seja executado", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "code-review"
+  },
+  {
+    "id": 275,
+    "question": "Quando é ideal realizar um code review?",
+    "options": [
+      { "id": 1, "name": "Antes de mesclar o código na branch principal", "alias": "a" },
+      { "id": 2, "name": "Após o deploy em produção", "alias": "b" },
+      { "id": 3, "name": "Durante a criação do repositório", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "code-review"
+  },
+  {
+    "id": 276,
+    "question": "O que é o Figma?",
+    "options": [
+      { "id": 1, "name": "Uma ferramenta de edição de vídeo", "alias": "a" },
+      { "id": 2, "name": "Uma plataforma de design colaborativo baseada em nuvem", "alias": "b" },
+      { "id": 3, "name": "Um sistema de gerenciamento de banco de dados", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "figma"
+  },
+  {
+    "id": 277,
+    "question": "Qual recurso do Figma permite criar componentes reutilizáveis?",
+    "options": [
+      { "id": 1, "name": "Frames", "alias": "a" },
+      { "id": 2, "name": "Prototypes", "alias": "b" },
+      { "id": 3, "name": "Components", "alias": "c" }
+    ],
+    "correct": "c",
+    "category": "figma"
+  },
+  {
+    "id": 278,
+    "question": "O que é o recurso 'Auto Layout' no Figma?",
+    "options": [
+      { "id": 1, "name": "Uma forma de aplicar estilos CSS automaticamente", "alias": "a" },
+      { "id": 2, "name": "Uma funcionalidade que organiza elementos dinamicamente com base em regras de layout", "alias": "b" },
+      { "id": 3, "name": "Um plugin para exportar imagens", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "figma"
+  },
+  {
+    "id": 279,
+    "question": "Qual vantagem do Figma em relação a ferramentas tradicionais de design?",
+    "options": [
+      { "id": 1, "name": "Funciona apenas offline", "alias": "a" },
+      { "id": 2, "name": "Permite colaboração em tempo real entre membros da equipe", "alias": "b" },
+      { "id": 3, "name": "Requer instalação local obrigatória", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "figma"
+  },
+  {
+    "id": 280,
+    "question": "O que é o FigJam dentro do ecossistema Figma?",
+    "options": [
+      { "id": 1, "name": "Uma ferramenta de prototipagem avançada", "alias": "a" },
+      { "id": 2, "name": "Uma extensão para exportar código", "alias": "b" },
+      { "id": 3, "name": "Uma ferramenta colaborativa para brainstorming e diagramas", "alias": "c" }
+    ],
+    "correct": "c",
+    "category": "figma"
+  },
+  {
+    "id": 281,
+    "question": "Qual é a função do recurso 'Prototype' no Figma?",
+    "options": [
+      { "id": 1, "name": "Criar animações para vídeos", "alias": "a" },
+      { "id": 2, "name": "Simular a navegação entre telas e interações", "alias": "b" },
+      { "id": 3, "name": "Exportar o projeto para código HTML", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "figma"
+  },
+  {
+    "id": 282,
+    "question": "Como os desenvolvedores geralmente acessam especificações de design no Figma?",
+    "options": [
+      { "id": 1, "name": "Através do modo 'Inspect'", "alias": "a" },
+      { "id": 2, "name": "Exportando o projeto como PDF", "alias": "b" },
+      { "id": 3, "name": "Copiando manualmente os estilos", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "figma"
+  },
+  {
+    "id": 283,
+    "question": "O que são 'Variants' em Figma?",
+    "options": [
+      { "id": 1, "name": "Versões alternativas de arquivos exportados", "alias": "a" },
+      { "id": 2, "name": "Componentes com diferentes estados agrupados em um único elemento", "alias": "b" },
+      { "id": 3, "name": "Plugins para alterar temas", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "figma"
+  },
+  {
+    "id": 284,
+    "question": "Qual é o benefício de usar estilos compartilhados no Figma?",
+    "options": [
+      { "id": 1, "name": "Permite alterar o layout automaticamente", "alias": "a" },
+      { "id": 2, "name": "Facilita a consistência visual e manutenção do design", "alias": "b" },
+      { "id": 3, "name": "Impede que outros editem o projeto", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "figma"
+  },
+  {
+    "id": 285,
+    "question": "Como é possível colaborar em tempo real no Figma?",
+    "options": [
+      { "id": 1, "name": "Compartilhando o arquivo via e-mail", "alias": "a" },
+      { "id": 2, "name": "Convidando membros para editar diretamente no navegador", "alias": "b" },
+      { "id": 3, "name": "Exportando o projeto para o Google Drive", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "figma"
+  },
+  {
+    "id": 286,
+    "question": "Qual é a diferença entre '==' e '===' em JavaScript?",
+    "options": [
+      { "id": 1, "name": "'==' compara apenas valores, enquanto '===' compara valor e tipo", "alias": "a" },
+      { "id": 2, "name": "Ambos são iguais e podem ser usados indistintamente", "alias": "b" },
+      { "id": 3, "name": "'===' é usado apenas em TypeScript", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 287,
+    "question": "Explique o ciclo de vida de um componente Angular.",
+    "options": [
+      { "id": 1, "name": "Inclui fases como ngOnInit, ngOnChanges e ngOnDestroy", "alias": "a" },
+      { "id": 2, "name": "É composto apenas por ngCreate e ngDelete", "alias": "b" },
+      { "id": 3, "name": "Não possui ciclo de vida definido", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 288,
+    "question": "Como você garantiria qualidade de código em um projeto colaborativo?",
+    "options": [
+      { "id": 1, "name": "Utilizando code reviews, testes automatizados e linters", "alias": "a" },
+      { "id": 2, "name": "Aprovando todos os pull requests automaticamente", "alias": "b" },
+      { "id": 3, "name": "Editando diretamente na branch principal", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 289,
+    "question": "Quais são os principais métodos HTTP usados em APIs REST?",
+    "options": [
+      { "id": 1, "name": "GET, POST, PUT, PATCH, DELETE", "alias": "a" },
+      { "id": 2, "name": "SEND, RECEIVE, UPDATE, REMOVE", "alias": "b" },
+      { "id": 3, "name": "CONNECT, TRACE, OPTIONS", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 290,
+    "question": "Qual é a diferença entre integração contínua (CI) e entrega contínua (CD)?",
+    "options": [
+      { "id": 1, "name": "CI foca em integrar código frequentemente; CD automatiza o deploy após testes", "alias": "a" },
+      { "id": 2, "name": "CI é usado apenas em projetos mobile; CD em projetos web", "alias": "b" },
+      { "id": 3, "name": "Ambos significam a mesma coisa", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 291,
+    "question": "O que representa o 'S' no acrônimo SOLID?",
+    "options": [
+      { "id": 1, "name": "Single Responsibility Principle", "alias": "a" },
+      { "id": 2, "name": "Simple Routing Protocol", "alias": "b" },
+      { "id": 3, "name": "Secure Resource Policy", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 292,
+    "question": "Qual é a ideia central do princípio Open/Closed (O de SOLID)?",
+    "options": [
+      { "id": 1, "name": "O código deve estar aberto para modificação e fechado para extensão", "alias": "a" },
+      { "id": 2, "name": "O código deve estar aberto para extensão e fechado para modificação", "alias": "b" },
+      { "id": 3, "name": "O código deve ser sempre público", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 293,
+    "question": "O que o princípio Liskov Substitution garante?",
+    "options": [
+      { "id": 1, "name": "Que subclasses possam substituir suas superclasses sem alterar o comportamento esperado", "alias": "a" },
+      { "id": 2, "name": "Que todas as classes sejam abstratas", "alias": "b" },
+      { "id": 3, "name": "Que métodos sejam sempre públicos", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 294,
+    "question": "O que o princípio Interface Segregation recomenda?",
+    "options": [
+      { "id": 1, "name": "Criar interfaces grandes e genéricas", "alias": "a" },
+      { "id": 2, "name": "Dividir interfaces em partes menores e mais específicas", "alias": "b" },
+      { "id": 3, "name": "Evitar o uso de interfaces", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 295,
+    "question": "Qual é o foco do princípio Dependency Inversion?",
+    "options": [
+      { "id": 1, "name": "Depender de implementações concretas", "alias": "a" },
+      { "id": 2, "name": "Depender de abstrações e não de implementações", "alias": "b" },
+      { "id": 3, "name": "Evitar o uso de dependências externas", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 296,
+    "question": "O que significa o acrônimo SOLID na programação orientada a objetos?",
+    "options": [
+      { "id": 1, "name": "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion", "alias": "a" },
+      { "id": 2, "name": "Simple Object, Logic Integration, Data", "alias": "b" },
+      { "id": 3, "name": "System Optimization, Layer Isolation, Design", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 297,
+    "question": "Por que o princípio Single Responsibility é importante?",
+    "options": [
+      { "id": 1, "name": "Porque permite que uma classe tenha múltiplas responsabilidades", "alias": "a" },
+      { "id": 2, "name": "Porque facilita testes, manutenção e reutilização do código", "alias": "b" },
+      { "id": 3, "name": "Porque reduz o número de arquivos no projeto", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 298,
+    "question": "Como o princípio Interface Segregation melhora o design de software?",
+    "options": [
+      { "id": 1, "name": "Evita que classes sejam forçadas a implementar métodos que não usam", "alias": "a" },
+      { "id": 2, "name": "Permite que interfaces tenham apenas métodos privados", "alias": "b" },
+      { "id": 3, "name": "Garante que todas as interfaces sejam genéricas", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 299,
+    "question": "O que caracteriza uma função assíncrona em JavaScript?",
+    "options": [
+      { "id": 1, "name": "Ela é executada em paralelo com outras funções", "alias": "a" },
+      { "id": 2, "name": "Ela retorna uma Promise e pode usar 'await' para esperar resultados", "alias": "b" },
+      { "id": 3, "name": "Ela bloqueia a execução do restante do código", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 300,
+    "question": "Qual é a vantagem de usar 'await' dentro de uma função assíncrona?",
+    "options": [
+      { "id": 1, "name": "Permite que o código continue sem esperar a resposta", "alias": "a" },
+      { "id": 2, "name": "Faz com que a função retorne imediatamente", "alias": "b" },
+      { "id": 3, "name": "Suspende a execução até que a Promise seja resolvida", "alias": "c" }
+    ],
+    "correct": "c",
+    "category": "entrevista"
+  },
+  {
+    "id": 301,
+    "question": "O que significa o termo 'assíncrono' na programação?",
+    "options": [
+      { "id": 1, "name": "Que as operações ocorrem em tempo real e simultaneamente", "alias": "a" },
+      { "id": 2, "name": "Que as operações podem ocorrer de forma independente, sem bloquear o fluxo principal", "alias": "b" },
+      { "id": 3, "name": "Que o código é executado apenas após o carregamento completo da página", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 302,
+    "question": "Qual é a principal vantagem de usar programação assíncrona?",
+    "options": [
+      { "id": 1, "name": "Permite que múltiplas tarefas sejam executadas sem travar o sistema", "alias": "a" },
+      { "id": 2, "name": "Evita o uso de funções", "alias": "b" },
+      { "id": 3, "name": "Garante que todas as tarefas sejam executadas em ordem", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 303,
+    "question": "O que é um acrônimo?",
+    "options": [
+      { "id": 1, "name": "Uma palavra formada pelas letras iniciais de outras palavras", "alias": "a" },
+      { "id": 2, "name": "Um tipo de variável em JavaScript", "alias": "b" },
+      { "id": 3, "name": "Um erro de compilação comum", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 304,
+    "question": "Qual dos exemplos abaixo é um acrônimo?",
+    "options": [
+      { "id": 1, "name": "HTML (HyperText Markup Language)", "alias": "a" },
+      { "id": 2, "name": "function()", "alias": "b" },
+      { "id": 3, "name": "let x = 10", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 305,
+    "question": "Por que é útil conhecer acrônimos em tecnologia?",
+    "options": [
+      { "id": 1, "name": "Porque ajudam a entender conceitos complexos de forma resumida", "alias": "a" },
+      { "id": 2, "name": "Porque são usados apenas em testes automatizados", "alias": "b" },
+      { "id": 3, "name": "Porque substituem comandos de terminal", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 306,
+    "question": "Qual é o principal objetivo da reunião diária (daily stand-up) em metodologias ágeis?",
+    "options": [
+      { "id": 1, "name": "Definir metas de longo prazo", "alias": "a" },
+      { "id": 2, "name": "Compartilhar o progresso, identificar impedimentos e alinhar o time", "alias": "b" },
+      { "id": 3, "name": "Apresentar o produto ao cliente", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 307,
+    "question": "O que acontece na reunião de planning (planejamento) em Scrum?",
+    "options": [
+      { "id": 1, "name": "O time define quais tarefas serão executadas no próximo sprint", "alias": "a" },
+      { "id": 2, "name": "Os stakeholders aprovam o deploy em produção", "alias": "b" },
+      { "id": 3, "name": "Os desenvolvedores revisam o código uns dos outros", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 308,
+    "question": "Qual é o propósito da reunião de review (revisão de sprint)?",
+    "options": [
+      { "id": 1, "name": "Apresentar o que foi desenvolvido e coletar feedback dos stakeholders", "alias": "a" },
+      { "id": 2, "name": "Revisar os testes automatizados", "alias": "b" },
+      { "id": 3, "name": "Planejar o próximo trimestre", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 309,
+    "question": "O que é uma retrospectiva em metodologias ágeis?",
+    "options": [
+      { "id": 1, "name": "Uma reunião para revisar o código-fonte", "alias": "a" },
+      { "id": 2, "name": "Uma reunião para refletir sobre o processo e buscar melhorias", "alias": "b" },
+      { "id": 3, "name": "Uma análise de desempenho individual", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 310,
+    "question": "Qual é uma vantagem das metodologias ágeis em relação aos modelos tradicionais?",
+    "options": [
+      { "id": 1, "name": "Maior flexibilidade para mudanças e entregas incrementais", "alias": "a" },
+      { "id": 2, "name": "Documentação extensa antes do início do projeto", "alias": "b" },
+      { "id": 3, "name": "Execução linear e sem revisões", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 311,
+    "question": "Qual é a principal diferença entre Scrum e Kanban?",
+    "options": [
+      { "id": 1, "name": "Scrum usa sprints com duração fixa; Kanban é contínuo e baseado em fluxo", "alias": "a" },
+      { "id": 2, "name": "Kanban exige reuniões diárias obrigatórias", "alias": "b" },
+      { "id": 3, "name": "Scrum não possui papéis definidos", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 312,
+    "question": "Qual é o papel do Product Owner em um time ágil?",
+    "options": [
+      { "id": 1, "name": "Garantir que o time siga os padrões de codificação", "alias": "a" },
+      { "id": 2, "name": "Priorizar o backlog e representar os interesses do cliente", "alias": "b" },
+      { "id": 3, "name": "Executar testes automatizados", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 313,
+    "question": "O que o Scrum Master faz em um time ágil?",
+    "options": [
+      { "id": 1, "name": "Define os requisitos do produto", "alias": "a" },
+      { "id": 2, "name": "Remove impedimentos e facilita o processo Scrum", "alias": "b" },
+      { "id": 3, "name": "Escreve os testes unitários", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 314,
+    "question": "O que é 'velocity' em Scrum?",
+    "options": [
+      { "id": 1, "name": "A velocidade de execução dos testes", "alias": "a" },
+      { "id": 2, "name": "A quantidade de trabalho concluído em um sprint", "alias": "b" },
+      { "id": 3, "name": "O tempo de resposta do servidor", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 315,
+    "question": "Qual prática é comum no Extreme Programming (XP)?",
+    "options": [
+      { "id": 1, "name": "Programação em pares (pair programming)", "alias": "a" },
+      { "id": 2, "name": "Deploy trimestral", "alias": "b" },
+      { "id": 3, "name": "Documentação extensa antes do desenvolvimento", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 316,
+    "question": "O que significa o termo 'lead time' em metodologias ágeis?",
+    "options": [
+      { "id": 1, "name": "Tempo entre o início e o fim da execução de um teste", "alias": "a" },
+      { "id": 2, "name": "Tempo entre a criação de uma demanda e sua entrega", "alias": "b" },
+      { "id": 3, "name": "Tempo de resposta do servidor em produção", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 317,
+    "question": "Qual é uma característica importante de um bom líder técnico?",
+    "options": [
+      { "id": 1, "name": "Centralizar todas as decisões técnicas", "alias": "a" },
+      { "id": 2, "name": "Facilitar a comunicação, apoiar o time e promover boas práticas", "alias": "b" },
+      { "id": 3, "name": "Evitar envolvimento com o time de desenvolvimento", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 318,
+    "question": "O que é uma definição de pronto (Definition of Done) em Scrum?",
+    "options": [
+      { "id": 1, "name": "Uma lista de tarefas pendentes", "alias": "a" },
+      { "id": 2, "name": "Critérios que definem quando uma entrega está realmente concluída", "alias": "b" },
+      { "id": 3, "name": "Um documento de requisitos do cliente", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 319,
+    "question": "Como a cultura de desenvolvimento influencia a qualidade do software?",
+    "options": [
+      { "id": 1, "name": "Promove colaboração, responsabilidade e melhoria contínua", "alias": "a" },
+      { "id": 2, "name": "Impede que o time compartilhe conhecimento", "alias": "b" },
+      { "id": 3, "name": "Reduz a necessidade de testes automatizados", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 320,
+    "question": "O que é uma sprint em Scrum?",
+    "options": [
+      { "id": 1, "name": "Uma reunião de revisão de código", "alias": "a" },
+      { "id": 2, "name": "Um período fixo para desenvolver e entregar funcionalidades", "alias": "b" },
+      { "id": 3, "name": "Um teste de performance do sistema", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 321,
+    "question": "O que é um Design Pattern no contexto de desenvolvimento de software?",
+    "options": [
+      { "id": 1, "name": "Uma biblioteca de componentes visuais", "alias": "a" },
+      { "id": 2, "name": "Uma solução reutilizável para problemas recorrentes de projeto", "alias": "b" },
+      { "id": 3, "name": "Um tipo de teste automatizado", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 322,
+    "question": "Qual é a principal característica do padrão Singleton?",
+    "options": [
+      { "id": 1, "name": "Permitir múltiplas instâncias simultâneas", "alias": "a" },
+      { "id": 2, "name": "Garantir que apenas uma instância da classe exista", "alias": "b" },
+      { "id": 3, "name": "Criar objetos com base em eventos", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 323,
+    "question": "Para que serve o padrão Factory?",
+    "options": [
+      { "id": 1, "name": "Criar objetos sem expor a lógica de criação ao cliente", "alias": "a" },
+      { "id": 2, "name": "Eliminar o uso de classes abstratas", "alias": "b" },
+      { "id": 3, "name": "Gerenciar o ciclo de vida de uma aplicação", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 324,
+    "question": "Qual padrão é ideal para implementar notificações entre objetos desacoplados?",
+    "options": [
+      { "id": 1, "name": "Strategy", "alias": "a" },
+      { "id": 2, "name": "Observer", "alias": "b" },
+      { "id": 3, "name": "Decorator", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 325,
+    "question": "O que o padrão Strategy permite?",
+    "options": [
+      { "id": 1, "name": "Alterar o comportamento de uma classe em tempo de execução", "alias": "a" },
+      { "id": 2, "name": "Criar múltiplas instâncias de uma mesma classe", "alias": "b" },
+      { "id": 3, "name": "Compartilhar atributos entre objetos", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 326,
+    "question": "Qual padrão é ideal para simplificar interfaces complexas e ocultar detalhes internos?",
+    "options": [
+      { "id": 1, "name": "Facade", "alias": "a" },
+      { "id": 2, "name": "Adapter", "alias": "b" },
+      { "id": 3, "name": "Composite", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 327,
+    "question": "O que o padrão Adapter permite?",
+    "options": [
+      { "id": 1, "name": "Adaptar uma interface existente para outra esperada", "alias": "a" },
+      { "id": 2, "name": "Criar múltiplas instâncias de uma classe", "alias": "b" },
+      { "id": 3, "name": "Executar código assíncrono em paralelo", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 328,
+    "question": "Qual padrão é útil para representar hierarquias de objetos como árvores?",
+    "options": [
+      { "id": 1, "name": "Composite", "alias": "a" },
+      { "id": 2, "name": "Builder", "alias": "b" },
+      { "id": 3, "name": "Proxy", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 329,
+    "question": "Qual é a principal função do padrão Builder?",
+    "options": [
+      { "id": 1, "name": "Construir objetos complexos passo a passo", "alias": "a" },
+      { "id": 2, "name": "Monitorar eventos entre objetos", "alias": "b" },
+      { "id": 3, "name": "Evitar a criação de objetos", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 330,
+    "question": "Quando usar o padrão Proxy?",
+    "options": [
+      { "id": 1, "name": "Quando é necessário controlar o acesso a um objeto", "alias": "a" },
+      { "id": 2, "name": "Quando se deseja criar objetos sem construtores", "alias": "b" },
+      { "id": 3, "name": "Quando se quer aplicar múltiplos estilos visuais", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 331,
+    "question": "O que é um Observable no contexto do RxJS?",
+    "options": [
+      { "id": 1, "name": "Uma função que retorna um valor síncrono", "alias": "a" },
+      { "id": 2, "name": "Uma abstração que representa um fluxo de dados assíncronos", "alias": "b" },
+      { "id": 3, "name": "Um tipo de variável global", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 332,
+    "question": "Qual operador RxJS é usado para transformar os valores emitidos por um Observable?",
+    "options": [
+      { "id": 1, "name": "map", "alias": "a" },
+      { "id": 2, "name": "filter", "alias": "b" },
+      { "id": 3, "name": "subscribe", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 333,
+    "question": "O que o operador 'switchMap' faz em RxJS?",
+    "options": [
+      { "id": 1, "name": "Cancela o Observable anterior e substitui por um novo", "alias": "a" },
+      { "id": 2, "name": "Combina múltiplos Observables em paralelo", "alias": "b" },
+      { "id": 3, "name": "Executa todos os Observables em sequência", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 334,
+    "question": "Qual é a função do método 'subscribe' em um Observable?",
+    "options": [
+      { "id": 1, "name": "Encerrar o Observable", "alias": "a" },
+      { "id": 2, "name": "Iniciar a execução e receber os valores emitidos", "alias": "b" },
+      { "id": 3, "name": "Transformar os dados em JSON", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 335,
+    "question": "Qual operador RxJS é ideal para executar múltiplos Observables em paralelo e aguardar todos os resultados?",
+    "options": [
+      { "id": 1, "name": "mergeMap", "alias": "a" },
+      { "id": 2, "name": "forkJoin", "alias": "b" },
+      { "id": 3, "name": "concatMap", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 336,
+    "question": "Qual operador RxJS é usado para filtrar valores emitidos por um Observable?",
+    "options": [
+      { "id": 1, "name": "filter", "alias": "a" },
+      { "id": 2, "name": "map", "alias": "b" },
+      { "id": 3, "name": "take", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 337,
+    "question": "O que é um Subject em RxJS?",
+    "options": [
+      { "id": 1, "name": "Um tipo especial de Observable que permite multicasting", "alias": "a" },
+      { "id": 2, "name": "Um operador para transformar valores", "alias": "b" },
+      { "id": 3, "name": "Uma função que cancela Observables", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 338,
+    "question": "Qual a diferença entre Subject e BehaviorSubject?",
+    "options": [
+      { "id": 1, "name": "BehaviorSubject armazena o último valor emitido e o envia aos novos inscritos", "alias": "a" },
+      { "id": 2, "name": "Subject é síncrono e BehaviorSubject é assíncrono", "alias": "b" },
+      { "id": 3, "name": "Subject é usado apenas em testes", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 339,
+    "question": "Qual operador RxJS é usado para limitar a quantidade de valores emitidos?",
+    "options": [
+      { "id": 1, "name": "take", "alias": "a" },
+      { "id": 2, "name": "merge", "alias": "b" },
+      { "id": 3, "name": "scan", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 340,
+    "question": "Por que usar RxJS em aplicações Angular?",
+    "options": [
+      { "id": 1, "name": "Para manipular fluxos assíncronos como eventos, requisições HTTP e formulários reativos", "alias": "a" },
+      { "id": 2, "name": "Para substituir o roteamento padrão", "alias": "b" },
+      { "id": 3, "name": "Para estilizar componentes com CSS", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 341,
+    "question": "O que significa o termo 'lazy loading' em desenvolvimento web?",
+    "options": [
+      { "id": 1, "name": "Carregar todos os recursos da aplicação antes da interação do usuário", "alias": "a" },
+      { "id": 2, "name": "Carregar recursos sob demanda, apenas quando necessário", "alias": "b" },
+      { "id": 3, "name": "Evitar o uso de cache no navegador", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 342,
+    "question": "Qual é o principal benefício do lazy loading em aplicações Angular?",
+    "options": [
+      { "id": 1, "name": "Reduz o tempo de carregamento inicial da aplicação", "alias": "a" },
+      { "id": 2, "name": "Aumenta o tamanho do bundle principal", "alias": "b" },
+      { "id": 3, "name": "Impede que módulos sejam reutilizados", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 343,
+    "question": "Como o lazy loading é implementado em Angular?",
+    "options": [
+      { "id": 1, "name": "Utilizando o operador 'subscribe' em Observables", "alias": "a" },
+      { "id": 2, "name": "Configurando rotas com 'loadChildren' no módulo de roteamento", "alias": "b" },
+      { "id": 3, "name": "Importando todos os módulos no AppModule", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 344,
+    "question": "Lazy loading pode ser aplicado a quais tipos de recursos?",
+    "options": [
+      { "id": 1, "name": "Imagens, módulos, componentes e scripts", "alias": "a" },
+      { "id": 2, "name": "Apenas arquivos de áudio", "alias": "b" },
+      { "id": 3, "name": "Somente estilos CSS", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 345,
+    "question": "Qual prática pode complementar o lazy loading para melhorar a performance?",
+    "options": [
+      { "id": 1, "name": "Pré-carregamento seletivo (preloading)", "alias": "a" },
+      { "id": 2, "name": "Desativar cache do navegador", "alias": "b" },
+      { "id": 3, "name": "Carregar todos os scripts no head", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 346,
+    "question": "O que significa uma arquitetura modular em projetos de software?",
+    "options": [
+      { "id": 1, "name": "Separar o código em partes independentes e reutilizáveis", "alias": "a" },
+      { "id": 2, "name": "Agrupar todo o código em um único arquivo", "alias": "b" },
+      { "id": 3, "name": "Evitar o uso de componentes reutilizáveis", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 347,
+    "question": "Qual é uma vantagem de organizar um projeto Angular em módulos feature-based?",
+    "options": [
+      { "id": 1, "name": "Facilita o lazy loading e a manutenção do código", "alias": "a" },
+      { "id": 2, "name": "Aumenta o tempo de build", "alias": "b" },
+      { "id": 3, "name": "Impede a reutilização de componentes", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 348,
+    "question": "Como a separação de responsabilidades contribui para a escalabilidade de um projeto?",
+    "options": [
+      { "id": 1, "name": "Permite que diferentes partes do sistema evoluam de forma independente", "alias": "a" },
+      { "id": 2, "name": "Centraliza toda a lógica em um único módulo", "alias": "b" },
+      { "id": 3, "name": "Reduz a necessidade de testes", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  },
+  {
+    "id": 349,
+    "question": "Qual prática ajuda a manter um projeto escalável ao longo do tempo?",
+    "options": [
+      { "id": 1, "name": "Evitar documentação e testes", "alias": "a" },
+      { "id": 2, "name": "Adotar padrões consistentes de arquitetura e modularização", "alias": "b" },
+      { "id": 3, "name": "Manter todos os arquivos em uma única pasta", "alias": "c" }
+    ],
+    "correct": "b",
+    "category": "entrevista"
+  },
+  {
+    "id": 350,
+    "question": "Em projetos escaláveis, o que é recomendado ao lidar com dependências entre módulos?",
+    "options": [
+      { "id": 1, "name": "Evitar acoplamento excessivo e usar interfaces ou serviços compartilhados", "alias": "a" },
+      { "id": 2, "name": "Importar diretamente componentes de outros módulos", "alias": "b" },
+      { "id": 3, "name": "Duplicar código para evitar dependências", "alias": "c" }
+    ],
+    "correct": "a",
+    "category": "entrevista"
+  }
+
   ],
   "results": {
     "X": "Parabéns! Você possui muito conhecimento em front-end!",
