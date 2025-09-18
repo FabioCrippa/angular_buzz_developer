@@ -71,10 +71,13 @@
         </p>
       </div>
       
-      <!-- ✅ LOADING STATE -->
+      <!-- ✅ LOADING MAIS ELEGANTE -->
       <div *ngIf="categories.length === 0" class="loading-categories">
-        <h3>🔄 Carregando categorias...</h3>
-        <div class="loading-spinner"></div>
+        <div class="loading-content">
+          <div class="loading-spinner"></div>
+          <h3>Carregando categorias...</h3>
+          <p>Preparando sua experiência de aprendizado</p>
+        </div>
       </div>
       
       <!-- ✅ GRID DE CATEGORIAS -->

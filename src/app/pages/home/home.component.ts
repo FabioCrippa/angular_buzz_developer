@@ -28,21 +28,26 @@ export class HomeComponent implements OnInit {
   }
 
   private loadCategories(): void {
-    const allCategories = quizz_questions.questions.map((q: any) => q.category);
-    const uniqueCategories = Array.from(new Set(allCategories));
+    try {
+      const allCategories = quizz_questions.questions.map((q: any) => q.category);
+      const uniqueCategories = Array.from(new Set(allCategories));
 
-    this.categories = uniqueCategories.map(category => {
-      const questionsInCategory = quizz_questions.questions.filter((q: any) => q.category === category);
-      
-      return {
-        id: category,
-        name: this.getCategoryDisplayName(category),
-        icon: this.getCategoryIcon(category),
-        description: this.getCategoryDescription(category),
-        questionCount: questionsInCategory.length,
-        difficulty: this.getCategoryDifficulty(category)
-      };
-    }).sort((a, b) => b.questionCount - a.questionCount);
+      this.categories = uniqueCategories.map(category => {
+        const questionsInCategory = quizz_questions.questions.filter((q: any) => q.category === category);
+        
+        return {
+          id: category,
+          name: this.getCategoryDisplayName(category),
+          icon: this.getCategoryIcon(category),
+          description: this.getCategoryDescription(category),
+          questionCount: questionsInCategory.length,
+          difficulty: this.getCategoryDifficulty(category)
+        };
+      }).sort((a, b) => b.questionCount - a.questionCount);
+    } catch (error) {
+      // Em caso de erro, carregar categorias padrão
+      this.categories = [];
+    }
   }
 
   private getCategoryDisplayName(category: string): string {
