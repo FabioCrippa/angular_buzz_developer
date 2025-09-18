@@ -1,17 +1,8 @@
 // Importações principais do Angular e dependências necessárias
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'; // Importa módulos essenciais do Angular
+import { Component, OnInit, OnDestroy } from '@angular/core'; // Importa módulos essenciais do Angular
 import { ActivatedRoute } from '@angular/router'; // Permite acessar parâmetros da rota
-import quizz_questions from "../../../assets/data/quizz_questions.json"; // Importa as perguntas do quiz em formato JSON
-
-// Interface que define o formato de uma questão do quiz
-export interface Question {
-  id: number; // Identificador único da questão
-  question: string; // Texto da pergunta
-  options: { id: number; name: string; alias: string }[]; // Opções de resposta
-  correct: string; // Alias da resposta correta
-  category: string; // Categoria da questão
-  explanation?: string; // Explicação opcional para a resposta
-}
+import { Subscription } from 'rxjs';
+import { QuizService, Question, QuizResult } from '../../services/quiz.service';
 
 // Decorador que define o componente Angular
 @Component({
@@ -19,226 +10,174 @@ export interface Question {
   templateUrl: './quizz.component.html', // Caminho do template HTML
   styleUrls: ['./quizz.component.css'] // Caminho do CSS
 })
-export class QuizzComponent implements OnInit {
-  // Permite acessar o elemento de áudio do template (caso usado)
-  @ViewChild('backgroundAudio') backgroundAudio!: ElementRef<HTMLAudioElement>;
-  private player: any; // Referência ao player do YouTube
+export class QuizzComponent implements OnInit, OnDestroy {
+pauseMusic() {
+throw new Error('Method not implemented.');
+}
+playMusic() {
+throw new Error('Method not implemented.');
+}
+goHome() {
+throw new Error('Method not implemented.');
+}
+getCategoryTitle(arg0: string) {
+throw new Error('Method not implemented.');
+}
+  // ✅ PROPRIEDADES SIMPLIFICADAS
+  title: string = "Quiz Buzz Developer";
+  questions: Question[] = [];
+  currentQuestion: Question | null = null;
+  questionIndex: number = 0;
+  selectedAnswer: string = "";
+  showFeedback: boolean = false;
+  finished: boolean = false;
+  quizResult: QuizResult | null = null;
+  category: string = '';
+  progress: number = 0;
 
-  // Propriedades do componente
-  title: string = ""; // Título dinâmico do quiz
-  questions: Question[] = []; // Array de questões filtradas
-  questionSelected: Question | null = null; // Questão atualmente exibida
-  answers: string[] = []; // Respostas selecionadas pelo usuário
-  answerSelected: string = ""; // Resposta final selecionada (para resultado)
-  questionIndex: number = 0; // Índice da questão atual
-  questionMaxIndex: number = 0; // Total de questões
-  finished: boolean = false; // Indica se o quiz terminou
-  difficulty: string = 'easy'; // Nível de dificuldade (pode ser expandido)
-  score: number = 0; // Pontuação do usuário
-  showCorrect: boolean = false; // Exibe feedback visual após resposta
-  selectedAnswer: string = ""; // Resposta escolhida na questão atual
-  correctAnswers: number = 0; // Contador de acertos
-  wrongAnswers: number = 0; // Contador de erros
-  category: string = ''; // Categoria selecionada pelo usuário
-  
+  // ✅ SUBSCRIPTIONS PARA CLEANUP
+  private subscriptions: Subscription[] = [];
+
   // Injeta dependências (rota)
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private quizService: QuizService
+  ) {}
 
   // Método chamado ao inicializar o componente
   ngOnInit(): void {
-    // Obtém parâmetros da rota (ex: categoria)
+    // ✅ OBTER CATEGORIA DA ROTA
     this.route.queryParams.subscribe(params => {
-      this.category = params['category'] || ''; // Salva categoria selecionada
-      console.log('Parâmetros recebidos:', params);
+      this.category = params['category'] || '';
+      this.initializeQuiz();
     });
 
-    // Verifica se o JSON de perguntas foi carregado
-    if (quizz_questions) {
-      console.log('Arquivo JSON carregado:', quizz_questions);
+    // ✅ OBSERVAR QUESTÃO ATUAL
+    const currentQuestion$ = this.quizService.currentQuestion$.subscribe(
+      question => this.currentQuestion = question
+    );
 
-      this.finished = false; // Garante que o quiz não está finalizado
-      this.title = quizz_questions.title; // Define o título do quiz
+    // ✅ OBSERVAR PROGRESSO
+    const progress$ = this.quizService.quizProgress$.subscribe(
+      progress => this.progress = progress
+    );
 
-      // Filtra perguntas pela categoria selecionada
-      this.questions = quizz_questions.questions.filter((q: any) => {
-        return this.category ? q.category === this.category : true;
-      });
+    this.subscriptions.push(currentQuestion$, progress$);
+  }
 
-      console.log('Categoria selecionada:', this.category);
-      console.log('Perguntas filtradas:', this.questions);
-      console.log('Todas as perguntas carregadas:', quizz_questions.questions);
-      console.log('Perguntas da categoria CSS:', quizz_questions.questions.filter(q => q.category === 'css'));
+  ngOnDestroy(): void {
+    // ✅ CLEANUP DE SUBSCRIPTIONS
+    this.subscriptions.forEach(sub => sub.unsubscribe());
+  }
 
-      // Se houver perguntas filtradas, inicializa o quiz
-      if (this.questions.length > 0) {
-        this.questionIndex = 0;
-        this.questionMaxIndex = this.questions.length;
-        this.questionSelected = this.questions[this.questionIndex];
-        console.log('Perguntas carregadas:', this.questions); // Debug
-      } else {
-        // Se não houver perguntas, exibe erro e limpa array
-        console.error('Nenhuma pergunta encontrada para os critérios selecionados.');
-        this.questions = []; // Garante que o array esteja vazio
+  // ✅ INICIALIZAR QUIZ
+  initializeQuiz(): void {
+    const categories = this.category ? [this.category] : [];
+    this.questions = this.quizService.startQuiz(categories, 25);
+    
+    if (this.questions.length > 0) {
+      this.currentQuestion = this.questions[0];
+      this.questionIndex = 0;
+      this.finished = false;
+    }
+  }
+
+  // ✅ SELECIONAR RESPOSTA
+  selectAnswer(answer: string): void {
+    if (!this.currentQuestion || this.showFeedback) return;
+
+    this.selectedAnswer = answer;
+    this.quizService.saveAnswer(this.currentQuestion.id, answer);
+    this.showFeedback = true;
+
+    // ✅ LER EXPLICAÇÃO SE ERROU E TEM interviewTip
+    if (answer !== this.currentQuestion.correct) {
+      if (this.currentQuestion.interviewTip) {
+        setTimeout(() => {
+          this.readText(this.currentQuestion!.interviewTip!);
+        }, 1000);
+      } else if (this.currentQuestion.explanation) {
+        setTimeout(() => {
+          this.readText(this.currentQuestion!.explanation!);
+        }, 1000);
       }
+    }
+  }
 
-      // Fallback: tenta carregar todas as perguntas se não encontrar nenhuma
-      if (this.questions.length === 0) {
-        console.warn('Nenhuma pergunta encontrada. Carregando todas as perguntas como fallback.');
-        this.questions = quizz_questions.questions.filter((q: any) => q.category === this.category);
-        this.questionIndex = 0;
-        this.questionMaxIndex = this.questions.length;
-        this.questionSelected = this.questions[this.questionIndex];
-      }
+  // ✅ PRÓXIMA QUESTÃO
+  nextQuestion(): void {
+    const nextQuestion = this.quizService.nextQuestion(this.questions);
+    
+    if (nextQuestion) {
+      this.questionIndex++;
+      this.currentQuestion = nextQuestion;
+      this.showFeedback = false;
+      this.selectedAnswer = "";
+      
+      // ✅ LER PERGUNTA
+      this.readText(nextQuestion.question);
     } else {
-      // Caso o JSON não seja encontrado
-      console.error('Arquivo de perguntas não encontrado.');
-    }
-
-    // Opcional: inicia a música automaticamente
-    this.playMusic();
-
-    // Inicializa o player do YouTube quando a API estiver pronta
-    (window as any).onYouTubeIframeAPIReady = () => {
-      if (!this.player) {
-        this.player = new (window as any).YT.Player('youtube-player', {
-          videoId: 'wiE0qjpBsbo', // ID do vídeo do YouTube
-          playerVars: {
-            autoplay: 1, // Reprodução automática
-            loop: 1, // Loop infinito
-            playlist: 'wiE0qjpBsbo', // Necessário para o loop
-            controls: 0, // Esconde controles
-            mute: 0 // Inicia com som
-          },
-          events: {
-            onReady: (event: any) => {
-              console.log('Player do YouTube está pronto.');
-              event.target.playVideo(); // Toca o vídeo
-            },
-            onError: (event: any) => {
-              console.error('Erro no player do YouTube:', event);
-            }
-          }
-        });
-      }
-    };
-  }
-
-  // Método chamado ao escolher uma resposta
-  playerChoose(value: string) {
-    this.selectedAnswer = value; // Salva resposta escolhida
-    this.answers.push(value); // Adiciona ao array de respostas
-
-    if (this.questionSelected) {
-      if (value === this.questionSelected.correct) {
-        this.correctAnswers++; // Incrementa acertos
-      } else {
-        this.wrongAnswers++; // Incrementa erros
-        // Se errar, lê a explicação em voz alta
-        if (this.questionSelected.explanation) {
-          this.readText(this.questionSelected.explanation);
-        }
-      }
-    }
-
-    // Calcula a pontuação em porcentagem
-    this.score = Math.round((this.correctAnswers / this.questions.length) * 100);
-    this.showCorrect = true; // Exibe feedback visual
-  }
-
-  // Avança para a próxima questão
-  
-  async nextStep() {
-    this.questionIndex += 1; // Incrementa índice
-
-    console.log('Índice da pergunta atual:', this.questionIndex);
-    console.log('Índice máximo de perguntas:', this.questionMaxIndex);
-
-    if (this.questionMaxIndex > this.questionIndex) {
-      this.questionSelected = this.questions[this.questionIndex]; // Seleciona próxima questão
-      console.log('Avançando para a próxima pergunta:', this.questionSelected); // Debug
-      this.showCorrect = false; // Reseta feedback visual
-      // Lê a nova pergunta em voz alta
-      this.readQuestion(this.questionSelected.question);
-    } else {
-      // Se acabou o quiz, calcula o resultado final
-      const finalAnswer: string = await this.checkResult(this.answers);
-      this.finished = true;
-      this.answerSelected = quizz_questions.results[finalAnswer as keyof typeof quizz_questions.results];
-      console.log('Quiz finalizado. Resultado:', this.answerSelected); // Debug
+      this.finishQuiz();
     }
   }
 
-  // Calcula qual resposta foi mais escolhida (pode ser usado para quizzes de personalidade)
-  async checkResult(answers: string[]) {
-    const result = answers.reduce((previous, current, index, arr) => {
-      if (
-        arr.filter(item => item === previous).length >
-        arr.filter(item => item === current).length
-      ) {
-        return previous;
-      } else {
-        return current;
-      }
-    });
-    return result;
+  // ✅ FINALIZAR QUIZ
+  finishQuiz(): void {
+    this.quizResult = this.quizService.calculateResults(this.questions);
+    this.finished = true;
+    
+    // ✅ LER RESULTADO
+    this.readText(`Quiz finalizado! Você acertou ${this.quizResult.score} de ${this.quizResult.total} questões. Sua pontuação foi ${this.quizResult.percentage}%.`);
   }
 
-  // Finaliza o quiz manualmente
-  async finishQuiz() {
-    this.finished = true; // Marca como finalizado
-    const finalAnswer: string = await this.checkResult(this.answers); // Calcula resultado
-    this.answerSelected = quizz_questions.results[finalAnswer as keyof typeof quizz_questions.results];
-    console.log('Quiz finalizado manualmente. Resultado:', this.answerSelected); // Debug
-    console.log(`Respostas corretas: ${this.correctAnswers}`);
-    console.log(`Respostas incorretas: ${this.wrongAnswers}`);
+  // ✅ REINICIAR QUIZ
+  restartQuiz(): void {
+    this.quizService.resetQuiz();
+    this.initializeQuiz();
+    this.showFeedback = false;
+    this.selectedAnswer = "";
+    this.finished = false;
+    this.quizResult = null;
+    this.progress = 0;
   }
 
-  // Reinicia o quiz do zero
-  restartQuiz() {
-    this.finished = false; // Marca como não finalizado
-    this.questionIndex = 0; // Reinicia índice
-    this.correctAnswers = 0; // Zera acertos
-    this.wrongAnswers = 0; // Zera erros
-    this.score = 0; // Zera pontuação
-    this.answers = []; // Limpa respostas
-    this.questionSelected = this.questions[this.questionIndex]; // Seleciona primeira questão
-    this.showCorrect = false; // Reseta feedback visual
-    console.log('Quiz reiniciado.');
+  // ✅ VERIFICAR SE RESPOSTA ESTÁ CORRETA
+  isCorrectAnswer(answer: string): boolean {
+    return this.currentQuestion ? answer === this.currentQuestion.correct : false;
   }
 
-  // Toca a música de fundo (YouTube)
-  playMusic() {
-    console.log('Tentando tocar música...');
-    if (this.player && this.player.playVideo) {
-      this.player.playVideo();
-      console.log('Música tocando.');
-    } else {
-      console.error('Player do YouTube não está inicializado ou não está pronto.');
+  // ✅ VERIFICAR SE É A RESPOSTA SELECIONADA
+  isSelectedAnswer(answer: string): boolean {
+    return answer === this.selectedAnswer;
+  }
+
+  // ✅ OBTER CLASSE CSS PARA OPÇÃO
+  getOptionClass(answer: string): string {
+    if (!this.showFeedback) return '';
+    
+    if (this.isSelectedAnswer(answer)) {
+      return this.isCorrectAnswer(answer) ? 'correct selected' : 'incorrect selected';
     }
-  }
-
-  // Pausa a música de fundo
-  pauseMusic() {
-    if (this.player && this.player.pauseVideo) {
-      this.player.pauseVideo(); // Pausa o vídeo
-      console.log('Música pausada.');
-    } else {
-      console.error('Player do YouTube não está inicializado ou não está pronto.');
+    
+    if (this.isCorrectAnswer(answer)) {
+      return 'correct';
     }
+    
+    return '';
   }
 
-  // Lê a pergunta em voz alta (acessibilidade)
-  readQuestion(text: string) {
+  // ✅ TEXT-TO-SPEECH SIMPLIFICADO
+  readText(text: string): void {
+    if (!text || !('speechSynthesis' in window)) return;
+    
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'pt-BR'; // Define idioma
+    utterance.lang = 'pt-BR';
+    utterance.rate = 0.8;
     window.speechSynthesis.speak(utterance);
   }
 
-  // Lê qualquer texto em voz alta (usado para explicações)
-  readText(text: string) {
-    if (!text) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'pt-BR'; // Define idioma
-    window.speechSynthesis.speak(utterance);
+  // ✅ OBTER RESULTADO POR CATEGORIA
+  getCategoryResults(): any[] {
+    return this.quizResult?.categoryResults || [];
   }
 }

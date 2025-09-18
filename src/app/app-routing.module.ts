@@ -5,7 +5,9 @@ import { QuizzComponent } from './components/quizz/quizz.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'quizz', component: QuizzComponent }
+  { path: 'quiz', component: QuizzComponent },
+  { path: 'quizz', component: QuizzComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

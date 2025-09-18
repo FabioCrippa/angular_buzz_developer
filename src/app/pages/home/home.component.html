@@ -1,13 +1,164 @@
 <div class="home-container">
-  <h1>Bem-vindo ao Quiz</h1>
-  <p>Escolha uma categoria para começar:</p>
-
-  <div class="categories-grid">
-    <div class="category-card" *ngFor="let category of categories">
-      <a [routerLink]="['/quizz']" [queryParams]="{ category: category }">
-        <span class="category-title">{{ category | titlecase }}</span>
-      </a>
+  
+  <!-- ✅ HERO SECTION LIMPA -->
+  <section class="hero-section">
+    <div class="hero-background">
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
     </div>
-  </div>
+    
+    <div class="hero-content">
+      <div class="logo-container">
+        <img src="assets/img/logo.png" alt="Quiz Buzz Developer" class="hero-logo">
+      </div>
+      
+      <h1 class="hero-title">
+        <span class="title-line-1">Quiz Buzz</span>
+        <span class="title-line-2">Developer</span>
+      </h1>
+      
+      <p class="hero-description">
+        Teste e aprimore seus conhecimentos em desenvolvimento web com 
+        <strong>{{ totalQuestions || 350 }}+ questões</strong> em <strong>{{ categories.length || 18 }} categorias</strong> diferentes
+      </p>
+      
+      <!-- ✅ STATS DINÂMICAS -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-icon">📚</div>
+          <div class="stat-number">{{ totalQuestions || 350 }}+</div>
+          <div class="stat-label">Questões</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-number">{{ categories.length || 18 }}</div>
+          <div class="stat-label">Categorias</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">💡</div>
+          <div class="stat-number">{{ getQuizStats().interviewQuestions || 50 }}+</div>
+          <div class="stat-label">Dicas de Entrevista</div>
+        </div>
+      </div>
+      
+      <!-- ✅ CTA BUTTONS LIMPOS -->
+      <div class="hero-actions">
+        <button class="btn-primary pulse" (click)="startQuickQuiz()">
+          <span class="btn-icon">🚀</span>
+          Começar Quiz Rápido
+        </button>
+        
+        <button class="btn-secondary" (click)="scrollToCategories()">
+          <span class="btn-icon">🎯</span>
+          Escolher Categoria
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ SEÇÃO DE CATEGORIAS LIMPA -->
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Escolha sua Especialidade</h2>
+        <p class="section-subtitle">
+          Selecione uma categoria para focar seus estudos ou teste todos os conhecimentos
+        </p>
+      </div>
+      
+      <!-- ✅ LOADING STATE -->
+      <div *ngIf="categories.length === 0" class="loading-categories">
+        <h3>🔄 Carregando categorias...</h3>
+        <div class="loading-spinner"></div>
+      </div>
+      
+      <!-- ✅ GRID DE CATEGORIAS -->
+      <div class="categories-grid" *ngIf="categories.length > 0">
+        
+        <!-- Card Especial - Todas as Categorias -->
+        <div 
+          class="category-card featured-card" 
+          (click)="startQuiz('all')"
+          role="button"
+          tabindex="0"
+          title="Clique para iniciar quiz com todas as categorias"
+        >
+          <div class="card-glow"></div>
+          <div class="card-content">
+            <div class="card-icon">🌟</div>
+            <h3 class="card-title">Todas as Categorias</h3>
+            <p class="card-description">Quiz completo com questões de todas as áreas</p>
+            <div class="card-stats">
+              <span class="question-count">{{ totalQuestions }} questões</span>
+              <span class="difficulty">Todos os níveis</span>
+            </div>
+          </div>
+          <div class="card-hover-effect"></div>
+        </div>
+
+        <!-- ✅ CARDS DAS CATEGORIAS -->
+        <div 
+          *ngFor="let category of categories; trackBy: trackByCategory" 
+          class="category-card"
+          (click)="startQuiz(category.id)"
+          role="button"
+          tabindex="0"
+          [title]="'Clique para iniciar quiz de ' + category.name"
+          [attr.data-category]="category.id"
+        >
+          <div class="card-content">
+            <div class="card-icon">{{ category.icon }}</div>
+            <h3 class="card-title">{{ category.name }}</h3>
+            <p class="card-description">{{ category.description }}</p>
+            <div class="card-stats">
+              <span class="question-count">{{ category.questionCount }} questões</span>
+              <span class="difficulty">{{ category.difficulty }}</span>
+            </div>
+          </div>
+          <div class="card-hover-effect"></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ SEÇÃO DE FEATURES -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">Por que escolher nosso Quiz?</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Preparação para Entrevistas</h3>
+          <p>Dicas práticas de como responder em entrevistas técnicas reais</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Análise Detalhada</h3>
+          <p>Estatísticas por categoria para identificar pontos de melhoria</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔊</div>
+          <h3>Acessibilidade</h3>
+          <p>Narração de questões para diferentes estilos de aprendizado</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Responsivo</h3>
+          <p>Funciona perfeitamente em desktop, tablet e smartphone</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>
 

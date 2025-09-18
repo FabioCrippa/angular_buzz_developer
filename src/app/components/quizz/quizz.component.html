@@ -16,79 +16,162 @@
         </div>
         <!-- Título dinâmico do quiz (pode ser o nome da categoria) -->
         <h3>{{ title }}</h3>
+        
+        <!-- ✅ BARRA DE PROGRESSO -->
+        <div class="progress-container" *ngIf="!finished">
+            <div class="progress-bar">
+                <div class="progress-fill" [style.width.%]="progress"></div>
+            </div>
+            <p>Questão {{ questionIndex + 1 }} de {{ questions.length }} ({{ progress }}%)</p>
+        </div>
     </div>
 
     <!--
       Seção para player de áudio do YouTube (caso usado).
-      O id 'youtube-player' pode ser manipulado via JS/TS.
     -->
     <div class="youtube-audio">
         <div id="youtube-player"></div>
     </div>
 
     <!--
-      Exibe o quiz enquanto não estiver finalizado.
-      Usa *ngIf para condicionalmente mostrar esta parte.
+      ✅ EXIBE O QUIZ - CORRIGIDO
     -->
-    <div *ngIf="!finished">
+    <div *ngIf="!finished && currentQuestion">
         <!--
-          Exibe a pergunta atual.
-          - Flexbox para alinhar pergunta e botão de ouvir.
-          - O botão de ouvir usa a Web Speech API para acessibilidade.
+          ✅ PERGUNTA ATUAL - CORRIGIDA
         -->
-        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-bottom: 24px;">
-            <h2 style="margin: 0;">{{ questionSelected?.question }}</h2>
+        <div class="question-container">
+            <h2>{{ currentQuestion.question }}</h2>
             <!-- Botão para ler a pergunta em voz alta -->
             <button 
-                (click)="readQuestion(questionSelected?.question!)" 
-                style="padding: 4px 8px; font-size: 1rem; height: 32px; min-width: 32px; border-radius: 50%;"
+                (click)="readText(currentQuestion.question)" 
+                class="listen-btn"
                 title="Ouvir Pergunta"
                 aria-label="Ouvir Pergunta"
             >🔊</button>
         </div>
 
         <!--
-          Lista as opções de resposta.
-          - Usa *ngFor para iterar sobre as opções.
-          - ngClass aplica estilos para respostas corretas/incorretas.
-          - O botão é desabilitado após resposta.
+          ✅ OPÇÕES DE RESPOSTA - CORRIGIDAS
         -->
-        <div *ngFor="let option of questionSelected?.options">
-            <!-- Botão de opção, com classes dinâmicas para mostrar resposta correta/incorreta -->
+        <div class="options-container">
+            <div *ngFor="let option of currentQuestion.options" class="option-wrapper">
+                <button 
+                    class="option-btn"
+                    [ngClass]="getOptionClass(option.alias)"
+                    (click)="selectAnswer(option.alias)"
+                    [disabled]="showFeedback"
+                    [attr.aria-label]="'Escolher resposta ' + option.name"
+                >
+                    {{ option.name }}
+                </button>
+            </div>
+        </div>
+
+        <!--
+          ✅ FEEDBACK E EXPLICAÇÃO
+        -->
+        <div *ngIf="showFeedback" class="feedback-container">
+            <!-- Mostrar se acertou ou errou -->
+            <div class="feedback-result">
+                <h3 *ngIf="isCorrectAnswer(selectedAnswer)" class="correct-feedback">
+                    ✅ Correto!
+                </h3>
+                <h3 *ngIf="!isCorrectAnswer(selectedAnswer)" class="incorrect-feedback">
+                    ❌ Resposta incorreta
+                </h3>
+            </div>
+
+            <!-- Explicação da resposta -->
+            <div *ngIf="currentQuestion.explanation" class="explanation">
+                <h4>💡 Explicação:</h4>
+                <p>{{ currentQuestion.explanation }}</p>
+            </div>
+
+            <!-- ✅ DICA DE ENTREVISTA (NOVA FUNCIONALIDADE!) -->
+            <div *ngIf="currentQuestion.interviewTip" class="interview-tip">
+                <h4>🎯 Dica para Entrevista:</h4>
+                <p class="tip-content">{{ currentQuestion.interviewTip }}</p>
+                <button 
+                    (click)="readText(currentQuestion.interviewTip)" 
+                    class="listen-tip-btn"
+                    title="Ouvir Dica"
+                >
+                    🔊 Ouvir Dica
+                </button>
+            </div>
+
+            <!--
+              ✅ BOTÃO AVANÇAR - CORRIGIDO
+            -->
             <button 
-                [ngClass]="{
-                    'correct': showCorrect && option.alias === questionSelected?.correct,
-                    'incorrect': showCorrect && option.alias !== questionSelected?.correct && option.alias === selectedAnswer
-                }"
-                (click)="playerChoose(option.alias)"
-                [disabled]="showCorrect"
-                [attr.aria-label]="'Escolher resposta ' + option.name"
+                class="next-btn" 
+                (click)="nextQuestion()"
             >
-                {{ option.name }}
+                {{ questionIndex === questions.length - 1 ? 'Finalizar Quiz' : 'Próxima Questão' }}
             </button>
         </div>
 
         <!--
-          Botão para avançar para a próxima pergunta.
-          Só aparece após mostrar a resposta correta.
+          Botão para finalizar o quiz a qualquer momento
         -->
-        <button *ngIf="showCorrect" (click)="nextStep()">Avançar</button>
-
-        <!--
-          Botão para finalizar o quiz a qualquer momento.
-        -->
-        <button class="finalize-btn" (click)="finishQuiz()">Finalizar</button>
+        <button class="finalize-btn" (click)="finishQuiz()" *ngIf="!showFeedback">
+            Finalizar Agora
+        </button>
     </div>
 
     <!--
-      Exibe o resultado final quando o quiz termina.
-      Mostra pontuação, acertos e erros.
+      ✅ RESULTADO FINAL - MELHORADO
     -->
-    <div *ngIf="finished">
-        <h2>Quiz Finalizado!</h2>
-        <p>Sua pontuação: {{ score }}%</p>
-        <p>Respostas corretas: {{ correctAnswers }}</p>
-        <p>Respostas erradas: {{ wrongAnswers }}</p>
+    <div *ngIf="finished && quizResult" class="results-container">
+        <h2>🎉 Quiz Finalizado!</h2>
+        
+        <!-- Pontuação Geral -->
+        <div class="score-summary">
+            <div class="score-circle">
+                <span class="percentage">{{ quizResult.percentage }}%</span>
+            </div>
+            <div class="score-details">
+                <p><strong>✅ Acertos:</strong> {{ quizResult.score }}</p>
+                <p><strong>❌ Erros:</strong> {{ quizResult.total - quizResult.score }}</p>
+                <p><strong>📊 Total:</strong> {{ quizResult.total }} questões</p>
+            </div>
+        </div>
+
+        <!-- ✅ RESULTADOS POR CATEGORIA -->
+        <div class="category-results" *ngIf="quizResult.categoryResults.length > 0">
+            <h3>📊 Desempenho por Categoria:</h3>
+            <div class="category-grid">
+                <div 
+                    *ngFor="let categoryResult of quizResult.categoryResults" 
+                    class="category-card"
+                >
+                    <h4>{{ getCategoryTitle(categoryResult.category) }}</h4>
+                    <div class="category-stats">
+                        <span class="category-percentage">{{ categoryResult.percentage }}%</span>
+                        <span class="category-details">
+                            {{ categoryResult.correct }}/{{ categoryResult.total }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ações -->
+        <div class="result-actions">
+            <button class="restart-btn" (click)="restartQuiz()">
+                🔄 Jogar Novamente
+            </button>
+            <button class="home-btn" (click)="goHome()">
+                🏠 Voltar ao Início
+            </button>
+        </div>
+    </div>
+
+    <!-- ✅ LOADING STATE -->
+    <div *ngIf="!finished && !currentQuestion" class="loading-container">
+        <h2>Carregando quiz...</h2>
+        <div class="loading-spinner"></div>
     </div>
 </div>
 
