@@ -7,7 +7,7 @@
     <div class="quiz-header">
         <div class="quiz-info">
             <div class="quiz-category">
-                <img src="assets/img/logo.png" alt="logo" style="width: 60px; margin-right: 1rem;">
+                <img src="assets/img/logo.png" alt="Buzz Developer Logo" class="quiz-logo">
                 <span>{{ title }}</span>
             </div>
             <div class="quiz-progress" *ngIf="!finished">
@@ -20,19 +20,19 @@
     </div>
 
     <!-- ✅ CONTROLES DE ÁUDIO -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-        <button class="btn btn-secondary" (click)="playMusic()" style="margin-right: 1rem;">
+    <div class="audio-controls">
+        <button class="btn btn-secondary btn-audio" (click)="playMusic()">
             🎵 Tocar Música
         </button>
-        <button class="btn btn-secondary" (click)="pauseMusic()">
+        <button class="btn btn-secondary btn-audio" (click)="pauseMusic()">
             ⏸️ Pausar Música
         </button>
         <!-- YouTube Player (oculto) -->
-        <div id="youtube-player" style="display: none;"></div>
+        <div id="youtube-player" class="youtube-hidden"></div>
     </div>
 
     <!-- ✅ QUIZ ATIVO -->
-    <div *ngIf="!finished && currentQuestion">
+    <div *ngIf="!finished && currentQuestion" class="quiz-active">
         
         <!-- ✅ CARTÃO DA PERGUNTA -->
         <div class="question-card">
@@ -44,9 +44,8 @@
             
             <!-- ✅ BOTÃO OUVIR PERGUNTA -->
             <button 
-                class="btn btn-secondary"
+                class="btn btn-secondary btn-listen"
                 (click)="readText(currentQuestion.question)"
-                style="margin-bottom: 2rem; padding: 0.5rem 1rem;"
                 title="Ouvir Pergunta"
                 aria-label="Ouvir Pergunta"
             >
@@ -71,15 +70,13 @@
             </div>
 
             <!-- ✅ FEEDBACK -->
-            <div *ngIf="showFeedback">
+            <div *ngIf="showFeedback" class="feedback-section">
                 <!-- Status da Resposta -->
-                <div style="margin-bottom: 1rem;">
-                    <h3 *ngIf="isCorrectAnswer(selectedAnswer)" 
-                        style="color: var(--success); text-align: center;">
+                <div class="feedback-status">
+                    <h3 *ngIf="isCorrectAnswer(selectedAnswer)" class="feedback-correct">
                         ✅ Correto!
                     </h3>
-                    <h3 *ngIf="!isCorrectAnswer(selectedAnswer)" 
-                        style="color: var(--danger); text-align: center;">
+                    <h3 *ngIf="!isCorrectAnswer(selectedAnswer)" class="feedback-incorrect">
                         ❌ Resposta incorreta
                     </h3>
                 </div>
@@ -99,9 +96,8 @@
                     </div>
                     <p>{{ currentQuestion.interviewTip }}</p>
                     <button 
-                        class="btn btn-secondary"
+                        class="btn btn-secondary btn-listen-tip"
                         (click)="readText(currentQuestion.interviewTip)"
-                        style="margin-top: 1rem; padding: 0.5rem 1rem;"
                         title="Ouvir Dica"
                     >
                         🔊 Ouvir Dica
@@ -114,7 +110,7 @@
                 <!-- Finalizar Agora (só aparece antes do feedback) -->
                 <button 
                     *ngIf="!showFeedback"
-                    class="btn btn-secondary" 
+                    class="btn btn-secondary btn-finalize" 
                     (click)="finishQuiz()"
                 >
                     ❌ Finalizar Agora
@@ -123,7 +119,7 @@
                 <!-- Próxima Questão (só aparece após feedback) -->
                 <button 
                     *ngIf="showFeedback"
-                    class="btn btn-primary" 
+                    class="btn btn-primary btn-next" 
                     (click)="nextQuestion()"
                 >
                     {{ questionIndex === questions.length - 1 ? '🏁 Finalizar Quiz' : '➡️ Próxima Questão' }}
@@ -134,7 +130,7 @@
 
     <!-- ✅ RESULTADO FINAL -->
     <div *ngIf="finished && quizResult" class="quiz-result">
-        <h2>🎉 Quiz Finalizado!</h2>
+        <h2 class="result-title">🎉 Quiz Finalizado!</h2>
         
         <!-- Pontuação Principal -->
         <div class="result-score">{{ quizResult.percentage }}%</div>
@@ -162,20 +158,20 @@
         </div>
 
         <!-- ✅ RESULTADOS POR CATEGORIA -->
-        <div *ngIf="quizResult.categoryResults.length > 0" style="margin-top: 2rem;">
-            <h3 style="margin-bottom: 1.5rem; text-align: center;">📊 Desempenho por Categoria</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <div *ngIf="quizResult.categoryResults.length > 0" class="category-results">
+            <h3 class="category-results-title">📊 Desempenho por Categoria</h3>
+            <div class="category-grid">
                 <div 
                     *ngFor="let categoryResult of quizResult.categoryResults"
-                    style="background: var(--bg); padding: 1rem; border-radius: var(--radius); text-align: center; color: var(--text);"
+                    class="category-card"
                 >
-                    <h4 style="margin-bottom: 0.5rem; color: var(--text);">
+                    <h4 class="category-name">
                         {{ getCategoryTitle(categoryResult.category) }}
                     </h4>
-                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">
+                    <div class="category-percentage">
                         {{ categoryResult.percentage }}%
                     </div>
-                    <div style="font-size: 0.9rem; opacity: 0.7;">
+                    <div class="category-details">
                         {{ categoryResult.correct }}/{{ categoryResult.total }} questões
                     </div>
                 </div>
@@ -183,7 +179,7 @@
         </div>
 
         <!-- ✅ AÇÕES FINAIS -->
-        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+        <div class="result-actions">
             <button class="btn btn-primary" (click)="restartQuiz()">
                 🔄 Jogar Novamente
             </button>
