@@ -18,17 +18,8 @@
         </div>
     </div>
 
-    <!-- ✅ CONTROLES DE ÁUDIO -->
-    <div class="audio-controls">
-        <button class="btn btn-secondary btn-audio" (click)="playMusic()">
-            🎵 Tocar Música
-        </button>
-        <button class="btn btn-secondary btn-audio" (click)="pauseMusic()">
-            ⏸️ Pausar Música
-        </button>
-        <!-- YouTube Player (oculto) -->
-        <div id="youtube-player" class="youtube-hidden"></div>
-    </div>
+    <!-- ✅ YOUTUBE PLAYER (OCULTO) - MANTÉM A MÚSICA FUNCIONANDO -->
+    <div id="youtube-player" class="youtube-hidden"></div>
 
     <!-- ✅ QUIZ ATIVO -->
     <div *ngIf="!finished && currentQuestion" class="quiz-active">
