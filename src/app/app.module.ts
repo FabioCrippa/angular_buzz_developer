@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { QuizzComponent } from './components/quizz/quizz.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CodeExampleComponent } from "./components/code-example/code-example.component";
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { CodeExampleComponent } from "./components/code-example/code-example.com
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CodeExampleComponent
 ],
   providers: [],
   bootstrap: [AppComponent]
