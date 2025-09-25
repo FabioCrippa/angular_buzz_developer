@@ -125,7 +125,7 @@
 }
 
 .answer-option {
-  background: #f8f9fa;
+  background: #e9ecef; /* ✅ CORREÇÃO: Mudando de #f8f9fa para cor mais escura */
   border: 2px solid transparent;
   border-radius: 10px;
   padding: 1rem;
@@ -269,7 +269,7 @@
   margin: 0 auto;
   max-width: 600px;
   text-align: center;
-  color: #1a1a1a;
+  color: #1a1a1a; /* ✅ Já está correto */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
@@ -284,6 +284,7 @@
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
+  color: #2c3e50; /* ✅ CORREÇÃO: Cor mais escura para melhor legibilidade */
 }
 
 .result-details {
@@ -294,22 +295,25 @@
 }
 
 .result-stat {
-  background: #f8f9fa;
+  background: #e9ecef; /* ✅ CORREÇÃO: Mudando de #f8f9fa para cor mais escura */
   padding: 1rem;
   border-radius: 10px;
+  color: #2c3e50;
+  border: 1px solid #dee2e6; /* ✅ ADICIONANDO: Borda sutil para definição */
 }
 
 .stat-number {
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #667eea;
+  color: #2c3e50; /* ✅ CORREÇÃO: Mudando de #667eea para cor mais escura */
+  margin-bottom: 0.25rem; /* ✅ ADICIONANDO: Pequeno espaçamento */
 }
 
 .stat-label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #2c3e50; /* ✅ Já está correto */
 }
 
 .category-results {
@@ -320,6 +324,7 @@
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 700;
+  color: #2c3e50; /* ✅ CORREÇÃO: Adicionando cor mais escura */
 }
 
 .category-grid {
@@ -329,16 +334,18 @@
 }
 
 .category-card {
-  background: #f8f9fa;
+  background: #e9ecef; /* ✅ CORREÇÃO: Mudando de #f8f9fa para cor mais escura */
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
-  color: #1a1a1a;
+  color: #2c3e50; /* ✅ CORREÇÃO: Cor mais escura para melhor contraste */
+  border: 1px solid #dee2e6; /* ✅ ADICIONANDO: Borda sutil para definição */
 }
 
 .category-name {
   margin-bottom: 0.5rem;
   font-weight: 700;
+  color: #2c3e50; /* ✅ CORREÇÃO: Garantindo cor escura */
 }
 
 .category-percentage {
@@ -351,7 +358,7 @@
 .category-details {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #2c3e50; /* ✅ CORREÇÃO: Cor mais escura que #1a1a1a */
 }
 
 .result-actions {

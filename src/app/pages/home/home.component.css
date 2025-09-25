@@ -193,7 +193,7 @@
 }
 
 .features-grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   max-width: 800px;
   margin: 0 auto;
 }
