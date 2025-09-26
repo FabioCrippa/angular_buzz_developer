@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { QuizzComponent } from './components/quizz/quizz.component';
 
-const routes: Routes = [
+// ✅ ADICIONAR EXPORT na frente de const
+export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'quiz', component: QuizzComponent },
   { path: 'quizz', component: QuizzComponent },
