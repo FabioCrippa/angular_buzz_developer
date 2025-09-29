@@ -1,7 +1,7 @@
-<div class="home-container">
-  
-  <!-- ✅ HERO SECTION SIMPLIFICADA -->
-  <section class="hero-section">
+<div class="landing-container">
+
+  <!-- ✅ HERO SECTION - CONVERSÃO MÁXIMA -->
+  <section class="hero-landing">
     <div class="hero-background">
       <div class="shape shape-1"></div>
       <div class="shape shape-2"></div>
@@ -9,138 +9,308 @@
     </div>
     
     <div class="hero-content">
-            
+      <div class="hero-badge">
+        🚀 #1 Plataforma para Devs Frontend
+      </div>
+      
       <h1 class="hero-title">
-        <span>Quiz Buzz</span>
-        <span class="title-line-2">Developer</span>
+        Domine <span class="gradient-text">Frontend</span><br>
+        e Conquiste sua <span class="gradient-text">Vaga dos Sonhos</span>
       </h1>
       
-      <p class="hero-description">
-        Teste e aprimore seus conhecimentos em desenvolvimento web com 
-        <strong>{{ totalQuestions || 350 }}+ questões</strong> em <strong>{{ categories.length || 18 }} categorias</strong> diferentes
-      </p>
+      <div class="hero-description">
+        <p>Pratique com <strong>558+ questões reais</strong> de React, Angular, JavaScript e mais.</p>
+        <p><strong>Prepare-se para entrevistas técnicas</strong> com dicas de recrutadores experientes.</p>
+      </div>
       
-      <!-- ✅ STATS SIMPLIFICADAS -->
-      <div class="hero-stats">
-        <div class="stat-card">
-          <span class="stat-number">{{ totalQuestions || 350 }}+</span>
-          <span class="stat-label">Questões</span>
+      <!-- SOCIAL PROOF -->
+      <div class="social-proof">
+        <div class="proof-item">
+          <span class="proof-number">558+</span>
+          <span class="proof-label">Questões</span>
         </div>
-        
-        <div class="stat-card">
-          <span class="stat-number">{{ categories.length || 18 }}</span>
-          <span class="stat-label">Categorias</span>
+        <div class="proof-item">
+          <span class="proof-number">18</span>
+          <span class="proof-label">Tecnologias</span>
         </div>
-        
-        <div class="stat-card">
-          <span class="stat-number">{{ getQuizStats().interviewQuestions || 50 }}+</span>
-          <span class="stat-label">Dicas de Entrevista</span>
+        <div class="proof-item">
+          <span class="proof-number">150+</span>
+          <span class="proof-label">Devs Aprovados</span>
         </div>
       </div>
       
-      <!-- ✅ BOTÕES SIMPLIFICADOS -->
-      <div class="hero-actions">
-        <button class="btn-primary" (click)="startQuickQuiz()">
-          🚀 Começar Quiz Rápido
+      <!-- CTA BUTTONS -->
+      <div class="cta-section">
+        <button class="btn-primary-large" (click)="startFreeTrial()">
+          🎯 Começar Teste Grátis
         </button>
+        <button class="btn-secondary-large" (click)="goToDashboard()">
+          📊 Ver Tecnologias
+        </button>
+      </div>
+      
+      <p class="guarantee-text">
+        ✨ <strong>3 tentativas grátis por dia</strong> • Sem cartão • Cancele quando quiser
+      </p>
+    </div>
+  </section>
+
+  <!-- ✅ TECNOLOGIAS DESTACADAS -->
+  <section class="technologies-preview">
+    <div class="container">
+      <h2 class="section-title">Tecnologias Mais Requisitadas</h2>
+      <p class="section-subtitle">Pratique as skills mais demandadas pelo mercado</p>
+      
+      <div class="tech-grid">
+        <div class="tech-card" (click)="goToTech('javascript')">
+          <div class="tech-icon">🟨</div>
+          <h3>JavaScript</h3>
+          <p>89 questões</p>
+          <span class="difficulty basic">Básico a Avançado</span>
+        </div>
         
-        <button class="btn-secondary" (click)="scrollToCategories()">
-          🎯 Escolher Categoria
+        <div class="tech-card" (click)="goToTech('react')">
+          <div class="tech-icon">⚛️</div>
+          <h3>React</h3>
+          <p>65 questões</p>
+          <span class="difficulty intermediate">Intermediário</span>
+        </div>
+        
+        <div class="tech-card" (click)="goToTech('angular')">
+          <div class="tech-icon">🅰️</div>
+          <h3>Angular</h3>
+          <p>35 questões</p>
+          <span class="difficulty advanced">Avançado</span>
+        </div>
+        
+        <div class="tech-card" (click)="goToTech('typescript')">
+          <div class="tech-icon">🔷</div>
+          <h3>TypeScript</h3>
+          <p>28 questões</p>
+          <span class="difficulty intermediate">Intermediário</span>
+        </div>
+      </div>
+      
+      <div class="see-all-section">
+        <button class="btn-outline" (click)="goToDashboard()">
+          Ver Todas as {{ totalTechnologies }} Tecnologias
         </button>
       </div>
     </div>
   </section>
 
-  <!-- ✅ SEÇÃO DE CATEGORIAS SIMPLIFICADA -->
-  <section class="categories-section" id="categories">
+  <!-- ✅ SEÇÃO DE PREÇOS FOCADA EM CONVERSÃO -->
+  <section class="pricing-section">
     <div class="container">
-      <h2 class="section-title">Escolha sua Especialidade</h2>
-      <p class="section-subtitle">
-        Selecione uma categoria para focar seus estudos ou teste todos os conhecimentos
-      </p>
+      <h2 class="section-title">Escolha seu Plano de Estudos</h2>
+      <p class="section-subtitle">Comece grátis e evolua quando quiser mais recursos</p>
       
-      <!-- ✅ LOADING SIMPLIFICADO -->
-      <div *ngIf="categories.length === 0" class="loading-categories">
-        <div class="loading-spinner"></div>
-        <h3>Carregando categorias...</h3>
-        <p>Preparando sua experiência de aprendizado</p>
+      <div class="pricing-cards">
+        <!-- PLANO GRATUITO -->
+        <div class="pricing-card free-plan">
+          <div class="plan-header">
+            <h3>Plano Gratuito</h3>
+            <div class="price">
+              <span class="amount">R$ 0</span>
+              <span class="period">/sempre</span>
+            </div>
+          </div>
+          
+          <ul class="features-list">
+            <li class="feature-included">✅ <strong>Tentativas por dia: 3</strong></li>
+            <li class="feature-included">✅ <strong>Acesso a tecnologias básicas: 5</strong></li>
+            <li class="feature-included">✅ <strong>Feedback das respostas: Básico</strong></li>
+            <li class="feature-excluded">❌ <strong>Dicas de entrevista: Não disponível</strong></li>
+            <li class="feature-excluded">❌ <strong>Relatórios detalhados: Não disponível</strong></li>
+            <li class="feature-excluded">❌ <strong>Histórico completo: Não disponível</strong></li>
+          </ul>
+          
+          <button class="btn-free" (click)="startFreeTrial()">
+            🎯 Começar Grátis
+          </button>
+          
+          <p class="plan-note">Perfeito para experimentar</p>
+        </div>
+        
+        <!-- PLANO PREMIUM - SIMPLIFICADO -->
+        <div class="pricing-card premium-plan featured">
+          
+          <div class="plan-header">
+            <h3>Developer Pro</h3>
+            <div class="price">
+              <span class="amount">R$ 29,90</span>
+              <span class="period">/mês</span>
+            </div>
+          </div>
+          
+          <ul class="features-list">
+            <li class="feature-included">✅ <strong>Tentativas ilimitadas</strong></li>
+            <li class="feature-included">✅ <strong>Todas as {{ totalTechnologies }} tecnologias</strong></li>
+            <li class="feature-included">✅ <strong>Dicas para entrevistas</strong></li>
+            <li class="feature-included">✅ <strong>Explicações detalhadas</strong></li>
+            <li class="feature-included">✅ <strong>Relatórios de performance</strong></li>
+            <li class="feature-included">✅ <strong>Histórico completo</strong></li>
+            <li class="feature-premium">✅ <strong>Simulados cronometrados</strong></li>
+            <li class="feature-premium">✅ <strong>Dicas de carreira</strong></li>
+          </ul>
+          
+          <button class="btn-premium" (click)="upgradeToPro()">
+            🚀 Começar 7 Dias Grátis
+          </button>
+          
+          <p class="plan-note">
+            <strong>Teste grátis por 7 dias</strong><br>
+            Depois R$ 29,90/mês • Cancele quando quiser
+          </p>
+        </div>
       </div>
       
-      <!-- ✅ GRID SIMPLIFICADO -->
-      <div class="categories-grid" *ngIf="categories.length > 0">
-        
-        <!-- Card Especial - Todas as Categorias -->
-        <div 
-          class="category-card featured-card" 
-          (click)="startQuiz('all')"
-          role="button"
-          tabindex="0"
-          title="Clique para iniciar quiz com todas as categorias"
-        >
-          <div class="card-icon">🌟</div>
-          <h3 class="card-title">Todas as Categorias</h3>
-          <p class="card-description">Quiz completo com questões de todas as áreas</p>
-          <div class="card-stats">
-            <span class="question-count">{{ totalQuestions }} questões</span>
-            <span class="difficulty">Todos os níveis</span>
+      <!-- GARANTIA -->
+      <div class="guarantee-section">
+        <div class="guarantee-card">
+          <div class="guarantee-icon">🛡️</div>
+          <div class="guarantee-content">
+            <h4>Garantia de 7 Dias</h4>
+            <p>Não ficou satisfeito? Cancele nos primeiros 7 dias e não pague nada!</p>
           </div>
         </div>
-
-        <!-- ✅ CARDS DAS CATEGORIAS -->
-        <div 
-          *ngFor="let category of categories; trackBy: trackByCategory" 
-          class="category-card"
-          (click)="startQuiz(category.id)"
-          role="button"
-          tabindex="0"
-          [title]="'Clique para iniciar quiz de ' + category.name"
-          [attr.data-category]="category.id"
-        >
-          <div class="card-icon">{{ category.icon }}</div>
-          <h3 class="card-title">{{ category.name }}</h3>
-          <p class="card-description">{{ category.description }}</p>
-          <div class="card-stats">
-            <span class="question-count">{{ category.questionCount }} questões</span>
-            <span class="difficulty">{{ category.difficulty }}</span>
-          </div>
-        </div>
-        
       </div>
     </div>
   </section>
 
-  <!-- ✅ SEÇÃO DE FEATURES SIMPLIFICADA -->
-  <section class="features-section">
+  <!-- ✅ DEPOIMENTOS DE DESENVOLVEDORES -->
+  <section class="testimonials-section">
     <div class="container">
-      <h2 class="section-title">Por que escolher nosso Quiz?</h2>
+      <h2 class="section-title">O que Desenvolvedores Estão Dizendo</h2>
+      <p class="section-subtitle">Junte-se a centenas de devs que conseguiram suas vagas</p>
       
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Preparação para Entrevistas</h3>
-          <p>Dicas práticas de como responder em entrevistas técnicas reais</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "Consegui minha vaga de React Developer na XP Inc depois de 3 semanas praticando aqui! 
+              As dicas de entrevista foram fundamentais na preparação."
+            </p>
+          </div>
+          
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <img src="assets/avatars/dev1.jpg" alt="João Silva" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="avatar-fallback">👨‍💻</div>
+            </div>
+            <div class="author-info">
+              <strong class="author-name">João Silva</strong>
+              <span class="author-role">React Developer</span>
+              <span class="author-company">XP Inc</span>
+            </div>
+          </div>
+          
+          <div class="rating">⭐⭐⭐⭐⭐</div>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Análise Detalhada</h3>
-          <p>Estatísticas por categoria para identificar pontos de melhoria</p>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "Plataforma incrível! Me ajudou muito na entrevista da Nubank. 
+              O sistema de análise mostrou exatamente onde eu estava fraco."
+            </p>
+          </div>
+          
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <div class="avatar-fallback">👩‍💻</div>
+            </div>
+            <div class="author-info">
+              <strong class="author-name">Maria Santos</strong>
+              <span class="author-role">Frontend Engineer</span>
+              <span class="author-company">Nubank</span>
+            </div>
+          </div>
+          
+          <div class="rating">⭐⭐⭐⭐⭐</div>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">🔊</div>
-          <h3>Acessibilidade</h3>
-          <p>Narração de questões para diferentes estilos de aprendizado</p>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">"</div>
+            <p class="testimonial-text">
+              "R$ 29,90 é muito pouco pelo valor que entrega. 
+              Uso todo dia para me manter atualizado. Super recomendo!"
+            </p>
+          </div>
+          
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              <div class="avatar-fallback">👨‍💼</div>
+            </div>
+            <div class="author-info">
+              <strong class="author-name">Carlos Tech</strong>
+              <span class="author-role">Full Stack Developer</span>
+              <span class="author-company">Ifood</span>
+            </div>
+          </div>
+          
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ FAQ ESPECÍFICO PARA DEVS -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <p class="section-subtitle">Tire suas dúvidas sobre a plataforma</p>
+      
+      <div class="faq-container">
+        <div class="faq-item" *ngFor="let faq of faqs; let i = index" 
+             [class.active]="activeFaq === i"
+             (click)="toggleFaq(i)">
+          
+          <div class="faq-question">
+            <h3>{{ faq.question }}</h3>
+            <span class="faq-toggle" [class.rotated]="activeFaq === i">▼</span>
+          </div>
+          
+          <div class="faq-answer" [class.open]="activeFaq === i">
+            <div class="answer-content">
+              <p [innerHTML]="faq.answer"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ CTA FINAL -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Pronto para Acelerar sua Carreira?</h2>
+        <p>Junte-se a <strong>centenas de desenvolvedores</strong> que já estão usando nossa plataforma para conquistar suas vagas dos sonhos!</p>
+        
+        <div class="final-stats">
+          <span class="stat">✅ {{ totalQuestions }}+ questões</span>
+          <span class="stat">✅ {{ totalTechnologies }} tecnologias</span>
+          <span class="stat">✅ 7 dias grátis</span>
         </div>
         
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>Responsivo</h3>
-          <p>Funciona perfeitamente em desktop, tablet e smartphone</p>
+        <div class="final-cta-buttons">
+          <button class="btn-primary-large" (click)="upgradeToPro()">
+            🚀 Começar Teste Grátis
+          </button>
+          <button class="btn-outline-white" (click)="startFreeTrial()">
+            🎯 Testar Gratuitamente
+          </button>
         </div>
+        
+        <p class="final-guarantee">
+          💡 <strong>Sem risco:</strong> Teste 7 dias grátis por R$ 29,90/mês
+        </p>
       </div>
     </div>
   </section>
 
 </div>
-
