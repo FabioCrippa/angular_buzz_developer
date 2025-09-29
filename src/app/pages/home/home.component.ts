@@ -21,6 +21,7 @@ export class HomeComponent {
   totalQuestions = 558;
   totalTechnologies = 18;
   activeFaq: number | null = null;
+  currentYear = new Date().getFullYear(); // ✅ ANO DINÂMICO
   
   // ✅ FAQs ESPECÍFICOS PARA DEVS
   faqs: FAQ[] = [

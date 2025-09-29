@@ -558,6 +558,15 @@ input:checked + .slider:before {
   cursor: pointer;
 }
 
+.simple-footer {
+  background: #667eea;
+  color: white;
+  text-align: center;
+  padding: 1.4rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
 /* =============================================== */
 /* ✅ RESPONSIVO */
 /* =============================================== */
