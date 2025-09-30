@@ -10,7 +10,7 @@
     
     <div class="hero-content">
       <div class="hero-badge">
-        🚀 #1 Plataforma para Devs Frontend
+        #1 Plataforma para Devs Frontend
       </div>
       
       <h1 class="hero-title">
@@ -19,8 +19,8 @@
       </h1>
       
       <div class="hero-description">
-        <p>Pratique com <strong>558+ questões reais</strong> de React, Angular, JavaScript e mais.</p>
-        <p><strong>Prepare-se para entrevistas técnicas</strong> com dicas de recrutadores experientes.</p>
+        <p>Pratique com 558+ questões reais de React, Angular, JavaScript e mais.</p>
+        <p>Prepare-se para entrevistas técnicas com dicas de recrutadores experientes.</p>
       </div>
       
       <!-- SOCIAL PROOF -->
@@ -42,15 +42,15 @@
       <!-- CTA BUTTONS -->
       <div class="cta-section">
         <button class="btn-primary-large" (click)="startFreeTrial()">
-          🎯 Começar Teste Grátis
+          Começar Teste Grátis
         </button>
         <button class="btn-secondary-large" (click)="goToDashboard()">
-          📊 Ver Tecnologias
+          Ver Tecnologias
         </button>
       </div>
       
       <p class="guarantee-text">
-        ✨ <strong>3 tentativas grátis por dia</strong> • Sem cartão • Cancele quando quiser
+        3 tentativas grátis por dia • Sem cartão • Cancele quando quiser
       </p>
     </div>
   </section>
@@ -125,7 +125,7 @@
           </ul>
           
           <button class="btn-free" (click)="startFreeTrial()">
-            🎯 Começar Grátis
+            Começar Grátis
           </button>
           
           <p class="plan-note">Perfeito para experimentar</p>
@@ -154,12 +154,12 @@
           </ul>
           
           <button class="btn-premium" (click)="upgradeToPro()">
-            🚀 Começar 7 Dias Grátis
+            Começar 7 Dias Grátis
           </button>
           
           <p class="plan-note">
             <strong>Teste grátis por 7 dias</strong><br>
-            Depois R$ 29,90/mês • Cancele quando quiser
+            Depois R$29,90/mês • Cancele quando quiser
           </p>
         </div>
       </div>
@@ -167,7 +167,6 @@
       <!-- GARANTIA -->
       <div class="guarantee-section">
         <div class="guarantee-card">
-          <div class="guarantee-icon">🛡️</div>
           <div class="guarantee-content">
             <h4>Garantia de 7 Dias</h4>
             <p>Não ficou satisfeito? Cancele nos primeiros 7 dias e não pague nada!</p>
@@ -198,8 +197,9 @@
               <img src="assets/avatars/dev1.jpg" alt="João Silva" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
               <div class="avatar-fallback">👨‍💻</div>
             </div>
+
             <div class="author-info">
-              <strong class="author-name">João Silva</strong>
+              <p class="author-name">João Silva</p>
               <span class="author-role">React Developer</span>
               <span class="author-company">XP Inc</span>
             </div>
@@ -221,8 +221,9 @@
             <div class="author-avatar">
               <div class="avatar-fallback">👩‍💻</div>
             </div>
+
             <div class="author-info">
-              <strong class="author-name">Maria Santos</strong>
+              <p class="author-name">Maria Santos</p>
               <span class="author-role">Frontend Engineer</span>
               <span class="author-company">Nubank</span>
             </div>
@@ -244,10 +245,11 @@
             <div class="author-avatar">
               <div class="avatar-fallback">👨‍💼</div>
             </div>
+
             <div class="author-info">
-              <strong class="author-name">Carlos Tech</strong>
+              <p class="author-name">Carlos Lima</p>
               <span class="author-role">Full Stack Developer</span>
-              <span class="author-company">Ifood</span>
+              <span class="author-company">Tech Company</span>
             </div>
           </div>
           
@@ -289,7 +291,7 @@
     <div class="container">
       <div class="cta-content">
         <h2>Pronto para Acelerar sua Carreira?</h2>
-        <p>Junte-se a <strong>centenas de desenvolvedores</strong> que já estão usando nossa plataforma para conquistar suas vagas dos sonhos!</p>
+        <p>Junte-se a centenas de desenvolvedores que já estão usando nossa plataforma para conquistar suas vagas dos sonhos!</p>
         
         <div class="final-stats">
           <span class="stat">✅ {{ totalQuestions }}+ questões</span>
@@ -299,25 +301,86 @@
         
         <div class="final-cta-buttons">
           <button class="btn-primary-large" (click)="upgradeToPro()">
-            🚀 Começar Teste Grátis
+            Começar Teste Grátis
           </button>
           <button class="btn-outline-white" (click)="startFreeTrial()">
-            🎯 Testar Gratuitamente
+            Testar Gratuitamente
           </button>
         </div>
         
         <p class="final-guarantee">
-          💡 <strong>Sem risco:</strong> Teste 7 dias grátis por R$ 29,90/mês
+          7 dias grátis • Depois R$ 29,90/mês • Cancele quando quiser
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ✅ FOOTER SIMPLES - SÓ COPYRIGHT E SLOGAN -->
-  <footer class="simple-footer">
+  <!-- ✅ FOOTER SIMPLES - SEM CONTATOS -->
+  <footer class="main-footer">
     <div class="container">
-      <p>© {{ currentYear }} Angular Buzz Developer. Todos os direitos reservados. </p>
-      <p>🚀 Capacitando Desenvolvedores Frontend a Conquistar suas Vagas dos Sonhos!</p>
+      <div class="footer-content">
+        
+        <!-- LOGO E DESCRIÇÃO -->
+        <div class="footer-section">
+          <div class="footer-logo">
+            <h3>BuzzDev</h3>
+          </div>
+          <p class="footer-description">
+            A plataforma #1 para desenvolvedores frontend se prepararem para entrevistas técnicas e acelerar suas carreiras.
+          </p>
+        </div>
+        
+        <!-- LINKS DA PLATAFORMA -->
+        <div class="footer-section">
+          <h4>Plataforma</h4>
+          <ul class="footer-links">
+            <li><a href="#" (click)="goToDashboard()">Dashboard</a></li>
+            <li><a href="#" (click)="startFreeTrial()">Começar Grátis</a></li>
+            <li><a href="#" (click)="upgradeToPro()">Plano Pro</a></li>
+            <li><a href="#">Relatórios</a></li>
+          </ul>
+        </div>
+        
+        <!-- TECNOLOGIAS PRINCIPAIS -->
+        <div class="footer-section">
+          <h4>Tecnologias</h4>
+          <ul class="footer-links">
+            <li><a href="#" (click)="goToTech('javascript')">JavaScript</a></li>
+            <li><a href="#" (click)="goToTech('react')">React</a></li>
+            <li><a href="#" (click)="goToTech('angular')">Angular</a></li>
+            <li><a href="#" (click)="goToTech('typescript')">TypeScript</a></li>
+          </ul>
+        </div>
+        
+        <!-- INFORMAÇÕES LEGAIS -->
+        <div class="footer-section">
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Política de Reembolso</a></li>
+            <li><a href="#">Termos de Serviço</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      
+      <!-- LINHA DIVISÓRIA -->
+      <div class="footer-divider"></div>
+      
+      <!-- COPYRIGHT E BADGES -->
+      <div class="footer-bottom">
+        <div class="copyright">
+          <p>© {{ currentYear }} BuzzDev. Todos os direitos reservados.</p>
+        </div>
+        
+        <div class="footer-badges">
+          <span class="security-badge">🔒 Pagamento Seguro</span>
+          <span class="guarantee-badge">✅ 7 Dias Grátis</span>
+          <span class="quality-badge">⭐ Qualidade Premium</span>
+        </div>
+      </div>
+      
     </div>
   </footer>
 
