@@ -1,387 +1,495 @@
 <div class="landing-container">
 
-  <!-- ✅ HERO SECTION - CONVERSÃO MÁXIMA -->
-  <section class="hero-landing">
-    <div class="hero-background">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-    
-    <div class="hero-content">
-      <div class="hero-badge">
-        #1 Plataforma para Devs Frontend
-      </div>
-      
-      <h1 class="hero-title">
-        Domine <span class="gradient-text">Frontend</span><br>
-        e Conquiste sua <span class="gradient-text">Vaga dos Sonhos</span>
-      </h1>
-      
-      <div class="hero-description">
-        <p>Pratique com 558+ questões reais de React, Angular, JavaScript e mais.</p>
-        <p>Prepare-se para entrevistas técnicas com dicas de recrutadores experientes.</p>
-      </div>
-      
-      <!-- SOCIAL PROOF -->
-      <div class="social-proof">
-        <div class="proof-item">
-          <span class="proof-number">558+</span>
-          <span class="proof-label">Questões</span>
-        </div>
-        <div class="proof-item">
-          <span class="proof-number">18</span>
-          <span class="proof-label">Tecnologias</span>
-        </div>
-        <div class="proof-item">
-          <span class="proof-number">150+</span>
-          <span class="proof-label">Devs Aprovados</span>
-        </div>
-      </div>
-      
-      <!-- CTA BUTTONS -->
-      <div class="cta-section">
-        <button class="btn-primary-large" (click)="startFreeTrial()">
-          Começar Teste Grátis
-        </button>
-        <button class="btn-secondary-large" (click)="goToDashboard()">
-          Ver Tecnologias
-        </button>
-      </div>
-      
-      <p class="guarantee-text">
-        3 tentativas grátis por dia • Sem cartão • Cancele quando quiser
-      </p>
-    </div>
-  </section>
-
-  <!-- ✅ TECNOLOGIAS DESTACADAS -->
-  <section class="technologies-preview">
+  <!-- ✅ HERO SECTION -->
+  <section class="hero-section">
     <div class="container">
-      <h2 class="section-title">Tecnologias Mais Requisitadas</h2>
-      <p class="section-subtitle">Pratique as skills mais demandadas pelo mercado</p>
-      
-      <div class="tech-grid">
-        <div class="tech-card" (click)="goToTech('javascript')">
-          <div class="tech-icon">🟨</div>
-          <h3>JavaScript</h3>
-          <p>89 questões</p>
-          <span class="difficulty basic">Básico a Avançado</span>
+      <div class="hero-content">
+        <div class="hero-badge">
+          #1 Plataforma de Preparação Profissional
         </div>
         
-        <div class="tech-card" (click)="goToTech('react')">
-          <div class="tech-icon">⚛️</div>
-          <h3>React</h3>
-          <p>65 questões</p>
-          <span class="difficulty intermediate">Intermediário</span>
+        <h1 class="hero-title">
+          Domine <span class="highlight-text">Tecnologia</span><br>
+          e Conquiste sua <span class="highlight-text">Carreira dos Sonhos</span>
+        </h1>
+        
+        <div class="hero-description">
+          <p><strong>Desenvolvimento Web:</strong> React, Angular, JavaScript para entrevistas técnicas</p>
+          <p><strong>Português:</strong> Gramática e interpretação com foco em concursos</p>
+          <p><strong>Matemática:</strong> Raciocínio lógico e matemática para qualquer prova</p>
+          <p><strong>Informática:</strong> Windows, Office e conceitos de TI atualizados</p>
         </div>
         
-        <div class="tech-card" (click)="goToTech('angular')">
-          <div class="tech-icon">🅰️</div>
-          <h3>Angular</h3>
-          <p>35 questões</p>
-          <span class="difficulty advanced">Avançado</span>
+        <div class="social-proof">
+          <div class="proof-item">
+            <span class="proof-number">1.500+</span>
+            <span class="proof-label">Questões</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-number">4</span>
+            <span class="proof-label">Áreas</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-number">89%</span>
+            <span class="proof-label">Taxa Sucesso</span>
+          </div>
         </div>
         
-        <div class="tech-card" (click)="goToTech('typescript')">
-          <div class="tech-icon">🔷</div>
-          <h3>TypeScript</h3>
-          <p>28 questões</p>
-          <span class="difficulty intermediate">Intermediário</span>
+        <div class="cta-buttons">
+          <button class="btn btn-primary" (click)="startFreeTrial()">
+            Começar Preparação Grátis
+          </button>
+          <button class="btn btn-secondary" (click)="goToDashboard()">
+            Ver Todas as Áreas
+          </button>
         </div>
-      </div>
-      
-      <div class="see-all-section">
-        <button class="btn-outline" (click)="goToDashboard()">
-          Ver Todas as {{ totalTechnologies }} Tecnologias
-        </button>
+        
+        <p class="guarantee-text">
+          ✨ 3 tentativas grátis por dia • Sem cartão • Cancele quando quiser
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ✅ SEÇÃO DE PREÇOS FOCADA EM CONVERSÃO -->
+  <!-- ✅ ÁREAS DE PREPARAÇÃO -->
+  <section class="areas-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">4 Áreas para Sua Evolução Profissional</h2>
+        <p class="section-subtitle">Do concurso público à Big Tech - prepare-se para qualquer desafio</p>
+      </div>
+      
+      <div class="areas-grid">
+        <!-- DESENVOLVIMENTO WEB -->
+        <div class="area-card featured" (click)="goToArea('desenvolvimento')">
+          
+          <div class="card-header">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Desenvolvimento Web</h3>
+            <p class="card-description">Entrevistas técnicas e vagas tech</p>
+          </div>
+          
+          <div class="card-stats">
+            <span class="stat">558 questões</span>
+            <span class="stat">18 tecnologias</span>
+          </div>
+          
+          <ul class="card-features">
+            <li>⚛️ React & Angular</li>
+            <li>🟨 JavaScript/TypeScript</li>
+            <li>🎨 CSS & HTML5</li>
+            <li>🔧 Node.js & DevOps</li>
+          </ul>
+          
+          <div class="card-footer">
+            <span class="difficulty-badge advanced">Tech Jobs</span>
+          </div>
+        </div>
+        
+        <!-- PORTUGUÊS -->
+        <div class="area-card" (click)="goToArea('portugues')">
+          <div class="card-header">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Língua Portuguesa</h3>
+            <p class="card-description">Base fundamental dos concursos</p>
+          </div>
+          
+          <div class="card-stats">
+            <span class="stat">420 questões</span>
+            <span class="stat">Todas as bancas</span>
+          </div>
+          
+          <ul class="card-features">
+            <li>✏️ Gramática completa</li>
+            <li>📖 Interpretação de textos</li>
+            <li>📝 Redação oficial</li>
+            <li>🏛️ Questões CESPE/FCC</li>
+          </ul>
+          
+          <div class="card-footer">
+            <span class="difficulty-badge fundamental">Concursos</span>
+          </div>
+        </div>
+        
+        <!-- MATEMÁTICA -->
+        <div class="area-card" (click)="goToArea('matematica')">
+          <div class="card-header">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Matemática & R.L.</h3>
+            <p class="card-description">Raciocínio lógico essencial</p>
+          </div>
+          
+          <div class="card-stats">
+            <span class="stat">350 questões</span>
+            <span class="stat">90% dos editais</span>
+          </div>
+          
+          <ul class="card-features">
+            <li>🧠 Raciocínio lógico</li>
+            <li>📊 Matemática básica</li>
+            <li>💰 Porcentagem e juros</li>
+            <li>📈 Estatística aplicada</li>
+          </ul>
+          
+          <div class="card-footer">
+            <span class="difficulty-badge intermediate">Diferencial</span>
+          </div>
+        </div>
+        
+        <!-- INFORMÁTICA -->
+        <div class="area-card" (click)="goToArea('informatica')">
+          <div class="card-header">
+            <div class="card-icon"></div>
+            <h3 class="card-title">Informática</h3>
+            <p class="card-description">Tecnologia em crescimento</p>
+          </div>
+          
+          <div class="card-stats">
+            <span class="stat">280 questões</span>
+            <span class="stat">80% dos editais</span>
+          </div>
+          
+          <ul class="card-features">
+            <li>🪟 Windows 10/11</li>
+            <li>📊 Office 365 completo</li>
+            <li>🌐 Internet e segurança</li>
+            <li>🔒 Conceitos de TI</li>
+          </ul>
+          
+          <div class="card-footer">
+            <span class="difficulty-badge advanced">Em Alta</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CREDENCIAIS -->
+      <div class="credentials-section">
+        <div class="credentials-group">
+          <h4 class="credentials-title">Principais Bancas:</h4>
+          <div class="credentials-list">
+            <span class="credential-badge cespe">CESPE</span>
+            <span class="credential-badge fcc">FCC</span>
+            <span class="credential-badge vunesp">VUNESP</span>
+            <span class="credential-badge fgv">FGV</span>
+          </div>
+        </div>
+        
+        <div class="credentials-group">
+          <h4 class="credentials-title">Empresas Tech:</h4>
+          <div class="credentials-list">
+            <span class="credential-badge google">Google</span>
+            <span class="credential-badge meta">Meta</span>
+            <span class="credential-badge nubank">Nubank</span>
+            <span class="credential-badge xp">XP Inc</span>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- ✅ PRICING -->
   <section class="pricing-section">
     <div class="container">
-      <h2 class="section-title">Escolha seu Plano de Estudos</h2>
-      <p class="section-subtitle">Comece grátis e evolua quando quiser mais recursos</p>
+      <div class="section-header">
+        <h2 class="section-title">Escolha seu Plano de Preparação</h2>
+        <p class="section-subtitle">Do básico ao profissional - temos o plano ideal para você</p>
+      </div>
       
-      <div class="pricing-cards">
+      <div class="pricing-grid">
         <!-- PLANO GRATUITO -->
-        <div class="pricing-card free-plan">
+        <div class="pricing-card">
           <div class="plan-header">
-            <h3>Plano Gratuito</h3>
-            <div class="price">
-              <span class="amount">R$ 0</span>
+            <h3 class="plan-name">Plano Gratuito</h3>
+            <div class="plan-price">
+              <span class="price-amount">R$ 0</span>
             </div>
           </div>
           
-          <ul class="features-list">
-            <li class="feature-included">✅ <strong>Tentativas por dia: 3</strong></li>
-            <li class="feature-included">✅ <strong>Acesso a tecnologias básicas: 5</strong></li>
-            <li class="feature-included">✅ <strong>Feedback das respostas: Básico</strong></li>
-            <li class="feature-excluded">❌ <strong>Dicas de entrevista: Não disponível</strong></li>
-            <li class="feature-excluded">❌ <strong>Relatórios detalhados: Não disponível</strong></li>
-            <li class="feature-excluded">❌ <strong>Histórico completo: Não disponível</strong></li>
+          <ul class="plan-features">
+            <li class="included">✅ <strong>3 tentativas por dia</strong></li>
+            <li class="included">✅ <strong>Acesso às 4 áreas</strong></li>
+            <li class="included">✅ <strong>Feedback básico</strong></li>
+            <li class="excluded">❌ <strong>Simulados cronometrados</strong></li>
+            <li class="excluded">❌ <strong>Relatórios detalhados</strong></li>
+            <li class="excluded">❌ <strong>Planos de estudo IA</strong></li>
           </ul>
           
-          <button class="btn-free" (click)="startFreeTrial()">
-            Começar Grátis
-          </button>
-          
-          <p class="plan-note">Perfeito para experimentar</p>
+          <div class="plan-cta">
+            <button class="btn btn-free" (click)="startFreeTrial()">
+              Começar Grátis
+            </button>
+            <p class="plan-note">Perfeito para experimentar</p>
+          </div>
         </div>
         
-        <!-- PLANO PREMIUM - SIMPLIFICADO -->
-        <div class="pricing-card premium-plan featured">
-          
+        <!-- PLANO PREMIUM -->
+        <div class="pricing-card featured">
           <div class="plan-header">
-            <h3>Developer Pro</h3>
-            <div class="price">
-              <span class="amount">R$ 29,90</span>
-              <span class="period">/mês</span>
+            <h3 class="plan-name">Preparação Pro</h3>
+            <div class="plan-price">
+              <span class="price-amount">R$ 39,90</span>
+              <span class="price-period">/mês</span>
             </div>
           </div>
           
-          <ul class="features-list">
-            <li class="feature-included">✅ <strong>Tentativas ilimitadas</strong></li>
-            <li class="feature-included">✅ <strong>Todas as {{ totalTechnologies }} tecnologias</strong></li>
-            <li class="feature-included">✅ <strong>Dicas para entrevistas</strong></li>
-            <li class="feature-included">✅ <strong>Explicações detalhadas</strong></li>
-            <li class="feature-included">✅ <strong>Relatórios de performance</strong></li>
-            <li class="feature-included">✅ <strong>Histórico completo</strong></li>
-            <li class="feature-premium">✅ <strong>Simulados cronometrados</strong></li>
-            <li class="feature-premium">✅ <strong>Dicas de carreira</strong></li>
+          <ul class="plan-features">
+            <li class="included">✅ <strong>Tentativas ilimitadas</strong></li>
+            <li class="included">✅ <strong>Todas as 4 áreas completas</strong></li>
+            <li class="included">✅ <strong>1.500+ questões atualizadas</strong></li>
+            <li class="included">✅ <strong>Simulados cronometrados</strong></li>
+            <li class="included">✅ <strong>Relatórios de performance</strong></li>
+            <li class="included">✅ <strong>Histórico completo</strong></li>
+            <li class="premium">🎯 <strong>Planos de estudo IA</strong></li>
+            <li class="premium">📋 <strong>Análise de editais</strong></li>
           </ul>
           
-          <button class="btn-premium" (click)="upgradeToPro()">
-            Começar 7 Dias Grátis
-          </button>
-          
-          <p class="plan-note">
-            <strong>Teste grátis por 7 dias</strong><br>
-            Depois R$29,90/mês • Cancele quando quiser
-          </p>
+          <div class="plan-cta">
+            <button class="btn btn-premium" (click)="upgradeToPro()">
+              Começar 7 Dias Grátis
+            </button>
+            <p class="plan-note">
+              <strong>Teste grátis por 7 dias</strong><br>
+              Depois R$ 39,90/mês • Cancele quando quiser
+            </p>
+          </div>
         </div>
       </div>
       
       <!-- GARANTIA -->
       <div class="guarantee-section">
         <div class="guarantee-card">
-          <div class="guarantee-content">
-            <h4>Garantia de 7 Dias</h4>
-            <p>Não ficou satisfeito? Cancele nos primeiros 7 dias e não pague nada!</p>
-          </div>
+          <h4 class="guarantee-title">🛡️ Garantia de 7 Dias</h4>
+          <p class="guarantee-text">Não ficou satisfeito? Cancele nos primeiros 7 dias e não pague nada!</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ DEPOIMENTOS DE DESENVOLVEDORES -->
+  <!-- ✅ TESTIMONIALS -->
   <section class="testimonials-section">
     <div class="container">
-      <h2 class="section-title">O que Desenvolvedores Estão Dizendo</h2>
-      <p class="section-subtitle">Junte-se a centenas de devs que conseguiram suas vagas</p>
+      <div class="section-header">
+        <h2 class="section-title">Histórias de Sucesso Reais</h2>
+        <p class="section-subtitle">Profissionais que mudaram de vida com nossa preparação</p>
+      </div>
       
       <div class="testimonials-grid">
         <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="quote-icon">"</div>
-            <p class="testimonial-text">
-              "Consegui minha vaga de React Developer na XP Inc depois de 3 semanas praticando aqui! 
-              As dicas de entrevista foram fundamentais na preparação."
-            </p>
-          </div>
+          <p class="testimonial-text">
+            "Passei no concurso do TRT após 6 meses de preparação! 
+            As questões de Português e Matemática foram fundamentais."
+          </p>
           
           <div class="testimonial-author">
-            <div class="author-avatar">
-              <img src="assets/avatars/dev1.jpg" alt="João Silva" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="avatar-fallback">👨‍💻</div>
-            </div>
-
+            <div class="author-avatar">👨‍💼</div>
             <div class="author-info">
-              <p class="author-name">João Silva</p>
-              <span class="author-role">React Developer</span>
-              <span class="author-company">XP Inc</span>
+              <h5 class="author-name">João Silva</h5>
+              <p class="author-role">Técnico Judiciário</p>
+              <p class="author-company">TRT-SP</p>
             </div>
           </div>
           
-          <div class="rating">⭐⭐⭐⭐⭐</div>
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
         </div>
         
         <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="quote-icon">"</div>
-            <p class="testimonial-text">
-              "Plataforma incrível! Me ajudou muito na entrevista da Nubank. 
-              O sistema de análise mostrou exatamente onde eu estava fraco."
-            </p>
-          </div>
+          <p class="testimonial-text">
+            "Consegui minha vaga de React Developer na Nubank! 
+            A área de desenvolvimento web é incrível e muito completa."
+          </p>
           
           <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-fallback">👩‍💻</div>
-            </div>
-
+            <div class="author-avatar">👩‍💻</div>
             <div class="author-info">
-              <p class="author-name">Maria Santos</p>
-              <span class="author-role">Frontend Engineer</span>
-              <span class="author-company">Nubank</span>
+              <h5 class="author-name">Maria Santos</h5>
+              <p class="author-role">Frontend Developer</p>
+              <p class="author-company">Nubank</p>
             </div>
           </div>
           
-          <div class="rating">⭐⭐⭐⭐⭐</div>
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
         </div>
         
         <div class="testimonial-card">
-          <div class="testimonial-content">
-            <div class="quote-icon">"</div>
-            <p class="testimonial-text">
-              "R$ 29,90 é muito pouco pelo valor que entrega. 
-              Uso todo dia para me manter atualizado. Super recomendo!"
-            </p>
-          </div>
+          <p class="testimonial-text">
+            "R$ 39,90 por mês é investimento que se paga! 
+            Tenho acesso a tudo: tech, concursos, português, matemática."
+          </p>
           
           <div class="testimonial-author">
-            <div class="author-avatar">
-              <div class="avatar-fallback">👨‍💼</div>
-            </div>
-
+            <div class="author-avatar">👨‍🎓</div>
             <div class="author-info">
-              <p class="author-name">Carlos Lima</p>
-              <span class="author-role">Full Stack Developer</span>
-              <span class="author-company">Tech Company</span>
+              <h5 class="author-name">Carlos Lima</h5>
+              <p class="author-role">Estudante</p>
+              <p class="author-company">Preparação Múltipla</p>
             </div>
           </div>
           
-          <div class="rating">⭐⭐⭐⭐⭐</div>
+          <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ FAQ ESPECÍFICO PARA DEVS -->
+  <!-- ✅ FAQ -->
   <section class="faq-section">
     <div class="container">
-      <h2 class="section-title">Perguntas Frequentes</h2>
-      <p class="section-subtitle">Tire suas dúvidas sobre a plataforma</p>
+      <div class="section-header">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-subtitle">Tire suas dúvidas sobre a plataforma</p>
+      </div>
       
-      <div class="faq-container">
+      <div class="faq-list">
         <div class="faq-item" *ngFor="let faq of faqs; let i = index" 
              [class.active]="activeFaq === i"
              (click)="toggleFaq(i)">
           
           <div class="faq-question">
             <h3>{{ faq.question }}</h3>
-            <span class="faq-toggle" [class.rotated]="activeFaq === i">▼</span>
+            <span class="faq-icon" [class.rotated]="activeFaq === i">▼</span>
           </div>
           
           <div class="faq-answer" [class.open]="activeFaq === i">
-            <div class="answer-content">
+            <div class="faq-content">
               <p [innerHTML]="faq.answer"></p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </section>
 
   <!-- ✅ CTA FINAL -->
-  <section class="final-cta">
+  <section class="cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2>Pronto para Acelerar sua Carreira?</h2>
-        <p>Junte-se a centenas de desenvolvedores que já estão usando nossa plataforma para conquistar suas vagas dos sonhos!</p>
+        <h2 class="cta-title">Pronto para Transformar sua Carreira?</h2>
+        <p class="cta-description">
+          Seja aprovado em concursos públicos ou conquiste sua vaga dos sonhos na área tech!
+        </p>
         
-        <div class="final-stats">
-          <span class="stat">✅ {{ totalQuestions }}+ questões</span>
-          <span class="stat">✅ {{ totalTechnologies }} tecnologias</span>
+        <div class="cta-stats">
+          <span class="stat">✅ 1.500+ questões</span>
+          <span class="stat">✅ 4 áreas completas</span>
           <span class="stat">✅ 7 dias grátis</span>
         </div>
         
-        <div class="final-cta-buttons">
-          <button class="btn-primary-large" (click)="upgradeToPro()">
+        <div class="cta-buttons">
+          <button class="btn btn-primary" (click)="upgradeToPro()">
             Começar Teste Grátis
           </button>
-          <button class="btn-outline-white" (click)="startFreeTrial()">
+          <button class="btn btn-secondary" (click)="startFreeTrial()">
             Testar Gratuitamente
           </button>
         </div>
         
-        <p class="final-guarantee">
-          7 dias grátis • Depois R$ 29,90/mês • Cancele quando quiser
+        <p class="cta-guarantee">
+          7 dias grátis • Depois R$ 39,90/mês • Cancele quando quiser
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ✅ FOOTER SIMPLES - SEM CONTATOS -->
-  <footer class="main-footer">
-    <div class="container">
-      <div class="footer-content">
-        
-        <!-- LOGO E DESCRIÇÃO -->
-        <div class="footer-section">
-          <div class="footer-logo">
-            <h3>BuzzDev</h3>
-          </div>
-          <p class="footer-description">
-            A plataforma #1 para desenvolvedores frontend se prepararem para entrevistas técnicas e acelerar suas carreiras.
+</div>
+
+<!-- ✅ FOOTER -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <!-- BRAND -->
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="brand-name">BuzzDev</h3>
+          <p class="brand-tagline">Preparação Inteligente para Sua Carreira</p>
+          <p class="brand-description">
+            A plataforma líder em preparação para concursos públicos e vagas tech. 
+            Mais de 1.500 questões atualizadas e 4 áreas de conhecimento.
           </p>
         </div>
-        
-        <!-- LINKS DA PLATAFORMA -->
-        <div class="footer-section">
-          <h4>Plataforma</h4>
-          <ul class="footer-links">
-            <li><a href="#" (click)="goToDashboard()">Dashboard</a></li>
-            <li><a href="#" (click)="startFreeTrial()">Começar Grátis</a></li>
-            <li><a href="#" (click)="upgradeToPro()">Plano Pro</a></li>
-            <li><a href="#">Relatórios</a></li>
-          </ul>
-        </div>
-        
-        <!-- TECNOLOGIAS PRINCIPAIS -->
-        <div class="footer-section">
-          <h4>Tecnologias</h4>
-          <ul class="footer-links">
-            <li><a href="#" (click)="goToTech('javascript')">JavaScript</a></li>
-            <li><a href="#" (click)="goToTech('react')">React</a></li>
-            <li><a href="#" (click)="goToTech('angular')">Angular</a></li>
-            <li><a href="#" (click)="goToTech('typescript')">TypeScript</a></li>
-          </ul>
-        </div>
-        
-        <!-- INFORMAÇÕES LEGAIS -->
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul class="footer-links">
-            <li><a href="#">Política de Privacidade</a></li>
-            <li><a href="#">Termos de Uso</a></li>
-            <li><a href="#">Política de Reembolso</a></li>
-            <li><a href="#">Termos de Serviço</a></li>
-          </ul>
-        </div>
-        
       </div>
       
-      <!-- LINHA DIVISÓRIA -->
-      <div class="footer-divider"></div>
-      
-      <!-- COPYRIGHT E BADGES -->
-      <div class="footer-bottom">
-        <div class="copyright">
-          <p>© {{ currentYear }} BuzzDev. Todos os direitos reservados.</p>
-        </div>
-        
-        <div class="footer-badges">
-          <span class="security-badge">🔒 Pagamento Seguro</span>
-          <span class="guarantee-badge">✅ 7 Dias Grátis</span>
-          <span class="quality-badge">⭐ Qualidade Premium</span>
-        </div>
+      <!-- LINKS -->
+      <div class="footer-section">
+        <h4 class="footer-title">Áreas de Estudo</h4>
+        <ul class="footer-links">
+          <li><a (click)="goToArea('desenvolvimento')">Desenvolvimento Web</a></li>
+          <li><a (click)="goToArea('portugues')">Língua Portuguesa</a></li>
+          <li><a (click)="goToArea('matematica')">Matemática & R.L.</a></li>
+          <li><a (click)="goToArea('informatica')">Informática</a></li>
+        </ul>
       </div>
       
+      <div class="footer-section">
+        <h4 class="footer-title">Carreiras</h4>
+        <ul class="footer-links">
+          <li><a (click)="goToCareer('tech')">Vagas Tech</a></li>
+          <li><a (click)="goToCareer('federal')">Tribunais</a></li>
+          <li><a (click)="goToCareer('fiscal')">Área Fiscal</a></li>
+          <li><a (click)="goToCareer('bancarios')">Bancários</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-title">Plataforma</h4>
+        <ul class="footer-links">
+          <li><a (click)="goToDashboard()">Dashboard</a></li>
+          <li><a (click)="startFreeTrial()">Teste Grátis</a></li>
+          <li><a (click)="upgradeToPro()">Plano Premium</a></li>
+          <li><a href="#">Central de Ajuda</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
-
-</div>
+    
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
+      <div class="footer-stats">
+        <div class="stat-item">
+          <span class="stat-number">1.500+</span>
+          <span class="stat-label">Questões</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Áreas</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">89%</span>
+          <span class="stat-label">Taxa Sucesso</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">15k+</span>
+          <span class="stat-label">Usuários</span>
+        </div>
+      </div>
+      
+      <div class="footer-legal">
+        <div class="legal-links">
+          <a href="#">Termos de Uso</a>
+          <a href="#">Privacidade</a>
+          <a href="#">Reembolso</a>
+        </div>
+        <p class="copyright">© {{ currentYear }} <strong>BuzzDev</strong>. Todos os direitos reservados.</p>
+      </div>
+    </div>
+    
+    <!-- SECURITY BADGES -->
+    <div class="security-badges">
+      <div class="security-badge">
+        <span class="badge-icon">🔒</span>
+        <span class="badge-text">SSL Seguro</span>
+      </div>
+      <div class="security-badge">
+        <span class="badge-icon">💳</span>
+        <span class="badge-text">Pagamento Seguro</span>
+      </div>
+      <div class="security-badge">
+        <span class="badge-icon">🛡️</span>
+        <span class="badge-text">LGPD</span>
+      </div>
+      <div class="security-badge">
+        <span class="badge-icon">⚡</span>
+        <span class="badge-text">99.9% Uptime</span>
+      </div>
+    </div>
+  </div>
+</footer>

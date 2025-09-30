@@ -36,8 +36,10 @@ export class HomeComponent {
   
   // ✅ PROPRIEDADES TIPADAS
   readonly currentYear: number = new Date().getFullYear();
-  readonly totalQuestions: number = 558;
+  readonly totalQuestions: number = 1500; // Aumentado
   readonly totalTechnologies: number = 18;
+  readonly totalAreas: number = 4; // 4 áreas
+  readonly successRate: number = 89; // Taxa de sucesso
   
   activeFaq: number | null = null;
   isLoading: boolean = false;
@@ -88,35 +90,23 @@ export class HomeComponent {
     {
       id: 1,
       category: 'pricing',
-      question: 'Quantas tentativas tenho no plano gratuito?',
-      answer: 'No plano gratuito você tem 3 tentativas por dia, que renovam automaticamente a cada 24 horas. É perfeito para testar nossa plataforma!'
+      question: 'Posso estudar tanto para concursos quanto para vagas tech?',
+      answer: 'Sim! Nossa plataforma oferece 4 áreas completas: Desenvolvimento Web, Português, Matemática e Informática. Você pode focar em uma área ou estudar todas!'
     },
     {
       id: 2,
-      category: 'pricing',
-      question: 'Posso cancelar a assinatura a qualquer momento?',
-      answer: 'Sim, sem pegadinhas! Você pode cancelar quando quiser, sem taxas ou multas. Seu acesso premium continuará até o fim do período já pago.'
+      category: 'platform',
+      question: 'As questões são baseadas em provas reais?',
+      answer: 'Absolutamente! Temos questões de bancas como CESPE, FCC, VUNESP e entrevistas reais de empresas como Google, Nubank, XP Inc.'
     },
     {
       id: 3,
-      category: 'platform',
-      question: 'As questões são baseadas em entrevistas reais?',
-      answer: 'Absolutamente! Todas as questões são baseadas em entrevistas reais de empresas como Google, Facebook, Amazon, Nubank, XP Inc e outras grandes techs.'
-    },
-    {
-      id: 4,
-      category: 'platform',
-      question: 'Como funcionam as dicas de entrevista?',
-      answer: 'Cada questão premium vem com dicas específicas de como responder em entrevistas reais, baseadas em experiências de recrutadores e tech leads.'
-    },
-    {
-      id: 5,
       category: 'technical',
       question: 'Funciona no celular?',
       answer: 'Perfeitamente! Nossa plataforma é totalmente responsiva e funciona em qualquer dispositivo - celular, tablet ou desktop.'
     },
     {
-      id: 6,
+      id: 4,
       category: 'platform',
       question: 'Que tecnologias estão disponíveis?',
       answer: 'Temos questões de JavaScript, React, Angular, TypeScript, HTML, CSS, Node.js, DevOps, Scrum e muitas outras. Total de 18 tecnologias!'
@@ -200,6 +190,25 @@ export class HomeComponent {
       }
     } catch (error) {
       console.error('Erro no toggle FAQ:', error);
+    }
+  }
+
+  // ✅ NOVOS MÉTODOS
+  goToArea(area: string): void {
+    try {
+      // gtag('event', 'select_area', { area });
+      this.router.navigate(['/area', area]);
+    } catch (error) {
+      console.error('Erro ao navegar para área:', error);
+    }
+  }
+
+  goToCareer(career: string): void {
+    try {
+      alert(`🎯 Carreira ${career} selecionada!\n\nVamos mostrar as oportunidades disponíveis.`);
+      this.router.navigate(['/career', career]);
+    } catch (error) {
+      console.error('Erro ao navegar para carreira:', error);
     }
   }
 
