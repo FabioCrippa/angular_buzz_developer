@@ -34,205 +34,67 @@ interface TechStack {
 })
 export class HomeComponent {
   
-  // ✅ PROPRIEDADES TIPADAS
-  readonly currentYear: number = new Date().getFullYear();
-  readonly totalQuestions: number = 1500; // Aumentado
-  readonly totalTechnologies: number = 18;
-  readonly totalAreas: number = 4; // 4 áreas
-  readonly successRate: number = 89; // Taxa de sucesso
+  // ✅ PROPRIEDADES NECESSÁRIAS
+  currentYear = new Date().getFullYear();
+  activeFaq = -1;
   
-  activeFaq: number | null = null;
-  isLoading: boolean = false;
-  
-  // ✅ SOCIAL PROOF ESTRUTURADO
-  readonly socialProof: SocialProof[] = [
-    { number: '558+', label: 'Questões', icon: '📚' },
-    { number: '18', label: 'Tecnologias', icon: '⚡' },
-    { number: '150+', label: 'Devs Aprovados', icon: '🎯' }
-  ];
-  
-  // ✅ TECH STACK ESTRUTURADO
-  readonly featuredTechs: TechStack[] = [
+  // ✅ FAQs DATA
+  faqs = [
     {
-      id: 'javascript',
-      name: 'JavaScript',
-      icon: '🟨',
-      questionCount: 89,
-      difficulty: 'basic',
-      popular: true
+      question: 'Como funciona o plano gratuito?',
+      answer: 'Você tem 3 tentativas grátis por dia em todas as 4 áreas de conhecimento. É perfeito para experimentar a plataforma e começar sua preparação sem custos.'
     },
     {
-      id: 'react',
-      name: 'React',
-      icon: '⚛️',
-      questionCount: 65,
-      difficulty: 'intermediate',
-      popular: true
+      question: 'Posso cancelar a assinatura a qualquer momento?',
+      answer: 'Sim! Você pode cancelar sua assinatura a qualquer momento sem burocracias. Se cancelar nos primeiros 7 dias, não será cobrado nada.'
     },
     {
-      id: 'angular',
-      name: 'Angular',
-      icon: '🅰️',
-      questionCount: 35,
-      difficulty: 'advanced'
+      question: 'As questões são atualizadas?',
+      answer: 'Sim! Nossa equipe atualiza constantemente o banco de questões. Temos mais de <strong>1.500 questões atualizadas</strong> baseadas nos editais e tendências mais recentes.'
     },
     {
-      id: 'typescript',
-      name: 'TypeScript',
-      icon: '🔷',
-      questionCount: 28,
-      difficulty: 'intermediate'
+      question: 'Funciona para concursos e vagas tech?',
+      answer: 'Exato! Nossa plataforma é única por cobrir tanto <strong>concursos públicos</strong> (Português, Matemática, Informática) quanto <strong>vagas tech</strong> (JavaScript, React, Angular, etc.).'
+    },
+    {
+      question: 'Tem versão mobile?',
+      answer: 'Sim! Nossa plataforma é 100% responsiva e funciona perfeitamente no celular, tablet e desktop. Estude onde e quando quiser.'
+    },
+    {
+      question: 'Como funciona o plano de estudo IA?',
+      answer: 'No plano premium, nossa IA analisa seu desempenho e cria planos de estudo personalizados, identificando suas <strong>pontos fracos</strong> e sugerindo o que estudar primeiro.'
     }
   ];
 
-  // ✅ FAQs COM CATEGORIAS E IDs
-  readonly faqs: FAQ[] = [
-    {
-      id: 1,
-      category: 'pricing',
-      question: 'Posso estudar tanto para concursos quanto para vagas tech?',
-      answer: 'Sim! Nossa plataforma oferece 4 áreas completas: Desenvolvimento Web, Português, Matemática e Informática. Você pode focar em uma área ou estudar todas!'
-    },
-    {
-      id: 2,
-      category: 'platform',
-      question: 'As questões são baseadas em provas reais?',
-      answer: 'Absolutamente! Temos questões de bancas como CESPE, FCC, VUNESP e entrevistas reais de empresas como Google, Nubank, XP Inc.'
-    },
-    {
-      id: 3,
-      category: 'technical',
-      question: 'Funciona no celular?',
-      answer: 'Perfeitamente! Nossa plataforma é totalmente responsiva e funciona em qualquer dispositivo - celular, tablet ou desktop.'
-    },
-    {
-      id: 4,
-      category: 'platform',
-      question: 'Que tecnologias estão disponíveis?',
-      answer: 'Temos questões de JavaScript, React, Angular, TypeScript, HTML, CSS, Node.js, DevOps, Scrum e muitas outras. Total de 18 tecnologias!'
-    }
-  ];
+  constructor(private router: Router) {}
 
-  constructor(private readonly router: Router) {}
+  // ✅ MÉTODOS PARA FAQs
+  toggleFaq(index: number): void {
+    this.activeFaq = this.activeFaq === index ? -1 : index;
+  }
 
-  // ✅ MÉTODOS COM TRATAMENTO DE ERRO
+  // ✅ MÉTODOS DE NAVEGAÇÃO
   startFreeTrial(): void {
-    try {
-      this.isLoading = true;
-      // TODO: Analytics tracking
-      // gtag('event', 'start_free_trial', { method: 'hero_cta' });
-      
-      this.router.navigate(['/dashboard']);
-    } catch (error) {
-      console.error('Erro ao iniciar trial:', error);
-    } finally {
-      this.isLoading = false;
-    }
-  }
-
-  goToDashboard(): void {
-    try {
-      this.router.navigate(['/dashboard']);
-    } catch (error) {
-      console.error('Erro na navegação:', error);
-    }
-  }
-
-  goToTech(techId: string): void {
-    try {
-      const tech = this.featuredTechs.find(t => t.id === techId);
-      if (!tech) {
-        console.warn(`Tecnologia ${techId} não encontrada`);
-        return;
-      }
-
-      // TODO: Analytics tracking
-      // gtag('event', 'select_technology', { technology: techId });
-      
-      this.router.navigate(['/quiz', techId]);
-    } catch (error) {
-      console.error('Erro ao navegar para tech:', error);
-    }
+    console.log('Iniciando teste grátis...');
+    // Implementar: navegar para registro ou login
+    // this.router.navigate(['/register']);
   }
 
   upgradeToPro(): void {
-    try {
-      // TODO: Analytics tracking
-      // gtag('event', 'begin_checkout', { value: 29.90, currency: 'BRL' });
-      
-      // Versão mais amigável do alert
-      const confirmed = confirm(
-        'Quer começar seu teste grátis de 7 dias?\n\n' +
-        'Acesso completo por 7 dias\n' +
-        'Apenas R$ 29,90/mês após o teste\n' +
-        'Cancele quando quiser\n\n' +
-        'Clique OK para continuar'
-      );
-      
-      if (confirmed) {
-        // TODO: Implementar Stripe
-        this.router.navigate(['/upgrade']);
-      }
-    } catch (error) {
-      console.error('Erro no upgrade:', error);
-    }
+    console.log('Upgrade para plano Pro...');
+    // Implementar: navegar para checkout ou upgrade
+    // this.router.navigate(['/checkout']);
   }
 
-  toggleFaq(index: number): void {
-    try {
-      const wasOpen = this.activeFaq === index;
-      this.activeFaq = wasOpen ? null : index;
-      
-      // TODO: Analytics tracking
-      if (!wasOpen) {
-        const faq = this.faqs[index];
-        // gtag('event', 'faq_expand', { faq_id: faq.id, category: faq.category });
-      }
-    } catch (error) {
-      console.error('Erro no toggle FAQ:', error);
-    }
+  goToDashboard(): void {
+    console.log('Navegando para dashboard...');
+    // Implementar: navegar para dashboard
+    // this.router.navigate(['/dashboard']);
   }
 
-  // ✅ NOVOS MÉTODOS
   goToArea(area: string): void {
-    try {
-      // gtag('event', 'select_area', { area });
-      this.router.navigate(['/area', area]);
-    } catch (error) {
-      console.error('Erro ao navegar para área:', error);
-    }
-  }
-
-  goToCareer(career: string): void {
-    try {
-      alert(`🎯 Carreira ${career} selecionada!\n\nVamos mostrar as oportunidades disponíveis.`);
-      this.router.navigate(['/career', career]);
-    } catch (error) {
-      console.error('Erro ao navegar para carreira:', error);
-    }
-  }
-
-  // ✅ MÉTODOS AUXILIARES
-  trackClick(element: string, value?: string): void {
-    try {
-      // TODO: Analytics
-      console.log(`Click tracked: ${element}`, value);
-      // gtag('event', 'click', { element, value });
-    } catch (error) {
-      console.error('Erro no tracking:', error);
-    }
-  }
-
-  getDifficultyClass(difficulty: TechStack['difficulty']): string {
-    const classes = {
-      basic: 'difficulty-basic',
-      intermediate: 'difficulty-intermediate', 
-      advanced: 'difficulty-advanced'
-    };
-    return classes[difficulty] || 'difficulty-basic';
-  }
-
-  getFaqsByCategory(category: FAQ['category']): FAQ[] {
-    return this.faqs.filter(faq => faq.category === category);
+    console.log(`Navegando para área: ${area}`);
+    // Implementar: navegar para área específica
+    // this.router.navigate(['/areas', area]);
   }
 }
