@@ -1039,14 +1039,27 @@ section {
   padding: 3rem 0 1rem;
 }
 
+/* ✅ FOOTER CONTENT - GRID RESPONSIVO */
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
 }
 
+/* ✅ FOOTER SECTIONS */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section:first-child {
+  /* Brand section - maior */
+}
+
+/* ✅ BRAND SECTION */
 .footer-brand {
   margin-bottom: 1rem;
 }
@@ -1056,6 +1069,7 @@ section {
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--primary);
+  line-height: 1.2;
 }
 
 .brand-tagline {
@@ -1063,14 +1077,16 @@ section {
   color: #fbbf24;
   margin-bottom: 1rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
 .brand-description {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* ✅ FOOTER TITLES E LINKS */
 .footer-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -1080,6 +1096,8 @@ section {
 
 .footer-links {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-links li {
@@ -1092,46 +1110,57 @@ section {
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s ease;
+  line-height: 1.4;
 }
 
 .footer-links a:hover {
   color: var(--primary);
 }
 
+/* ✅ FOOTER BOTTOM - FLEXÍVEL */
 .footer-bottom {
-  padding: 2rem 0 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* ✅ FOOTER STATS - RESPONSIVO */
 .footer-stats {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .stat-item {
   text-align: center;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.8rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius);
-  min-width: 70px;
+  min-width: 60px;
+  flex-shrink: 0;
 }
 
 .stat-number {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--primary);
+  line-height: 1.2;
 }
 
 .stat-label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-top: 0.2rem;
 }
 
+/* ✅ FOOTER LEGAL - FLEXÍVEL */
 .footer-legal {
   text-align: right;
 }
@@ -1140,7 +1169,7 @@ section {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   flex-wrap: wrap;
 }
 
@@ -1148,6 +1177,7 @@ section {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 
 .legal-links a:hover {
@@ -1157,28 +1187,44 @@ section {
 .copyright {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
 }
 
+.copyright strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ✅ SECURITY BADGES - TOTALMENTE RESPONSIVO */
 .security-badges {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
   padding: 1.5rem 0 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .security-badge {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.8rem;
+  gap: 0.4rem;
+  padding: 0.4rem 0.7rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.security-badge:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .badge-icon {
   font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
 .badge-text {
@@ -1186,78 +1232,182 @@ section {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 /* =============================================== */
-/* ✅ RESPONSIVE DESIGN - ESPAÇAMENTOS MOBILE */
+/* ✅ FOOTER RESPONSIVE - MOBILE FIRST */
 /* =============================================== */
 
+/* TABLET GRANDE (1024px) */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-bottom {
+    gap: 1.5rem;
+  }
+  
+  .footer-stats {
+    gap: 0.6rem;
+  }
+  
+  .stat-item {
+    min-width: 55px;
+    padding: 0.5rem 0.6rem;
+  }
+}
+
+/* TABLET (768px) */
 @media (max-width: 768px) {
-  section {
-    padding: 2.5rem 0; /* ✅ MOBILE: ainda menor */
+  .main-footer {
+    padding: 2.5rem 0 1rem;
   }
   
-  .hero-section {
-    padding: 3rem 0; /* ✅ MOBILE: Hero menor */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+    padding-bottom: 1.5rem;
   }
   
-  .areas-section,
-  .opportunities-section,
-  .pricing-section,
-  .testimonials-section,
-  .faq-section,
-  .cta-section {
-    padding: 2.5rem 0; /* ✅ MOBILE: todas as seções menores */
+  .footer-section:first-child {
+    order: -1; /* Brand sempre primeiro */
   }
   
-  .section-header {
-    margin-bottom: 2rem; /* ✅ MOBILE: header menor */
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
   }
   
-  .section-cta {
-    margin-top: 2rem; /* ✅ MOBILE: CTA menor */
+  .footer-stats {
+    justify-content: center;
+    gap: 0.8rem;
   }
   
-  .social-proof {
-    margin: 2rem 0; /* ✅ MOBILE: social proof menor */
+  .footer-legal {
+    text-align: center;
   }
   
-  .credentials-section {
-    margin: 2rem 0 1.5rem; /* ✅ MOBILE: credenciais menor */
+  .legal-links {
+    justify-content: center;
+    gap: 1.5rem;
   }
   
-  .guarantee-section {
-    margin-top: 2rem; /* ✅ MOBILE: garantia menor */
+  .security-badges {
+    gap: 1rem;
+    justify-content: center;
   }
 }
 
+/* MOBILE (480px) */
 @media (max-width: 480px) {
-  .container {
-    padding: 0 1rem;
+  .main-footer {
+    padding: 2rem 0 0.5rem;
   }
   
-  section {
-    padding: 2rem 0; /* ✅ MOBILE PEQUENO: muito menor */
+  .footer-content {
+    gap: 1.5rem;
+    padding-bottom: 1rem;
   }
   
-  .hero-section {
-    padding: 2.5rem 0; /* ✅ MOBILE PEQUENO: Hero compacto */
+  .brand-name {
+    font-size: 1.5rem;
   }
   
-  .areas-section,
-  .opportunities-section,
-  .pricing-section,
-  .testimonials-section,
-  .faq-section,
-  .cta-section {
-    padding: 2rem 0; /* ✅ MOBILE PEQUENO: seções compactas */
+  .brand-tagline {
+    font-size: 0.9rem;
   }
   
-  .section-header {
-    margin-bottom: 1.5rem; /* ✅ MOBILE PEQUENO: header compacto */
+  .brand-description {
+    font-size: 0.85rem;
   }
   
-  .section-cta {
-    margin-top: 1.5rem; /* ✅ MOBILE PEQUENO: CTA compacto */
+  .footer-title {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+  
+  .footer-stats {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .stat-item {
+    min-width: 50px;
+    padding: 0.4rem 0.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1rem;
+  }
+  
+  .stat-label {
+    font-size: 0.6rem;
+  }
+  
+  .legal-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .legal-links a {
+    font-size: 0.75rem;
+  }
+  
+  .copyright {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  
+  .security-badges {
+    gap: 0.5rem;
+    padding: 1rem 0 0.5rem;
+  }
+  
+  .security-badge {
+    padding: 0.3rem 0.5rem;
+    gap: 0.3rem;
+  }
+  
+  .badge-icon {
+    font-size: 0.8rem;
+  }
+  
+  .badge-text {
+    font-size: 0.6rem;
+  }
+}
+
+/* MOBILE MUITO PEQUENO (360px) */
+@media (max-width: 360px) {
+  .footer-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .stat-item {
+    width: 100%;
+    max-width: 120px;
+  }
+  
+  .security-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .security-badge {
+    width: 100%;
+    max-width: 140px;
+    justify-content: center;
   }
 }
