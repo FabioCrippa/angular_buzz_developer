@@ -1,15 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { QuizzComponent } from './components/quizz/quizz.component';
-import { HomeComponent } from './pages/home/home.component';
 
 // ✅ ADICIONAR EXPORT na frente de const
 export const routes: Routes = [
+  // ✅ ROTA HOME
   { path: '', component: HomeComponent },
+  
+  // ✅ ROTA DASHBOARD  
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'quiz', component: QuizzComponent },
-  { path: 'quizz', component: QuizzComponent },
+  
+  // ✅ ROTAS DO QUIZ
+  { path: 'quiz', component: QuizzComponent }, // Quiz misto
+  { path: 'quiz/:area', component: QuizzComponent }, // Quiz por área
+  { path: 'quiz/:area/:subject', component: QuizzComponent }, // Quiz específico
+  
+  // ✅ REDIRECTS
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
+  
+  // ✅ WILDCARD (404)
   { path: '**', redirectTo: '' }
 ];
 

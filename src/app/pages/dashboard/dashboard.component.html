@@ -1,150 +1,78 @@
-<div class="home-container">
-  
-  <!-- ✅ HERO SECTION SIMPLIFICADA -->
-  <section class="hero-section">
-    <div class="hero-background">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-    
-    <div class="hero-content">
-            
-      <!-- ✅ AJUSTAR HERO TITLE -->
-      <h1 class="hero-title">
-        <span>Quiz Tech</span>
-        <span class="title-line-2">Developer</span>
-      </h1>
-      
-      <!-- ✅ AJUSTAR HERO DESCRIPTION -->
-      <p class="hero-description">
-        Teste e aprimore seus conhecimentos em <strong>desenvolvimento web</strong> com 
-        <strong>{{ totalQuestions || 558 }}+ questões</strong> reais de <strong>entrevistas técnicas</strong>
-      </p>
-      
-      <!-- ✅ STATS SIMPLIFICADAS -->
-      <div class="hero-stats">
-        <div class="stat-card">
-          <span class="stat-number">{{ totalQuestions || 350 }}+</span>
-          <span class="stat-label">Questões</span>
-        </div>
-        
-        <div class="stat-card">
-          <span class="stat-number">{{ categories.length || 18 }}</span>
-          <span class="stat-label">Categorias</span>
-        </div>
-        
-        <div class="stat-card">
-          <span class="stat-number">{{ getQuizStats().interviewQuestions || 50 }}+</span>
-          <span class="stat-label">Dicas de Entrevista</span>
-        </div>
-      </div>
-      
-      <!-- ✅ BOTÕES SIMPLIFICADOS -->
-      <div class="hero-actions">
-        <button class="btn-primary" (click)="startQuickQuiz()">
-          🚀 Começar Quiz Rápido
-        </button>
-        
-        <button class="btn-secondary" (click)="scrollToCategories()">
-          🎯 Escolher Categoria
-        </button>
-      </div>
-    </div>
-  </section>
+<!-- Loading State -->
+<app-loading 
+  *ngIf="isLoading" 
+  message="Carregando dados do dashboard..." 
+  size="large">
+</app-loading>
 
-  <!-- ✅ SEÇÃO DE CATEGORIAS SIMPLIFICADA -->
-  <section class="categories-section" id="categories">
-    <div class="container">
-      <h2 class="section-title">Escolha sua Especialidade</h2>
-      <!-- ✅ AJUSTAR SECTION SUBTITLE -->
-      <p class="section-subtitle">
-        Escolha sua tecnologia favorita ou teste conhecimentos gerais de desenvolvimento frontend
-      </p>
-      
-      <!-- ✅ LOADING SIMPLIFICADO -->
-      <div *ngIf="categories.length === 0" class="loading-categories">
-        <div class="loading-spinner"></div>
-        <h3>Carregando categorias...</h3>
-        <p>Preparando sua experiência de aprendizado</p>
-      </div>
-      
-      <!-- ✅ GRID SIMPLIFICADO -->
-      <div class="categories-grid" *ngIf="categories.length > 0">
-        
-        <!-- Card Especial - Todas as Categorias -->
-        <div 
-          class="category-card featured-card" 
-          (click)="startQuiz('all')"
-          role="button"
-          tabindex="0"
-          title="Clique para iniciar quiz com todas as categorias"
-        >
-          <div class="card-icon">🌟</div>
-          <h3 class="card-title">Todas as Categorias</h3>
-          <p class="card-description">Quiz completo com questões de todas as áreas</p>
-          <div class="card-stats">
-            <span class="question-count">{{ totalQuestions }} questões</span>
-            <span class="difficulty">Todos os níveis</span>
-          </div>
-        </div>
-
-        <!-- ✅ CARDS DAS CATEGORIAS -->
-        <div 
-          *ngFor="let category of categories; trackBy: trackByCategory" 
-          class="category-card"
-          (click)="startQuiz(category.id)"
-          role="button"
-          tabindex="0"
-          [title]="'Clique para iniciar quiz de ' + category.name"
-          [attr.data-category]="category.id"
-        >
-          <div class="card-icon">{{ category.icon }}</div>
-          <h3 class="card-title">{{ category.name }}</h3>
-          <p class="card-description">{{ category.description }}</p>
-          <div class="card-stats">
-            <span class="question-count">{{ category.questionCount }} questões</span>
-            <span class="difficulty">{{ category.difficulty }}</span>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
-
-  <!-- ✅ SEÇÃO DE FEATURES SIMPLIFICADA -->
-  <section class="features-section">
-    <div class="container">
-      <h2 class="section-title">Por que escolher nosso Quiz?</h2>
-      
-      <!-- ✅ AJUSTAR FEATURES PARA TECH -->
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">💻</div>
-          <h3>Questões Reais de Tech</h3>
-          <p>Baseadas em entrevistas reais de empresas como Google, Facebook, Amazon</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <h3>Preparação para Entrevistas</h3>
-          <p>Dicas de como responder e se comportar em entrevistas técnicas</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">📊</div>
-          <h3>Análise por Tecnologia</h3>
-          <p>Veja seu desempenho em React, Angular, JavaScript e outras tech</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">🚀</div>
-          <h3>Evolua Sua Carreira</h3>
-          <p>Pratique diariamente e conquiste aquela vaga dos sonhos!</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+<!-- Error State -->
+<div *ngIf="hasError && !isLoading" class="error-container">
+  <div class="error-content">
+    <h3>Ops! Algo deu errado</h3>
+    <p>{{ errorMessage }}</p>
+    <button class="btn btn-primary" (click)="reloadData()">
+      <i class="fas fa-redo"></i> Tentar Novamente
+    </button>
+  </div>
 </div>
 
+<!-- Dashboard Content -->
+<div *ngIf="!isLoading && !hasError" class="dashboard-container">
+  
+  <!-- Header -->
+  <header class="dashboard-header">
+    <div class="app-info">
+      <h1>{{ appInfo.name || 'Angular Buzz Developer' }}</h1>
+      <p class="app-description">{{ appInfo.description || 'Plataforma completa de questões técnicas' }}</p>
+      <div class="stats-summary">
+        <span class="stat-item">
+          <i class="fas fa-question-circle"></i>
+          {{ totalQuestions }} questões disponíveis
+        </span>
+        <span class="stat-item">
+          <i class="fas fa-layer-group"></i>
+          {{ areas.length }} áreas de estudo
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Areas Grid -->
+  <section class="areas-section">
+    <h2>Áreas de Estudo</h2>
+    
+    <div class="areas-grid">
+      <div 
+        *ngFor="let area of areas" 
+        class="area-card"
+        [class.available]="area.available"
+        [class.coming-soon]="!area.available"
+        (click)="navigateToArea(area.name)">
+        
+        <div class="card-header">
+          <h3>{{ area.displayName }}</h3>
+          <span class="question-count">{{ area.questionCount }} questões</span>
+        </div>
+        
+        <div class="card-body">
+          <div class="subjects-list">
+            <span 
+              *ngFor="let subject of area.subjects" 
+              class="subject-tag">
+              {{ subject }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="card-footer">
+          <span *ngIf="area.available" class="status-badge available">
+            <i class="fas fa-play"></i> Disponível
+          </span>
+          <span *ngIf="!area.available" class="status-badge coming-soon">
+            <i class="fas fa-clock"></i> Em breve
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

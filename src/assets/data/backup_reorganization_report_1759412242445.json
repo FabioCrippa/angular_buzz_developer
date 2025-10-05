@@ -1,0 +1,175 @@
+{
+  "timestamp": "2025-10-02T10:26:12.755Z",
+  "totalQuestions": 520,
+  "categoriesProcessed": 18,
+  "categoryStats": {
+    "html": {
+      "count": 25,
+      "startId": 1,
+      "endId": 25
+    },
+    "css": {
+      "count": 35,
+      "startId": 101,
+      "endId": 135
+    },
+    "javascript": {
+      "count": 25,
+      "startId": 201,
+      "endId": 225
+    },
+    "versionamento": {
+      "count": 25,
+      "startId": 801,
+      "endId": 825
+    },
+    "responsividade": {
+      "count": 30,
+      "startId": 501,
+      "endId": 530
+    },
+    "scrum": {
+      "count": 25,
+      "startId": 901,
+      "endId": 925
+    },
+    "devops": {
+      "count": 25,
+      "startId": 1001,
+      "endId": 1025
+    },
+    "criptografia": {
+      "count": 25,
+      "startId": 1401,
+      "endId": 1425
+    },
+    "angular": {
+      "count": 25,
+      "startId": 401,
+      "endId": 425
+    },
+    "micro-front-end": {
+      "count": 25,
+      "startId": 1601,
+      "endId": 1625
+    },
+    "testes-unitarios": {
+      "count": 25,
+      "startId": 1301,
+      "endId": 1325
+    },
+    "front-end": {
+      "count": 25,
+      "startId": 601,
+      "endId": 625
+    },
+    "typescript": {
+      "count": 25,
+      "startId": 301,
+      "endId": 325
+    },
+    "boas-praticas": {
+      "count": 25,
+      "startId": 701,
+      "endId": 725
+    },
+    "ci-cd": {
+      "count": 25,
+      "startId": 1101,
+      "endId": 1125
+    },
+    "code-review": {
+      "count": 25,
+      "startId": 1201,
+      "endId": 1225
+    },
+    "figma": {
+      "count": 25,
+      "startId": 1501,
+      "endId": 1525
+    },
+    "entrevista": {
+      "count": 80,
+      "startId": 1701,
+      "endId": 1780
+    }
+  },
+  "idRanges": {
+    "html": {
+      "start": 1,
+      "count": 0
+    },
+    "css": {
+      "start": 101,
+      "count": 0
+    },
+    "javascript": {
+      "start": 201,
+      "count": 0
+    },
+    "typescript": {
+      "start": 301,
+      "count": 0
+    },
+    "angular": {
+      "start": 401,
+      "count": 0
+    },
+    "responsividade": {
+      "start": 501,
+      "count": 0
+    },
+    "front-end": {
+      "start": 601,
+      "count": 0
+    },
+    "boas-praticas": {
+      "start": 701,
+      "count": 0
+    },
+    "versionamento": {
+      "start": 801,
+      "count": 0
+    },
+    "scrum": {
+      "start": 901,
+      "count": 0
+    },
+    "devops": {
+      "start": 1001,
+      "count": 0
+    },
+    "ci-cd": {
+      "start": 1101,
+      "count": 0
+    },
+    "code-review": {
+      "start": 1201,
+      "count": 0
+    },
+    "testes-unitarios": {
+      "start": 1301,
+      "count": 0
+    },
+    "criptografia": {
+      "start": 1401,
+      "count": 0
+    },
+    "figma": {
+      "start": 1501,
+      "count": 0
+    },
+    "micro-front-end": {
+      "start": 1601,
+      "count": 0
+    },
+    "entrevista": {
+      "start": 1701,
+      "count": 0
+    },
+    "outros": {
+      "start": 9001,
+      "count": 0
+    }
+  }
+}

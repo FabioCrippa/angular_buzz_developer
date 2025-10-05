@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "desenvolvimento-web",
+    "subject": "boas-praticas",
+    "name": "Boas Práticas de Código",
+    "description": "Clean code, SOLID, padrões de desenvolvimento e qualidade de software.",
+    "difficulty": "intermediate",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "clean-code",
+      "solid",
+      "qualidade",
+      "manutencao"
+    ]
+  },
+  "questions": [
+    {
+      "id": 701,
+      "question": "Qual é o principal benefício de aplicar o princípio DRY (Don't Repeat Yourself)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Melhorar a performance do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Evitar duplicação e facilitar manutenção",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Aumentar a complexidade do sistema",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 702,
+      "question": "Por que é importante nomear variáveis de forma clara e descritiva?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para que o código fique mais difícil de entender",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Para facilitar a leitura e manutenção do código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para reduzir o tempo de compilação",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 703,
+      "question": "O que significa o princípio KISS (Keep It Simple, Stupid)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Evitar comentários no código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Manter o código o mais simples e direto possível",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Utilizar apenas variáveis globais",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 704,
+      "question": "Qual é a vantagem de dividir o código em módulos ou componentes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita a reutilização e a manutenção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Dificulta a leitura do código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Aumenta o tempo de execução",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 705,
+      "question": "Por que é importante escrever testes automatizados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para aumentar a complexidade do projeto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Para garantir que o código funcione como esperado e facilitar refatorações",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para evitar o uso de comentários",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 706,
+      "question": "O que é um 'code smell'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um erro de sintaxe no código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um indicativo de que o código pode ser melhorado",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo de variável",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 707,
+      "question": "Qual é a importância de seguir um padrão de codificação (coding style)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para tornar o código mais difícil de entender",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Para garantir consistência e facilitar a colaboração entre desenvolvedores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para aumentar o tamanho do arquivo",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 708,
+      "question": "O que é refatoração de código?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adicionar novas funcionalidades ao código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Modificar o código para melhorar sua estrutura sem alterar seu comportamento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Remover comentários do código",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 709,
+      "question": "Por que é importante documentar o código?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para dificultar a leitura do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Para ajudar outros desenvolvedores (e você mesmo) a entenderem o propósito e funcionamento do código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para aumentar o tamanho do arquivo",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "boas-praticas",
+      "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
+    },
+    {
+      "id": 710,
+      "question": "O que é o princípio YAGNI (You Aren't Gonna Need It)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não implementar funcionalidades até que sejam realmente necessárias",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Sempre implementar todas as funcionalidades possíveis antecipadamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Remover funcionalidades desnecessárias após implementação",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "YAGNI evita over-engineering focando apenas no que é necessário no momento presente.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 711,
+      "question": "Qual é a importância do error handling adequado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Melhora experiência do usuário e facilita debugging em produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Não é necessário se o código estiver bem escrito",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas esconde erros do usuário final",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Error handling robusto previne crashes, orienta usuários e fornece informações valiosas para desenvolvedores.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 712,
+      "question": "O que são code smells e como identificá-los?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Indicadores de possíveis problemas no código que sugerem necessidade de refatoração",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Erros de sintaxe que impedem compilação",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Comentários mal escritos no código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Code smells como funções muito longas, duplicação excessiva e acoplamento forte indicam áreas para melhoria.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 713,
+      "question": "Por que logging é uma boa prática essencial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita debugging, monitoramento e auditoria de sistemas em produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas para demonstrar que o código está executando",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para substituir testes automatizados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Logs estruturados são fundamentais para diagnosticar problemas, entender comportamento e garantir compliance.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 714,
+      "question": "O que é defensive programming?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Escrever código que funciona mesmo com inputs inesperados ou condições adversas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Proteger código com senhas e criptografia",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Programar apenas funcionalidades defensivas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Programming defensivo antecipa problemas usando validação de input, null checks e graceful degradation.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 715,
+      "question": "Qual é a importância da consistência no estilo de código?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita leitura, manutenção e colaboração entre desenvolvedores",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Melhora performance do código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Reduz o tamanho dos arquivos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Código consistente reduz cognitive load e permite que qualquer dev do time entenda e modifique rapidamente.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 716,
+      "question": "O que é pair programming e seus benefícios?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Dois desenvolvedores trabalhando juntos no mesmo código simultaneamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Programar apenas em pares de funções",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Dividir tarefas igualmente entre dois desenvolvedores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Pair programming melhora qualidade do código, acelera onboarding e promove knowledge sharing contínuo.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 717,
+      "question": "Por que validação de input é crucial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Previne ataques de segurança, crashes e comportamentos inesperados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas melhora a aparência da interface",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não é necessária em aplicações internas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Input validation é primeira linha de defesa contra SQL injection, XSS e outros ataques maliciosos.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 718,
+      "question": "O que é technical debt e como gerenciá-lo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Custo implícito de refatoração futura devido a soluções subótimas atuais",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Dívidas financeiras relacionadas a ferramentas de desenvolvimento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tempo gasto aprendendo novas tecnologias",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Technical debt deve ser monitorado e pago regularmente para evitar que comprometa velocidade de desenvolvimento futuro.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 719,
+      "question": "Qual é a importância de code coverage em testes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Indica quanta parte do código é exercitada pelos testes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Mede a velocidade de execução dos testes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Define quantos testes são necessários",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Coverage revela áreas não testadas, mas 100% coverage não garante qualidade - foque em testes significativos.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 720,
+      "question": "O que é continuous learning na carreira de desenvolvimento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Processo constante de atualização de conhecimentos e habilidades",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aprender apenas quando mudando de emprego",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Estudar apenas tecnologias relacionadas ao projeto atual",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Tecnologia evolui rapidamente - desenvolvedores devem dedicar tempo regular para aprender e se adaptar.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 721,
+      "question": "Por que performance optimization deve ser baseada em dados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Evita otimização prematura e foca nos gargalos reais",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Porque dados sempre mostram problemas de performance",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para impressionar stakeholders com métricas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Profile first, optimize second - métricas reais evitam desperdício de tempo em pseudo-otimizações.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 722,
+      "question": "O que é mob programming e quando usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Todo o time trabalhando no mesmo código simultaneamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Programação desenvolvida por multidões online",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Programação apenas para aplicações móveis",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Mob programming é eficaz para problemas complexos, knowledge transfer e decisões arquiteturais importantes.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 723,
+      "question": "Qual é a importância da segurança by design?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Integrar considerações de segurança desde o início do desenvolvimento",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Adicionar segurança apenas após completar todas as features",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Terceirizar toda responsabilidade de segurança",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Segurança como afterthought é cara e ineficaz - deve ser considerada em cada decisão de arquitetura.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 724,
+      "question": "O que são design patterns e quando aplicá-los?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Soluções reutilizáveis para problemas recorrentes de design de software",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Padrões visuais para interfaces de usuário",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Templates de código prontos para usar",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Design patterns como Singleton, Observer e Strategy devem ser aplicados quando o problema corresponde exatamente ao pattern.",
+      "category": "boas-praticas"
+    },
+    {
+      "id": 725,
+      "question": "Por que é importante ter environment separation?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Isola desenvolvimento, teste e produção para reduzir riscos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas para organizar melhor os arquivos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para economizar recursos de servidor",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Ambientes separados permitem desenvolvimento seguro, testes realistas e deployments controlados sem afetar produção.",
+      "category": "boas-praticas"
+    }
+  ]
+}

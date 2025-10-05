@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "seguranca",
+    "subject": "criptografia",
+    "name": "Criptografia & Segurança",
+    "description": "Segurança, criptografia, autenticação e proteção de dados.",
+    "difficulty": "advanced",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "seguranca",
+      "autenticacao",
+      "protecao",
+      "dados"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1401,
+      "question": "Qual é o propósito de um certificado SSL em um ambiente criptografado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Garantir a comunicação segura entre cliente e servidor",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aumentar a velocidade de carregamento do site",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Adicionar estilos ao site",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1402,
+      "question": "O que é criptografia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um método de codificação de informações para garantir sua segurança",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica de armazenamento de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um processo de compressão de arquivos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1403,
+      "question": "Qual é o principal objetivo da criptografia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Garantir a privacidade e integridade das informações",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduzir o tamanho dos arquivos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Acelerar a transmissão de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1404,
+      "question": "Qual dos seguintes termos está relacionado à criptografia simétrica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma única chave usada para criptografar e descriptografar",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Chave pública e chave privada",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Autenticação baseada em assinatura digital",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1405,
+      "question": "Qual é a principal característica da criptografia assimétrica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usa uma chave pública para criptografar e uma chave privada para descriptografar",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Usa a mesma chave para criptografar e descriptografar os dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não necessita de chave para criptografar os dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1406,
+      "question": "Qual é a função principal de um protocolo criptográfico?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estabelecer regras e métodos para realizar a criptografia e garantir a segurança das comunicações",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Gerenciar a quantidade de dados transmitidos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Controlar os erros durante a comunicação de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1407,
+      "question": "O que é uma chave de criptografia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma sequência de caracteres usada para criptografar ou descriptografar dados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um código que permite a compactação dos dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um identificador de usuários no sistema",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1408,
+      "question": "Qual é o principal protocolo criptográfico usado em redes de comunicação seguras?",
+      "options": [
+        {
+          "id": 1,
+          "name": "SSL/TLS (Secure Sockets Layer / Transport Layer Security)",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "SMTP (Simple Mail Transfer Protocol)",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "HTTP (HyperText Transfer Protocol)",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1409,
+      "question": "O que é criptografia de ponta a ponta?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um método que garante que apenas o remetente e o destinatário possam acessar os dados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica para compactar arquivos antes da transmissão",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um protocolo para acelerar a comunicação de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1410,
+      "question": "O que é um ataque de força bruta na criptografia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma tentativa de descobrir uma chave criptográfica testando todas as combinações possíveis",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para acelerar a criptografia de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para compactar arquivos criptografados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1411,
+      "question": "O que é um ataque de replay na criptografia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma técnica onde um invasor intercepta e retransmite dados para enganar o sistema",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para acelerar a criptografia de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para compactar arquivos criptografados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1412,
+      "question": "O que é um hash criptográfico?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma função que transforma dados em um valor fixo e irreversível",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para compactar arquivos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica de armazenamento de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1413,
+      "question": "Qual é a função da criptografia em blockchain?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Garantir a segurança e integridade das transações registradas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Compactar os blocos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Acelerar a transmissão de informações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1414,
+      "question": "O que é um certificado digital?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um documento eletrônico que autentica a identidade de um usuário ou site",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um código usado para compactar arquivos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica de armazenamento de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1415,
+      "question": "O que é criptografia de curva elíptica (ECC)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Método criptográfico baseado em matemática de curvas elípticas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Protocolo para redes em formato de elipse",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Algoritmo para compressão de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "ECC oferece segurança equivalente ao RSA com chaves menores, sendo mais eficiente.",
+      "category": "criptografia"
+    },
+    {
+      "id": 1416,
+      "question": "O que é um hash criptográfico?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma função que transforma dados em um valor fixo e irreversível",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para compactar arquivos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica de armazenamento de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1417,
+      "question": "Qual é a função da criptografia em blockchain?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Garantir a segurança e integridade das transações registradas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Compactar os blocos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Acelerar a transmissão de informações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1418,
+      "question": "O que é um ataque de força bruta?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma tentativa de descobrir uma chave criptográfica testando todas as combinações possíveis",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para acelerar a criptografia de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para compactar arquivos criptografados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1419,
+      "question": "O que é um ataque de man-in-the-middle?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma técnica onde um invasor intercepta e altera a comunicação entre duas partes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para acelerar a criptografia de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para compactar arquivos criptografados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1420,
+      "question": "Qual é a importância da criptografia em comunicações seguras?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Protege dados contra acessos não autorizados e garante a privacidade",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Acelera a transmissão de informações",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Reduz o tamanho dos arquivos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1421,
+      "question": "O que é criptografia homomórfica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma técnica que permite realizar operações sobre dados criptografados sem precisar descriptografá-los",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para compactar arquivos criptografados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica de armazenamento de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "criptografia",
+      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
+    },
+    {
+      "id": 1422,
+      "question": "O que é uma assinatura digital em criptografia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Mecanismo que garante autenticidade e integridade de mensagens",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Arquivo de imagem digitalizada",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Senha de acesso a sistemas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Assinaturas digitais usam criptografia de chave pública para verificar a origem e integridade dos dados.",
+      "category": "criptografia"
+    },
+    {
+      "id": 1423,
+      "question": "O que é uma VPN (Virtual Private Network)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Rede privada virtual que criptografa conexões através da internet",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Tipo de servidor web",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Protocolo de email seguro",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "VPNs criam túneis criptografados para proteger dados em redes públicas e mascarar localização.",
+      "category": "criptografia"
+    },
+    {
+      "id": 1424,
+      "question": "O que é PKI (Public Key Infrastructure)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Infraestrutura para gerenciar certificados e chaves públicas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Protocolo de internet",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipo de firewall",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "PKI gerencia criação, distribuição e revogação de certificados digitais em sistemas criptográficos.",
+      "category": "criptografia"
+    },
+    {
+      "id": 1425,
+      "question": "O que é Two-Factor Authentication (2FA)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Método de autenticação que requer dois fatores diferentes para acesso",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Sistema de backup duplo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Protocolo de rede",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "2FA combina algo que você sabe (senha) com algo que você tem (token/SMS) para maior segurança.",
+      "category": "criptografia"
+    }
+  ]
+}

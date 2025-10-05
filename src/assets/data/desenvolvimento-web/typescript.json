@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "desenvolvimento-web",
+    "subject": "typescript",
+    "name": "TypeScript Avançado",
+    "description": "TypeScript, tipagem estática, interfaces, generics e desenvolvimento escalável.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "tipagem",
+      "interfaces",
+      "generics",
+      "desenvolvimento"
+    ]
+  },
+  "questions": [
+    {
+      "id": 301,
+      "question": "Qual é a diferença entre 'interface' e 'type' em TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Interfaces são usadas apenas para classes, enquanto types são usados para funções",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Interfaces podem ser estendidas múltiplas vezes, enquanto types não",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Types são exclusivos para definir tipos primitivos",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "typescript",
+      "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
+    },
+    {
+      "id": 302,
+      "question": "O que é um 'union type' em TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um tipo que pode ser um de vários tipos especificados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um tipo que combina dois tipos em um só",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo exclusivo para arrays",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "typescript",
+      "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
+    },
+    {
+      "id": 303,
+      "question": "O que é um 'intersection type' em TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um tipo que combina múltiplos tipos em um só",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um tipo que pode ser um de vários tipos especificados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo exclusivo para funções",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "typescript",
+      "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
+    },
+    {
+      "id": 304,
+      "question": "O que é o operador 'as' em TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um operador de asserção de tipo que informa ao compilador para tratar uma variável como um tipo específico",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um operador para definir variáveis constantes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um operador para criar arrays",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "typescript",
+      "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
+    },
+    {
+      "id": 305,
+      "question": "O que é o 'type assertion' em TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma forma de informar ao compilador sobre o tipo de uma variável quando ele não consegue inferir automaticamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica para criar tipos genéricos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma maneira de definir interfaces",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "typescript",
+      "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
+    },
+    {
+      "id": 306,
+      "question": "O que são Generics em TypeScript e quando usá-los?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitem criar tipos flexíveis que trabalham com múltiplos tipos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São tipos específicos para arrays",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas uma forma de comentar código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Generics como Array<T> ou Promise<T> permitem reutilização de código mantendo type safety.",
+      "category": "typescript"
+    },
+    {
+      "id": 307,
+      "question": "Qual é a diferença entre 'any' e 'unknown' no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "'unknown' é type-safe e requer verificação antes do uso, 'any' desabilita verificações",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São exatamente iguais",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "'any' é mais seguro que 'unknown'",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "unknown força verificação de tipo antes do uso, sendo uma alternativa mais segura ao any.",
+      "category": "typescript"
+    },
+    {
+      "id": 308,
+      "question": "O que são mapped types em TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tipos que criam novos tipos baseados em tipos existentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Tipos para trabalhar com mapas geográficos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipos exclusivos para objetos Map",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Mapped types como Partial<T>, Required<T> transformam propriedades de tipos existentes.",
+      "category": "typescript"
+    },
+    {
+      "id": 309,
+      "question": "O que são conditional types no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tipos que mudam baseados em condições usando sintaxe ternária",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Tipos que só funcionam com if/else",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipos exclusivos para promises",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Conditional types usam T extends U ? X : Y para criar tipos dinâmicos baseados em condições.",
+      "category": "typescript"
+    },
+    {
+      "id": 310,
+      "question": "O que é template literal types no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tipos baseados em template literals que permitem patterns de string específicos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Templates HTML dentro do TypeScript",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas uma forma de comentar código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Template literal types como `hello-${string}` criam tipos precisos para padrões de string.",
+      "category": "typescript"
+    },
+    {
+      "id": 311,
+      "question": "Qual é o propósito do 'never' type no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Representa valores que nunca devem ocorrer",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um tipo para loops infinitos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Equivalente ao tipo null",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "never é usado para funções que nunca retornam (throw error) ou para exhaustive checking.",
+      "category": "typescript"
+    },
+    {
+      "id": 312,
+      "question": "O que são utility types no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tipos pré-definidos que facilitam transformações comuns",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Tipos para funções utilitárias apenas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipos exclusivos para bibliotecas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Utility types como Pick<T, K>, Omit<T, K>, Record<K, V> facilitam manipulação de tipos.",
+      "category": "typescript"
+    },
+    {
+      "id": 313,
+      "question": "Como funciona type narrowing no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Refina tipos através de checks condicionais como typeof, instanceof",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduz o tamanho dos tipos automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Converte tipos complexos em tipos simples",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Type narrowing permite ao TypeScript inferir tipos mais específicos baseado em runtime checks.",
+      "category": "typescript"
+    },
+    {
+      "id": 314,
+      "question": "O que são discriminated unions no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Union types com propriedade comum que permite diferenciação",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "União de tipos que só funciona com arrays",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipos que discriminam usuários",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Discriminated unions usam uma propriedade tag para type narrowing seguro em switch/if statements.",
+      "category": "typescript"
+    },
+    {
+      "id": 315,
+      "question": "Qual é a diferença entre 'readonly' e 'const' no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "'readonly' é para propriedades de objetos/arrays, 'const' é para variáveis",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São exatamente iguais",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "'const' é mais restritivo que 'readonly'",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "readonly previne modificação de propriedades após inicialização, const previne reassignment de variáveis.",
+      "category": "typescript"
+    },
+    {
+      "id": 316,
+      "question": "O que é index signature no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Define o tipo para propriedades dinâmicas de um objeto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Assinatura digital para arquivos TypeScript",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Índice de todas as funções do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Index signature como [key: string]: any permite propriedades dinâmicas com tipos específicos.",
+      "category": "typescript"
+    },
+    {
+      "id": 317,
+      "question": "Como usar keyof operator no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Obtém união de todas as chaves de um tipo de objeto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Verifica se uma chave existe em um objeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Remove chaves de um tipo",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "keyof T produz união literal das chaves de T, útil para type-safe property access.",
+      "category": "typescript"
+    },
+    {
+      "id": 318,
+      "question": "O que são function overloads no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Múltiplas assinaturas para a mesma função com diferentes parâmetros",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Funções que executam outras funções",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Funções que fazem muitas operações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Function overloads permitem diferentes assinaturas para a mesma função baseadas nos tipos de entrada.",
+      "category": "typescript"
+    },
+    {
+      "id": 319,
+      "question": "O que é module augmentation no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Extensão de módulos existentes com novos tipos ou propriedades",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aumento do tamanho dos módulos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Duplicação de módulos para backup",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Module augmentation permite adicionar tipos a módulos externos como libraries npm.",
+      "category": "typescript"
+    },
+    {
+      "id": 320,
+      "question": "Como funciona o sistema de modules no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Suporta ES modules, CommonJS e AMD com interoperabilidade",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas suporta ES modules",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não suporta sistema de módulos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "TypeScript compila para diferentes sistemas de módulos mantendo type safety entre boundaries.",
+      "category": "typescript"
+    },
+    {
+      "id": 321,
+      "question": "O que são decorators no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Metaprogramação que permite modificar classes, métodos e propriedades",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas comentários decorativos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Padrões de design visual",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Decorators como @Component no Angular usam metaprogramação para adicionar funcionalidades declarativamente.",
+      "category": "typescript"
+    },
+    {
+      "id": 322,
+      "question": "Qual é o propósito do strict mode no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Habilita verificações de tipo mais rigorosas para maior segurança",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Desabilita todas as verificações de tipo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas para projetos em produção",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Strict mode ativa flags como strictNullChecks, noImplicitAny para maximum type safety.",
+      "category": "typescript"
+    },
+    {
+      "id": 323,
+      "question": "Como configurar path mapping no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando 'paths' no tsconfig.json para criar aliases de importação",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Modificando variáveis de ambiente do sistema",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não é possível configurar path mapping",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Path mapping permite imports limpos como @/components em vez de ../../../components.",
+      "category": "typescript"
+    },
+    {
+      "id": 324,
+      "question": "O que é declaration merging no TypeScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Capacidade de combinar múltiplas declarações do mesmo nome",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Fusão de arquivos .d.ts automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Combinação de tipos primitivos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Declaration merging permite estender interfaces, namespaces e enums definidos em locais diferentes.",
+      "category": "typescript"
+    },
+    {
+      "id": 325,
+      "question": "Como otimizar performance de compilação TypeScript em projetos grandes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando project references, incremental compilation e skipLibCheck",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Removendo todos os tipos para compilar mais rápido",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Compilando apenas arquivos modificados manualmente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Project references e incremental builds aceleram drasticamente compilação em monorepos e projetos grandes.",
+      "category": "typescript"
+    }
+  ]
+}

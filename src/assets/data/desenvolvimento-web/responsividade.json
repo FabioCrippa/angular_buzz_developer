@@ -1,0 +1,739 @@
+{
+  "metadata": {
+    "area": "desenvolvimento-web",
+    "subject": "responsividade",
+    "name": "Design Responsivo",
+    "description": "Design responsivo, media queries, mobile-first e otimização para diferentes dispositivos.",
+    "difficulty": "intermediate",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 30,
+    "tags": [
+      "mobile-first",
+      "media-queries",
+      "layout",
+      "otimizacao"
+    ]
+  },
+  "questions": [
+    {
+      "id": 501,
+      "question": "Qual é o propósito do atributo 'media' em uma tag <link> no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Aplicar estilos com base no tipo de dispositivo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Adicionar metadados ao documento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definir o caminho para o arquivo CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 502,
+      "question": "O que é o conceito de 'responsividade' no design web?",
+      "options": [
+        {
+          "id": 1,
+          "name": "É a capacidade de um site se ajustar a diferentes tamanhos de tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "É a velocidade de carregamento de um site",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "É a capacidade de um site responder a eventos do usuário",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 503,
+      "question": "O que é responsividade em desenvolvimento web?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A capacidade de um site se adaptar a diferentes tamanhos de tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para aumentar a velocidade de carregamento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para criar animações interativas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 504,
+      "question": "Qual a função das media queries no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitir a aplicação de estilos diferentes com base no tamanho da tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Criar animações CSS avançadas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definir a estrutura HTML de uma página",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 505,
+      "question": "O que significa o conceito de 'mobile-first'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Desenvolver primeiro para dispositivos móveis e depois para telas maiores",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Criar sites exclusivamente para dispositivos móveis",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Priorizar animações em dispositivos móveis",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 506,
+      "question": "Qual propriedade CSS pode ser usada para tornar imagens responsivas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`max-width: 100%`",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "`position: absolute`",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "`display: block`",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 507,
+      "question": "O que é um layout fluido?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um layout que se ajusta dinamicamente ao tamanho da tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um layout fixo que não muda de tamanho",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um layout baseado apenas em pixels",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 508,
+      "question": "Qual unidade de medida é mais recomendada para fontes em sites responsivos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "rem",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "px",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "cm",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 509,
+      "question": "O que é viewport no contexto de responsividade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A área visível de um site em um dispositivo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um elemento HTML usado para criar menus",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma propriedade CSS para definir cores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 510,
+      "question": "Qual meta tag é essencial para tornar um site responsivo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`<meta name='viewport' content='width=device-width, initial-scale=1.0'>`",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "`<meta name='responsive' content='true'>`",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "`<meta name='mobile' content='yes'>`",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 511,
+      "question": "O que é um breakpoint em design responsivo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um ponto onde o layout muda com base no tamanho da tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um erro de código que impede a responsividade",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para criar animações CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 512,
+      "question": "Qual técnica pode ser usada para esconder elementos em telas menores?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`display: none;`",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "`visibility: hidden;`",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "`opacity: 0;`",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 513,
+      "question": "O que é um layout adaptativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um layout que usa pontos de quebra para se ajustar a diferentes dispositivos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um layout fixo que não muda de tamanho",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um layout baseado apenas em pixels",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 514,
+      "question": "Qual a diferença entre design responsivo e design adaptativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O design responsivo usa layouts fluidos, enquanto o adaptativo usa pontos de quebra fixos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ambos são exatamente iguais",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "O design adaptativo é usado apenas para aplicativos móveis",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 515,
+      "question": "Como o Flexbox pode ajudar na responsividade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite organizar elementos de forma flexível e adaptável ao tamanho da tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Cria animações responsivas automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Define a largura fixa dos elementos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 516,
+      "question": "O que é a propriedade `object-fit` no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Define como uma imagem deve se ajustar ao seu contêiner",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define a opacidade de um elemento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Cria sombras em elementos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 517,
+      "question": "Qual a importância do `min-width` e `max-width` na responsividade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitem definir limites mínimos e máximos para o tamanho de um elemento",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aumentam a velocidade de carregamento da página",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criam animações automáticas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 518,
+      "question": "Como o Grid Layout pode ser usado para criar layouts responsivos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite definir áreas flexíveis que se ajustam ao tamanho da tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Cria animações responsivas automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Define a largura fixa dos elementos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 519,
+      "question": "O que é a técnica de 'lazy loading' e como ela impacta a responsividade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Carrega imagens e conteúdos apenas quando necessários, melhorando o desempenho",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Cria animações responsivas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Aumenta o tamanho das imagens para telas maiores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "responsividade",
+      "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
+    },
+    {
+      "id": 520,
+      "question": "O que é Container Queries no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Media queries baseadas no tamanho do container pai em vez da viewport",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Consultas para bancos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Seletores CSS avançados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Container Queries permitem aplicar estilos baseados no tamanho do container, não da tela.",
+      "category": "responsividade"
+    },
+    {
+      "id": 521,
+      "question": "O que é a técnica de 'Mobile First' em CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Escrever CSS para dispositivos móveis primeiro, depois expandir para telas maiores",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Criar apenas versões mobile do site",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Otimizar apenas imagens para mobile",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Mobile First utiliza min-width media queries, começando pelo design móvel e expandindo para desktop.",
+      "category": "responsividade"
+    },
+    {
+      "id": 522,
+      "question": "O que são Progressive Web Apps (PWA) em relação à responsividade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apps que se adaptam automaticamente a qualquer dispositivo e funcionam offline",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apps que funcionam apenas em desktop",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apps que requerem instalação obrigatória",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "PWAs são responsivas por natureza e oferecem experiência consistente em todos os dispositivos.",
+      "category": "responsividade"
+    },
+    {
+      "id": 523,
+      "question": "O que é o princípio 'Content First' no design responsivo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Priorizar o conteúdo na definição de breakpoints e layout",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Sempre colocar muito conteúdo na página",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usar apenas texto sem imagens",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Content First significa que os breakpoints devem ser definidos baseados no conteúdo, não em dispositivos específicos.",
+      "category": "responsividade"
+    },
+    {
+      "id": 524,
+      "question": "O que é Responsive Typography e como implementá-la?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Técnica que ajusta tamanhos de fonte baseado no tamanho da tela usando unidades como vw, rem ou clamp",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Usar sempre pixels para definir fontes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Manter o mesmo tamanho de fonte em todos os dispositivos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Responsive Typography usa unidades flexíveis e funções CSS para adaptar textos a diferentes telas.",
+      "category": "responsividade"
+    },
+    {
+      "id": 525,
+      "question": "O que são Critical CSS e como melhoram a responsividade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "CSS essencial para renderizar a parte visível da página rapidamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "CSS que causa erros críticos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "CSS usado apenas para debugging",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Critical CSS extrai e inline os estilos necessários para renderizar o conteúdo above-the-fold.",
+      "category": "responsividade"
+    },
+    {
+      "id": 526,
+      "question": "Como implementar imagens responsivas com multiple formats (WebP, AVIF)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando elemento <picture> com <source> para diferentes formatos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas convertendo todas as imagens para JPG",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando apenas CSS background-image",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O elemento picture permite definir múltiplos formatos com fallbacks automáticos.",
+      "category": "responsividade"
+    },
+    {
+      "id": 527,
+      "question": "O que é Responsive Web Design (RWD) versus Adaptive Web Design (AWD)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "RWD usa layouts fluidos, AWD usa layouts fixos com breakpoints específicos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São exatamente a mesma coisa",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "AWD é usado apenas para mobile",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "RWD flui continuamente, enquanto AWD detecta o dispositivo e serve layout específico.",
+      "category": "responsividade"
+    },
+    {
+      "id": 528,
+      "question": "Como otimizar performance em dispositivos móveis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reduzindo bundle size, lazy loading, otimizando imagens e minimizando reflows",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Adicionando mais animações CSS",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando apenas JavaScript para todos os layouts",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Mobile performance requer otimizações específicas devido a hardware limitado.",
+      "category": "responsividade"
+    },
+    {
+      "id": 529,
+      "question": "O que são Progressive Enhancement e Graceful Degradation?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Progressive Enhancement constrói de base simples para cima, Graceful Degradation remove features avançadas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São técnicas apenas para design visual",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "São métodos de compressão de imagens",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Progressive Enhancement garante funcionalidade básica para todos, com melhorias incrementais.",
+      "category": "responsividade"
+    },
+    {
+      "id": 530,
+      "question": "Como testar efetivamente a responsividade de uma aplicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando DevTools, dispositivos reais, ferramentas como BrowserStack e testes automatizados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas testando no desktop",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Confiando apenas no design mockup",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Teste de responsividade requer múltiplas ferramentas e dispositivos para cobertura completa.",
+      "category": "responsividade"
+    }
+  ]
+}

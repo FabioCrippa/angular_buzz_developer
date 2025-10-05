@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "metodologias",
+    "subject": "ci-cd",
+    "name": "CI/CD & Deploy",
+    "description": "Integração e entrega contínua, pipelines automatizados e deploy.",
+    "difficulty": "intermediate",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "pipeline",
+      "automacao",
+      "deploy",
+      "qualidade"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1101,
+      "question": "O que significa CI no contexto de desenvolvimento de software?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Continuous Integration",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Code Injection",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Centralized Infrastructure",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1102,
+      "question": "Qual é o objetivo principal da entrega contínua (CD)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executar testes manuais",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Automatizar o processo de deploy com segurança e frequência",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar atualizações no sistema",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1103,
+      "question": "Qual ferramenta é comumente usada para pipelines de CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Jenkins",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Photoshop",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Excel",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1104,
+      "question": "Em um pipeline CI/CD, o que geralmente acontece após o commit de código?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O código é ignorado até o próximo deploy manual",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "O pipeline é disparado para compilar, testar e preparar o deploy",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "O código é enviado diretamente para produção",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1105,
+      "question": "Qual é uma vantagem do uso de CI/CD em projetos de software?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Redução da frequência de deploys",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Maior agilidade e confiabilidade nas entregas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Eliminação completa de bugs",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1106,
+      "question": "O que é um pipeline de CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um conjunto de comandos para estilizar o código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma sequência automatizada de etapas para compilar, testar e implantar software",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um script para limpar o cache do servidor",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1107,
+      "question": "Qual prática ajuda a evitar conflitos durante a integração contínua?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Commits frequentes e pequenos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Deploy manual em produção",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uso exclusivo de branches longos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1108,
+      "question": "O que é um artefato em um processo de CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um arquivo gerado durante o build que pode ser implantado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um erro de compilação",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um script de teste automatizado",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1109,
+      "question": "Qual é o papel dos testes automatizados em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Verificar se o código está formatado corretamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Garantir que novas alterações não quebrem funcionalidades existentes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Reduzir o tempo de deploy manual",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1110,
+      "question": "O que é um ambiente de staging em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um ambiente de produção com dados reais",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um ambiente de testes que simula a produção",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um ambiente usado apenas para desenvolvimento local",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "ci-cd",
+      "explanation": "CI/CD automatiza integração, testes e deploy de código, reduzindo erros e acelerando time-to-market."
+    },
+    {
+      "id": 1111,
+      "question": "Qual é a diferença entre Continuous Integration e Continuous Deployment?",
+      "options": [
+        {
+          "id": 1,
+          "name": "CI integra código frequentemente, CD automatiza deploy para produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São exatamente a mesma coisa",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "CI é para backend, CD é para frontend",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CI foca na integração contínua de código, enquanto CD automatiza o deploy até produção.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1112,
+      "question": "O que são gates de qualidade (quality gates) em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Critérios que devem ser atendidos antes do código prosseguir no pipeline",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Portões físicos nos servidores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ferramentas para testar interfaces",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Quality gates verificam cobertura de testes, code quality e outros critérios antes de permitir deploy.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1113,
+      "question": "O que é Blue-Green deployment em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estratégia que mantém dois ambientes idênticos para switch instantâneo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Deploy usando apenas cores azul e verde no UI",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipo de teste automatizado",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Blue-Green permite deploy sem downtime alternando entre dois ambientes de produção.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1114,
+      "question": "Qual é o papel dos feature flags em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitem ativar/desativar funcionalidades sem redeploy",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Marcam código como feature branch",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definem configurações de build",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Feature flags facilitam deploy contínuo e rollback de features sem afetar o pipeline.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1115,
+      "question": "O que é rollback automático em pipelines CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reversão automática para versão anterior quando deploy falha",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Backup automático do código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Reset do banco de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Rollback automático detecta falhas em produção e reverte para a versão estável anterior.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1116,
+      "question": "Qual é a importância do paralelismo em pipelines CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executa múltiplas tarefas simultaneamente para reduzir tempo de build",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Executa testes apenas em produção",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Impede que múltiplos desenvolvedores façam commit",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Paralelização de testes, builds e checks reduz significativamente o tempo do pipeline.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1117,
+      "question": "O que são environment variables em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Variáveis que armazenam configurações específicas de cada ambiente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Variáveis que definem a cor do ambiente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Variáveis para configurar o hardware",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Environment variables permitem diferentes configurações entre dev, staging e produção.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1118,
+      "question": "Qual é o conceito de 'fail fast' em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Parar o pipeline imediatamente quando um erro é detectado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Fazer deploy o mais rápido possível",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Falhar propositalmente para testar rollback",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Fail fast economiza tempo e recursos parando execução assim que um problema é detectado.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1119,
+      "question": "O que são smoke tests em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Testes básicos que verificam se a aplicação está funcionando após deploy",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Testes de performance sob carga",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Testes que verificam a qualidade do ar",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Smoke tests fazem verificações rápidas das funcionalidades críticas após deploy.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1120,
+      "question": "Qual é a função do cache em pipelines CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reutilizar dependências e artefatos para acelerar builds",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Armazenar logs de execução",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Fazer backup do código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Cache evita re-download de dependências e recompilação desnecessária entre execuções.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1121,
+      "question": "O que é Canary deployment em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Deploy gradual para pequena porcentagem de usuários antes do rollout completo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Deploy usando pássaros como tema",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Deploy apenas durante o dia",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Canary deployment reduz riscos testando com subconjunto de usuários reais.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1122,
+      "question": "Qual é a importância da auditoria em pipelines CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Rastreabilidade de mudanças e conformidade com regulamentações",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Verificar apenas a qualidade do código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Testar a performance da aplicação",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Auditoria mantém histórico completo de deployments para compliance e troubleshooting.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1123,
+      "question": "O que são deployment slots em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ambientes temporários para testar deploys antes de afetar produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Horários específicos para fazer deploy",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Slots de memória para aplicações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Deployment slots permitem teste e aquecimento da nova versão antes do swap com produção.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1124,
+      "question": "Qual é o papel da observabilidade em CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Monitorar métricas e logs para detectar problemas em deployments",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Observar manualmente cada deploy",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Fazer screenshots das aplicações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Observabilidade fornece insights para detectar e diagnosticar problemas rapidamente.",
+      "category": "ci-cd"
+    },
+    {
+      "id": 1125,
+      "question": "O que é GitFlow em relação ao CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estratégia de branching que se integra com pipelines para diferentes tipos de release",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ferramenta para controle de versão",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Protocolo de comunicação Git",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "GitFlow define como branches (feature, develop, release) devem triggerar diferentes pipelines.",
+      "category": "ci-cd"
+    }
+  ]
+}

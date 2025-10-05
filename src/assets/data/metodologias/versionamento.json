@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "metodologias",
+    "subject": "versionamento",
+    "name": "Git & Controle de Versão",
+    "description": "Git, controle de versão, branches, merges e workflow colaborativo.",
+    "difficulty": "intermediate",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "git",
+      "branches",
+      "colaboracao",
+      "workflow"
+    ]
+  },
+  "questions": [
+    {
+      "id": 801,
+      "question": "Qual é o comando para criar um branch no Git?",
+      "options": [
+        {
+          "id": 1,
+          "name": "git branch <nome>",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "git create <nome>",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "git new <nome>",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 802,
+      "question": "O que é versionamento de código?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um processo para acompanhar e registrar alterações no código-fonte",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica para compactar arquivos de código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método de criptografia para proteger código-fonte",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 803,
+      "question": "Qual a diferença entre versionamento centralizado e distribuído?",
+      "options": [
+        {
+          "id": 1,
+          "name": "No centralizado, há um único repositório central; no distribuído, cada usuário tem uma cópia completa",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "No distribuído, os arquivos são armazenados localmente sem necessidade de um servidor",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "No centralizado, cada usuário tem uma cópia completa do repositório",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 804,
+      "question": "O que é um commit no controle de versão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma alteração registrada no histórico do repositório",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um backup automático do código-fonte",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um comando para excluir arquivos do repositório",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 805,
+      "question": "Como funcionam os branches em sistemas de versionamento como Git?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitem trabalhar em diferentes versões do código sem afetar a principal",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São cópias permanentes do código que não podem ser alteradas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "São arquivos temporários que desaparecem após o commit",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 806,
+      "question": "O que é um merge no Git?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A junção de alterações de diferentes branches em um único branch",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um comando para excluir branches antigos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para compactar commits",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 807,
+      "question": "Por que mensagens de commit bem escritas são importantes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilitam o entendimento das alterações feitas no código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ajudam a reduzir o tamanho do repositório",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "São obrigatórias para realizar um commit",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 808,
+      "question": "O que são tags em sistemas de versionamento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Marcadores usados para identificar versões específicas do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Arquivos temporários gerados pelo sistema de controle de versão",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Comentários adicionados ao código para facilitar a leitura",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 809,
+      "question": "Como o versionamento de código facilita o trabalho colaborativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite que vários desenvolvedores trabalhem simultaneamente sem conflitos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Impede que diferentes usuários acessem o mesmo código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Remove automaticamente código duplicado",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 810,
+      "question": "O que é um repositório remoto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um repositório armazenado em um servidor acessível por vários usuários",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma cópia local do código-fonte",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um backup automático do código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 811,
+      "question": "Quais são as melhores práticas para evitar conflitos ao trabalhar com versionamento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Realizar commits frequentes e manter o código atualizado com o repositório remoto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Evitar o uso de branches",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Nunca realizar merges",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 812,
+      "question": "O que é um sistema de controle de versão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma ferramenta que gerencia e registra alterações no código-fonte",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um software para testar código antes da implantação",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método para compactar arquivos de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 813,
+      "question": "Qual a função do comando `git clone`?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar um novo repositório local a partir de um remoto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Excluir um repositório remoto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Mesclar alterações entre branches",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 814,
+      "question": "O que é um rebase no Git?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma técnica para reescrever o histórico de commits",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um comando para excluir branches antigos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma forma de compactar arquivos no repositório",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 815,
+      "question": "Qual a diferença entre `git pull` e `git fetch`?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`git pull` baixa e aplica as alterações, enquanto `git fetch` apenas baixa sem aplicar",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ambos os comandos fazem exatamente a mesma coisa",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "`git fetch` exclui arquivos antigos do repositório",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 816,
+      "question": "O que é um commit revertido?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um commit que desfaz alterações anteriores sem remover o histórico",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um commit que exclui permanentemente arquivos do repositório",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um commit que mescla alterações de diferentes branches",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 817,
+      "question": "Qual a função do arquivo `.gitignore`?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Definir quais arquivos devem ser ignorados pelo Git",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Excluir arquivos do repositório remoto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criar um backup automático do código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 818,
+      "question": "O que acontece quando usamos `git stash`?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Salva temporariamente alterações não commitadas para retomá-las depois",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Exclui todas as alterações não commitadas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Cria um novo branch automaticamente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 819,
+      "question": "Qual a função do comando `git diff`?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Exibir diferenças entre versões do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Excluir arquivos do repositório",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criar um novo commit automaticamente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 820,
+      "question": "O que é um fork em sistemas de versionamento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma cópia independente de um repositório remoto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um comando para excluir branches antigos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para compactar commits",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 821,
+      "question": "Qual a importância do versionamento de código em projetos colaborativos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita o rastreamento de alterações e colaboração entre desenvolvedores",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Impede que diferentes usuários acessem o mesmo código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Remove automaticamente código duplicado",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "versionamento",
+      "explanation": "Controle de versão permite rastrear mudanças no código, colaborar em equipe e manter histórico de desenvolvimento."
+    },
+    {
+      "id": 822,
+      "question": "Qual comando Git é usado para ver o histórico de commits?",
+      "options": [
+        {
+          "id": 1,
+          "name": "git log",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "git history",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "git show",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O comando 'git log' exibe o histórico de commits do repositório atual.",
+      "category": "versionamento"
+    },
+    {
+      "id": 823,
+      "question": "O que faz o comando 'git cherry-pick'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Aplica mudanças de commits específicos de outro branch",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Remove commits do histórico",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Cria um novo branch",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Cherry-pick permite aplicar mudanças de commits específicos sem fazer merge completo do branch.",
+      "category": "versionamento"
+    },
+    {
+      "id": 824,
+      "question": "O que significa 'HEAD' no Git?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ponteiro para o commit atual onde você está trabalhando",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "O primeiro commit do repositório",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "O branch principal do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "HEAD é um ponteiro móvel que indica qual commit está atualmente verificado no workspace.",
+      "category": "versionamento"
+    },
+    {
+      "id": 825,
+      "question": "Qual comando é usado para desfazer o último commit mantendo as alterações?",
+      "options": [
+        {
+          "id": 1,
+          "name": "git reset --soft HEAD~1",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "git delete HEAD",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "git undo commit",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "git reset --soft HEAD~1 desfaz o último commit mas mantém as alterações staged.",
+      "category": "versionamento"
+    }
+  ]
+}

@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "design",
+    "subject": "figma",
+    "name": "Figma & Design Systems",
+    "description": "Design colaborativo, prototipagem, design systems e handoff para desenvolvimento.",
+    "difficulty": "advanced",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "design",
+      "prototipagem",
+      "colaboracao",
+      "handoff"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1501,
+      "question": "O que é o Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma ferramenta de edição de vídeo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma plataforma de design colaborativo baseada em nuvem",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um sistema de gerenciamento de banco de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1502,
+      "question": "Qual recurso do Figma permite criar componentes reutilizáveis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Frames",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Prototypes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Components",
+          "alias": "c"
+        }
+      ],
+      "correct": "c",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1503,
+      "question": "O que é o recurso 'Auto Layout' no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma forma de aplicar estilos CSS automaticamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma funcionalidade que organiza elementos dinamicamente com base em regras de layout",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um plugin para exportar imagens",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1504,
+      "question": "Qual vantagem do Figma em relação a ferramentas tradicionais de design?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Funciona apenas offline",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Permite colaboração em tempo real entre membros da equipe",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Requer instalação local obrigatória",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1505,
+      "question": "O que é o FigJam dentro do ecossistema Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma ferramenta de prototipagem avançada",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma extensão para exportar código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma ferramenta colaborativa para brainstorming e diagramas",
+          "alias": "c"
+        }
+      ],
+      "correct": "c",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1506,
+      "question": "Qual é a função do recurso 'Prototype' no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar animações para vídeos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Simular a navegação entre telas e interações",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Exportar o projeto para código HTML",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1507,
+      "question": "Como os desenvolvedores geralmente acessam especificações de design no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Através do modo 'Inspect'",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Exportando o projeto como PDF",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Copiando manualmente os estilos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1508,
+      "question": "O que são 'Variants' em Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Versões alternativas de arquivos exportados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Componentes com diferentes estados agrupados em um único elemento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Plugins para alterar temas",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1509,
+      "question": "Qual é o benefício de usar estilos compartilhados no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite alterar o layout automaticamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Facilita a consistência visual e manutenção do design",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Impede que outros editem o projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1510,
+      "question": "Como é possível colaborar em tempo real no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Compartilhando o arquivo via e-mail",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Convidando membros para editar diretamente no navegador",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Exportando o projeto para o Google Drive",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "figma",
+      "explanation": "Figma é uma ferramenta de design colaborativo baseada em nuvem para criar interfaces, protótipos e design systems."
+    },
+    {
+      "id": 1511,
+      "question": "Como criar um Design System eficiente no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando components, variants, styles e design tokens organizados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Copiando e colando elementos manualmente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criando arquivos separados para cada página",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Um Design System no Figma requer organização sistemática de components, variants e styles reutilizáveis.",
+      "category": "figma"
+    },
+    {
+      "id": 1512,
+      "question": "O que são Constraints no Figma e como usá-las?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Regras que definem como elementos se comportam quando o frame é redimensionado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Limitações de tamanho de arquivo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Restrições de acesso ao projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Constraints permitem criar layouts responsivos definindo como elementos se adaptam a mudanças de tamanho.",
+      "category": "figma"
+    },
+    {
+      "id": 1513,
+      "question": "Como otimizar a performance de arquivos grandes no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando instances, otimizando imagens e organizando em páginas separadas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Duplicando todos os componentes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Mantendo tudo em uma única página",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Performance no Figma melhora com uso estratégico de instances, compressão de imagens e organização modular.",
+      "category": "figma"
+    },
+    {
+      "id": 1514,
+      "question": "O que é o recurso 'Smart Animate' no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Transições automáticas entre frames baseadas em propriedades similares",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Animações de loading automáticas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Redimensionamento inteligente de elementos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Smart Animate cria transições fluidas detectando automaticamente elementos correspondentes entre frames.",
+      "category": "figma"
+    },
+    {
+      "id": 1515,
+      "question": "Como implementar Dark Mode em um Design System no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando variables/tokens de cor e component variants",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Duplicando todos os components manualmente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criando arquivos separados para cada tema",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Dark Mode eficiente usa variables para cores e variants para alternar entre temas sem duplicação.",
+      "category": "figma"
+    },
+    {
+      "id": 1516,
+      "question": "O que são Figma Plugins e como podem acelerar o workflow?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Extensões que automatizam tarefas repetitivas e integram ferramentas externas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Componentes premium pagos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Templates prontos para usar",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Plugins estendem funcionalidades do Figma automatizando tarefas como geração de conteúdo, exportação e integração com código.",
+      "category": "figma"
+    },
+    {
+      "id": 1517,
+      "question": "Como configurar um handoff eficiente para desenvolvedores no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando mode 'Dev Mode', documentação clara e specs automatizadas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Exportando tudo como imagens PNG",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Enviando screenshots por email",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Dev Mode no Figma fornece specs automáticas, assets otimizados e integração com ferramentas de desenvolvimento.",
+      "category": "figma"
+    },
+    {
+      "id": 1518,
+      "question": "O que são Figma Variables e como revolucionam Design Systems?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sistema de tokens que permite mudanças globais e temas dinâmicos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Variáveis matemáticas para cálculos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Elementos que mudam de cor aleatoriamente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Variables permitem criar design tokens reutilizáveis que se propagam automaticamente por todo o design system.",
+      "category": "figma"
+    },
+    {
+      "id": 1519,
+      "question": "Como criar protótipos interativos avançados no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Combinando interactions, overlays, smart animate e component states",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas linkando frames com cliques simples",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando apenas hover effects",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Protótipos avançados usam múltiplas ferramentas de interação para simular experiências reais do usuário.",
+      "category": "figma"
+    },
+    {
+      "id": 1520,
+      "question": "O que é Boolean Operations no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Operações para combinar, subtrair e interseccionar formas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Operações lógicas true/false",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Configurações de privacidade",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Boolean Operations (Union, Subtract, Intersect, Exclude) permitem criar formas complexas combinando shapes básicas.",
+      "category": "figma"
+    },
+    {
+      "id": 1521,
+      "question": "Como versionar e gerenciar mudanças em projetos Figma grandes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando branching, version history e library publishing",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Salvando cópias locais manualmente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não é possível versionar no Figma",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Figma oferece ferramentas de versionamento profissional incluindo branches para trabalho paralelo e histórico detalhado.",
+      "category": "figma"
+    },
+    {
+      "id": 1522,
+      "question": "O que são Figma Libraries e como organizar assets reutilizáveis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Bibliotecas compartilhadas de components, styles e assets entre projetos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Coleções de templates gratuitos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Arquivos de backup automático",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Libraries permitem compartilhar e sincronizar components e styles entre múltiplos projetos da organização.",
+      "category": "figma"
+    },
+    {
+      "id": 1523,
+      "question": "Como implementar acessibilidade (A11y) no design usando Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Verificando contraste, usando plugins A11y e documentando estados de foco",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas usando cores vibrantes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Acessibilidade não é responsabilidade do design",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Design acessível no Figma requer atenção ao contraste, hierarquia clara e documentação de estados interativos.",
+      "category": "figma"
+    },
+    {
+      "id": 1524,
+      "question": "O que é Design Tokenization no contexto Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Processo de converter valores de design em tokens reutilizáveis e exportáveis",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Criptografia de arquivos de design",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Pagamento por uso de recursos premium",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Design tokens criam bridge entre design e código, exportando valores para uso direto no desenvolvimento.",
+      "category": "figma"
+    },
+    {
+      "id": 1525,
+      "question": "Como configurar um workflow colaborativo eficiente no Figma?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Definindo permissões, comentários estruturados e processos de review",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Permitindo que todos editem tudo livremente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Trabalhando apenas offline",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Colaboração eficiente requer estrutura: roles claros, processo de feedback organizado e versionamento disciplinado.",
+      "category": "figma"
+    }
+  ]
+}

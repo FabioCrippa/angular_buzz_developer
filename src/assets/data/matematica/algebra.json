@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "matematica",
+    "subject": "algebra",
+    "name": "Álgebra & Equações",
+    "description": "Equações, sistemas, funções e resolução de problemas algébricos.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "álgebra",
+      "equações",
+      "matemática",
+      "funções"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual é o valor de x na equação 2x + 5 = 13?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 5",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 6",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "2x + 5 = 13 → 2x = 13 - 5 → 2x = 8 → x = 4",
+      "studyTip": "Sempre isole a variável: passe números para um lado, variáveis para outro.",
+      "id": 3002,
+      "category": "algebra",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O sistema {x + y = 7, x - y = 1} tem solução:",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3, y = 4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 4, y = 3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 5, y = 2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 2, y = 5",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Somando as equações: 2x = 8 → x = 4. Substituindo: 4 + y = 7 → y = 3",
+      "studyTip": "Método da adição: some as equações para eliminar uma variável.",
+      "id": 3003,
+      "category": "algebra",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma função do 1º grau sempre tem como gráfico:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma parábola",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uma reta",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uma hipérbole",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uma circunferência",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Função do 1º grau f(x) = ax + b sempre gera uma reta no plano cartesiano.",
+      "studyTip": "1º grau = reta, 2º grau = parábola, 3º grau = cúbica.",
+      "id": 3004,
+      "category": "algebra",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 3x - 2 = 7, então 6x - 4 é igual a:",
+      "options": [
+        {
+          "id": 1,
+          "name": "12",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "14",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "16",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "18",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "3x - 2 = 7, então 3x = 9. Logo, 6x = 18 e 6x - 4 = 18 - 4 = 14",
+      "studyTip": "Observe relações entre expressões para resolver mais rapidamente.",
+      "id": 3005,
+      "category": "algebra",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A equação x² - 5x + 6 = 0 tem raízes:",
+      "options": [
+        {
+          "id": 1,
+          "name": "2 e 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "1 e 6",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "-2 e -3",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "0 e 5",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Fatorando: (x-2)(x-3) = 0, então x = 2 ou x = 3. Verificação: 2+3=5 e 2×3=6 ✓",
+      "studyTip": "Para x² + bx + c = 0, procure dois números que somem -b e multipliquem c.",
+      "id": 3006,
+      "category": "algebra",
+      "difficulty": "fundamental"
+    }
+  ]
+}

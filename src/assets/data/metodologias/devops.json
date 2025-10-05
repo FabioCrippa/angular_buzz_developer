@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "metodologias",
+    "subject": "devops",
+    "name": "DevOps & Automação",
+    "description": "DevOps, automação, infraestrutura como código e integração contínua.",
+    "difficulty": "intermediate",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "automacao",
+      "infraestrutura",
+      "integracao",
+      "deploy"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1001,
+      "question": "Qual é o comando para fazer deploy em um pipeline DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "dep deploy",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "git deploy",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "dep push",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1002,
+      "question": "O que é DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma cultura e conjunto de práticas que integram desenvolvimento e operações",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um framework para desenvolvimento de software",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma linguagem de programação para automação",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1003,
+      "question": "Quais são os principais benefícios do DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Entrega contínua, maior colaboração e automação de processos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Redução da necessidade de testes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Eliminação da necessidade de infraestrutura",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1004,
+      "question": "O que é integração contínua (CI) no DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um processo de automação para integrar código frequentemente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica para testar código manualmente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método para criar bancos de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1005,
+      "question": "O que é entrega contínua (CD) no DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Automatização do processo de entrega de software para produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica para criar interfaces gráficas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método para gerenciar bancos de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1006,
+      "question": "Qual é a importância da automação no DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reduz erros humanos e melhora a eficiência dos processos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Elimina a necessidade de testes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Substitui completamente os desenvolvedores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1007,
+      "question": "O que é um pipeline de CI/CD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um conjunto de etapas automatizadas para integração e entrega contínua",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para criar interfaces de usuário",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para gerenciar bancos de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1008,
+      "question": "Quais são algumas ferramentas populares usadas em DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Jenkins, Docker, Kubernetes, Ansible e Git",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Photoshop, Illustrator e After Effects",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Excel, Word e PowerPoint",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1009,
+      "question": "O que é monitoramento no DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A prática de acompanhar o desempenho e a saúde dos sistemas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para criar relatórios financeiros",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para gerenciar bancos de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1010,
+      "question": "O que é infraestrutura como código (IaC)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma abordagem para gerenciar infraestrutura por meio de código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para criar interfaces gráficas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para gerenciar bancos de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1011,
+      "question": "Qual é o papel do DevOps na segurança?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Integrar práticas de segurança ao longo do ciclo de desenvolvimento",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Eliminar a necessidade de testes de segurança",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Substituir completamente os analistas de segurança",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "devops",
+      "explanation": "DevOps integra desenvolvimento e operações para automatizar deploys, melhorar colaboração e acelerar entregas."
+    },
+    {
+      "id": 1012,
+      "question": "O que é Infrastructure as Code (IaC) no DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Gerenciar infraestrutura através de arquivos de configuração versionados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Escrever código apenas para servidores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usar código para substituir hardware",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "IaC permite provisionar e gerenciar infraestrutura usando código, tornando o processo reproduzível e versionado.",
+      "category": "devops"
+    },
+    {
+      "id": 1013,
+      "question": "O que é um Container no contexto DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Pacote que inclui aplicação e suas dependências isoladamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Pasta para armazenar arquivos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipo de banco de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Containers fornecem ambiente consistente e isolado para aplicações, facilitando deploy e escalabilidade.",
+      "category": "devops"
+    },
+    {
+      "id": 1014,
+      "question": "O que é Kubernetes no ecossistema DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Plataforma de orquestração de containers",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Linguagem de programação",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Banco de dados distribuído",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Kubernetes automatiza deploy, escalonamento e gerenciamento de aplicações em containers.",
+      "category": "devops"
+    },
+    {
+      "id": 1015,
+      "question": "O que é Blue-Green Deployment?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estratégia de deploy que mantém dois ambientes idênticos para troca rápida",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Tipo de teste de interface",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Método de backup de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Blue-Green permite rollback instantâneo alternando tráfego entre dois ambientes de produção.",
+      "category": "devops"
+    },
+    {
+      "id": 1016,
+      "question": "O que é GitOps e como funciona?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Metodologia que usa Git como fonte única da verdade para infraestrutura e deployments",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ferramenta para gerenciar repositórios Git",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Sistema operacional baseado em Git",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "GitOps automatiza deployments usando Git como interface declarativa para gerenciar infraestrutura.",
+      "category": "devops"
+    },
+    {
+      "id": 1017,
+      "question": "O que é Helm no contexto Kubernetes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Gerenciador de pacotes para Kubernetes que facilita instalação de aplicações",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Interface gráfica para Kubernetes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tipo especial de container",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Helm usa charts (templates) para definir, instalar e atualizar aplicações Kubernetes complexas.",
+      "category": "devops"
+    },
+    {
+      "id": 1018,
+      "question": "O que é Canary Deployment?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estratégia de deploy que libera gradualmente para uma pequena porção de usuários",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Deploy que acontece apenas durante a madrugada",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Backup automático antes do deploy",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Canary deployment reduz riscos testando novas versões com um subconjunto de usuários antes do rollout completo.",
+      "category": "devops"
+    },
+    {
+      "id": 1019,
+      "question": "O que é Prometheus no ecossistema DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sistema de monitoramento e alertas com time-series database",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ferramenta de versionamento de código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Container runtime",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Prometheus coleta métricas de aplicações e infraestrutura, fornecendo alertas e dados para análise.",
+      "category": "devops"
+    },
+    {
+      "id": 1020,
+      "question": "O que é Service Mesh?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Camada de infraestrutura que gerencia comunicação entre microserviços",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Rede física entre servidores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Interface web para gerenciar serviços",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Service Mesh como Istio fornece descoberta de serviços, balanceamento de carga, criptografia e observabilidade.",
+      "category": "devops"
+    },
+    {
+      "id": 1021,
+      "question": "O que é Terraform?",
+      "options": [
+        {
+          "id": 1,
+          "name": "ferramenta de Infrastructure as Code para provisionar recursos em múltiplas clouds",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Sistema de containerização",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Linguagem de programação",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Terraform usa linguagem declarativa (HCL) para definir infraestrutura como código de forma reproduzível.",
+      "category": "devops"
+    },
+    {
+      "id": 1022,
+      "question": "O que é Ansible?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ferramenta de automação para configuração e gerenciamento de sistemas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Banco de dados distribuído",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Framework para desenvolvimento web",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Ansible usa playbooks YAML para automatizar instalação, configuração e deployment de software.",
+      "category": "devops"
+    },
+    {
+      "id": 1023,
+      "question": "O que é um Reverse Proxy?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Servidor intermediário que encaminha requests de clientes para servidores backend",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Backup dos dados do servidor",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Firewall para proteger aplicações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Reverse proxy como Nginx distribui carga, fornece SSL termination e cache para aplicações.",
+      "category": "devops"
+    },
+    {
+      "id": 1024,
+      "question": "O que é Load Balancing?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Distribuição de requisições entre múltiplos servidores para otimizar recursos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Processo de backup de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Otimização de código JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Load balancers distribuem tráfego usando algoritmos como round-robin, least connections ou weighted.",
+      "category": "devops"
+    },
+    {
+      "id": 1025,
+      "question": "O que é Observability em DevOps?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Capacidade de entender o estado interno de um sistema através de logs, métricas e traces",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Processo de revisar código manualmente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Técnica para otimizar banco de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Observability vai além do monitoramento, permitindo fazer perguntas sobre o comportamento do sistema.",
+      "category": "devops"
+    }
+  ]
+}

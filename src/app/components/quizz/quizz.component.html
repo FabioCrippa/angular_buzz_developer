@@ -2,189 +2,217 @@
   Container principal do quiz. Utiliza uma classe para facilitar a estilização e garantir responsividade.
 -->
 <div class="quiz-container">
+  <!-- ✅ LOADING STATE -->
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Carregando questões...</p>
+  </div>
+
+  <!-- ✅ ERROR STATE -->
+  <div *ngIf="hasError" class="error-container">
+    <div class="error-content">
+      <i class="fas fa-exclamation-triangle"></i>
+      <h3>Erro ao carregar questões</h3>
+      <p>{{ errorMessage }}</p>
+      <button class="btn btn-primary" (click)="reloadQuestions()">
+        <i class="fas fa-refresh"></i>
+        Tentar Novamente
+      </button>
+    </div>
+  </div>
+
+  <!-- ✅ QUIZ ACTIVE STATE -->
+  <div *ngIf="!isLoading && !hasError && !quizCompleted && currentQuestion" class="quiz-active">
     
-    <!-- ✅ HEADER DO QUIZ -->
+    <!-- ✅ HEADER -->
     <div class="quiz-header">
-        <div class="quiz-info">
-            <div class="quiz-category">
-                <span>{{ title }}</span>
-            </div>
-            <div class="quiz-progress" *ngIf="!finished">
-                Questão {{ questionIndex + 1 }} de {{ questions.length }} ({{ progress }}%)
-            </div>
+      <div class="quiz-info">
+        <h1>{{ title }}</h1>
+        <div class="question-counter">
+          <span class="current">{{ currentQuestionIndex + 1 }}</span>
+          <span class="separator">de</span>
+          <span class="total">{{ totalQuestions }}</span>
         </div>
-        <div class="quiz-score" *ngIf="!finished">
-            {{ progress }}%
+      </div>
+      
+      <!-- ✅ PROGRESS BAR -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="progressPercentage"></div>
         </div>
+        <span class="progress-text">{{ Math.round(progressPercentage) }}%</span>
+      </div>
     </div>
 
-    <!-- ✅ YOUTUBE PLAYER (OCULTO) - MANTÉM A MÚSICA FUNCIONANDO -->
-    <div id="youtube-player" class="youtube-hidden"></div>
-
-    <!-- ✅ QUIZ ATIVO -->
-    <div *ngIf="!finished && currentQuestion" class="quiz-active">
+    <!-- ✅ QUESTION CONTENT -->
+    <div class="question-container">
+      <div class="question-header">
+        <h2 class="question-text">{{ currentQuestion.question }}</h2>
         
-        <!-- ✅ CARTÃO DA PERGUNTA -->
-        <div class="question-card">
-            <div class="question-number">
-                {{ questionIndex + 1 }}/{{ questions.length }}
-            </div>
-            
-            <h2 class="question-text">{{ currentQuestion.question }}</h2>
-            
-            <!-- ✅ BOTÃO OUVIR PERGUNTA -->
-            <button 
-                class="btn btn-secondary btn-listen"
-                (click)="readText(currentQuestion.question)"
-                title="Ouvir Pergunta"
-                aria-label="Ouvir Pergunta"
-            >
-                🔊 Ouvir Pergunta
-            </button>
-
-            <!-- ✅ OPÇÕES DE RESPOSTA -->
-            <div class="answer-options">
-                <div 
-                    *ngFor="let option of currentQuestion.options; let i = index" 
-                    class="answer-option"
-                    [ngClass]="getOptionClass(option.alias)"
-                    (click)="selectAnswer(option.alias)"
-                    [attr.disabled]="showFeedback ? true : null"
-                    [attr.aria-label]="'Escolher resposta ' + option.name"
-                    tabindex="0"
-                    role="button"
-                >
-                    <div class="option-letter">{{ getOptionLetter(i) }}</div>
-                    <div class="option-text">{{ option.name }}</div>
-                </div>
-            </div>
-
-            <!-- ✅ FEEDBACK -->
-            <div *ngIf="showFeedback" class="feedback-section">
-                <!-- Status da Resposta -->
-                <div class="feedback-status">
-                    <h3 *ngIf="isCorrectAnswer(selectedAnswer)" class="feedback-correct">
-                        ✅ Correto!
-                    </h3>
-                    <h3 *ngIf="!isCorrectAnswer(selectedAnswer)" class="feedback-incorrect">
-                        ❌ Resposta incorreta
-                    </h3>
-                </div>
-
-                <!-- ✅ EXPLICAÇÃO -->
-                <div *ngIf="currentQuestion.explanation" class="explanation">
-                    <div class="explanation-title">
-                        💡 Explicação
-                    </div>
-                    <p>{{ currentQuestion.explanation }}</p>
-                </div>
-
-                <!-- ✅ DICA DE ENTREVISTA -->
-                <div *ngIf="currentQuestion.interviewTip" class="interview-tip">
-                    <div class="interview-tip-title">
-                        🎯 Dica para Entrevista
-                    </div>
-                    <p>{{ currentQuestion.interviewTip }}</p>
-                    <button 
-                        class="btn btn-secondary btn-listen-tip"
-                        (click)="readText(currentQuestion.interviewTip)"
-                        title="Ouvir Dica"
-                    >
-                        🔊 Ouvir Dica
-                    </button>
-                </div>
-            </div>
-
-            <!-- ✅ AÇÕES DO QUIZ -->
-            <div class="quiz-actions">
-                <!-- Finalizar Agora (só aparece antes do feedback) -->
-                <button 
-                    *ngIf="!showFeedback"
-                    class="btn btn-secondary btn-finalize" 
-                    (click)="finishQuiz()"
-                >
-                    ❌ Finalizar Agora
-                </button>
-                
-                <!-- Próxima Questão (só aparece após feedback) -->
-                <button 
-                    *ngIf="showFeedback"
-                    class="btn btn-primary btn-next" 
-                    (click)="nextQuestion()"
-                >
-                    {{ questionIndex === questions.length - 1 ? '🏁 Finalizar Quiz' : '➡️ Próxima Questão' }}
-                </button>
-            </div>
+        <!-- ✅ QUESTION META INFO -->
+        <div class="question-meta" *ngIf="currentQuestion.difficulty || currentQuestion.category">
+          <span class="difficulty-tag" *ngIf="currentQuestion.difficulty">
+            {{ currentQuestion.difficulty }}
+          </span>
+          <span class="category-tag" *ngIf="currentQuestion.category">
+            {{ getCategoryTitle(currentQuestion.category) }}
+          </span>
         </div>
+      </div>
+
+      <!-- ✅ OPTIONS LIST - MODO NORMAL -->
+      <div class="options-container" *ngIf="!showExplanation">
+        <div 
+          class="option-item"
+          *ngFor="let option of currentQuestion.options; let i = index"
+          [class.selected]="selectedAnswer === option.alias"
+          [class.disabled]="showExplanation"
+          (click)="selectAnswer(option.alias)"
+        >
+          <div class="option-letter">{{ getOptionLetter(i) }}</div>
+          <div class="option-content">
+            <span class="option-text">{{ option.name }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ OPTIONS LIST - MODO EXPLICAÇÃO -->
+      <div class="options-container explanation-mode" *ngIf="showExplanation">
+        <div 
+          class="option-item"
+          *ngFor="let option of currentQuestion.options; let i = index"
+          [class.selected]="selectedAnswer === option.alias"
+          [class.correct]="option.alias === currentQuestion.correct"
+          [class.incorrect]="selectedAnswer === option.alias && option.alias !== currentQuestion.correct"
+          [class.disabled]="true"
+        >
+          <div class="option-letter">{{ getOptionLetter(i) }}</div>
+          <div class="option-content">
+            <span class="option-text">{{ option.name }}</span>
+            
+            <!-- ✅ FEEDBACK ICONS -->
+            <div class="option-feedback">
+              <i class="fas fa-check-circle correct-icon" 
+                 *ngIf="option.alias === currentQuestion.correct"></i>
+              <i class="fas fa-times-circle incorrect-icon" 
+                 *ngIf="selectedAnswer === option.alias && option.alias !== currentQuestion.correct"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ EXPLANATION SECTION -->
+      <div class="explanation-container" *ngIf="showExplanation && currentQuestion.explanation">
+        <div class="explanation-header">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Explicação</h3>
+        </div>
+        <div class="explanation-content">
+          <p>{{ currentQuestion.explanation }}</p>
+          
+          <!-- ✅ ADDITIONAL TIPS -->
+          <div class="tips-container" *ngIf="currentQuestion.studyTip || currentQuestion.examTip || currentQuestion.interviewTip">
+            <div class="tip-item" *ngIf="currentQuestion.studyTip">
+              <i class="fas fa-book"></i>
+              <span>{{ currentQuestion.studyTip }}</span>
+            </div>
+            <div class="tip-item" *ngIf="currentQuestion.examTip">
+              <i class="fas fa-graduation-cap"></i>
+              <span>{{ currentQuestion.examTip }}</span>
+            </div>
+            <div class="tip-item" *ngIf="currentQuestion.interviewTip">
+              <i class="fas fa-handshake"></i>
+              <span>{{ currentQuestion.interviewTip }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- ✅ RESULTADO FINAL -->
-    <div *ngIf="finished && quizResult" class="quiz-result">
-        <h2 class="result-title">🎉 Quiz Finalizado!</h2>
+    <!-- ✅ ACTION BUTTONS -->
+    <div class="quiz-actions">
+      
+      <!-- ✅ SUBMIT ANSWER BUTTON -->
+      <button 
+        class="btn btn-primary btn-large"
+        *ngIf="selectedAnswer && !showExplanation"
+        (click)="submitAnswer()"
+      >
+        <i class="fas fa-check"></i>
+        Confirmar Resposta
+      </button>
+
+      <!-- ✅ SELECT ANSWER MESSAGE -->
+      <div class="select-message" *ngIf="!selectedAnswer && !showExplanation">
+        <i class="fas fa-hand-pointer"></i>
+        <span>Selecione uma alternativa para continuar</span>
+      </div>
+
+      <!-- ✅ NAVIGATION BUTTONS -->
+      <div class="navigation-buttons" *ngIf="showExplanation">
         
-        <!-- Pontuação Principal -->
-        <div class="result-score">{{ quizResult.percentage }}%</div>
-        
-        <p class="result-message">
-            Você acertou {{ quizResult.score }} de {{ quizResult.total }} questões!
-        </p>
+        <!-- ✅ PREVIOUS BUTTON -->
+        <button 
+          class="btn btn-secondary"
+          *ngIf="canGoPrevious"
+          (click)="previousQuestion()"
+        >
+          <i class="fas fa-arrow-left"></i>
+          Anterior
+        </button>
 
-        <!-- Estatísticas Detalhadas -->
-        <div class="result-details">
-            <div class="result-stat">
-                <span class="stat-number">{{ quizResult.score }}</span>
-                <span class="stat-label">Acertos</span>
-            </div>
-            
-            <div class="result-stat">
-                <span class="stat-number">{{ quizResult.total - quizResult.score }}</span>
-                <span class="stat-label">Erros</span>
-            </div>
-            
-            <div class="result-stat">
-                <span class="stat-number">{{ quizResult.percentage }}%</span>
-                <span class="stat-label">Desempenho</span>
-            </div>
-        </div>
+        <!-- ✅ NEXT BUTTON -->
+        <button 
+          class="btn btn-primary"
+          *ngIf="canGoNext"
+          (click)="nextQuestion()"
+        >
+          Próxima
+          <i class="fas fa-arrow-right"></i>
+        </button>
 
-        <!-- ✅ RESULTADOS POR CATEGORIA -->
-        <div *ngIf="quizResult.categoryResults.length > 0" class="category-results">
-            <h3 class="category-results-title">📊 Desempenho por Categoria</h3>
-            <div class="category-grid">
-                <div 
-                    *ngFor="let categoryResult of quizResult.categoryResults"
-                    class="category-card"
-                >
-                    <h4 class="category-name">
-                        {{ getCategoryTitle(categoryResult.category) }}
-                    </h4>
-                    <div class="category-percentage">
-                        {{ categoryResult.percentage }}%
-                    </div>
-                    <div class="category-details">
-                        {{ categoryResult.correct }}/{{ categoryResult.total }} questões
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ✅ AÇÕES FINAIS -->
-        <div class="result-actions">
-            <button class="btn btn-primary" (click)="restartQuiz()">
-                🔄 Jogar Novamente
-            </button>
-            <button class="btn btn-secondary" (click)="goHome()">
-                🏠 Voltar ao Início
-            </button>
-        </div>
+        <!-- ✅ FINISH BUTTON -->
+        <button 
+          class="btn btn-success btn-large"
+          *ngIf="!canGoNext"
+          (click)="completeQuiz()"
+        >
+          <i class="fas fa-flag-checkered"></i>
+          Finalizar Quiz
+        </button>
+      </div>
     </div>
+  </div>
 
-    <!-- ✅ LOADING -->
-    <div *ngIf="!finished && !currentQuestion" class="quiz-loading">
-        <div class="loading-spinner"></div>
-        <h2>Carregando quiz...</h2>
-        <p>Preparando suas questões...</p>
+  <!-- ✅ QUIZ COMPLETED STATE -->
+  <div *ngIf="!isLoading && !hasError && quizCompleted" class="quiz-completed">
+    <div class="results-container">
+      <div class="results-header">
+        <i class="fas fa-trophy"></i>
+        <h2>Quiz Concluído!</h2>
+      </div>
+      
+      <div class="score-display">
+        <div class="score-circle">
+          <span class="score-value">{{ score }}%</span>
+        </div>
+        <div class="score-details">
+          <p><strong>{{ correctAnswers }}</strong> de <strong>{{ totalQuestions }}</strong> questões corretas</p>
+          <p>Tempo: <strong>{{ Math.floor(timeSpent / 60) }}m {{ timeSpent % 60 }}s</strong></p>
+        </div>
+      </div>
+
+      <div class="results-actions">
+        <button class="btn btn-primary" (click)="restartQuiz()">
+          <i class="fas fa-redo"></i>
+          Refazer Quiz
+        </button>
+        <button class="btn btn-secondary" (click)="goHome()">
+          <i class="fas fa-home"></i>
+          Voltar ao Início
+        </button>
+      </div>
     </div>
-
+  </div>
 </div>
 

@@ -1,0 +1,860 @@
+{
+  "metadata": {
+    "area": "desenvolvimento-web",
+    "subject": "css",
+    "name": "CSS3 & Layout Moderno",
+    "description": "CSS3, Flexbox, Grid, animações, responsividade e técnicas avançadas de estilização.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 35,
+    "tags": [
+      "css3",
+      "flexbox",
+      "grid",
+      "animacoes",
+      "responsividade"
+    ]
+  },
+  "questions": [
+    {
+      "id": 101,
+      "question": "Qual propriedade CSS é usada para alterar a cor do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "color",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "text-color",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "font-color",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "A propriedade 'color' define a cor do texto. Aceita valores em hexadecimal, RGB, HSL ou nomes de cores predefinidos."
+    },
+    {
+      "id": 102,
+      "question": "Qual é a diferença entre `inline`, `block` e `inline-block` no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Define como os elementos são renderizados na página",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define a cor do texto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Define o tamanho do elemento",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "display: inline não quebra linha e ignora width/height. block quebra linha e aceita dimensões. inline-block combina ambos os comportamentos."
+    },
+    {
+      "id": 103,
+      "question": "Qual é o propósito do `box-sizing` no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Controlar como o tamanho total de um elemento é calculado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir o espaçamento interno de um elemento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definir a largura de um elemento",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "box-sizing: border-box faz com que width inclua padding e border, facilitando cálculos de layout responsivo."
+    },
+    {
+      "id": 104,
+      "question": "Qual propriedade CSS é usada para alterar o tamanho da fonte?",
+      "options": [
+        {
+          "id": 1,
+          "name": "font-size",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "text-size",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "size",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "A propriedade 'font-size' controla o tamanho da fonte, aceita valores em px, em, rem, %, etc."
+    },
+    {
+      "id": 105,
+      "question": "Qual propriedade CSS é usada para alterar a cor de fundo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "background-color",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "color",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "bg-color",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "A propriedade 'background-color' define a cor de fundo de um elemento."
+    },
+    {
+      "id": 106,
+      "question": "Qual propriedade CSS é usada para centralizar texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "text-align",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "align",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "center",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "A propriedade 'text-align' controla o alinhamento horizontal do texto dentro de um elemento."
+    },
+    {
+      "id": 107,
+      "question": "O que é CSS e qual sua função?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma linguagem de marcação para estruturar páginas web",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma linguagem de estilo usada para definir a aparência de elementos HTML",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um framework para desenvolvimento de aplicações web",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "css",
+      "explanation": "CSS (Cascading Style Sheets) é uma linguagem de estilo usada para definir a apresentação de documentos HTML."
+    },
+    {
+      "id": 108,
+      "question": "Qual a diferença entre CSS inline, interno e externo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "CSS inline é aplicado diretamente no elemento, interno dentro da tag `<style>` e externo em um arquivo separado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "CSS interno e externo são iguais, apenas o inline é diferente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "CSS externo é usado apenas para JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "CSS inline tem maior especificidade, interno fica no <head>, externo em arquivo separado. Externo é mais maintível."
+    },
+    {
+      "id": 109,
+      "question": "O que é a especificidade no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A prioridade que um seletor tem sobre outro ao aplicar estilos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para organizar arquivos CSS",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma propriedade que define a cor do texto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "Especificidade determina qual regra CSS se aplica quando há conflitos: IDs (100) > Classes (10) > Elementos (1)."
+    },
+    {
+      "id": 110,
+      "question": "O que é um pseudo-elemento no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um elemento HTML que não pode ser estilizado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma palavra-chave que permite estilizar partes específicas de um elemento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma propriedade usada para definir animações",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "css",
+      "explanation": "Pseudo-elementos como ::before e ::after permitem estilizar partes específicas de elementos ou criar conteúdo virtual."
+    },
+    {
+      "id": 111,
+      "question": "Qual é a função do `z-index` no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Definir a ordem de empilhamento dos elementos na página",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Alterar a opacidade dos elementos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definir a largura máxima de um elemento",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "z-index controla a ordem de empilhamento de elementos posicionados. Valores maiores ficam na frente."
+    },
+    {
+      "id": 112,
+      "question": "O que é o modelo de caixa (box model) no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma estrutura que define como os elementos HTML são renderizados na página",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para criar animações",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma propriedade usada para definir sombras",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "O box model define como elementos são renderizados: content, padding, border e margin formam o tamanho total."
+    },
+    {
+      "id": 113,
+      "question": "Qual a diferença entre `relative`, `absolute` e `fixed` no posicionamento CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`relative` posiciona em relação ao local original, `absolute` em relação ao elemento pai e `fixed` em relação à janela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Todos os três posicionam os elementos da mesma forma",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "`fixed` e `absolute` são iguais, apenas `relative` é diferente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "position: relative move elemento relativo à posição original. absolute posiciona relativo ao ancestral posicionado. fixed relativo à viewport."
+    },
+    {
+      "id": 114,
+      "question": "O que são media queries no CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Regras que permitem aplicar estilos diferentes dependendo do tamanho da tela",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica para otimizar imagens",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método para criar animações CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "Media queries permitem aplicar estilos diferentes baseados em características do dispositivo como largura da tela."
+    },
+    {
+      "id": 115,
+      "question": "Qual a função da propriedade `flex-grow` no Flexbox?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Define a capacidade de um item crescer dentro do contêiner flexível",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define a altura máxima de um elemento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Define a opacidade do elemento",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "flex-grow define quanto um item flex pode crescer em relação aos outros itens no mesmo container."
+    },
+    {
+      "id": 116,
+      "question": "O que é a propriedade `grid-template-columns` no CSS Grid?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Define o número e tamanho das colunas em um layout de grade",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define a cor de fundo das colunas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Define a altura das linhas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "css",
+      "explanation": "grid-template-columns define o número e tamanho das colunas em um layout CSS Grid."
+    },
+    {
+      "id": 117,
+      "question": "Qual é o propósito da propriedade CSS 'display: grid'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar layouts bidimensionais com linhas e colunas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ocultar elementos da página",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definir a cor de fundo",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CSS Grid permite criar layouts complexos com controle preciso sobre linhas e colunas.",
+      "category": "css"
+    },
+    {
+      "id": 118,
+      "question": "O que faz a propriedade CSS 'transform'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Aplica transformações 2D ou 3D aos elementos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Muda a cor do texto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Define o tamanho da fonte",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "A propriedade transform permite aplicar rotações, escalas, translações e inclinações aos elementos.",
+      "category": "css"
+    },
+    {
+      "id": 119,
+      "question": "Qual é a função da propriedade CSS 'transition'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar animações suaves entre estados diferentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir a posição do elemento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Alterar a cor do elemento",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CSS transitions criam animações suaves quando propriedades CSS mudam de valor.",
+      "category": "css"
+    },
+    {
+      "id": 120,
+      "question": "O que é CSS Custom Properties (CSS Variables)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Variáveis reutilizáveis que armazenam valores CSS",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Propriedades para definir cores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Seletores especiais do CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CSS Custom Properties (--variavel) permitem reutilizar valores e criar temas dinâmicos.",
+      "category": "css"
+    },
+    {
+      "id": 121,
+      "question": "O que é o CSS-in-JS e quais suas vantagens?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Técnica de escrever estilos CSS dentro do JavaScript com escopo automático",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma biblioteca para animações CSS",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um preprocessador como SASS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CSS-in-JS permite escrever estilos com JavaScript, oferecendo escopo automático e tipagem.",
+      "category": "css"
+    },
+    {
+      "id": 122,
+      "question": "Qual é a função da propriedade CSS 'contain'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Otimiza renderização isolando mudanças de layout, estilo e pintura",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define o conteúdo de um elemento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Controla a visibilidade do elemento",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "A propriedade contain informa ao navegador que mudanças no elemento não afetam outros elementos.",
+      "category": "css"
+    },
+    {
+      "id": 123,
+      "question": "O que são CSS Logical Properties?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Propriedades que se adaptam à direção de escrita (LTR/RTL)",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Propriedades que usam operadores lógicos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Propriedades exclusivas para JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Logical Properties como margin-inline-start se adaptam automaticamente à direção do texto.",
+      "category": "css"
+    },
+    {
+      "id": 124,
+      "question": "O que é CSS Subgrid?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite que um grid item tenha seus próprios itens filhos participem do grid pai",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma versão menor do CSS Grid",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um framework CSS para grids",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Subgrid permite que elementos filhos de um grid item participem do layout grid principal.",
+      "category": "css"
+    },
+    {
+      "id": 125,
+      "question": "Qual é a função da propriedade 'aspect-ratio' em CSS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Define a proporção largura/altura de um elemento",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define o tamanho da fonte",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Controla a opacidade",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "aspect-ratio: 16/9 mantém a proporção do elemento independente de seu tamanho.",
+      "category": "css"
+    },
+    {
+      "id": 126,
+      "question": "O que é CSS Cascade Layers (@layer)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sistema para organizar e controlar a precedência de estilos CSS",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Técnica para criar animações em camadas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Método para agrupar seletores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Cascade Layers permitem controlar explicitamente a ordem de precedência dos estilos.",
+      "category": "css"
+    },
+    {
+      "id": 127,
+      "question": "Para que serve a função CSS 'clamp()'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Define um valor que varia entre um mínimo e máximo baseado em uma condição",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Fixa um elemento na tela",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Cria animações suaves",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "clamp(min, preferred, max) é ideal para tipografia responsiva: clamp(1rem, 4vw, 2rem).",
+      "category": "css"
+    },
+    {
+      "id": 128,
+      "question": "O que é CSS Houdini?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunto de APIs que permite estender o CSS com JavaScript",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um novo framework CSS",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma ferramenta de debugging",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CSS Houdini permite criar custom properties, layout algorithms e paint functions.",
+      "category": "css"
+    },
+    {
+      "id": 129,
+      "question": "Qual é a função da propriedade 'scroll-behavior'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Controla o comportamento de rolagem (smooth ou auto)",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define a direção da rolagem",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Oculta a barra de rolagem",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "scroll-behavior: smooth cria animação suave ao rolar para âncoras ou usar scrollIntoView().",
+      "category": "css"
+    },
+    {
+      "id": 130,
+      "question": "O que são CSS Scroll Snap properties?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Propriedades que fazem elementos 'grudarem' em posições específicas durante rolagem",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Propriedades para capturar screenshots",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Propriedades para acelerar rolagem",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Scroll snap cria experiências de rolagem similar a carrosséis nativos em mobile.",
+      "category": "css"
+    },
+    {
+      "id": 131,
+      "question": "Para que serve a propriedade 'overscroll-behavior'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Controla o que acontece quando o usuário rola além do limite do elemento",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define a velocidade de rolagem",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Oculta conteúdo que transborda",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "overscroll-behavior: contain evita que rolagem de modais afete a página principal.",
+      "category": "css"
+    },
+    {
+      "id": 132,
+      "question": "O que é CSS Paint API?",
+      "options": [
+        {
+          "id": 1,
+          "name": "API que permite criar imagens CSS personalizadas usando JavaScript",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "API para colorir elementos automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ferramenta para escolher cores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Paint API permite criar backgrounds, borders e máscaras customizadas programaticamente.",
+      "category": "css"
+    },
+    {
+      "id": 133,
+      "question": "Qual é a diferença entre 'gap' e 'margin' em CSS Grid/Flexbox?",
+      "options": [
+        {
+          "id": 1,
+          "name": "gap cria espaço apenas entre itens, margin adiciona espaço ao redor de cada item",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "gap e margin fazem exatamente a mesma coisa",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "gap só funciona em Grid, não em Flexbox",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "gap é mais eficiente para espaçamento interno em containers flex/grid que margin.",
+      "category": "css"
+    },
+    {
+      "id": 134,
+      "question": "O que é o CSS Feature Queries (@supports)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite aplicar estilos condicionalmente baseado no suporte do navegador a uma propriedade",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Define estilos para dispositivos específicos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Verifica a versão do CSS suportada",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "@supports permite escrever CSS que só será aplicado se o navegador suportar a feature especificada.",
+      "category": "css"
+    },
+    {
+      "id": 135,
+      "question": "O que é o CSS Object Fit e quando usá-lo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Propriedade que define como o conteúdo de um elemento (como imagens) deve se ajustar ao seu contêiner",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Propriedade para ajustar o tamanho da fonte",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Propriedade para alinhar texto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "object-fit: cover; faz a imagem preencher o contêiner sem distorcer, cortando se necessário.",
+      "category": "css"
+    }
+  ]
+}

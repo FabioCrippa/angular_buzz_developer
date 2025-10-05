@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "metodologias",
+    "subject": "code-review",
+    "name": "Code Review & Qualidade",
+    "description": "Revisão de código, qualidade, colaboração e boas práticas de equipe.",
+    "difficulty": "advanced",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "revisao",
+      "qualidade",
+      "colaboracao",
+      "equipe"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1201,
+      "question": "Qual é o principal objetivo de um code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criticar o estilo pessoal do desenvolvedor",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Garantir qualidade, legibilidade e detectar possíveis erros",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Reduzir o número de commits no projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1202,
+      "question": "O que deve ser evitado durante um code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Comentários construtivos e sugestões",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Discussões sobre boas práticas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Críticas pessoais e subjetivas",
+          "alias": "c"
+        }
+      ],
+      "correct": "c",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1203,
+      "question": "Qual é uma boa prática ao revisar código de outra pessoa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Testar o código antes de aprovar",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ignorar os testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Aprovar sem ler se o autor é experiente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1204,
+      "question": "Por que é importante manter o escopo pequeno em um pull request?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita a revisão e reduz chances de erros",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Permite adicionar mais funcionalidades de uma vez",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evita que outros desenvolvedores vejam o código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1205,
+      "question": "Qual ferramenta é comumente usada para realizar code reviews em projetos Git?",
+      "options": [
+        {
+          "id": 1,
+          "name": "GitHub",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Photoshop",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Excel",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1206,
+      "question": "Por que é importante revisar testes automatizados durante o code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para garantir que o código esteja bem documentado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Para verificar se os testes cobrem os cenários esperados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para remover todos os testes do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1207,
+      "question": "Qual é uma boa prática ao escrever comentários em um code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ser claro, objetivo e respeitoso",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Usar linguagem agressiva para reforçar pontos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar qualquer tipo de comentário",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1208,
+      "question": "O que significa aprovar um pull request?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Que o código foi revisado e está pronto para ser mesclado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Que o código será deletado",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Que o autor deve reescrever tudo",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1209,
+      "question": "Qual é o impacto de um code review bem feito na qualidade do software?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reduz bugs e melhora a legibilidade do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aumenta o tempo de desenvolvimento sem benefícios",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Impede que o código seja executado",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1210,
+      "question": "Quando é ideal realizar um code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Antes de mesclar o código na branch principal",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Após o deploy em produção",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Durante a criação do repositório",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "code-review",
+      "explanation": "Code review melhora qualidade do código através de revisão por pares, compartilhamento de conhecimento e detecção precoce de bugs."
+    },
+    {
+      "id": 1211,
+      "question": "Qual é a diferença entre code review síncrono e assíncrono?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Síncrono em tempo real (pair programming), assíncrono por pull requests",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Síncrono para frontend, assíncrono para backend",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não há diferença entre eles",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Code review síncrono acontece em tempo real, enquanto assíncrono através de ferramentas como PR/MR.",
+      "category": "code-review"
+    },
+    {
+      "id": 1212,
+      "question": "O que são code review guidelines e por que são importantes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Padrões definidos pela equipe para manter consistência na revisão",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Documentação técnica da aplicação",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Manuais de instalação de ferramentas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Guidelines padronizam critérios de revisão e expectativas entre os membros da equipe.",
+      "category": "code-review"
+    },
+    {
+      "id": 1213,
+      "question": "Qual é o tamanho ideal de um pull request para review efetivo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Máximo de 400 linhas de código para manter foco e qualidade",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Não há limite, quanto maior melhor",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas uma linha por pull request",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "PRs menores são mais fáceis de revisar, resultam em feedback melhor e reduzem erros.",
+      "category": "code-review"
+    },
+    {
+      "id": 1214,
+      "question": "O que é pair programming em relação ao code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Dois desenvolvedores trabalhando juntos, eliminando necessidade de review posterior",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Revisar código em duplas após desenvolvimento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Programar apenas em pares de arquivos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Pair programming é review contínuo em tempo real, prevenindo problemas antes do commit.",
+      "category": "code-review"
+    },
+    {
+      "id": 1215,
+      "question": "Como lidar com conflitos durante code reviews?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Discussão respeitosa focada no código, não na pessoa, com mediação se necessário",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Sempre aceitar a opinião do revisor mais sênior",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar dar feedback para não criar conflitos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Conflitos devem ser resolvidos através de discussão técnica construtiva e mediação quando necessário.",
+      "category": "code-review"
+    },
+    {
+      "id": 1216,
+      "question": "Qual é a importância do contexto em um pull request?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Descrição clara do problema, solução e impacto facilita a revisão",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Contexto não é necessário se o código for claro",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas o título do PR é suficiente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Contexto bem documentado acelera o review e melhora a qualidade do feedback.",
+      "category": "code-review"
+    },
+    {
+      "id": 1217,
+      "question": "O que são automated code review tools?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ferramentas que analisam código automaticamente para detectar problemas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ferramentas para escrever código automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ferramentas para fazer deploy automático",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Tools como SonarQube, ESLint e CodeClimate automatizam detecção de code smells e vulnerabilidades.",
+      "category": "code-review"
+    },
+    {
+      "id": 1218,
+      "question": "Qual é o papel da documentação inline durante code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Comentários que explicam lógica complexa facilitam a compreensão do revisor",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Documentação inline deve ser evitada sempre",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas documenta bugs conhecidos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Comentários bem colocados explicam o 'porquê' do código, não apenas o 'como'.",
+      "category": "code-review"
+    },
+    {
+      "id": 1219,
+      "question": "Como realizar code review de forma construtiva?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Focar em melhorias, sugerir soluções e reconhecer bom trabalho",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas apontar problemas sem sugestões",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Aprovar rapidamente para não atrasar o time",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Reviews construtivos educam, melhoram o código e mantêm o moral da equipe.",
+      "category": "code-review"
+    },
+    {
+      "id": 1220,
+      "question": "O que é mob programming em relação ao code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Equipe inteira trabalhando no mesmo código simultaneamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Programação por criminosos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Revisão de código por multidões",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Mob programming estende pair programming para toda a equipe, eliminando need de review posterior.",
+      "category": "code-review"
+    },
+    {
+      "id": 1221,
+      "question": "Qual é a importância da cobertura de testes durante code review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Verifica se novo código está adequadamente testado e não quebra testes existentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Testes não são necessários em code review",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas verifica se os testes compilam",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Review deve verificar qualidade dos testes, cobertura de edge cases e manutenibilidade.",
+      "category": "code-review"
+    },
+    {
+      "id": 1222,
+      "question": "Como revisar código de diferentes níveis de senioridade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adaptar abordagem: mentoring para juniores, colaboração para seniores",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Usar a mesma abordagem para todos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas seniores devem revisar código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Reviews devem ser pedagógicos para juniores e colaborativos entre pares experientes.",
+      "category": "code-review"
+    },
+    {
+      "id": 1223,
+      "question": "O que são review checklists e quando usá-las?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Listas padronizadas de itens a verificar durante a revisão",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Listas de tarefas do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Listas de bugs conhecidos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Checklists garantem consistência e completude nas revisões, especialmente para equipes grandes.",
+      "category": "code-review"
+    },
+    {
+      "id": 1224,
+      "question": "Qual é o impacto cultural do code review em equipes de desenvolvimento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Promove colaboração, aprendizado mútuo e ownership coletivo do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Cria competição desnecessária entre desenvolvedores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não tem impacto na cultura da equipe",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Code review bem implementado fortalece a cultura de qualidade e colaboração na equipe.",
+      "category": "code-review"
+    },
+    {
+      "id": 1225,
+      "question": "Como balancear velocidade e qualidade em code reviews?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Definir SLAs para review, priorizar mudanças críticas e usar automated checks",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Sempre priorizar velocidade sobre qualidade",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Revisar cada linha de código detalhadamente sempre",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Equilíbrio é alcançado com processos eficientes, automação e foco no que realmente importa.",
+      "category": "code-review"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "matematica",
+    "subject": "raciocinio-logico",
+    "name": "Raciocínio Lógico",
+    "description": "Sequências, padrões, lógica proposicional e resolução de problemas.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "lógica",
+      "sequências",
+      "padrões",
+      "raciocínio"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Na sequência 2, 6, 18, 54, ..., o próximo termo é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "162",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "108",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "156",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "216",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Cada termo é multiplicado por 3: 2×3=6, 6×3=18, 18×3=54, 54×3=162",
+      "studyTip": "Procure padrões: soma, multiplicação, potências. Teste hipóteses com os primeiros termos.",
+      "id": 3202,
+      "category": "raciocinio-logico",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 'Todo A é B' e 'Alguns B são C', então:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Todo A é C",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Alguns A podem ser C",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Nenhum A é C",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Todo C é A",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Como Todo A é B e apenas Alguns B são C, é possível que Alguns A sejam C, mas não é certeza.",
+      "studyTip": "Use diagramas de Venn para visualizar relações lógicas entre conjuntos.",
+      "id": 3203,
+      "category": "raciocinio-logico",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em uma sequência lógica: ♠, ♣, ♠, ♣, ♠, o próximo símbolo é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "♠",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "♣",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "♥",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "♦",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A sequência alterna entre ♠ e ♣. Após o quinto ♠, vem ♣.",
+      "studyTip": "Identifique padrões de repetição, alternância ou progressão.",
+      "id": 3204,
+      "category": "raciocinio-logico",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se p: 'Está chovendo' e q: 'Uso guarda-chuva', a negação de 'p → q' é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não está chovendo e não uso guarda-chuva",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Está chovendo e não uso guarda-chuva",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não está chovendo ou uso guarda-chuva",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Está chovendo ou não uso guarda-chuva",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A negação de p→q é p∧¬q: 'Está chovendo E não uso guarda-chuva'.",
+      "studyTip": "~(p→q) = p∧~q. A implicação só é falsa quando p é verdadeiro e q é falso.",
+      "id": 3205,
+      "category": "raciocinio-logico",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos triângulos há na figura com 4 triângulos pequenos formando um maior?",
+      "options": [
+        {
+          "id": 1,
+          "name": "4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "8",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "13",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "16",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "4 pequenos + 6 médios (combinações de 2) + 2 grandes (combinações de 3) + 1 maior = 13 triângulos.",
+      "studyTip": "Conte sistematicamente: pequenos, médios, grandes. Evite contar o mesmo duas vezes.",
+      "id": 3206,
+      "category": "raciocinio-logico",
+      "difficulty": "fundamental"
+    }
+  ]
+}

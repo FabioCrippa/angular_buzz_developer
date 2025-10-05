@@ -1,0 +1,622 @@
+{
+  "metadata": {
+    "area": "desenvolvimento-web",
+    "subject": "javascript",
+    "name": "JavaScript ES6+",
+    "description": "JavaScript ES6+, programação assíncrona, manipulação DOM e conceitos fundamentais.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "es6",
+      "assincrono",
+      "dom",
+      "programacao",
+      "entrevista",
+      "dicas-praticas"
+    ]
+  },
+  "questions": [
+    {
+      "id": 201,
+      "question": "Qual é o propósito do método 'filter()' em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Filtrar elementos de um array com base em uma condição",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Adicionar elementos a um array",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Remover elementos de um array",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "O método filter() cria um novo array contendo apenas os elementos que passam no teste implementado pela função fornecida."
+    },
+    {
+      "id": 202,
+      "question": "Explique o conceito de 'hoisting' no JavaScript.",
+      "options": [
+        {
+          "id": 1,
+          "name": "É o comportamento de mover declarações para o topo do escopo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "É o processo de otimização de código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "É o método de chamar funções assíncronas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "Hoisting é o comportamento de mover declarações de variáveis e funções para o topo do escopo durante a compilação."
+    },
+    {
+      "id": 203,
+      "question": "Qual é a diferença entre `let`, `var` e `const` no JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`let` e `const` têm escopo de bloco, enquanto `var` tem escopo de função",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "`var` e `const` têm escopo global, enquanto `let` tem escopo de bloco",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não há diferença entre eles",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "let e const têm escopo de bloco e Temporal Dead Zone. var tem escopo de função e hoisting com inicialização undefined."
+    },
+    {
+      "id": 204,
+      "question": "Qual é a diferença entre `==` e `===` no JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`==` compara valores, enquanto `===` compara valores e tipos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "`==` compara valores e tipos, enquanto `===` compara apenas valores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ambos comparam apenas valores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "`==` permite coerção de tipos, enquanto `===` é uma comparação estrita.",
+      "category": "javascript",
+      "interviewTip": "Como explicar na entrevista: Sempre uso '===' (strict equality) porque é mais previsível. O '==' faz coerção de tipos que pode causar bugs sutis. Por exemplo, '0' == false retorna true, mas '0' === false retorna false. Em produção, prefiro ser explícito e evitar comportamentos inesperados."
+    },
+    {
+      "id": 205,
+      "question": "Explique o conceito de 'promises' no JavaScript.",
+      "options": [
+        {
+          "id": 1,
+          "name": "É um objeto que representa a eventual conclusão ou falha de uma operação assíncrona",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "É um método para criar funções síncronas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "É uma função que retorna valores imediatamente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 206,
+      "question": "O que é um 'polyfill' no desenvolvimento web?",
+      "options": [
+        {
+          "id": 1,
+          "name": "É um código que adiciona suporte a funcionalidades não disponíveis em navegadores antigos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "É um método para otimizar o carregamento de páginas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "É uma biblioteca para criar animações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 207,
+      "question": "Qual é a diferença entre `let`, `var` e `const` na declaração de variáveis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`var` tem escopo de função, `let` e `const` têm escopo de bloco",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "`const` pode ser redefinido após a sua declaração",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "`let` e `var` são exatamente iguais",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 208,
+      "question": "O que é um closure em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma função que encapsula uma variável global",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma função que pode acessar variáveis de seu escopo léxico mesmo após serem removidas do escopo original",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um erro de compilação em JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 209,
+      "question": "Qual é a diferença entre `==` e `===`?",
+      "options": [
+        {
+          "id": 1,
+          "name": "`==` compara apenas o valor, enquanto `===` compara valor e tipo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "`==` e `===` são equivalentes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "`===` permite conversão automática de tipos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 210,
+      "question": "O que é o **Event Loop** em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um mecanismo que permite a execução assíncrona em JavaScript",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma estrutura para gerenciar funções síncronas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um processo que bloqueia a execução do JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 211,
+      "question": "O que é o `this` em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma referência ao contexto de execução atual que pode variar",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um objeto global que nunca muda",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método de manipulação de DOM",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 212,
+      "question": "Como funciona a herança baseada em protótipos no JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Objetos podem herdar propriedades diretamente de outros objetos por meio de protótipos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "JavaScript não suporta herança",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "A herança em JavaScript é baseada em classes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 213,
+      "question": "Como podemos manipular objetos utilizando **destructuring assignment**?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Atribuindo valores de propriedades diretamente a variáveis usando uma sintaxe especial",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Convertendo objetos em arrays automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando um loop `for` para extrair valores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 214,
+      "question": "Explique o conceito de **hoisting** em JavaScript.",
+      "options": [
+        {
+          "id": 1,
+          "name": "Mover declarações de variáveis e funções para o topo do escopo durante a execução",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ajustar automaticamente o desempenho do código JavaScript",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criar um novo escopo para cada variável",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 215,
+      "question": "O que são **Promises** em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma estrutura para gerenciar código assíncrono",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma forma de definir variáveis imutáveis",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um loop de repetição especial",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 216,
+      "question": "O que acontece quando usamos `setTimeout` com um valor de 0ms?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A função é executada imediatamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "A função é colocada na fila de execução e executada após o Event Loop concluir outras tarefas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "O JavaScript pausa a execução até que a função seja chamada",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "javascript",
+      "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
+    },
+    {
+      "id": 217,
+      "question": "Qual é o propósito do método 'reduce()' em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reduzir um array a um único valor através de uma função acumuladora",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Remover elementos duplicados de um array",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ordenar elementos de um array",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O método reduce aplica uma função a cada elemento do array, acumulando o resultado em um valor único.",
+      "category": "javascript"
+    },
+    {
+      "id": 218,
+      "question": "O que é event delegation em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Técnica de usar um elemento pai para gerenciar eventos de elementos filhos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Método para criar novos eventos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Forma de prevenir eventos padrão",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Event delegation aproveita o bubbling para gerenciar eventos de múltiplos elementos através de um ancestral comum.",
+      "category": "javascript"
+    },
+    {
+      "id": 219,
+      "question": "O que é o método 'Object.assign()' em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Copia propriedades de objetos fonte para um objeto destino",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Remove propriedades de um objeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Converte objeto em string",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Object.assign() copia propriedades enumeráveis de um ou mais objetos fonte para um objeto destino.",
+      "category": "javascript"
+    },
+    {
+      "id": 220,
+      "question": "O que é destructuring assignment em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sintaxe para extrair valores de arrays ou propriedades de objetos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Método para destruir variáveis",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Técnica para criar novos objetos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Destructuring permite extrair dados de arrays ou objetos de forma concisa: const {name, age} = person.",
+      "category": "javascript"
+    },
+    {
+      "id": 221,
+      "question": "O que é o método 'Array.from()' em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Converte objetos iteráveis ou array-like em arrays reais",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Remove elementos de um array",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ordena elementos de um array",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Array.from() cria uma nova instância de Array a partir de objetos iteráveis ou array-like.",
+      "category": "javascript"
+    },
+    {
+      "id": 222,
+      "question": "Qual é a diferença entre 'null' e 'undefined' em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "'null' é um valor atribuído intencionalmente, 'undefined' indica ausência de valor",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "São exatamente iguais",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "'undefined' é usado apenas em objetos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "null é uma atribuição intencional de 'nenhum valor', undefined indica que a variável foi declarada mas não recebeu valor.",
+      "category": "javascript"
+    },
+    {
+      "id": 223,
+      "question": "O que é o spread operator (...) em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Operador que expande elementos de arrays, objetos ou strings",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Operador para criar loops",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Operador para comparar valores",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O spread operator (...) permite expandir elementos iteráveis em lugares onde múltiplos elementos são esperados.",
+      "category": "javascript"
+    },
+    {
+      "id": 224,
+      "question": "O que é o método 'Array.prototype.find()' em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Retorna o primeiro elemento que satisfaz a condição fornecida",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Encontra todos os elementos de um array",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Remove elementos de um array",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "find() retorna o primeiro elemento do array que satisfaz a função de teste fornecida, ou undefined se não encontrar.",
+      "category": "javascript"
+    },
+    {
+      "id": 225,
+      "question": "O que é o conceito de 'modules' em JavaScript moderno?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sistema para organizar código em arquivos separados com import/export",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Função para criar variáveis globais",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Método para criar objetos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Modules (ES6) permitem dividir código em arquivos separados, exportando e importando funcionalidades conforme necessário.",
+      "category": "javascript"
+    }
+  ]
+}

@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "design",
+    "subject": "micro-front-end",
+    "name": "Micro Front-End",
+    "description": "Arquitetura microfrontend, modularização e desenvolvimento distribuído.",
+    "difficulty": "advanced",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "arquitetura",
+      "modular",
+      "escalabilidade",
+      "distribuido"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1601,
+      "question": "O que é Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma abordagem para dividir aplicações front-end em módulos independentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um framework para desenvolvimento de aplicações web",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para otimizar imagens em páginas web",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1602,
+      "question": "Qual é o principal objetivo do Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitir que diferentes equipes desenvolvam partes do front-end de forma independente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduzir o tamanho dos arquivos CSS",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Melhorar a performance de bancos de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1603,
+      "question": "Quais são as vantagens do Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Escalabilidade, independência de equipes e facilidade de manutenção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Redução da necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Eliminação da necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1604,
+      "question": "Qual tecnologia pode ser usada para implementar Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Web Components",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "SQL",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Bootstrap",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1605,
+      "question": "Como os Micro Front-Ends se comunicam entre si?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Por meio de eventos e mensagens entre módulos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas por meio de bancos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando arquivos estáticos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1606,
+      "question": "Quais são os desafios ao implementar Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Gerenciamento de estado, comunicação entre módulos e padronização de estilos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Redução da necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Eliminação da necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1607,
+      "question": "Qual é a relação entre Micro Front-End e Microservices?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Micro Front-End aplica os princípios de Microservices ao desenvolvimento front-end",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Microservices são usados apenas para back-end",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Micro Front-End substitui completamente os Microservices",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1608,
+      "question": "Como o Micro Front-End pode impactar a experiência do usuário?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Pode melhorar a performance e permitir atualizações mais rápidas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduz a necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Elimina a necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1609,
+      "question": "Quais são as abordagens para integrar Micro Front-Ends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Iframe, Web Components e Single SPA",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas usando bancos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando arquivos estáticos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1610,
+      "question": "Quando é recomendado usar Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Quando há múltiplas equipes trabalhando em um mesmo projeto de forma independente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Quando o projeto não precisa de modularização",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Quando o front-end é pequeno e simples",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1611,
+      "question": "O que diferencia Micro Front-End de uma arquitetura monolítica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Micro Front-End divide a aplicação em módulos independentes, enquanto a arquitetura monolítica centraliza tudo em um único código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Microservices são usados apenas para back-end",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Micro Front-End elimina completamente a necessidade de um back-end",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1612,
+      "question": "Como os Micro Front-Ends podem ser carregados em uma aplicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Por meio de módulos independentes carregados dinamicamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas por meio de bancos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando arquivos estáticos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1613,
+      "question": "Quais são os principais desafios ao adotar Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Gerenciamento de estado, comunicação entre módulos e padronização de estilos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Redução da necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Eliminação da necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1614,
+      "question": "Qual abordagem pode ser usada para compartilhar estado entre Micro Front-Ends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando um gerenciador de estado global como Redux ou eventos customizados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas por meio de bancos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando arquivos estáticos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1615,
+      "question": "Como garantir a consistência visual entre diferentes Micro Front-Ends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Utilizando uma biblioteca de componentes compartilhada e padronização de estilos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Criando estilos independentes para cada módulo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitando o uso de CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1616,
+      "question": "Quais são as formas de integrar Micro Front-Ends em uma aplicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Iframe, Web Components e Single SPA",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas usando bancos de dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando arquivos estáticos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1617,
+      "question": "Como o Micro Front-End pode impactar a performance da aplicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Pode aumentar o tempo de carregamento devido à necessidade de carregar múltiplos módulos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduz a necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Elimina a necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1618,
+      "question": "Qual é a importância da comunicação entre Micro Front-Ends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite que diferentes módulos troquem informações e mantenham a aplicação sincronizada",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Evita que os módulos sejam carregados corretamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Elimina a necessidade de um back-end",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1619,
+      "question": "Quais são os benefícios de usar Web Components em Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite criar componentes reutilizáveis e independentes de framework",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduz a necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Elimina a necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1620,
+      "question": "Quando **não** é recomendado usar Micro Front-End?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Quando a aplicação é pequena e não há necessidade de modularização",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Quando há múltiplas equipes trabalhando em um mesmo projeto de forma independente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Quando o front-end precisa ser altamente escalável",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "micro-front-end",
+      "explanation": "Micro front-ends dividem aplicações em módulos independentes, permitindo desenvolvimento autônomo por diferentes equipes."
+    },
+    {
+      "id": 1621,
+      "question": "Qual é o principal desafio ao compartilhar dependências entre microfrontends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Gerenciar versões conflitantes e tamanho do bundle",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Criar novos componentes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definir rotas da aplicação",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Diferentes microfrontends podem usar versões diferentes da mesma dependência, causando conflitos e aumento do bundle.",
+      "category": "micro-front-end"
+    },
+    {
+      "id": 1622,
+      "question": "O que é Module Federation no contexto de microfrontends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tecnologia que permite compartilhar código entre aplicações JavaScript de forma dinâmica",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um framework para criar interfaces",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma biblioteca de componentes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Module Federation permite que aplicações carreguem dinamicamente código de outras aplicações em runtime.",
+      "category": "micro-front-end"
+    },
+    {
+      "id": 1623,
+      "question": "Como implementar roteamento em uma arquitetura de microfrontends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando um shell application que gerencia rotas e carrega microfrontends",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Cada microfrontend gerencia suas próprias rotas independentemente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não é possível usar roteamento em microfrontends",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Um container/shell application coordena as rotas e decide qual microfrontend carregar para cada rota.",
+      "category": "micro-front-end"
+    },
+    {
+      "id": 1624,
+      "question": "Qual estratégia é recomendada para deploy de microfrontends?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Deploy independente de cada microfrontend com versionamento",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Deploy de todos os microfrontends simultaneamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Deploy manual apenas quando necessário",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Cada microfrontend deve poder ser deployado independentemente, permitindo agilidade e autonomia dos times.",
+      "category": "micro-front-end"
+    },
+    {
+      "id": 1625,
+      "question": "Como lidar com SEO em aplicações microfrontend?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Implementar Server-Side Rendering no shell application e meta tags dinâmicas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "SEO não é possível com microfrontends",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas usar meta tags estáticas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O shell application deve coordenar SSR e meta tags dinâmicas baseadas no microfrontend ativo.",
+      "category": "micro-front-end"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "portugues",
+    "subject": "gramatica",
+    "name": "Gramática & Português",
+    "description": "Questões de gramática, morfologia, sintaxe e norma culta da língua portuguesa.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "gramática",
+      "português",
+      "concurso",
+      "língua-portuguesa"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual é a função sintática do pronome 'que' na frase: 'O livro que comprei é interessante'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Pronome interrogativo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Pronome relativo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Conjunção integrante",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Advérbio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O pronome 'que' é relativo pois retoma o termo 'livro' e introduz uma oração subordinada adjetiva.",
+      "studyTip": "Para identificar: substitua por 'o qual/a qual'. Se fizer sentido, é pronome relativo.",
+      "id": 2002,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em qual frase há erro de concordância verbal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A maioria dos alunos chegaram cedo.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Fazem dois anos que me formei.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Houve muitos problemas na reunião.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Existem várias soluções para isso.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O verbo 'fazer' indicando tempo é impessoal, deve ficar no singular: 'Faz dois anos'.",
+      "studyTip": "Verbos impessoais (haver, fazer indicando tempo) sempre ficam no singular.",
+      "id": 2003,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual palavra está corretamente acentuada?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Assembléia",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Idéia",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Heroína",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Geléia",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Após o Acordo Ortográfico, 'heroína' mantém o acento por ser paroxítona terminada em 'a'.",
+      "studyTip": "Memorize: ditongos abertos 'ei' e 'oi' não são mais acentuados em paroxítonas.",
+      "id": 2004,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Identifique a figura de linguagem: 'Suas mãos eram geleiras'.",
+      "options": [
+        {
+          "id": 1,
+          "name": "Metáfora",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Metonímia",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Comparação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Personificação",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Metáfora é a comparação implícita, sem conectivo, entre 'mãos' e 'geleiras'.",
+      "studyTip": "Metáfora = comparação sem 'como'. Comparação = com 'como', 'tal qual'.",
+      "id": 2005,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em 'Vossa Excelência está preocupado', há erro de:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Concordância nominal",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Concordância verbal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Regência verbal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de pronome",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O correto é 'preocupada'. O adjetivo concorda com o sexo da pessoa, não com a expressão de tratamento.",
+      "studyTip": "Pronomes de tratamento: verbo na 3ª pessoa, adjetivo concorda com o sexo da pessoa.",
+      "id": 2006,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    }
+  ]
+}

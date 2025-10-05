@@ -1,0 +1,107 @@
+{
+  "categories": [
+    {
+      "id": "desenvolvimento-web",
+      "name": "Desenvolvimento Web",
+      "icon": "🚀", 
+      "description": "Tecnologias modernas para vagas tech",
+      "color": "#667eea",
+      "difficulty": "intermediate",
+      "careerType": "tech",
+      "subjects": [
+        { "id": "html", "name": "HTML5", "questions": 0 },
+        { "id": "css", "name": "CSS3", "questions": 0 },
+        { "id": "javascript", "name": "JavaScript", "questions": 0 },
+        { "id": "typescript", "name": "TypeScript", "questions": 0 },
+        { "id": "angular", "name": "Angular", "questions": 0 },
+        { "id": "responsividade", "name": "Design Responsivo", "questions": 0 },
+        { "id": "front-end", "name": "Front-end Geral", "questions": 0 },
+        { "id": "boas-praticas", "name": "Boas Práticas", "questions": 0 }
+      ]
+    },
+    {
+      "id": "metodologias",
+      "name": "Metodologias & DevOps", 
+      "icon": "⚙️",
+      "description": "Processos e ferramentas de desenvolvimento",
+      "color": "#10b981",
+      "difficulty": "advanced",
+      "careerType": "tech",
+      "subjects": [
+        { "id": "scrum", "name": "Scrum/Agile", "questions": 0 },
+        { "id": "devops", "name": "DevOps", "questions": 0 },
+        { "id": "ci-cd", "name": "CI/CD", "questions": 0 },
+        { "id": "versionamento", "name": "Git/Versionamento", "questions": 0 },
+        { "id": "code-review", "name": "Code Review", "questions": 0 },
+        { "id": "testes-unitarios", "name": "Testes Unitários", "questions": 0 }
+      ]
+    },
+    {
+      "id": "design",
+      "name": "Design & UX",
+      "icon": "🎨",
+      "description": "Design Systems e arquitetura front-end",
+      "color": "#f59e0b", 
+      "difficulty": "intermediate",
+      "careerType": "tech",
+      "subjects": [
+        { "id": "figma", "name": "Figma/Design Systems", "questions": 0 },
+        { "id": "micro-front-end", "name": "Micro Front-ends", "questions": 0 }
+      ]
+    },
+    {
+      "id": "seguranca", 
+      "name": "Segurança",
+      "icon": "🔒",
+      "description": "Conceitos de segurança da informação",
+      "color": "#ef4444",
+      "difficulty": "advanced",
+      "careerType": "tech",
+      "subjects": [
+        { "id": "criptografia", "name": "Criptografia", "questions": 0 }
+      ]
+    },
+    {
+      "id": "portugues",
+      "name": "Língua Portuguesa",
+      "icon": "📚", 
+      "description": "Base fundamental para concursos públicos",
+      "color": "#8b5cf6",
+      "difficulty": "fundamental",
+      "careerType": "concurso",
+      "subjects": [
+        { "id": "gramatica", "name": "Gramática", "questions": 0 },
+        { "id": "interpretacao", "name": "Interpretação de Textos", "questions": 0 },
+        { "id": "redacao", "name": "Redação Oficial", "questions": 0 }
+      ]
+    },
+    {
+      "id": "matematica",
+      "name": "Matemática & R.L.",
+      "icon": "🔢",
+      "description": "Matemática e raciocínio lógico para concursos", 
+      "color": "#06b6d4",
+      "difficulty": "intermediate",
+      "careerType": "concurso",
+      "subjects": [
+        { "id": "algebra", "name": "Álgebra", "questions": 0 },
+        { "id": "geometria", "name": "Geometria", "questions": 0 },
+        { "id": "raciocinio-logico", "name": "Raciocínio Lógico", "questions": 0 }
+      ]
+    },
+    {
+      "id": "informatica",
+      "name": "Informática",
+      "icon": "💻",
+      "description": "Conceitos de TI para concursos públicos",
+      "color": "#84cc16", 
+      "difficulty": "fundamental",
+      "careerType": "concurso",
+      "subjects": [
+        { "id": "hardware", "name": "Hardware", "questions": 0 },
+        { "id": "redes", "name": "Redes", "questions": 0 },
+        { "id": "sistemas-operacionais", "name": "Sistemas Operacionais", "questions": 0 }
+      ]
+    }
+  ]
+}

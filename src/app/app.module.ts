@@ -1,27 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common'; // ✅ IMPORTAR CommonModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { QuizzComponent } from './components/quizz/quizz.component';
+
+// Components
+import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HomeComponent } from './pages/home/home.component'; // ✅ IMPORT
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { QuizzComponent } from './components/quizz/quizz.component';
+import { LoadingComponent } from './shared/components/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuizzComponent,
+    HomeComponent,
     DashboardComponent,
+    QuizzComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,          // ✅ Contém CommonModule
+    CommonModule,           // ✅ ADICIONAR EXPLICITAMENTE
     AppRoutingModule,
-    BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
-    HomeComponent // ✅ COMPONENTE STANDALONE VAI NOS IMPORTS
-],
+    LoadingComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

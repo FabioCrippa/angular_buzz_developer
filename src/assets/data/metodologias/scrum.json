@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "metodologias",
+    "subject": "scrum",
+    "name": "Scrum & Metodologias Ágeis",
+    "description": "Metodologia Scrum, práticas ágeis, sprints e gestão de projetos.",
+    "difficulty": "intermediate",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "agil",
+      "sprints",
+      "gestao",
+      "metodologia"
+    ]
+  },
+  "questions": [
+    {
+      "id": 901,
+      "question": "O que é um 'sprint' no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um período de tempo para completar um conjunto de tarefas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma reunião para revisar o progresso do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um documento que descreve os requisitos do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 902,
+      "question": "O que é Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um framework ágil para gerenciamento de projetos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um software de desenvolvimento de código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método de teste automatizado",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 903,
+      "question": "Quem é responsável por maximizar o valor do produto no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O Scrum Master",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "O Product Owner",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "O Time de Desenvolvimento",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 904,
+      "question": "O que é um Sprint no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um período de tempo fixo para desenvolver um incremento do produto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma reunião diária para discutir o progresso",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um documento que define os requisitos do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 905,
+      "question": "Qual é a função do Scrum Master?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Garantir que o Scrum seja compreendido e aplicado corretamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir os requisitos do produto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Codificar e testar o software",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 906,
+      "question": "O que é um Product Backlog?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma lista priorizada de funcionalidades e requisitos do produto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um documento de planejamento financeiro",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma ferramenta de controle de qualidade",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 907,
+      "question": "O que acontece na Sprint Planning?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O Time Scrum define quais itens do Product Backlog serão trabalhados na Sprint",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "O Scrum Master revisa o código do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Os desenvolvedores apresentam o produto final ao cliente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 908,
+      "question": "Qual é o objetivo da Daily Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sincronizar as atividades do Time de Desenvolvimento e identificar impedimentos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir novos requisitos para o produto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Encerrar a Sprint e revisar os resultados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 909,
+      "question": "O que é um Sprint Backlog?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma lista de tarefas selecionadas para serem desenvolvidas na Sprint",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um relatório de progresso do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma ferramenta de controle de qualidade",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 910,
+      "question": "O que acontece na Sprint Review?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O Time Scrum apresenta o incremento do produto para os stakeholders",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Os desenvolvedores revisam o código do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "O Scrum Master define os próximos passos do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 911,
+      "question": "Qual é o objetivo da Sprint Retrospective?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Identificar melhorias no processo e aumentar a eficiência do Time Scrum",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir novos requisitos para o produto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Encerrar oficialmente o projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 912,
+      "question": "O que é um artefato no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um elemento essencial para transparência e inspeção no processo Scrum",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um documento de requisitos do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma ferramenta de controle de qualidade",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 913,
+      "question": "Qual é a função do Incremento no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Representar a soma de todos os itens do Product Backlog concluídos durante a Sprint",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir os requisitos do produto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criar um novo Sprint Backlog",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 914,
+      "question": "O que é um Definition of Done (DoD) no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um conjunto de critérios que define quando um item do backlog está concluído",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma lista de tarefas pendentes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um documento de planejamento financeiro",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 915,
+      "question": "Qual é o papel do Time de Desenvolvimento no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar incrementos de produto potencialmente utilizáveis a cada Sprint",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Gerenciar o Product Backlog",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Definir os objetivos do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 916,
+      "question": "O que é um Sprint Goal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um objetivo que orienta o trabalho do Time de Desenvolvimento durante a Sprint",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma lista de tarefas pendentes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um relatório de progresso do projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 917,
+      "question": "Qual é a importância da transparência no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitir que todos os envolvidos tenham uma visão clara do progresso e dos desafios do projeto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Garantir que apenas o Scrum Master tenha controle sobre o projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar que o Product Owner participe das decisões",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 918,
+      "question": "O que é um Burndown Chart no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um gráfico que mostra o progresso do trabalho restante ao longo do tempo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma ferramenta para estimar custos do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um documento de planejamento estratégico",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 919,
+      "question": "Qual é a função do Refinamento do Backlog no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ajustar e detalhar os itens do Product Backlog para futuras Sprints",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir os objetivos do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criar um novo Sprint Backlog",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 920,
+      "question": "O que significa inspeção e adaptação no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Revisar continuamente o progresso e ajustar o processo conforme necessário",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Definir um plano fixo sem possibilidade de mudanças",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criar um novo Product Backlog",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 921,
+      "question": "Qual é a importância da auto-organização no Time Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitir que o Time de Desenvolvimento tome decisões sobre como realizar o trabalho",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Garantir que o Scrum Master controle todas as tarefas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar que o Product Owner participe das decisões",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "scrum",
+      "explanation": "Scrum é um framework ágil que organiza desenvolvimento em sprints com roles, eventos e artefatos bem definidos."
+    },
+    {
+      "id": 922,
+      "question": "O que é um User Story no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma descrição simples de uma funcionalidade do ponto de vista do usuário",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "A biografia do usuário final",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um relatório de bugs encontrados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "User Stories descrevem funcionalidades usando o formato: 'Como [usuário], eu quero [funcionalidade] para que [benefício]'.",
+      "category": "scrum"
+    },
+    {
+      "id": 923,
+      "question": "O que são Story Points no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Unidade de medida para estimar o esforço relativo de User Stories",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Pontos ganhos ao completar tarefas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Número de histórias no backlog",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Story Points estimam complexidade, esforço e incerteza usando escala relativa (Fibonacci é comum).",
+      "category": "scrum"
+    },
+    {
+      "id": 924,
+      "question": "O que é Velocity no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Quantidade de trabalho que o time consegue completar em uma Sprint",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Velocidade da internet da equipe",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Tempo gasto em reuniões",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Velocity é medida em Story Points e ajuda a prever capacidade para próximas Sprints.",
+      "category": "scrum"
+    },
+    {
+      "id": 925,
+      "question": "O que é um Spike no Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma atividade de pesquisa ou investigação para reduzir incertezas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um bug crítico que precisa ser corrigido",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma reunião de emergência",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Spikes são timeboxed para investigar tecnologias, arquiteturas ou soluções antes da implementação.",
+      "category": "scrum"
+    }
+  ]
+}

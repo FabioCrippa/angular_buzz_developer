@@ -1,0 +1,4825 @@
+{
+  "timestamp": "2025-10-02T13:38:03.754Z",
+  "summary": {
+    "totalFiles": 32,
+    "totalQuestions": 1085,
+    "errorCount": 4,
+    "warningCount": 14,
+    "duplicateCount": 520
+  },
+  "statistics": {
+    "byArea": {
+      "desenvolvimento-web": 215,
+      "design": 50,
+      "entrevista": 80,
+      "informatica": 15,
+      "matematica": 15,
+      "metodologias": 150,
+      "portugues": 15,
+      "": 520,
+      "seguranca": 25
+    },
+    "byDifficulty": {
+      "fundamental": 45
+    },
+    "withTips": 207,
+    "withoutExplanation": 0,
+    "shortExplanations": 0
+  },
+  "errors": [
+    {
+      "type": "NO_QUESTIONS",
+      "file": "audit-report.json",
+      "message": "Arquivo sem array de questões"
+    },
+    {
+      "type": "NO_QUESTIONS",
+      "file": "backup_categories_1759412242442.json",
+      "message": "Arquivo sem array de questões"
+    },
+    {
+      "type": "NO_QUESTIONS",
+      "file": "backup_reorganization_report_1759412242445.json",
+      "message": "Arquivo sem array de questões"
+    },
+    {
+      "type": "NO_QUESTIONS",
+      "file": "correction-report.json",
+      "message": "Arquivo sem array de questões"
+    }
+  ],
+  "warnings": [
+    {
+      "type": "MISSING_METADATA",
+      "file": "audit-report.json",
+      "message": "Arquivo sem metadata"
+    },
+    {
+      "type": "MISSING_METADATA",
+      "file": "backup_categories_1759412242442.json",
+      "message": "Arquivo sem metadata"
+    },
+    {
+      "type": "MISSING_METADATA",
+      "file": "backup_reorganization_report_1759412242445.json",
+      "message": "Arquivo sem metadata"
+    },
+    {
+      "type": "MISSING_METADATA",
+      "file": "correction-report.json",
+      "message": "Arquivo sem metadata"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "desenvolvimento-web\\javascript.json",
+      "question": 2,
+      "message": "Pergunta não termina com ? ou :"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "desenvolvimento-web\\javascript.json",
+      "question": 5,
+      "message": "Pergunta não termina com ? ou :"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "desenvolvimento-web\\javascript.json",
+      "question": 14,
+      "message": "Pergunta não termina com ? ou :"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "entrevista\\entrevista-tecnica.json",
+      "question": 2,
+      "message": "Pergunta não termina com ? ou :"
+    },
+    {
+      "type": "MISSING_METADATA",
+      "file": "quizz_questions_backup_1759412242429.json",
+      "message": "Arquivo sem metadata"
+    },
+    {
+      "type": "TOO_MANY_QUESTIONS",
+      "file": "quizz_questions_backup_1759412242429.json",
+      "message": "520 questões (máximo recomendado: 100)"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "quizz_questions_backup_1759412242429.json",
+      "question": 62,
+      "message": "Pergunta não termina com ? ou :"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "quizz_questions_backup_1759412242429.json",
+      "question": 65,
+      "message": "Pergunta não termina com ? ou :"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "quizz_questions_backup_1759412242429.json",
+      "question": 74,
+      "message": "Pergunta não termina com ? ou :"
+    },
+    {
+      "type": "QUESTION_FORMAT",
+      "file": "quizz_questions_backup_1759412242429.json",
+      "question": 442,
+      "message": "Pergunta não termina com ? ou :"
+    }
+  ],
+  "duplicates": [
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 2,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 2 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 3,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 3 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 4,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 4 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 5,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 5 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 6,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 6 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 7,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 7 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 8,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 8 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 9,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 9 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 10,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 10 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 11,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 11 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 12,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 12 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 13,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 13 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 14,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 14 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 15,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 15 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 16,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 16 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 17,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 17 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 18,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 18 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 19,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 19 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 20,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 20 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 21,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 21 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 22,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 22 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 23,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 23 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 24,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 24 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 25,
+      "files": [
+        "desenvolvimento-web\\html.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 25 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 101,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 101 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 102,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 102 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 103,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 103 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 104,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 104 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 105,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 105 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 106,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 106 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 107,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 107 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 108,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 108 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 109,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 109 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 110,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 110 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 111,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 111 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 112,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 112 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 113,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 113 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 114,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 114 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 115,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 115 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 116,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 116 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 117,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 117 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 118,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 118 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 119,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 119 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 120,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 120 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 121,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 121 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 122,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 122 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 123,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 123 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 124,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 124 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 125,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 125 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 126,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 126 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 127,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 127 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 128,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 128 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 129,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 129 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 130,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 130 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 131,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 131 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 132,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 132 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 133,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 133 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 134,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 134 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 135,
+      "files": [
+        "desenvolvimento-web\\css.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 135 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 201,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 201 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 202,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 202 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 203,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 203 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 204,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 204 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 205,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 205 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 206,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 206 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 207,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 207 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 208,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 208 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 209,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 209 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 210,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 210 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 211,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 211 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 212,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 212 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 213,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 213 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 214,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 214 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 215,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 215 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 216,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 216 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 217,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 217 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 218,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 218 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 219,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 219 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 220,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 220 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 221,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 221 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 222,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 222 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 223,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 223 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 224,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 224 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 225,
+      "files": [
+        "desenvolvimento-web\\javascript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 225 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 301,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 301 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 302,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 302 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 303,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 303 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 304,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 304 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 305,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 305 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 306,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 306 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 307,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 307 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 308,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 308 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 309,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 309 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 310,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 310 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 311,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 311 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 312,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 312 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 313,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 313 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 314,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 314 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 315,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 315 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 316,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 316 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 317,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 317 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 318,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 318 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 319,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 319 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 320,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 320 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 321,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 321 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 322,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 322 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 323,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 323 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 324,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 324 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 325,
+      "files": [
+        "desenvolvimento-web\\typescript.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 325 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 401,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 401 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 402,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 402 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 403,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 403 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 404,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 404 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 405,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 405 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 406,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 406 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 407,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 407 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 408,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 408 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 409,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 409 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 410,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 410 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 411,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 411 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 412,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 412 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 413,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 413 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 414,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 414 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 415,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 415 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 416,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 416 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 417,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 417 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 418,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 418 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 419,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 419 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 420,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 420 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 421,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 421 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 422,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 422 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 423,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 423 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 424,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 424 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 425,
+      "files": [
+        "desenvolvimento-web\\angular.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 425 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 501,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 501 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 502,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 502 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 503,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 503 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 504,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 504 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 505,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 505 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 506,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 506 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 507,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 507 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 508,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 508 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 509,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 509 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 510,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 510 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 511,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 511 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 512,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 512 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 513,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 513 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 514,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 514 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 515,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 515 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 516,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 516 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 517,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 517 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 518,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 518 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 519,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 519 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 520,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 520 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 521,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 521 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 522,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 522 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 523,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 523 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 524,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 524 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 525,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 525 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 526,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 526 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 527,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 527 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 528,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 528 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 529,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 529 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 530,
+      "files": [
+        "desenvolvimento-web\\responsividade.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 530 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 601,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 601 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 602,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 602 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 603,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 603 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 604,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 604 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 605,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 605 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 606,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 606 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 607,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 607 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 608,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 608 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 609,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 609 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 610,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 610 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 611,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 611 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 612,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 612 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 613,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 613 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 614,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 614 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 615,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 615 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 616,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 616 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 617,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 617 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 618,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 618 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 619,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 619 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 620,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 620 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 621,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 621 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 622,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 622 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 623,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 623 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 624,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 624 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 625,
+      "files": [
+        "desenvolvimento-web\\front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 625 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 701,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 701 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 702,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 702 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 703,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 703 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 704,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 704 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 705,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 705 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 706,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 706 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 707,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 707 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 708,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 708 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 709,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 709 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 710,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 710 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 711,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 711 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 712,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 712 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 713,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 713 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 714,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 714 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 715,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 715 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 716,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 716 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 717,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 717 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 718,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 718 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 719,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 719 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 720,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 720 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 721,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 721 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 722,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 722 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 723,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 723 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 724,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 724 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 725,
+      "files": [
+        "desenvolvimento-web\\boas-praticas.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 725 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 801,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 801 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 802,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 802 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 803,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 803 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 804,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 804 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 805,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 805 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 806,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 806 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 807,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 807 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 808,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 808 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 809,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 809 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 810,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 810 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 811,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 811 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 812,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 812 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 813,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 813 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 814,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 814 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 815,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 815 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 816,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 816 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 817,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 817 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 818,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 818 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 819,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 819 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 820,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 820 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 821,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 821 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 822,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 822 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 823,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 823 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 824,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 824 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 825,
+      "files": [
+        "metodologias\\versionamento.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 825 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 901,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 901 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 902,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 902 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 903,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 903 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 904,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 904 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 905,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 905 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 906,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 906 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 907,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 907 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 908,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 908 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 909,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 909 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 910,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 910 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 911,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 911 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 912,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 912 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 913,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 913 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 914,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 914 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 915,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 915 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 916,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 916 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 917,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 917 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 918,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 918 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 919,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 919 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 920,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 920 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 921,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 921 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 922,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 922 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 923,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 923 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 924,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 924 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 925,
+      "files": [
+        "metodologias\\scrum.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 925 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1001,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1001 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1002,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1002 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1003,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1003 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1004,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1004 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1005,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1005 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1006,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1006 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1007,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1007 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1008,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1008 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1009,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1009 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1010,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1010 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1011,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1011 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1012,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1012 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1013,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1013 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1014,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1014 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1015,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1015 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1016,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1016 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1017,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1017 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1018,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1018 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1019,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1019 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1020,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1020 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1021,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1021 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1022,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1022 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1023,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1023 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1024,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1024 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1025,
+      "files": [
+        "metodologias\\devops.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1025 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1101,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1101 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1102,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1102 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1103,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1103 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1104,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1104 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1105,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1105 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1106,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1106 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1107,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1107 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1108,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1108 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1109,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1109 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1110,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1110 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1111,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1111 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1112,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1112 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1113,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1113 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1114,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1114 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1115,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1115 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1116,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1116 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1117,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1117 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1118,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1118 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1119,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1119 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1120,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1120 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1121,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1121 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1122,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1122 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1123,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1123 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1124,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1124 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1125,
+      "files": [
+        "metodologias\\ci-cd.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1125 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1201,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1201 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1202,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1202 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1203,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1203 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1204,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1204 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1205,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1205 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1206,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1206 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1207,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1207 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1208,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1208 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1209,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1209 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1210,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1210 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1211,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1211 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1212,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1212 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1213,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1213 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1214,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1214 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1215,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1215 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1216,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1216 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1217,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1217 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1218,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1218 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1219,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1219 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1220,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1220 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1221,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1221 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1222,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1222 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1223,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1223 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1224,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1224 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1225,
+      "files": [
+        "metodologias\\code-review.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1225 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1301,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1301 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1302,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1302 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1303,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1303 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1304,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1304 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1305,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1305 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1306,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1306 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1307,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1307 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1308,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1308 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1309,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1309 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1310,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1310 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1311,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1311 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1312,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1312 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1313,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1313 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1314,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1314 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1315,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1315 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1316,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1316 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1317,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1317 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1318,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1318 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1319,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1319 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1320,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1320 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1321,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1321 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1322,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1322 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1323,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1323 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1324,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1324 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1325,
+      "files": [
+        "metodologias\\testes-unitarios.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1325 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1501,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1501 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1502,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1502 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1503,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1503 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1504,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1504 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1505,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1505 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1506,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1506 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1507,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1507 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1508,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1508 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1509,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1509 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1510,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1510 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1511,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1511 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1512,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1512 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1513,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1513 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1514,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1514 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1515,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1515 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1516,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1516 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1517,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1517 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1518,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1518 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1519,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1519 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1520,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1520 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1521,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1521 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1522,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1522 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1523,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1523 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1524,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1524 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1525,
+      "files": [
+        "design\\figma.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1525 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1601,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1601 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1602,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1602 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1603,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1603 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1604,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1604 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1605,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1605 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1606,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1606 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1607,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1607 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1608,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1608 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1609,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1609 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1610,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1610 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1611,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1611 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1612,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1612 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1613,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1613 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1614,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1614 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1615,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1615 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1616,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1616 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1617,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1617 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1618,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1618 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1619,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1619 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1620,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1620 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1621,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1621 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1622,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1622 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1623,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1623 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1624,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1624 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1625,
+      "files": [
+        "design\\micro-front-end.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1625 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1701,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1701 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1702,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1702 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1703,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1703 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1704,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1704 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1705,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1705 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1706,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1706 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1707,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1707 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1708,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1708 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1709,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1709 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1710,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1710 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1711,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1711 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1712,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1712 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1713,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1713 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1714,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1714 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1715,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1715 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1716,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1716 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1717,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1717 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1718,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1718 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1719,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1719 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1720,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1720 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1721,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1721 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1722,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1722 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1723,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1723 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1724,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1724 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1725,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1725 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1726,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1726 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1727,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1727 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1728,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1728 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1729,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1729 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1730,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1730 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1731,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1731 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1732,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1732 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1733,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1733 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1734,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1734 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1735,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1735 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1736,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1736 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1737,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1737 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1738,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1738 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1739,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1739 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1740,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1740 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1741,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1741 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1742,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1742 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1743,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1743 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1744,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1744 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1745,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1745 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1746,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1746 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1747,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1747 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1748,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1748 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1749,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1749 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1750,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1750 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1751,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1751 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1752,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1752 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1753,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1753 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1754,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1754 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1755,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1755 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1756,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1756 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1757,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1757 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1758,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1758 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1759,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1759 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1760,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1760 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1761,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1761 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1762,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1762 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1763,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1763 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1764,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1764 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1765,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1765 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1766,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1766 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1767,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1767 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1768,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1768 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1769,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1769 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1770,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1770 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1771,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1771 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1772,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1772 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1773,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1773 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1774,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1774 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1775,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1775 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1776,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1776 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1777,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1777 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1778,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1778 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1779,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1779 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1780,
+      "files": [
+        "entrevista\\entrevista-tecnica.json",
+        "quizz_questions_backup_1759412242429.json"
+      ],
+      "message": "ID 1780 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1401,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1401 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1402,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1402 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1403,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1403 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1404,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1404 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1405,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1405 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1406,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1406 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1407,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1407 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1408,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1408 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1409,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1409 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1410,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1410 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1411,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1411 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1412,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1412 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1413,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1413 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1414,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1414 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1415,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1415 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1416,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1416 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1417,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1417 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1418,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1418 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1419,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1419 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1420,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1420 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1421,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1421 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1422,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1422 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1423,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1423 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1424,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1424 duplicado"
+    },
+    {
+      "type": "DUPLICATE_ID",
+      "id": 1425,
+      "files": [
+        "quizz_questions_backup_1759412242429.json",
+        "seguranca\\criptografia.json"
+      ],
+      "message": "ID 1425 duplicado"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "DATA_INTEGRITY",
+      "priority": "HIGH",
+      "message": "520 IDs duplicados precisam ser corrigidos"
+    },
+    {
+      "type": "FEATURE_ENHANCEMENT",
+      "priority": "MEDIUM",
+      "message": "Considere adicionar mais tips (studyTip, interviewTip) para melhorar valor educacional"
+    }
+  ]
+}

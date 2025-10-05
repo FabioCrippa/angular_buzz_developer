@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "informatica",
+    "subject": "hardware",
+    "name": "Hardware & Componentes",
+    "description": "Componentes de computador, arquitetura e funcionamento de hardware.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "componentes",
+      "computador",
+      "informática",
+      "técnico"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual componente é considerado o 'cérebro' do computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Memória RAM",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Processador (CPU)",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Disco Rígido (HD)",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Placa-mãe",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O processador (CPU) executa todas as instruções e cálculos, sendo o componente central de processamento.",
+      "studyTip": "CPU = processamento, RAM = memória temporária, HD = armazenamento permanente.",
+      "id": 4002,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A memória RAM é caracterizada por ser:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não volátil e lenta",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Volátil e rápida",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não volátil e rápida",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Volátil e lenta",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "RAM é volátil (perde dados sem energia) e rápida (acesso direto aos dados).",
+      "studyTip": "Volátil = perde dados sem energia. Não volátil = mantém dados (HD, SSD, ROM).",
+      "id": 4003,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual a diferença principal entre HD e SSD?",
+      "options": [
+        {
+          "id": 1,
+          "name": "HD é mais rápido",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "SSD tem partes móveis",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "SSD é mais rápido e sem partes móveis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "HD consome menos energia",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "SSD usa memória flash (sem partes móveis), sendo mais rápido, silencioso e confiável que HD.",
+      "studyTip": "HD = mecânico, mais barato, mais capacidade. SSD = eletrônico, mais rápido, mais caro.",
+      "id": 4004,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A BIOS/UEFI é responsável por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Processar dados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Armazenar arquivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Inicializar o sistema",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conectar à internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "BIOS/UEFI é o firmware que inicializa o hardware e carrega o sistema operacional.",
+      "studyTip": "BIOS = Basic Input/Output System. É o primeiro software executado ao ligar o PC.",
+      "id": 4005,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual porta é mais moderna e versátil?",
+      "options": [
+        {
+          "id": 1,
+          "name": "USB 2.0",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "VGA",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "USB-C",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "PS/2",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "USB-C é reversível, suporta alta velocidade, vídeo, áudio e carregamento em uma única porta.",
+      "studyTip": "Evolução USB: 1.1 → 2.0 → 3.0 → 3.1 → USB-C (Type-C).",
+      "id": 4006,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    }
+  ]
+}

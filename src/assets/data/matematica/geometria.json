@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "matematica",
+    "subject": "geometria",
+    "name": "Geometria & Medidas",
+    "description": "Geometria plana e espacial, perímetros, áreas e volumes.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "geometria",
+      "figuras",
+      "área",
+      "perímetro"
+    ]
+  },
+  "questions": [
+    {
+      "question": "A área de um triângulo retângulo com catetos de 3 cm e 4 cm é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "5 cm²",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "6 cm²",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "7 cm²",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "12 cm²",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Área = (base × altura)/2 = (3 × 4)/2 = 6 cm²",
+      "studyTip": "Em triângulo retângulo, use os catetos como base e altura.",
+      "id": 3102,
+      "category": "geometria",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O perímetro de um quadrado com lado 5 cm é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "20 cm",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "25 cm",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "10 cm",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "15 cm",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Perímetro do quadrado = 4 × lado = 4 × 5 = 20 cm",
+      "studyTip": "Perímetro = soma de todos os lados. Área = lado × lado (quadrado).",
+      "id": 3103,
+      "category": "geometria",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em um círculo de raio 3 cm, a área é aproximadamente:",
+      "options": [
+        {
+          "id": 1,
+          "name": "18,84 cm²",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "28,26 cm²",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "9,42 cm²",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "37,68 cm²",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Área = π × r² = 3,14 × 3² = 3,14 × 9 = 28,26 cm²",
+      "studyTip": "Círculo: Área = πr², Perímetro = 2πr. Use π ≈ 3,14.",
+      "id": 3104,
+      "category": "geometria",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A soma dos ângulos internos de um triângulo é sempre:",
+      "options": [
+        {
+          "id": 1,
+          "name": "90°",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "180°",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "270°",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "360°",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A soma dos ângulos internos de qualquer triângulo é sempre 180°.",
+      "studyTip": "Triângulo = 180°, Quadrilátero = 360°, Pentágono = 540°. Fórmula: (n-2)×180°",
+      "id": 3105,
+      "category": "geometria",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O volume de um cubo com aresta de 2 cm é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "6 cm³",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "8 cm³",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "12 cm³",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "16 cm³",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Volume do cubo = aresta³ = 2³ = 8 cm³",
+      "studyTip": "Cubo: V = a³. Paralelepípedo: V = comprimento × largura × altura.",
+      "id": 3106,
+      "category": "geometria",
+      "difficulty": "fundamental"
+    }
+  ]
+}

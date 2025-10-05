@@ -20,17 +20,18 @@
           <p><strong>Informática:</strong> Windows, Office e conceitos de TI atualizados</p>
         </div>
         
+        <!-- ✅ HERO SECTION COM DADOS DINÂMICOS -->
         <div class="social-proof">
           <div class="proof-item">
-            <span class="proof-number">1.500+</span>
+            <span class="proof-number">{{ heroStats.totalQuestions }}+</span>
             <span class="proof-label">Questões</span>
           </div>
           <div class="proof-item">
-            <span class="proof-number">4</span>
+            <span class="proof-number">{{ heroStats.totalAreas }}</span>
             <span class="proof-label">Áreas</span>
           </div>
           <div class="proof-item">
-            <span class="proof-number">92%</span>
+            <span class="proof-number">{{ heroStats.successRate }}%</span>
             <span class="proof-label">Taxa Sucesso</span>
           </div>
         </div>
@@ -59,105 +60,30 @@
         <p class="section-subtitle">Do concurso público à Big Tech - prepare-se para qualquer desafio</p>
       </div>
       
+      <!-- ✅ GRID DE ÁREAS DINÂMICO -->
       <div class="areas-grid">
-        <!-- DESENVOLVIMENTO WEB -->
-        <div class="area-card featured" (click)="goToArea('desenvolvimento')">
+        <div class="area-card" 
+             *ngFor="let area of areas; let i = index"
+             [class.featured]="i === 0"
+             (click)="goToArea(area.name)">
           
           <div class="card-header">
-            <div class="card-icon"></div>
-            <h3 class="card-title">Desenvolvimento Web</h3>
-            <p class="card-description">Entrevistas técnicas e vagas tech</p>
+            <div class="card-icon">{{ area.icon }}</div>
+            <h3 class="card-title">{{ area.displayName }}</h3>
+            <p class="card-description">{{ area.description }}</p>
           </div>
           
           <div class="card-stats">
-            <span class="stat">558 questões</span>
-            <span class="stat">18 tecnologias</span>
+            <span class="stat">{{ area.questionCount }} questões</span>
+            <span class="stat">{{ area.subjects.length }} disciplinas</span>
           </div>
           
           <ul class="card-features">
-            <li>⚛️ React & Angular</li>
-            <li>🟨 JavaScript/TypeScript</li>
-            <li>🎨 CSS & HTML5</li>
-            <li>🔧 Node.js & DevOps</li>
+            <li *ngFor="let feature of area.features">{{ feature }}</li>
           </ul>
           
           <div class="card-footer">
-            <span class="difficulty-badge advanced">Tech Jobs</span>
-          </div>
-        </div>
-        
-        <!-- PORTUGUÊS -->
-        <div class="area-card" (click)="goToArea('portugues')">
-          <div class="card-header">
-            <div class="card-icon"></div>
-            <h3 class="card-title">Língua Portuguesa</h3>
-            <p class="card-description">Base fundamental dos concursos</p>
-          </div>
-          
-          <div class="card-stats">
-            <span class="stat">420 questões</span>
-            <span class="stat">Todas as bancas</span>
-          </div>
-          
-          <ul class="card-features">
-            <li>✏️ Gramática completa</li>
-            <li>📖 Interpretação de textos</li>
-            <li>📝 Redação oficial</li>
-            <li>🏛️ Questões CESPE/FCC</li>
-          </ul>
-          
-          <div class="card-footer">
-            <span class="difficulty-badge fundamental">Concursos</span>
-          </div>
-        </div>
-        
-        <!-- MATEMÁTICA -->
-        <div class="area-card" (click)="goToArea('matematica')">
-          <div class="card-header">
-            <div class="card-icon"></div>
-            <h3 class="card-title">Matemática & R.L.</h3>
-            <p class="card-description">Raciocínio lógico essencial</p>
-          </div>
-          
-          <div class="card-stats">
-            <span class="stat">350 questões</span>
-            <span class="stat">90% dos editais</span>
-          </div>
-          
-          <ul class="card-features">
-            <li>🧠 Raciocínio lógico</li>
-            <li>📊 Matemática básica</li>
-            <li>💰 Porcentagem e juros</li>
-            <li>📈 Estatística aplicada</li>
-          </ul>
-          
-          <div class="card-footer">
-            <span class="difficulty-badge intermediate">Diferencial</span>
-          </div>
-        </div>
-        
-        <!-- INFORMÁTICA -->
-        <div class="area-card" (click)="goToArea('informatica')">
-          <div class="card-header">
-            <div class="card-icon"></div>
-            <h3 class="card-title">Informática</h3>
-            <p class="card-description">Tecnologia em crescimento</p>
-          </div>
-          
-          <div class="card-stats">
-            <span class="stat">280 questões</span>
-            <span class="stat">80% dos editais</span>
-          </div>
-          
-          <ul class="card-features">
-            <li>🪟 Windows 10/11</li>
-            <li>📊 Office 365 completo</li>
-            <li>🌐 Internet e segurança</li>
-            <li>🔒 Conceitos de TI</li>
-          </ul>
-          
-          <div class="card-footer">
-            <span class="difficulty-badge advanced">Em Alta</span>
+            <span class="difficulty-badge" [ngClass]="area.badgeClass">{{ area.badge }}</span>
           </div>
         </div>
       </div>
@@ -426,7 +352,7 @@
           <li><a (click)="goToDashboard()">Dashboard</a></li>
           <li><a (click)="startFreeTrial()">Teste Grátis</a></li>
           <li><a (click)="upgradeToPro()">Plano Premium</a></li>
-          <li><a href="#">Central de Ajuda</a></li>
+          <li><a (click)="openHelp()">Central de Ajuda</a></li>
         </ul>
       </div>
     </div>
@@ -454,8 +380,8 @@
       
       <div class="footer-legal">
         <div class="legal-links">
-          <a href="#">Termos de Uso</a>
-          <a href="#">Privacidade</a>
+          <a (click)="openTerms()">Termos de Uso</a>
+          <a (click)="openPrivacy()">Privacidade</a>
         </div>
         <p class="copyright">© {{ currentYear }} <strong>BuzzDev</strong>. Todos os direitos reservados.</p>
       </div>

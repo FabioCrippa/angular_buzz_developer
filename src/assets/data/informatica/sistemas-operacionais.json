@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "informatica",
+    "subject": "sistemas-operacionais",
+    "name": "Sistemas Operacionais",
+    "description": "Conceitos de SO, Windows, Linux e gerenciamento de recursos.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "windows",
+      "linux",
+      "gerenciamento",
+      "comandos"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual é a função principal de um sistema operacional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Navegar na internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Gerenciar hardware e software",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Editar textos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fazer cálculos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O SO gerencia recursos do hardware e fornece interface para execução de programas.",
+      "studyTip": "SO = intermediário entre usuário/programas e hardware do computador.",
+      "id": 4202,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "No Windows, qual tecla de atalho abre o Gerenciador de Tarefas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + Alt + Del",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + Shift + Esc",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Alt + Tab",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Win + R",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Ctrl + Shift + Esc abre diretamente o Gerenciador de Tarefas no Windows.",
+      "studyTip": "Ctrl+Alt+Del abre menu de opções. Ctrl+Shift+Esc abre direto o Gerenciador.",
+      "id": 4203,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "No Linux, qual comando lista o conteúdo de um diretório?",
+      "options": [
+        {
+          "id": 1,
+          "name": "dir",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "ls",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "list",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "show",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O comando 'ls' (list) mostra arquivos e pastas do diretório atual no Linux.",
+      "studyTip": "Linux: ls = listar, cd = mudar diretório, mkdir = criar pasta, rm = remover.",
+      "id": 4204,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual a diferença entre software livre e proprietário?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Preço de compra",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Acesso ao código-fonte",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Velocidade de execução",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Compatibilidade com hardware",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Software livre permite acesso, modificação e distribuição do código-fonte. Proprietário não.",
+      "studyTip": "Livre ≠ grátis. Livre = liberdade de uso, estudo, modificação e distribuição.",
+      "id": 4205,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A memória virtual em um SO serve para:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Acelerar o processador",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Expandir a capacidade da RAM",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Proteger contra vírus",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conectar à internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Memória virtual usa espaço do HD/SSD como extensão da RAM quando esta fica cheia.",
+      "studyTip": "Memória virtual = 'RAM extra' no disco. Mais lenta que RAM real, mas evita travamentos.",
+      "id": 4206,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    }
+  ]
+}

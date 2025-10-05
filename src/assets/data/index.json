@@ -1,0 +1,79 @@
+{
+  "appInfo": {
+    "name": "Angular Buzz Developer",
+    "version": "2.0.0",
+    "description": "Plataforma completa de questões técnicas para desenvolvedores e concursos",
+    "lastUpdated": "2025-10-02"
+  },
+  "stats": {
+    "totalQuestions": 565,
+    "totalAreas": 8,
+    "totalSubjects": 27,
+    "byArea": {
+      "desenvolvimento-web": 215,
+      "metodologias": 150,
+      "design": 50,
+      "seguranca": 25,
+      "entrevista": 80,
+      "portugues": 15,
+      "matematica": 15,
+      "informatica": 15
+    },
+    "lastUpdated": "2025-10-02"
+  },
+  "areas": [
+    "desenvolvimento-web",
+    "metodologias",
+    "design",
+    "seguranca",
+    "entrevista",
+    "portugues",
+    "matematica",
+    "informatica"
+  ],
+  "structure": {
+    "desenvolvimento-web": [
+      "angular",
+      "boas-praticas",
+      "css",
+      "front-end",
+      "html",
+      "javascript",
+      "responsividade",
+      "typescript"
+    ],
+    "metodologias": [
+      "ci-cd",
+      "code-review",
+      "devops",
+      "scrum",
+      "testes-unitarios",
+      "versionamento"
+    ],
+    "design": [
+      "figma",
+      "micro-front-end"
+    ],
+    "seguranca": [
+      "criptografia"
+    ],
+    "entrevista": [
+      "entrevista-tecnica"
+    ],
+    "portugues": [
+      "gramatica",
+      "interpretacao",
+      "redacao"
+    ],
+    "matematica": [
+      "algebra",
+      "geometria",
+      "raciocinio-logico"
+    ],
+    "informatica": [
+      "hardware",
+      "redes",
+      "sistemas-operacionais"
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "portugues",
+    "subject": "interpretacao",
+    "name": "Interpretação de Texto",
+    "description": "Compreensão textual, inferências, tipos de texto e análise literária.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "interpretação",
+      "leitura",
+      "compreensão",
+      "texto"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Em um texto argumentativo, qual é a função principal do parágrafo de conclusão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentar novos argumentos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Retomar a tese e reforçar a argumentação",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Contradizer os argumentos anteriores",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fazer citações de autoridade",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A conclusão deve retomar a tese inicial e sintetizar os argumentos apresentados no desenvolvimento.",
+      "studyTip": "Lembre-se: introdução apresenta, desenvolvimento argumenta, conclusão sintetiza.",
+      "id": 2102,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual elemento NÃO é característica de um texto dissertativo-argumentativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Presença de tese",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso da 1ª pessoa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Argumentos consistentes",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Linguagem objetiva",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Textos dissertativo-argumentativos geralmente usam 3ª pessoa para manter imparcialidade.",
+      "studyTip": "Dissertação: 3ª pessoa, impessoal. Narração: pode usar 1ª ou 3ª pessoa.",
+      "id": 2103,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "No texto 'O Brasil é um país de contrastes', a palavra 'contrastes' sugere:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uniformidade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Diversidade e diferenças",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Simplicidade",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pequenez",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Contrastes indica diferenças marcantes, diversidade de situações opostas no mesmo contexto.",
+      "studyTip": "Sempre considere o contexto para interpretar palavras polissêmicas.",
+      "id": 2104,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em 'Chovia canivetes', temos um exemplo de linguagem:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Denotativa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conotativa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Técnica",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Formal",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Linguagem conotativa usa sentido figurado. 'Chover canivetes' = chover forte.",
+      "studyTip": "Denotativo = sentido literal. Conotativo = sentido figurado, subjetivo.",
+      "id": 2105,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual conectivo indica oposição entre ideias?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Portanto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Entretanto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Logo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Assim",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Entretanto' expressa contraste, oposição entre ideias do período.",
+      "studyTip": "Conectivos adversativos: mas, porém, contudo, todavia, entretanto, no entanto.",
+      "id": 2106,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    }
+  ]
+}

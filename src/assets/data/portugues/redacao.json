@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "portugues",
+    "subject": "redacao",
+    "name": "Redação & Produção Textual",
+    "description": "Técnicas de redação, estrutura textual, coesão e coerência.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "redação",
+      "escrita",
+      "dissertação",
+      "argumentação"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual é a estrutura básica de uma dissertação-argumentativa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Introdução, desenvolvimento e conclusão",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Apresentação, nó e desfecho",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Situação inicial, desenvolvimento e situação final",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tese, antítese e síntese",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A dissertação segue a estrutura clássica: introdução (tese), desenvolvimento (argumentos) e conclusão (síntese).",
+      "studyTip": "Memorize a proporção: 25% introdução, 50% desenvolvimento, 25% conclusão.",
+      "id": 2202,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Para garantir coesão textual, é fundamental o uso adequado de:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conectivos e pronomes",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Adjetivos e advérbios",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Substantivos e verbos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Interjeições e onomatopeias",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Coesão é obtida através de conectivos (conjunções, preposições) e pronomes que ligam ideias.",
+      "studyTip": "Coesão = ligação entre palavras. Coerência = sentido lógico das ideias.",
+      "id": 2203,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em uma introdução, deve-se evitar:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentar a tese",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Contextualizar o tema",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Antecipar argumentos detalhados",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Delimitar o assunto",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A introdução deve apresentar o tema e a tese, mas os argumentos detalhados ficam no desenvolvimento.",
+      "studyTip": "Introdução = apresentação geral. Desenvolvimento = argumentação detalhada.",
+      "id": 2204,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual frase apresenta linguagem adequada para texto formal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "É importante que todos se conscientizem.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Todo mundo tem que se ligar nisso.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Galera, isso aí é muito importante.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Cara, todo mundo deveria saber disso.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Linguagem formal evita gírias, expressões coloquiais e uso de 2ª pessoa direta.",
+      "studyTip": "Formal: 3ª pessoa, linguagem culta. Informal: gírias, contrações, 2ª pessoa.",
+      "id": 2205,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma boa conclusão deve:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Repetir exatamente a introdução",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Apresentar novos argumentos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Retomar a tese e propor soluções",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contradizer o desenvolvimento",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A conclusão deve retomar a tese, sintetizar argumentos e, idealmente, propor soluções ou reflexões.",
+      "studyTip": "Conclusão eficaz: retomada + síntese + proposta/reflexão final.",
+      "id": 2206,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    }
+  ]
+}

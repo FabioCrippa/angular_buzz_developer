@@ -1,0 +1,2021 @@
+{
+  "metadata": {
+    "area": "entrevista",
+    "subject": "entrevista-tecnica",
+    "name": "Preparação para Entrevistas",
+    "description": "Preparação para entrevistas técnicas com dicas práticas e estratégias de comunicação.",
+    "difficulty": "advanced",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 80,
+    "tags": [
+      "preparacao",
+      "comunicacao",
+      "estrategias",
+      "dicas-tecnicas",
+      "entrevista",
+      "dicas-praticas"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1701,
+      "question": "Qual é a diferença entre '==' e '===' em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "'==' compara apenas valores, enquanto '===' compara valor e tipo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ambos são iguais e podem ser usados indistintamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "'===' é usado apenas em TypeScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "'==' permite coerção de tipos, enquanto '===' é uma comparação estrita.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Sempre uso '===' (strict equality) porque é mais previsível. O '==' faz coerção de tipos que pode causar bugs sutis. Por exemplo, '0' == false retorna true, mas '0' === false retorna false. Em produção, prefiro ser explícito e evitar comportamentos inesperados."
+    },
+    {
+      "id": 1702,
+      "question": "Explique o ciclo de vida de um componente Angular.",
+      "options": [
+        {
+          "id": 1,
+          "name": "Inclui fases como ngOnInit, ngOnChanges e ngOnDestroy",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "É composto apenas por ngCreate e ngDelete",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Não possui ciclo de vida definido",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O ciclo de vida do Angular inclui hooks como ngOnInit, ngOnChanges, ngAfterViewInit e ngOnDestroy.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: O Angular possui hooks de ciclo de vida que permitem executar código em momentos específicos. Uso ngOnInit para inicialização, ngOnChanges para reagir a mudanças de @Input, ngAfterViewInit quando preciso acessar elementos DOM, e ngOnDestroy para cleanup de subscriptions e evitar memory leaks. É fundamental implementar OnDestroy ao trabalhar com Observables."
+    },
+    {
+      "id": 1703,
+      "question": "Como você garantiria qualidade de código em um projeto colaborativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Utilizando code reviews, testes automatizados e linters",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aprovando todos os pull requests automaticamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Editando diretamente na branch principal",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "A qualidade é garantida através de múltiplas camadas: revisão de código, testes e ferramentas automatizadas.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Implemento uma estratégia em camadas: 1) Linters (ESLint, Prettier) para padronização automática, 2) Testes unitários com cobertura mínima de 80%, 3) Code reviews obrigatórios com pelo menos 2 aprovações, 4) Pipeline CI/CD que bloqueia merge se testes falharem, 5) SonarQube para análise de qualidade. Também promovo pair programming para compartilhar conhecimento."
+    },
+    {
+      "id": 1704,
+      "question": "Quais são os principais métodos HTTP usados em APIs REST?",
+      "options": [
+        {
+          "id": 1,
+          "name": "GET, POST, PUT, PATCH, DELETE",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "SEND, RECEIVE, UPDATE, REMOVE",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "CONNECT, TRACE, OPTIONS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "GET recupera dados, POST cria, PUT substitui completamente, PATCH atualiza parcialmente, DELETE remove recursos.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Uso cada método com seu propósito específico: GET para consultas (idempotente e cacheable), POST para criar recursos únicos, PUT para substituição completa (idempotente), PATCH para atualizações parciais, DELETE para remoção. Sempre implemento status codes adequados: 200 para sucesso, 201 para criação, 404 para não encontrado. Isso garante uma API RESTful bem estruturada."
+    },
+    {
+      "id": 1705,
+      "question": "Qual é a diferença entre integração contínua (CI) e entrega contínua (CD)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "CI foca em integrar código frequentemente; CD automatiza o deploy após testes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "CI é usado apenas em projetos mobile; CD em projetos web",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ambos significam a mesma coisa",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CI automatiza integração e testes; CD automatiza o processo de deployment.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: CI é sobre integrar código frequentemente - cada commit dispara build e testes automatizados. CD vai além: automatiza o deployment para diferentes ambientes. Na prática, uso GitHub Actions onde CI roda testes a cada PR, e CD faz deploy automático para staging quando merge na main, mas deploy para produção requer aprovação manual. Isso garante qualidade e agilidade com segurança."
+    },
+    {
+      "id": 1706,
+      "question": "O que representa o 'S' no acrônimo SOLID?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Single Responsibility Principle",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Simple Routing Protocol",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Secure Resource Policy",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Single Responsibility Principle: cada classe deve ter apenas uma razão para mudar.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: O Single Responsibility Principle determina que cada classe deve ter apenas uma responsabilidade. Por exemplo, divido UserService em UserRepository (acesso a dados), UserValidator (validações) e UserNotifier (notificações). Isso facilita testes, manutenção e reduz acoplamento. Quando preciso modificar a validação, só altero UserValidator sem impactar outras funcionalidades."
+    },
+    {
+      "id": 1707,
+      "question": "Qual é a ideia central do princípio Open/Closed (O de SOLID)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O código deve estar aberto para modificação e fechado para extensão",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "O código deve estar aberto para extensão e fechado para modificação",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "O código deve ser sempre público",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Classes devem estar abertas para extensão mas fechadas para modificação.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Open/Closed significa que posso adicionar novas funcionalidades sem alterar código existente. Uso interfaces e herança: criando PaymentProcessor interface, posso implementar CreditCardPayment, PayPalPayment sem modificar o código original. Quando surge novo método de pagamento, apenas crio nova implementação. Isso reduz bugs e facilita manutenção em sistemas legados."
+    },
+    {
+      "id": 1708,
+      "question": "O que o princípio Liskov Substitution garante?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Que subclasses possam substituir suas superclasses sem alterar o comportamento esperado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Que todas as classes sejam abstratas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Que métodos sejam sempre públicos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Objetos de subclasses devem poder substituir objetos da classe pai sem quebrar a funcionalidade.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Liskov Substitution garante que qualquer instância da classe pai pode ser substituída por instância da subclasse. Se tenho Animal e Bird extends Animal, posso usar Bird onde espero Animal. Mas se Bird sobrescreve fly() e Penguin extends Bird, Penguin não deveria ter fly() funcional. Prefiro criar Flying interface apenas para aves que voam. Isso evita quebras no polimorfismo."
+    },
+    {
+      "id": 1709,
+      "question": "O que o princípio Interface Segregation recomenda?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar interfaces grandes e genéricas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Dividir interfaces em partes menores e mais específicas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar o uso de interfaces",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Clientes não devem depender de interfaces que não usam.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Interface Segregation evita que classes implementem métodos desnecessários. Ao invés de uma interface Worker gigante com work(), eat(), sleep(), crio interfaces específicas: Workable, Eatable, Sleepable. Robot implementa apenas Workable, Human implementa todas. Assim cada classe depende apenas do que realmente precisa, tornando o código mais flexível e fácil de manter."
+    },
+    {
+      "id": 1710,
+      "question": "Qual é o foco do princípio Dependency Inversion?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Depender de implementações concretas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Depender de abstrações e não de implementações",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar o uso de dependências externas",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Dependency Inversion inverte a dependência tradicional. Em vez de UserService depender diretamente de MySQLDatabase, ambos dependem de DatabaseInterface. UserService recebe a implementação via injeção de dependência. Isso permite trocar MySQL por PostgreSQL sem alterar UserService. No Angular, uso injeção de dependência nativamente: constructor(@Inject(DATABASE_TOKEN) private db: DatabaseInterface)."
+    },
+    {
+      "id": 1711,
+      "question": "O que significa o acrônimo SOLID na programação orientada a objetos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Simple Object, Logic Integration, Data",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "System Optimization, Layer Isolation, Design",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "SOLID são 5 princípios fundamentais para design de software orientado a objetos.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: SOLID são princípios que aplico diariamente para criar código maintível. Single Responsibility (uma razão para mudar), Open/Closed (extensível sem modificação), Liskov Substitution (subclasses substituem pais), Interface Segregation (interfaces específicas), Dependency Inversion (depender de abstrações). Exemplo prático: ao criar UserManager, separo responsabilidades (UserValidator, UserRepository), uso interfaces para extensibilidade e injeto dependências."
+    },
+    {
+      "id": 1712,
+      "question": "Por que o princípio Single Responsibility é importante?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Porque permite que uma classe tenha múltiplas responsabilidades",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Porque facilita testes, manutenção e reutilização do código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Porque reduz o número de arquivos no projeto",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Classes com única responsabilidade são mais fáceis de testar, manter e reutilizar.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Single Responsibility torna o código previsível e maintível. Uma classe OrderProcessor que processa pedidos, envia emails E calcula impostos é difícil de testar e modificar. Separando em OrderProcessor, EmailService e TaxCalculator, posso testar cada um isoladamente, reutilizar TaxCalculator em outros contextos e modificar cálculo de impostos sem afetar processamento de pedidos."
+    },
+    {
+      "id": 1713,
+      "question": "Como o princípio Interface Segregation melhora o design de software?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Evita que classes sejam forçadas a implementar métodos que não usam",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Permite que interfaces tenham apenas métodos privados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Garante que todas as interfaces sejam genéricas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Clientes não devem ser forçados a depender de interfaces que não utilizam.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Interface Segregation evita 'fat interfaces' que forçam implementações desnecessárias. Em vez de Vehicle com fly(), swim(), drive(), crio interfaces específicas: Flyable, Swimmable, Driveable. Airplane implementa Flyable e Driveable, Boat implementa Swimmable e Driveable. Isso reduz acoplamento e torna implementações mais coesas e flexíveis."
+    },
+    {
+      "id": 1714,
+      "question": "O que caracteriza uma função assíncrona em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela é executada em paralelo com outras funções",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Ela retorna uma Promise e pode usar 'await' para esperar resultados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Ela bloqueia a execução do restante do código",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Funções async retornam Promises automaticamente e permitem uso de await.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Funções async/await facilitam código assíncrono legível. Em vez de .then().catch(), uso try/catch com await. Exemplo: async function getUser() { try { const user = await api.fetchUser(); return user; } catch (error) { handleError(error); }}. Isso evita callback hell e torna o código mais limpo. Sempre implemento error handling adequado."
+    },
+    {
+      "id": 1715,
+      "question": "Qual é a vantagem de usar 'await' dentro de uma função assíncrona?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite que o código continue sem esperar a resposta",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Faz com que a função retorne imediatamente",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Suspende a execução até que a Promise seja resolvida",
+          "alias": "c"
+        }
+      ],
+      "correct": "c",
+      "explanation": "await pausa a execução da função até que a Promise seja resolvida ou rejeitada.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: await torna código assíncrono similar ao síncrono, melhorando legibilidade. Posso aguardar múltiplas operações sequenciais: const user = await getUser(); const profile = await getProfile(user.id); const posts = await getPosts(user.id). Ou paralelas com Promise.all: const [user, posts] = await Promise.all([getUser(), getPosts()]). Sempre uso try/catch para tratamento de erros."
+    },
+    {
+      "id": 1716,
+      "question": "O que significa o termo 'assíncrono' na programação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Que as operações ocorrem em tempo real e simultaneamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Que as operações podem ocorrer de forma independente, sem bloquear o fluxo principal",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Que o código é executado apenas após o carregamento completo da página",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Programação assíncrona permite que operações executem sem bloquear o thread principal.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Programação assíncrona é essencial para UX responsiva. Enquanto faço requisição à API, a interface continua interativa. Uso Promises/async-await para operações demoradas: requisições HTTP, leitura de arquivos, timers. No Angular, Observables facilitam isso: this.http.get().subscribe() não trava a UI. Event Loop do JavaScript gerencia a execução, mantendo a aplicação fluida."
+    },
+    {
+      "id": 1717,
+      "question": "Qual é a principal vantagem de usar programação assíncrona?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite que múltiplas tarefas sejam executadas sem travar o sistema",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Evita o uso de funções",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Garante que todas as tarefas sejam executadas em ordem",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Programação assíncrona melhora responsividade e performance da aplicação.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Assíncrono evita blocking operations que travam a UI. Sem ele, uma requisição de 2 segundos congelaria toda a aplicação. Com async, posso mostrar loading spinner enquanto busco dados. Também permite paralelização: carregar dados do usuário E seus posts simultaneamente com Promise.all(). Isso melhora drasticamente a experiência do usuário."
+    },
+    {
+      "id": 1718,
+      "question": "Qual é o principal objetivo da reunião diária (daily stand-up) em metodologias ágeis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Definir metas de longo prazo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Compartilhar o progresso, identificar impedimentos e alinhar o time",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apresentar o produto ao cliente",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Daily visa sincronização rápida do time e identificação precoce de bloqueios.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Daily é sobre transparência e colaboração. Cada membro responde: 'O que fiz ontem?', 'O que farei hoje?', 'Tenho impedimentos?'. Máximo 15 minutos, foco em sincronização, não relatório detalhado. Quando identifico impedimento, busco ajuda do time. Se alguém está trabalhando em algo similar, nos sincronizamos depois. Mantém o time alinhado e produtivo."
+    },
+    {
+      "id": 1719,
+      "question": "O que acontece na reunião de planning (planejamento) em Scrum?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O time define quais tarefas serão executadas no próximo sprint",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Os stakeholders aprovam o deploy em produção",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Os desenvolvedores revisam o código uns dos outros",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Sprint Planning define o escopo e objetivos do próximo sprint.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Sprint Planning é dividido em duas partes: 'O que faremos?' e 'Como faremos?'. Product Owner apresenta prioridades do backlog, time estima complexidade usando planning poker ou t-shirt sizes. Consideramos velocity histórica para definir capacidade realista. Quebramos User Stories em tarefas técnicas menores. Definimos Definition of Done clara. Planning bem feito garante sprint focado e produtivo."
+    },
+    {
+      "id": 1720,
+      "question": "Qual é o propósito da reunião de review (revisão de sprint)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentar o que foi desenvolvido e coletar feedback dos stakeholders",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Revisar os testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Planejar o próximo trimestre",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Sprint Review demonstra o incremento desenvolvido e coleta feedback.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Sprint Review é demo das funcionalidades entregues para stakeholders. Mostro o produto funcionando, não slides ou teorias. Coleto feedback real dos usuários, identifico ajustes necessários. PO atualiza o backlog baseado no feedback. É transparência total: mostro o que funcionou e o que não funcionou. Essa validação contínua garante que construímos o produto certo."
+    },
+    {
+      "id": 1721,
+      "question": "O que é uma retrospectiva em metodologias ágeis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma reunião para revisar o código-fonte",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma reunião para refletir sobre o processo e buscar melhorias",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma análise de desempenho individual",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Retrospectiva foca em melhorar o processo de trabalho do time.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Retrospectiva é momento de melhoria contínua do processo. Usamos formato 'Start, Stop, Continue': o que começar a fazer, parar de fazer, continuar fazendo. Discutimos impedimentos recorrentes, celebramos sucessos, definimos ações concretas para o próximo sprint. Exemplo: identificamos que code review estava atrasando entregas, então definimos SLA de 24h para reviews. Foco sempre no processo, não nas pessoas."
+    },
+    {
+      "id": 1722,
+      "question": "Qual é uma vantagem das metodologias ágeis em relação aos modelos tradicionais?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Maior flexibilidade para mudanças e entregas incrementais",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Documentação extensa antes do início do projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Execução linear e sem revisões",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Agilidade permite adaptação rápida a mudanças e entrega contínua de valor.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Metodologias ágeis respondem a mudanças ao invés de seguir plano rígido. Entregamos valor incremental a cada sprint, permitindo validação contínua com usuários. Se mercado muda ou surgem novas necessidades, pivotamos rapidamente. Feedback loops curtos evitam desperdício de tempo construindo features desnecessárias. Foco em individuals e interactions over processes and tools."
+    },
+    {
+      "id": 1723,
+      "question": "Qual é a principal diferença entre Scrum e Kanban?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Scrum usa sprints com duração fixa; Kanban é contínuo e baseado em fluxo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Kanban exige reuniões diárias obrigatórias",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Scrum não possui papéis definidos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Scrum trabalha em sprints timeboxed, enquanto Kanban é um fluxo contínuo baseado em limites WIP.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Trabalhei com ambos. Scrum é ideal quando precisa de entregas regulares e planejamento estruturado - sprints de 2 semanas com planning, daily, review e retrospectiva. Kanban uso para suporte ou manutenção, onde demandas chegam continuamente. O board Kanban limita WIP (work in progress) para evitar multitasking excessivo. Cada abordagem serve contextos diferentes."
+    },
+    {
+      "id": 1724,
+      "question": "O que é um Design Pattern no contexto de desenvolvimento de software?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma biblioteca de componentes visuais",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma solução reutilizável para problemas recorrentes de projeto",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo de teste automatizado",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Design Patterns são soluções testadas e documentadas para problemas comuns de design de software.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Design Patterns são como receitas de bolo - soluções comprovadas para problemas recorrentes. Por exemplo, uso Singleton para serviços que devem ter única instância (como AuthService), Observer para notificações entre componentes, Strategy para diferentes algoritmos de pagamento. Não são código, mas conceitos que tornam o sistema mais flexível e mantível. É importante não forçar padrões onde não são necessários."
+    },
+    {
+      "id": 1725,
+      "question": "O que é um Observable no contexto do RxJS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma função que retorna um valor síncrono",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma abstração que representa um fluxo de dados assíncronos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo de variável global",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Observables representam fluxos de dados que podem emitir valores ao longo do tempo.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Observable é como uma mangueira de dados - pode emitir múltiplos valores ao longo do tempo. Diferente de Promise que resolve uma vez, Observable pode emitir 0, 1 ou N valores. Uso para HTTP requests, eventos de formulário, WebSocket connections. É lazy - só executa quando subscribe. RxJS operators como map, filter, switchMap tornam o código declarativo."
+    },
+    {
+      "id": 1726,
+      "question": "Qual operador RxJS é usado para transformar os valores emitidos por um Observable?",
+      "options": [
+        {
+          "id": 1,
+          "name": "map",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "filter",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "subscribe",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O operador map transforma cada valor emitido aplicando uma função de transformação.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: O operador map é como Array.map(), mas para Observables. Transformo cada valor emitido: userObservable.pipe(map(user => user.name)) extrai apenas o nome. É pipeable operator, então posso encadear: .pipe(map(toUpperCase), filter(isValid)). Diferente de subscribe, map retorna novo Observable, mantendo a cadeia reativa funcional."
+    },
+    {
+      "id": 1727,
+      "question": "O que o operador 'switchMap' faz em RxJS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Cancela o Observable anterior e substitui por um novo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Combina múltiplos Observables em paralelo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Executa todos os Observables em sequência",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "switchMap cancela a subscription anterior quando um novo valor é emitido, evitando race conditions.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: switchMap é essencial para evitar race conditions. Quando usuario digita no search input, cada keystroke dispara nova requisição. switchMap cancela requisição anterior e executa apenas a mais recente. Perfeito para autocomplete: searchInput.pipe(switchMap(term => this.api.search(term))). Evita respostas fora de ordem que confundiriam o usuário."
+    },
+    {
+      "id": 1728,
+      "question": "Qual é a função do método 'subscribe' em um Observable?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Encerrar o Observable",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Iniciar a execução e receber os valores emitidos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Transformar os dados em JSON",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "subscribe inicia a execução do Observable e permite receber os valores emitidos.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: subscribe é onde 'consumo' o Observable. Sem subscribe, Observable é lazy - não executa. É como ligar a torneira: observable.subscribe(data => console.log(data)). Sempre implemento error handling: .subscribe({next: data => {}, error: err => {}}). Importante: sempre unsubscribe para evitar memory leaks, uso takeUntil(destroy$) ou async pipe no template."
+    },
+    {
+      "id": 1729,
+      "question": "Qual operador RxJS é ideal para executar múltiplos Observables em paralelo e aguardar todos os resultados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "mergeMap",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "forkJoin",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "concatMap",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "forkJoin aguarda que todos os Observables completem e retorna um array com todos os resultados.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: forkJoin é como Promise.all() para Observables. Executa múltiplas operações em paralelo e aguarda todas completarem: forkJoin([getUser(), getPosts(), getProfile()]).subscribe(([user, posts, profile]) => {}). Só emite quando TODOS completam. Diferente de combineLatest que emite sempre que qualquer um muda. Ideal para carregar dados independentes simultaneamente."
+    },
+    {
+      "id": 1730,
+      "question": "Qual operador RxJS é usado para filtrar valores emitidos por um Observable?",
+      "options": [
+        {
+          "id": 1,
+          "name": "filter",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "map",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "take",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O operador filter permite que apenas valores que atendem a uma condição passem pelo stream.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: filter funciona como Array.filter(), mas para streams. Só deixa passar valores que atendem condição: numbers$.pipe(filter(n => n > 5)). Muito útil para eventos: clicks$.pipe(filter(event => event.target.classList.contains('valid'))). Combino com outros operadores: searchInput.pipe(filter(term => term.length > 2), switchMap(term => search(term))). Evita requisições desnecessárias."
+    },
+    {
+      "id": 1731,
+      "question": "O que é um Subject em RxJS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um tipo especial de Observable que permite multicasting",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um operador para transformar valores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma função que cancela Observables",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Subject é um tipo especial de Observable que pode ter múltiplos observers e permite emitir valores.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Subject é Observable que posso controlar - posso emitir valores com next(), complete(), error(). É multicast: vários subscribers recebem o mesmo valor. Uso para comunicação entre componentes: private messageSubject = new Subject(); sendMessage(msg) { this.messageSubject.next(msg); }. Diferente de Observable comum que é unicast e cold."
+    },
+    {
+      "id": 1732,
+      "question": "Qual a diferença entre Subject e BehaviorSubject?",
+      "options": [
+        {
+          "id": 1,
+          "name": "BehaviorSubject armazena o último valor emitido e o envia aos novos inscritos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Subject é síncrono e BehaviorSubject é assíncrono",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Subject é usado apenas em testes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "BehaviorSubject mantém o último valor emitido e o envia imediatamente para novos subscribers.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: BehaviorSubject guarda o último valor emitido. Novo subscriber recebe imediatamente o valor atual. Ideal para estados: private userSubject = new BehaviorSubject(null); get currentUser() { return this.userSubject.value; }. Subject comum não guarda nada - subscriber só recebe valores futuros. BehaviorSubject requer valor inicial, Subject não."
+    },
+    {
+      "id": 1733,
+      "question": "Qual operador RxJS é usado para limitar a quantidade de valores emitidos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "take",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "merge",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "scan",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "O operador take limita a quantidade de valores que o Observable pode emitir.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: take(n) pega apenas os primeiros n valores e completa o Observable automaticamente. Exemplo: interval(1000).pipe(take(3)) emite 0, 1, 2 e para. Muito útil: take(1) para single value como getCurrentUser(), takeUntil(destroy$) para auto-unsubscribe em componentes. takeWhile(condition) para parar baseado em condição."
+    },
+    {
+      "id": 1734,
+      "question": "Por que usar RxJS em aplicações Angular?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para manipular fluxos assíncronos como eventos, requisições HTTP e formulários reativos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Para substituir o roteamento padrão",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para estilizar componentes com CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "RxJS facilita o manejo de operações assíncronas e fluxos de dados complexos em Angular.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: RxJS é coração do Angular - HttpClient retorna Observables, Reactive Forms usam Observables, eventos são streams. Permite programação declarativa: combino streams, transformo dados, reajo a mudanças. Exemplo: combineLatest([searchTerm$, filters$]).pipe(switchMap(([term, filters]) => search(term, filters))). Gerencia estado complexo, evita callback hell, facilita cancelamento de operações."
+    },
+    {
+      "id": 1735,
+      "question": "Qual é o principal benefício do lazy loading em aplicações Angular?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reduz o tempo de carregamento inicial da aplicação",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aumenta o tamanho do bundle principal",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Impede a reutilização de componentes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Lazy loading reduz o bundle inicial carregando módulos apenas quando necessário.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Lazy loading melhora drasticamente Time to Interactive (TTI). Bundle inicial menor significa carregamento mais rápido, especialmente em redes 3G. Usuário vê a página principal rapidamente, módulos de admin/settings carregam só quando necessário. Implemento code splitting automático: { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }. Estratégia essencial para Progressive Web Apps."
+    },
+    {
+      "id": 1736,
+      "question": "Como o lazy loading é implementado em Angular?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Utilizando o operador 'subscribe' em Observables",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Configurando rotas com 'loadChildren' no módulo de roteamento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Importando todos os módulos no AppModule",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Lazy loading em Angular é configurado nas rotas usando a propriedade loadChildren.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Uso loadChildren nas rotas para carregar módulos sob demanda. Sintaxe moderna: loadChildren: () => import('./feature/feature.module').then(m => m.FeatureModule). Angular automaticamente cria chunk separado para cada módulo lazy. Posso usar preloading strategies para otimizar: RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}) pré-carrega módulos em background após carregamento inicial."
+    },
+    {
+      "id": 1737,
+      "question": "Lazy loading pode ser aplicado a quais tipos de recursos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Imagens, módulos, componentes e scripts",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas arquivos de áudio",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Somente estilos CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Lazy loading pode ser aplicado a diversos tipos de recursos para otimizar performance.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Implemento lazy loading em múltiplas camadas: 1) Módulos Angular com loadChildren, 2) Imagens com Intersection Observer API ou loading='lazy', 3) Componentes standalone com dynamic imports, 4) Scripts externos carregados condicionalmente. Exemplo: só carrego Google Maps SDK quando usuário abre mapa. Estratégia holística reduz bundle inicial e melhora Core Web Vitals."
+    },
+    {
+      "id": 1738,
+      "question": "Qual prática pode complementar o lazy loading para melhorar a performance?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Pré-carregamento seletivo (preloading)",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Desativar cache do navegador",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Carregar todos os scripts no head",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Preloading strategies permitem carregar módulos em background após o carregamento inicial.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Combino lazy loading com preloading inteligente. PreloadAllModules carrega módulos em background após inicial load. Ou implemento custom strategy: só pré-carrego módulos que usuário provavelmente acessará baseado em analytics. Uso service worker para cache inteligente. Resource hints como <link rel='prefetch'> para recursos futuros. Estratégia balanceada entre performance inicial e UX fluida."
+    },
+    {
+      "id": 1739,
+      "question": "O que significa uma arquitetura modular em projetos de software?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Separar o código em partes independentes e reutilizáveis",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Agrupar todo o código em um único arquivo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar o uso de componentes reutilizáveis",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Arquitetura modular divide o sistema em módulos independentes com responsabilidades bem definidas.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Arquitetura modular é como LEGO - peças independentes que se conectam. Cada módulo tem responsabilidade única, interface clara, baixo acoplamento. No Angular: Core module (singleton services), Shared module (componentes reutilizáveis), Feature modules (funcionalidades específicas). Benefícios: facilita testes, manutenção, trabalho em equipe, lazy loading. Exemplo: AuthModule, ProductModule, OrderModule - cada um independente mas interconectado via interfaces."
+    },
+    {
+      "id": 1740,
+      "question": "Qual é uma vantagem de organizar um projeto Angular em módulos feature-based?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita o lazy loading e a manutenção do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aumenta o tempo de build",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Impede a reutilização de componentes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Módulos feature-based permitem lazy loading e melhor organização do código por funcionalidades.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Feature-based modules organizam código por funcionalidade de negócio, não por tipo técnico. Em vez de 'components/', 'services/', tenho 'user-management/', 'product-catalog/'. Cada feature é mini-aplicação: seus componentes, services, models. Facilita lazy loading, onboarding de novos devs, manutenção. Time de produtos trabalha só no ProductModule sem afetar UserModule. Escalabilidade real."
+    },
+    {
+      "id": 1741,
+      "question": "Como a separação de responsabilidades contribui para a escalabilidade de um projeto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite que diferentes partes do sistema evoluam de forma independente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Centraliza toda a lógica em um único módulo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Reduz a necessidade de testes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Separação de responsabilidades reduz acoplamento, facilitando evolução independente de módulos.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Separação de responsabilidades é chave para escalabilidade. Cada módulo/component tem função clara, reduzindo dependências. Exemplo: AuthService só cuida de autenticação, UserService só de dados do usuário. Se preciso mudar lógica de autenticação, faço no AuthService sem afetar UserService. Facilita trabalho em equipe - múltiplos devs podem trabalhar em módulos diferentes simultaneamente. Testes unitários mais simples e eficazes."
+    },
+    {
+      "id": 1742,
+      "question": "Qual prática ajuda a manter um projeto escalável ao longo do tempo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Evitar documentação e testes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Adotar padrões consistentes de arquitetura e modularização",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Manter todos os arquivos em uma única pasta",
+          "alias": "c"
+        }
+      ],
+      "correct": "b",
+      "explanation": "Padrões consistentes facilitam manutenção, onboarding e evolução do projeto.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Adotar padrões consistentes é crucial para a escalabilidade. Isso inclui convenções de nomenclatura, estrutura de pastas e práticas de codificação. Por exemplo, usar sempre 'feature/' para módulos de recursos e 'shared/' para módulos compartilhados. Isso ajuda novos desenvolvedores a entenderem rapidamente a estrutura do projeto e reduz a curva de aprendizado."
+    },
+    {
+      "id": 1743,
+      "question": "Em projetos escaláveis, o que é recomendado ao lidar com dependências entre módulos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Evitar acoplamento excessivo e usar interfaces ou serviços compartilhados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Importar diretamente componentes de outros módulos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Duplicar código para evitar dependências",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Reduzir acoplamento entre módulos facilita manutenção e evolução independente.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Para lidar com dependências entre módulos, é importante evitar acoplamento excessivo. Isso pode ser feito usando interfaces ou serviços compartilhados. Por exemplo, em vez de um módulo importar diretamente componentes de outro, ele pode se comunicar através de um serviço. Isso torna os módulos mais independentes e facilita a manutenção."
+    },
+    {
+      "id": 1744,
+      "question": "O que é TypeScript e quais suas principais vantagens?",
+      "options": [
+        {
+          "id": 1,
+          "name": "É um superset do JavaScript que adiciona tipagem estática",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "É um framework para desenvolvimento web",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "É uma biblioteca para manipulação do DOM",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e IntelliSense.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: TypeScript é JavaScript com superpoderes. Adiciona tipagem estática que detecta erros em tempo de compilação, não runtime. Melhora drasticamente a experiência de desenvolvimento com IntelliSense, refactoring seguro e documentação self-describing. Em projetos grandes, reduz bugs significativamente. É transpilado para JavaScript puro, então roda em qualquer lugar que JS roda."
+    },
+    {
+      "id": 1745,
+      "question": "O que são Web Components e qual sua importância?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunto de tecnologias para criar elementos HTML personalizados e reutilizáveis",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma biblioteca JavaScript para animações",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um framework para desenvolvimento backend",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Web Components permitem criar elementos HTML customizados usando Custom Elements, Shadow DOM e HTML Templates.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Web Components são padrão web nativo para criar componentes reutilizáveis sem frameworks. Uso Custom Elements para definir tags personalizadas, Shadow DOM para encapsular estilos e funcionalidade, HTML Templates para markup reutilizável. Exemplo: <my-button disabled>Click me</my-button>. Funciona em todos os browsers modernos e é framework-agnostic. Ideal para design systems e componentes compartilhados entre diferentes projetos."
+    },
+    {
+      "id": 1746,
+      "question": "Como você implementaria autenticação em uma SPA (Single Page Application)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando JWT tokens e guards de rota",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas com cookies de sessão",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Armazenando senhas no localStorage",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "JWT tokens com guards de rota fornecem autenticação stateless e segura em SPAs.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Implemento autenticação com JWT tokens: 1) Login envia credenciais para API que retorna access token + refresh token, 2) Armazeno tokens de forma segura (httpOnly cookies ou memória), 3) AuthGuard intercepta rotas protegidas verificando token válido, 4) AuthInterceptor adiciona token automaticamente às requisições HTTP, 5) Refresh token strategy para renovar tokens expirados. Para segurança extra, uso HTTPS always e implemento logout automático."
+    },
+    {
+      "id": 1747,
+      "question": "O que é Progressive Web App (PWA) e suas principais características?",
+      "options": [
+        {
+          "id": 1,
+          "name": "App web que funciona offline e pode ser instalada como app nativo",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma biblioteca para desenvolvimento web",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo de banco de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "PWAs combinam o melhor da web e apps nativos com service workers, manifests e design responsivo.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: PWA combina web e mobile nativo. Características principais: 1) Service Worker para cache e funcionamento offline, 2) Web App Manifest para instalação no device, 3) HTTPS obrigatório para segurança, 4) Design responsivo e touch-friendly, 5) Push notifications para engagement. Vantagens: sem app store, updates automáticos, menor tamanho que apps nativos. Desenvolvo PWAs usando Angular Service Worker que automatiza cache strategies."
+    },
+    {
+      "id": 1748,
+      "question": "Como você otimizaria a performance de uma aplicação web?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Code splitting, lazy loading, otimização de imagens e cache strategies",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas usando CDN para assets",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Minificando apenas o CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Performance requer abordagem holística: code splitting, lazy loading, otimização de assets e cache inteligente.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Performance é multi-layered: 1) Bundle optimization com code splitting e tree shaking, 2) Lazy loading de módulos e imagens, 3) Otimização de assets (WebP images, minificação), 4) HTTP/2 e preload critical resources, 5) Service Worker para cache strategies, 6) Database optimization e CDN para assets. Uso Lighthouse para medir Core Web Vitals. Monitoro com ferramentas como New Relic ou DataDog em produção."
+    },
+    {
+      "id": 1749,
+      "question": "O que é Docker e como você o usaria em desenvolvimento front-end?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Plataforma de containerização para padronizar ambientes de desenvolvimento",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma linguagem de programação para backend",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um framework JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Docker containeriza aplicações garantindo consistência entre ambientes de desenvolvimento, teste e produção.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Docker resolve o problema 'funciona na minha máquina'. Crio Dockerfile que define ambiente padronizado com Node.js, dependências e configurações. docker-compose orquestra múltiplos containers (frontend, backend, banco). Vantagens: 1) Ambiente consistente entre devs, 2) Onboarding rápido de novos membros, 3) Deploy idêntico em staging/produção, 4) Isolamento de dependências. Uso multi-stage builds para otimizar imagens de produção."
+    },
+    {
+      "id": 1750,
+      "question": "Como você implementaria um sistema de estado global sem Redux/NgRx?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando Context API no React ou Services com BehaviorSubject no Angular",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas com variáveis globais",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando apenas localStorage",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Context API e Services com RxJS fornecem state management simples sem bibliotecas externas.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Para estado global simples, uso ferramentas nativas: Context API no React ou Services singleton no Angular. Crio UserService com BehaviorSubject para estado reativo: private userSubject = new BehaviorSubject(null); get user$() { return this.userSubject.asObservable(); }. Para estado complexo, avalio se realmente preciso de Redux/NgRx ou se padrão simples resolve. Às vezes, lift state up ou prop drilling é mais simples que over-engineering."
+    },
+    {
+      "id": 1751,
+      "question": "O que são microfrontends e quando você os recomendaria?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Arquitetura que divide frontend em módulos independentes desenvolvidos por times diferentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma nova versão do Angular",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo de componente React",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Microfrontends aplicam conceitos de microservices ao frontend, permitindo desenvolvimento independente por múltiplos times.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Microfrontends estendem microservices para frontend. Cada time desenvolve parte da aplicação independentemente - diferentes frameworks, deploy cycles, ownership. Recomendo para: 1) Times grandes (50+ devs), 2) Produtos complexos com domínios bem definidos, 3) Legacy migration gradual. Desafios: state sharing, styling consistency, bundle size. Uso Module Federation ou Single-SPA para implementar. Não recomendo para apps pequenas - overhead não compensa."
+    },
+    {
+      "id": 1752,
+      "question": "Como você garantiria acessibilidade (a11y) em suas aplicações?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando ARIA labels, navegação por teclado, contraste adequado e testes automatizados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas testando em diferentes navegadores",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando apenas cores para indicar estados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Acessibilidade requer ARIA, navegação por teclado, contraste visual adequado e testes com screen readers.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Acessibilidade é responsabilidade, não opcional. Implemento: 1) ARIA labels e roles para screen readers, 2) Navegação completa por teclado (tab order lógico), 3) Contraste mínimo 4.5:1 para texto, 4) Focus indicators visíveis, 5) Alt text em imagens, 6) Formulários com labels associadas. Uso ferramentas como axe-core para testes automatizados e testo com NVDA/JAWS. Objetivo: app usável por todos, independente de limitações."
+    },
+    {
+      "id": 1753,
+      "question": "O que é Server-Side Rendering (SSR) e suas vantagens?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Renderização no servidor que melhora SEO e tempo de carregamento inicial",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica apenas para aplicações mobile",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo de banco de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "SSR renderiza páginas no servidor, enviando HTML completo para o cliente, melhorando SEO e performance inicial.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: SSR renderiza HTML no servidor antes de enviar para cliente. Vantagens: 1) SEO melhorado - crawlers veem conteúdo completo, 2) First Contentful Paint mais rápido, 3) Melhor performance em dispositivos lentos. Desafios: complexidade do setup, hydration mismatches, maior carga no servidor. No Angular uso Angular Universal, no React uso Next.js. Para apps com muito conteúdo dinâmico, avalio se SSG (Static Site Generation) não seria melhor."
+    },
+    {
+      "id": 1754,
+      "question": "Como você implementaria um sistema de cache eficiente no frontend?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Combinando HTTP cache, Service Workers e estratégias de invalidação",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas usando localStorage para tudo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Desabilitando cache completamente",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Cache eficiente combina múltiplas estratégias: HTTP headers, Service Workers e invalidação inteligente.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Cache multi-layered: 1) HTTP cache com ETags e Cache-Control headers para assets estáticos, 2) Service Worker para cache programático - Cache First para assets, Network First para dados dinâmicos, 3) Memory cache para dados frequentemente acessados (usando Map ou WeakMap), 4) IndexedDB para dados grandes offline-first. Estratégias de invalidação baseadas em TTL, versioning ou manual trigger. Sempre considero cache size limits e cleanup policies."
+    },
+    {
+      "id": 1755,
+      "question": "O que são Design Tokens e como implementá-los?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Valores de design armazenados como dados estruturados para consistência visual",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma biblioteca de componentes UI",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um tipo de animação CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Design Tokens são valores de design (cores, tipografia, espaçamentos) armazenados como dados para garantir consistência.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Design Tokens centralizam decisões de design como dados estruturados. Define cores, tipografia, spacing, shadows em JSON/YAML, depois gero variáveis CSS, SCSS, JS automaticamente. Benefícios: 1) Single source of truth para design, 2) Consistência entre plataformas (web, mobile, desktop), 3) Facilita temas e white-labeling, 4) Integração design-dev mais fluida. Uso tools como Style Dictionary ou Figma Tokens Studio para automatizar pipeline."
+    },
+    {
+      "id": 1756,
+      "question": "Como você debuggaria problemas de performance em uma aplicação web?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando DevTools, Lighthouse, profiling e monitoring em produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas adicionando console.log no código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Reescrevendo toda a aplicação",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Debug de performance requer ferramentas específicas para identificar gargalos e métricas de user experience.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Debug performance é sistemático: 1) Chrome DevTools Performance tab para identificar long tasks e layout thrashing, 2) Lighthouse para Core Web Vitals e sugestões automatizadas, 3) Network tab para analisar waterfall de requests, 4) Memory tab para detectar memory leaks, 5) Angular DevTools ou React Profiler para component re-renders, 6) Real User Monitoring (RUM) em produção. Foco em métricas que impactam UX: FCP, LCP, FID, CLS."
+    },
+    {
+      "id": 1757,
+      "question": "O que é Webpack e qual sua importância no desenvolvimento moderno?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Bundler que processa e otimiza assets para produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um framework para desenvolvimento web",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma biblioteca para manipulação DOM",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Webpack é module bundler que processa JavaScript, CSS, imagens e outros assets para criar bundles otimizados.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Webpack orquestra todo build process moderno. Transforma código ES6+ via Babel, processa SCSS para CSS, otimiza imagens, faz code splitting automático, tree shaking para remover código morto. Conceitos principais: Entry points, Loaders (transformam arquivos), Plugins (fazem otimizações), Output configuration. Configuro dev server com hot reload, production builds com minificação e chunking. Webpack é base do Angular CLI e Create React App."
+    },
+    {
+      "id": 1758,
+      "question": "Como você implementaria internacionalização (i18n) em uma aplicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando bibliotecas como Angular i18n ou react-i18next com arquivos de tradução",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas usando condicionais para mostrar textos diferentes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Criando versões separadas da aplicação para cada idioma",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "i18n requer bibliotecas especializadas, arquivos de tradução estruturados e considerações de UX para diferentes culturas.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: i18n vai além de traduzir textos. Implemento: 1) Extraction de strings para arquivos JSON/XML de tradução, 2) Pluralization rules para diferentes idiomas, 3) Date/number/currency formatting por locale, 4) RTL support para árabe/hebraico, 5) Dynamic loading de bundles por idioma para reduzir bundle size. No Angular uso Angular i18n oficial, no React prefiro react-i18next. Considero cultural differences (cores, ícones, layout) além da linguagem."
+    },
+    {
+      "id": 1759,
+      "question": "O que são Web APIs modernas e como você as utiliza?",
+      "options": [
+        {
+          "id": 1,
+          "name": "APIs nativas do browser como Intersection Observer, Web Workers e Payment Request",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas APIs REST para comunicação com servidor",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Bibliotecas JavaScript externas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Web APIs modernas fornecem funcionalidades nativas do browser sem necessidade de bibliotecas externas.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Web APIs modernas substituem bibliotecas pesadas por funcionalidades nativas. Uso: 1) Intersection Observer para lazy loading em vez de scroll listeners, 2) Web Workers para heavy computations sem bloquear UI, 3) Payment Request API para checkout simplificado, 4) Web Share API para share nativo, 5) Geolocation API para localização, 6) Push API para notificações. Sempre verifico browser support com caniuse.com e implemento progressive enhancement com feature detection."
+    },
+    {
+      "id": 1760,
+      "question": "Como você estruturaria um projeto Angular/React grande com múltiplos desenvolvedores?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Arquitetura baseada em features, style guides, linting automatizado e code reviews",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma única pasta com todos os arquivos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Separação apenas por tipo de arquivo",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Projetos grandes requerem arquitetura bem definida, padrões consistentes e automação para manter qualidade.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Estrutura por domínio/feature, não por tipo técnico. Organização: shared/ (components/services reutilizáveis), core/ (singletons/guards), features/ (módulos por domínio), assets/, environments/. Padronização: ESLint+Prettier+Husky para code quality automática, Angular/React style guides, naming conventions claras. Workflow: feature branches, PR templates, code review obrigatório, automated testing. Documentation: README detalhado, architectural decision records (ADRs), component documentation."
+    },
+    {
+      "id": 1761,
+      "question": "O que é GraphQL e quando você escolheria sobre REST?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Query language que permite requisitar dados específicos, ideal para clientes com necessidades diferentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um banco de dados NoSQL",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma biblioteca para animações",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "GraphQL permite queries flexíveis e tipadas, reduzindo over-fetching e under-fetching de dados.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: GraphQL resolve problemas de REST: over-fetching (dados desnecessários) e under-fetching (múltiplas requests). Com GraphQL, client especifica exatamente quais dados quer: { user { name posts { title } } }. Vantagens: 1) Strong typing com schema, 2) Single endpoint, 3) Real-time com subscriptions, 4) Great developer experience. Escolho GraphQL para: mobile apps (bandwidth limitado), complex relationships, rapid iteration. Uso Apollo Client para caching inteligente e state management."
+    },
+    {
+      "id": 1762,
+      "question": "Como você implementaria testes end-to-end (E2E) em uma aplicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando ferramentas como Cypress ou Playwright para simular interações do usuário",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas com testes unitários",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Testando manualmente toda a aplicação",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Testes E2E automatizam fluxos de usuário completos, validando integração entre todos os componentes.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: E2E tests validam user journeys completos - login, navegação, forms, checkout. Uso Cypress para sintaxe simples e debugging visual, ou Playwright para cross-browser testing. Estratégia: 1) Test critical paths primeiro (happy flows), 2) Page Object Model para maintainability, 3) Data setup/teardown automático, 4) Screenshots/videos para debug, 5) Parallel execution para speed. Integro no CI/CD pipeline mas com cuidado - E2E tests são mais flaky que unit tests."
+    },
+    {
+      "id": 1763,
+      "question": "O que é Clean Code e quais são seus princípios fundamentais?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Código legível, simples e facilmente mantível seguindo princípios como DRY, YAGNI e KISS",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Código sem comentários",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Código com máxima performance",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Clean Code prioriza legibilidade, simplicidade e manutenibilidade sobre cleverness ou performance prematura.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Clean Code é sobre comunicação entre desenvolvedores. Princípios: 1) Meaningful names (getUserById vs get), 2) Functions should be small and do one thing, 3) Comments explain WHY, not WHAT, 4) DRY (Don't Repeat Yourself), 5) YAGNI (You Aren't Gonna Need It), 6) Consistent formatting. Refactoro constantemente: Extract Method, Rename Variable, Remove Dead Code. Código limpo é investimento - tempo inicial extra, mas economia gigante na manutenção."
+    },
+    {
+      "id": 1764,
+      "question": "Como você implementaria um sistema de notificações em tempo real?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando WebSockets ou Server-Sent Events com fallback para polling",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas com requisições HTTP a cada segundo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando apenas localStorage",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Notificações em tempo real requerem conexão persistente via WebSockets ou SSE, com polling como fallback.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Real-time notifications precisam de conexão persistente. WebSockets para comunicação bidirecional (chat, collaborative editing), Server-Sent Events para unidirecional (notificações). Implemento: 1) Connection management com reconnection logic, 2) Heartbeat/keepalive para detectar connection drops, 3) Message queuing para offline scenarios, 4) Progressive enhancement - polling fallback para browsers antigos. Uso libraries como Socket.io ou native WebSocket API com proper error handling."
+    },
+    {
+      "id": 1765,
+      "question": "O que são Custom Hooks no React ou Custom Decorators no Angular?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Funcionalidades reutilizáveis que encapsulam lógica complexa",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas funções normais de JavaScript",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Componentes visuais customizados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Custom Hooks/Decorators permitem reutilizar lógica stateful entre componentes de forma elegante.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Custom Hooks (React) ou Custom Decorators (Angular) extraem lógica reutilizável. React Hook exemplo: useLocalStorage que synca state com localStorage automaticamente. Angular Decorator exemplo: @Debounce que adiciona debouncing a qualquer método. Benefícios: 1) DRY principle, 2) Separation of concerns, 3) Easy testing, 4) Better composition. Sempre penso: 'essa lógica pode ser útil em outros componentes?' Se sim, extraio para custom hook/decorator."
+    },
+    {
+      "id": 1766,
+      "question": "Como você otimizaria imagens para web considerando diferentes dispositivos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando formatos modernos, responsive images e lazy loading",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas convertendo todas para JPEG",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Usando sempre o maior tamanho possível",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Otimização de imagens requer múltiplas estratégias: formatos modernos, sizes adequados e carregamento otimizado.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Image optimization é crucial para performance. Estratégia: 1) Formatos modernos: WebP/AVIF com JPEG fallback using <picture> element, 2) Responsive images com srcset para diferentes densidades/sizes, 3) Lazy loading com Intersection Observer ou loading='lazy', 4) CDN com automatic optimization (Cloudinary, ImageKit), 5) Build-time optimization com tools como sharp. Para arte use PNG, fotos use JPEG/WebP, ícones use SVG. Always consider CLS (Cumulative Layout Shift)."
+    },
+    {
+      "id": 1767,
+      "question": "O que é Continuous Integration e como implementá-la?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Prática de integrar código frequentemente com testes automatizados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Deploy manual em produção",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Backup diário do código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "CI automatiza integração de código com execução de testes, build e verificações de qualidade a cada commit.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: CI automatiza quality gates para cada commit. Pipeline típico: 1) Code push triggers build, 2) Install dependencies, 3) Run linting/formatting checks, 4) Execute unit tests com coverage, 5) Run integration tests, 6) Build for production, 7) Deploy to staging environment. Uso GitHub Actions ou GitLab CI com cache para speed up builds. Fail fast principle - se qualquer step falha, pipeline para. Team nunca deveria quebrar main branch."
+    },
+    {
+      "id": 1768,
+      "question": "Como você implementaria um sistema de busca eficiente no frontend?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Debouncing, cache de resultados, paginação e filtros avançados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas uma requisição por caractere digitado",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Carregando todos os dados na memória",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Sistema de busca eficiente requer otimizações de UX e performance: debouncing, cache e paginação.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Search UX eficiente combina várias técnicas: 1) Debouncing (300-500ms) para evitar requests excessivas, 2) Cache de resultados para queries repetidas, 3) Infinite scrolling ou pagination para large datasets, 4) Loading states e skeleton screens, 5) Search suggestions/autocomplete, 6) Advanced filters com query string persistence, 7) Search analytics para melhorar relevância. Uso RxJS switchMap para cancelar requests obsoletas. Performance critical em mobile."
+    },
+    {
+      "id": 1769,
+      "question": "O que é Atomic Design e como aplicá-lo no desenvolvimento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Metodologia que organiza componentes UI em hierarquia: átomos, moléculas, organismos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma biblioteca de animações CSS",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um framework JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Atomic Design estrutura design systems em componentes hierárquicos, facilitando reutilização e consistência.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Atomic Design organiza UI components sistematicamente. Átomos: button, input, label (básicos). Moléculas: search form (átomos combinados). Organismos: header, product list (moléculas + átomos). Templates: page layouts sem conteúdo. Pages: templates com dados reais. Benefícios: 1) Reusabilidade máxima, 2) Consistency across app, 3) Better developer handoff, 4) Easier testing. Uso Storybook para documentar cada nível e visualizar todas as variações."
+    },
+    {
+      "id": 1770,
+      "question": "Como você implementaria autenticação com OAuth 2.0/OpenID Connect?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Redirecionando para provider, recebendo authorization code e trocando por tokens",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Enviando credenciais diretamente para o provider",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Armazenando senhas no banco de dados local",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "OAuth 2.0 flow envolve redirecionamento para authorization server, code exchange e token management.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: OAuth 2.0 é delegation protocol - user autoriza app a acessar recursos sem compartilhar senha. Authorization Code Flow: 1) Redirect user para authorization server (Google, Auth0), 2) User consente e retorna com authorization code, 3) Exchange code por access_token + refresh_token, 4) Use tokens para API calls. PKCE (Proof Key for Code Exchange) para SPAs. OpenID Connect adiciona ID token com user info. Implemento com libraries como oauth2-client ou auth0-js."
+    },
+    {
+      "id": 1771,
+      "question": "O que são Web Standards e por que são importantes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Especificações técnicas que garantem interoperabilidade entre browsers e plataformas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Padrões visuais para design",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Bibliotecas JavaScript obrigatórias",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Web Standards (W3C, WHATWG) definem como tecnologias web devem funcionar, garantindo consistência cross-browser.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Web Standards garantem que web funcione igual everywhere. W3C e WHATWG definem HTML, CSS, JavaScript APIs. Importância: 1) Cross-browser compatibility, 2) Future-proof code, 3) Accessibility compliance, 4) Performance optimization. Sempre prefiro soluções standards-based: Custom Elements over proprietary widgets, CSS Grid over framework-specific layouts, Fetch API over jQuery.ajax. Progressive enhancement com feature detection quando preciso usar features cutting-edge."
+    },
+    {
+      "id": 1772,
+      "question": "Como você implementaria um sistema de logs e monitoring no frontend?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Error boundaries, structured logging, analytics e monitoring de performance",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas console.log em desenvolvimento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Alertas por email para cada erro",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Monitoring frontend requer captura de erros, métricas de performance e insights de uso para debugging e otimização.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Frontend monitoring é crucial para production apps. Implemento: 1) Error Boundaries (React) ou Global Error Handler para capturar unhandled errors, 2) Structured logging com context (user ID, route, timestamp), 3) Performance monitoring (Core Web Vitals, custom metrics), 4) User analytics (feature usage, conversion funnels). Uso tools como Sentry para error tracking, LogRocket para session replay, Google Analytics para user behavior. Always respect privacy - anonymize sensitive data."
+    },
+    {
+      "id": 1773,
+      "question": "O que é Feature Flags e como implementá-las no frontend?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Toggles que permitem ativar/desativar funcionalidades sem deploy",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Comentários especiais no código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Configurações de CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Feature Flags permitem controlar funcionalidades dinamicamente, facilitando deploys seguros e A/B testing.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Feature Flags (ou Feature Toggles) permitem deployar código disabled e ativar remotamente. Use cases: 1) Gradual rollouts (5% → 50% → 100%), 2) A/B testing different implementations, 3) Kill switch para features problemáticas, 4) Trunk-based development sem feature branches. Implementação: flag service que busca configurações remotas, components que checam flags antes de render. Uso LaunchDarkly ou custom solution com real-time updates via WebSocket."
+    },
+    {
+      "id": 1774,
+      "question": "Como você estruturaria CSS/SCSS em um projeto grande?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Metodologias como BEM, ITCSS ou CSS Modules com arquitetura por componentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um único arquivo CSS global",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Estilos inline em todos os elementos",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Projetos grandes requerem arquitetura CSS organizada para evitar conflitos e facilitar manutenção.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: CSS architecture é crucial em projetos grandes para evitar specificity wars e side effects. ITCSS organiza por especificidade: Settings → Tools → Generic → Elements → Objects → Components → Utilities. BEM naming evita conflitos: .card__title--highlighted. CSS Modules ou styled-components fazem scoping automático. Estrutura: abstracts/ (variables, mixins), base/ (resets, typography), components/ (UI components), utilities/ (helper classes). Always mobile-first approach."
+    },
+    {
+      "id": 1775,
+      "question": "O que é Web Assembly (WASM) e quando utilizá-lo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Formato binário que permite executar código de alta performance no browser",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma nova versão do JavaScript",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um framework para desenvolvimento web",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "WebAssembly permite executar código compilado (C++, Rust, C#) no browser com performance próxima ao nativo.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: WebAssembly complementa JavaScript para computações heavy. Use cases: 1) Image/video processing, 2) Games com physics engines, 3) Cryptography operations, 4) Scientific computing, 5) Porting legacy C/C++ libraries. WASM executa em sandbox seguro, acessa DOM via JavaScript glue code. Linguagens: Rust, C/C++, C#, Go. Não substitui JS - é collaborative technology. Consider WASM quando JavaScript performance não é suficiente e computational cost justifica complexity overhead."
+    },
+    {
+      "id": 1776,
+      "question": "Como você implementaria scroll infinito (infinite scroll) eficiente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Intersection Observer API com virtualization para grandes datasets",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Event listener no scroll carregando todos os dados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "setTimeout para carregar dados a cada segundo",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Infinite scroll eficiente usa Intersection Observer e virtualization para performance com grandes volumes de dados.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Infinite scroll eficiente evita scroll event listeners que degradam performance. Uso Intersection Observer para detectar quando user aproxima do final da lista. Para datasets grandes, implemento virtualization (só renderizo itens visíveis + buffer). Considerações UX: 1) Loading states claros, 2) Error handling com retry, 3) Preserve scroll position ao voltar, 4) Accessibility com proper ARIA announcements. Libraries como react-window ou ngx-virtual-scroller simplificam implementation."
+    },
+    {
+      "id": 1777,
+      "question": "O que é Edge Computing e como impacta desenvolvimento frontend?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Processamento próximo ao usuário que reduz latência e melhora performance",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um novo framework JavaScript",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica de CSS",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Edge Computing executa código próximo aos usuários, reduzindo latência através de CDNs distribuídas globalmente.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Edge Computing move computação para próximo dos users via CDN edge servers worldwide. Para frontend: 1) Edge-side rendering reduz TTFB, 2) A/B testing sem client-side overhead, 3) Personalization sem roundtrips, 4) Security filtering antes de chegar ao origin. Platforms como Cloudflare Workers, Vercel Edge Functions permitem rodar JavaScript no edge. Ideal for: geolocation-based content, authentication, caching logic, request routing. Consider cold start latency e limited runtime environment."
+    },
+    {
+      "id": 1778,
+      "question": "Como você implementaria drag and drop acessível e responsivo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "HTML5 Drag API com fallbacks para touch e teclado",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas mouse events básicos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Somente bibliotecas externas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Drag and drop moderno requer suporte multi-input: mouse, touch e keyboard para acessibilidade completa.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Drag and drop inclusivo suporta todos input methods. HTML5 Drag API para mouse, touch events para mobile, keyboard navigation (Space/Enter para select, Arrow keys para move). ARIA live regions para screen reader feedback. Visual cues: drag handles, drop zones highlight, ghost images. Considerations: 1) Touch devices precision, 2) Auto-scroll during drag, 3) Undo/redo capability, 4) Data persistence. Libraries como react-beautiful-dnd ou SortableJS já solved these challenges com accessibility built-in."
+    },
+    {
+      "id": 1779,
+      "question": "O que é a Shadow DOM e como ela melhora o encapsulamento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Parte do DOM isolada que encapsula estilos e markup de componentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma nova API para manipulação DOM",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um framework JavaScript",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Shadow DOM cria um escopo isolado para componentes, prevenindo conflitos de estilo e comportamento.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: Shadow DOM isola component internals do global DOM. Cada web component tem seu próprio shadow root com styles e markup encapsulados. Benefícios: 1) No style leakage - estilos globais não afetam o componente e vice-versa, 2) Scoped CSS - use classes/id sem medo de conflitos, 3) Encapsulation of behavior - eventos e state são locais. Uso em Custom Elements nativos ou frameworks como Angular (ViewEncapsulation) e Stencil. Considerações: performance overhead, debugging challenges."
+    },
+    {
+      "id": 1780,
+      "question": "Como você implementaria um sistema de permissões baseado em funções (RBAC) no frontend?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Definindo roles e permissions, controlando acesso via guards e componentes protegidos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Apenas escondendo botões no UI",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Armazenando permissões no localStorage",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "RBAC envolve definição clara de roles/permissions e controle de acesso tanto na UI quanto na lógica de navegação.",
+      "category": "entrevista",
+      "interviewTip": "Como explicar na entrevista: RBAC estrutura acesso baseado em roles (admin, user, guest) e permissions (read, write). Implemento: 1) Centralized role/permission definitions, 2) Route guards (Angular CanActivate, React PrivateRoute) para proteger rotas, 3) Conditional rendering de componentes/botões baseado em permissions, 4) Middleware para API calls que checa tokens/roles. Nunca confio apenas no frontend - backend deve validar permissions também. Uso JWT claims para transportar roles/permissions com segurança."
+    }
+  ]
+}

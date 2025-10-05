@@ -1,0 +1,619 @@
+{
+  "metadata": {
+    "area": "metodologias",
+    "subject": "testes-unitarios",
+    "name": "Testes Automatizados",
+    "description": "Testes automatizados, TDD, BDD e garantia de qualidade.",
+    "difficulty": "advanced",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 25,
+    "tags": [
+      "tdd",
+      "bdd",
+      "automacao",
+      "qualidade"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1301,
+      "question": "O que são testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma técnica de teste que verifica o funcionamento de pequenas partes do código isoladamente",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para testar a aplicação completa",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma abordagem para testar apenas a interface gráfica",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1302,
+      "question": "Qual é o principal objetivo dos testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Garantir que cada unidade de código funcione corretamente de forma isolada",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Testar a integração entre diferentes módulos",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Validar a experiência do usuário",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1303,
+      "question": "Quais são as vantagens de usar testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilitam a manutenção do código e reduzem erros em produção",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Aumentam o tempo de desenvolvimento",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Eliminam a necessidade de testes automatizados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1304,
+      "question": "O que é um mock em testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um objeto simulado que imita o comportamento de dependências externas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um erro encontrado durante a execução dos testes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para testar interfaces gráficas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1305,
+      "question": "Qual ferramenta é amplamente utilizada para testes unitários em Java?",
+      "options": [
+        {
+          "id": 1,
+          "name": "JUnit",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Selenium",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Postman",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1306,
+      "question": "O que significa TDD (Test-Driven Development)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma abordagem de desenvolvimento onde os testes são escritos antes do código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Uma técnica para testar interfaces gráficas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um método para testar apenas a experiência do usuário",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1307,
+      "question": "Qual é a diferença entre testes unitários e testes de integração?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Testes unitários verificam partes isoladas do código, enquanto testes de integração validam a comunicação entre módulos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Testes unitários são aplicados apenas em interfaces gráficas",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Testes de integração são usados apenas para bancos de dados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1308,
+      "question": "Por que é importante automatizar testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para garantir que os testes sejam executados de forma consistente e rápida",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Para eliminar a necessidade de revisão de código",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Para reduzir a necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1309,
+      "question": "O que é cobertura de testes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A porcentagem do código que é testada por testes unitários",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um relatório de erros encontrados durante os testes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para testar interfaces gráficas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1310,
+      "question": "Qual é a melhor prática ao escrever testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar testes pequenos e independentes que validem apenas uma funcionalidade por vez",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Testar todas as funcionalidades em um único teste",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Evitar o uso de testes automatizados",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1311,
+      "question": "O que é um stub em testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um objeto substituto que retorna respostas pré-definidas para chamadas de métodos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um erro encontrado durante a execução dos testes",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para testar interfaces gráficas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1312,
+      "question": "Qual é a diferença entre mocks e stubs?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Mocks verificam interações entre objetos, enquanto stubs retornam valores pré-definidos",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Mocks são usados apenas para testes de integração",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Stubs são usados apenas para testes de interface",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1313,
+      "question": "O que é um teste de regressão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um teste que verifica se alterações no código não introduziram novos erros",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um teste que mede a performance do sistema",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um teste que verifica apenas a interface gráfica",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1314,
+      "question": "Qual é a importância da independência dos testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permite que cada teste seja executado isoladamente sem depender de outros testes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduz a necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Elimina a necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1315,
+      "question": "O que é um falso positivo em testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um teste que passa mesmo quando há um erro no código",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um teste que falha devido a um erro externo",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um teste que verifica apenas a interface gráfica",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1316,
+      "question": "O que é um falso negativo em testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um teste que falha mesmo quando o código está correto",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um teste que mede a performance do sistema",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um teste que verifica apenas a interface gráfica",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1317,
+      "question": "Qual é a relação entre testes unitários e refatoração de código?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Testes unitários ajudam a garantir que a refatoração não introduza novos erros",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Refatoração elimina a necessidade de testes unitários",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Testes unitários são usados apenas para validar interfaces gráficas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1318,
+      "question": "O que é um framework de testes unitários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma biblioteca que facilita a criação e execução de testes unitários",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um método para testar apenas a experiência do usuário",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Uma técnica para testar interfaces gráficas",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1319,
+      "question": "Qual é a importância da cobertura de testes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ajuda a identificar partes do código que não estão sendo testadas",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Reduz a necessidade de testes automatizados",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Elimina a necessidade de versionamento de código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1320,
+      "question": "O que é um teste parametrizado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um teste que executa o mesmo código com diferentes conjuntos de dados",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Um teste que mede a performance do sistema",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Um teste que verifica apenas a interface gráfica",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "category": "testes-unitarios",
+      "explanation": "Testes unitários verificam o funcionamento de pequenas partes do código isoladamente, garantindo qualidade e facilitando refatoração."
+    },
+    {
+      "id": 1321,
+      "question": "O que é Test-Driven Development (TDD) e quais seus benefícios?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Metodologia onde escreve-se o teste antes do código, garantindo melhor design",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Escrever testes apenas após terminar toda a funcionalidade",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Testar apenas as funções mais importantes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "TDD segue o ciclo Red-Green-Refactor, melhorando design de código e cobertura de testes.",
+      "category": "testes-unitarios"
+    },
+    {
+      "id": 1322,
+      "question": "Como testar funções assíncronas em JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando async/await nos testes e esperando promises resolverem",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Não é possível testar código assíncrono",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas com setTimeout",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Testes assíncronos devem aguardar promises com async/await ou usar callbacks done() conforme o framework.",
+      "category": "testes-unitarios"
+    },
+    {
+      "id": 1323,
+      "question": "O que é Behavior-Driven Development (BDD)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Abordagem que foca em descrever o comportamento esperado usando linguagem natural",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Tipo de teste apenas para APIs",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Framework específico para testes",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "BDD usa sintaxe Given-When-Then para descrever cenários de teste em linguagem compreensível para todos.",
+      "category": "testes-unitarios"
+    },
+    {
+      "id": 1324,
+      "question": "Como testar componentes que dependem do DOM?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando ferramentas como Testing Library ou Enzyme para renderizar componentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Não é possível testar componentes DOM",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Apenas testando a lógica sem renderização",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Testing Library e similares fornecem utilities para renderizar e interagir com componentes em ambiente de teste.",
+      "category": "testes-unitarios"
+    },
+    {
+      "id": 1325,
+      "question": "Qual é a importância dos testes de snapshot?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Detectam mudanças não intencionais na saída/renderização de componentes",
+          "alias": "a"
+        },
+        {
+          "id": 2,
+          "name": "Testam a performance da aplicação",
+          "alias": "b"
+        },
+        {
+          "id": 3,
+          "name": "Verificam a segurança do código",
+          "alias": "c"
+        }
+      ],
+      "correct": "a",
+      "explanation": "Snapshot tests capturam a saída de componentes e alertam quando há mudanças, ajudando a detectar regressões visuais.",
+      "category": "testes-unitarios"
+    }
+  ]
+}

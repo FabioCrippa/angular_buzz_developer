@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "area": "informatica",
+    "subject": "redes",
+    "name": "Redes & Internet",
+    "description": "Conceitos de rede, protocolos, internet e conectividade.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-02",
+    "questionCount": 5,
+    "tags": [
+      "internet",
+      "protocolos",
+      "conectividade",
+      "wi-fi"
+    ]
+  },
+  "questions": [
+    {
+      "question": "O protocolo usado para navegação na web é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "FTP",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "HTTP/HTTPS",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "SMTP",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "POP3",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "HTTP (HyperText Transfer Protocol) e sua versão segura HTTPS são usados para navegação web.",
+      "studyTip": "HTTP = web, FTP = arquivos, SMTP = envio email, POP3/IMAP = recebimento email.",
+      "id": 4102,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um endereço IP válido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "192.168.1.256",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "192.168.1.1",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "256.168.1.1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "192.256.1.1",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "IP v4 tem 4 octetos de 0 a 255. Apenas 192.168.1.1 está dentro dessa faixa.",
+      "studyTip": "IPv4: 4 números de 0 a 255 separados por ponto. IPv6: usa hexadecimal com ':'.",
+      "id": 4103,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que significa DNS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Dynamic Network System",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Domain Name System",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Data Network Service",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Digital Name Server",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "DNS (Domain Name System) traduz nomes de domínio (google.com) em endereços IP.",
+      "studyTip": "DNS é como uma 'lista telefônica' da internet: nome → número (IP).",
+      "id": 4104,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em uma rede Wi-Fi, WPA2 refere-se à:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Velocidade da conexão",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Segurança e criptografia",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Frequência do sinal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Alcance da rede",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "WPA2 (Wi-Fi Protected Access 2) é um protocolo de segurança que criptografa dados na rede Wi-Fi.",
+      "studyTip": "Evolução Wi-Fi: WEP (fraco) → WPA → WPA2 → WPA3 (mais seguro).",
+      "id": 4105,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A topologia de rede em estrela caracteriza-se por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Todos conectados em linha",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conexão em anel fechado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Dispositivos conectados a um ponto central",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Cada um conectado a todos",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Na topologia estrela, todos os dispositivos se conectam a um hub ou switch central.",
+      "studyTip": "Estrela = hub central. Anel = círculo. Barramento = linha. Malha = todos com todos.",
+      "id": 4106,
+      "category": "redes",
+      "difficulty": "fundamental"
+    }
+  ]
+}
