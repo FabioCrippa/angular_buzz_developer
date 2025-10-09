@@ -1,78 +1,222 @@
 <!-- Loading State -->
-<app-loading 
-  *ngIf="isLoading" 
-  message="Carregando dados do dashboard..." 
-  size="large">
-</app-loading>
+<div *ngIf="isLoading" class="loading-container">
+  <mat-card class="loading-card">
+    <mat-card-content>
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Carregando dados do dashboard...</p>
+    </mat-card-content>
+  </mat-card>
+</div>
 
 <!-- Error State -->
-<div *ngIf="hasError && !isLoading" class="error-container">
-  <div class="error-content">
-    <h3>Ops! Algo deu errado</h3>
+<mat-card *ngIf="hasError && !isLoading" class="error-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar color="warn">error_outline</mat-icon>
+    <mat-card-title>Ops! Algo deu errado</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
     <p>{{ errorMessage }}</p>
-    <button class="btn btn-primary" (click)="reloadData()">
-      <i class="fas fa-redo"></i> Tentar Novamente
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="reloadData()">
+      <mat-icon>refresh</mat-icon>
+      Tentar Novamente
     </button>
-  </div>
-</div>
+  </mat-card-actions>
+</mat-card>
 
 <!-- Dashboard Content -->
 <div *ngIf="!isLoading && !hasError" class="dashboard-container">
   
-  <!-- Header -->
-  <header class="dashboard-header">
-    <div class="app-info">
-      <h1>{{ appInfo.name || 'Angular Buzz Developer' }}</h1>
-      <p class="app-description">{{ appInfo.description || 'Plataforma completa de questões técnicas' }}</p>
-      <div class="stats-summary">
-        <span class="stat-item">
-          <i class="fas fa-question-circle"></i>
-          {{ totalQuestions }} questões disponíveis
-        </span>
-        <span class="stat-item">
-          <i class="fas fa-layer-group"></i>
-          {{ areas.length }} áreas de estudo
-        </span>
+  <!-- Header Card -->
+  <mat-card class="header-card" appearance="outlined">
+    <mat-card-content>
+      <div class="app-info">
+        <h1 class="app-title">Quizzfy</h1>
+        <p class="app-description">{{ appInfo.description || 'Plataforma completa de preparação profissional' }}</p>
+        
+        <!-- Stats com Material Cards -->
+        <div class="stats-grid">
+          <mat-card class="stat-card" matRipple>
+            <mat-card-content>
+              <div class="stat-content">
+                <mat-icon class="stat-icon">quiz</mat-icon>
+                <div class="stat-info">
+                  <span class="stat-number">{{ totalQuestions }}</span>
+                  <span class="stat-label">questões disponíveis</span>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          
+          <mat-card class="stat-card" matRipple>
+            <mat-card-content>
+              <div class="stat-content">
+                <mat-icon class="stat-icon">layers</mat-icon>
+                <div class="stat-info">
+                  <span class="stat-number">{{ areas.length }}</span>
+                  <span class="stat-label">áreas de estudo</span>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
-    </div>
-  </header>
+    </mat-card-content>
+  </mat-card>
 
-  <!-- Areas Grid -->
+  <!-- Areas Section -->
   <section class="areas-section">
-    <h2>Áreas de Estudo</h2>
+    <h2 class="section-title">Áreas de Estudo</h2>
     
+    <!-- Areas Grid with Material Cards -->
     <div class="areas-grid">
-      <div 
-        *ngFor="let area of areas" 
+      <mat-card 
+        *ngFor="let area of areas; trackBy: trackByAreaName"
         class="area-card"
         [class.available]="area.available"
         [class.coming-soon]="!area.available"
-        (click)="navigateToArea(area.name)">
+        [attr.tabindex]="area.available ? 0 : -1"
+        (click)="navigateToArea(area.name)"
+        matRipple
+        [matRippleDisabled]="!area.available">
         
-        <div class="card-header">
-          <h3>{{ area.displayName }}</h3>
-          <span class="question-count">{{ area.questionCount }} questões</span>
-        </div>
+        <!-- Card Header -->
+        <mat-card-header>
+          <mat-icon mat-card-avatar [class]="'icon-' + area.name">
+            {{ getAreaIcon(area.name) }}
+          </mat-icon>
+          <mat-card-title>{{ area.displayName }}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-chip-set>
+              <mat-chip class="question-chip">
+                {{ area.questionCount }} questões
+              </mat-chip>
+            </mat-chip-set>
+          </mat-card-subtitle>
+        </mat-card-header>
         
-        <div class="card-body">
-          <div class="subjects-list">
-            <span 
-              *ngFor="let subject of area.subjects" 
-              class="subject-tag">
-              {{ subject }}
-            </span>
+        <!-- Card Content -->
+        <mat-card-content>
+          <!-- Description -->
+          <p class="area-description" *ngIf="area.description">
+            {{ area.description }}
+          </p>
+          
+          <!-- Subjects Chips -->
+          <div class="subjects-container" *ngIf="area.subjects?.length">
+            <h4 class="subjects-title">Disciplinas:</h4>
+            <mat-chip-set class="subjects-chips">
+              <mat-chip 
+                *ngFor="let subject of area.subjects; trackBy: trackBySubject"
+                class="subject-chip">
+                {{ subject }}
+              </mat-chip>
+            </mat-chip-set>
           </div>
-        </div>
+
+          <!-- Mini Stats -->
+          <div class="mini-stats" *ngIf="area.stats">
+            <div class="mini-stat">
+              <mat-icon class="mini-stat-icon">speed</mat-icon>
+              <div class="mini-stat-info">
+                <span class="mini-stat-value">{{ area.stats.difficulty || 'Médio' }}</span>
+                <span class="mini-stat-label">Dificuldade</span>
+              </div>
+            </div>
+            <div class="mini-stat">
+              <mat-icon class="mini-stat-icon">schedule</mat-icon>
+              <div class="mini-stat-info">
+                <span class="mini-stat-value">{{ area.stats.avgTime || '2min' }}</span>
+                <span class="mini-stat-label">Tempo médio</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-container" *ngIf="area.progress !== undefined">
+            <div class="progress-info">
+              <span class="progress-label">Progresso</span>
+              <span class="progress-value">{{ area.progress }}%</span>
+            </div>
+            <mat-progress-bar 
+              mode="determinate" 
+              [value]="area.progress"
+              class="area-progress">
+            </mat-progress-bar>
+          </div>
+        </mat-card-content>
         
-        <div class="card-footer">
-          <span *ngIf="area.available" class="status-badge available">
-            <i class="fas fa-play"></i> Disponível
-          </span>
-          <span *ngIf="!area.available" class="status-badge coming-soon">
-            <i class="fas fa-clock"></i> Em breve
-          </span>
-        </div>
-      </div>
+        <mat-divider></mat-divider>
+        
+        <!-- Card Actions -->
+        <mat-card-actions align="end">
+          <!-- Status Badge -->
+          <mat-chip class="status-chip" [class.available-chip]="area.available" [class.coming-soon-chip]="!area.available">
+            <mat-icon matChipAvatar>
+              {{ area.available ? 'play_arrow' : 'schedule' }}
+            </mat-icon>
+            {{ area.available ? 'Disponível' : 'Em breve' }}
+          </mat-chip>
+
+          <!-- Action Button -->
+          <button 
+            mat-raised-button
+            [color]="area.available ? 'primary' : ''"
+            [disabled]="!area.available"
+            [matTooltip]="area.available ? 'Estudar ' + area.displayName : 'Área não disponível'"
+            (click)="$event.stopPropagation(); navigateToArea(area.name)">
+            <mat-icon>{{ area.available ? 'arrow_forward' : 'lock' }}</mat-icon>
+            {{ area.available ? 'Estudar' : 'Bloqueado' }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Empty State -->
+    <mat-card *ngIf="areas.length === 0" class="empty-state-card">
+      <mat-card-content>
+        <mat-icon class="empty-icon">folder_open</mat-icon>
+        <h3>Nenhuma área encontrada</h3>
+        <p>Não há áreas de estudo disponíveis no momento.</p>
+        <button mat-raised-button color="primary" (click)="reloadData()">
+          <mat-icon>refresh</mat-icon>
+          Recarregar
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <!-- Quick Actions -->
+  <section class="quick-actions-section">
+    <h2 class="section-title">Ações Rápidas</h2>
+    <div class="quick-actions-grid">
+      
+      <mat-card class="quick-action-card" matRipple (click)="startRandomQuiz()">
+        <mat-card-content>
+          <mat-icon class="action-icon">shuffle</mat-icon>
+          <h3 class="action-title">Quiz Aleatório</h3>
+          <p class="action-description">Questões de todas as áreas</p>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card class="quick-action-card" matRipple (click)="viewProgress()">
+        <mat-card-content>
+          <mat-icon class="action-icon">trending_up</mat-icon>
+          <h3 class="action-title">Meu Progresso</h3>
+          <p class="action-description">Acompanhe sua evolução</p>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card class="quick-action-card" matRipple (click)="viewFavorites()">
+        <mat-card-content>
+          <mat-icon class="action-icon">favorite</mat-icon>
+          <h3 class="action-title">Favoritos</h3>
+          <p class="action-description">Questões marcadas</p>
+        </mat-card-content>
+      </mat-card>
+      
     </div>
   </section>
+
 </div>

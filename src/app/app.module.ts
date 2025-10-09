@@ -6,12 +6,16 @@ import { CommonModule } from '@angular/common'; // ✅ IMPORTAR CommonModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './shared/material/material/material.module';
 
 // Components
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { QuizzComponent } from './components/quizz/quizz.component';
+import { QuizzComponent } from './pages/quizz/quizz.component';
 import { LoadingComponent } from './shared/components/loading/loading.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AreaComponent } from './pages/area/area.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    LoadingComponent
+    LoadingComponent,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

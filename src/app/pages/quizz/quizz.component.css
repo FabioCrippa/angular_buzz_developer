@@ -1,0 +1,650 @@
+/* ✅ CONTAINER PRINCIPAL */
+.quiz-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.quiz-container h1, span {
+  color: #2c3e50;
+}
+
+/* ✅ QUIZZ COMPONENT - SEM CONTROLES DE ÁUDIO */
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+/* 🎯 MELHORIAS VISUAIS */
+.quiz-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 0;
+}
+
+.quiz-info {
+  flex: 1;
+}
+
+.quiz-category {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-progress {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.quiz-score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.question-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* 🎨 BOTÕES DE RESPOSTA MELHORADOS */
+.option.selected {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb) !important;
+  border-color: #2196f3 !important;
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.option.correct {
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c9) !important;
+  border-color: #4caf50 !important;
+  color: #2e7d32 !important;
+}
+
+.option.incorrect {
+  background: linear-gradient(135deg, #ffebee, #ffcdd2) !important;
+  border-color: #f44336 !important;
+  color: #c62828 !important;
+}
+
+.question-number {
+  background: #667eea;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.question-text {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.progress-container span {
+  color: #2c3e50;
+}
+
+
+.btn-listen {
+  margin-bottom: 2rem;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+/* ✅ OPTIONS CONTAINER */
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* ✅ OPTION ITEM - INTERATIVA */
+.option-item {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  position: relative;
+}
+
+/* ✅ HOVER EFFECT */
+.option-item:hover:not(.disabled) {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+/* ✅ SELECTED STATE */
+.option-item.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* ✅ CORRECT STATE */
+.option-item.correct {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  animation: correctPulse 0.6s ease;
+}
+
+/* ✅ INCORRECT STATE */
+.option-item.incorrect {
+  border-color: #ef4444;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  animation: incorrectShake 0.6s ease;
+}
+
+/* ✅ DISABLED STATE */
+.option-item.disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* ✅ OPTION LETTER */
+.option-letter {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+/* ✅ LETTER IN SELECTED STATE */
+.option-item.selected .option-letter {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.option-item.correct .option-letter {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.option-item.incorrect .option-letter {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* ✅ OPTION CONTENT */
+.option-content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ✅ FEEDBACK ICONS */
+.option-feedback {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.correct-icon {
+  color: white;
+  font-size: 1.5rem;
+  animation: bounceIn 0.5s ease;
+}
+
+.incorrect-icon {
+  color: white;
+  font-size: 1.5rem;
+  animation: bounceIn 0.5s ease;
+}
+
+/* ✅ ANIMATIONS */
+@keyframes correctPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes incorrectShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ✅ ACTION BUTTONS */
+.quiz-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ✅ BUTTON STYLES */
+.btn {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.btn-large {
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+  min-width: 200px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  margin-right: 1rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #4b5563;
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+/* ✅ SELECT MESSAGE */
+.select-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* ⏸️ PAUSE OVERLAY */
+.pause-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pause-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+}
+
+/* 🔥 FEEDBACK VISUAL */
+.quiz-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  color: #667eea;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* 💫 ANIMAÇÕES */
+.option {
+  transition: all 0.3s ease;
+}
+
+.option:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🏆 RESULTADO FINAL */
+.quiz-complete {
+  text-align: center;
+  padding: 2rem;
+}
+
+.score-display {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  margin-top: 1.5rem;
+}
+
+.score-excellent { color: #4caf50; }
+.score-good { color: #2196f3; }
+.score-average { color: #ff9800; }
+.score-poor { color: #f44336; }
+
+/* ✅ SCORE DETAILS - CONTAINER PRINCIPAL */
+.score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* ✅ ESPAÇAMENTO ENTRE OS PARÁGRAFOS */
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.score-details p {
+  margin: 0 !important; /* ✅ REMOVER MARGEM PADRÃO DOS PARÁGRAFOS */
+  padding: 0.75rem 0; /* ✅ PADDING INTERNO */
+  color: #1e293b !important; /* ✅ COR ESCURA */
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5; /* ✅ ALTURA DE LINHA ADEQUADA */
+  border-bottom: 1px solid rgba(226, 232, 240, 0.5); /* ✅ SEPARADOR SUTIL */
+}
+
+.score-details p:last-child {
+  border-bottom: none; /* ✅ REMOVER BORDA DO ÚLTIMO */
+}
+
+.score-details p strong {
+  color: #0f172a !important; /* ✅ NÚMEROS EM DESTAQUE MAIS ESCUROS */
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* ✅ ALTERNATIVE: LAYOUT GRID PARA MELHOR ORGANIZAÇÃO */
+.score-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.score-details-grid .score-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.score-details-grid .score-item .score-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a !important;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.score-details-grid .score-item .score-label {
+  color: #475569 !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ✅ RESPONSIVE PARA SCORE DETAILS */
+@media (max-width: 768px) {
+  .score-details {
+    gap: 0.75rem;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  .score-details p {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .score-details p strong {
+    font-size: 1.1rem;
+  }
+  
+  .score-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .score-details {
+    gap: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .score-details p {
+    font-size: 0.95rem;
+    padding: 0.4rem 0;
+  }
+  
+  .score-details p strong {
+    font-size: 1rem;
+  }
+}
+
+/* 🎨 ANIMAÇÕES EXTRAS */
+.result-stat {
+  animation: fadeInUp 0.6s ease;
+  animation-fill-mode: both;
+}
+
+.result-stat:nth-child(1) { animation-delay: 0.1s; }
+.result-stat:nth-child(2) { animation-delay: 0.2s; }
+.result-stat:nth-child(3) { animation-delay: 0.3s; }
+.result-stat:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 MELHORIAS MOBILE ESPECÍFICAS */
+@media (max-width: 768px) {
+  .result-details {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+}
+
+/* 🎮 AÇÕES DO RESULTADO - BOTÕES CENTRALIZADOS */
+.results-actions {
+  display: flex;
+  justify-content: center; /* ✅ CENTRALIZAR HORIZONTALMENTE */
+  align-items: center; /* ✅ CENTRALIZAR VERTICALMENTE */
+  gap: 2rem; /* ✅ ESPAÇAMENTO ENTRE OS BOTÕES */
+  margin-top: 3rem;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+/* ✅ GARANTIR QUE OS BOTÕES TENHAM TAMANHOS SIMILARES */
+.results-actions .btn {
+  min-width: 200px; /* ✅ LARGURA MÍNIMA CONSISTENTE */
+  padding: 1.25rem 2rem; /* ✅ PADDING GENEROSO */
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap; /* ✅ EVITAR QUEBRA DE LINHA */
+}
+
+/* ✅ RESPONSIVE PARA MOBILE */
+@media (max-width: 768px) {
+  .results-actions {
+    flex-direction: column; /* ✅ EMPILHAR VERTICALMENTE EM MOBILE */
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+  }
+  
+  .results-actions .btn {
+    width: 100%; /* ✅ LARGURA TOTAL EM MOBILE */
+    max-width: 300px; /* ✅ MÁXIMO PARA NÃO FICAR MUITO LARGO */
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .results-actions {
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .results-actions .btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* ✅ ALTERNATIVA: CENTRALIZANDO COM GRID */
+.results-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  justify-items: center; /* ✅ CENTRALIZAR OS ITENS NO GRID */
+  margin-top: 3rem;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 600px; /* ✅ LIMITAR LARGURA MÁXIMA */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ✅ PARA GARANTIR QUE O CONTAINER PAI TAMBÉM ESTEJA CENTRALIZADO */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ CENTRALIZAR TODO O CONTEÚDO */
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}

@@ -65,589 +65,516 @@
 .dashboard-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-lg) var(--space-lg) calc(var(--space-xl) + 2rem); /* ✅ NOVO: padding-bottom aumentado */
+  padding: 2rem 1rem;
+  background: #fafafa;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 /* =============================================== */
-/* 📊 HEADER DO DASHBOARD */
+/* 📊 HEADER DO DASHBOARD - VISUAL MELHORADO */
 /* =============================================== */
-.dashboard-header {
-  text-align: center;
-  margin-bottom: var(--space-xl);
-  padding: var(--space-lg);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  border-radius: var(--radius-xl);
-  color: var(--text-white);
-  box-shadow: var(--shadow-primary);
+.header-card {
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
-.dashboard-header .app-info h1 {
+.header-card .mat-mdc-card-content {
+  padding: 2rem;
+}
+
+.app-title {
   font-size: 2.5rem;
-  margin-bottom: var(--space-xs);
   font-weight: 700;
-  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
 }
 
-.dashboard-header .app-description {
+.app-description {
   font-size: 1.1rem;
-  margin-bottom: var(--space-md);
+  text-align: center;
+  margin-bottom: 2rem;
   opacity: 0.9;
-  line-height: 1.5;
 }
 
-.dashboard-header .stats-summary {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  flex-wrap: wrap;
+/* =============================================== */
+/* 📊 STATS SUMMARY - TAMANHOS REDUZIDOS */
+/* =============================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.dashboard-header .stat-item {
+.stat-card {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.stat-content {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  backdrop-filter: blur(10px);
-  transition: var(--transition-normal);
+  gap: 1rem;
 }
 
-.dashboard-header .stat-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+.stat-icon {
+  font-size: 2rem !important;
+  color: white;
 }
 
-.dashboard-header .stat-item i {
-  font-size: 1.2rem;
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* =============================================== */
-/* 📚 SEÇÃO DE ÁREAS */
+/* 🎯 SEÇÕES */
 /* =============================================== */
-.areas-section {
-  margin-bottom: calc(var(--space-xl) + 1.5rem);
-  margin-top: 2rem; /* ✅ NOVO: margem superior para evitar sobreposição */
-  padding-top: 1rem; /* ✅ NOVO: padding superior adicional */
-  padding-bottom: 2rem;
+.areas-section,
+.quick-actions-section {
+  margin-bottom: 3rem;
 }
 
-.areas-section h2 {
-  color: var(--text-primary);
-  margin-bottom: calc(var(--space-md) + 1rem); /* ✅ AUMENTADO: mais espaço após o título */
-  text-align: center;
-  font-size: 2rem;
+.section-title {
+  font-size: 1.8rem;
   font-weight: 600;
-  line-height: 1.3;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 /* =============================================== */
-/* 🎯 GRID DE ÁREAS */
+/* 📄 CARDS DAS ÁREAS - TAMANHOS REDUZIDOS */
 /* =============================================== */
 .areas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem; /* ✅ AUMENTADO: de var(--space-md) (1.5rem) para 2.5rem */
-  margin-top: var(--space-lg);
-  padding: 0 1rem; /* ✅ NOVO: padding lateral para respirar mais */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
 }
 
-/* =============================================== */
-/* 📄 CARDS DAS ÁREAS - VISUAL MELHORADO */
-/* =============================================== */
 .area-card {
-  background: var(--bg-white);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.8rem; /* ✅ AUMENTADO: mais espaçamento interno */
-  box-shadow: var(--shadow-md);
   cursor: pointer;
-  transition: var(--transition-normal);
-  border: 2px solid rgba(102, 126, 234, 0.1); /* ✅ NOVO: borda sutil */
+  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 350px; /* ✅ AUMENTADO: de 280px para 350px */
-  
-  /* ✅ NOVO: gradiente sutil de fundo */
-  background: linear-gradient(145deg, #ffffff 0%, #fafbfc 100%);
+  min-height: 300px;
+  justify-content: space-between;
 }
 
-.area-card::before {
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.area-card.available {
+  border-left: 4px solid #4caf50;
+}
+
+.area-card.coming-soon {
+  border-left: 4px solid #ff9800;
+  opacity: 0.7;
+}
+
+/* =============================================== */
+/* 🎨 ELEMENTOS DOS CARDS - TAMANHOS REDUZIDOS */
+/* =============================================== */
+.area-card .mat-mdc-card-header {
+  padding-bottom: 0;
+}
+
+.area-card .mat-mdc-card-title {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.area-card .mat-mdc-card-subtitle {
+  margin-top: 0.5rem;
+}
+
+.question-chip {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+  font-weight: 500;
+}
+
+/* =============================================== */
+/* 📝 DESCRIPTION & SUBJECTS */
+/* =============================================== */
+.area-description {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.subjects-container {
+  margin: 1rem 0;
+}
+
+.subjects-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.subjects-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.subject-chip {
+  background: #f5f5f5 !important;
+  color: #666 !important;
+  font-size: 0.8rem !important;
+}
+
+/* =============================================== */
+/* 📊 MINI STATS */
+/* =============================================== */
+.mini-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  text-align: center;
+}
+
+.mini-stat-icon {
+  color: #666 !important;
+  font-size: 1.2rem !important;
+}
+
+.mini-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-stat-value {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.mini-stat-label {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+/* =============================================== */
+/* 📊 PROGRESS BAR */
+/* =============================================== */
+.progress-container {
+  margin: 1rem 0;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.progress-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.area-progress {
+  height: 6px !important;
+  border-radius: 3px;
+}
+
+/* =============================================== */
+/* 🎯 STATUS & ACTIONS */
+/* =============================================== */
+.status-chip {
+  margin-right: 1rem;
+}
+
+.available-chip {
+  background: #e8f5e8 !important;
+  color: #2e7d32 !important;
+}
+
+.coming-soon-chip {
+  background: #fff3e0 !important;
+  color: #f57c00 !important;
+}
+
+/* =============================================== */
+/* ⚡ QUICK ACTIONS */
+/* =============================================== */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.quick-action-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.quick-action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.action-icon {
+  font-size: 3rem !important;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.action-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.action-description {
+  color: #666;
+  margin: 0;
+}
+
+/* =============================================== */
+/* 🚨 ERROR & LOADING STATES */
+/* =============================================== */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.loading-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading-card p {
+  margin-top: 1rem;
+  color: #666;
+}
+
+.error-card {
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.empty-state-card {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-icon {
+  font-size: 4rem !important;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+/* =============================================== */
+/* 🔔 SNACKBARS PERSONALIZADOS */
+/* =============================================== */
+::ng-deep .success-snackbar {
+  background: #4caf50 !important;
+  color: white !important;
+}
+
+::ng-deep .error-snackbar {
+  background: #f44336 !important;
+  color: white !important;
+}
+
+::ng-deep .warning-snackbar {
+  background: #ff9800 !important;
+  color: white !important;
+}
+
+::ng-deep .mat-mdc-snack-bar-container {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* =============================================== */
+/* 🎯 ESTADOS INTERATIVOS DOS CARDS */
+/* =============================================== */
+.area-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+.area-card.available:hover {
+  border-left-color: #4caf50 !important;
+  border-left-width: 6px !important;
+}
+
+.area-card.coming-soon:hover {
+  border-left-color: #ff9800 !important;
+  border-left-width: 6px !important;
+}
+
+/* ✅ LOADING STATE PARA CARDS */
+.area-card.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.area-card.loading::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  transform: scaleX(0);
-  transition: var(--transition-normal);
-}
-
-.area-card:hover {
-  transform: translateY(-12px); /* ✅ AUMENTADO: mais movimento */
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2); /* ✅ MELHORADO: shadow mais suave */
-  border-color: rgba(102, 126, 234, 0.3); /* ✅ MELHORADO: borda mais visível */
-}
-
-.area-card:hover::before {
-  transform: scaleX(1);
-}
-
-.area-card.available {
-  border-color: rgba(16, 185, 129, 0.2);
-  background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%); /* ✅ NOVO: fundo verde claro */
-}
-
-.area-card.available:hover {
-  border-color: var(--accent);
-  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.25);
-}
-
-.area-card.coming-soon {
-  opacity: 0.7;
-  cursor: not-allowed;
-  background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%); /* ✅ NOVO: fundo acinzetado */
-}
-
-.area-card.coming-soon:hover {
-  transform: translateY(-4px); /* ✅ MOVIMENTO REDUZIDO */
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-}
-
-/* =============================================== */
-/* 🎨 ELEMENTOS DOS CARDS - ESPAÇAMENTO MELHORADO */
-/* =============================================== */
-
-/* ✅ HEADER COM MELHOR ESPAÇAMENTO */
-.card-header {
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.8rem; /* ✅ AUMENTADO: de var(--space-sm) para 1.8rem */
-  flex-shrink: 0;
-  gap: 1rem; /* ✅ NOVO: espaço entre elementos */
-}
-
-.card-header h3 {
-  color: var(--text-primary);
-  font-size: 1.5rem; /* ✅ AUMENTADO: de 1.4rem para 1.5rem */
-  margin: 0;
-  flex: 1;
-  font-weight: 700; /* ✅ AUMENTADO: de 600 para 700 */
-  line-height: 1.3;
-  
-  /* ✅ NOVO: gradiente no texto */
-  background: linear-gradient(135deg, var(--text-primary), var(--primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.question-count {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: var(--text-white);
-  padding: 0.6rem 1.2rem; /* ✅ AUMENTADO: de 0.4rem 1rem para 0.6rem 1.2rem */
-  border-radius: 25px; /* ✅ AUMENTADO: de 20px para 25px */
-  font-size: 0.9rem; /* ✅ AUMENTADO: de 0.875rem para 0.9rem */
-  font-weight: 600;
-  white-space: nowrap;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3); /* ✅ NOVO: shadow no badge */
-}
-
-/* ✅ BODY COM MELHOR ESPAÇAMENTO */
-.card-body {
-  margin-bottom: 2rem; /* ✅ AUMENTADO: de var(--space-md) para 2rem */
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem; /* ✅ NOVO: espaçamento entre elementos */
-}
-
-/* ✅ DESCRIÇÃO DA ÁREA (NOVO) */
-.area-description {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-  font-style: italic;
-}
-
-/* ✅ SUBJECTS LIST MELHORADA */
-.subjects-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem; /* ✅ AUMENTADO: de var(--space-xs) para 0.8rem */
-}
-
-.subject-tag {
-  background: var(--bg-light);
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem; /* ✅ AUMENTADO: de 0.3rem 0.75rem para 0.5rem 1rem */
-  border-radius: var(--radius-md);
-  font-size: 0.8rem; /* ✅ AUMENTADO: de 0.75rem para 0.8rem */
-  font-weight: 500;
-  border: 1px solid #e2e8f0;
-  transition: var(--transition-fast);
-  
-  /* ✅ NOVO: gradiente sutil */
-  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-}
-
-.subject-tag:hover {
-  background: linear-gradient(135deg, #e2e8f0, #cbd5e1); /* ✅ MELHORADO */
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* ✅ NOVO: shadow no hover */
-}
-
-/* ✅ FOOTER MELHORADO */
-.card-footer {
-  text-align: center;
-  flex-shrink: 0;
-  padding-top: 1.5rem; /* ✅ NOVO: padding superior */
-  border-top: 1px solid rgba(226, 232, 240, 0.5); /* ✅ NOVO: linha separadora sutil */
-}
-
-/* =============================================== */
-/* 🏷️ STATUS BADGES - VISUAL MELHORADO */
-/* =============================================== */
-.status-badge {
-  display: inline-flex;
   align-items: center;
-  gap: 0.6rem; /* ✅ AUMENTADO: de var(--space-xs) para 0.6rem */
-  padding: 0.8rem 1.5rem; /* ✅ AUMENTADO: de 0.6rem 1.2rem para 0.8rem 1.5rem */
-  border-radius: 30px; /* ✅ AUMENTADO: de 25px para 30px */
-  font-size: 0.9rem; /* ✅ AUMENTADO: de 0.875rem para 0.9rem */
-  font-weight: 600;
-  transition: var(--transition-normal);
-  text-transform: uppercase;
-  letter-spacing: 0.5px; /* ✅ NOVO: espaçamento das letras */
+  justify-content: center;
 }
 
-.status-badge.available {
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color: var(--text-white);
-  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); /* ✅ NOVO: shadow */
+/* ✅ RIPPLE EFFECT CUSTOMIZADO */
+.area-card .mat-ripple-element {
+  background-color: rgba(102, 126, 234, 0.1) !important;
 }
 
-.status-badge.available:hover {
-  transform: translateY(-2px); /* ✅ NOVO: movimento no hover */
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-}
-
-.status-badge.available i {
-  animation: pulse 2s infinite;
-  font-size: 1rem; /* ✅ NOVO: tamanho do ícone */
-}
-
-.status-badge.coming-soon {
-  background: linear-gradient(135deg, #fef3c7, #fcd34d); /* ✅ MELHORADO: gradiente */
-  color: #92400e;
-  border: 2px solid var(--warning); /* ✅ AUMENTADO: de 1px para 2px */
-  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2); /* ✅ NOVO: shadow */
+.area-card.coming-soon .mat-ripple-element {
+  background-color: rgba(255, 152, 0, 0.1) !important;
 }
 
 /* =============================================== */
-/* 🌟 ELEMENTOS VISUAIS EXTRAS */
+/* ⚡ QUICK ACTIONS INTERATIVAS */
 /* =============================================== */
-
-/* ✅ ÍCONE DA ÁREA (NOVO) */
-.area-icon {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 2.5rem;
-  opacity: 0.1;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* ✅ PROGRESS BAR (NOVO) */
-.progress-bar {
-  height: 4px;
-  background: #e2e8f0;
-  border-radius: 2px;
-  overflow: hidden;
-  margin: 1rem 0;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  border-radius: 2px;
-  transition: width 1s ease;
-}
-
-/* ✅ STATS MINI (NOVO) */
-.mini-stats {
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem 0;
-  padding: 1rem;
-  background: rgba(102, 126, 234, 0.05);
-  border-radius: var(--radius-md);
-  border-left: 4px solid var(--primary);
-}
-
-.mini-stat {
+.quick-action-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-align: center;
-  flex: 1;
+  border: 2px solid transparent;
 }
 
-.mini-stat-value {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary);
-  display: block;
+.quick-action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+  border-color: #667eea;
 }
 
-.mini-stat-label {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.quick-action-card:active {
+  transform: translateY(-2px);
 }
 
-/* =============================================== */
-/* ✨ ANIMAÇÕES */
-/* =============================================== */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+.action-icon {
+  font-size: 3rem !important;
+  color: #667eea;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.area-card {
-  animation: fadeIn 0.6s ease-out;
+.quick-action-card:hover .action-icon {
+  transform: scale(1.1);
+  color: #5a6fd8;
 }
 
 /* =============================================== */
-/* 📱 RESPONSIVE DESIGN - COM MARGENS CORRETAS */
+/* 🎯 ESTADOS DOS BOTÕES */
 /* =============================================== */
-
-/* 💻 Desktop Large (1200px+) */
-@media (min-width: 1200px) {
-  .dashboard-container {
-    padding: var(--space-xl) var(--space-xl) calc(var(--space-xl) + 3rem);
-  }
-  
-  .areas-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    max-width: 1400px;
-    margin: calc(var(--space-lg) + 2rem) auto 2rem; /* ✅ AUMENTADO: margem superior maior */
-    padding-top: 1.5rem; /* ✅ AUMENTADO: padding superior maior */
-  }
-  
-  .areas-section {
-    margin-top: 2.5rem; /* ✅ AUMENTADO: margem superior maior */
-    margin-bottom: calc(var(--space-xl) + 2rem);
-    padding-top: 1.5rem; /* ✅ AUMENTADO */
-    padding-bottom: 2.5rem;
-  }
-  
-  .areas-section h2 {
-    margin-bottom: calc(var(--space-md) + 1.5rem); /* ✅ AUMENTADO: mais espaço em telas grandes */
-  }
+.area-card button[disabled] {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
 }
 
-/* 📱 Tablet (768px - 1024px) */
-@media (max-width: 1024px) {
-  .dashboard-container {
-    padding: var(--space-md) var(--space-md) calc(var(--space-xl) + 1.5rem);
-  }
-  
-  .areas-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.2rem;
-    padding: 0.8rem 0.5rem 0; /* ✅ NOVO: padding-top para compensar hover */
-    margin-top: calc(var(--space-lg) + 1rem); /* ✅ AJUSTADO */
-  }
-  
-  .areas-section {
-    margin-top: 1.8rem; /* ✅ NOVO: margem superior adequada */
-    margin-bottom: calc(var(--space-xl) + 1rem);
-    padding-top: 1rem;
-    padding-bottom: 1.8rem;
-  }
-  
-  .areas-section h2 {
-    margin-bottom: calc(var(--space-md) + 0.8rem); /* ✅ AJUSTADO */
-  }
+.area-card button:not([disabled]):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* 📱 Mobile Large (768px) */
+/* =============================================== */
+/* 📱 FEEDBACK VISUAL DE CLIQUE */
+/* =============================================== */
+.area-card:active {
+  transform: translateY(-2px) !important;
+}
+
+.quick-action-card:active {
+  transform: translateY(-2px) !important;
+}
+
+.stat-card:active {
+  transform: scale(0.98) !important;
+}
+
+/* =============================================== */
+/* 📱 RESPONSIVE */
+/* =============================================== */
 @media (max-width: 768px) {
   .dashboard-container {
-    padding: var(--space-sm) var(--space-sm) calc(var(--space-lg) + 2rem);
+    padding: 1rem 0.5rem;
   }
   
-  .dashboard-header {
-    margin-bottom: calc(var(--space-xl) + 0.5rem); /* ✅ AUMENTADO: mais espaço */
-    padding: var(--space-md);
-  }
-  
-  .dashboard-header .app-info h1 {
-    font-size: 2rem;
-  }
-  
-  .dashboard-header .stats-summary {
-    flex-direction: column;
-    gap: var(--space-sm);
-  }
-  
-  .dashboard-header .stat-item {
-    justify-content: center;
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
   
   .areas-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 1rem 0; /* ✅ NOVO: padding superior e inferior */
-    margin-top: calc(var(--space-lg) + 0.5rem); /* ✅ AJUSTADO */
-    margin-bottom: 2rem;
   }
   
-  .areas-section {
-    margin-top: 1.5rem; /* ✅ NOVO: margem superior */
-    margin-bottom: calc(var(--space-lg) + 1.5rem);
-    padding-top: 0.8rem;
-    padding-bottom: 1.5rem;
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
   }
   
-  .areas-section h2 {
-    margin-bottom: calc(var(--space-md) + 0.5rem); /* ✅ AJUSTADO */
-  }
-  
-  .area-card {
-    min-height: 320px;
-    padding: 1.8rem 1.5rem;
-    margin: 0;
-  }
-  
-  .card-header h3 {
-    font-size: 1.4rem;
-  }
-  
-  .subjects-list {
-    gap: 0.6rem;
-  }
-  
-  .subject-tag {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
-}
-
-/* 📱 Mobile Small (480px) */
-@media (max-width: 480px) {
-  .dashboard-container {
-    padding: 1rem 1rem calc(var(--space-lg) + 1.5rem);
-  }
-  
-  .dashboard-header {
-    padding: var(--space-md);
-    margin-bottom: calc(var(--space-xl) + 0.3rem); /* ✅ AJUSTADO */
-  }
-  
-  .dashboard-header .app-info h1 {
-    font-size: 1.75rem;
-  }
-  
-  .areas-grid {
-    gap: 1.8rem;
-    margin-top: calc(var(--space-md) + 0.8rem); /* ✅ AJUSTADO */
-    margin-bottom: 1.5rem;
-    padding: 0.8rem 0; /* ✅ NOVO: padding para compensar hover */
-  }
-  
-  .areas-section {
-    margin-top: 1.2rem; /* ✅ NOVO: margem superior */
-    margin-bottom: calc(var(--space-lg) + 1rem);
-    padding-top: 0.6rem;
-    padding-bottom: 1.2rem;
-  }
-  
-  .areas-section h2 {
-    margin-bottom: var(--space-md); /* ✅ AJUSTADO */
-    font-size: 1.8rem; /* ✅ NOVO: fonte menor no mobile pequeno */
-  }
-  
-  .card-header {
+  .mini-stats {
     flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  
-  .question-count {
-    align-self: flex-start;
-    padding: 0.5rem 1rem;
-  }
-  
-  .subjects-list {
-    justify-content: flex-start;
     gap: 0.5rem;
   }
-  
-  .area-card {
-    padding: 1.5rem;
-    min-height: 300px;
-    margin: 0;
-  }
-  
-  .card-body {
-    gap: 1.2rem;
-  }
-  
-  .status-badge {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.8rem;
-  }
-}
-
-/* =============================================== */
-/* 🎯 UTILITIES */
-/* =============================================== */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-.mb-sm { margin-bottom: var(--space-sm); }
-.mb-md { margin-bottom: var(--space-md); }
-.mb-lg { margin-bottom: var(--space-lg); }
-
-.mt-sm { margin-top: var(--space-sm); }
-.mt-md { margin-top: var(--space-md); }
-.mt-lg { margin-top: var(--space-lg); }
-
-.p-sm { padding: var(--space-sm); }
-.p-md { padding: var(--space-md); }
-.p-lg { padding: var(--space-lg); }
-
-.hidden { display: none; }
-.visible { display: block; }
-
-.loading {
-  opacity: 0.6;
-  pointer-events: none;
 }

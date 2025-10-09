@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface AreaData {
   name: string;
@@ -72,15 +73,39 @@ export class HomeComponent implements OnInit {
     },
     {
       question: 'Como funciona o teste grátis de 7 dias?',
-      answer: 'Você tem <strong>acesso completo por 7 dias</strong> sem pagar nada. Depois disso, se não cancelar, cobra-se R$ 39,90/mês. Mas você pode cancelar a qualquer momento!'
+      answer: 'Você tem acesso completo a todas as funcionalidades premium por 7 dias. Após esse período, será cobrado R$ 39,90/mês. Pode cancelar a qualquer momento.'
     },
     {
       question: 'Tem suporte técnico?',
       answer: 'Sim! Temos suporte por chat e email para tirar suas dúvidas sobre a plataforma, questões ou planos de estudo.'
+    },
+    {
+      question: 'Posso usar para concursos e vagas tech ao mesmo tempo?',
+      answer: 'Sim! A plataforma tem 4 áreas: <strong>Desenvolvimento Web</strong> (para vagas tech), <strong>Português</strong>, <strong>Matemática</strong> e <strong>Informática</strong> (para concursos).'
+    },
+    {
+      question: 'As questões são atualizadas constantemente?',
+      answer: 'Sim! Nossa equipe atualiza as questões mensalmente com base nas provas mais recentes de concursos e entrevistas técnicas das principais empresas.'
+    },
+    {
+      question: 'Funciona no celular?',
+      answer: 'Perfeitamente! A plataforma é 100% responsiva e funciona em qualquer dispositivo - celular, tablet ou computador.'
+    },
+    {
+      question: 'Como faço para cancelar minha assinatura?',
+      answer: 'Muito simples! Você pode cancelar a qualquer momento nas configurações da sua conta. O acesso continua até o final do período pago.'
+    },
+    {
+      question: 'Há garantia de aprovação?',
+      answer: 'Oferecemos as melhores ferramentas de preparação, mas o sucesso depende do seu empenho nos estudos. Temos 92% de taxa de satisfação dos usuários!'
     }
   ];
 
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private snackBar?: MatSnackBar // ✅ OPCIONAL
+  ) {}
 
   ngOnInit(): void {
     console.log('🏠 Home Component inicializado');
@@ -235,8 +260,8 @@ export class HomeComponent implements OnInit {
   }
 
   // ✅ MÉTODOS DE NAVEGAÇÃO (USADOS NO TEMPLATE)
-  goToArea(area: string) {
-    console.log(`🎯 Navegando para área: ${area}`);
+  goToQuizArea(area: string) {
+    console.log(`🎯 Navegando para área do quiz: ${area}`);
     
     const areaRoutes: { [key: string]: string } = {
       'desenvolvimento': 'desenvolvimento-web',
@@ -249,43 +274,114 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/quiz', routeArea]);
   }
 
-  goToDashboard() {
-    console.log('📊 Navegando para dashboard');
+  // ✅ MÉTODO CORRIGIDO PARA INICIAR TESTE GRÁTIS
+  startFreeTrial(): void {
+    console.log('🎯 Iniciando teste grátis...');
+    
+    // ✅ NAVEGAR PARA QUIZ MISTO (sem parâmetros específicos)
+    this.router.navigate(['/quiz'], {
+      queryParams: {
+        mode: 'mixed',
+        type: 'free-trial',
+        limit: 10 // Limite para teste grátis
+      }
+    });
+  }
+
+  // ✅ MÉTODO PARA IR DIRETAMENTE AO DASHBOARD
+  goToDashboard(): void {
+    console.log('📊 Navegando para dashboard...');
     this.router.navigate(['/dashboard']);
   }
 
-  startFreeTrial() {
-    console.log('🆓 Iniciando teste gratuito');
-    this.router.navigate(['/quiz']);
+  // ✅ MÉTODO PARA IR A UMA ÁREA ESPECÍFICA
+  goToArea(areaName: string): void {
+    console.log(`📖 Navegando para área: ${areaName}`);
+    
+    // ✅ MAPEAR NOMES PARA OS ARQUIVOS CORRETOS
+    const areaMapping: { [key: string]: string } = {
+      'desenvolvimento': 'desenvolvimento-web',
+      'portugues': 'portugues',
+      'matematica': 'matematica',
+      'informatica': 'informatica'
+    };
+    
+    const mappedArea = areaMapping[areaName] || areaName;
+    
+    this.showSuccessMessage(`Carregando área: ${mappedArea}`);
+    
+    // ✅ NAVEGAR COM DELAY PARA FEEDBACK
+    setTimeout(() => {
+      this.router.navigate(['/area', mappedArea]);
+    }, 500);
   }
 
-  upgradeToPro() {
-    console.log('💎 Upgrade para Pro');
-    this.router.navigate(['/quiz']);
+  // 🚀 MÉTODO PARA UPGRADE PRO
+  upgradeToPro(): void {
+    console.log('💎 Iniciando upgrade para plano Pro...');
+    
+    // ✅ SIMULAR MODAL DE UPGRADE (por enquanto)
+    alert('🎉 Funcionalidade em desenvolvimento!\n\n' +
+          '• 7 dias grátis\n' +
+          '• Depois R$ 39,90/mês\n' +
+          '• Cancele quando quiser\n\n' +
+          'Em breve você poderá se inscrever!');
+    
+    // ✅ OU REDIRECIONAR PARA PÁGINA DE PRICING
+    // this.router.navigate(['/pricing']);
   }
 
-  toggleFaq(index: number) {
-    console.log(`❓ Toggle FAQ ${index}`);
-    this.activeFaq = this.activeFaq === index ? null : index;
+  // 🆘 MÉTODO PARA CENTRAL DE AJUDA
+  openHelp(): void {
+    console.log('❓ Abrindo central de ajuda...');
+    
+    // ✅ SIMULAR ABERTURA DE AJUDA
+    alert('📚 Central de Ajuda\n\n' +
+          'Entre em contato:\n' +
+          '📧 suporte@quizzfy.com\n' +
+          '📱 WhatsApp: (11) 99999-9999\n\n' +
+          'Horário: 9h às 18h');
+    
+    // ✅ OU ABRIR EM NOVA ABA
+    // window.open('mailto:suporte@quizzfy.com', '_blank');
   }
 
-  // ✅ MÉTODOS DO FOOTER (OBRIGATÓRIOS PARA O TEMPLATE)
-  openHelp() {
-    console.log('❓ Abrindo central de ajuda');
-    // TODO: Implementar modal ou página de ajuda
-    alert('Central de Ajuda será implementada em breve!');
+  // 📄 MÉTODO PARA TERMOS DE USO
+  openTerms(): void {
+    console.log('📋 Abrindo termos de uso...');
+    
+    // ✅ SIMULAR MODAL DE TERMOS
+    alert('📋 Termos de Uso\n\n' +
+          'Funcionalidade em desenvolvimento.\n' +
+          'Em breve teremos nossa política completa!');
+    
+    // ✅ OU NAVEGAR PARA PÁGINA DE TERMOS
+    // this.router.navigate(['/terms']);
   }
 
-  openTerms() {
-    console.log('📄 Abrindo termos de uso');
-    // TODO: Implementar modal ou página de termos
-    alert('Termos de Uso serão implementados em breve!');
+  // 🔒 MÉTODO PARA POLÍTICA DE PRIVACIDADE  
+  openPrivacy(): void {
+    console.log('🔒 Abrindo política de privacidade...');
+    
+    // ✅ SIMULAR MODAL DE PRIVACIDADE
+    alert('🔒 Política de Privacidade\n\n' +
+          'Seus dados estão seguros conosco!\n' +
+          'Funcionalidade completa em desenvolvimento.');
+    
+    // ✅ OU NAVEGAR PARA PÁGINA DE PRIVACIDADE
+    // this.router.navigate(['/privacy']);
   }
 
-  openPrivacy() {
-    console.log('🔒 Abrindo política de privacidade');
-    // TODO: Implementar modal ou página de privacidade
-    alert('Política de Privacidade será implementada em breve!');
+  // ❓ MÉTODO PARA FAQ
+  toggleFaq(index: number): void {
+    console.log(`❓ Toggling FAQ ${index}`);
+    
+    // ✅ ALTERNAR FAQ ATIVO
+    if (this.activeFaq === index) {
+      this.activeFaq = -1; // Fechar se já estiver aberto
+    } else {
+      this.activeFaq = index; // Abrir o selecionado
+    }
   }
 
   // ✅ MÉTODOS AUXILIARES
@@ -297,6 +393,20 @@ export class HomeComponent implements OnInit {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // ✅ SE NÃO EXISTIR, ADICIONAR ESTE MÉTODO TAMBÉM
+  private showSuccessMessage(message: string): void {
+    // ✅ SE VOCÊ TEM MatSnackBar
+    if (this.snackBar) {
+      this.snackBar.open(message, 'Fechar', {
+        duration: 3000,
+        panelClass: ['success-snackbar']
+      });
+    } else {
+      // ✅ FALLBACK SIMPLES
+      console.log('✅ Success:', message);
     }
   }
 }

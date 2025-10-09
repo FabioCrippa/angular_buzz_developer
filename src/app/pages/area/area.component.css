@@ -1,0 +1,307 @@
+/* =============================================== */
+/* 🎯 AREA PAGE STYLES - CORES ESPECÍFICAS */
+/* =============================================== */
+.area-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: #fafafa !important; /* ✅ Fundo claro */
+  min-height: 100vh;
+  color: #333333 !important; /* ✅ Texto escuro por padrão */
+}
+
+/* =============================================== */
+/* 📊 HEADER - CORES MELHORADAS */
+/* =============================================== */
+.area-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.back-button {
+  flex-shrink: 0;
+  color: #667eea !important; /* ✅ Cor específica para botão de voltar */
+}
+
+.area-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.area-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.area-details {
+  flex: 1;
+}
+
+.area-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #333333 !important; /* ✅ Título sempre escuro */
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.area-description {
+  font-size: 1.1rem;
+  color: #666666 !important; /* ✅ Descrição cinza */
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =============================================== */
+/* 📊 PROGRESS CARD - CORES ESPECÍFICAS */
+/* =============================================== */
+.progress-card {
+  margin-bottom: 2rem;
+  border-left: 4px solid #4caf50;
+  background: white !important; /* ✅ Fundo branco */
+}
+
+.progress-card .mat-mdc-card-title {
+  color: #333333 !important; /* ✅ Título escuro */
+}
+
+.progress-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress-stat {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4caf50 !important; /* ✅ Verde para valores */
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666666 !important; /* ✅ Cinza para labels */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =============================================== */
+/* ⚡ QUICK ACTIONS - CORES MELHORADAS */
+/* =============================================== */
+.quick-actions h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333 !important; /* ✅ Título escuro */
+  margin-bottom: 1rem;
+}
+
+.quick-action-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 2px solid transparent;
+  background: white !important; /* ✅ Fundo branco */
+  margin-bottom: 1rem;
+}
+
+.quick-action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+  border-color: #667eea;
+}
+
+.quick-action-card .action-icon {
+  font-size: 2.5rem !important;
+  color: #667eea !important; /* ✅ Ícone azul */
+  margin-bottom: 0.5rem;
+}
+
+.quick-action-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: #333333 !important; /* ✅ Título escuro */
+}
+
+.quick-action-card p {
+  font-size: 0.9rem;
+  color: #666666 !important; /* ✅ Descrição cinza */
+  margin: 0;
+}
+
+/* =============================================== */
+/* 📚 SUBJECTS SECTION - CORES ESPECÍFICAS */
+/* =============================================== */
+.subjects-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333 !important; /* ✅ Título escuro */
+  margin-bottom: 1rem;
+}
+
+.subject-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: white !important; /* ✅ Fundo branco */
+}
+
+.subject-card .mat-mdc-card-title {
+  color: #333333 !important; /* ✅ Título escuro */
+}
+
+.subject-card .mat-mdc-card-subtitle {
+  color: #666666 !important; /* ✅ Subtítulo cinza */
+}
+
+.subject-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.subject-card.selected {
+  border-color: #4caf50 !important;
+  background: linear-gradient(135deg, #f8fff8, #e8f5e8) !important;
+}
+
+/* =============================================== */
+/* 🎨 CHIPS COM CORES ESPECÍFICAS */
+/* =============================================== */
+.question-count-chip {
+  background: #e3f2fd !important;
+  color: #1976d2 !important;
+  margin-right: 0.5rem;
+}
+
+.difficulty-easy {
+  background: #e8f5e8 !important;
+  color: #2e7d32 !important;
+}
+
+.difficulty-medium {
+  background: #fff3e0 !important;
+  color: #f57c00 !important;
+}
+
+.difficulty-hard {
+  background: #ffebee !important;
+  color: #c62828 !important;
+}
+
+.topic-chip {
+  background: #f5f5f5 !important;
+  color: #666666 !important;
+  font-size: 0.75rem !important;
+  margin: 0.2rem !important;
+}
+
+.more-chip {
+  background: #e0e0e0 !important;
+  color: #666666 !important;
+  font-size: 0.75rem !important;
+}
+
+/* =============================================== */
+/* ⚙️ QUIZ CONFIGURATION - CORES ESPECÍFICAS */
+/* =============================================== */
+.quiz-config-card {
+  margin-bottom: 2rem;
+  border-left: 4px solid #667eea;
+  background: white !important; /* ✅ Fundo branco */
+}
+
+.quiz-config-card .mat-mdc-card-title {
+  color: #333333 !important; /* ✅ Título escuro */
+}
+
+.quiz-config-card .mat-mdc-card-subtitle {
+  color: #666666 !important; /* ✅ Subtítulo cinza */
+}
+
+.config-label {
+  font-weight: 600;
+  color: #333333 !important; /* ✅ Label escuro */
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.config-value {
+  font-size: 0.9rem;
+  color: #667eea !important; /* ✅ Valor azul */
+  font-weight: 500;
+}
+
+.subject-topics h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666666 !important; /* ✅ Título tópicos cinza */
+  margin: 0 0 0.5rem 0;
+}
+
+/* =============================================== */
+/* 📱 ELEMENTOS DE FORMULÁRIO - CORES ESPECÍFICAS */
+/* =============================================== */
+.mat-mdc-radio-button .mdc-form-field {
+  color: #333333 !important; /* ✅ Texto radio escuro */
+}
+
+.mat-mdc-checkbox .mdc-form-field {
+  color: #333333 !important; /* ✅ Texto checkbox escuro */
+}
+
+/* =============================================== */
+/* 🚨 LOADING & ERROR STATES - CORES ESPECÍFICAS */
+/* =============================================== */
+.loading-card {
+  text-align: center;
+  padding: 2rem;
+  background: white !important; /* ✅ Fundo branco */
+}
+
+.loading-card p {
+  margin-top: 1rem;
+  color: #666666 !important; /* ✅ Texto cinza */
+}
+
+.error-card {
+  margin: 2rem auto;
+  max-width: 500px;
+  background: white !important; /* ✅ Fundo branco */
+}
+
+.error-card .mat-mdc-card-title {
+  color: #d32f2f !important; /* ✅ Título erro vermelho */
+}
+
+.error-card .mat-mdc-card-content {
+  color: #666666 !important; /* ✅ Conteúdo erro cinza */
+}
+
+/* =============================================== */
+/* 📱 RESPONSIVE - MANTÉM CORES */
+/* =============================================== */
+@media (max-width: 768px) {
+  .area-container {
+    padding: 1rem 0.5rem;
+    background: #fafafa !important; /* ✅ Mantém fundo claro */
+  }
+  
+  .area-title {
+    font-size: 2rem;
+    color: #333333 !important; /* ✅ Mantém título escuro */
+  }
+}

@@ -1,0 +1,219 @@
+<!-- Loading State -->
+<div *ngIf="isLoading" class="loading-container">
+  <mat-card class="loading-card">
+    <mat-card-content>
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Carregando área de estudo...</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Error State -->
+<mat-card *ngIf="hasError && !isLoading" class="error-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar color="warn">error_outline</mat-icon>
+    <mat-card-title>Área não encontrada</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ errorMessage }}</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar ao Dashboard
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- Area Content -->
+<div *ngIf="!isLoading && !hasError && areaData" class="area-container">
+  
+  <!-- Header -->
+  <div class="area-header">
+    <button mat-icon-button (click)="goBack()" class="back-button">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    
+    <div class="area-info">
+      <div class="area-icon">{{ areaData.area.icon }}</div>
+      <div class="area-details">
+        <h1 class="area-title">{{ areaData.area.displayName }}</h1>
+        <p class="area-description">{{ areaData.area.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Card -->
+  <mat-card class="progress-card" *ngIf="areaProgress">
+    <mat-card-header>
+      <mat-card-title>Seu Progresso</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="progress-stats">
+        <div class="progress-stat">
+          <span class="stat-value">{{ areaProgress.percentage }}%</span>
+          <span class="stat-label">Acurácia</span>
+        </div>
+        <div class="progress-stat">
+          <span class="stat-value">{{ areaProgress.questionsAnswered }}</span>
+          <span class="stat-label">Questões</span>
+        </div>
+        <div class="progress-stat">
+          <span class="stat-value">Nível {{ areaProgress.level }}</span>
+          <span class="stat-label">{{ areaProgress.xp }} XP</span>
+        </div>
+        <div class="progress-stat">
+          <span class="stat-value">{{ areaProgress.streak }}</span>
+          <span class="stat-label">Sequência</span>
+        </div>
+      </div>
+      
+      <div class="progress-bar-container">
+        <mat-progress-bar 
+          mode="determinate" 
+          [value]="areaProgress.percentage"
+          class="progress-bar">
+        </mat-progress-bar>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Quick Actions -->
+  <div class="quick-actions">
+    <h2>Ações Rápidas</h2>
+    <div class="quick-actions-grid">
+      
+      <mat-card class="quick-action-card" matRipple (click)="startQuickQuiz()">
+        <mat-card-content>
+          <h3>Quiz Rápido</h3>
+          <p>5 questões aleatórias</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="quick-action-card" matRipple (click)="viewProgress()">
+        <mat-card-content>
+          <h3>Ver Progresso</h3>
+          <p>Estatísticas detalhadas</p>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+
+  <!-- Subjects -->
+  <div class="subjects-section">
+    <h2>Disciplinas Disponíveis</h2>
+    <div class="subjects-grid">
+      
+      <mat-card 
+        *ngFor="let subject of areaData.area.subjects" 
+        class="subject-card"
+        [class.selected]="isSubjectSelected(subject.name)">
+        <mat-card-header>
+          <mat-card-title>{{ subject.displayName }}</mat-card-title>
+          <mat-card-subtitle>
+            <mat-chip class="question-count-chip">
+              {{ subject.questionCount }} questões
+            </mat-chip>
+            <mat-chip [class]="'difficulty-' + subject.difficulty">
+              {{ subject.difficulty === 'easy' ? 'Fácil' : subject.difficulty === 'medium' ? 'Médio' : 'Difícil' }}
+            </mat-chip>
+          </mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <div class="subject-topics" *ngIf="subject.topics?.length">
+            <h4>Tópicos:</h4>
+            <mat-chip-set>
+              <mat-chip *ngFor="let topic of subject.topics.slice(0, 4)" class="topic-chip">
+                {{ topic }}
+              </mat-chip>
+              <mat-chip *ngIf="subject.topics.length > 4" class="more-chip">
+                +{{ subject.topics.length - 4 }}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+        </mat-card-content>
+        
+        <mat-card-actions>
+          <button 
+            mat-stroked-button 
+            (click)="toggleSubject(subject.name)"
+            [color]="isSubjectSelected(subject.name) ? 'primary' : ''">
+            <mat-icon>{{ isSubjectSelected(subject.name) ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+            {{ isSubjectSelected(subject.name) ? 'Selecionado' : 'Selecionar' }}
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      
+    </div>
+  </div>
+
+  <!-- Quiz Configuration -->
+  <mat-card class="quiz-config-card">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>settings</mat-icon>
+      <mat-card-title>Configurar Quiz</mat-card-title>
+      <mat-card-subtitle>Personalize sua experiência de estudo</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="config-grid">
+        
+        <!-- Question Count -->
+        <div class="config-item">
+          <label class="config-label">Número de Questões:</label>
+          <mat-slider 
+            min="5" 
+            max="50" 
+            step="5" 
+            [(ngModel)]="questionCount"
+            class="config-slider">
+            <input matSliderThumb>
+          </mat-slider>
+          <span class="config-value">{{ questionCount }} questões</span>
+        </div>
+
+        <!-- Time Limit -->
+        <div class="config-item">
+          <label class="config-label">Tempo Limite:</label>
+          <mat-slider 
+            min="0" 
+            max="60" 
+            step="5" 
+            [(ngModel)]="timeLimit"
+            class="config-slider">
+            <input matSliderThumb>
+          </mat-slider>
+          <span class="config-value">{{ timeLimit === 0 ? 'Sem limite' : timeLimit + ' minutos' }}</span>
+        </div>
+
+        <!-- Difficulty -->
+        <div class="config-item">
+          <label class="config-label">Dificuldade:</label>
+          <mat-radio-group [(ngModel)]="selectedDifficulty" class="config-radio-group">
+            <mat-radio-button value="mixed">Mista</mat-radio-button>
+            <mat-radio-button value="easy">Fácil</mat-radio-button>
+            <mat-radio-button value="medium">Médio</mat-radio-button>
+            <mat-radio-button value="hard">Difícil</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <!-- Shuffle -->
+        <div class="config-item">
+          <mat-checkbox [(ngModel)]="shuffleQuestions">
+            Embaralhar questões
+          </mat-checkbox>
+        </div>
+
+      </div>
+    </mat-card-content>
+    
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="startQuiz()" class="start-quiz-btn">
+        Iniciar Quiz
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

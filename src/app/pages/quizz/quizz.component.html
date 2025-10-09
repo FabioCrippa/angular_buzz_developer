@@ -44,6 +44,48 @@
       </div>
     </div>
 
+    <!-- 📊 Stats Header -->
+    <div class="quiz-stats" *ngIf="!isLoading && !hasError">
+      <div class="stat-item">
+        <div class="stat-value">{{ currentQuestionIndex + 1 }}</div>
+        <div class="stat-label">Questão</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">{{ correctAnswers }}</div>
+        <div class="stat-label">Acertos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">{{ getTimeSpentFormatted() }}</div>
+        <div class="stat-label">Tempo</div>
+      </div>
+      <div class="stat-item">
+        <button mat-icon-button (click)="toggleFavorite()" 
+                [color]="isFavorite() ? 'accent' : ''" 
+                title="Favoritar questão">
+          <mat-icon>{{ isFavorite() ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </button>
+      </div>
+      <div class="stat-item">
+        <button mat-icon-button (click)="pauseQuiz()" 
+                [title]="isPaused ? 'Continuar' : 'Pausar'">
+          <mat-icon>{{ isPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pause Overlay -->
+    <div class="pause-overlay" *ngIf="isPaused">
+      <div class="pause-card">
+        <mat-icon style="font-size: 3rem; color: #667eea;">pause_circle_filled</mat-icon>
+        <h2>Quiz Pausado</h2>
+        <p>Clique em continuar quando estiver pronto</p>
+        <button mat-raised-button color="primary" (click)="pauseQuiz()">
+          <mat-icon>play_arrow</mat-icon>
+          Continuar
+        </button>
+      </div>
+    </div>
+
     <!-- ✅ QUESTION CONTENT -->
     <div class="question-container">
       <div class="question-header">
@@ -144,7 +186,6 @@
 
       <!-- ✅ SELECT ANSWER MESSAGE -->
       <div class="select-message" *ngIf="!selectedAnswer && !showExplanation">
-        <i class="fas fa-hand-pointer"></i>
         <span>Selecione uma alternativa para continuar</span>
       </div>
 

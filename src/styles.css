@@ -1,14 +1,126 @@
 /* You can add global styles to this file, and also import other style files */
-*{
+/* =============================================== */
+/* 🎨 RESET E CONFIGURAÇÕES GLOBAIS */
+/* =============================================== */
+* {
     padding: 0;
     margin: 0;
     border: 0;
     box-sizing: border-box;
-    color: antiquewhite;
+    /* ✅ REMOVIDO: color: antiquewhite; - deixar componentes definirem suas cores */
 }
 
 body {
     background-color: #1f1147;
+    color: antiquewhite; /* ✅ MOVIDO PARA BODY - cor padrão apenas para body */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100%;
+    margin: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html {
+    height: 100%;
+}
+
+/* =============================================== */
+/* 🎯 OVERRIDE PARA MATERIAL DESIGN */
+/* =============================================== */
+.mat-mdc-card {
+    background-color: #ffffff !important; /* ✅ Cards sempre brancos */
+    color: #333333 !important; /* ✅ Texto escuro nos cards */
+}
+
+.mat-mdc-card-title {
+    color: #333333 !important; /* ✅ Títulos escuros */
+}
+
+.mat-mdc-card-subtitle {
+    color: #666666 !important; /* ✅ Subtítulos cinza */
+}
+
+.mat-mdc-card-content {
+    color: #333333 !important; /* ✅ Conteúdo escuro */
+}
+
+/* =============================================== */
+/* 🔧 BOTÕES E ELEMENTOS INTERATIVOS */
+/* =============================================== */
+.mat-mdc-button {
+    color: #667eea !important; /* ✅ Botões com cor específica */
+}
+
+.mat-mdc-raised-button.mat-primary {
+    background-color: #667eea !important;
+    color: white !important;
+}
+
+.mat-mdc-stroked-button {
+    border-color: #667eea !important;
+    color: #667eea !important;
+}
+
+/* =============================================== */
+/* 📊 CHIPS E ELEMENTOS DE STATUS */
+/* =============================================== */
+.mat-mdc-chip {
+    color: inherit !important; /* ✅ Herda cor do parent */
+}
+
+/* =============================================== */
+/* 🎨 SNACKBARS PERSONALIZADOS */
+/* =============================================== */
+.success-snackbar {
+    background: #4caf50 !important;
+    color: white !important;
+}
+
+.error-snackbar {
+    background: #f44336 !important;
+    color: white !important;
+}
+
+.warning-snackbar {
+    background: #ff9800 !important;
+    color: white !important;
+}
+
+/* =============================================== */
+/* 📱 ELEMENTOS DE FORMULÁRIO */
+/* =============================================== */
+.mat-mdc-form-field {
+    color: #333333 !important;
+}
+
+.mat-mdc-input-element {
+    color: #333333 !important;
+}
+
+.mat-mdc-radio-button .mdc-form-field {
+    color: #333333 !important;
+}
+
+.mat-mdc-checkbox .mdc-form-field {
+    color: #333333 !important;
+}
+
+/* =============================================== */
+/* 🏠 ÁREA ESPECÍFICA - OVERRIDE CORES CLARAS */
+/* =============================================== */
+.area-container {
+    background: #fafafa !important; /* ✅ Fundo claro para área */
+}
+
+.area-container * {
+    color: inherit; /* ✅ Remove herança global de cor */
+}
+
+/* =============================================== */
+/* 📊 DASHBOARD - OVERRIDE CORES CLARAS */
+/* =============================================== */
+.dashboard-container {
+    background: #fafafa !important; /* ✅ Fundo claro para dashboard */
+}
+
+.dashboard-container * {
+    color: inherit; /* ✅ Remove herança global de cor */
+}
