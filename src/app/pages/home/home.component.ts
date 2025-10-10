@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
   faqs: FAQ[] = [
     {
       question: 'Como funciona o plano gratuito?',
-      answer: 'Você tem <strong>3 tentativas gratuitas por dia</strong> para testar todas as 4 áreas de estudo. Sem cartão de crédito, sem compromisso. Perfeito para conhecer a plataforma!'
+      answer: 'Você tem <strong>3 tentativas gratuitas por dia</strong> em cada área de estudo. Sem cartão de crédito, sem compromisso. Perfeito para conhecer a plataforma!'
     },
     {
       question: 'Quais áreas estão disponíveis?',
@@ -75,30 +75,7 @@ export class HomeComponent implements OnInit {
       question: 'Como funciona o teste grátis de 7 dias?',
       answer: 'Você tem acesso completo a todas as funcionalidades premium por 7 dias. Após esse período, será cobrado R$ 39,90/mês. Pode cancelar a qualquer momento.'
     },
-    {
-      question: 'Tem suporte técnico?',
-      answer: 'Sim! Temos suporte por chat e email para tirar suas dúvidas sobre a plataforma, questões ou planos de estudo.'
-    },
-    {
-      question: 'Posso usar para concursos e vagas tech ao mesmo tempo?',
-      answer: 'Sim! A plataforma tem 4 áreas: <strong>Desenvolvimento Web</strong> (para vagas tech), <strong>Português</strong>, <strong>Matemática</strong> e <strong>Informática</strong> (para concursos).'
-    },
-    {
-      question: 'As questões são atualizadas constantemente?',
-      answer: 'Sim! Nossa equipe atualiza as questões mensalmente com base nas provas mais recentes de concursos e entrevistas técnicas das principais empresas.'
-    },
-    {
-      question: 'Funciona no celular?',
-      answer: 'Perfeitamente! A plataforma é 100% responsiva e funciona em qualquer dispositivo - celular, tablet ou computador.'
-    },
-    {
-      question: 'Como faço para cancelar minha assinatura?',
-      answer: 'Muito simples! Você pode cancelar a qualquer momento nas configurações da sua conta. O acesso continua até o final do período pago.'
-    },
-    {
-      question: 'Há garantia de aprovação?',
-      answer: 'Oferecemos as melhores ferramentas de preparação, mas o sucesso depende do seu empenho nos estudos. Temos 92% de taxa de satisfação dos usuários!'
-    }
+    
   ];
 
   constructor(
@@ -320,15 +297,17 @@ export class HomeComponent implements OnInit {
   upgradeToPro(): void {
     console.log('💎 Iniciando upgrade para plano Pro...');
     
-    // ✅ SIMULAR MODAL DE UPGRADE (por enquanto)
-    alert('🎉 Funcionalidade em desenvolvimento!\n\n' +
-          '• 7 dias grátis\n' +
-          '• Depois R$ 39,90/mês\n' +
-          '• Cancele quando quiser\n\n' +
-          'Em breve você poderá se inscrever!');
+    // ✅ NAVEGAR PARA PÁGINA DE UPGRADE
+    this.router.navigate(['/upgrade'], {
+      queryParams: {
+        source: 'home-cta',
+        plan: 'monthly',
+        timestamp: Date.now()
+      }
+    });
     
-    // ✅ OU REDIRECIONAR PARA PÁGINA DE PRICING
-    // this.router.navigate(['/pricing']);
+    // ✅ FEEDBACK VISUAL
+    this.showSuccessMessage('Carregando planos premium...');
   }
 
   // 🆘 MÉTODO PARA CENTRAL DE AJUDA

@@ -1,0 +1,287 @@
+<!-- ✅ CRIAR: src/app/pages/upgrade/upgrade.component.html -->
+<div class="upgrade-container">
+  
+  <!-- ✅ HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>🚀 Acelere Sua Aprovação</h1>
+        <p class="hero-subtitle">
+          Desbloqueie todo o potencial da plataforma com acesso premium
+        </p>
+        
+        <!-- ✅ CONTEXTO BASEADO NA ORIGEM -->
+        <div class="context-message" *ngIf="source === 'quiz-completion' && currentArea">
+          <div class="score-context" *ngIf="currentScore > 0">
+            <i class="fas fa-chart-line"></i>
+            <span>Você fez <strong>{{ currentScore }}%</strong> em {{ currentArea }}</span>
+            <p>Com o Premium, você pode praticar infinitamente até dominar 100%!</p>
+          </div>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>1.500+</strong>
+            <span>Questões</span>
+          </div>
+          <div class="stat-item">
+            <strong>92%</strong>
+            <span>Aprovação</span>
+          </div>
+          <div class="stat-item">
+            <strong>15k+</strong>
+            <span>Estudantes</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="feature-preview">
+          <div class="preview-card">
+            <i class="fas fa-infinity"></i>
+            <h3>Tentativas Ilimitadas</h3>
+            <p>Pratique quantas vezes quiser</p>
+          </div>
+          <div class="preview-card">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Relatórios Detalhados</h3>
+            <p>Veja sua evolução em tempo real</p>
+          </div>
+          <div class="preview-card">
+            <i class="fas fa-target"></i>
+            <h3>Simulados Personalizados</h3>
+            <p>Foque nas suas dificuldades</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ PRICING SECTION -->
+  <section class="pricing-section">
+    <div class="section-header">
+      <h2>Escolha Seu Plano</h2>
+      <p>Cancele a qualquer momento • Teste 7 dias grátis</p>
+    </div>
+    
+    <div class="pricing-grid">
+      <div 
+        *ngFor="let plan of plans"
+        [class]="getPlanCardClass(plan)"
+        (click)="selectPlan(plan.id)"
+      >
+        
+        <!-- ✅ PLAN BADGE -->
+        <div class="plan-badge" 
+             *ngIf="plan.badge"
+             [class]="getPlanBadgeClass(plan)">
+          {{ plan.badge }}
+        </div>
+        
+        <!-- ✅ PLAN HEADER -->
+        <div class="plan-header">
+          <h3>{{ plan.name }}</h3>//
+          <p class="plan-description">{{ plan.description }}</p>
+          
+          <div class="price-display">
+            <div class="price-main">
+              <span class="currency">R$</span>
+              <span class="amount">{{ plan.price.toFixed(2).replace('.', ',') }}</span>
+              <span class="period">/ {{ plan.period }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ✅ FEATURES LIST -->
+        <div class="plan-features">
+          <ul>
+            <li *ngFor="let feature of plan.features">
+              <i class="fas fa-check"></i>
+              <span [innerHTML]="feature"></span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- ✅ PLAN BUTTON -->
+        <div class="plan-action">
+          <button 
+            mat-raised-button
+            [color]="plan.buttonColor"
+            [disabled]="isLoading || plan.id === 'free'"
+            (click)="startCheckout(plan)"
+            class="plan-button"
+          >
+            <span *ngIf="!isLoading || selectedPlan !== plan.id">
+              {{ plan.buttonText }}
+            </span>
+            <span *ngIf="isLoading && selectedPlan === plan.id">
+              <mat-spinner diameter="20" color="accent"></mat-spinner>
+              Processando...
+            </span>
+          </button>
+          
+          <p class="plan-note" *ngIf="plan.id !== 'free'">
+            <i class="fas fa-shield-alt"></i>
+            Pagamento 100% seguro
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ FEATURES COMPARISON -->
+  <section class="comparison-section">
+    <div class="section-header">
+      <h2>Por que escolher o Premium?</h2>
+      <p>Compare os recursos e veja a diferença</p>
+    </div>
+    
+    <div class="comparison-grid">
+      <div class="comparison-item">
+        <div class="comparison-icon">
+          <i class="fas fa-infinity"></i>
+        </div>
+        <h3>Tentativas Ilimitadas</h3>
+        <div class="comparison-content">
+          <div class="free-version">
+            <span class="label">Gratuito:</span>
+            <span class="value">3 por área/dia</span>
+          </div>
+          <div class="premium-version">
+            <span class="label">Premium:</span>
+            <span class="value">Ilimitadas</span>
+            <i class="fas fa-crown"></i>
+          </div>
+        </div>
+        <p>Pratique quantas vezes quiser, quando quiser, sem limitações.</p>
+      </div>
+      
+      <div class="comparison-item">
+        <div class="comparison-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Relatórios Detalhados</h3>
+        <div class="comparison-content">
+          <div class="free-version">
+            <span class="label">Gratuito:</span>
+            <span class="value">Básico</span>
+          </div>
+          <div class="premium-version">
+            <span class="label">Premium:</span>
+            <span class="value">Completo</span>
+            <i class="fas fa-crown"></i>
+          </div>
+        </div>
+        <p>Análise completa da sua evolução, pontos fracos e sugestões personalizadas.</p>
+      </div>
+      
+      <div class="comparison-item">
+        <div class="comparison-icon">
+          <i class="fas fa-target"></i>
+        </div>
+        <h3>Simulados Personalizados</h3>
+        <div class="comparison-content">
+          <div class="free-version">
+            <span class="label">Gratuito:</span>
+            <span class="value">Não disponível</span>
+          </div>
+          <div class="premium-version">
+            <span class="label">Premium:</span>
+            <span class="value">Disponível</span>
+            <i class="fas fa-crown"></i>
+          </div>
+        </div>
+        <p>Crie simulados focados nas suas dificuldades específicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <h2>O que nossos usuários dizem</h2>
+      <p>Histórias reais de aprovação</p>
+    </div>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar">{{ testimonial.avatar }}</div>
+          <div class="testimonial-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.role }}</p>
+          </div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+          </div>
+        </div>
+        <div class="testimonial-content">
+          <p>"{{ testimonial.text }}"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ FAQ SECTION -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2>Dúvidas Frequentes</h2>
+      <p>Respostas para suas principais questões</p>
+    </div>
+    
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <h3>{{ faq.question }}</h3>
+          <i class="fas fa-chevron-down" 
+             [class.expanded]="faq.expanded"></i>
+        </div>
+        <div class="faq-answer" 
+             [class.expanded]="faq.expanded"
+             [innerHTML]="faq.answer">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ CTA FINAL -->
+  <section class="final-cta">
+    <div class="cta-content">
+      <h2>🏆 Comece Seu Teste Gratuito</h2>
+      <p>7 dias de acesso premium • Sem compromisso • Cancele quando quiser</p>
+      
+      <div class="cta-buttons">
+        <button mat-raised-button 
+                color="primary" 
+                class="cta-primary"
+                (click)="startCheckout(plans[1])"
+                [disabled]="isLoading">
+          <i class="fas fa-rocket"></i>
+          Começar Teste Grátis
+        </button>
+        
+        <button mat-raised-button 
+                color="primary"
+                (click)="goBack()">
+          <i class="fas fa-arrow-left"></i>
+          Voltar
+        </button>
+      </div>
+      
+      <div class="security-badges">
+        <div class="security-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>Pagamento Seguro</span>
+        </div>
+        <div class="security-item">
+          <i class="fas fa-lock"></i>
+          <span>SSL Criptografado</span>
+        </div>
+        <div class="security-item">
+          <i class="fas fa-undo"></i>
+          <span>Cancele Quando Quiser</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -16,13 +16,14 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AreaComponent } from './pages/area/area.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { UpgradeComponent } from './pages/upgrade/upgrade.component'; // ✅ ADICIONAR NO app.module.ts (imports)
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    QuizzComponent
+    QuizzComponent,
   ],
   imports: [
     BrowserModule,          // ✅ Contém CommonModule
@@ -33,7 +34,9 @@ import { MatRadioModule } from '@angular/material/radio';
     LoadingComponent,
     BrowserAnimationsModule,
     MaterialModule,
-    MatRadioModule
+    MatRadioModule,
+    UpgradeComponent,
+    AreaComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

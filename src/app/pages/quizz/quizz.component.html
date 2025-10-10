@@ -4,8 +4,15 @@
 <div class="quiz-container">
   <!-- ✅ LOADING STATE -->
   <div *ngIf="isLoading" class="loading-container">
-    <div class="loading-spinner"></div>
-    <p>Carregando questões...</p>
+    <div class="loading-spinner">
+      <div class="spinner-ring"></div>
+    </div>
+    <h3>Preparando seu quiz...</h3>
+    <p>{{ loadingMessage || 'Carregando questões incríveis para você!' }}</p>
+    <div class="loading-progress" *ngIf="loadingProgress">
+      <div class="loading-bar" [style.width.%]="loadingProgress"></div>
+      <span>{{ loadingProgress }}%</span>
+    </div>
   </div>
 
   <!-- ✅ ERROR STATE -->
@@ -37,15 +44,22 @@
       
       <!-- ✅ PROGRESS BAR -->
       <div class="progress-container">
-        <div class="progress-bar">
+        <div class="progress-bar" 
+             role="progressbar"
+             [attr.aria-valuenow]="progressPercentageRounded"
+             aria-valuemin="0" 
+             aria-valuemax="100"
+             [attr.aria-label]="progressAriaLabel">
           <div class="progress-fill" [style.width.%]="progressPercentage"></div>
         </div>
-        <span class="progress-text">{{ Math.round(progressPercentage) }}%</span>
+        <span class="progress-text">{{ progressPercentageRounded }}%</span>
       </div>
     </div>
 
-    <!-- 📊 Stats Header -->
-    <div class="quiz-stats" *ngIf="!isLoading && !hasError">
+    <!-- ✅ QUIZ STATS - APENAS UMA VEZ -->
+    <div class="quiz-stats" 
+         [class.mobile-view]="isMobile()"
+         [class.tablet-view]="isTablet()">
       <div class="stat-item">
         <div class="stat-value">{{ currentQuestionIndex + 1 }}</div>
         <div class="stat-label">Questão</div>
@@ -73,7 +87,7 @@
       </div>
     </div>
 
-    <!-- Pause Overlay -->
+    <!-- ✅ PAUSE OVERLAY -->
     <div class="pause-overlay" *ngIf="isPaused">
       <div class="pause-card">
         <mat-icon style="font-size: 3rem; color: #667eea;">pause_circle_filled</mat-icon>
@@ -109,8 +123,14 @@
           *ngFor="let option of currentQuestion.options; let i = index"
           [class.selected]="selectedAnswer === option.alias"
           [class.disabled]="showExplanation"
-          (click)="selectAnswer(option.alias)"
-        >
+          (click)="!showExplanation && selectAnswer(option.alias)"
+          (keydown)="handleOptionKeydown($event, option.alias, i)"
+          role="button"
+          tabindex="0"
+          [attr.aria-pressed]="selectedAnswer === option.alias"
+          [attr.aria-label]="'Opção ' + getOptionLetter(i) + ': ' + option.name"
+          [attr.aria-disabled]="showExplanation">
+          
           <div class="option-letter">{{ getOptionLetter(i) }}</div>
           <div class="option-content">
             <span class="option-text">{{ option.name }}</span>
@@ -179,7 +199,8 @@
         class="btn btn-primary btn-large"
         *ngIf="selectedAnswer && !showExplanation"
         (click)="submitAnswer()"
-      >
+        [attr.data-analytics]="'quiz-submit-answer'"
+        [attr.data-question-id]="currentQuestion.id">
         <i class="fas fa-check"></i>
         Confirmar Resposta
       </button>
@@ -223,6 +244,24 @@
         </button>
       </div>
     </div>
+
+    <!-- ✅ TRIAL WARNING -->
+    <div class="trial-warning" *ngIf="isFreeTrial && showTrialWarning">
+      <div class="trial-card">
+        <i class="fas fa-gift"></i>
+        <div class="trial-content">
+          <h4>Plano Gratuito</h4>
+          <p>{{ trialMessage }}</p>
+          <!-- ✅ MOSTRAR OUTRAS ÁREAS DISPONÍVEIS SE HOUVER -->
+          <div class="available-areas" *ngIf="hasOtherAreasAvailable()">
+            <small>
+              <strong>Áreas ainda disponíveis:</strong> 
+              {{ getAvailableAreasFormatted() }}
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ✅ QUIZ COMPLETED STATE -->
@@ -239,21 +278,90 @@
         </div>
         <div class="score-details">
           <p><strong>{{ correctAnswers }}</strong> de <strong>{{ totalQuestions }}</strong> questões corretas</p>
-          <p>Tempo: <strong>{{ Math.floor(timeSpent / 60) }}m {{ timeSpent % 60 }}s</strong></p>
+          <p>Tempo: <strong>{{ getFinalTimeFormatted() }}</strong></p>
+          
+          <!-- ✅ INFO DO TRIAL -->
+          <div class="trial-info" *ngIf="isFreeTrial">
+            <p class="trial-status">
+              <i class="fas fa-gift"></i>
+              Tentativas restantes em {{ getCategoryTitle(area || 'desenvolvimento-web') }}: 
+              <strong>{{ getCurrentAreaRemainingAttempts() }}</strong>
+            </p>
+            
+            <!-- ✅ MOSTRAR TOTAL DE TENTATIVAS RESTANTES -->
+            <p class="trial-total" *ngIf="getTotalRemainingAttempts() > 0">
+              <i class="fas fa-chart-bar"></i>
+              Total de tentativas hoje: <strong>{{ getTotalRemainingAttempts() }}</strong>
+            </p>
+            
+            <!-- ✅ MENSAGEM QUANDO TODAS ESGOTADAS -->
+            <p class="trial-exhausted" *ngIf="getTotalRemainingAttempts() === 0">
+              <i class="fas fa-clock"></i>
+              Todas as tentativas foram utilizadas. Elas serão renovadas automaticamente à meia-noite.
+            </p>
+          </div>
         </div>
       </div>
 
       <div class="results-actions">
-        <button class="btn btn-primary" (click)="restartQuiz()">
-          <i class="fas fa-redo"></i>
-          Refazer Quiz
+        <button class="btn btn-primary" 
+                (click)="restartQuiz()"
+                [disabled]="isRestarting || (isFreeTrial && !canStartQuizInArea(area || 'desenvolvimento-web'))">
+          <i class="fas" 
+             [class.fa-redo]="!isRestarting" 
+             [class.fa-spinner]="isRestarting"
+             [class.fa-spin]="isRestarting"></i>
+          {{ isRestarting ? 'Reiniciando...' : (isFreeTrial && !canStartQuizInArea(area || 'desenvolvimento-web') ? 'Sem tentativas' : 'Refazer Quiz') }}
         </button>
-        <button class="btn btn-secondary" (click)="goHome()">
-          <i class="fas fa-home"></i>
-          Voltar ao Início
+        
+        <button class="btn btn-secondary" 
+                (click)="goHome()"
+                [disabled]="isNavigating">
+          <i class="fas" 
+             [class.fa-home]="!isNavigating"
+             [class.fa-spinner]="isNavigating"
+             [class.fa-spin]="isNavigating"></i>
+          {{ isNavigating ? 'Carregando...' : 'Voltar ao Início' }}
+        </button>
+        
+        <button class="btn btn-success" 
+                *ngIf="isFreeTrial && hasExhaustedTrialAttempts()"
+                (click)="navigateToUpgrade()"
+                [disabled]="isNavigating">
+          <i class="fas fa-crown"></i>
+          Upgrade para Premium
         </button>
       </div>
     </div>
+  </div>
+
+  <!-- ✅ MANTER APENAS ESTA VERSÃO MELHORADA: -->
+  <div class="quiz-shortcuts" 
+       *ngIf="!showExplanation && currentQuestion && !isPaused"
+       (keydown)="handleKeyboardShortcut($event)"
+       tabindex="-1"
+       [attr.aria-hidden]="true"
+       style="position: absolute; left: -9999px; opacity: 0;">
+    <!-- Hidden element for keyboard shortcuts -->
+  </div>
+
+  <!-- ✅ CORRIGIR OS IDs DO ÁUDIO: -->
+  <div class="audio-controls" *ngIf="currentQuestion">
+    <button mat-icon-button 
+            (click)="toggleSound()"
+            [title]="soundEnabled ? 'Desativar sons' : 'Ativar sons'">
+      <mat-icon>{{ soundEnabled ? 'volume_up' : 'volume_off' }}</mat-icon>
+    </button>
+    
+    <!-- ✅ ÁUDIO COM IDs CORRETOS -->
+    <audio id="correctSound" preload="none" *ngIf="soundEnabled">
+      <source src="assets/sounds/correct.mp3" type="audio/mpeg">
+      <source src="assets/sounds/correct.ogg" type="audio/ogg">
+    </audio>
+    <audio id="incorrectSound" preload="none" *ngIf="soundEnabled">
+      <source src="assets/sounds/incorrect.mp3" type="audio/mpeg">
+      <source src="assets/sounds/incorrect.ogg" type="audio/ogg">
+    </audio>
   </div>
 </div>
 

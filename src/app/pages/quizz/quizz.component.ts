@@ -1,10 +1,11 @@
-// Importações principais do Angular e dependências necessárias
-import { Component, OnInit } from '@angular/core';
+// ✅ VERSÃO CORRIGIDA - quizz.component.ts
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, forkJoin, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators'; // ✅ ADICIONAR MAP AQUI
+import { Observable, forkJoin, of, Subscription } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FreeTrialService } from '../../core/services/free-trial.service';
 
 // ✅ INTERFACES ESSENCIAIS
 interface QuestionOption {
@@ -50,15 +51,37 @@ interface IndexData {
   structure: { [key: string]: string[] };
 }
 
-@Component({
+// ✅ ENUM PARA ESTADOS
+enum QuizState {
+  INITIALIZING = 'INITIALIZING',
+  LOADING = 'LOADING', 
+  READY = 'READY',
+  IN_PROGRESS = 'IN_PROGRESS',
+  PAUSED = 'PAUSED',
+  COMPLETED = 'COMPLETED',
+  ERROR = 'ERROR'
+}
+
+// ✅ INTERFACE PARA ANALYTICS
+interface QuizAnalytics {
+  startTime: Date;
+  endTime?: Date;
+  questionsAnswered: number;
+  correctAnswers: number;
+  timePerQuestion: number[];
+  abandonedAt?: number;
+  retries: number;
+}
+
+@Component({ // ✅ ADICIONAR O DECORATOR @Component
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
   styleUrls: ['./quizz.component.css']
 })
-export class QuizzComponent implements OnInit {
+export class QuizzComponent implements OnInit, OnDestroy {
   
-  // ✅ PROPRIEDADES FALTANTES
-  mode: string = 'mixed'; // ✅ ADICIONAR ESTA LINHA
+  // ✅ PROPRIEDADES PRINCIPAIS
+  mode: string = 'mixed';
   
   // Estados do componente
   isLoading: boolean = true;
@@ -85,27 +108,156 @@ export class QuizzComponent implements OnInit {
   // Timer
   timeSpent: number = 0;
   startTime: Date = new Date();
-
-  // ✅ ADICIONAR NO CONSTRUCTOR
-  constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute,
-    private router: Router,
-    private snackBar: MatSnackBar // ✅ ADICIONAR ESTA LINHA
-  ) {}
-
-  // ✅ ADICIONAR PROPRIEDADES PARA O INDEX
+  questionStartTime: Date = new Date();
+  finalTime: number = 0;
+  finalTimeFormatted: string = '00:00';
+  
+  // ✅ PROPRIEDADES PARA O INDEX
   appInfo: any = null;
   availableAreas: string[] = [];
   areaStructure: any = {};
   areaStats: any = {};
 
-  // ✅ MÉTODO ngOnInit CORRIGIDO
+  // ✅ TIMER MELHORADO
+  private timer: any;
+  currentTimeFormatted: string = '00:00';
+
+  // ✅ ESTADO E ANALYTICS
+  currentState: QuizState = QuizState.INITIALIZING;
+  private analytics: QuizAnalytics = {
+    startTime: new Date(),
+    questionsAnswered: 0,
+    correctAnswers: 0,
+    timePerQuestion: [],
+    retries: 0
+  };
+
+  // ✅ CACHE DE QUESTÕES E FAVORITOS
+  private questionCache = new Map<string, any>();
+  private subscriptions: Subscription[] = [];
+  private favoriteQuestions: Set<number> = new Set();
+
+  // ✅ PROPRIEDADES PARA CONTROLE DE TENTATIVAS
+  isFreeTrial: boolean = true;
+  canStartQuiz: boolean = true;
+  remainingAttempts: number = 3;
+  trialMessage: string = '';
+  showTrialWarning: boolean = false;
+
+  // ===============================================
+  // 📄 PROPRIEDADES DE TÍTULO E INTERFACE
+  // ===============================================
+  title: string = 'Quiz Interativo';
+
+  // ===============================================
+  // 📊 PROPRIEDADES DE LOADING E PROGRESSO
+  // ===============================================
+  loadingMessage: string = 'Carregando questões incríveis para você!';
+  loadingProgress: number = 0;
+
+  // ===============================================
+  // 🔊 PROPRIEDADES DE ÁUDIO
+  // ===============================================
+  soundEnabled: boolean = true;
+
+  // ===============================================
+  // ⏳ PROPRIEDADES DE LOADING STATES PARA AÇÕES
+  // ===============================================
+  isRestarting: boolean = false;
+  isNavigating: boolean = false;
+
+  // ===============================================
+  // ⌨️ PROPRIEDADES PARA CONTROLE DE TECLADO
+  // ===============================================
+  private keyboardListenerActive: boolean = true;
+
+  // ✅ CONSTRUCTOR
+  constructor(
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private router: Router, // ✅ MANTER private
+    private snackBar: MatSnackBar,
+    private freeTrialService: FreeTrialService // ✅ MANTER private
+  ) {}
+
+  // ✅ GETTERS PARA ESTADO
+  get isInitializing(): boolean { return this.currentState === QuizState.INITIALIZING; }
+  get isReady(): boolean { return this.currentState === QuizState.READY; }
+  get isInProgress(): boolean { return this.currentState === QuizState.IN_PROGRESS; }
+  get isPaused(): boolean { return this.currentState === QuizState.PAUSED; }
+  get isCompleted(): boolean { return this.currentState === QuizState.COMPLETED; }
+
+  // ✅ GETTER PARA QUESTÃO ATUAL
+  get currentQuestion(): Question | null {
+    // ✅ ADICIONAR VALIDAÇÃO:
+    if (!this.questions || this.questions.length === 0) return null;
+    if (this.currentQuestionIndex < 0 || this.currentQuestionIndex >= this.questions.length) return null;
+    return this.questions[this.currentQuestionIndex] || null;
+  }
+
+  // ✅ GETTER PARA PROGRESSO
+  get progressPercentage(): number {
+    if (this.totalQuestions === 0) return 0;
+    return Math.round((this.currentQuestionIndex / this.totalQuestions) * 100);
+  }
+
+  // ✅ GETTERS PARA MATH E FORMATAÇÃO
+  get Math(): typeof Math {
+    return Math;
+  }
+
+  get progressPercentageRounded(): number {
+    return Math.round(this.progressPercentage);
+  }
+
+  get progressAriaLabel(): string {
+    return `Progresso: ${Math.round(this.progressPercentage)}%`;
+  }
+
+  // ✅ GETTERS DE NAVEGAÇÃO
+  get canGoNext(): boolean {
+    return this.currentQuestionIndex < this.totalQuestions - 1;
+  }
+
+  get canGoPrevious(): boolean {
+    return this.currentQuestionIndex > 0;
+  }
+
+  // ✅ ngOnInit
   ngOnInit(): void {
-    console.log('🚀 Inicializando Quizz Component');
+    console.log('🚀 Inicializando QuizComponent...');
     
-    // ✅ CARREGAR PARÂMETROS DA ROTA E QUERY PARAMS
-    this.route.params.subscribe(params => {
+    // Carregar preferências
+    this.loadSoundPreference();
+    this.loadFavorites();
+    
+    // Definir título dinâmico
+    this.updateTitle();
+    
+    // Verificar parâmetros da rota
+    this.route.paramMap.subscribe(params => {
+      this.area = params.get('area') || '';
+      this.subject = params.get('subject') || '';
+      
+      // Atualizar título quando parâmetros mudarem
+      this.updateTitle();
+      
+      console.log('📍 Parâmetros da rota:', { area: this.area, subject: this.subject });
+    });
+    
+    this.route.queryParamMap.subscribe(params => {
+      this.mode = params.get('mode') as 'area' | 'subject' | 'mixed' || 'mixed';
+      this.isFreeTrial = params.get('type') === 'free-trial';
+      
+      // Atualizar título quando query params mudarem
+      this.updateTitle();
+      
+      console.log('🔍 Query params:', { mode: this.mode, isFreeTrial: this.isFreeTrial });
+    });
+    
+    this.setState(QuizState.INITIALIZING);
+    
+    const routeParamsSub = this.route.params.subscribe(params => {
       this.area = params['area'] || '';
       this.subject = params['subject'] || '';
       
@@ -115,15 +267,15 @@ export class QuizzComponent implements OnInit {
       });
     });
 
-    // ✅ CARREGAR QUERY PARAMETERS (IMPORTANTE!)
-    this.route.queryParams.subscribe(queryParams => {
+    const queryParamsSub = this.route.queryParams.subscribe(queryParams => {
       const queryMode = queryParams['mode'];
       const queryType = queryParams['type'];
       const questionLimit = queryParams['limit'];
       
       console.log('🔍 Query parameters:', { queryMode, queryType, questionLimit });
       
-      // ✅ DETERMINAR O MODO BASEADO EM PARÂMETROS E QUERY
+      this.isFreeTrial = queryType === 'free-trial' || queryMode === 'mixed';
+      
       if (queryMode === 'mixed' || queryType === 'free-trial') {
         this.mode = 'mixed';
         console.log('🎲 Modo definido: Quiz Misto (Teste Grátis)');
@@ -133,271 +285,494 @@ export class QuizzComponent implements OnInit {
         this.mode = 'area';
       } else {
         this.mode = 'mixed';
+        this.isFreeTrial = true;
         console.log('🎲 Modo padrão: Quiz Misto');
       }
       
-      console.log(`🎯 Modo final determinado: ${this.mode}`);
+      if (this.isFreeTrial) {
+        this.checkTrialLimits();
+      }
       
-      // ✅ CARREGAR QUESTÕES
+      console.log(`🎯 Modo final determinado: ${this.mode} | Trial: ${this.isFreeTrial}`);
+      
       this.startTime = new Date();
+      this.startTimer();
       this.loadAppIndex();
     });
+
+    this.subscriptions.push(routeParamsSub, queryParamsSub);
   }
 
-  // ✅ MÉTODO PARA CARREGAR O INDEX PRIMEIRO
-  private loadAppIndex(): void {
-    console.log('📋 Carregando índice da aplicação...');
+  // ✅ ngOnDestroy
+  ngOnDestroy(): void {
+    console.log('🧹 Destruindo QuizComponent...');
     
-    this.http.get<any>('assets/data/index.json').subscribe({
-      next: (indexData) => {
-        console.log('✅ Index carregado:', indexData);
-        
-        // ✅ CARREGAR DADOS DO INDEX
-        this.appInfo = indexData.appInfo;
-        this.availableAreas = indexData.areas || Object.keys(indexData.structure || {});
-        this.areaStructure = indexData.structure || {};
-        this.areaStats = indexData.stats?.byArea || {};
-        
-        console.log(`📊 Aplicação: ${this.appInfo?.name} v${this.appInfo?.version}`);
-        console.log(`📚 Áreas disponíveis: ${this.availableAreas.join(', ')}`);
-        
-        // ✅ CARREGAR QUESTÕES BASEADO NO MODO
-        this.loadQuestionsBasedOnMode();
-      },
-      error: (error) => {
-        console.warn('⚠️ Index não encontrado, tentando carregamento direto:', error);
-        
-        // ✅ FALLBACK: TENTAR CARREGAR DIRETAMENTE
-        if (this.mode === 'mixed') {
-          this.loadMixedQuestionsWithIndex();
-        } else {
-          // ✅ ÚLTIMO RECURSO: QUESTÕES DE EMERGÊNCIA
-          console.warn('🚨 Usando questões de emergência como fallback');
-          this.loadEmergencyQuestions();
-        }
+    // Desativar listeners de teclado
+    this.keyboardListenerActive = false;
+    
+    // Limpar timer
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+    
+    // Limpar loading states
+    this.isRestarting = false;
+    this.isNavigating = false;
+    
+    this.subscriptions.forEach(sub => {
+      if (sub && !sub.closed) {
+        sub.unsubscribe();
       }
     });
-  }
-
-  // ✅ MÉTODO SIMPLIFICADO PARA DETERMINAR TIPO DE CARREGAMENTO
-  private loadQuestionsBasedOnMode(): void {
-    console.log(`🎯 Carregando questões no modo: ${this.mode}`);
     
-    switch (this.mode) {
-      case 'subject':
-        if (this.area && this.subject) {
-          this.loadSubjectQuestionsWithIndex();
-        } else {
-          this.showError('Parâmetros de área e subject são obrigatórios para este modo');
-        }
-        break;
-        
-      case 'area':
-        if (this.area) {
-          this.loadAreaQuestionsWithIndex();
-        } else {
-          this.showError('Parâmetro de área é obrigatório para este modo');
-        }
-        break;
-        
-      case 'mixed':
-      default:
-        this.loadMixedQuestionsWithIndex();
-        break;
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+    
+    if ('speechSynthesis' in window) {
+      speechSynthesis.cancel();
     }
   }
 
-  // ✅ MÉTODO INTELIGENTE QUE USA O INDEX
-  private loadQuestionsWithIndex(): void {
-    if (this.mode === 'area' && this.area) {
-      this.loadAreaQuestionsWithIndex();
-    } else if (this.mode === 'subject' && this.subject && this.area) {
-      this.loadSubjectQuestionsWithIndex();
-    } else if (this.mode === 'mixed') {
-      this.loadMixedQuestionsWithIndex();
-    } else {
-      console.log('🎲 Modo padrão: carregando quiz misto');
-      this.loadMixedQuestionsWithIndex();
+  // ✅ MÉTODOS DE ESTADO
+  private setState(newState: QuizState): void {
+    console.log(`🔄 Estado: ${this.currentState} → ${newState}`);
+    
+    const previousState = this.currentState;
+    this.currentState = newState;
+    
+    this.isLoading = newState === QuizState.LOADING || newState === QuizState.INITIALIZING;
+    this.hasError = newState === QuizState.ERROR;
+    this.quizCompleted = newState === QuizState.COMPLETED;
+    
+    if ((newState === QuizState.COMPLETED || newState === QuizState.ERROR) && this.timer) {
+      console.log('⏹️ Parando timer - estado final alcançado');
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+    
+    if (newState === QuizState.IN_PROGRESS && !this.timer) {
+      console.log('▶️ Iniciando timer - quiz em progresso');
+      this.startTimer();
     }
   }
 
-  // ✅ CARREGAR QUESTÕES DE UMA ÁREA USANDO O INDEX
-  private loadAreaQuestionsWithIndex(): void {
-    if (!this.availableAreas.includes(this.area)) {
-      this.showError(`Área "${this.area}" não encontrada. Áreas disponíveis: ${this.availableAreas.join(', ')}`);
-      return;
-    }
-
-    const questionCount = this.areaStats[this.area] || 0;
-    console.log(`📊 Carregando área "${this.area}" com ${questionCount} questões`);
-
-    const filePath = `assets/data/areas/${this.area}.json`;
-    
-    this.http.get<any>(filePath).subscribe({
-      next: (data) => {
-        this.processQuestionsData(data, `Área: ${this.area}`);
-      },
-      error: (error) => {
-        console.error(`❌ Erro ao carregar ${this.area}:`, error);
-        this.showError(`Erro ao carregar questões de ${this.area}`);
-      }
-    });
-  }
-
-  // ✅ CARREGAR QUESTÕES DE UM ASSUNTO ESPECÍFICO
-  private loadSubjectQuestionsWithIndex(): void {
-    const areaSubjects = this.areaStructure[this.area] || [];
-    
-    if (!areaSubjects.includes(this.subject)) {
-      this.showError(`Assunto "${this.subject}" não encontrado na área "${this.area}". Assuntos disponíveis: ${areaSubjects.join(', ')}`);
-      return;
-    }
-
-    console.log(`📖 Carregando assunto "${this.subject}" da área "${this.area}"`);
-
-    const filePath = `assets/data/${this.area}/${this.subject}.json`;
-    
-    this.http.get<any>(filePath).subscribe({
-      next: (data) => {
-        this.processQuestionsData(data, `${this.area} → ${this.subject}`);
-      },
-      error: (error) => {
-        console.error(`❌ Erro ao carregar ${this.area}/${this.subject}:`, error);
-        // ✅ FALLBACK: tentar carregar toda a área e filtrar
-        this.loadAreaAndFilterSubject();
-      }
-    });
-  }
-
-  // ✅ FALLBACK: CARREGAR ÁREA E FILTRAR ASSUNTO
-  private loadAreaAndFilterSubject(): void {
-    console.log(`🔄 Fallback: filtrando assunto "${this.subject}" da área "${this.area}"`);
-    
-    const filePath = `assets/data/areas/${this.area}.json`;
-    
-    this.http.get<any>(filePath).subscribe({
-      next: (data) => {
-        if (data && data.questions) {
-          // ✅ FILTRAR QUESTÕES PELO ASSUNTO
-          const filteredQuestions = data.questions.filter((q: any) => 
-            q.subject === this.subject || q.category === this.subject
-          );
-          
-          if (filteredQuestions.length > 0) {
-            const filteredData = {
-              ...data,
-              questions: filteredQuestions,
-              title: `${data.title} - ${this.subject}`
-            };
-            this.processQuestionsData(filteredData, `${this.area} → ${this.subject} (filtrado)`);
-          } else {
-            this.showError(`Nenhuma questão encontrada para o assunto "${this.subject}"`);
-          }
-        }
-      },
-      error: (error) => {
-        this.showError(`Erro ao carregar questões: ${error.message}`);
-      }
-    });
-  }
-
-  // ✅ QUIZ MISTO INTELIGENTE BASEADO NO INDEX
-  private loadMixedQuestionsWithIndex(): void {
-    console.log('🎲 Criando quiz misto...');
-    
-    // ✅ USAR APENAS ÁREAS QUE REALMENTE EXISTEM
-    const defaultAreas = ['desenvolvimento-web', 'portugues', 'matematica', 'informatica'];
-    
-    // ✅ SE O INDEX TEM ÁREAS, FILTRAR APENAS AS QUE EXISTEM
-    let areasToLoad = defaultAreas;
-    if (this.availableAreas.length > 0) {
-      areasToLoad = this.availableAreas.filter(area => 
-        defaultAreas.includes(area)
-      );
-      console.log('📚 Áreas filtradas do index:', areasToLoad);
+  // ✅ TIMER
+  private startTimer(): void {
+    if (this.timer) {
+      clearInterval(this.timer);
     }
     
-    console.log('📚 Áreas para carregar:', areasToLoad);
-    
-    const requests = areasToLoad.map(area => {
-      console.log(`📂 Tentando carregar: assets/data/areas/${area}.json`);
+    this.timer = setInterval(() => {
+      const seconds = Math.floor((new Date().getTime() - this.startTime.getTime()) / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
       
-      return this.http.get<any>(`assets/data/areas/${area}.json`).pipe(
-        map(data => ({ 
-          area, 
-          data, 
-          maxQuestions: 3
-        })),
-        catchError(error => {
-          console.warn(`⚠️ Erro ao carregar ${area}:`, error.status, error.message);
-          return of(null);
-        })
-      );
+      this.currentTimeFormatted = `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+      this.timeSpent = seconds;
+    }, 1000);
+  }
+
+  // ✅ MÉTODOS DE FORMATAÇÃO
+  getTimeSpentFormatted(): string {
+    if (this.quizCompleted && this.currentTimeFormatted !== '00:00') {
+      return this.currentTimeFormatted;
+    }
+    
+    const seconds = Math.floor((new Date().getTime() - this.startTime.getTime()) / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  }
+
+  getFinalTimeFormatted(): string {
+    return this.quizCompleted ? this.finalTimeFormatted : this.getTimeSpentFormatted();
+  }
+
+  getFormattedTime(): string {
+    return this.getTimeSpentFormatted();
+  }
+
+  // ✅ DISPOSITIVOS
+  isMobile(): boolean {
+    return window.innerWidth <= 768;
+  }
+
+  isTablet(): boolean {
+    return window.innerWidth > 768 && window.innerWidth <= 1024;
+  }
+
+  // ✅ MÉTODOS DE OPÇÕES
+  getOptionLetter(index: number): string {
+    return String.fromCharCode(65 + index); // A, B, C, D
+  }
+
+  // ===============================================
+  // 🎮 MÉTODOS PRINCIPAIS DO QUIZ
+  // ===============================================
+
+  // ✅ SELECIONAR RESPOSTA
+  selectAnswer(alias: string): void {
+    if (this.showExplanation) return;
+    
+    this.selectedAnswer = alias;
+    this.showSuccessMessage(`Alternativa ${alias.toUpperCase()} selecionada`);
+  }
+
+  // ✅ SUBMETER RESPOSTA
+  submitAnswer(): void {
+    if (!this.selectedAnswer) {
+      this.showErrorMessage('Selecione uma alternativa');
+      return;
+    }
+    
+    if (this.showExplanation) {
+      this.showErrorMessage('Já respondida');
+      return;
+    }
+    
+    if (!this.currentQuestion) {
+      this.showErrorMessage('Questão não encontrada');
+      return;
+    }
+
+    const currentQ = this.currentQuestion;
+    const isCorrect = this.selectedAnswer === currentQ.correct;
+    
+    this.answers[currentQ.id] = this.selectedAnswer;
+    this.analytics.questionsAnswered++;
+    
+    if (isCorrect) {
+      this.correctAnswers++;
+      this.analytics.correctAnswers++;
+      this.showSuccessMessage('🎉 Correto!');
+      this.playCorrectSound(); // ✅ ADICIONAR SOM
+    } else {
+      this.showErrorMessage('❌ Incorreto');
+      this.playIncorrectSound(); // ✅ ADICIONAR SOM
+    }
+
+    this.showExplanation = true;
+    this.trackAnswerTime();
+  }
+
+  // ✅ PRÓXIMA QUESTÃO
+  nextQuestion(): void {
+    console.log('➡️ Próxima questão...');
+    
+    if (this.selectedAnswer && !this.showExplanation) {
+      this.submitAnswer();
+      return;
+    }
+    
+    if (this.canGoNext) {
+      this.currentQuestionIndex++;
+      this.selectedAnswer = '';
+      this.showExplanation = false;
+      
+      if (this.currentQuestionIndex >= this.totalQuestions) {
+        this.completeQuiz();
+      } else {
+        this.showSuccessMessage(`Questão ${this.currentQuestionIndex + 1}/${this.totalQuestions}`);
+      }
+    } else {
+      this.completeQuiz();
+    }
+  }
+
+  // ✅ QUESTÃO ANTERIOR
+  previousQuestion(): void {
+    if (this.canGoPrevious) {
+      this.currentQuestionIndex--;
+      this.selectedAnswer = '';
+      this.showExplanation = false;
+      this.showSuccessMessage(`Questão ${this.currentQuestionIndex + 1}/${this.totalQuestions}`);
+    }
+  }
+
+  // ✅ COMPLETAR QUIZ
+  completeQuiz(): void {
+    console.log('🏁 Finalizando quiz...');
+    
+    this.finalTime = Math.floor((new Date().getTime() - this.startTime.getTime()) / 1000);
+    const finalMinutes = Math.floor(this.finalTime / 60);
+    const finalSeconds = this.finalTime % 60;
+    this.finalTimeFormatted = `${finalMinutes.toString().padStart(2, '0')}:${finalSeconds.toString().padStart(2, '0')}`;
+    
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+    
+    this.setState(QuizState.COMPLETED);
+    this.score = Math.round((this.correctAnswers / this.totalQuestions) * 100);
+    this.analytics.endTime = new Date();
+    
+    let completionMessage = `🎉 Quiz concluído! ${this.score}% de acertos`;
+    
+    if (this.isFreeTrial) {
+      const remaining = this.freeTrialService.getRemainingAttempts(this.area || 'desenvolvimento-web');
+      if (remaining > 0) {
+        completionMessage += ` | ${remaining} tentativas restantes hoje`;
+      } else {
+        completionMessage += ` | Tentativas diárias esgotadas`;
+      }
+    }
+    
+    this.showSuccessMessage(completionMessage);
+    
+    console.log('🏁 Quiz finalizado!', {
+      score: this.score,
+      correct: this.correctAnswers,
+      total: this.totalQuestions,
+      timeSpent: this.finalTimeFormatted,
+      isFreeTrial: this.isFreeTrial,
+      remainingAttempts: this.isFreeTrial ? this.freeTrialService.getRemainingAttempts(this.area || 'desenvolvimento-web') : 'Ilimitado'
     });
+  }
 
-    forkJoin(requests).subscribe({
-      next: (results) => {
-        console.log('📊 Resultados do carregamento:', results);
-        
-        const allQuestions: any[] = [];
-        const loadedAreas: string[] = [];
-        const failedAreas: string[] = [];
-        
-        results.forEach(result => {
-          if (result && result.data && result.data.questions && result.data.questions.length > 0) {
-            const shuffledQuestions = this.shuffleArray([...result.data.questions]);
-            const selectedQuestions = shuffledQuestions.slice(0, result.maxQuestions);
-            allQuestions.push(...selectedQuestions);
-            loadedAreas.push(result.area);
-            
-            console.log(`✅ ${result.area}: ${selectedQuestions.length} questões adicionadas`);
-          } else {
-            if (result?.area) {
-              failedAreas.push(result.area);
-              console.warn(`⚠️ ${result.area}: Falha no carregamento`);
-            }
-          }
-        });
+  // ✅ REINICIAR QUIZ
+  async restartQuiz(): Promise<void> {
+    if (this.isRestarting) return;
+    
+    // Verificar se pode reiniciar (trial)
+    if (this.isFreeTrial && !this.canStartQuizInArea(this.area || 'desenvolvimento-web')) {
+      this.showErrorMessage('Você esgotou suas tentativas diárias para esta área!');
+      return;
+    }
+    
+    this.isRestarting = true;
+    console.log('🔄 Reiniciando quiz...');
+    
+    try {
+      // Limpar timer
+      if (this.timer) {
+        clearInterval(this.timer);
+        this.timer = null;
+      }
+      
+      // Reset completo
+      this.currentQuestionIndex = 0;
+      this.selectedAnswer = '';
+      this.showExplanation = false;
+      this.correctAnswers = 0;
+      this.score = 0;
+      this.answers = {};
+      this.timeSpent = 0;
+      this.currentTimeFormatted = '00:00';
+      this.quizCompleted = false;
+      
+      // Reset de tempo
+      this.startTime = new Date();
+      this.questionStartTime = new Date();
+      
+      // Reset de analytics
+      this.analytics = {
+        startTime: new Date(),
+        questionsAnswered: 0,
+        correctAnswers: 0,
+        timePerQuestion: [],
+        retries: this.analytics.retries + 1
+      };
+      
+      // Atualizar título
+      this.updateTitle();
+      
+      // Simular delay para UX
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      // Reiniciar
+      this.setState(QuizState.IN_PROGRESS);
+      this.startTimer();
+      
+      this.showSuccessMessage('🔄 Quiz reiniciado com sucesso!');
+      
+    } catch (error) {
+      console.error('❌ Erro ao reiniciar quiz:', error);
+      this.showErrorMessage('Erro ao reiniciar o quiz. Tente novamente.');
+    } finally {
+      this.isRestarting = false;
+    }
+  }
 
-        console.log(`🎯 Total de questões coletadas: ${allQuestions.length}`);
-        console.log(`✅ Áreas carregadas: ${loadedAreas.join(', ')}`);
-        if (failedAreas.length > 0) {
-          console.log(`❌ Áreas com falha: ${failedAreas.join(', ')}`);
-        }
+  // ✅ RECARREGAR QUESTÕES
+  reloadQuestions(): void {
+    console.log('🔄 Recarregando questões...');
+    
+    this.isLoading = true;
+    this.hasError = false;
+    this.errorMessage = '';
+    this.setState(QuizState.LOADING);
+    
+    this.questions = [];
+    this.currentQuestionIndex = 0;
+    this.selectedAnswer = '';
+    this.showExplanation = false;
+    this.correctAnswers = 0;
+    this.score = 0;
+    this.answers = {};
+    
+    setTimeout(() => {
+      this.loadQuestionsBasedOnMode();
+    }, 500);
+  }
 
-        if (allQuestions.length > 0) {
-          const mixedData = {
-            title: `Quiz Misto - ${loadedAreas.length} Áreas`,
-            description: `Questões de: ${loadedAreas.join(', ')}`,
-            questions: this.shuffleArray(allQuestions).slice(0, 15)
-          };
-          
-          console.log('🎉 Dados do quiz misto preparados:', mixedData);
-          this.processQuestionsData(mixedData, `Quiz Misto (${loadedAreas.length} áreas)`);
-          
-        } else {
-          console.error('❌ Nenhuma questão foi carregada, usando fallback');
-          this.loadEmergencyQuestions();
-        }
-      },
-      error: (error) => {
-        console.error('❌ Erro geral ao carregar quiz misto:', error);
-        console.log('🚨 Fallback: carregando questões de emergência');
-        this.loadEmergencyQuestions();
+  // ✅ VOLTAR PARA HOME
+  async goHome(): Promise<void> {
+    if (this.isNavigating) return;
+    
+    this.isNavigating = true;
+    console.log('🏠 Voltando para home...');
+    
+    try {
+      // Salvar estatísticas se necessário
+      if (this.isFreeTrial) {
+        const summary = this.freeTrialService.getDailySummary();
+        console.log('📊 Resumo diário das tentativas:', summary);
+      }
+      
+      // Limpar timer se ativo
+      if (this.timer) {
+        clearInterval(this.timer);
+        this.timer = null;
+      }
+      
+      // Simular delay para UX
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Navegar
+      this.router.navigate(['/']);
+      
+    } catch (error) {
+      console.error('❌ Erro ao navegar para home:', error);
+      this.showErrorMessage('Erro ao navegar. Tente novamente.');
+    } finally {
+      this.isNavigating = false;
+    }
+  }
+
+  // ===============================================
+  // 🎯 MÉTODOS PARA TRIAL E ÁREAS DISPONÍVEIS
+  // ===============================================
+  
+  // ✅ OBTER ÁREAS DISPONÍVEIS FORMATADAS
+  getAvailableAreasFormatted(): string {
+    const availableAreas = this.freeTrialService.getAvailableAreas();
+    
+    if (availableAreas.length === 0) {
+      return 'Nenhuma área disponível';
+    }
+    
+    return availableAreas
+      .map(area => this.getCategoryTitle(area))
+      .join(', ');
+  }
+
+  // ✅ VERIFICAR SE HÁ OUTRAS ÁREAS DISPONÍVEIS
+  hasOtherAreasAvailable(): boolean {
+    const availableAreas = this.freeTrialService.getAvailableAreas();
+    return availableAreas.length > 0;
+  }
+
+  // ✅ OBTER ÁREAS DISPONÍVEIS (MÉTODO BASE)
+  getAvailableAreas(): string[] {
+    return this.freeTrialService.getAvailableAreas();
+  }
+
+  // ✅ OBTER TENTATIVAS RESTANTES NA ÁREA ATUAL
+  getCurrentAreaRemainingAttempts(): number {
+    const currentArea = this.area || 'desenvolvimento-web';
+    return this.freeTrialService.getRemainingAttempts(currentArea);
+  }
+
+  // ✅ VERIFICAR SE PODE INICIAR QUIZ EM ÁREA ESPECÍFICA
+  canStartQuizInArea(area: string): boolean {
+    return this.freeTrialService.canStartQuiz(area);
+  }
+
+  // ✅ VERIFICAR SE ESGOTOU TODAS AS TENTATIVAS
+  hasExhaustedTrialAttempts(): boolean {
+    return this.freeTrialService.hasExhaustedAllAttempts();
+  }
+
+  // ✅ OBTER TOTAL DE TENTATIVAS RESTANTES
+  getTotalRemainingAttempts(): number {
+    return this.freeTrialService.getTotalRemainingAttempts();
+  }
+
+  // ✅ OBTER ESTATÍSTICAS DO TRIAL
+  getTrialStats(): any {
+    return this.freeTrialService.getTrialStats();
+  }
+
+  // ✅ VERIFICAR SE PODE REINICIAR QUIZ ATUAL
+  canRestartCurrentQuiz(): boolean {
+    if (!this.isFreeTrial) return true;
+    const currentArea = this.area || 'desenvolvimento-web';
+    return this.freeTrialService.canStartQuiz(currentArea);
+  }
+
+  // ✅ MÉTODO PARA NAVEGAR PARA UPGRADE
+  navigateToUpgrade(): void {
+    console.log('🚀 Navegando para página de upgrade...');
+    
+    // ✅ ANALYTICS: TRACK UPGRADE INTENT
+    if (this.isFreeTrial) {
+      console.log('📊 Analytics: Usuário tentou fazer upgrade', {
+        area: this.area,
+        remainingAttempts: this.getCurrentAreaRemainingAttempts(),
+        score: this.score,
+        questionsCompleted: this.analytics.questionsAnswered
+      });
+    }
+    
+    // ✅ NAVEGAR PARA PÁGINA DE UPGRADE
+    this.router.navigate(['/upgrade'], {
+      queryParams: {
+        source: 'quiz-completion',
+        area: this.area || 'mixed',
+        score: this.score
       }
     });
   }
 
-  // ✅ CALCULAR QUESTÕES POR ÁREA DE FORMA PROPORCIONAL
-  private calculateMaxQuestionsPerArea(totalInArea: number): number {
-    if (totalInArea >= 100) return 5; // Áreas grandes: 5 questões
-    if (totalInArea >= 50) return 3;  // Áreas médias: 3 questões
-    if (totalInArea >= 20) return 2;  // Áreas pequenas: 2 questões
-    return 1; // Áreas muito pequenas: 1 questão
+  // ✅ OBTER ÁREAS DISPONÍVEIS COM CONTADORES (OPCIONAL)
+  getAvailableAreasWithCount(): string {
+    const availableAreas = this.freeTrialService.getAvailableAreas();
+    
+    if (availableAreas.length === 0) {
+      return 'Todas as áreas foram utilizadas hoje';
+    }
+    
+    const formattedAreas = availableAreas.map(area => {
+      const remaining = this.freeTrialService.getRemainingAttempts(area);
+      const title = this.getCategoryTitle(area);
+      return `${title} (${remaining} tentativa${remaining !== 1 ? 's' : ''})`;
+    });
+    
+    return formattedAreas.join(', ');
   }
 
-  // ✅ MÉTODO CENTRALIZADO PARA PROCESSAR DADOS
-  // ✅ MÉTODO processQuestionsData MELHORADO
+  // ✅ OBTER RESUMO COMPLETO DE TENTATIVAS
+  getTrialSummaryFormatted(): string {
+    const stats = this.freeTrialService.getTrialStats();
+    return `${stats.usedAttempts}/${stats.totalAttempts} tentativas utilizadas hoje`;
+  }
+
+  // ✅ VERIFICAR SE PODE SUGERIR OUTRAS ÁREAS
+  canSuggestOtherAreas(): boolean {
+    // Só sugere se a área atual está esgotada mas há outras disponíveis
+    const currentArea = this.area || 'desenvolvimento-web';
+    const canStartCurrentArea = this.freeTrialService.canStartQuiz(currentArea);
+    const hasOtherAreas = this.hasOtherAreasAvailable();
+    
+    return !canStartCurrentArea && hasOtherAreas;
+  }
+
+  // ✅ CORRIGIR O MÉTODO processQuestionsData (LINHA 801)
   private processQuestionsData(data: any, source: string): void {
     console.log(`🔄 Processando questões de: ${source}`, data);
     
@@ -424,7 +799,6 @@ export class QuizzComponent implements OnInit {
         interviewTip: q.interviewTip || ''
       }));
       
-      // ✅ VALIDAR SE TODAS AS QUESTÕES TÊM OPÇÕES
       this.questions = this.questions.filter(q => q.options && q.options.length >= 2);
       
       if (this.questions.length === 0) {
@@ -434,10 +808,10 @@ export class QuizzComponent implements OnInit {
       
       this.questions = this.shuffleArray([...this.questions]);
       this.totalQuestions = this.questions.length;
-      this.isLoading = false;
+      this.setState(QuizState.READY);
       
       console.log(`🎉 ${this.totalQuestions} questões carregadas de: ${source}`);
-      this.showSuccessMessage(`Quiz carregado! ${this.totalQuestions} questões de ${source}.`);
+      this.showSuccessMessage(`Quiz carregado! ${this.totalQuestions} questões`); // ✅ AGORA FUNCIONA
       
     } catch (error) {
       console.error('❌ Erro ao processar questões:', error);
@@ -445,27 +819,130 @@ export class QuizzComponent implements OnInit {
     }
   }
 
-  // ✅ MÉTODO DE FALLBACK SIMPLIFICADO
-  private loadQuestions() {
-    console.log('📚 Método de fallback - carregando questões...');
-    
-    this.isLoading = true;
-    this.hasError = false;
-    this.startTime = new Date();
+  // ===============================================
+  // 🛠️ MÉTODOS ESSENCIAIS FALTANTES
+  // ===============================================
 
-    // ✅ USAR ESTRUTURA SIMPLIFICADA
-    if (this.area && this.subject) {
-      console.log(`🎯 Fallback: carregando ${this.area}/${this.subject}`);
-      this.loadSubjectQuestionsWithIndex();
-    } else if (this.area) {
-      console.log(`📖 Fallback: carregando área ${this.area}`);
-      this.loadAreaQuestionsWithIndex();
+  // ✅ CATEGORIA - MÉTODO FALTANTE
+  getCategoryTitle(category: string): string {
+    const categoryMap: { [key: string]: string } = {
+      'desenvolvimento-web': 'Desenvolvimento Web',
+      'portugues': 'Português',
+      'matematica': 'Matemática',
+      'informatica': 'Informática',
+      'logica': 'Lógica',
+      'algoritmos': 'Algoritmos'
+    };
+    
+    return categoryMap[category] || category.charAt(0).toUpperCase() + category.slice(1);
+  }
+
+  // ✅ FAVORITOS - MÉTODOS FALTANTES
+  isFavorite(): boolean {
+    return this.currentQuestion ? this.favoriteQuestions.has(this.currentQuestion.id) : false;
+  }
+
+  toggleFavorite(): void {
+    if (!this.currentQuestion) return;
+    
+    const questionId = this.currentQuestion.id;
+    if (this.favoriteQuestions.has(questionId)) {
+      this.favoriteQuestions.delete(questionId);
+      this.showSuccessMessage('Removido dos favoritos');
     } else {
-      console.log('🎲 Fallback: carregando quiz misto');
-      this.loadMixedQuestionsWithIndex();
+      this.favoriteQuestions.add(questionId);
+      this.showSuccessMessage('Adicionado aos favoritos');
+    }
+    
+    localStorage.setItem('favoriteQuestions', JSON.stringify([...this.favoriteQuestions]));
+  }
+
+  // ✅ CARREGAR FAVORITOS
+  private loadFavorites(): void {
+    try {
+      const saved = localStorage.getItem('favoriteQuestions');
+      if (saved) {
+        const favoriteIds = JSON.parse(saved);
+        this.favoriteQuestions = new Set(favoriteIds);
+      }
+    } catch (error) {
+      console.warn('⚠️ Erro ao carregar favoritos:', error);
     }
   }
 
+  // ✅ PAUSAR/RETOMAR QUIZ
+  pauseQuiz(): void {
+    if (this.isPaused) {
+      this.setState(QuizState.IN_PROGRESS);
+      this.showSuccessMessage('Quiz retomado');
+      this.startTimer();
+    } else {
+      this.setState(QuizState.PAUSED);
+      this.showSuccessMessage('Quiz pausado');
+      if (this.timer) {
+        clearInterval(this.timer);
+        this.timer = null;
+      }
+    }
+  }
+
+  // ✅ SELECIONAR OPÇÃO POR NÚMERO
+  selectOptionByNumber(index: number): void {
+    if (this.currentQuestion && this.currentQuestion.options[index] && !this.showExplanation) { // ✅ ADICIONAR PARÊNTESES
+      const option = this.currentQuestion.options[index];
+      this.selectAnswer(option.alias);
+    }
+  }
+
+  // ✅ NOTIFICAÇÕES
+  private showSuccessMessage(message: string): void {
+    console.log('✅ Success:', message);
+    
+    this.snackBar.dismiss();
+    
+    setTimeout(() => {
+      this.snackBar.open(message, 'Fechar', {
+        duration: 4000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+        panelClass: ['success-snackbar']
+      });
+    }, 100);
+  }
+
+  private showErrorMessage(message: string): void {
+    console.error('❌ Error:', message);
+    
+    this.snackBar.dismiss();
+    
+    setTimeout(() => {
+      this.snackBar.open(message, 'Fechar', {
+        duration: 6000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+        panelClass: ['error-snackbar']
+      });
+    }, 100);
+  }
+
+  // ✅ RASTREAR TEMPO DE RESPOSTA
+  private trackAnswerTime(): void {
+    if (this.questionStartTime) {
+      const timeSpent = Date.now() - this.questionStartTime.getTime();
+      this.analytics.timePerQuestion.push(timeSpent);
+    }
+    this.questionStartTime = new Date();
+  }
+
+  // ✅ MOSTRAR ERRO
+  private showError(message: string): void {
+    console.error('❌ Erro no quiz:', message);
+    this.setState(QuizState.ERROR);
+    this.errorMessage = message;
+    this.showErrorMessage(message);
+  }
+
+  // ✅ EMBARALHAR ARRAY
   private shuffleArray<T>(array: T[]): T[] {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -475,490 +952,608 @@ export class QuizzComponent implements OnInit {
     return shuffled;
   }
 
-  private showError(message: string) {
-    console.error('❌ Erro no quiz:', message);
-    this.hasError = true;
-    this.errorMessage = message;
-    this.isLoading = false;
-  }
-
-  // Getters para o template
-  get currentQuestion(): Question | null {
-    return this.questions[this.currentQuestionIndex] || null;
-  }
-
-  get progressPercentage(): number {
-    return this.totalQuestions > 0 ? ((this.currentQuestionIndex + 1) / this.totalQuestions) * 100 : 0;
-  }
-
-  get questionNumber(): string {
-    return `${this.currentQuestionIndex + 1} de ${this.totalQuestions}`;
-  }
-
-  get canGoNext(): boolean {
-    return this.currentQuestionIndex < this.totalQuestions - 1;
-  }
-
-  get canGoPrevious(): boolean {
-    return this.currentQuestionIndex > 0;
-  }
-
-  // Propriedades para compatibilidade com template
-  get title(): string {
-    if (this.area && this.subject) {
-      return `${this.getAreaDisplayName(this.area)} - ${this.subject.charAt(0).toUpperCase() + this.subject.slice(1)}`;
-    } else if (this.area) {
-      return this.getAreaDisplayName(this.area);
+  // ✅ VERIFICAR LIMITES DO TRIAL
+  private checkTrialLimits(): void {
+    console.log('🔍 Verificando limites do trial gratuito...');
+    
+    let areaToCheck = this.area;
+    if (this.mode === 'mixed') {
+      areaToCheck = 'desenvolvimento-web';
     }
-    return 'Quiz Misto';
-  }
-
-  get questionIndex(): number {
-    return this.currentQuestionIndex;
-  }
-
-  get finished(): boolean {
-    return this.quizCompleted;
-  }
-
-  get progress(): number {
-    return Math.round(this.progressPercentage);
-  }
-
-  get showFeedback(): boolean {
-    return this.showExplanation;
-  }
-
-  get quizResult(): any {
-    if (!this.quizCompleted) return null;
     
-    return {
-      score: this.correctAnswers,
-      total: this.totalQuestions,
-      percentage: this.score,
-      categoryResults: this.getCategoryResults()
-    };
-  }
-
-  // Métodos de interação
-  selectAnswer(alias: string) {
-    console.log('🖱️ Clique detectado na alternativa:', alias);
-    
-    if (this.showExplanation) {
-      this.showWarningMessage('⚠️ Você já respondeu esta questão!');
+    if (!areaToCheck) {
+      console.warn('⚠️ Área não definida para verificação de trial');
       return;
     }
     
-    if (!alias || typeof alias !== 'string') {
-      console.error('❌ Alias inválido:', alias);
-      return;
-    }
+    this.canStartQuiz = this.freeTrialService.canStartQuiz(areaToCheck);
+    this.remainingAttempts = this.freeTrialService.getRemainingAttempts(areaToCheck);
     
-    this.selectedAnswer = alias;
-    console.log(`✅ Resposta selecionada: ${alias}`);
+    console.log(`📊 Trial Status - Área: ${areaToCheck}`, {
+      canStart: this.canStartQuiz,
+      remaining: this.remainingAttempts,
+      totalRemaining: this.freeTrialService.getTotalRemainingAttempts()
+    });
     
-    // ✅ FEEDBACK IMEDIATO
-    this.showSuccessMessage(`Alternativa ${alias.toUpperCase()} selecionada!`);
-  }
-
-  // ✅ MÉTODO SUBMITANSWER CORRIGIDO COMPLETO
-  submitAnswer() {
-    console.log('📤 Submetendo resposta...');
-    
-    if (!this.selectedAnswer) {
-      this.showWarningMessage('⚠️ Selecione uma alternativa primeiro!');
-      return;
-    }
-    
-    if (this.showExplanation) { // ✅ CORRIGIDO: ADICIONADO PARÊNTESE ABERTURA
-      this.showWarningMessage('⚠️ Resposta já foi submetida!');
-      return;
-    }
-    
-    if (!this.currentQuestion) {
-      this.showErrorMessage('❌ Erro: questão não encontrada!');
-      return;
-    }
-
-    const currentQ = this.currentQuestion;
-    const isCorrect = this.selectedAnswer === currentQ.correct;
-    
-    this.answers[currentQ.id] = this.selectedAnswer;
-    
-    if (isCorrect) {
-      this.correctAnswers++;
-      this.showSuccessMessage('🎉 Resposta correta! Parabéns!');
-    } else {
-      this.showErrorMessage('❌ Resposta incorreta. Veja a explicação!');
-    }
-
-    this.showExplanation = true;
-  }
-
-  // ✅ MÉTODO NEXTQUESTION CORRIGIDO
-  nextQuestion() {
-    console.log('➡️ Próxima questão...');
-    
-    if (this.selectedAnswer && !this.showExplanation) {
-      this.submitAnswer();
-      return;
-    }
-    
-    if (this.canGoNext) {
-      this.currentQuestionIndex++;
-      this.selectedAnswer = '';
-      this.showExplanation = false;
+    if (!this.canStartQuiz) {
+      const availableAreas = this.freeTrialService.getAvailableAreas();
       
-      this.showSuccessMessage(`Questão ${this.currentQuestionIndex + 1} de ${this.totalQuestions}`);
-    } else {
-      this.completeQuiz();
-    }
-  }
-
-  previousQuestion() {
-    if (this.canGoPrevious) {
-      this.currentQuestionIndex--;
-      this.selectedAnswer = '';
-      this.showExplanation = false;
+      if (availableAreas.length > 0) {
+        this.trialMessage = `Tentativas esgotadas em ${this.getCategoryTitle(areaToCheck)}. Tente: ${availableAreas.map(area => this.getCategoryTitle(area)).join(', ')}`;
+      } else {
+        this.trialMessage = `Todas as tentativas diárias foram utilizadas. Suas tentativas serão renovadas automaticamente à meia-noite.`;
+      }
       
-      console.log(`⬅️ Questão anterior: ${this.currentQuestionIndex + 1}`);
+      this.showTrialWarning = true;
+      this.setState(QuizState.ERROR);
+      this.errorMessage = this.trialMessage;
+      return;
+    }
+    
+    if (this.remainingAttempts === 1) {
+      this.trialMessage = `⚠️ Última tentativa disponível para ${this.getCategoryTitle(areaToCheck)} hoje!`;
+      this.showTrialWarning = true;
+    } else if (this.remainingAttempts === 2) {
+      this.trialMessage = `Restam ${this.remainingAttempts} tentativas para ${this.getCategoryTitle(areaToCheck)} hoje`;
+      this.showTrialWarning = true;
     }
   }
 
-  completeQuiz() {
-    this.quizCompleted = true;
-    this.score = Math.round((this.correctAnswers / this.totalQuestions) * 100);
-    this.timeSpent = Math.round((new Date().getTime() - this.startTime.getTime()) / 1000);
+  // ✅ CARREGAR INDEX
+  private loadAppIndex(): void {
+    console.log('📋 Carregando índice da aplicação...');
+    this.setState(QuizState.LOADING);
     
-    // ✅ FEEDBACK FINAL MOTIVACIONAL
-    let message = '';
-    if (this.score >= 90) {
-      message = '🏆 Excelente! Você é um expert!';
-    } else if (this.score >= 70) {
-      message = '🎉 Muito bom! Continue assim!';
-    } else if (this.score >= 50) {
-      message = '👍 Bom trabalho! Pode melhorar!';
-    } else {
-      message = '💪 Continue estudando! Você consegue!';
-    }
-    
-    this.showSuccessMessage(message);
-    
-    console.log('🏆 Quiz completado!', {
-      score: this.score,
-      correctAnswers: this.correctAnswers,
-      totalQuestions: this.totalQuestions,
-      timeSpent: this.timeSpent
+    this.http.get<any>('assets/data/index.json').subscribe({
+      next: (indexData) => {
+        console.log('✅ Index carregado:', indexData);
+        
+        this.appInfo = indexData.appInfo;
+        this.availableAreas = indexData.areas || Object.keys(indexData.structure || {});
+        this.areaStructure = indexData.structure || {};
+        this.areaStats = indexData.stats?.byArea || {};
+        
+        console.log(`📊 Aplicação: ${this.appInfo?.name} v${this.appInfo?.version}`);
+        console.log(`📚 Áreas disponíveis: ${this.availableAreas.join(', ')}`);
+        
+        this.loadQuestionsBasedOnMode();
+      },
+      error: (error) => {
+        console.warn('⚠️ Index não encontrado, tentando carregamento direto:', error);
+        
+        if (this.mode === 'mixed') {
+          this.loadMixedQuestionsWithIndex();
+        } else {
+          console.warn('🚨 Usando questões de emergência como fallback');
+          this.loadEmergencyQuestions();
+        }
+      }
     });
   }
 
-  restartQuiz() {
-    console.log('🔄 Reiniciando quiz');
+  // ✅ CARREGAR QUESTÕES BASEADO NO MODO
+  private loadQuestionsBasedOnMode(): void {
+    console.log(`🎯 Carregando questões no modo: ${this.mode}`);
     
-    this.currentQuestionIndex = 0;
-    this.selectedAnswer = '';
-    this.showExplanation = false;
-    this.quizCompleted = false;
-    this.correctAnswers = 0;
-    this.score = 0;
-    this.answers = {};
-    this.timeSpent = 0;
-    this.startTime = new Date();
-    
-    this.questions = this.shuffleArray(this.questions);
-  }
-
-  goHome() {
-    console.log('🏠 Voltando para home');
-    this.router.navigate(['/']);
-  }
-
-  reloadQuestions() {
-    console.log('🔄 Recarregando questões');
-    this.loadQuestions();
-  }
-
-  // Métodos para o template
-  getOptionLetter(index: number): string {
-    return String.fromCharCode(65 + index); // A, B, C, D...
-  }
-
-  // ✅ MÉTODO GETOPTIONCLASS CORRIGIDO
-  getOptionClass(alias: string): string {
-    console.log(`🎨 Calculando classe para: ${alias}`, {
-      selectedAnswer: this.selectedAnswer,
-      showExplanation: this.showExplanation,
-      correctAnswer: this.currentQuestion?.correct
-    });
-    
-    const classes: string[] = ['option'];
-    
-    // Adiciona classe 'selected' se esta é a resposta selecionada
-    if (this.selectedAnswer === alias) {
-      classes.push('selected');
-      console.log(`✅ Classe 'selected' adicionada para: ${alias}`);
-    }
-    
-    // Se está mostrando explicação, adiciona classes de feedback
-    if (this.showExplanation) {
-      if (alias === this.currentQuestion?.correct) {
-        classes.push('correct');
-        console.log(`✅ Classe 'correct' adicionada para: ${alias}`);
-      } else if (alias === this.selectedAnswer && alias !== this.currentQuestion?.correct) {
-        classes.push('incorrect');
-        console.log(`❌ Classe 'incorrect' adicionada para: ${alias}`);
+    if (this.isFreeTrial && this.canStartQuiz) {
+      let areaToRegister = this.area;
+      if (this.mode === 'mixed') {
+        areaToRegister = 'desenvolvimento-web';
+      }
+      
+      if (areaToRegister) {
+        const registered = this.freeTrialService.registerAttempt(areaToRegister);
+        if (!registered) {
+          this.showError('Limite de tentativas diárias excedido!');
+          return;
+        }
+        
+        this.remainingAttempts = this.freeTrialService.getRemainingAttempts(areaToRegister);
+        console.log(`✅ Tentativa registrada! Restantes: ${this.remainingAttempts}`);
       }
     }
     
-    const finalClasses = classes.join(' ');
-    console.log(`🎨 Classes finais para ${alias}: ${finalClasses}`);
-    
-    return finalClasses;
+    switch (this.mode) {
+      case 'subject':
+        if (this.area && this.subject) {
+          this.loadSubjectQuestionsWithIndex();
+        } else {
+          this.showError('Parâmetros de área e subject são obrigatórios para este modo');
+        }
+        break;
+        
+      case 'area':
+        if (this.area) {
+          this.loadAreaQuestionsWithIndex();
+        } else {
+          this.showError('Parâmetro de área é obrigatório para este modo');
+        }
+        break;
+        
+      case 'mixed':
+      default:
+        this.loadMixedQuestionsWithIndex();
+        break;
+    }
   }
 
-  isCorrectAnswer(alias: string): boolean {
-    return alias === this.currentQuestion?.correct;
-  }
-
-  finishQuiz(): void {
-    this.completeQuiz();
-  }
-
-  getCategoryResults(): any[] {
-    if (!this.questions.length) return [];
+  // ✅ MÉTODOS DE CARREGAMENTO ADICIONAIS (IMPLEMENTAR CONFORME NECESSÁRIO)
+  private loadMixedQuestionsWithIndex(): void {
+    console.log('🎲 Carregando quiz misto (trial gratuito)...');
     
-    const categoryStats: { [key: string]: { correct: number; total: number } } = {};
+    // ✅ DEFINIR ARQUIVOS DE QUESTÕES DISPONÍVEIS
+    const questionFiles = [
+      'assets/data/desenvolvimento-web/html-css.json',
+      'assets/data/desenvolvimento-web/javascript.json',
+      'assets/data/portugues/ortografia.json',
+      'assets/data/matematica/basica.json',
+      'assets/data/informatica/conceitos.json'
+    ];
     
-    this.questions.forEach(question => {
-      const category = question.category || 'Geral';
-      
-      if (!categoryStats[category]) {
-        categoryStats[category] = { correct: 0, total: 0 };
-      }
-      
-      categoryStats[category].total++;
-      
-      if (this.answers[question.id] === question.correct) {
-        categoryStats[category].correct++;
+    // ✅ CARREGAR MÚLTIPLOS ARQUIVOS
+    const requests = questionFiles.map(file => 
+      this.http.get<any>(file).pipe(
+        catchError(error => {
+          console.warn(`⚠️ Erro ao carregar ${file}:`, error);
+          return of(null); // Retorna null se falhar
+        })
+      )
+    );
+    
+    // ✅ AGUARDAR TODOS OS REQUESTS
+    forkJoin(requests).subscribe({
+      next: (results) => {
+        console.log('📊 Resultados do carregamento:', results);
+        
+        // ✅ FILTRAR RESULTADOS VÁLIDOS
+        const validResults = results.filter(result => result && result.questions);
+        
+        if (validResults.length === 0) {
+          console.warn('⚠️ Nenhum arquivo válido encontrado, tentando carregamento de emergência...');
+          this.loadEmergencyQuestions();
+          return;
+        }
+        
+        // ✅ COMBINAR TODAS AS QUESTÕES
+        let allQuestions: any[] = [];
+        validResults.forEach(result => {
+          if (result.questions && Array.isArray(result.questions)) {
+            allQuestions = [...allQuestions, ...result.questions];
+          }
+        });
+        
+        if (allQuestions.length === 0) {
+          console.warn('⚠️ Nenhuma questão encontrada nos arquivos válidos');
+          this.loadEmergencyQuestions();
+          return;
+        }
+        
+        // ✅ EMBARALHAR E LIMITAR QUESTÕES (MÁXIMO 20 PARA TRIAL)
+        const shuffledQuestions = this.shuffleArray(allQuestions);
+        const limitedQuestions = shuffledQuestions.slice(0, 20);
+        
+        // ✅ PROCESSAR QUESTÕES
+        const questionData = {
+          metadata: {
+            area: 'mixed',
+            subject: 'Quiz Misto',
+            name: 'Quiz Gratuito - Múltiplas Áreas',
+            description: 'Seleção de questões de várias áreas do conhecimento',
+            questionCount: limitedQuestions.length
+          },
+          questions: limitedQuestions
+        };
+        
+        console.log(`🎉 ${limitedQuestions.length} questões mistas carregadas!`);
+        this.processQuestionsData(questionData, 'Quiz Misto');
+        
+      },
+      error: (error) => {
+        console.error('❌ Erro ao carregar questões mistas:', error);
+        this.loadEmergencyQuestions();
       }
     });
-    
-    return Object.entries(categoryStats).map(([category, stats]) => ({
-      category,
-      correct: stats.correct,
-      total: stats.total,
-      percentage: Math.round((stats.correct / stats.total) * 100)
-    }));
   }
 
-  getCategoryTitle(category: string): string {
-    const categoryTitles: { [key: string]: string } = {
-      'html': 'HTML',
-      'css': 'CSS', 
-      'javascript': 'JavaScript',
-      'typescript': 'TypeScript',
-      'angular': 'Angular',
-      'responsividade': 'Responsividade',
-      'front-end': 'Front-End',
-      'boas-praticas': 'Boas Práticas',
-      'versionamento': 'Versionamento',
-      'scrum': 'Scrum/Agile',
-      'devops': 'DevOps',
-      'ci-cd': 'CI/CD',
-      'code-review': 'Code Review',
-      'testes-unitarios': 'Testes Unitários',
-      'criptografia': 'Criptografia',
-      'figma': 'Figma/Design',
-      'micro-front-end': 'Micro Front-End',
-      'entrevista-tecnica': 'Entrevista Técnica',
-      'gramatica': 'Gramática',
-      'interpretacao': 'Interpretação',
-      'redacao': 'Redação',
-      'algebra': 'Álgebra',
-      'geometria': 'Geometria',
-      'raciocinio-logico': 'Raciocínio Lógico',
-      'hardware': 'Hardware',
-      'redes': 'Redes',
-      'sistemas-operacionais': 'Sistemas Operacionais'
+  private loadAreaQuestionsWithIndex(): void {
+    console.log(`📚 Carregando questões da área: ${this.area}`);
+    
+    if (!this.area) {
+      this.showError('Área não especificada');
+      return;
+    }
+    
+    // ✅ MAPEAR ÁREA PARA ARQUIVOS
+    const areaFiles: { [key: string]: string[] } = {
+      'desenvolvimento-web': [
+        'assets/data/desenvolvimento-web/html-css.json',
+        'assets/data/desenvolvimento-web/javascript.json',
+        'assets/data/desenvolvimento-web/react.json',
+        'assets/data/desenvolvimento-web/nodejs.json'
+      ],
+      'portugues': [
+        'assets/data/portugues/ortografia.json',
+        'assets/data/portugues/gramatica.json',
+        'assets/data/portugues/interpretacao.json'
+      ],
+      'matematica': [
+        'assets/data/matematica/basica.json',
+        'assets/data/matematica/algebra.json',
+        'assets/data/matematica/geometria.json'
+      ],
+      'informatica': [
+        'assets/data/informatica/conceitos.json',
+        'assets/data/informatica/hardware.json',
+        'assets/data/informatica/software.json'
+      ]
     };
     
-    return categoryTitles[category] || category.charAt(0).toUpperCase() + category.slice(1);
-  }
-
-  getAreaDisplayName(area: string): string {
-    const displayNames: { [key: string]: string } = {
-      'desenvolvimento-web': 'Desenvolvimento Web',
-      'metodologias': 'Metodologias Ágeis',
-      'seguranca': 'Segurança',
-      'design': 'Design & UX',
-      'entrevista': 'Preparação para Entrevista',
-      'portugues': 'Português',
-      'matematica': 'Matemática',
-      'informatica': 'Informática'
-    };
-    
-    return displayNames[area] || area.charAt(0).toUpperCase() + area.slice(1);
-  }
-
-  // Funcionalidade de áudio (básica)
-  readText(text: string): void {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'pt-BR';
-      utterance.rate = 0.8;
-      utterance.pitch = 1;
-      
-      speechSynthesis.speak(utterance);
-      console.log('🔊 Reproduzindo áudio:', text.substring(0, 50) + '...');
-    } else {
-      console.warn('⚠️ Speech Synthesis não suportado neste navegador');
-    }
-  }
-
-  // ✅ MÉTODO DE DEBUG
-  debugQuizState() {
-    console.log('🔍 ESTADO COMPLETO DO QUIZ:', {
-      isLoading: this.isLoading,
-      hasError: this.hasError,
-      questions: this.questions.length,
-      currentQuestionIndex: this.currentQuestionIndex,
-      currentQuestion: this.currentQuestion,
-      selectedAnswer: this.selectedAnswer,
-      showExplanation: this.showExplanation,
-      quizCompleted: this.quizCompleted,
-      correctAnswers: this.correctAnswers,
-      totalQuestions: this.totalQuestions
-    });
-  }
-
-  // ✅ ADICIONAR NO COMPONENT
-  Math = Math; // Para usar Math.round e Math.floor no template
-
-  // 🎉 NOTIFICAÇÕES MELHORADAS
-  private showSuccessMessage(message: string): void {
-    this.snackBar.open(message, 'Fechar', {
-      duration: 3000,
-      panelClass: ['success-snackbar']
-    });
-  }
-
-  private showErrorMessage(message: string): void {
-    this.snackBar.open(message, 'Fechar', {
-      duration: 4000,
-      panelClass: ['error-snackbar']
-    });
-  }
-
-  private showWarningMessage(message: string): void {
-    this.snackBar.open(message, 'Fechar', {
-      duration: 3000,
-      panelClass: ['warning-snackbar']
-    });
-  }
-
-  // ✅ ADICIONAR MÉTODO PARA FAVORITOS (BÁSICO)
-  toggleFavorite(): void {
-    if (!this.currentQuestion) return;
-    
-    // Simulação simples de favoritos
-    const favorites = JSON.parse(localStorage.getItem('quiz_favorites') || '[]');
-    const questionId = this.currentQuestion.id;
-    
-    const index = favorites.indexOf(questionId);
-    if (index > -1) {
-      favorites.splice(index, 1);
-      this.showSuccessMessage('❤️ Removido dos favoritos');
-    } else {
-      favorites.push(questionId);
-      this.showSuccessMessage('⭐ Adicionado aos favoritos');
+    const files = areaFiles[this.area];
+    if (!files || files.length === 0) {
+      console.warn(`⚠️ Nenhum arquivo encontrado para área: ${this.area}`);
+      this.loadEmergencyQuestions();
+      return;
     }
     
-    localStorage.setItem('quiz_favorites', JSON.stringify(favorites));
+    // ✅ CARREGAR ARQUIVOS DA ÁREA
+    const requests = files.map(file => 
+      this.http.get<any>(file).pipe(
+        catchError(error => {
+          console.warn(`⚠️ Erro ao carregar ${file}:`, error);
+          return of(null);
+        })
+      )
+    );
+    
+    forkJoin(requests).subscribe({
+      next: (results) => {
+        const validResults = results.filter(result => result && result.questions);
+        
+        if (validResults.length === 0) {
+          this.loadEmergencyQuestions();
+          return;
+        }
+        
+        // ✅ COMBINAR QUESTÕES DA ÁREA
+        let areaQuestions: any[] = [];
+        validResults.forEach(result => {
+          if (result.questions && Array.isArray(result.questions)) {
+            areaQuestions = [...areaQuestions, ...result.questions];
+          }
+        });
+        
+        // ✅ EMBARALHAR E LIMITAR (30 questões para área específica)
+        const shuffledQuestions = this.shuffleArray(areaQuestions);
+        const limitedQuestions = shuffledQuestions.slice(0, 30);
+        
+        const questionData = {
+          metadata: {
+            area: this.area,
+            subject: this.getCategoryTitle(this.area),
+            name: `Quiz de ${this.getCategoryTitle(this.area)}`,
+            description: `Questões específicas da área de ${this.getCategoryTitle(this.area)}`,
+            questionCount: limitedQuestions.length
+          },
+          questions: limitedQuestions
+        };
+        
+        console.log(`🎉 ${limitedQuestions.length} questões de ${this.area} carregadas!`);
+        this.processQuestionsData(questionData, this.getCategoryTitle(this.area));
+        
+      },
+      error: (error) => {
+        console.error(`❌ Erro ao carregar questões da área ${this.area}:`, error);
+        this.loadEmergencyQuestions();
+      }
+    });
   }
 
-  isFavorite(): boolean {
-    if (!this.currentQuestion) return false;
+  private loadSubjectQuestionsWithIndex(): void {
+    console.log(`📖 Carregando questões do assunto: ${this.area}/${this.subject}`);
     
-    const favorites = JSON.parse(localStorage.getItem('quiz_favorites') || '[]');
-    return favorites.includes(this.currentQuestion.id);
-  }
-
-  // ✅ ADICIONAR CONTROLE DE PAUSA
-  isPaused: boolean = false;
-
-  pauseQuiz(): void {
-    this.isPaused = !this.isPaused;
-    
-    if (this.isPaused) {
-      this.showWarningMessage('⏸️ Quiz pausado');
-    } else {
-      this.showSuccessMessage('▶️ Quiz retomado');
+    if (!this.area || !this.subject) {
+      this.showError('Área e assunto devem ser especificados');
+      return;
     }
-  }
-
-  // ✅ ADICIONAR TIMER VISUAL (BÁSICO)
-  getTimeSpentFormatted(): string {
-    const seconds = Math.floor((new Date().getTime() - this.startTime.getTime()) / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
     
-    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    // ✅ CONSTRUIR CAMINHO DO ARQUIVO
+    const filePath = `assets/data/${this.area}/${this.subject}.json`;
+    
+    this.http.get<any>(filePath).subscribe({
+      next: (data) => {
+        if (!data || !data.questions || data.questions.length === 0) {
+          console.warn(`⚠️ Nenhuma questão encontrada em: ${filePath}`);
+          this.loadEmergencyQuestions();
+          return;
+        }
+        
+        // ✅ EMBARALHAR QUESTÕES DO ASSUNTO
+        const shuffledQuestions = this.shuffleArray(data.questions);
+        const limitedQuestions = shuffledQuestions.slice(0, 25);
+        
+        const questionData = {
+          metadata: {
+            area: this.area,
+            subject: this.subject,
+            name: `${this.getCategoryTitle(this.area)} - ${this.subject}`,
+            description: `Questões específicas de ${this.subject}`,
+            questionCount: limitedQuestions.length
+          },
+          questions: limitedQuestions
+        };
+        
+        console.log(`🎉 ${limitedQuestions.length} questões de ${this.subject} carregadas!`);
+        this.processQuestionsData(questionData, `${this.getCategoryTitle(this.area)} - ${this.subject}`);
+        
+      },
+      error: (error) => {
+        console.error(`❌ Erro ao carregar ${filePath}:`, error);
+        this.loadEmergencyQuestions();
+      }
+    });
   }
 
-  // ✅ MÉTODO DE EMERGÊNCIA - QUESTÕES HARDCODED
+  // ✅ QUESTÕES DE EMERGÊNCIA (FALLBACK)
   private loadEmergencyQuestions(): void {
     console.log('🚨 Carregando questões de emergência...');
     
+    // ✅ QUESTÕES HARDCODED COMO FALLBACK
     const emergencyQuestions = [
       {
         id: 1,
-        category: 'JavaScript',
-        question: 'Qual é a diferença entre let, const e var?',
+        category: 'Desenvolvimento Web',
+        question: 'Qual tag HTML é usada para criar um link?',
         options: [
-          { id: 0, alias: 'a', name: 'Não há diferença' }, // ✅ ADICIONADO ID
-          { id: 1, alias: 'b', name: 'let e const têm escopo de bloco' }, // ✅ ADICIONADO ID
-          { id: 2, alias: 'c', name: 'var é mais moderno' }, // ✅ ADICIONADO ID
-          { id: 3, alias: 'd', name: 'Todas são iguais' } // ✅ ADICIONADO ID
+          { id: 0, name: '<a>', alias: 'a' },
+          { id: 1, name: '<link>', alias: 'b' },
+          { id: 2, name: '<href>', alias: 'c' },
+          { id: 3, name: '<url>', alias: 'd' }
         ],
-        correct: 'b',
-        explanation: 'let e const têm escopo de bloco, var tem escopo de função',
-        difficulty: 'medium'
+        correct: 'a',
+        explanation: 'A tag <a> (anchor) é usada para criar hyperlinks em HTML.',
+        difficulty: 'easy'
       },
       {
         id: 2,
-        category: 'React',
-        question: 'Qual hook é usado para estado?',
+        category: 'JavaScript',
+        question: 'Como declarar uma variável em JavaScript?',
         options: [
-          { id: 0, alias: 'a', name: 'useEffect' }, // ✅ ADICIONADO ID
-          { id: 1, alias: 'b', name: 'useState' }, // ✅ ADICIONADO ID
-          { id: 2, alias: 'c', name: 'useContext' }, // ✅ ADICIONADO ID
-          { id: 3, alias: 'd', name: 'useReducer' } // ✅ ADICIONADO ID
+          { id: 0, name: 'var nome;', alias: 'a' },
+          { id: 1, name: 'variable nome;', alias: 'b' },
+          { id: 2, name: 'v nome;', alias: 'c' },
+          { id: 3, name: 'declare nome;', alias: 'd' }
         ],
-        correct: 'b',
-        explanation: 'useState é o hook para gerenciar estado local',
+        correct: 'a',
+        explanation: 'Em JavaScript, usamos "var", "let" ou "const" para declarar variáveis.',
         difficulty: 'easy'
       },
       {
         id: 3,
         category: 'CSS',
-        question: 'Qual propriedade cria layout flexível?',
+        question: 'Qual propriedade CSS define a cor do texto?',
         options: [
-          { id: 0, alias: 'a', name: 'display: block' }, // ✅ ADICIONADO ID
-          { id: 1, alias: 'b', name: 'display: flex' }, // ✅ ADICIONADO ID
-          { id: 2, alias: 'c', name: 'display: grid' }, // ✅ ADICIONADO ID
-          { id: 3, alias: 'd', name: 'display: table' } // ✅ ADICIONADO ID
+          { id: 0, name: 'color', alias: 'a' },
+          { id: 1, name: 'text-color', alias: 'b' },
+          { id: 2, name: 'font-color', alias: 'c' },
+          { id: 3, name: 'text-style', alias: 'd' }
         ],
-        correct: 'b',
-        explanation: 'display: flex ativa o Flexbox',
+        correct: 'a',
+        explanation: 'A propriedade "color" define a cor do texto em CSS.',
         difficulty: 'easy'
+      },
+      {
+        id: 4,
+        category: 'Português',
+        question: 'Qual é o plural de "cidadão"?',
+        options: [
+          { id: 0, name: 'cidadãos', alias: 'a' },
+          { id: 1, name: 'cidadões', alias: 'b' },
+          { id: 2, name: 'cidadans', alias: 'c' },
+          { id: 3, name: 'cidadãos', alias: 'd' }
+        ],
+        correct: 'a',
+        explanation: 'O plural de "cidadão" é "cidadãos".',
+        difficulty: 'medium'
+      },
+      {
+        id: 5,
+        category: 'Matemática',
+        question: 'Quanto é 2 + 2 × 3?',
+        options: [
+          { id: 0, name: '8', alias: 'a' },
+          { id: 1, name: '12', alias: 'b' },
+          { id: 2, name: '10', alias: 'c' },
+          { id: 3, name: '6', alias: 'd' }
+        ],
+        correct: 'a',
+        explanation: 'Seguindo a ordem das operações: 2 + (2 × 3) = 2 + 6 = 8.',
+        difficulty: 'medium'
       }
     ];
     
-    this.questions = emergencyQuestions;
-    this.totalQuestions = this.questions.length;
-    this.isLoading = false;
+    const questionData = {
+      metadata: {
+        area: 'emergency',
+        subject: 'Questões de Emergência',
+        name: 'Quiz de Demonstração',
+        description: 'Questões básicas para demonstração do sistema',
+        questionCount: emergencyQuestions.length
+      },
+      questions: emergencyQuestions
+    };
     
-    this.showSuccessMessage('Quiz de demonstração carregado!');
-    console.log('✅ Questões de emergência carregadas:', this.questions);
+    console.log('🆘 Usando questões de emergência como fallback');
+    this.processQuestionsData(questionData, 'Quiz de Demonstração');
   }
-}
+  
+  // ===============================================
+  // ⌨️ MÉTODOS DE TECLADO E NAVEGAÇÃO
+  // ===============================================
+
+  handleKeyboardShortcut(event: KeyboardEvent): void {
+    if (!this.keyboardListenerActive) return;
+    
+    // Prevenir atalhos se estiver em input/textarea ou pausado
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || this.isPaused) {
+      return;
+    }
+
+    switch (event.key) {
+      case '1':
+      case '2': 
+      case '3':
+      case '4':
+        event.preventDefault();
+        const optionIndex = parseInt(event.key) - 1;
+        if (this.currentQuestion && this.currentQuestion.options[optionIndex] && !this.showExplanation) {
+          this.selectOptionByNumber(optionIndex);
+        }
+        break;
+      
+      case 'Enter':
+      case ' ':
+        event.preventDefault();
+        if (this.selectedAnswer && !this.showExplanation) {
+          this.submitAnswer();
+        } else if (this.showExplanation && this.canGoNext) {
+          this.nextQuestion();
+        } else if (this.showExplanation && !this.canGoNext) {
+          this.completeQuiz();
+        }
+        break;
+      
+      case 'ArrowLeft':
+        if (this.showExplanation && this.canGoPrevious) {
+          event.preventDefault();
+          this.previousQuestion();
+        }
+        break;
+      
+      case 'ArrowRight':
+        if (this.showExplanation && this.canGoNext) {
+          event.preventDefault();
+          this.nextQuestion();
+        }
+        break;
+        
+      case 'p':
+      case 'P':
+        if (this.currentQuestion) {
+          event.preventDefault();
+          this.pauseQuiz();
+        }
+        break;
+    }
+  }
+
+  handleOptionKeydown(event: KeyboardEvent, alias: string, index: number): void {
+    if (this.showExplanation) return; // ✅ ADICIONAR PARÊNTESES
+    
+    switch (event.key) {
+      case 'Enter':
+      case ' ':
+        event.preventDefault();
+        this.selectAnswer(alias);
+        break;
+      
+      case 'ArrowDown':
+        event.preventDefault();
+        this.focusNextOption(index);
+        break;
+      
+      case 'ArrowUp':
+        event.preventDefault();
+        this.focusPreviousOption(index);
+        break;
+    }
+  }
+
+  private focusNextOption(currentIndex: number): void {
+    if (!this.currentQuestion) return;
+    
+    const nextIndex = (currentIndex + 1) % this.currentQuestion.options.length;
+    const nextOption = document.querySelector(`.option-item:nth-child(${nextIndex + 1})`) as HTMLElement;
+    nextOption?.focus();
+  }
+
+  private focusPreviousOption(currentIndex: number): void {
+    if (!this.currentQuestion) return;
+    
+    const prevIndex = currentIndex === 0 ? this.currentQuestion.options.length - 1 : currentIndex - 1;
+    const prevOption = document.querySelector(`.option-item:nth-child(${prevIndex + 1})`) as HTMLElement;
+    prevOption?.focus();
+  }
+
+  // ===============================================
+  // 🔊 MÉTODOS DE CONTROLE DE ÁUDIO
+  // ===============================================
+
+  toggleSound(): void {
+    this.soundEnabled = !this.soundEnabled;
+    localStorage.setItem('quiz_sound_enabled', this.soundEnabled.toString());
+    
+    this.showSuccessMessage(
+      this.soundEnabled ? '🔊 Sons ativados' : '🔇 Sons desativados'
+    );
+  }
+
+  private loadSoundPreference(): void {
+    const saved = localStorage.getItem('quiz_sound_enabled');
+    this.soundEnabled = saved !== null ? saved === 'true' : true;
+  }
+
+  private playCorrectSound(): void {
+    if (!this.soundEnabled) return;
+    
+    try {
+      const audio = document.querySelector('#correctSound') as HTMLAudioElement;
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(error => {
+          console.warn('⚠️ Não foi possível reproduzir som de acerto:', error);
+        });
+      }
+    } catch (error) {
+      console.warn('⚠️ Erro ao reproduzir som:', error);
+    }
+  }
+
+  private playIncorrectSound(): void {
+    if (!this.soundEnabled) return;
+    
+    try {
+      const audio = document.querySelector('#incorrectSound') as HTMLAudioElement;
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(error => {
+          console.warn('⚠️ Não foi possível reproduzir som de erro:', error);
+        });
+      }
+    } catch (error) {
+      console.warn('⚠️ Erro ao reproduzir som:', error);
+    }
+  }
+
+  // ===============================================
+  // 🏷️ MÉTODO PARA TÍTULO DINÂMICO
+  // ===============================================
+
+  private updateTitle(): void {
+    if (this.mode === 'area' && this.area) {
+      this.title = `Quiz de ${this.getCategoryTitle(this.area)}`;
+    } else if (this.mode === 'subject' && this.area && this.subject) {
+      this.title = `${this.getCategoryTitle(this.area)} - ${this.subject}`;
+    } else if (this.mode === 'mixed') {
+      this.title = 'Quiz Misto - Todas as Áreas';
+    } else {
+      this.title = 'Quiz Interativo';
+    }
+    
+    // Adicionar indicador de trial
+    if (this.isFreeTrial) {
+      this.title += ' (Gratuito)';
+    }
+  }
+
+} // ✅ CHAVE DE FECHAMENTO DA CLASSE QuizzComponent

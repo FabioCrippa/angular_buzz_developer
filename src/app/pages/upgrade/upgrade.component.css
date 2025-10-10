@@ -1,0 +1,816 @@
+/* ✅ CRIAR: src/app/pages/upgrade/upgrade.component.css */
+
+/* =============================================== */
+/* 🎨 UPGRADE PAGE STYLES */
+/* =============================================== */
+
+.upgrade-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+}
+
+/* =============================================== */
+/* 🚀 HERO SECTION */
+/* =============================================== */
+.hero-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.context-message {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  backdrop-filter: blur(10px);
+}
+
+.score-context {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.score-context i {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-item strong {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffd700;
+}
+
+.stat-item span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* =============================================== */
+/* 🎯 FEATURE PREVIEW */
+/* =============================================== */
+.feature-preview {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.preview-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.preview-card i {
+  font-size: 2.5rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.preview-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.preview-card p {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* =============================================== */
+/* 💰 PRICING SECTION */
+/* =============================================== */
+.pricing-section {
+  padding: 4rem 2rem;
+  background: white;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #718096;
+}
+
+.pricing-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Forçar exatamente 2 colunas */
+  gap: 4rem;
+  align-items: stretch; /* Cards com mesma altura */
+  justify-content: center;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px; /* Altura mínima para uniformidade */
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.recommended {
+  border-color: #667eea;
+  transform: scale(1.05);
+  box-shadow: 0 25px 60px rgba(102, 126, 234, 0.25);
+  z-index: 2;
+}
+
+.pricing-card.recommended:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.pricing-card.selected {
+  border-color: #48bb78;
+  box-shadow: 0 0 0 4px rgba(72, 187, 120, 0.1);
+}
+
+/* =============================================== */
+/* 🏷️ PLAN BADGES - MELHORADOS */
+/* =============================================== */
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem 1.8rem;
+  border-radius: 25px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+.badge-popular {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* =============================================== */
+/* 📝 PLAN HEADER - ALINHADO */
+/* =============================================== */
+.plan-header {
+  text-align: center;
+  flex-shrink: 0;
+  margin-bottom: auto;
+}
+
+.plan-header h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.8rem;
+}
+
+.plan-description {
+  font-size: 1rem;
+  color: #718096;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* =============================================== */
+/* 💲 PRICE DISPLAY - CENTRALIZADO */
+/* =============================================== */
+.price-display {
+  text-align: center;
+  margin: 2rem 0;
+  flex-shrink: 0;
+}
+
+.price-main {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.currency {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2d3748;
+}
+
+.period {
+  font-size: 1rem;
+  color: #718096;
+}
+
+/* =============================================== */
+/* ✅ PLAN FEATURES - ALTURA FLEXÍVEL */
+/* =============================================== */
+.plan-features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1rem 0;
+}
+
+.plan-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+.plan-features i {
+  color: #48bb78;
+  font-size: 1rem;
+  width: 16px;
+  text-align: center;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.plan-features span {
+  flex: 1;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+/* =============================================== */
+/* 🔘 PLAN BUTTONS - FIXADOS EMBAIXO */
+/* =============================================== */
+.plan-action {
+  margin-top: auto;
+  flex-shrink: 0;
+  padding-top: 1.5rem;
+}
+
+.plan-button {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: none;
+  margin-bottom: 1rem;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.plan-note {
+  text-align: center;
+  color: #718096;
+  font-size: 0.85rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.plan-note i {
+  color: #48bb78;
+  font-size: 0.9rem;
+}
+
+/* =============================================== */
+/* 📱 RESPONSIVE - PRICING GRID */
+/* =============================================== */
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 350px;
+  }
+  
+  .pricing-card {
+    min-height: auto;
+    max-width: none;
+  }
+  
+  .pricing-card.recommended {
+    transform: none;
+  }
+  
+  .pricing-card.recommended:hover {
+    transform: translateY(-5px);
+  }
+  
+  .plan-badge {
+    font-size: 0.7rem;
+    padding: 0.5rem 1.5rem;
+    top: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .price-main .amount {
+    font-size: 2.5rem;
+  }
+  
+  .plan-header h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* =============================================== */
+/* 🎨 MELHORIAS VISUAIS EXTRAS */
+/* =============================================== */
+
+/* Badge com efeito pulse para chamar atenção */
+.badge-popular {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% { 
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  }
+  50% { 
+    box-shadow: 0 4px 25px rgba(102, 126, 234, 0.6);
+  }
+}
+
+/* Hover effect melhorado para features */
+.plan-features li:hover {
+  background: rgba(72, 187, 120, 0.05);
+  border-radius: 8px;
+  padding-left: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Loading spinner alinhado */
+.plan-button mat-spinner {
+  margin-right: 0.5rem;
+}
+
+/* =============================================== */
+/* 📊 COMPARISON SECTION */
+/* =============================================== */
+.comparison-section {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.comparison-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajustado para 3 itens */
+  gap: 2rem;
+}
+
+.comparison-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.comparison-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* =============================================== */
+/* 💬 TESTIMONIALS */
+/* =============================================== */
+.testimonials-section {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.testimonial-info h4 {
+  margin: 0;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.testimonial-info p {
+  margin: 0.2rem 0 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.testimonial-rating {
+  margin-left: auto;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.testimonial-rating i {
+  color: #ffd700;
+}
+
+.testimonial-content p {
+  line-height: 1.6;
+  color: #4a5568;
+  font-style: italic;
+  margin: 0;
+}
+
+/* =============================================== */
+/* ❓ FAQ SECTION */
+/* =============================================== */
+.faq-section {
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+  background: #f8fafc;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.faq-question i {
+  color: #667eea;
+  transition: transform 0.3s ease;
+}
+
+.faq-question i.expanded {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.faq-answer.expanded {
+  max-height: 200px;
+  padding: 1.5rem 2rem;
+}
+
+.faq-answer p {
+  margin: 0;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+/* =============================================== */
+/* 🎯 FINAL CTA */
+/* =============================================== */
+.final-cta {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cta-primary {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.security-badges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.security-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.9;
+}
+
+.security-item i {
+  color: #ffd700;
+}
+
+/* =============================================== */
+/* 📱 RESPONSIVE DESIGN */
+/* =============================================== */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  
+  .pricing-card.recommended {
+    transform: none; /* Remover scale no mobile */
+  }
+  
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .security-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .comparison-grid {
+    grid-template-columns: 1fr 1fr; /* 2 colunas no tablet */
+    max-width: 800px;
+  }
+}
+
+/* =============================================== */
+/* 🎨 ANIMATIONS */
+/* =============================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pricing-card,
+.comparison-item,
+.testimonial-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.pricing-card:nth-child(1) { animation-delay: 0.1s; }
+.pricing-card:nth-child(2) { animation-delay: 0.2s; }
+.pricing-card:nth-child(3) { animation-delay: 0.3s; }
+/* =============================================== */
+/* 📊 COMPARISON SECTION - ESTILOS COMPLETOS */
+/* =============================================== */
+
+.comparison-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.comparison-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.comparison-item h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.comparison-content {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.free-version,
+.premium-version {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+}
+
+.free-version {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.premium-version {
+  background: #c6f6d5;
+  color: #22543d;
+  position: relative;
+}
+
+.premium-version .fa-crown {
+  color: #ffd700;
+  margin-left: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.value {
+  font-weight: 700;
+}
+
+.comparison-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4a5568;
+  margin: 1rem 0 0;
+}

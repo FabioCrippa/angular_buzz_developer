@@ -12,6 +12,16 @@ export const routes: Routes = [
   // ✅ ROTA DASHBOARD  
   { path: 'dashboard', component: DashboardComponent },
   
+  // ✅ ROTA UPGRADE (MOVER PARA CIMA!)
+  { 
+    path: 'upgrade',
+    loadComponent: () => import('./pages/upgrade/upgrade.component').then(m => m.UpgradeComponent),
+    data: { 
+      title: 'Upgrade Premium - BuzzDeveloper',
+      description: 'Acelere sua aprovação com acesso premium ilimitado'
+    }
+  },
+  
   // ✅ ROTA ÁREA - STANDALONE COMPONENT
   { 
     path: 'area/:name', 
@@ -37,7 +47,7 @@ export const routes: Routes = [
   // ✅ REDIRECTS
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   
-  // ✅ WILDCARD (404)
+  // ✅ WILDCARD (404) - SEMPRE POR ÚLTIMO!
   { path: '**', redirectTo: '' }
 ];
 
