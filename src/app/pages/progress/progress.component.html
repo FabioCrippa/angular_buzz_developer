@@ -1,0 +1,286 @@
+<div class="progress-container">
+
+  <!-- ✅ LOADING STATE -->
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <h3>Carregando seu progresso...</h3>
+    <p>Analisando suas estatísticas</p>
+  </div>
+
+  <!-- ✅ ERROR STATE -->
+  <div *ngIf="hasError" class="error-container">
+    <mat-icon class="error-icon">error_outline</mat-icon>
+    <h2 class="error-title">Ops! Algo deu errado</h2>
+    <p class="error-message">{{ errorMessage }}</p>
+    <button mat-raised-button color="primary" (click)="reloadData()">
+      <mat-icon>refresh</mat-icon>
+      Tentar Novamente
+    </button>
+  </div>
+
+  <!-- ✅ MAIN CONTENT -->
+  <div *ngIf="!isLoading && !hasError">
+
+    <!-- 📊 HEADER SECTION -->
+    <header class="progress-header">
+      <div class="header-content">
+        <div class="header-text">
+          <h1 class="page-title">📈 Meu Progresso</h1>
+          <p class="page-subtitle">Acompanhe sua evolução detalhada em todas as áreas</p>
+          <p class="last-access">
+            <mat-icon>schedule</mat-icon>
+            Último acesso: {{ progressData.lastAccess | date:'dd/MM/yyyy HH:mm' }}
+          </p>
+        </div>
+        <div class="header-actions">
+          <button mat-stroked-button (click)="navigateToDashboard()">
+            <mat-icon>dashboard</mat-icon>
+            Dashboard
+          </button>
+          <button mat-raised-button color="primary" (click)="navigateToUpgrade()">
+            <mat-icon>star</mat-icon>
+            Upgrade Premium
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 🏆 OVERALL STATS -->
+    <section class="overall-stats-section">
+      <h2 class="section-title">Estatísticas Gerais</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card total-card">
+          <div class="stat-icon">
+            <mat-icon>quiz</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ progressData.overallStats.totalCompleted }}</span>
+            <span class="stat-label">Questões Respondidas</span>
+            <span class="stat-sublabel">de {{ progressData.totalQuestions }} disponíveis</span>
+          </div>
+        </div>
+
+        <div class="stat-card accuracy-card">
+          <div class="stat-icon">
+            <mat-icon>trending_up</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ progressData.overallStats.averageAccuracy }}%</span>
+            <span class="stat-label">Precisão Média</span>
+            <span class="stat-sublabel">em todas as áreas</span>
+          </div>
+        </div>
+
+        <div class="stat-card time-card">
+          <div class="stat-icon">
+            <mat-icon>schedule</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ progressData.overallStats.totalTimeSpent }}</span>
+            <span class="stat-label">Tempo Total</span>
+            <span class="stat-sublabel">estudando</span>
+          </div>
+        </div>
+
+        <div class="stat-card streak-card">
+          <div class="stat-icon">
+            <mat-icon>local_fire_department</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ progressData.overallStats.streak }}</span>
+            <span class="stat-label">Sequência</span>
+            <span class="stat-sublabel">dias consecutivos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔧 FILTERS & SORTING -->
+    <section class="filters-section">
+      <div class="filters-content">
+        <div class="filters-group">
+          <h3>Filtrar por:</h3>
+          <div class="filter-buttons">
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'all' ? 'primary' : ''"
+              (click)="setFilterBy('all')"
+            >
+              Todas ({{ progressData.areasProgress.length }})
+            </button>
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'completed' ? 'primary' : ''"
+              (click)="setFilterBy('completed')"
+            >
+              Concluídas
+            </button>
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'inProgress' ? 'primary' : ''"
+              (click)="setFilterBy('inProgress')"
+            >
+              Em Progresso
+            </button>
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'notStarted' ? 'primary' : ''"
+              (click)="setFilterBy('notStarted')"
+            >
+              Não Iniciadas
+            </button>
+          </div>
+        </div>
+
+        <div class="sort-group">
+          <h3>Ordenar por:</h3>
+          <mat-select [(value)]="sortBy" (selectionChange)="setSortBy($event.value)">
+            <mat-option value="progress">Progresso</mat-option>
+            <mat-option value="accuracy">Precisão</mat-option>
+            <mat-option value="name">Nome</mat-option>
+          </mat-select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📚 AREAS PROGRESS -->
+    <section class="areas-progress-section">
+      <h2 class="section-title">Progresso por Área</h2>
+      
+      <div class="areas-grid">
+        <div 
+          *ngFor="let area of filteredAndSortedAreas; trackBy: trackAreaProgress" 
+          class="area-progress-card"
+          [class.completed]="area.progress >= 100"
+          (click)="startQuizForArea(area.name)"
+        >
+          
+          <!-- 🎯 AREA HEADER -->
+          <div class="area-header">
+            <div class="area-icon">{{ area.icon }}</div>
+            <div class="area-info">
+              <h3 class="area-name">{{ area.displayName }}</h3>
+              <p class="area-difficulty">
+                <mat-icon>bar_chart</mat-icon>
+                Dificuldade: {{ area.difficulty }}
+              </p>
+            </div>
+            <div class="area-badge" [class]="'progress-' + getProgressLevel(area.progress)">
+              {{ area.progress }}%
+            </div>
+          </div>
+
+          <!-- 📊 PROGRESS BAR -->
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div 
+                class="progress-fill" 
+                [style.width.%]="area.progress"
+                [style.background-color]="getProgressColor(area.progress)"
+              ></div>
+            </div>
+            <span class="progress-text">
+              {{ area.completed }}/{{ area.questionCount }} questões
+            </span>
+          </div>
+
+          <!-- 📈 AREA STATS -->
+          <div class="area-stats">
+            <div class="stat-item">
+              <mat-icon>target</mat-icon>
+              <span class="stat-value" [style.color]="getAccuracyColor(area.accuracy)">
+                {{ area.accuracy }}%
+              </span>
+              <span class="stat-label">Precisão</span>
+            </div>
+            
+            <div class="stat-item">
+              <mat-icon>schedule</mat-icon>
+              <span class="stat-value">{{ area.timeSpent }}</span>
+              <span class="stat-label">Tempo</span>
+            </div>
+            
+            <div class="stat-item">
+              <mat-icon>event</mat-icon>
+              <span class="stat-value">{{ area.lastActivity }}</span>
+              <span class="stat-label">Último</span>
+            </div>
+          </div>
+
+          <!-- 🎯 AREA ACTIONS -->
+          <div class="area-actions">
+            <button 
+              mat-raised-button 
+              color="primary" 
+              (click)="startQuizForArea(area.name); $event.stopPropagation()"
+            >
+              <mat-icon>play_arrow</mat-icon>
+              {{ area.progress === 0 ? 'Começar' : 'Continuar' }}
+            </button>
+            
+            <button 
+              mat-icon-button 
+              matTooltip="Ver detalhes"
+              (click)="$event.stopPropagation()"
+            >
+              <mat-icon>info</mat-icon>
+            </button>
+          </div>
+
+          <!-- ✨ COMPLETION BADGE -->
+          <div *ngIf="area.progress >= 100" class="completion-badge">
+            <mat-icon>check_circle</mat-icon>
+            <span>Concluída!</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 📋 EMPTY STATE -->
+      <div *ngIf="filteredAndSortedAreas.length === 0" class="empty-state">
+        <mat-icon>search_off</mat-icon>
+        <h3>Nenhuma área encontrada</h3>
+        <p>Tente ajustar os filtros ou começar estudando uma nova área</p>
+        <button mat-raised-button color="primary" (click)="navigateToDashboard()">
+          Voltar ao Dashboard
+        </button>
+      </div>
+    </section>
+
+    <!-- 🎯 RECOMMENDATIONS -->
+    <section class="recommendations-section">
+      <h2 class="section-title">Recomendações</h2>
+      
+      <div class="recommendations-grid">
+        <div class="recommendation-card study-card">
+          <mat-icon class="rec-icon">school</mat-icon>
+          <h3>Continue Estudando</h3>
+          <p>Você tem {{ getInProgressAreasCount() }} áreas em progresso. Continue praticando!</p>
+          <button mat-stroked-button (click)="startQuizForArea(getNextAreaToStudy())">
+            Próxima Área
+          </button>
+        </div>
+
+        <div class="recommendation-card upgrade-card">
+          <mat-icon class="rec-icon">star</mat-icon>
+          <h3>Upgrade Premium</h3>
+          <p>Acesse relatórios detalhados e simulados personalizados</p>
+          <button mat-raised-button color="primary" (click)="navigateToUpgrade()">
+            Fazer Upgrade
+          </button>
+        </div>
+
+        <div class="recommendation-card streak-card">
+          <mat-icon class="rec-icon">local_fire_department</mat-icon>
+          <h3>Manter Sequência</h3>
+          <p>Você está há {{ progressData.overallStats.streak }} dias estudando!</p>
+          <button mat-stroked-button (click)="navigateToDashboard()">
+            Estudar Hoje
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

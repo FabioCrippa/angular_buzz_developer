@@ -72,6 +72,66 @@
 }
 
 /* =============================================== */
+/* 🎨 DASHBOARD PREMIUM STYLING */
+/* =============================================== */
+
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 2rem 1rem;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2.5rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748 !important; /* Forçar cor escura */
+  margin-bottom: 0.5rem;
+  background: none !important; /* Remover gradiente */
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  text-shadow: none !important; /* Remover sombra */
+}
+
+.dashboard-subtitle {
+  font-size: 1.1rem;
+  color: #64748b !important; /* Forçar cor cinza */
+  margin-bottom: 2rem;
+  font-weight: 400;
+  text-shadow: none !important; /* Remover sombra */
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 140px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================================== */
 /* 📊 HEADER DO DASHBOARD - VISUAL MELHORADO */
 /* =============================================== */
 .header-card {
@@ -355,226 +415,901 @@
   text-align: center;
 }
 
+/* =============================================== */
+/* 🚀 QUICK ACTIONS - GRID PREMIUM */
+/* =============================================== */
+
+.quick-actions-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =============================================== */
+/* 🎯 QUICK ACTION CARDS - REDESENHADOS */
+/* =============================================== */
+
+.quick-action-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.quick-action-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+  transition: left 0.5s;
+}
+
+.quick-action-card:hover::before {
+  left: 100%;
+}
+
 .quick-action-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
 }
 
 .action-icon {
-  font-size: 3rem !important;
-  color: #667eea;
-  margin-bottom: 1rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.quick-action-card:hover .action-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .action-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
 }
 
 .action-description {
-  color: #666;
-  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* =============================================== */
-/* 🚨 ERROR & LOADING STATES */
+/* 💎 UPGRADE CARD - SUPER PREMIUM */
 /* =============================================== */
-.loading-container {
+
+.upgrade-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.upgrade-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.upgrade-card .action-icon {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.crown-icon {
+  color: #ffd700 !important;
+  font-size: 2.2rem !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.upgrade-badge {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 50vh;
 }
 
-.loading-card {
-  text-align: center;
-  padding: 2rem;
-}
-
-.loading-card p {
-  margin-top: 1rem;
-  color: #666;
-}
-
-.error-card {
-  margin: 2rem auto;
-  max-width: 500px;
-}
-
-.empty-state-card {
-  text-align: center;
-  padding: 3rem 2rem;
-}
-
-.empty-icon {
-  font-size: 4rem !important;
-  color: #ccc;
-  margin-bottom: 1rem;
-}
-
-/* =============================================== */
-/* 🔔 SNACKBARS PERSONALIZADOS */
-/* =============================================== */
-::ng-deep .success-snackbar {
-  background: #4caf50 !important;
-  color: white !important;
-}
-
-::ng-deep .error-snackbar {
-  background: #f44336 !important;
-  color: white !important;
-}
-
-::ng-deep .warning-snackbar {
-  background: #ff9800 !important;
-  color: white !important;
-}
-
-::ng-deep .mat-mdc-snack-bar-container {
-  border-radius: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* =============================================== */
-/* 🎯 ESTADOS INTERATIVOS DOS CARDS */
-/* =============================================== */
-.area-card {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  height: 100%;
+.premium-chip {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
   display: flex;
-  flex-direction: column;
-  min-height: 420px;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.premium-chip mat-icon {
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+.upgrade-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.4);
+}
+
+/* =============================================== */
+/* 🏫 STUDY AREAS SECTION - PREMIUM CARDS */
+/* =============================================== */
+
+.study-areas-section {
+  margin-bottom: 3rem;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.area-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.area-card:hover::before {
+  transform: scaleX(1);
 }
 
 .area-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  border-color: #667eea;
 }
 
-.area-card.available:hover {
-  border-left-color: #4caf50 !important;
-  border-left-width: 6px !important;
+.area-card.unavailable {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.area-card.coming-soon:hover {
-  border-left-color: #ff9800 !important;
-  border-left-width: 6px !important;
+.area-card.unavailable:hover {
+  transform: none;
+  box-shadow: none;
 }
 
-/* ✅ LOADING STATE PARA CARDS */
-.area-card.loading {
-  opacity: 0.7;
-  pointer-events: none;
+/* =============================================== */
+/* 📊 AREA CARD HEADER */
+/* =============================================== */
+
+.area-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
-.area-card.loading::after {
+.area-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.area-card:hover .area-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.area-info h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.3rem;
+}
+
+.area-info .question-count {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* =============================================== */
+/* 📈 PROGRESS BAR - REDESENHADO */
+/* =============================================== */
+
+.progress-section {
+  margin: 1.5rem 0;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.progress-label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.progress-value {
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.progress-fill::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: progressShimmer 2s infinite;
+}
+
+/* =============================================== */
+/* 🏷️ AREA BADGES - ESTATÍSTICAS */
+/* =============================================== */
+
+.area-stats {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.stat-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.3rem;
 }
 
-/* ✅ RIPPLE EFFECT CUSTOMIZADO */
-.area-card .mat-ripple-element {
-  background-color: rgba(102, 126, 234, 0.1) !important;
+.difficulty-easy {
+  background: #c6f6d5;
+  color: #22543d;
 }
 
-.area-card.coming-soon .mat-ripple-element {
-  background-color: rgba(255, 152, 0, 0.1) !important;
+.difficulty-medium {
+  background: #fed7a1;
+  color: #c05621;
+}
+
+.difficulty-hard {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.time-badge {
+  background: #bee3f8;
+  color: #2c5282;
 }
 
 /* =============================================== */
-/* ⚡ QUICK ACTIONS INTERATIVAS */
+/* 📝 AREA DESCRIPTION */
 /* =============================================== */
-.quick-action-card {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-  border: 2px solid transparent;
-}
 
-.quick-action-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
-  border-color: #667eea;
-}
-
-.quick-action-card:active {
-  transform: translateY(-2px);
-}
-
-.action-icon {
-  font-size: 3rem !important;
-  color: #667eea;
+.area-description {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
   margin-bottom: 1rem;
-  transition: all 0.3s ease;
 }
 
-.quick-action-card:hover .action-icon {
-  transform: scale(1.1);
-  color: #5a6fd8;
-}
-
-/* =============================================== */
-/* 🎯 ESTADOS DOS BOTÕES */
-/* =============================================== */
-.area-card button[disabled] {
-  opacity: 0.6 !important;
-  cursor: not-allowed !important;
-}
-
-.area-card button:not([disabled]):hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.subjects-preview {
+  color: #8fa5b8;
+  font-size: 0.85rem;
+  font-style: italic;
 }
 
 /* =============================================== */
-/* 📱 FEEDBACK VISUAL DE CLIQUE */
+/* 🎨 ANIMAÇÕES */
 /* =============================================== */
-.area-card:active {
-  transform: translateY(-2px) !important;
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-.quick-action-card:active {
-  transform: translateY(-2px) !important;
+@keyframes shimmer {
+  0%, 100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
 }
 
-.stat-card:active {
-  transform: scale(0.98) !important;
+@keyframes progressShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes headerShimmer {
+  0%, 100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes headerGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(50%) translateY(50%) rotate(45deg);
+  }
+}
+
+/* ✅ ANIMAÇÃO DE ENTRADA DOS STATS */
+.stat-item {
+  animation: statsSlideIn 0.6s ease-out forwards;
+}
+
+.stat-item:nth-child(1) { animation-delay: 0.1s; }
+.stat-item:nth-child(2) { animation-delay: 0.2s; }
+.stat-item:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes statsSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =============================================== */
-/* 📱 RESPONSIVE */
+/* 📱 RESPONSIVE DESIGN */
 /* =============================================== */
+
+@media (max-width: 1200px) {
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .areas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 1rem 0.5rem;
   }
   
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .dashboard-title {
+    font-size: 2rem;
   }
   
-  .areas-grid {
-    grid-template-columns: 1fr;
+  .stats-overview {
+    gap: 2rem;
   }
   
   .quick-actions-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
-  .mini-stats {
+  .areas-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .area-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+  
+  .area-header {
     flex-direction: column;
-    gap: 0.5rem;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .area-stats {
+    justify-content: center;
+  }
+}
+
+/* =============================================== */
+/* 🔄 LOADING & ERROR STATES */
+/* =============================================== */
+
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #e2e8f0;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-icon {
+  font-size: 4rem;
+  color: #f56565;
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.error-message {
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.retry-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.retry-button:hover {
+  transform: translateY(-2px);
+}
+
+/* =============================================== */
+/* 🚀 QUICK ACTIONS - FORÇAR 4 CARDS EM LINHA */
+/* =============================================== */
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Forçar exatamente 4 colunas */
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =============================================== */
+/* 🎯 QUICK ACTION CARDS - AJUSTADOS PARA LINHA */
+/* =============================================== */
+
+.quick-action-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem; /* Reduzir padding para caber melhor */
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+  min-height: 200px; /* Altura mínima para uniformidade */
+}
+
+.action-icon {
+  width: 60px; /* Reduzir tamanho do ícone */
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 1.8rem; /* Reduzir fonte do ícone */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem; /* Reduzir margem inferior */
+  transition: transform 0.3s ease;
+}
+
+.action-title {
+  font-size: 1.1rem; /* Reduzir fonte do título */
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.action-description {
+  color: #64748b;
+  font-size: 0.9rem; /* Reduzir fonte da descrição */
+  line-height: 1.4;
+}
+
+/* =============================================== */
+/* 💎 UPGRADE CARD - AJUSTADO PARA LINHA */
+/* =============================================== */
+
+.upgrade-card .premium-chip {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 0.3rem 0.8rem; /* Reduzir padding do chip */
+  border-radius: 20px;
+  font-size: 0.8rem; /* Reduzir fonte do chip */
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.upgrade-card .premium-chip mat-icon {
+  color: #ffd700;
+  font-size: 1rem; /* Reduzir ícone do chip */
+}
+
+/* =============================================== */
+/* 📱 RESPONSIVE - MANTER 4 EM LINHA ATÉ TABLET */
+/* =============================================== */
+
+/* Desktop grande - 4 cards */
+@media (min-width: 1200px) {
+  .quick-actions-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .quick-action-card {
+    padding: 2rem;
+  }
+  
+  .action-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  
+  .action-title {
+    font-size: 1.3rem;
+  }
+  
+  .action-description {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop médio - 4 cards menores */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .quick-actions-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+  
+  .quick-action-card {
+    padding: 1.3rem;
+  }
+}
+
+/* Tablet - 2 cards por linha */
+@media (min-width: 600px) and (max-width: 899px) {
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .quick-action-card {
+    padding: 1.8rem;
+  }
+  
+  .action-icon {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+/* Mobile - 1 card por linha */
+@media (max-width: 599px) {
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 350px;
+  }
+  
+  .quick-action-card {
+    padding: 2rem;
+  }
+  
+  .action-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  
+  .action-title {
+    font-size: 1.3rem;
+  }
+  
+  .action-description {
+    font-size: 1rem;
+  }
+}
+
+/* =============================================== */
+/* 🔧 AJUSTE FINO PARA TELAS MÉDIAS */
+/* =============================================== */
+
+/* Para telas entre 800px e 1100px - manter 4 cards mais compactos */
+@media (min-width: 800px) and (max-width: 1100px) {
+  .quick-actions-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+  }
+  
+  .quick-action-card {
+    padding: 1.2rem;
+  }
+  
+  .action-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .action-title {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .action-description {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .upgrade-card .premium-chip {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .upgrade-badge {
+    margin-top: 0.5rem;
+  }
+}
+
+/* =============================================== */
+/* 📊 DASHBOARD HEADER - VERSÃO SIMPLES */
+/* =============================================== */
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2.5rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+/* =============================================== */
+/* 📊 STATS OVERVIEW - VERSÃO SIMPLES */
+/* =============================================== */
+
+.stats-overview {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #667eea;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+/* =============================================== */
+/* 📱 RESPONSIVE - VERSÃO SIMPLES */
+/* =============================================== */
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-title {
+    font-size: 2rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 1rem;
+  }
+  
+  .stats-overview {
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 1.2rem;
+    min-width: 100px;
+    flex: 1;
+    max-width: 120px;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .stat-item {
+    padding: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
   }
 }

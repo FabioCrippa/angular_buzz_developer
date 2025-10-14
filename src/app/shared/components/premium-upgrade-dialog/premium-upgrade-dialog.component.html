@@ -1,0 +1,87 @@
+<div class="premium-dialog-container">
+  <!-- Header -->
+  <div class="dialog-header">
+    <div class="premium-icon-container">
+      <mat-icon class="premium-icon">diamond</mat-icon>
+    </div>
+    <button mat-icon-button class="close-button" (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <!-- Title -->
+  <div class="dialog-title">
+    <h2>Desbloqueie o {{ featureName }}</h2>
+    <p class="subtitle" *ngIf="isLoggedIn">
+      Olá, {{ userName }}! Esta funcionalidade é exclusiva para usuários Premium.
+    </p>
+    <p class="subtitle" *ngIf="!isLoggedIn">
+      Faça login e faça upgrade para acessar todas as funcionalidades.
+    </p>
+  </div>
+
+  <!-- Benefits Grid -->
+  <div class="benefits-section">
+    <h3>O que você ganha com o Premium:</h3>
+    <div class="benefits-grid">
+      <div class="benefit-item" *ngFor="let benefit of premiumBenefits">
+        <mat-icon class="benefit-icon">{{ benefit.icon }}</mat-icon>
+        <div class="benefit-content">
+          <h4>{{ benefit.title }}</h4>
+          <p>{{ benefit.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <!-- Actions -->
+  <div class="dialog-actions">
+    <div class="action-buttons" *ngIf="isLoggedIn">
+      <button 
+        mat-raised-button 
+        color="primary" 
+        class="upgrade-button"
+        (click)="onUpgrade(); trackEvent('upgrade_clicked')"
+      >
+        <mat-icon>diamond</mat-icon>
+        Fazer Upgrade Agora
+      </button>
+      
+      <button 
+        mat-stroked-button 
+        class="free-button"
+        (click)="onTryFree(); trackEvent('continue_free')"
+      >
+        Continuar Grátis
+      </button>
+    </div>
+
+    <div class="action-buttons" *ngIf="!isLoggedIn">
+      <button 
+        mat-raised-button 
+        color="primary" 
+        class="login-button"
+        (click)="onLogin(); trackEvent('login_clicked')"
+      >
+        <mat-icon>login</mat-icon>
+        Fazer Login
+      </button>
+      
+      <button 
+        mat-stroked-button 
+        class="close-button-text"
+        (click)="onClose(); trackEvent('dialog_closed')"
+      >
+        Fechar
+      </button>
+    </div>
+  </div>
+
+  <!-- Premium Badge -->
+  <div class="premium-badge">
+    <mat-icon>star</mat-icon>
+    <span>Premium</span>
+  </div>
+</div>

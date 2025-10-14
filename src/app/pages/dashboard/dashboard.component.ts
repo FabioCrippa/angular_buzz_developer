@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; // ✅ ADICIONAR IMPORT
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, forkJoin } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { AuthService } from '../../core/services/auth.service';
 
 // ✅ INTERFACES ATUALIZADAS
 interface IndexData {
@@ -57,10 +58,11 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private router: Router,
+    private router: Router, // ✅ ADICIONAR NO CONSTRUCTOR
     private titleService: Title,
-    private snackBar: MatSnackBar // ✅ NOVO: para notificações
-  ) {}
+    private snackBar: MatSnackBar, // ✅ NOVO: para notificações
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('Dashboard - Quizzfy');
@@ -218,9 +220,54 @@ export class DashboardComponent implements OnInit {
 
   // ✅ RECARGA DE DADOS
   reloadData(): void {
-    this.showSuccessMessage('Recarregando dados...');
-    this.loadDashboardData();
+    console.log('🔄 Recarregando dados do dashboard...');
+    this.isLoading = true;
+    this.hasError = false;
+    
+    // Simular reload
+    setTimeout(() => {
+      this.loadDashboardData();
+    }, 1000);
   }
+
+  // ===============================================
+  // 🚀 NAVEGAÇÃO PARA UPGRADE
+  // ===============================================
+  navigateToUpgrade(): void {
+    console.log('💎 Navegando para upgrade premium...');
+    
+    // ✅ FEEDBACK VISUAL
+    this.showSuccessMessage('Carregando planos premium...');
+    
+    // ✅ NAVEGAR COM CONTEXTO
+    this.router.navigate(['/upgrade'], {
+      queryParams: {
+        source: 'dashboard',
+        timestamp: Date.now(),
+        currentPlan: 'free' // Usuário atual está no plano gratuito
+      }
+    });
+  }
+
+  // ===============================================
+  // 📊 MÉTODOS PARA TEMPLATE
+  // ===============================================
+  
+  // ✅ CALCULAR ÁREAS DISPONÍVEIS
+  getAvailableAreasCount(): number {
+    return this.areas.filter(area => area.available).length;
+  }
+
+  // ✅ OBTER TOTAL DE QUESTÕES
+  getTotalQuestions(): number {
+    return this.areas.reduce((total, area) => total + area.questionCount, 0);
+  }
+
+  // ✅ MÉTODO PARA ÍCONES DAS ÁREAS (se não existir)
+  // (Removido por duplicidade)
+
+  // ✅ MÉTODO SHOW SUCCESS MESSAGE (se não existir)
+  // (Removido por duplicidade)
 
   // ✅ FUNÇÕES AUXILIARES - NOMES E DESCRIÇÕES
   getAreaDisplayName(areaName: string): string {

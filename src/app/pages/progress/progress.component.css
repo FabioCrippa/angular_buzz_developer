@@ -1,8 +1,8 @@
 /* =============================================== */
-/* 🎯 AREA PAGE - CSS PREMIUM */
+/* 📊 PROGRESS PAGE - CSS PREMIUM */
 /* =============================================== */
 
-.area-container {
+.progress-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -33,7 +33,7 @@
   width: 60px;
   height: 60px;
   border: 4px solid #e2e8f0;
-  border-top: 4px solid #8b5cf6;
+  border-top: 4px solid #667eea;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 1.5rem;
@@ -69,66 +69,22 @@
   font-size: 1.1rem;
 }
 
-.error-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 /* =============================================== */
-/* 📚 BREADCRUMB */
+/* 📊 HEADER SECTION */
 /* =============================================== */
 
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  padding: 1rem 1.5rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  gap: 0.5rem;
-}
-
-.breadcrumb-item {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.3rem !important;
-  color: #64748b !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-}
-
-.breadcrumb-item:hover {
-  color: #8b5cf6 !important;
-}
-
-.breadcrumb-separator {
-  color: #cbd5e0;
-  font-size: 1rem !important;
-}
-
-.breadcrumb-current {
-  color: #2d3748;
-  font-weight: 600;
-}
-
-/* =============================================== */
-/* 🎯 AREA HEADER */
-/* =============================================== */
-
-.area-header {
+.progress-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 20px;
   padding: 3rem 2rem;
   margin-bottom: 3rem;
   color: white;
-  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
   position: relative;
   overflow: hidden;
 }
 
-.area-header::before {
+.progress-header::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -147,49 +103,30 @@
   z-index: 2;
 }
 
-.header-main {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+.header-text {
   flex: 1;
 }
 
-.area-icon-large {
-  font-size: 5rem;
-  line-height: 1;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.area-info {
-  flex: 1;
-}
-
-.area-title {
+.page-title {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.area-description {
+.page-subtitle {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   opacity: 0.9;
-  line-height: 1.4;
 }
 
-.area-meta {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.meta-item {
+.last-access {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.95rem;
   opacity: 0.8;
+  margin: 0;
 }
 
 .header-actions {
@@ -209,10 +146,10 @@
 }
 
 /* =============================================== */
-/* 📊 PROGRESS SECTION */
+/* 🏆 OVERALL STATS SECTION */
 /* =============================================== */
 
-.progress-section {
+.overall-stats-section {
   margin-bottom: 3rem;
 }
 
@@ -233,19 +170,19 @@
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  background: linear-gradient(90deg, #667eea, #764ba2);
   border-radius: 2px;
 }
 
-.progress-grid {
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto;
 }
 
-.progress-card {
+.stat-card {
   background: white;
   padding: 2rem;
   border-radius: 16px;
@@ -257,12 +194,12 @@
   border: 1px solid #e2e8f0;
 }
 
-.progress-card:hover {
+.stat-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.progress-icon {
+.stat-icon {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -273,27 +210,27 @@
   color: white;
 }
 
-.completed-card .progress-icon {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-}
-
-.accuracy-card .progress-icon {
+.total-card .stat-icon {
   background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 }
 
-.time-card .progress-icon {
+.accuracy-card .stat-icon {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.time-card .stat-icon {
   background: linear-gradient(135deg, #f59e0b, #d97706);
 }
 
-.level-card .progress-icon {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+.streak-card .stat-icon {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
 }
 
-.progress-content {
+.stat-content {
   flex: 1;
 }
 
-.progress-number {
+.stat-number {
   display: block;
   font-size: 2.2rem;
   font-weight: 800;
@@ -302,7 +239,7 @@
   margin-bottom: 0.3rem;
 }
 
-.progress-label {
+.stat-label {
   display: block;
   font-size: 1rem;
   font-weight: 600;
@@ -310,18 +247,192 @@
   margin-bottom: 0.2rem;
 }
 
-.progress-sublabel {
+.stat-sublabel {
   font-size: 0.85rem;
   color: #64748b;
 }
 
-.overall-progress {
-  max-width: 600px;
+/* =============================================== */
+/* 🔧 FILTERS SECTION */
+/* =============================================== */
+
+.filters-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+  border: 1px solid #e2e8f0;
+}
+
+.filters-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.filters-group,
+.sort-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filters-group h3,
+.sort-group h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin: 0;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  border-radius: 20px !important;
+  font-size: 0.9rem;
+}
+
+.sort-group mat-select {
+  min-width: 150px;
+}
+
+/* =============================================== */
+/* 📚 AREAS PROGRESS SECTION */
+/* =============================================== */
+
+.areas-progress-section {
+  margin-bottom: 3rem;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
+.area-progress-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-progress-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.area-progress-card.completed {
+  border-color: #22c55e;
+}
+
+.area-progress-card.completed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+/* =============================================== */
+/* 🎯 AREA HEADER */
+/* =============================================== */
+
+.area-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.area-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.area-info {
+  flex: 1;
+}
+
+.area-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 0.3rem 0;
+}
+
+.area-difficulty {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.area-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.area-badge.progress-completed {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.area-badge.progress-high {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.area-badge.progress-medium {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.area-badge.progress-low {
+  background: #fed7a1;
+  color: #ea580c;
+}
+
+.area-badge.progress-none {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* =============================================== */
+/* 📊 PROGRESS BAR */
+/* =============================================== */
+
 .progress-bar-container {
-  text-align: center;
+  margin: 1.5rem 0;
 }
 
 .progress-bar {
@@ -359,300 +470,86 @@
 }
 
 /* =============================================== */
-/* 🔍 FILTERS SECTION */
+/* 📈 AREA STATS */
 /* =============================================== */
 
-.filters-section {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin-bottom: 3rem;
-  border: 1px solid #e2e8f0;
-}
-
-.filters-header {
+.area-stats {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  margin: 1.5rem 0;
   gap: 1rem;
-}
-
-.count-badge {
-  background: #8b5cf6;
-  color: white;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.filters-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.search-group {
-  position: relative;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.search-icon {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #64748b;
-  z-index: 2;
-}
-
-.search-input {
-  width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 25px;
-  font-size: 1rem;
-  background: #f8fafc;
-  transition: all 0.3s ease;
-  outline: none;
-}
-
-.search-input:focus {
-  border-color: #8b5cf6;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-}
-
-.filter-controls {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  align-items: flex-end;
-}
-
-.filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  min-width: 150px;
-}
-
-.filter-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #4a5568;
-}
-
-.filter-select {
-  min-width: 150px;
-}
-
-.quick-filters {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.quick-filters button {
-  border-radius: 20px !important;
-  font-size: 0.9rem !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 0.3rem !important;
-}
-
-.custom-quiz-btn {
-  background: #8b5cf6 !important;
-  color: white !important;
-  border-color: #8b5cf6 !important;
-}
-
-.custom-quiz-btn[disabled] {
-  background: #e2e8f0 !important;
-  color: #9ca3af !important;
-  border-color: #e2e8f0 !important;
-}
-
-/* =============================================== */
-/* 📝 QUESTIONS SECTION */
-/* =============================================== */
-
-.questions-section {
-  margin-bottom: 3rem;
-}
-
-.questions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.question-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.question-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  border-color: #8b5cf6;
-}
-
-.question-card.favorite {
-  border-left: 4px solid #f59e0b;
-}
-
-.question-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-.question-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.subject-tag {
-  padding: 0.3rem 0.8rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  width: fit-content;
-}
-
-.difficulty-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.question-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.question-actions .favorited {
-  color: #f59e0b !important;
-}
-
-.question-actions button:hover {
-  background: rgba(139, 92, 246, 0.1) !important;
-}
-
-.question-content {
-  margin-bottom: 1.5rem;
-}
-
-.question-text {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #2d3748;
-  line-height: 1.4;
-  margin-bottom: 1rem;
-}
-
-.question-details {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.question-tags {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.question-tags mat-icon {
-  font-size: 1rem !important;
-  color: #64748b;
-}
-
-.tag {
-  background: #f1f5f9;
-  color: #64748b;
-  padding: 0.2rem 0.6rem;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.more-tags {
-  color: #64748b;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.question-stats {
-  display: flex;
-  gap: 1.5rem;
 }
 
 .stat-item {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.85rem;
-  color: #64748b;
+  text-align: center;
+  flex: 1;
 }
 
 .stat-item mat-icon {
-  font-size: 1rem !important;
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-bottom: 0.3rem;
 }
 
-.question-card-actions {
+.stat-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =============================================== */
+/* 🎯 AREA ACTIONS */
+/* =============================================== */
+
+.area-actions {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 1.5rem;
 }
 
-.view-btn {
+.area-actions .mat-mdc-raised-button {
   flex: 1;
+  margin-right: 1rem;
   border-radius: 12px !important;
 }
 
-.question-card-actions .mat-mdc-raised-button {
-  flex: 1;
-  border-radius: 12px !important;
+.area-actions .mat-mdc-icon-button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
 }
 
-.favorite-indicator {
+/* =============================================== */
+/* ✨ COMPLETION BADGE */
+/* =============================================== */
+
+.completion-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(34, 197, 94, 0.3);
 }
 
-.favorite-indicator mat-icon {
-  font-size: 1.2rem !important;
+.completion-badge mat-icon {
+  font-size: 1rem !important;
 }
 
 /* =============================================== */
@@ -670,7 +567,7 @@
 
 .empty-state mat-icon {
   font-size: 4rem !important;
-  color: #8b5cf6;
+  color: #94a3b8;
   margin-bottom: 1rem;
 }
 
@@ -686,62 +583,22 @@
 }
 
 /* =============================================== */
-/* 📄 PAGINATION */
+/* 🎯 RECOMMENDATIONS SECTION */
 /* =============================================== */
 
-.pagination-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin-bottom: 3rem;
-  border: 1px solid #e2e8f0;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.pagination-info {
-  color: #64748b;
-  font-size: 0.9rem;
-}
-
-.pagination-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.page-numbers {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.page-numbers button {
-  min-width: 40px !important;
-  height: 40px !important;
-  border-radius: 8px !important;
-}
-
-/* =============================================== */
-/* 🎯 QUICK ACTIONS SECTION */
-/* =============================================== */
-
-.quick-actions-section {
+.recommendations-section {
   margin-bottom: 2rem;
 }
 
-.quick-actions-grid {
+.recommendations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.quick-action-card {
+.recommendation-card {
   background: white;
   padding: 2rem;
   border-radius: 16px;
@@ -749,29 +606,38 @@
   text-align: center;
   border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
-.quick-action-card:hover {
+.recommendation-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border-color: #8b5cf6;
 }
 
-.action-icon {
+.rec-icon {
   font-size: 3rem !important;
   margin-bottom: 1rem;
-  color: #8b5cf6;
 }
 
-.quick-action-card h3 {
+.study-card .rec-icon {
+  color: #3b82f6;
+}
+
+.upgrade-card .rec-icon {
+  color: #f59e0b;
+}
+
+.streak-card .rec-icon {
+  color: #ef4444;
+}
+
+.recommendation-card h3 {
   font-size: 1.3rem;
   font-weight: 700;
   color: #2d3748;
   margin-bottom: 0.5rem;
 }
 
-.quick-action-card p {
+.recommendation-card p {
   color: #64748b;
   margin-bottom: 1.5rem;
   line-height: 1.5;
@@ -807,21 +673,21 @@
 /* =============================================== */
 
 @media (max-width: 1200px) {
-  .progress-grid {
+  .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .questions-grid {
+  .areas-grid {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .area-container {
+  .progress-container {
     padding: 1rem 0.5rem;
   }
   
-  .area-header {
+  .progress-header {
     padding: 2rem 1.5rem;
   }
   
@@ -830,13 +696,7 @@
     gap: 1.5rem;
   }
   
-  .header-main {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .area-title {
+  .page-title {
     font-size: 2.2rem;
   }
   
@@ -845,69 +705,55 @@
     justify-content: center;
   }
   
-  .progress-grid {
+  .stats-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
   
-  .progress-card {
+  .stat-card {
     padding: 1.5rem;
   }
   
-  .filter-controls {
+  .filters-content {
     flex-direction: column;
-    align-items: center;
+    gap: 1.5rem;
   }
   
-  .questions-grid {
+  .areas-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .question-card {
+  .area-progress-card {
     padding: 1.5rem;
   }
   
-  .pagination-section {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .quick-actions-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .recommendations-grid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .breadcrumb {
-    padding: 0.75rem 1rem;
+  .area-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
   
-  .area-meta {
+  .area-stats {
     flex-direction: column;
     gap: 0.5rem;
   }
   
-  .question-header {
-    flex-direction: column;
-    gap: 1rem;
+  .stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
   }
   
-  .question-actions {
-    align-self: flex-end;
-  }
-  
-  .question-card-actions {
-    flex-direction: column;
-  }
-  
-  .quick-actions-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .pagination-controls {
-    flex-wrap: wrap;
+  .filter-buttons {
     justify-content: center;
   }
 }
@@ -920,10 +766,8 @@
 .text-warning { color: #f59e0b; }
 .text-danger { color: #ef4444; }
 .text-info { color: #3b82f6; }
-.text-purple { color: #8b5cf6; }
 
 .bg-success { background-color: #dcfce7; }
 .bg-warning { background-color: #fef3c7; }
 .bg-danger { background-color: #fecaca; }
 .bg-info { background-color: #dbeafe; }
-.bg-purple { background-color: #ede9fe; }

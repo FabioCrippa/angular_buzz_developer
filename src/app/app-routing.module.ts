@@ -3,59 +3,128 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { QuizzComponent } from './pages/quizz/quizz.component';
+import { ProgressComponent } from './pages/progress/progress.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { UpgradeComponent } from './pages/upgrade/upgrade.component'; // ✅ ADICIONAR
+import { AreaComponent } from './pages/area/area.component'; // ✅ ADICIONAR
 
-// ✅ ROTAS PARA PROJETO STANDALONE
-export const routes: Routes = [
-  // ✅ ROTA HOME
-  { path: '', component: HomeComponent },
-  
-  // ✅ ROTA DASHBOARD  
-  { path: 'dashboard', component: DashboardComponent },
-  
-  // ✅ ROTA UPGRADE (MOVER PARA CIMA!)
+// Guards
+import { AuthGuard } from './core/guards/auth.guard';
+import { PremiumGuard } from './core/guards/premium.guard';
+import { GuestGuard } from './core/guards/guest.guard';
+
+const routes: Routes = [
+  // ===============================================
+  // 🏠 ROTAS PÚBLICAS
+  // ===============================================
   { 
-    path: 'upgrade',
-    loadComponent: () => import('./pages/upgrade/upgrade.component').then(m => m.UpgradeComponent),
+    path: '', 
+    component: HomeComponent 
+  },
+  
+  // ===============================================
+  // 🔐 ROTAS DE AUTENTICAÇÃO
+  // ===============================================
+  { 
+    path: 'login', 
+    loadComponent: () => import('./shared/components/login/login.component').then(c => c.LoginComponent),
+    canActivate: [GuestGuard],
     data: { 
-      title: 'Upgrade Premium - BuzzDeveloper',
-      description: 'Acelere sua aprovação com acesso premium ilimitado'
+      title: 'Login - BuzzDeveloper',
+      description: 'Acesse sua conta na BuzzDeveloper'
     }
   },
-  
-  // ✅ ROTA ÁREA - STANDALONE COMPONENT
+
+  // ===============================================
+  // 🛡️ ROTAS PROTEGIDAS (REQUER LOGIN)
+  // ===============================================
   { 
-    path: 'area/:name', 
-    loadComponent: () => import('./pages/area/area.component').then(c => c.AreaComponent)
+    path: 'dashboard', 
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   
-  // ✅ ROTAS DO QUIZ
-  { path: 'quiz', component: QuizzComponent },
-  { path: 'quiz/:mode', component: QuizzComponent },
-  { path: 'quiz/:mode/:area', component: QuizzComponent },
-  { path: 'quiz/:area/:subject', component: QuizzComponent },
+  { 
+    path: 'quiz', 
+    component: QuizzComponent,
+    canActivate: [AuthGuard]
+  },
   
-  // ✅ ROTAS FUTURAS - STANDALONE
+  { 
+    path: 'quiz/:mode', 
+    component: QuizzComponent,
+    canActivate: [AuthGuard]
+  },
+  
+  { 
+    path: 'quiz/:mode/:area', 
+    component: QuizzComponent,
+    canActivate: [AuthGuard]
+  },
+  
+  { 
+    path: 'quiz/:area/:subject', 
+    component: QuizzComponent,
+    canActivate: [AuthGuard]
+  },
+
+  { 
+    path: 'area/:name', 
+    component: AreaComponent, // ✅ COMPONENT TRADICIONAL
+    canActivate: [AuthGuard]
+  },
+
+  { 
+    path: 'progress', 
+    component: ProgressComponent,
+    canActivate: [AuthGuard]
+  },
+
+  { 
+    path: 'favorites', 
+    component: FavoritesComponent,
+    canActivate: [AuthGuard]
+  },
+
+  // ===============================================
+  // 💎 ROTAS PREMIUM (REQUER LOGIN + PREMIUM)
+  // ===============================================
+  { 
+    path: 'upgrade', 
+    component: UpgradeComponent, // ✅ COMPONENT TRADICIONAL
+    data: { 
+      title: 'Upgrade Premium - BuzzDeveloper',
+      description: 'Desbloqueie todo o potencial da plataforma com nossos planos premium'
+    }
+    // Nota: Não precisa de guard, qualquer um pode ver a página de upgrade
+  },
+
+  // Exemplo de rota premium (descomente quando criar conteúdo premium)
   // { 
-  //   path: 'progress', 
-  //   loadComponent: () => import('./pages/progress/progress.component').then(c => c.ProgressComponent)
+  //   path: 'premium/advanced-analytics', 
+  //   loadComponent: () => import('./pages/premium/analytics/analytics.component').then(c => c.AdvancedAnalyticsComponent),
+  //   canActivate: [AuthGuard, PremiumGuard]
   // },
-  // { 
-  //   path: 'favorites', 
-  //   loadComponent: () => import('./pages/favorites/favorites.component').then(c => c.FavoritesComponent)
-  // },
+
+  // ===============================================
+  // 🔄 REDIRECTS E WILDCARDS
+  // ===============================================
+  { 
+    path: 'home', 
+    redirectTo: '', 
+    pathMatch: 'full' 
+  },
   
-  // ✅ REDIRECTS
-  { path: 'home', redirectTo: '', pathMatch: 'full' },
-  
-  // ✅ WILDCARD (404) - SEMPRE POR ÚLTIMO!
-  { path: '**', redirectTo: '' }
+  { 
+    path: '**', 
+    redirectTo: '', 
+    pathMatch: 'full' 
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    enableTracing: false
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 

@@ -1,0 +1,386 @@
+<div class="favorites-container">
+
+  <!-- ✅ LOADING STATE -->
+  <div *ngIf="isLoading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <h3>Carregando seus favoritos...</h3>
+    <p>Organizando suas questões preferidas</p>
+  </div>
+
+  <!-- ✅ ERROR STATE -->
+  <div *ngIf="hasError" class="error-container">
+    <mat-icon class="error-icon">error_outline</mat-icon>
+    <h2 class="error-title">Ops! Algo deu errado</h2>
+    <p class="error-message">{{ errorMessage }}</p>
+    <button mat-raised-button color="primary" (click)="reloadData()">
+      <mat-icon>refresh</mat-icon>
+      Tentar Novamente
+    </button>
+  </div>
+
+  <!-- ✅ MAIN CONTENT -->
+  <div *ngIf="!isLoading && !hasError">
+
+    <!-- ⭐ HEADER SECTION -->
+    <header class="favorites-header">
+      <div class="header-content">
+        <div class="header-text">
+          <h1 class="page-title">⭐ Meus Favoritos</h1>
+          <p class="page-subtitle">Suas questões marcadas como favoritas organizadas em um só lugar</p>
+          <p class="last-updated">
+            <mat-icon>update</mat-icon>
+            Atualizado: {{ favoritesData.lastUpdated | date:'dd/MM/yyyy HH:mm' }}
+          </p>
+        </div>
+        <div class="header-actions">
+          <button mat-stroked-button (click)="navigateToDashboard()">
+            <mat-icon>dashboard</mat-icon>
+            Dashboard
+          </button>
+          <button 
+            mat-raised-button 
+            color="primary" 
+            (click)="startFavoritesQuiz()"
+            [disabled]="favorites.length === 0"
+          >
+            <mat-icon>play_arrow</mat-icon>
+            Quiz Favoritos
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 📊 FAVORITES STATS -->
+    <section class="favorites-stats-section">
+      <h2 class="section-title">Estatísticas dos Favoritos</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card total-card">
+          <div class="stat-icon">
+            <mat-icon>favorite</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ favoritesData.totalFavorites }}</span>
+            <span class="stat-label">Total de Favoritos</span>
+            <span class="stat-sublabel">questões salvas</span>
+          </div>
+        </div>
+
+        <div class="stat-card activity-card">
+          <div class="stat-icon">
+            <mat-icon>add_circle</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ favoritesData.recentActivity.added }}</span>
+            <span class="stat-label">Adicionados</span>
+            <span class="stat-sublabel">nos últimos 7 dias</span>
+          </div>
+        </div>
+
+        <div class="stat-card quiz-card">
+          <div class="stat-icon">
+            <mat-icon>quiz</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ favoritesData.recentActivity.quizzesTaken }}</span>
+            <span class="stat-label">Quizzes Feitos</span>
+            <span class="stat-sublabel">com favoritos</span>
+          </div>
+        </div>
+
+        <div class="stat-card removed-card">
+          <div class="stat-icon">
+            <mat-icon>remove_circle</mat-icon>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number">{{ favoritesData.recentActivity.removed }}</span>
+            <span class="stat-label">Removidos</span>
+            <span class="stat-sublabel">recentemente</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📊 AREA DISTRIBUTION -->
+    <section class="distribution-section" *ngIf="hasAnyAreas()">
+      <h2 class="section-title">Distribuição por Área</h2>
+      
+      <div class="area-chips-container">
+        <mat-chip-set>
+          <mat-chip 
+            *ngFor="let area of getAreaKeys()" 
+            (click)="setSelectedArea(area)"
+            [class.selected]="selectedArea === area"
+          >
+            {{ area }} ({{ getAreaCount(area) }})
+          </mat-chip>
+        </mat-chip-set>
+      </div>
+
+      <div class="quick-area-actions">
+        <button 
+          *ngFor="let area of getAreaKeys()" 
+          mat-stroked-button 
+          (click)="startAreaQuiz(area)"
+          class="area-quiz-btn"
+        >
+          <mat-icon>play_arrow</mat-icon>
+          Quiz {{ area }}
+        </button>
+      </div>
+    </section>
+
+    <!-- 🔍 FILTERS & SEARCH -->
+    <section class="filters-section">
+      <div class="filters-content">
+        
+        <!-- Busca -->
+        <div class="search-group">
+          <mat-icon class="search-icon">search</mat-icon>
+          <input 
+            type="text" 
+            placeholder="Buscar questões favoritas..." 
+            [(ngModel)]="searchQuery"
+            class="search-input"
+          >
+        </div>
+
+        <!-- Filtros -->
+        <div class="filters-group">
+          <h3>Dificuldade:</h3>
+          <div class="filter-buttons">
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'all' ? 'primary' : ''"
+              (click)="setFilterBy('all')"
+            >
+              Todas ({{ favorites.length }})
+            </button>
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'easy' ? 'primary' : ''"
+              (click)="setFilterBy('easy')"
+            >
+              <mat-icon>trending_down</mat-icon>
+              Fácil ({{ getDifficultyCount('Fácil') }})
+            </button>
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'medium' ? 'primary' : ''"
+              (click)="setFilterBy('medium')"
+            >
+              <mat-icon>trending_flat</mat-icon>
+              Médio ({{ getDifficultyCount('Médio') }})
+            </button>
+            <button 
+              mat-stroked-button 
+              [color]="filterBy === 'hard' ? 'primary' : ''"
+              (click)="setFilterBy('hard')"
+            >
+              <mat-icon>trending_up</mat-icon>
+              Difícil ({{ getDifficultyCount('Difícil') }})
+            </button>
+          </div>
+        </div>
+
+        <!-- Área e Ordenação -->
+        <div class="controls-group">
+          <div class="area-select">
+            <mat-select [(value)]="selectedArea" (selectionChange)="setSelectedArea($event.value)">
+              <mat-option value="all">Todas as Áreas</mat-option>
+              <mat-option *ngFor="let area of availableAreas" [value]="area">
+                {{ area }}
+              </mat-option>
+            </mat-select>
+          </div>
+
+          <div class="sort-select">
+            <mat-select [(value)]="sortBy" (selectionChange)="setSortBy($event.value)">
+              <mat-option value="recent">Mais Recentes</mat-option>
+              <mat-option value="area">Por Área</mat-option>
+              <mat-option value="difficulty">Por Dificuldade</mat-option>
+              <mat-option value="attempts">Mais Tentativas</mat-option>
+            </mat-select>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 📝 FAVORITES LIST -->
+    <section class="favorites-list-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          Questões Favoritas
+          <span class="count-badge">({{ filteredAndSortedFavorites.length }})</span>
+        </h2>
+        
+        <div class="list-actions" *ngIf="filteredAndSortedFavorites.length > 0">
+          <button mat-stroked-button (click)="startFavoritesQuiz()">
+            <mat-icon>play_arrow</mat-icon>
+            Quiz com Filtradas
+          </button>
+          <button mat-raised-button color="primary" (click)="navigateToUpgrade()">
+            <mat-icon>star</mat-icon>
+            Upgrade Premium
+          </button>
+        </div>
+      </div>
+      
+      <!-- Lista de Questões -->
+      <div class="favorites-grid">
+        <div 
+          *ngFor="let favorite of filteredAndSortedFavorites; trackBy: trackFavorite" 
+          class="favorite-card"
+          [class.correct-attempt]="favorite.isCorrect === true"
+          [class.incorrect-attempt]="favorite.isCorrect === false"
+        >
+          
+          <!-- 📋 QUESTION HEADER -->
+          <div class="question-header">
+            <div class="question-meta">
+              <div class="area-info">
+                <span class="area-icon">{{ favorite.icon }}</span>
+                <span class="area-name">{{ favorite.areaDisplayName }}</span>
+              </div>
+              <div class="difficulty-badge" [style.color]="getDifficultyColor(favorite.difficulty)">
+                <mat-icon>{{ getDifficultyIcon(favorite.difficulty) }}</mat-icon>
+                {{ favorite.difficulty }}
+              </div>
+            </div>
+            <div class="question-actions">
+              <button 
+                mat-icon-button 
+                matTooltip="Ver questão completa"
+                (click)="viewQuestion(favorite)"
+              >
+                <mat-icon>visibility</mat-icon>
+              </button>
+              <button 
+                mat-icon-button 
+                matTooltip="Remover dos favoritos"
+                (click)="removeFavorite(favorite.id)"
+                class="remove-btn"
+              >
+                <mat-icon>favorite</mat-icon>
+              </button>
+            </div>
+          </div>
+
+          <!-- 📝 QUESTION CONTENT -->
+          <div class="question-content">
+            <h3 class="question-text">{{ favorite.question }}</h3>
+            
+            <div class="question-details">
+              <span class="subject-tag">
+                <mat-icon>label</mat-icon>
+                {{ favorite.subject }}
+              </span>
+              
+              <span class="date-info">
+                <mat-icon>schedule</mat-icon>
+                Adicionado: {{ favorite.addedDate | date:'dd/MM/yyyy' }}
+              </span>
+            </div>
+          </div>
+
+          <!-- 📊 QUESTION STATS -->
+          <div class="question-stats">
+            <div class="stat-item">
+              <mat-icon>repeat</mat-icon>
+              <span class="stat-value">{{ favorite.attempts }}</span>
+              <span class="stat-label">Tentativas</span>
+            </div>
+            
+            <div class="stat-item">
+              <mat-icon [style.color]="getAttemptStatusColor(favorite.isCorrect)">
+                {{ getAttemptStatusIcon(favorite.isCorrect) }}
+              </mat-icon>
+              <span class="stat-value">
+                {{ favorite.isCorrect === true ? 'Acertou' : favorite.isCorrect === false ? 'Errou' : 'Não tentou' }}
+              </span>
+              <span class="stat-label">Último resultado</span>
+            </div>
+            
+            <div class="stat-item" *ngIf="favorite.lastAttempt">
+              <mat-icon>event</mat-icon>
+              <span class="stat-value">{{ favorite.lastAttempt | date:'dd/MM' }}</span>
+              <span class="stat-label">Última tentativa</span>
+            </div>
+          </div>
+
+          <!-- 🎯 CARD ACTIONS -->
+          <div class="card-actions">
+            <button 
+              mat-stroked-button 
+              (click)="viewQuestion(favorite)"
+              class="view-btn"
+            >
+              <mat-icon>visibility</mat-icon>
+              Ver Completa
+            </button>
+            
+            <button 
+              mat-raised-button 
+              color="primary" 
+              (click)="startAreaQuiz(favorite.areaDisplayName)"
+            >
+              <mat-icon>play_arrow</mat-icon>
+              Praticar Área
+            </button>
+          </div>
+
+          <!-- ✨ FAVORITE INDICATOR -->
+          <div class="favorite-indicator">
+            <mat-icon>favorite</mat-icon>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 📋 EMPTY STATE -->
+      <div *ngIf="filteredAndSortedFavorites.length === 0" class="empty-state">
+        <div *ngIf="favorites.length === 0; else filteredEmpty">
+          <mat-icon>favorite_border</mat-icon>
+          <h3>Nenhuma questão favorita ainda</h3>
+          <p>Comece a marcar questões como favoritas durante os quizzes!</p>
+          <button mat-raised-button color="primary" (click)="navigateToDashboard()">
+            <mat-icon>dashboard</mat-icon>
+            Ir para Dashboard
+          </button>
+        </div>
+        
+        <ng-template #filteredEmpty>
+          <mat-icon>search_off</mat-icon>
+          <h3>Nenhuma questão encontrada</h3>
+          <p>Tente ajustar os filtros ou termo de busca</p>
+          <button mat-stroked-button (click)="setFilterBy('all'); setSelectedArea('all'); searchQuery = ''">
+            <mat-icon>clear</mat-icon>
+            Limpar Filtros
+          </button>
+        </ng-template>
+      </div>
+    </section>
+
+    <!-- 🎯 PREMIUM UPGRADE SECTION -->
+    <section class="upgrade-section" *ngIf="favorites.length > 0">
+      <div class="upgrade-card">
+        <div class="upgrade-content">
+          <div class="upgrade-icon">
+            <mat-icon>star</mat-icon>
+          </div>
+          <div class="upgrade-text">
+            <h3>Upgrade para Premium</h3>
+            <p>Favoritos ilimitados, relatórios detalhados e muito mais!</p>
+          </div>
+          <div class="upgrade-action">
+            <button mat-raised-button color="primary" (click)="navigateToUpgrade()">
+              Fazer Upgrade
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>

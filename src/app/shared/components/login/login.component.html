@@ -1,0 +1,333 @@
+<div class="login-container">
+  
+  <!-- ✅ BACKGROUND DECORATIVO -->
+  <div class="login-background">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+  </div>
+
+  <!-- ✅ BOTÃO VOLTAR -->
+  <button 
+    mat-icon-button 
+    class="back-button" 
+    (click)="navigateHome()"
+    matTooltip="Voltar à home"
+  >
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <!-- ✅ CARD PRINCIPAL -->
+  <div class="login-card">
+    
+    <!-- Header do Card -->
+    <div class="login-header">
+      <div class="logo-section">
+        <div class="logo">🚀</div>
+        <h1 class="brand-name">Quizzfy</h1>
+        <p class="brand-subtitle">Sua plataforma de aprendizado</p>
+      </div>
+    </div>
+
+    <!-- Mensagens de Status -->
+    <div class="status-messages" *ngIf="errorMessage || successMessage">
+      <div *ngIf="errorMessage" class="error-message">
+        <mat-icon>error_outline</mat-icon>
+        <span>{{ errorMessage }}</span>
+      </div>
+      
+      <div *ngIf="successMessage" class="success-message">
+        <mat-icon>check_circle</mat-icon>
+        <span>{{ successMessage }}</span>
+      </div>
+    </div>
+
+    <!-- ✅ TABS LOGIN/REGISTER -->
+    <mat-tab-group 
+      [(selectedIndex)]="selectedTabIndex" 
+      (selectedTabChange)="onTabChanged($event.index)"
+      class="auth-tabs"
+      animationDuration="300ms"
+    >
+      
+      <!-- =============================================== -->
+      <!-- 🔐 TAB LOGIN -->
+      <!-- =============================================== -->
+      <mat-tab label="Entrar">
+        <div class="tab-content">
+          
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="auth-form">
+            
+            <!-- Campo Email -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Email</mat-label>
+              <input 
+                matInput 
+                type="email" 
+                formControlName="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+              >
+              <mat-icon matPrefix>email</mat-icon>
+              <mat-error>{{ getLoginErrorMessage('email') }}</mat-error>
+            </mat-form-field>
+
+            <!-- Campo Senha -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Senha</mat-label>
+              <input 
+                matInput 
+                [type]="hideLoginPassword ? 'password' : 'text'"
+                formControlName="password"
+                placeholder="Sua senha"
+                autocomplete="current-password"
+              >
+              <mat-icon matPrefix>lock</mat-icon>
+              <button 
+                mat-icon-button 
+                matSuffix 
+                type="button"
+                (click)="hideLoginPassword = !hideLoginPassword"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hideLoginPassword"
+              >
+                <mat-icon>{{ hideLoginPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+              <mat-error>{{ getLoginErrorMessage('password') }}</mat-error>
+            </mat-form-field>
+
+            <!-- Opções Extras -->
+            <div class="form-options">
+              <mat-checkbox formControlName="rememberMe" class="remember-me">
+                Lembrar de mim
+              </mat-checkbox>
+              
+              <button type="button" mat-button class="forgot-password">
+                Esqueci minha senha
+              </button>
+            </div>
+
+            <!-- Botão Login -->
+            <button 
+              mat-raised-button 
+              color="primary" 
+              type="submit"
+              class="auth-button"
+              [disabled]="isLoading"
+            >
+              <span *ngIf="!isLoading" class="button-content">
+                <mat-icon>login</mat-icon>
+                Entrar
+              </span>
+              
+              <div *ngIf="isLoading" class="loading-content">
+                <mat-spinner diameter="20"></mat-spinner>
+                <span>Entrando...</span>
+              </div>
+            </button>
+
+            <!-- Demo Button -->
+            <button 
+              type="button"
+              mat-stroked-button 
+              class="demo-button"
+              (click)="fillDemoCredentials()"
+              [disabled]="isLoading"
+            >
+              <mat-icon>preview</mat-icon>
+              Testar com dados demo
+            </button>
+
+          </form>
+
+          <!-- Divisor -->
+          <div class="divider">
+            <span>ou</span>
+          </div>
+
+          <!-- Link para Register -->
+          <div class="switch-auth">
+            <p>Não tem uma conta?</p>
+            <button mat-button color="primary" (click)="switchToRegister()">
+              Criar conta gratuita
+            </button>
+          </div>
+
+        </div>
+      </mat-tab>
+
+      <!-- =============================================== -->
+      <!-- 📝 TAB REGISTER -->
+      <!-- =============================================== -->
+      <mat-tab label="Criar Conta">
+        <div class="tab-content">
+          
+          <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="auth-form">
+            
+            <!-- Campo Nome -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Nome Completo</mat-label>
+              <input 
+                matInput 
+                type="text" 
+                formControlName="name"
+                placeholder="Seu nome completo"
+                autocomplete="name"
+              >
+              <mat-icon matPrefix>person</mat-icon>
+              <mat-error>{{ getRegisterErrorMessage('name') }}</mat-error>
+            </mat-form-field>
+
+            <!-- Campo Email -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Email</mat-label>
+              <input 
+                matInput 
+                type="email" 
+                formControlName="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+              >
+              <mat-icon matPrefix>email</mat-icon>
+              <mat-error>{{ getRegisterErrorMessage('email') }}</mat-error>
+            </mat-form-field>
+
+            <!-- Campo Senha -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Senha</mat-label>
+              <input 
+                matInput 
+                [type]="hideRegisterPassword ? 'password' : 'text'"
+                formControlName="password"
+                placeholder="Mínimo 6 caracteres"
+                autocomplete="new-password"
+              >
+              <mat-icon matPrefix>lock</mat-icon>
+              <button 
+                mat-icon-button 
+                matSuffix 
+                type="button"
+                (click)="hideRegisterPassword = !hideRegisterPassword"
+              >
+                <mat-icon>{{ hideRegisterPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+              <mat-error>{{ getRegisterErrorMessage('password') }}</mat-error>
+            </mat-form-field>
+
+            <!-- Campo Confirmar Senha -->
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Confirmar Senha</mat-label>
+              <input 
+                matInput 
+                [type]="hideConfirmPassword ? 'password' : 'text'"
+                formControlName="confirmPassword"
+                placeholder="Digite a senha novamente"
+                autocomplete="new-password"
+              >
+              <mat-icon matPrefix>lock_outline</mat-icon>
+              <button 
+                mat-icon-button 
+                matSuffix 
+                type="button"
+                (click)="hideConfirmPassword = !hideConfirmPassword"
+              >
+                <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+              </button>
+              <mat-error>{{ getRegisterErrorMessage('confirmPassword') }}</mat-error>
+            </mat-form-field>
+
+            <!-- Aceitar Termos -->
+            <div class="terms-section">
+              <mat-checkbox formControlName="acceptTerms" class="accept-terms">
+                Eu concordo com os 
+                <a href="#" target="_blank">termos de uso</a> 
+                e 
+                <a href="#" target="_blank">política de privacidade</a>
+              </mat-checkbox>
+              <mat-error *ngIf="registerForm.get('acceptTerms')?.invalid && registerForm.get('acceptTerms')?.touched">
+                {{ getRegisterErrorMessage('acceptTerms') }}
+              </mat-error>
+            </div>
+
+            <!-- Botão Register -->
+            <button 
+              mat-raised-button 
+              color="primary" 
+              type="submit"
+              class="auth-button"
+              [disabled]="isLoading"
+            >
+              <span *ngIf="!isLoading" class="button-content">
+                <mat-icon>person_add</mat-icon>
+                Criar Conta
+              </span>
+              
+              <div *ngIf="isLoading" class="loading-content">
+                <mat-spinner diameter="20"></mat-spinner>
+                <span>Criando conta...</span>
+              </div>
+            </button>
+
+          </form>
+
+          <!-- Divisor -->
+          <div class="divider">
+            <span>ou</span>
+          </div>
+
+          <!-- Link para Login -->
+          <div class="switch-auth">
+            <p>Já tem uma conta?</p>
+            <button mat-button color="primary" (click)="switchToLogin()">
+              Fazer login
+            </button>
+          </div>
+
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+
+    <!-- ✅ FOOTER DO CARD -->
+    <div class="login-footer">
+      <div class="benefits">
+        <h3>Por que se cadastrar?</h3>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <mat-icon>check_circle</mat-icon>
+            <span>Acompanhe seu progresso</span>
+          </div>
+          <div class="benefit-item">
+            <mat-icon>favorite</mat-icon>
+            <span>Salve questões favoritas</span>
+          </div>
+          <div class="benefit-item">
+            <mat-icon>trending_up</mat-icon>
+            <span>Estatísticas detalhadas</span>
+          </div>
+          <div class="benefit-item">
+            <mat-icon>stars</mat-icon>
+            <span>Conteúdo premium</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ DEMO CREDENTIALS INFO -->
+  <div class="demo-info" *ngIf="selectedTabIndex === 0">
+    <div class="demo-card">
+      <mat-icon>info</mat-icon>
+      <div class="demo-content">
+        <h4>Testar a plataforma</h4>
+        <p>Use as credenciais demo ou qualquer email/senha válidos</p>
+        <div class="demo-credentials">
+          <span><strong>Email:</strong> demo@buzzdeveloper.com</span>
+          <span><strong>Senha:</strong> demo123</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

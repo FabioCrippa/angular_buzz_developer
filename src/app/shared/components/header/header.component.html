@@ -1,0 +1,326 @@
+<mat-toolbar class="app-header" [class.logged-in]="isLoggedIn" [class.premium]="isPremium">
+  
+  <!-- =============================================== -->
+  <!-- 🏠 LOGO E BRAND -->
+  <!-- =============================================== -->
+  <div class="brand-section" (click)="navigateToHome()">
+    <div class="logo-container">
+      <mat-icon class="brand-icon">quiz</mat-icon>
+    </div>
+    <span class="brand-name">Quizzfy</span>
+    <span class="premium-badge" *ngIf="isPremium">
+      <mat-icon>diamond</mat-icon>
+      <span>PRO</span>
+    </span>
+  </div>
+
+  <!-- =============================================== -->
+  <!-- 🧭 NAVEGAÇÃO DESKTOP -->
+  <!-- =============================================== -->
+  <nav class="desktop-nav" *ngIf="!isMobile()">
+    <button 
+      mat-button 
+      [class.active]="isCurrentRoute('/')"
+      (click)="navigateToHome()"
+    >
+      <mat-icon>home</mat-icon>
+      Início
+    </button>
+
+    <button 
+      mat-button 
+      [class.active]="isCurrentRoute('/dashboard')"
+      (click)="navigateToDashboard()"
+      *ngIf="isLoggedIn"
+    >
+      <mat-icon>dashboard</mat-icon>
+      Dashboard
+    </button>
+
+    <button 
+      mat-button 
+      [class.active]="isCurrentRoute('/progress')"
+      (click)="navigateToProgress()"
+      *ngIf="isLoggedIn"
+    >
+      <mat-icon>trending_up</mat-icon>
+      Progresso
+    </button>
+
+    <button 
+      mat-button 
+      [class.active]="isCurrentRoute('/favorites')"
+      (click)="navigateToFavorites()"
+      *ngIf="isLoggedIn"
+    >
+      <mat-icon>favorite</mat-icon>
+      Favoritos
+    </button>
+  </nav>
+
+  <!-- =============================================== -->
+  <!-- 📱 SPACER PARA MOBILE -->
+  <!-- =============================================== -->
+  <div class="spacer"></div>
+
+  <!-- =============================================== -->
+  <!-- 🔔 NOTIFICAÇÕES -->
+  <!-- =============================================== -->
+  <button 
+    mat-icon-button 
+    class="notification-btn"
+    (click)="openNotifications()"
+    *ngIf="isLoggedIn"
+    matTooltip="Notificações"
+  >
+    <mat-icon 
+      [matBadge]="notificationCount" 
+      [matBadgeHidden]="notificationCount === 0"
+      matBadgeColor="warn"
+      matBadgeSize="small"
+    >
+      notifications
+    </mat-icon>
+  </button>
+
+  <!-- =============================================== -->
+  <!-- 💎 UPGRADE BUTTON (PARA NÃO PREMIUM) -->
+  <!-- =============================================== -->
+  <button 
+    mat-raised-button 
+    color="accent" 
+    class="upgrade-btn"
+    (click)="openPremiumDialog()"
+    *ngIf="isLoggedIn && !isPremium"
+    matTooltip="Fazer upgrade para Premium"
+  >
+    <mat-icon>diamond</mat-icon>
+    Upgrade
+  </button>
+
+  <!-- =============================================== -->
+  <!-- 👤 USUÁRIO LOGADO - MENU DROPDOWN -->
+  <!-- =============================================== -->
+  <div class="user-section" *ngIf="isLoggedIn">
+    
+    <!-- Avatar e Info -->
+    <button 
+      mat-button 
+      class="user-button"
+      [matMenuTriggerFor]="userMenu"
+      #userMenuTrigger="matMenuTrigger"
+    >
+      <div class="user-avatar" [class.premium-avatar]="isPremium">
+        <img 
+          *ngIf="currentUser?.avatar" 
+          [src]="currentUser?.avatar" 
+          [alt]="currentUser?.name"
+          class="avatar-img"
+        >
+        <span *ngIf="!currentUser?.avatar" class="avatar-initials">
+          {{ getUserInitials() }}
+        </span>
+        <div class="premium-ring" *ngIf="isPremium"></div>
+      </div>
+      
+      <div class="user-info" *ngIf="!isMobile()">
+        <span class="user-name">{{ currentUser?.name }}</span>
+        <div class="user-stats">
+          <span class="level">Nv. {{ getUserLevel() }}</span>
+          <span class="streak" *ngIf="getUserStreak() > 0">
+            🔥 {{ getUserStreak() }}
+          </span>
+        </div>
+      </div>
+      
+      <mat-icon class="dropdown-arrow">expand_more</mat-icon>
+    </button>
+
+    <!-- Menu Dropdown -->
+    <mat-menu #userMenu="matMenu" class="user-dropdown-menu">
+      
+      <!-- Header do Menu -->
+      <div class="menu-header" mat-menu-item disabled>
+        <div class="menu-user-info">
+          <div class="menu-avatar">
+            <img 
+              *ngIf="currentUser?.avatar" 
+              [src]="currentUser?.avatar" 
+              [alt]="currentUser?.name"
+            >
+            <span *ngIf="!currentUser?.avatar">
+              {{ getUserInitials() }}
+            </span>
+          </div>
+          <div class="menu-user-details">
+            <strong>{{ currentUser?.name }}</strong>
+            <span class="user-email">{{ currentUser?.email }}</span>
+            <div class="user-status">
+              <span class="level-badge">Nível {{ getUserLevel() }}</span>
+              <span class="premium-status" *ngIf="isPremium">✨ Premium</span>
+              <span class="free-status" *ngIf="!isPremium">🆓 Gratuito</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <!-- Opções do Menu -->
+      <button mat-menu-item (click)="navigateToDashboard()">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button>
+
+      <button mat-menu-item (click)="navigateToProfile()">
+        <mat-icon>person</mat-icon>
+        <span>Perfil</span>
+      </button>
+
+      <button mat-menu-item (click)="navigateToProgress()">
+        <mat-icon>trending_up</mat-icon>
+        <span>Meu Progresso</span>
+      </button>
+
+      <button mat-menu-item (click)="navigateToFavorites()">
+        <mat-icon>favorite</mat-icon>
+        <span>Favoritos</span>
+      </button>
+
+      <mat-divider *ngIf="!isPremium"></mat-divider>
+
+      <!-- Upgrade Premium -->
+      <button 
+        mat-menu-item 
+        class="premium-menu-item"
+        (click)="openPremiumDialog()"
+        *ngIf="!isPremium"
+      >
+        <mat-icon class="premium-icon">diamond</mat-icon>
+        <span>Upgrade Premium</span>
+        <mat-icon class="upgrade-arrow">arrow_forward</mat-icon>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <!-- Configurações -->
+      <button mat-menu-item (click)="navigateToSettings()">
+        <mat-icon>settings</mat-icon>
+        <span>Configurações</span>
+      </button>
+
+      <!-- Theme Toggle -->
+      <button mat-menu-item (click)="toggleTheme()">
+        <mat-icon>palette</mat-icon>
+        <span>Alternar Tema</span>
+      </button>
+
+      <!-- Logout -->
+      <button mat-menu-item (click)="logout()" class="logout-item">
+        <mat-icon>logout</mat-icon>
+        <span>Sair</span>
+      </button>
+
+    </mat-menu>
+
+  </div>
+
+  <!-- =============================================== -->
+  <!-- 🔐 USUÁRIO NÃO LOGADO -->
+  <!-- =============================================== -->
+  <div class="auth-section" *ngIf="!isLoggedIn">
+    <button 
+      mat-button 
+      (click)="openLoginDialog()"
+      class="login-btn"
+    >
+      <mat-icon>login</mat-icon>
+      <span *ngIf="!isMobile()">Entrar</span>
+    </button>
+  </div>
+
+  <!-- =============================================== -->
+  <!-- 📱 MOBILE MENU BUTTON -->
+  <!-- =============================================== -->
+  <button 
+    mat-icon-button 
+    class="mobile-menu-btn"
+    (click)="toggleMobileMenu()"
+    *ngIf="isMobile()"
+  >
+    <mat-icon>{{ isMobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<!-- =============================================== -->
+<!-- 📱 MOBILE NAVIGATION OVERLAY -->
+<!-- =============================================== -->
+<div 
+  class="mobile-nav-overlay" 
+  [class.open]="isMobileMenuOpen"
+  (click)="closeMobileMenu()"
+  *ngIf="isMobile()"
+>
+  <div class="mobile-nav-content" (click)="$event.stopPropagation()">
+    
+    <!-- User Info Mobile -->
+    <div class="mobile-user-section" *ngIf="isLoggedIn">
+      <div class="mobile-avatar">
+        <img 
+          *ngIf="currentUser?.avatar" 
+          [src]="currentUser?.avatar" 
+          [alt]="currentUser?.name"
+        >
+        <span *ngIf="!currentUser?.avatar">
+          {{ getUserInitials() }}
+        </span>
+      </div>
+      <div class="mobile-user-info">
+        <strong>{{ currentUser?.name }}</strong>
+        <span>Nível {{ getUserLevel() }} • 🔥 {{ getUserStreak() }}</span>
+      </div>
+    </div>
+
+    <mat-divider *ngIf="isLoggedIn"></mat-divider>
+
+    <!-- Navigation Links -->
+    <div class="mobile-nav-links">
+      <button mat-button (click)="navigateToHome()">
+        <mat-icon>home</mat-icon>
+        Início
+      </button>
+
+      <button mat-button (click)="navigateToDashboard()" *ngIf="isLoggedIn">
+        <mat-icon>dashboard</mat-icon>
+        Dashboard
+      </button>
+
+      <button mat-button (click)="navigateToProgress()" *ngIf="isLoggedIn">
+        <mat-icon>trending_up</mat-icon>
+        Progresso
+      </button>
+
+      <button mat-button (click)="navigateToFavorites()" *ngIf="isLoggedIn">
+        <mat-icon>favorite</mat-icon>
+        Favoritos
+      </button>
+
+      <button mat-button (click)="openPremiumDialog()" *ngIf="isLoggedIn && !isPremium">
+        <mat-icon>diamond</mat-icon>
+        Upgrade Premium
+      </button>
+
+      <button mat-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
+        <mat-icon>login</mat-icon>
+        Fazer Login
+      </button>
+
+      <button mat-button (click)="logout()" *ngIf="isLoggedIn">
+        <mat-icon>logout</mat-icon>
+        Sair
+      </button>
+    </div>
+
+  </div>
+</div>

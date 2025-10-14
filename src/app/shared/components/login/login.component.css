@@ -1,0 +1,690 @@
+/* =============================================== */
+/* 🔐 LOGIN COMPONENT - CSS SEM SCROLL */
+/* =============================================== */
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* =============================================== */
+/* 🎨 BACKGROUND ANIMADO */
+/* =============================================== */
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 3s;
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 60%;
+  animation-delay: 6s;
+}
+
+/* =============================================== */
+/* 🏠 BOTÃO VOLTAR */
+/* =============================================== */
+
+.back-button {
+  position: fixed !important;
+  top: 1.5rem !important;
+  left: 1.5rem !important;
+  z-index: 1000 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #667eea !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.back-button:hover {
+  background: white !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* =============================================== */
+/* 📱 CARD PRINCIPAL - OTIMIZADO */
+/* =============================================== */
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  position: relative;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: cardSlideIn 0.6s ease-out;
+  overflow-y: auto;
+}
+
+/* Custom scrollbar para o card */
+.login-card::-webkit-scrollbar {
+  width: 4px;
+}
+
+.login-card::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+}
+
+.login-card::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 2px;
+}
+
+.login-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.5);
+}
+
+/* =============================================== */
+/* 🎯 HEADER COMPACTO */
+/* =============================================== */
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.brand-subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0.3rem 0 0 0;
+  font-weight: 500;
+}
+
+/* =============================================== */
+/* 📢 MENSAGENS COMPACTAS */
+/* =============================================== */
+
+.status-messages {
+  margin-bottom: 1rem;
+}
+
+.error-message,
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  animation: messageSlide 0.3s ease-out;
+}
+
+.error-message {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.success-message {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+/* =============================================== */
+/* 📂 TABS COMPACTOS */
+/* =============================================== */
+
+.auth-tabs {
+  margin-bottom: 1rem;
+}
+
+.auth-tabs ::ng-deep .mat-mdc-tab-group {
+  --mdc-secondary-navigation-tab-container-height: 50px;
+}
+
+.auth-tabs ::ng-deep .mat-mdc-tab {
+  min-width: 100px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+}
+
+.auth-tabs ::ng-deep .mat-mdc-tab-header {
+  border-bottom: 2px solid #f3f4f6 !important;
+}
+
+.auth-tabs ::ng-deep .mdc-tab-indicator__content--underline {
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  height: 3px !important;
+  border-radius: 2px !important;
+}
+
+.tab-content {
+  padding-top: 1rem;
+  animation: tabContentFade 0.4s ease-in-out;
+}
+
+/* =============================================== */
+/* 📝 FORMULÁRIOS COMPACTOS */
+/* =============================================== */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.auth-form ::ng-deep .mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: 10px;
+}
+
+.auth-form ::ng-deep .mdc-text-field {
+  height: 48px;
+}
+
+.auth-form ::ng-deep .mdc-notched-outline__leading,
+.auth-form ::ng-deep .mdc-notched-outline__notch,
+.auth-form ::ng-deep .mdc-notched-outline__trailing {
+  border-color: #d1d5db;
+  border-width: 1.5px;
+}
+
+.auth-form ::ng-deep .mdc-text-field--focused .mdc-notched-outline__leading,
+.auth-form ::ng-deep .mdc-text-field--focused .mdc-notched-outline__notch,
+.auth-form ::ng-deep .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: #667eea;
+}
+
+/* =============================================== */
+/* ⚙️ OPÇÕES COMPACTAS */
+/* =============================================== */
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -0.3rem 0 0.5rem 0;
+}
+
+.remember-me {
+  font-size: 0.8rem;
+}
+
+.forgot-password {
+  font-size: 0.8rem !important;
+  color: #667eea !important;
+  text-decoration: underline !important;
+  min-width: auto !important;
+  padding: 0.3rem 0 !important;
+}
+
+/* =============================================== */
+/* 🔘 BOTÕES COMPACTOS */
+/* =============================================== */
+
+.auth-button {
+  height: 48px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  color: white !important;
+  border: none !important;
+  text-transform: none !important;
+  letter-spacing: 0.3px !important;
+  transition: all 0.3s ease !important;
+  margin-top: 0.5rem !important;
+}
+
+.auth-button:hover:not([disabled]) {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.loading-content {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.demo-button {
+  height: 42px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  border-radius: 10px !important;
+  border: 1.5px solid #667eea !important;
+  color: #667eea !important;
+  background: transparent !important;
+  text-transform: none !important;
+  margin-top: 0.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+/* =============================================== */
+/* ➖ DIVISOR COMPACTO */
+/* =============================================== */
+
+.divider {
+  position: relative;
+  margin: 1.2rem 0 1rem 0;
+  text-align: center;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
+}
+
+.divider span {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0 0.8rem;
+  color: #6b7280;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* =============================================== */
+/* 🔄 SWITCH AUTH COMPACTO */
+/* =============================================== */
+
+.switch-auth {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.switch-auth p {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.switch-auth button {
+  font-weight: 600 !important;
+  text-decoration: underline !important;
+  color: #667eea !important;
+  font-size: 0.9rem !important;
+}
+
+/* =============================================== */
+/* ✅ TERMOS COMPACTOS */
+/* =============================================== */
+
+.terms-section {
+  margin-top: 0.3rem;
+}
+
+.accept-terms {
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+
+.accept-terms a {
+  color: #667eea;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* =============================================== */
+/* 🎯 FOOTER COMPACTO */
+/* =============================================== */
+
+.login-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.benefits h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+.benefit-item mat-icon {
+  font-size: 1rem !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  color: #667eea;
+}
+
+/* =============================================== */
+/* 💡 INFO DEMO COMPACTO */
+/* =============================================== */
+
+.demo-info {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  max-width: 280px;
+}
+
+.demo-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  gap: 0.75rem;
+  animation: demoSlideIn 0.5s ease-out 0.8s both;
+}
+
+.demo-card mat-icon {
+  color: #667eea;
+  font-size: 1.3rem !important;
+  flex-shrink: 0;
+}
+
+.demo-content h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 0.3rem 0;
+}
+
+.demo-content p {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.demo-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.demo-credentials span {
+  font-size: 0.7rem;
+  color: #4b5563;
+  font-family: 'Courier New', monospace;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* =============================================== */
+/* 🎨 ANIMAÇÕES */
+/* =============================================== */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.06;
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+    opacity: 0.12;
+  }
+}
+
+@keyframes logoGlow {
+  0% {
+    filter: drop-shadow(0 0 3px rgba(102, 126, 234, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(118, 75, 162, 0.5));
+  }
+}
+
+@keyframes cardSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes tabContentFade {
+  0% {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes messageSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes demoSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =============================================== */
+/* 📱 RESPONSIVE OTIMIZADO */
+/* =============================================== */
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 0.5rem;
+  }
+
+  .login-card {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    max-height: 95vh;
+  }
+
+  .brand-name {
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .benefits-list {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .demo-info {
+    position: static;
+    margin: 1rem auto 0 auto;
+    max-width: none;
+  }
+
+  .demo-card {
+    margin: 0;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1rem 0.8rem;
+    max-height: 98vh;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .auth-button {
+    height: 44px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .login-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .benefits h3 {
+    font-size: 0.9rem;
+  }
+
+  .shape-1,
+  .shape-2,
+  .shape-3 {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  .login-card {
+    max-height: 95vh;
+    padding: 1rem;
+  }
+
+  .login-footer {
+    display: none;
+  }
+
+  .demo-info {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .login-header {
+    margin-bottom: 1rem;
+  }
+
+  .auth-tabs {
+    margin-bottom: 0.5rem;
+  }
+
+  .tab-content {
+    padding-top: 0.5rem;
+  }
+
+  .auth-form {
+    gap: 0.8rem;
+  }
+}

@@ -28,13 +28,6 @@ interface FAQ {
 
 @Component({
   selector: 'app-upgrade',
-  standalone: true, // ✅ TORNAR STANDALONE
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    MatProgressSpinnerModule
-  ],
   templateUrl: './upgrade.component.html',
   styleUrls: ['./upgrade.component.css']
 })
