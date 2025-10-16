@@ -1,15 +1,19 @@
-<mat-toolbar class="app-header" [class.logged-in]="isLoggedIn" [class.premium]="isPremium">
+<header class="app-header" [class.logged-in]="isLoggedIn" [class.premium]="isPremium">
   
   <!-- =============================================== -->
   <!-- 🏠 LOGO E BRAND -->
   <!-- =============================================== -->
   <div class="brand-section" (click)="navigateToHome()">
     <div class="logo-container">
-      <mat-icon class="brand-icon">quiz</mat-icon>
+      <svg class="brand-icon" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" fill="currentColor"/>
+      </svg>
     </div>
     <span class="brand-name">Quizzfy</span>
     <span class="premium-badge" *ngIf="isPremium">
-      <mat-icon>diamond</mat-icon>
+      <svg viewBox="0 0 24 24" width="16" height="16">
+        <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zM15.5 3H8.5c-.83 0-1.5.67-1.5 1.5S7.67 6 8.5 6h7c.83 0 1.5-.67 1.5-1.5S16.33 3 15.5 3z" fill="currentColor"/>
+      </svg>
       <span>PRO</span>
     </span>
   </div>
@@ -19,41 +23,49 @@
   <!-- =============================================== -->
   <nav class="desktop-nav" *ngIf="!isMobile()">
     <button 
-      mat-button 
+      class="nav-button"
       [class.active]="isCurrentRoute('/')"
       (click)="navigateToHome()"
     >
-      <mat-icon>home</mat-icon>
+      <svg viewBox="0 0 24 24" width="18" height="18">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+      </svg>
       Início
     </button>
 
     <button 
-      mat-button 
+      class="nav-button"
       [class.active]="isCurrentRoute('/dashboard')"
       (click)="navigateToDashboard()"
       *ngIf="isLoggedIn"
     >
-      <mat-icon>dashboard</mat-icon>
+      <svg viewBox="0 0 24 24" width="18" height="18">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
+      </svg>
       Dashboard
     </button>
 
     <button 
-      mat-button 
+      class="nav-button"
       [class.active]="isCurrentRoute('/progress')"
       (click)="navigateToProgress()"
       *ngIf="isLoggedIn"
     >
-      <mat-icon>trending_up</mat-icon>
+      <svg viewBox="0 0 24 24" width="18" height="18">
+        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
+      </svg>
       Progresso
     </button>
 
     <button 
-      mat-button 
+      class="nav-button"
       [class.active]="isCurrentRoute('/favorites')"
       (click)="navigateToFavorites()"
       *ngIf="isLoggedIn"
     >
-      <mat-icon>favorite</mat-icon>
+      <svg viewBox="0 0 24 24" width="18" height="18">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+      </svg>
       Favoritos
     </button>
   </nav>
@@ -67,34 +79,31 @@
   <!-- 🔔 NOTIFICAÇÕES -->
   <!-- =============================================== -->
   <button 
-    mat-icon-button 
-    class="notification-btn"
+    class="icon-button notification-btn"
     (click)="openNotifications()"
     *ngIf="isLoggedIn"
-    matTooltip="Notificações"
+    title="Notificações"
   >
-    <mat-icon 
-      [matBadge]="notificationCount" 
-      [matBadgeHidden]="notificationCount === 0"
-      matBadgeColor="warn"
-      matBadgeSize="small"
-    >
-      notifications
-    </mat-icon>
+    <div class="icon-wrapper">
+      <svg viewBox="0 0 24 24" width="20" height="20">
+        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+      </svg>
+      <span class="notification-badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+    </div>
   </button>
 
   <!-- =============================================== -->
   <!-- 💎 UPGRADE BUTTON (PARA NÃO PREMIUM) -->
   <!-- =============================================== -->
   <button 
-    mat-raised-button 
-    color="accent" 
-    class="upgrade-btn"
+    class="upgrade-button"
     (click)="openPremiumDialog()"
     *ngIf="isLoggedIn && !isPremium"
-    matTooltip="Fazer upgrade para Premium"
+    title="Fazer upgrade para Premium"
   >
-    <mat-icon>diamond</mat-icon>
+    <svg viewBox="0 0 24 24" width="16" height="16">
+      <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
+    </svg>
     Upgrade
   </button>
 
@@ -105,10 +114,8 @@
     
     <!-- Avatar e Info -->
     <button 
-      mat-button 
       class="user-button"
-      [matMenuTriggerFor]="userMenu"
-      #userMenuTrigger="matMenuTrigger"
+      (click)="toggleUserMenu()"
     >
       <div class="user-avatar" [class.premium-avatar]="isPremium">
         <img 
@@ -133,14 +140,16 @@
         </div>
       </div>
       
-      <mat-icon class="dropdown-arrow">expand_more</mat-icon>
+      <svg class="dropdown-arrow" viewBox="0 0 24 24" width="18" height="18">
+        <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+      </svg>
     </button>
 
     <!-- Menu Dropdown -->
-    <mat-menu #userMenu="matMenu" class="user-dropdown-menu">
+    <div class="user-dropdown-menu" [class.open]="isUserMenuOpen" *ngIf="isUserMenuOpen">
       
       <!-- Header do Menu -->
-      <div class="menu-header" mat-menu-item disabled>
+      <div class="menu-header">
         <div class="menu-user-info">
           <div class="menu-avatar">
             <img 
@@ -164,77 +173,95 @@
         </div>
       </div>
 
-      <mat-divider></mat-divider>
+      <div class="menu-divider"></div>
 
       <!-- Opções do Menu -->
-      <button mat-menu-item (click)="navigateToDashboard()">
-        <mat-icon>dashboard</mat-icon>
+      <button class="menu-item" (click)="navigateToDashboard()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
+        </svg>
         <span>Dashboard</span>
       </button>
 
-      <button mat-menu-item (click)="navigateToProfile()">
-        <mat-icon>person</mat-icon>
+      <button class="menu-item" (click)="navigateToProfile()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+        </svg>
         <span>Perfil</span>
       </button>
 
-      <button mat-menu-item (click)="navigateToProgress()">
-        <mat-icon>trending_up</mat-icon>
+      <button class="menu-item" (click)="navigateToProgress()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
+        </svg>
         <span>Meu Progresso</span>
       </button>
 
-      <button mat-menu-item (click)="navigateToFavorites()">
-        <mat-icon>favorite</mat-icon>
+      <button class="menu-item" (click)="navigateToFavorites()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+        </svg>
         <span>Favoritos</span>
       </button>
 
-      <mat-divider *ngIf="!isPremium"></mat-divider>
-
       <!-- Upgrade Premium -->
+      <div class="menu-divider" *ngIf="!isPremium"></div>
       <button 
-        mat-menu-item 
-        class="premium-menu-item"
+        class="menu-item premium-menu-item"
         (click)="openPremiumDialog()"
         *ngIf="!isPremium"
       >
-        <mat-icon class="premium-icon">diamond</mat-icon>
+        <svg class="premium-icon" viewBox="0 0 24 24" width="18" height="18">
+          <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
+        </svg>
         <span>Upgrade Premium</span>
-        <mat-icon class="upgrade-arrow">arrow_forward</mat-icon>
+        <svg class="upgrade-arrow" viewBox="0 0 24 24" width="16" height="16">
+          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor"/>
+        </svg>
       </button>
 
-      <mat-divider></mat-divider>
+      <div class="menu-divider"></div>
 
       <!-- Configurações -->
-      <button mat-menu-item (click)="navigateToSettings()">
-        <mat-icon>settings</mat-icon>
+      <button class="menu-item" (click)="navigateToSettings()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.82,11.69,4.82,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" fill="currentColor"/>
+        </svg>
         <span>Configurações</span>
       </button>
 
       <!-- Theme Toggle -->
-      <button mat-menu-item (click)="toggleTheme()">
-        <mat-icon>palette</mat-icon>
+      <button class="menu-item" (click)="toggleTheme()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" fill="currentColor"/>
+        </svg>
         <span>Alternar Tema</span>
       </button>
 
       <!-- Logout -->
-      <button mat-menu-item (click)="logout()" class="logout-item">
-        <mat-icon>logout</mat-icon>
+      <button class="menu-item logout-item" (click)="logout()">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" fill="currentColor"/>
+        </svg>
         <span>Sair</span>
       </button>
 
-    </mat-menu>
+    </div>
 
   </div>
 
   <!-- =============================================== -->
-  <!-- 🔐 USUÁRIO NÃO LOGADO -->
+  <!-- 🔐 USUÁRIO NÃO LOGADO - BOTÃO ENTRAR -->
   <!-- =============================================== -->
   <div class="auth-section" *ngIf="!isLoggedIn">
     <button 
-      mat-button 
+      type="button"
       (click)="openLoginDialog()"
-      class="login-btn"
+      class="auth-button primary login-btn header-login-btn"
     >
-      <mat-icon>login</mat-icon>
+      <svg viewBox="0 0 24 24" width="18" height="18">
+        <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z" fill="currentColor"/>
+      </svg>
       <span *ngIf="!isMobile()">Entrar</span>
     </button>
   </div>
@@ -243,15 +270,19 @@
   <!-- 📱 MOBILE MENU BUTTON -->
   <!-- =============================================== -->
   <button 
-    mat-icon-button 
-    class="mobile-menu-btn"
+    class="icon-button mobile-menu-btn"
     (click)="toggleMobileMenu()"
     *ngIf="isMobile()"
   >
-    <mat-icon>{{ isMobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+    <svg viewBox="0 0 24 24" width="20" height="20" *ngIf="!isMobileMenuOpen">
+      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/>
+    </svg>
+    <svg viewBox="0 0 24 24" width="20" height="20" *ngIf="isMobileMenuOpen">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/>
+    </svg>
   </button>
 
-</mat-toolbar>
+</header>
 
 <!-- =============================================== -->
 <!-- 📱 MOBILE NAVIGATION OVERLAY -->
@@ -260,7 +291,7 @@
   class="mobile-nav-overlay" 
   [class.open]="isMobileMenuOpen"
   (click)="closeMobileMenu()"
-  *ngIf="isMobile()"
+  *ngIf="isMobile() && isMobileMenuOpen"
 >
   <div class="mobile-nav-content" (click)="$event.stopPropagation()">
     
@@ -282,42 +313,56 @@
       </div>
     </div>
 
-    <mat-divider *ngIf="isLoggedIn"></mat-divider>
+    <div class="mobile-divider" *ngIf="isLoggedIn"></div>
 
     <!-- Navigation Links -->
     <div class="mobile-nav-links">
-      <button mat-button (click)="navigateToHome()">
-        <mat-icon>home</mat-icon>
+      <button class="mobile-nav-button" (click)="navigateToHome(); closeMobileMenu()">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+        </svg>
         Início
       </button>
 
-      <button mat-button (click)="navigateToDashboard()" *ngIf="isLoggedIn">
-        <mat-icon>dashboard</mat-icon>
+      <button class="mobile-nav-button" (click)="navigateToDashboard(); closeMobileMenu()" *ngIf="isLoggedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
+        </svg>
         Dashboard
       </button>
 
-      <button mat-button (click)="navigateToProgress()" *ngIf="isLoggedIn">
-        <mat-icon>trending_up</mat-icon>
+      <button class="mobile-nav-button" (click)="navigateToProgress(); closeMobileMenu()" *ngIf="isLoggedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
+        </svg>
         Progresso
       </button>
 
-      <button mat-button (click)="navigateToFavorites()" *ngIf="isLoggedIn">
-        <mat-icon>favorite</mat-icon>
+      <button class="mobile-nav-button" (click)="navigateToFavorites(); closeMobileMenu()" *ngIf="isLoggedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
+        </svg>
         Favoritos
       </button>
 
-      <button mat-button (click)="openPremiumDialog()" *ngIf="isLoggedIn && !isPremium">
-        <mat-icon>diamond</mat-icon>
+      <button class="mobile-nav-button premium-mobile" (click)="openPremiumDialog(); closeMobileMenu()" *ngIf="isLoggedIn && !isPremium">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
+        </svg>
         Upgrade Premium
       </button>
 
-      <button mat-button (click)="openLoginDialog()" *ngIf="!isLoggedIn">
-        <mat-icon>login</mat-icon>
+      <button class="mobile-nav-button" (click)="openLoginDialog(); closeMobileMenu()" *ngIf="!isLoggedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z" fill="currentColor"/>
+        </svg>
         Fazer Login
       </button>
 
-      <button mat-button (click)="logout()" *ngIf="isLoggedIn">
-        <mat-icon>logout</mat-icon>
+      <button class="mobile-nav-button logout-mobile" (click)="logout(); closeMobileMenu()" *ngIf="isLoggedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" fill="currentColor"/>
+        </svg>
         Sair
       </button>
     </div>

@@ -289,15 +289,6 @@ export class LoginComponent implements OnInit {
     this.clearMessages();
   }
 
-  // ✅ NAVEGAÇÃO INTELIGENTE
-  navigateHome(): void {
-    if (this.isDialog) {
-      this.dialogRef?.close();
-    } else {
-      this.router.navigate(['/']);
-    }
-  }
-
   onNoClick(): void {
     if (this.isDialog) {
       this.dialogRef?.close();

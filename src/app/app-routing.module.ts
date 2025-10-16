@@ -7,6 +7,7 @@ import { ProgressComponent } from './pages/progress/progress.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { UpgradeComponent } from './pages/upgrade/upgrade.component'; // ✅ ADICIONAR
 import { AreaComponent } from './pages/area/area.component'; // ✅ ADICIONAR
+import { LoginComponent } from './shared/components/login/login.component'; // ✅ ADICIONAR ESTA LINHA CORRETA
 
 // Guards
 import { AuthGuard } from './core/guards/auth.guard';
@@ -27,11 +28,10 @@ const routes: Routes = [
   // ===============================================
   { 
     path: 'login', 
-    loadComponent: () => import('./shared/components/login/login.component').then(c => c.LoginComponent),
-    canActivate: [GuestGuard],
+    component: LoginComponent,
     data: { 
       title: 'Login - BuzzDeveloper',
-      description: 'Acesse sua conta na BuzzDeveloper'
+      description: 'Faça login para acessar sua conta'
     }
   },
 
@@ -99,16 +99,6 @@ const routes: Routes = [
     // Nota: Não precisa de guard, qualquer um pode ver a página de upgrade
   },
 
-  // Exemplo de rota premium (descomente quando criar conteúdo premium)
-  // { 
-  //   path: 'premium/advanced-analytics', 
-  //   loadComponent: () => import('./pages/premium/analytics/analytics.component').then(c => c.AdvancedAnalyticsComponent),
-  //   canActivate: [AuthGuard, PremiumGuard]
-  // },
-
-  // ===============================================
-  // 🔄 REDIRECTS E WILDCARDS
-  // ===============================================
   { 
     path: 'home', 
     redirectTo: '', 

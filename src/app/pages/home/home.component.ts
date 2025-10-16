@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../../core/services/auth.service'; // ✅ ADICIONAR
 
 interface AreaData {
   name: string;
@@ -81,6 +82,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private http: HttpClient,
+    private authService: AuthService, // ✅ ADICIONAR
     private snackBar?: MatSnackBar // ✅ OPCIONAL
   ) {}
 
@@ -253,29 +255,75 @@ export class HomeComponent implements OnInit {
 
   // ✅ MÉTODO CORRIGIDO PARA INICIAR TESTE GRÁTIS
   startFreeTrial(): void {
-    console.log('🎯 Iniciando teste grátis...');
-    
-    // ✅ NAVEGAR PARA QUIZ MISTO (sem parâmetros específicos)
+  console.log('🎯 Iniciando teste grátis...');
+  
+  // ✅ TESTE DE DIAGNÓSTICO
+  const isAuth = this.authService.isAuthenticated();
+  console.log('🔍 AuthService.isAuthenticated():', isAuth);
+  console.log('🔍 AuthService objeto:', this.authService);
+  
+  // ✅ TESTE FORÇADO - IGNORAR AUTENTICAÇÃO TEMPORARIAMENTE
+  if (true) { // FORÇAR SEMPRE TRUE PARA TESTE
+    console.log('✅ Navegando diretamente para quiz...');
     this.router.navigate(['/quiz'], {
       queryParams: {
         mode: 'mixed',
         type: 'free-trial',
-        limit: 10 // Limite para teste grátis
+        limit: 10
       }
     });
+    return;
+  }
+  
+    // ✅ VERIFICAR AUTENTICAÇÃO
+    if (this.authService.isAuthenticated()) {
+      // Usuário logado - vai direto para quiz
+      this.router.navigate(['/quiz'], {
+        queryParams: {
+          mode: 'mixed',
+          type: 'free-trial',
+          limit: 10
+        }
+      });
+    } else {
+      // ✅ USUÁRIO NÃO LOGADO - IR PARA LOGIN
+      this.showSuccessMessage('Redirecionando para login...');
+      
+      setTimeout(() => {
+        this.router.navigate(['/login'], {
+          queryParams: {
+            returnUrl: '/quiz',
+            mode: 'mixed',
+            type: 'free-trial'
+          }
+        });
+      }, 500);
+    }
   }
 
   // ✅ MÉTODO PARA IR DIRETAMENTE AO DASHBOARD
   goToDashboard(): void {
     console.log('📊 Navegando para dashboard...');
-    this.router.navigate(['/dashboard']);
+    
+    // ✅ VERIFICAR AUTENTICAÇÃO
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      // ✅ USUÁRIO NÃO LOGADO - IR PARA LOGIN
+      this.showSuccessMessage('Faça login para acessar o dashboard');
+      
+      setTimeout(() => {
+        this.router.navigate(['/login'], {
+          queryParams: { returnUrl: '/dashboard' }
+        });
+      }, 500);
+    }
   }
 
   // ✅ MÉTODO PARA IR A UMA ÁREA ESPECÍFICA
   goToArea(areaName: string): void {
     console.log(`📖 Navegando para área: ${areaName}`);
     
-    // ✅ MAPEAR NOMES PARA OS ARQUIVOS CORRETOS
     const areaMapping: { [key: string]: string } = {
       'desenvolvimento': 'desenvolvimento-web',
       'portugues': 'portugues',
@@ -285,19 +333,31 @@ export class HomeComponent implements OnInit {
     
     const mappedArea = areaMapping[areaName] || areaName;
     
-    this.showSuccessMessage(`Carregando área: ${mappedArea}`);
-    
-    // ✅ NAVEGAR COM DELAY PARA FEEDBACK
-    setTimeout(() => {
-      this.router.navigate(['/area', mappedArea]);
-    }, 500);
+    // ✅ VERIFICAR AUTENTICAÇÃO
+    if (this.authService.isAuthenticated()) {
+      this.showSuccessMessage(`Carregando área: ${mappedArea}`);
+      
+      setTimeout(() => {
+        this.router.navigate(['/area', mappedArea]);
+      }, 500);
+    } else {
+      // ✅ USUÁRIO NÃO LOGADO - IR PARA LOGIN
+      this.showSuccessMessage('Faça login para acessar esta área');
+      
+      setTimeout(() => {
+        this.router.navigate(['/login'], {
+          queryParams: { returnUrl: `/area/${mappedArea}` }
+        });
+      }, 500);
+    }
   }
 
   // 🚀 MÉTODO PARA UPGRADE PRO
   upgradeToPro(): void {
-    console.log('💎 Iniciando upgrade para plano Pro...');
-    
-    // ✅ NAVEGAR PARA PÁGINA DE UPGRADE
+  console.log('💎 Iniciando upgrade para plano Pro...');
+  
+  // ✅ VERIFICAR AUTENTICAÇÃO
+  if (this.authService.isAuthenticated()) {
     this.router.navigate(['/upgrade'], {
       queryParams: {
         source: 'home-cta',
@@ -305,10 +365,18 @@ export class HomeComponent implements OnInit {
         timestamp: Date.now()
       }
     });
-    
-    // ✅ FEEDBACK VISUAL
     this.showSuccessMessage('Carregando planos premium...');
+  } else {
+    // ✅ USUÁRIO NÃO LOGADO - IR PARA LOGIN
+    this.showSuccessMessage('Faça login para ver os planos premium');
+    
+    setTimeout(() => {
+      this.router.navigate(['/login'], {
+        queryParams: { returnUrl: '/upgrade' }
+      });
+    }, 500);
   }
+}
 
   // 🆘 MÉTODO PARA CENTRAL DE AJUDA
   openHelp(): void {

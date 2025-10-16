@@ -1,21 +1,25 @@
 /* =============================================== */
-/* 🔐 LOGIN COMPONENT - CSS SEM SCROLL */
+/* 🚀 LOGIN SIMPLES - SEM ANGULAR MATERIAL */
 /* =============================================== */
 
+* {
+  box-sizing: border-box;
+}
+
 .login-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 20px;
   position: relative;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   overflow: hidden;
 }
 
 /* =============================================== */
-/* 🎨 BACKGROUND ANIMADO */
+/* 🌟 BACKGROUND DECORATIVO */
 /* =============================================== */
 
 .login-background {
@@ -32,314 +36,445 @@
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  animation: float 8s ease-in-out infinite;
+  animation: float 15s ease-in-out infinite;
 }
 
 .shape-1 {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   top: 10%;
   left: 10%;
   animation-delay: 0s;
 }
 
 .shape-2 {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   top: 60%;
   right: 15%;
-  animation-delay: 3s;
+  animation-delay: 5s;
 }
 
 .shape-3 {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   bottom: 20%;
   left: 60%;
-  animation-delay: 6s;
+  animation-delay: 10s;
 }
 
 /* =============================================== */
-/* 🏠 BOTÃO VOLTAR */
+/* 🔙 BOTÃO VOLTAR */
 /* =============================================== */
 
 .back-button {
-  position: fixed !important;
-  top: 1.5rem !important;
-  left: 1.5rem !important;
-  z-index: 1000 !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  color: #667eea !important;
-  backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  transition: all 0.3s ease !important;
-  width: 48px !important;
-  height: 48px !important;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .back-button:hover {
-  background: white !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.back-button svg {
+  flex-shrink: 0;
 }
 
 /* =============================================== */
-/* 📱 CARD PRINCIPAL - OTIMIZADO */
+/* 💎 CARD PRINCIPAL */
 /* =============================================== */
 
 .login-card {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.05);
+  padding: 40px;
   width: 100%;
   max-width: 420px;
-  max-height: 90vh;
   position: relative;
   z-index: 10;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: cardSlideIn 0.6s ease-out;
-  overflow-y: auto;
-}
-
-/* Custom scrollbar para o card */
-.login-card::-webkit-scrollbar {
-  width: 4px;
-}
-
-.login-card::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
-}
-
-.login-card::-webkit-scrollbar-thumb {
-  background: rgba(102, 126, 234, 0.3);
-  border-radius: 2px;
-}
-
-.login-card::-webkit-scrollbar-thumb:hover {
-  background: rgba(102, 126, 234, 0.5);
+  animation: cardSlideIn 0.6s ease-out 0.2s both;
 }
 
 /* =============================================== */
-/* 🎯 HEADER COMPACTO */
+/* 🎯 HEADER */
 /* =============================================== */
 
 .login-header {
   text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.logo-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
+  margin-bottom: 32px;
 }
 
 .logo {
-  font-size: 2.5rem;
-  margin-bottom: 0.3rem;
-  animation: logoGlow 3s ease-in-out infinite alternate;
+  font-size: 48px;
+  margin-bottom: 12px;
+  animation: logoFloat 3s ease-in-out infinite;
 }
 
 .brand-name {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 700;
   background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin: 0;
-  letter-spacing: -0.3px;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
 }
 
 .brand-subtitle {
-  font-size: 0.9rem;
   color: #6b7280;
-  margin: 0.3rem 0 0 0;
+  font-size: 14px;
   font-weight: 500;
+  margin: 0;
 }
 
 /* =============================================== */
-/* 📢 MENSAGENS COMPACTAS */
+/* 📢 MENSAGENS DE STATUS */
 /* =============================================== */
 
 .status-messages {
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
 }
 
-.error-message,
-.success-message {
+.message {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  gap: 12px;
+  padding: 12px 16px;
   border-radius: 10px;
-  font-size: 0.85rem;
+  font-size: 14px;
   font-weight: 500;
-  animation: messageSlide 0.3s ease-out;
+  animation: messageSlide 0.4s ease-out;
 }
 
 .error-message {
-  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  background: #fef2f2;
   color: #dc2626;
   border: 1px solid #fecaca;
 }
 
 .success-message {
-  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  background: #f0fdf4;
   color: #16a34a;
   border: 1px solid #bbf7d0;
 }
 
+.message svg {
+  flex-shrink: 0;
+}
+
 /* =============================================== */
-/* 📂 TABS COMPACTOS */
+/* 📂 TABS CUSTOMIZADOS */
 /* =============================================== */
 
-.auth-tabs {
-  margin-bottom: 1rem;
+.custom-tabs {
+  display: flex;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 32px;
+  gap: 4px;
 }
 
-.auth-tabs ::ng-deep .mat-mdc-tab-group {
-  --mdc-secondary-navigation-tab-container-height: 50px;
+.tab-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.auth-tabs ::ng-deep .mat-mdc-tab {
-  min-width: 100px !important;
-  font-weight: 600 !important;
-  font-size: 0.9rem !important;
+.tab-button.active {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.auth-tabs ::ng-deep .mat-mdc-tab-header {
-  border-bottom: 2px solid #f3f4f6 !important;
+.tab-button:hover:not(.active) {
+  color: #374151;
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.auth-tabs ::ng-deep .mdc-tab-indicator__content--underline {
-  background: linear-gradient(135deg, #667eea, #764ba2) !important;
-  height: 3px !important;
-  border-radius: 2px !important;
-}
+/* =============================================== */
+/* 📝 CONTEÚDO DOS TABS */
+/* =============================================== */
 
 .tab-content {
-  padding-top: 1rem;
-  animation: tabContentFade 0.4s ease-in-out;
+  position: relative;
+}
+
+.tab-panel {
+  animation: tabSlide 0.4s ease-out;
 }
 
 /* =============================================== */
-/* 📝 FORMULÁRIOS COMPACTOS */
+/* 📋 FORMULÁRIOS */
 /* =============================================== */
 
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 20px;
 }
 
-.full-width {
-  width: 100%;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.auth-form ::ng-deep .mat-mdc-form-field {
-  --mdc-outlined-text-field-container-shape: 10px;
-}
-
-.auth-form ::ng-deep .mdc-text-field {
-  height: 48px;
-}
-
-.auth-form ::ng-deep .mdc-notched-outline__leading,
-.auth-form ::ng-deep .mdc-notched-outline__notch,
-.auth-form ::ng-deep .mdc-notched-outline__trailing {
-  border-color: #d1d5db;
-  border-width: 1.5px;
-}
-
-.auth-form ::ng-deep .mdc-text-field--focused .mdc-notched-outline__leading,
-.auth-form ::ng-deep .mdc-text-field--focused .mdc-notched-outline__notch,
-.auth-form ::ng-deep .mdc-text-field--focused .mdc-notched-outline__trailing {
-  border-color: #667eea;
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
 }
 
 /* =============================================== */
-/* ⚙️ OPÇÕES COMPACTAS */
+/* 📝 INPUTS */
+/* =============================================== */
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px 0 44px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  color: #6b7280;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.toggle-password:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* =============================================== */
+/* ✅ CHECKBOX CUSTOMIZADO */
+/* =============================================== */
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  background: white;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-custom {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-custom::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.checkbox-label a {
+  color: #667eea;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.checkbox-label a:hover {
+  color: #5b6cdf;
+}
+
+/* =============================================== */
+/* ⚙️ OPÇÕES DO FORMULÁRIO */
 /* =============================================== */
 
 .form-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: -0.3rem 0 0.5rem 0;
-}
-
-.remember-me {
-  font-size: 0.8rem;
+  margin: -8px 0 8px 0;
 }
 
 .forgot-password {
-  font-size: 0.8rem !important;
-  color: #667eea !important;
-  text-decoration: underline !important;
-  min-width: auto !important;
-  padding: 0.3rem 0 !important;
+  background: none;
+  border: none;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.forgot-password:hover {
+  color: #5b6cdf;
 }
 
 /* =============================================== */
-/* 🔘 BOTÕES COMPACTOS */
+/* 🔘 BOTÕES */
 /* =============================================== */
 
 .auth-button {
-  height: 48px !important;
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  border-radius: 12px !important;
-  background: linear-gradient(135deg, #667eea, #764ba2) !important;
-  color: white !important;
-  border: none !important;
-  text-transform: none !important;
-  letter-spacing: 0.3px !important;
-  transition: all 0.3s ease !important;
-  margin-top: 0.5rem !important;
-}
-
-.auth-button:hover:not([disabled]) {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
-}
-
-.button-content {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
-.loading-content {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
+.auth-button.primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
 }
 
-.demo-button {
-  height: 42px !important;
-  font-size: 0.85rem !important;
-  font-weight: 500 !important;
-  border-radius: 10px !important;
-  border: 1.5px solid #667eea !important;
-  color: #667eea !important;
-  background: transparent !important;
-  text-transform: none !important;
-  margin-top: 0.5rem !important;
-  transition: all 0.3s ease !important;
+.auth-button.primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.auth-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.auth-button svg {
+  flex-shrink: 0;
 }
 
 /* =============================================== */
-/* ➖ DIVISOR COMPACTO */
+/* 🔄 SPINNER DE LOADING */
+/* =============================================== */
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* =============================================== */
+/* 🚨 MENSAGENS DE ERRO */
+/* =============================================== */
+
+.error-text {
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* =============================================== */
+/* ➖ DIVISOR */
 /* =============================================== */
 
 .divider {
   position: relative;
-  margin: 1.2rem 0 1rem 0;
+  margin: 24px 0;
   text-align: center;
 }
 
@@ -350,154 +485,60 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #d1d5db, transparent);
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
 }
 
 .divider span {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 0 0.8rem;
+  background: white;
+  padding: 0 16px;
   color: #6b7280;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 /* =============================================== */
-/* 🔄 SWITCH AUTH COMPACTO */
+/* 🔄 SWITCH AUTH */
 /* =============================================== */
 
 .switch-auth {
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 16px;
 }
 
 .switch-auth p {
   color: #6b7280;
-  font-size: 0.85rem;
-  margin-bottom: 0.3rem;
-}
-
-.switch-auth button {
-  font-weight: 600 !important;
-  text-decoration: underline !important;
-  color: #667eea !important;
-  font-size: 0.9rem !important;
-}
-
-/* =============================================== */
-/* ✅ TERMOS COMPACTOS */
-/* =============================================== */
-
-.terms-section {
-  margin-top: 0.3rem;
-}
-
-.accept-terms {
-  font-size: 0.8rem;
-  line-height: 1.3;
-}
-
-.accept-terms a {
-  color: #667eea;
-  text-decoration: underline;
+  font-size: 14px;
+  margin-bottom: 8px;
   font-weight: 500;
 }
 
-/* =============================================== */
-/* 🎯 FOOTER COMPACTO */
-/* =============================================== */
-
-.login-footer {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #f3f4f6;
-}
-
-.benefits h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #374151;
-  margin-bottom: 0.8rem;
-  text-align: center;
-}
-
-.benefits-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  color: #4b5563;
-}
-
-.benefit-item mat-icon {
-  font-size: 1rem !important;
-  width: 1rem !important;
-  height: 1rem !important;
+.switch-button {
+  background: none;
+  border: none;
   color: #667eea;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.switch-button:hover {
+  color: #5b6cdf;
 }
 
 /* =============================================== */
-/* 💡 INFO DEMO COMPACTO */
+/* 📱 TERMOS ESPECÍFICOS */
 /* =============================================== */
 
-.demo-info {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  z-index: 1000;
-  max-width: 280px;
+.terms-wrapper {
+  font-size: 13px;
+  line-height: 1.4;
 }
 
-.demo-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  gap: 0.75rem;
-  animation: demoSlideIn 0.5s ease-out 0.8s both;
-}
-
-.demo-card mat-icon {
-  color: #667eea;
-  font-size: 1.3rem !important;
-  flex-shrink: 0;
-}
-
-.demo-content h4 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #374151;
-  margin: 0 0 0.3rem 0;
-}
-
-.demo-content p {
-  font-size: 0.75rem;
+.terms-wrapper .checkbox-label {
   color: #6b7280;
-  margin: 0 0 0.5rem 0;
-  line-height: 1.3;
-}
-
-.demo-credentials {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.demo-credentials span {
-  font-size: 0.7rem;
-  color: #4b5563;
-  font-family: 'Courier New', monospace;
-  background: rgba(102, 126, 234, 0.1);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
 }
 
 /* =============================================== */
@@ -507,27 +548,27 @@
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
-    opacity: 0.06;
+    opacity: 0.08;
   }
   50% {
-    transform: translateY(-15px) rotate(180deg);
-    opacity: 0.12;
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.15;
   }
 }
 
-@keyframes logoGlow {
-  0% {
-    filter: drop-shadow(0 0 3px rgba(102, 126, 234, 0.3));
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
   }
-  100% {
-    filter: drop-shadow(0 0 8px rgba(118, 75, 162, 0.5));
+  50% {
+    transform: translateY(-3px);
   }
 }
 
 @keyframes cardSlideIn {
   0% {
     opacity: 0;
-    transform: translateY(20px) scale(0.98);
+    transform: translateY(30px) scale(0.95);
   }
   100% {
     opacity: 1;
@@ -535,7 +576,7 @@
   }
 }
 
-@keyframes tabContentFade {
+@keyframes tabSlide {
   0% {
     opacity: 0;
     transform: translateX(15px);
@@ -549,7 +590,7 @@
 @keyframes messageSlide {
   0% {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
   100% {
     opacity: 1;
@@ -557,134 +598,155 @@
   }
 }
 
-@keyframes demoSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(80px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* =============================================== */
-/* 📱 RESPONSIVE OTIMIZADO */
+/* 📱 RESPONSIVE DESIGN */
 /* =============================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .login-container {
-    padding: 0.5rem;
+    padding: 16px;
   }
 
   .login-card {
-    padding: 1.5rem 1rem;
+    padding: 32px 24px;
     border-radius: 16px;
-    max-height: 95vh;
+    max-width: 100%;
   }
 
   .brand-name {
-    font-size: 1.6rem;
+    font-size: 24px;
   }
 
   .logo {
-    font-size: 2rem;
+    font-size: 40px;
   }
 
-  .benefits-list {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
+  .custom-tabs {
+    margin-bottom: 24px;
   }
 
-  .demo-info {
-    position: static;
-    margin: 1rem auto 0 auto;
-    max-width: none;
-  }
-
-  .demo-card {
-    margin: 0;
+  .auth-form {
+    gap: 16px;
   }
 
   .form-options {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 12px;
     align-items: flex-start;
   }
+
+  .back-button {
+    top: 16px;
+    left: 16px;
+    padding: 8px 12px;
+  }
+
+  .back-button span {
+    display: none;
+  }
 }
 
-@media (max-width: 480px) {
+@media (max-height: 700px) {
   .login-card {
-    padding: 1rem 0.8rem;
-    max-height: 98vh;
+    padding: 28px 32px;
   }
 
-  .brand-name {
-    font-size: 1.4rem;
-  }
-
-  .logo {
-    font-size: 1.8rem;
-  }
-
-  .auth-button {
-    height: 44px !important;
-    font-size: 0.95rem !important;
-  }
-
-  .login-footer {
-    margin-top: 1rem;
-    padding-top: 1rem;
-  }
-
-  .benefits h3 {
-    font-size: 0.9rem;
-  }
-
-  .shape-1,
-  .shape-2,
-  .shape-3 {
-    display: none;
-  }
-}
-
-@media (max-height: 600px) {
-  .login-card {
-    max-height: 95vh;
-    padding: 1rem;
-  }
-
-  .login-footer {
-    display: none;
-  }
-
-  .demo-info {
-    display: none;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-  }
-
-  .brand-name {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-height: 500px) {
   .login-header {
-    margin-bottom: 1rem;
+    margin-bottom: 24px;
   }
 
-  .auth-tabs {
-    margin-bottom: 0.5rem;
+  .logo {
+    font-size: 36px;
+    margin-bottom: 8px;
   }
 
-  .tab-content {
-    padding-top: 0.5rem;
+  .brand-name {
+    font-size: 22px;
+  }
+
+  .custom-tabs {
+    margin-bottom: 24px;
   }
 
   .auth-form {
-    gap: 0.8rem;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .login-card {
+    padding: 24px 20px;
+  }
+
+  .form-input {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .auth-button {
+    height: 44px;
+    font-size: 14px;
+  }
+}
+
+/* =============================================== */
+/* 🌙 MODO ESCURO (OPCIONAL) */
+/* =============================================== */
+
+@media (prefers-color-scheme: dark) {
+  .login-card {
+    background: rgba(30, 30, 30, 0.95);
+    color: white;
+  }
+
+  .brand-subtitle,
+  .form-group label,
+  .checkbox-label {
+    color: #d1d5db;
+  }
+
+  .form-input {
+    background: rgba(55, 65, 81, 0.5);
+    border-color: #4b5563;
+    color: white;
+  }
+
+  .form-input::placeholder {
+    color: #9ca3af;
+  }
+
+  .custom-tabs {
+    background: rgba(55, 65, 81, 0.3);
+  }
+
+  .tab-button {
+    color: #9ca3af;
+  }
+
+  .tab-button.active {
+    background: rgba(102, 126, 234, 0.2);
+    color: #93c5fd;
+  }
+
+  .error-message {
+    background: rgba(239, 68, 68, 0.1);
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+
+  .success-message {
+    background: rgba(34, 197, 94, 0.1);
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+
+  .divider span {
+    background: rgba(30, 30, 30, 0.95);
+    color: #9ca3af;
   }
 }

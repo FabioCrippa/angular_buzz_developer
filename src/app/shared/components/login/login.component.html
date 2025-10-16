@@ -1,333 +1,311 @@
 <div class="login-container">
   
-  <!-- ✅ BACKGROUND DECORATIVO -->
+  <!-- Background Decorativo -->
   <div class="login-background">
     <div class="bg-shape shape-1"></div>
     <div class="bg-shape shape-2"></div>
     <div class="bg-shape shape-3"></div>
   </div>
 
-  <!-- ✅ BOTÃO VOLTAR -->
-  <button 
-    mat-icon-button 
-    class="back-button" 
-    (click)="navigateHome()"
-    matTooltip="Voltar à home"
-  >
-    <mat-icon>arrow_back</mat-icon>
-  </button>
-
-  <!-- ✅ CARD PRINCIPAL -->
+  <!-- Card Principal -->
   <div class="login-card">
     
-    <!-- Header do Card -->
+    <!-- Header -->
     <div class="login-header">
-      <div class="logo-section">
-        <div class="logo">🚀</div>
-        <h1 class="brand-name">Quizzfy</h1>
-        <p class="brand-subtitle">Sua plataforma de aprendizado</p>
-      </div>
+      <div class="logo">🚀</div>
+      <h1 class="brand-name">Quizzfy</h1>
+      <p class="brand-subtitle">Sua plataforma de aprendizado</p>
     </div>
 
     <!-- Mensagens de Status -->
     <div class="status-messages" *ngIf="errorMessage || successMessage">
-      <div *ngIf="errorMessage" class="error-message">
-        <mat-icon>error_outline</mat-icon>
+      <div *ngIf="errorMessage" class="message error-message">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
+        </svg>
         <span>{{ errorMessage }}</span>
       </div>
       
-      <div *ngIf="successMessage" class="success-message">
-        <mat-icon>check_circle</mat-icon>
+      <div *ngIf="successMessage" class="message success-message">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+        </svg>
         <span>{{ successMessage }}</span>
       </div>
     </div>
 
-    <!-- ✅ TABS LOGIN/REGISTER -->
-    <mat-tab-group 
-      [(selectedIndex)]="selectedTabIndex" 
-      (selectedTabChange)="onTabChanged($event.index)"
-      class="auth-tabs"
-      animationDuration="300ms"
-    >
+    <!-- Tabs Customizados -->
+    <div class="custom-tabs">
+      <button 
+        class="tab-button" 
+        [class.active]="selectedTabIndex === 0"
+        (click)="switchToLogin()"
+      >
+        Entrar
+      </button>
+      <button 
+        class="tab-button" 
+        [class.active]="selectedTabIndex === 1"
+        (click)="switchToRegister()"
+      >
+        Criar Conta
+      </button>
+    </div>
+
+    <!-- Conteúdo dos Tabs -->
+    <div class="tab-content">
       
-      <!-- =============================================== -->
-      <!-- 🔐 TAB LOGIN -->
-      <!-- =============================================== -->
-      <mat-tab label="Entrar">
-        <div class="tab-content">
+      <!-- TAB LOGIN -->
+      <div *ngIf="selectedTabIndex === 0" class="tab-panel login-panel">
+        
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="auth-form">
           
-          <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="auth-form">
-            
-            <!-- Campo Email -->
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Email</mat-label>
+          <!-- Campo Email -->
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+              </svg>
               <input 
-                matInput 
+                id="login-email"
                 type="email" 
                 formControlName="email"
                 placeholder="seu@email.com"
                 autocomplete="email"
+                class="form-input"
               >
-              <mat-icon matPrefix>email</mat-icon>
-              <mat-error>{{ getLoginErrorMessage('email') }}</mat-error>
-            </mat-form-field>
+            </div>
+            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-text">
+              {{ getLoginErrorMessage('email') }}
+            </div>
+          </div>
 
-            <!-- Campo Senha -->
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Senha</mat-label>
+          <!-- Campo Senha -->
+          <div class="form-group">
+            <label for="login-password">Senha</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
+              </svg>
               <input 
-                matInput 
+                id="login-password"
                 [type]="hideLoginPassword ? 'password' : 'text'"
                 formControlName="password"
                 placeholder="Sua senha"
                 autocomplete="current-password"
+                class="form-input"
               >
-              <mat-icon matPrefix>lock</mat-icon>
               <button 
-                mat-icon-button 
-                matSuffix 
                 type="button"
+                class="toggle-password"
                 (click)="hideLoginPassword = !hideLoginPassword"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hideLoginPassword"
               >
-                <mat-icon>{{ hideLoginPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
-              </button>
-              <mat-error>{{ getLoginErrorMessage('password') }}</mat-error>
-            </mat-form-field>
-
-            <!-- Opções Extras -->
-            <div class="form-options">
-              <mat-checkbox formControlName="rememberMe" class="remember-me">
-                Lembrar de mim
-              </mat-checkbox>
-              
-              <button type="button" mat-button class="forgot-password">
-                Esqueci minha senha
+                <svg *ngIf="hideLoginPassword" viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                </svg>
+                <svg *ngIf="!hideLoginPassword" viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z" fill="currentColor"/>
+                </svg>
               </button>
             </div>
-
-            <!-- Botão Login -->
-            <button 
-              mat-raised-button 
-              color="primary" 
-              type="submit"
-              class="auth-button"
-              [disabled]="isLoading"
-            >
-              <span *ngIf="!isLoading" class="button-content">
-                <mat-icon>login</mat-icon>
-                Entrar
-              </span>
-              
-              <div *ngIf="isLoading" class="loading-content">
-                <mat-spinner diameter="20"></mat-spinner>
-                <span>Entrando...</span>
-              </div>
-            </button>
-
-            <!-- Demo Button -->
-            <button 
-              type="button"
-              mat-stroked-button 
-              class="demo-button"
-              (click)="fillDemoCredentials()"
-              [disabled]="isLoading"
-            >
-              <mat-icon>preview</mat-icon>
-              Testar com dados demo
-            </button>
-
-          </form>
-
-          <!-- Divisor -->
-          <div class="divider">
-            <span>ou</span>
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-text">
+              {{ getLoginErrorMessage('password') }}
+            </div>
           </div>
 
-          <!-- Link para Register -->
-          <div class="switch-auth">
-            <p>Não tem uma conta?</p>
-            <button mat-button color="primary" (click)="switchToRegister()">
-              Criar conta gratuita
-            </button>
-          </div>
-
-        </div>
-      </mat-tab>
-
-      <!-- =============================================== -->
-      <!-- 📝 TAB REGISTER -->
-      <!-- =============================================== -->
-      <mat-tab label="Criar Conta">
-        <div class="tab-content">
-          
-          <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="auth-form">
+          <!-- Opções -->
+          <div class="form-options">
+            <label class="checkbox-wrapper">
+              <input type="checkbox" formControlName="rememberMe">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-label">Lembrar de mim</span>
+            </label>
             
-            <!-- Campo Nome -->
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Nome Completo</mat-label>
+            <button type="button" class="forgot-password">
+              Esqueci minha senha
+            </button>
+          </div>
+
+          <!-- Botão Login -->
+          <button 
+            type="submit"
+            class="auth-button primary"
+            [disabled]="isLoading"
+          >
+            <svg *ngIf="!isLoading" viewBox="0 0 24 24" width="18" height="18">
+              <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z" fill="currentColor"/>
+            </svg>
+            <div *ngIf="isLoading" class="spinner"></div>
+            <span>{{ isLoading ? 'Entrando...' : 'Entrar' }}</span>
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- TAB REGISTER -->
+      <div *ngIf="selectedTabIndex === 1" class="tab-panel register-panel">
+        
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="auth-form">
+          
+          <!-- Campo Nome -->
+          <div class="form-group">
+            <label for="register-name">Nome Completo</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+              </svg>
               <input 
-                matInput 
+                id="register-name"
                 type="text" 
                 formControlName="name"
                 placeholder="Seu nome completo"
                 autocomplete="name"
+                class="form-input"
               >
-              <mat-icon matPrefix>person</mat-icon>
-              <mat-error>{{ getRegisterErrorMessage('name') }}</mat-error>
-            </mat-form-field>
+            </div>
+            <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="error-text">
+              {{ getRegisterErrorMessage('name') }}
+            </div>
+          </div>
 
-            <!-- Campo Email -->
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Email</mat-label>
+          <!-- Campo Email -->
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+              </svg>
               <input 
-                matInput 
+                id="register-email"
                 type="email" 
                 formControlName="email"
                 placeholder="seu@email.com"
                 autocomplete="email"
+                class="form-input"
               >
-              <mat-icon matPrefix>email</mat-icon>
-              <mat-error>{{ getRegisterErrorMessage('email') }}</mat-error>
-            </mat-form-field>
+            </div>
+            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-text">
+              {{ getRegisterErrorMessage('email') }}
+            </div>
+          </div>
 
-            <!-- Campo Senha -->
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Senha</mat-label>
+          <!-- Campo Senha -->
+          <div class="form-group">
+            <label for="register-password">Senha</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" fill="currentColor"/>
+              </svg>
               <input 
-                matInput 
+                id="register-password"
                 [type]="hideRegisterPassword ? 'password' : 'text'"
                 formControlName="password"
                 placeholder="Mínimo 6 caracteres"
                 autocomplete="new-password"
+                class="form-input"
               >
-              <mat-icon matPrefix>lock</mat-icon>
               <button 
-                mat-icon-button 
-                matSuffix 
                 type="button"
+                class="toggle-password"
                 (click)="hideRegisterPassword = !hideRegisterPassword"
               >
-                <mat-icon>{{ hideRegisterPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                <svg *ngIf="hideRegisterPassword" viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                </svg>
+                <svg *ngIf="!hideRegisterPassword" viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z" fill="currentColor"/>
+                </svg>
               </button>
-              <mat-error>{{ getRegisterErrorMessage('password') }}</mat-error>
-            </mat-form-field>
+            </div>
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-text">
+              {{ getRegisterErrorMessage('password') }}
+            </div>
+          </div>
 
-            <!-- Campo Confirmar Senha -->
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Confirmar Senha</mat-label>
+          <!-- Campo Confirmar Senha -->
+          <div class="form-group">
+            <label for="confirm-password">Confirmar Senha</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="currentColor"/>
+              </svg>
               <input 
-                matInput 
+                id="confirm-password"
                 [type]="hideConfirmPassword ? 'password' : 'text'"
                 formControlName="confirmPassword"
                 placeholder="Digite a senha novamente"
                 autocomplete="new-password"
+                class="form-input"
               >
-              <mat-icon matPrefix>lock_outline</mat-icon>
               <button 
-                mat-icon-button 
-                matSuffix 
                 type="button"
+                class="toggle-password"
                 (click)="hideConfirmPassword = !hideConfirmPassword"
               >
-                <mat-icon>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                <svg *ngIf="hideConfirmPassword" viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="currentColor"/>
+                </svg>
+                <svg *ngIf="!hideConfirmPassword" viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z" fill="currentColor"/>
+                </svg>
               </button>
-              <mat-error>{{ getRegisterErrorMessage('confirmPassword') }}</mat-error>
-            </mat-form-field>
+            </div>
+            <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched" class="error-text">
+              {{ getRegisterErrorMessage('confirmPassword') }}
+            </div>
+          </div>
 
-            <!-- Aceitar Termos -->
-            <div class="terms-section">
-              <mat-checkbox formControlName="acceptTerms" class="accept-terms">
+          <!-- Aceitar Termos -->
+          <div class="form-group">
+            <label class="checkbox-wrapper terms-wrapper">
+              <input type="checkbox" formControlName="acceptTerms">
+              <span class="checkbox-custom"></span>
+              <span class="checkbox-label">
                 Eu concordo com os 
                 <a href="#" target="_blank">termos de uso</a> 
                 e 
                 <a href="#" target="_blank">política de privacidade</a>
-              </mat-checkbox>
-              <mat-error *ngIf="registerForm.get('acceptTerms')?.invalid && registerForm.get('acceptTerms')?.touched">
-                {{ getRegisterErrorMessage('acceptTerms') }}
-              </mat-error>
-            </div>
-
-            <!-- Botão Register -->
-            <button 
-              mat-raised-button 
-              color="primary" 
-              type="submit"
-              class="auth-button"
-              [disabled]="isLoading"
-            >
-              <span *ngIf="!isLoading" class="button-content">
-                <mat-icon>person_add</mat-icon>
-                Criar Conta
               </span>
-              
-              <div *ngIf="isLoading" class="loading-content">
-                <mat-spinner diameter="20"></mat-spinner>
-                <span>Criando conta...</span>
-              </div>
-            </button>
-
-          </form>
-
-          <!-- Divisor -->
-          <div class="divider">
-            <span>ou</span>
+            </label>
+            <div *ngIf="registerForm.get('acceptTerms')?.invalid && registerForm.get('acceptTerms')?.touched" class="error-text">
+              {{ getRegisterErrorMessage('acceptTerms') }}
+            </div>
           </div>
 
-          <!-- Link para Login -->
-          <div class="switch-auth">
-            <p>Já tem uma conta?</p>
-            <button mat-button color="primary" (click)="switchToLogin()">
-              Fazer login
-            </button>
-          </div>
+          <!-- Botão Register -->
+          <button 
+            type="submit"
+            class="auth-button primary"
+            [disabled]="isLoading"
+          >
+            <svg *ngIf="!isLoading" viewBox="0 0 24 24" width="18" height="18">
+              <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+            </svg>
+            <div *ngIf="isLoading" class="spinner"></div>
+            <span>{{ isLoading ? 'Criando conta...' : 'Criar Conta' }}</span>
+          </button>
 
+        </form>
+
+        <!-- Divisor -->
+        <div class="divider">
+          <span>ou</span>
         </div>
-      </mat-tab>
 
-    </mat-tab-group>
-
-    <!-- ✅ FOOTER DO CARD -->
-    <div class="login-footer">
-      <div class="benefits">
-        <h3>Por que se cadastrar?</h3>
-        <div class="benefits-list">
-          <div class="benefit-item">
-            <mat-icon>check_circle</mat-icon>
-            <span>Acompanhe seu progresso</span>
-          </div>
-          <div class="benefit-item">
-            <mat-icon>favorite</mat-icon>
-            <span>Salve questões favoritas</span>
-          </div>
-          <div class="benefit-item">
-            <mat-icon>trending_up</mat-icon>
-            <span>Estatísticas detalhadas</span>
-          </div>
-          <div class="benefit-item">
-            <mat-icon>stars</mat-icon>
-            <span>Conteúdo premium</span>
-          </div>
+        <!-- Link para Login -->
+        <div class="switch-auth">
+          <p>Já tem uma conta?</p>
+          <button type="button" class="switch-button" (click)="switchToLogin()">
+            Fazer login
+          </button>
         </div>
+
       </div>
+
     </div>
 
-  </div>
-
-  <!-- ✅ DEMO CREDENTIALS INFO -->
-  <div class="demo-info" *ngIf="selectedTabIndex === 0">
-    <div class="demo-card">
-      <mat-icon>info</mat-icon>
-      <div class="demo-content">
-        <h4>Testar a plataforma</h4>
-        <p>Use as credenciais demo ou qualquer email/senha válidos</p>
-        <div class="demo-credentials">
-          <span><strong>Email:</strong> demo@buzzdeveloper.com</span>
-          <span><strong>Senha:</strong> demo123</span>
-        </div>
-      </div>
-    </div>
   </div>
 
 </div>

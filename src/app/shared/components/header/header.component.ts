@@ -30,6 +30,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // Menu mobile
   isMobileMenuOpen: boolean = false;
   
+  // Menu dropdown do usuário
+  isUserMenuOpen: boolean = false;
+  
   // Notificações (placeholder para futuras features)
   notificationCount: number = 0;
 
@@ -92,10 +95,25 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   // ===============================================
-  // 🔐 AUTENTICAÇÃO
+  // 🔐 AUTENTICAÇÃO - VERSÃO CORRIGIDA
   // ===============================================
 
   openLoginDialog(): void {
+    // ✅ NAVEGAR DIRETAMENTE PARA A PÁGINA DE LOGIN
+    this.router.navigate(['/login']);
+    this.closeMobileMenu();
+    this.closeUserMenu();
+  }
+
+  // ✅ MANTER O MÉTODO PARA COMPATIBILIDADE (CASO SEJA USADO EM OUTROS LUGARES)
+  openLoginPage(): void {
+    this.router.navigate(['/login']);
+    this.closeMobileMenu();
+    this.closeUserMenu();
+  }
+
+  // ✅ MÉTODO ALTERNATIVO CASO QUEIRA ABRIR MODAL EM OUTRAS SITUAÇÕES
+  openLoginModal(): void {
     const dialogRef = this.dialog.open(LoginComponent, {
       width: '450px',
       maxWidth: '95vw',
@@ -128,6 +146,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
         panelClass: ['success-snackbar']
       }
     );
+
+    this.closeUserMenu();
   }
 
   private showWelcomeMessage(user: User): void {
@@ -170,6 +190,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.navigateToUpgrade();
       }
     });
+
+    this.closeUserMenu();
   }
 
   // ===============================================
@@ -179,6 +201,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateToHome(): void {
     this.router.navigate(['/']);
     this.closeMobileMenu();
+    this.closeUserMenu();
   }
 
   navigateToDashboard(): void {
@@ -188,6 +211,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.openLoginDialog();
     }
     this.closeMobileMenu();
+    this.closeUserMenu();
   }
 
   navigateToProfile(): void {
@@ -197,6 +221,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.openLoginDialog();
     }
     this.closeMobileMenu();
+    this.closeUserMenu();
   }
 
   navigateToProgress(): void {
@@ -206,6 +231,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.openLoginDialog();
     }
     this.closeMobileMenu();
+    this.closeUserMenu();
   }
 
   navigateToFavorites(): void {
@@ -215,11 +241,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.openLoginDialog();
     }
     this.closeMobileMenu();
+    this.closeUserMenu();
   }
 
   navigateToUpgrade(): void {
     this.router.navigate(['/upgrade']);
     this.closeMobileMenu();
+    this.closeUserMenu();
   }
 
   navigateToSettings(): void {
@@ -229,6 +257,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.openLoginDialog();
     }
     this.closeMobileMenu();
+    this.closeUserMenu();
   }
 
   // ===============================================
@@ -241,6 +270,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
+  }
+
+  // ===============================================
+  // 👤 CONTROLE DO MENU DO USUÁRIO
+  // ===============================================
+
+  toggleUserMenu(): void {
+    this.isUserMenuOpen = !this.isUserMenuOpen;
+  }
+
+  closeUserMenu(): void {
+    this.isUserMenuOpen = false;
   }
 
   // ===============================================

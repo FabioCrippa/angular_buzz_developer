@@ -2,23 +2,29 @@
 /* 🎨 HEADER COMPONENT - CLEAN & SIMPLE - FIXED */
 /* ============================================== */
 
+* {
+  box-sizing: border-box;
+}
+
 .app-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
   color: #333;
   height: 72px; /* ✅ AUMENTEI DE 64px PARA 72px */
   padding: 0 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
-  transition: box-shadow 0.2s ease;
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .app-header:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* ============================================== */
@@ -44,8 +50,8 @@
   justify-content: center;
   width: 40px; /* ✅ AUMENTEI DE 36px PARA 40px */
   height: 40px; /* ✅ AUMENTEI DE 36px PARA 40px */
-  background: #667eea;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
   transition: transform 0.2s ease;
 }
 
@@ -54,22 +60,24 @@
 }
 
 .brand-icon {
-  font-size: 22px; /* ✅ AUMENTEI DE 20px PARA 22px */
   color: white;
 }
 
 .brand-name {
   font-size: 20px; /* ✅ AUMENTEI DE 18px PARA 20px */
-  font-weight: 600;
-  color: #2d3748;
-  letter-spacing: -0.3px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 .premium-badge {
   display: flex;
   align-items: center;
   gap: 4px;
-  background: #ffd700;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
   color: #1a202c;
   padding: 6px 10px; /* ✅ AUMENTEI PADDING */
   border-radius: 12px;
@@ -77,10 +85,12 @@
   font-weight: 600;
   text-transform: uppercase;
   height: fit-content; /* ✅ ADICIONEI PARA CONTROLAR ALTURA */
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
 
-.premium-badge mat-icon {
-  font-size: 14px; /* ✅ AUMENTEI DE 12px PARA 14px */
+.premium-badge svg {
+  width: 14px;
+  height: 14px;
 }
 
 /* ============================================== */
@@ -94,31 +104,39 @@
   margin-left: 32px;
 }
 
-.desktop-nav button {
-  color: #4a5568;
-  border-radius: 6px;
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
   padding: 10px 16px; /* ✅ AUMENTEI PADDING VERTICAL */
   font-weight: 500;
-  text-transform: none;
+  font-size: 14px;
+  cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
   height: 44px; /* ✅ ALTURA FIXA PARA CONSISTÊNCIA */
+  text-decoration: none;
 }
 
-.desktop-nav button:hover {
-  background: #f7fafc;
+.nav-button:hover {
+  background: #f8fafc;
   color: #667eea;
 }
 
-.desktop-nav button.active {
+.nav-button.active {
   background: #edf2f7;
   color: #667eea;
   font-weight: 600;
 }
 
-.desktop-nav button mat-icon {
-  margin-right: 8px;
-  font-size: 18px;
+.nav-button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 /* ============================================== */
@@ -130,47 +148,83 @@
 }
 
 /* ============================================== */
-/* 🔔 NOTIFICATIONS */
+/* 🔔 NOTIFICATION BUTTON */
 /* ============================================== */
 
-.notification-btn {
-  color: #4a5568;
-  margin-right: 8px;
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #6b7280;
+  cursor: pointer;
   transition: all 0.2s ease;
-  width: 44px; /* ✅ TAMANHO FIXO */
-  height: 44px; /* ✅ TAMANHO FIXO */
+  position: relative;
 }
 
-.notification-btn:hover {
+.icon-button:hover {
+  background: #f8fafc;
   color: #667eea;
-  background: #f7fafc;
+}
+
+.notification-btn {
+  margin-right: 8px;
+}
+
+.icon-wrapper {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
 }
 
 /* ============================================== */
 /* 💎 UPGRADE BUTTON */
 /* ============================================== */
 
-.upgrade-btn {
-  background: #667eea !important;
-  color: white !important;
-  font-weight: 600;
-  text-transform: none;
+.upgrade-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  color: #1a202c;
+  border: none;
   border-radius: 8px;
-  padding: 0 20px;
-  height: 40px; /* ✅ AUMENTEI DE 36px PARA 40px */
-  margin-right: 16px;
+  padding: 0 16px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
   transition: all 0.2s ease;
+  margin-right: 12px;
 }
 
-.upgrade-btn:hover {
-  background: #5a67d8 !important;
+.upgrade-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
-.upgrade-btn mat-icon {
-  margin-right: 8px;
-  font-size: 16px;
+.upgrade-button svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* ============================================== */
@@ -180,15 +234,7 @@
 .user-section {
   display: flex;
   align-items: center;
-}
-
-/* ============================================== */
-/* 👤 USER SECTION - LAYOUT HORIZONTAL PERFEITO */
-/* ============================================== */
-
-.user-section {
-  display: flex;
-  align-items: center;
+  position: relative;
 }
 
 .user-button {
@@ -196,13 +242,13 @@
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  border-radius: 8px;
-  background: #f7fafc;
-  transition: all 0.2s ease;
-  color: #2d3748;
-  text-transform: none;
-  min-height: 48px; /* ✅ ALTURA ADEQUADA */
+  border-radius: 10px;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px; /* ✅ ALTURA ADEQUADA */
 }
 
 .user-button:hover {
@@ -225,7 +271,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 0; /* ✅ SEM MARGIN-TOP */
 }
 
 .user-avatar.premium-avatar {
@@ -259,13 +304,13 @@
 }
 
 /* ============================================== */
-/* 📊 USER INFO - LAYOUT HORIZONTAL */
+/* 📊 USER INFO */
 /* ============================================== */
 
 .user-info {
-  display: flex; /* ✅ HORIZONTAL */
-  align-items: center; /* ✅ CENTRALIZADO */
-  gap: 10px; /* ✅ ESPAÇAMENTO */
+  display: flex;
+  align-items: center;
+  gap: 10px;
   min-width: 0;
   height: 36px; /* ✅ ALTURA IGUAL AO AVATAR */
 }
@@ -280,8 +325,6 @@
   text-overflow: ellipsis;
   color: #2d3748;
   margin: 0;
-  padding: 0;
-  flex-shrink: 0;
 }
 
 .user-stats {
@@ -290,9 +333,6 @@
   gap: 8px;
   font-size: 12px;
   color: #718096;
-  height: 36px;
-  margin: 0;
-  padding: 0;
 }
 
 .level {
@@ -319,13 +359,12 @@
 }
 
 .dropdown-arrow {
-  font-size: 18px;
   color: #a0aec0;
   transition: transform 0.2s ease;
   margin-left: 4px; /* ✅ PEQUENO ESPAÇAMENTO */
 }
 
-.user-button[aria-expanded="true"] .dropdown-arrow {
+.user-button:hover .dropdown-arrow {
   transform: rotate(180deg);
 }
 
@@ -334,95 +373,38 @@
 /* ============================================== */
 
 .user-dropdown-menu {
-  margin-top: 8px;
-  border-radius: 8px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   border: 1px solid #e2e8f0;
-  overflow: visible !important; /* ✅ FORÇAR SEM SCROLL */
   min-width: 280px;
-  max-width: 320px; /* ✅ LARGURA MÁXIMA */
-  width: auto;
-  height: auto !important;
-  max-height: none !important; /* ✅ REMOVER LIMITE DE ALTURA */
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  visibility: hidden;
+  transition: all 0.2s ease;
 }
 
-/* ✅ OVERRIDE COMPLETO DOS ESTILOS DO MATERIAL DESKTOP */
-@media (min-width: 769px) {
-  .user-dropdown-menu .mat-mdc-menu-content {
-    overflow: visible !important; /* ✅ SEM SCROLL VERTICAL E HORIZONTAL */
-    overflow-x: visible !important; /* ✅ FORÇAR SEM SCROLL HORIZONTAL */
-    overflow-y: visible !important; /* ✅ FORÇAR SEM SCROLL VERTICAL */
-    max-height: none !important;
-    max-width: none !important; /* ✅ SEM LIMITE DE LARGURA */
-    height: auto !important;
-    width: auto !important; /* ✅ LARGURA AUTOMÁTICA */
-    padding: 0 !important;
-    display: block !important;
-  }
-
-  .user-dropdown-menu .mat-mdc-menu-panel {
-    overflow: visible !important;
-    overflow-x: visible !important; /* ✅ SEM SCROLL HORIZONTAL */
-    overflow-y: visible !important; /* ✅ SEM SCROLL VERTICAL */
-    max-height: none !important;
-    max-width: none !important; /* ✅ SEM LIMITE DE LARGURA */
-    height: auto !important;
-    width: auto !important; /* ✅ LARGURA AUTOMÁTICA */
-    transform-origin: top center !important;
-  }
-
-  /* ✅ FORÇAR CDK OVERLAY A NÃO TER SCROLL */
-  .cdk-overlay-pane:has(.user-dropdown-menu) {
-    overflow: visible !important;
-    overflow-x: visible !important; /* ✅ SEM SCROLL HORIZONTAL */
-    overflow-y: visible !important; /* ✅ SEM SCROLL VERTICAL */
-    max-height: none !important;
-    max-width: none !important; /* ✅ SEM LIMITE DE LARGURA */
-    height: auto !important;
-    width: auto !important; /* ✅ LARGURA AUTOMÁTICA */
-  }
-
-  /* ✅ REMOVER SCROLLBAR COMPLETAMENTE NO DESKTOP */
-  .user-dropdown-menu,
-  .user-dropdown-menu *,
-  .user-dropdown-menu .mat-mdc-menu-content,
-  .user-dropdown-menu .mat-mdc-menu-panel {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-    overflow-x: visible !important; /* ✅ SEM SCROLL HORIZONTAL */
-    overflow-y: visible !important; /* ✅ SEM SCROLL VERTICAL */
-  }
-
-  .user-dropdown-menu::-webkit-scrollbar,
-  .user-dropdown-menu *::-webkit-scrollbar {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
-  }
-
-  /* ✅ REMOVER SCROLLBAR HORIZONTAL ESPECÍFICO */
-  .user-dropdown-menu::-webkit-scrollbar:horizontal,
-  .user-dropdown-menu *::-webkit-scrollbar:horizontal {
-    display: none !important;
-    height: 0 !important;
-  }
+.user-dropdown-menu.open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
 }
 
 .menu-header {
-  padding: 16px !important;
-  background: #f7fafc;
+  padding: 20px;
+  background: #f8fafc;
   border-bottom: 1px solid #e2e8f0;
-  width: 100%; /* ✅ LARGURA TOTAL */
-  box-sizing: border-box; /* ✅ INCLUIR PADDING NA LARGURA */
-  overflow: hidden; /* ✅ SEM SCROLL NO HEADER */
+  border-radius: 12px 12px 0 0;
 }
 
 .menu-user-info {
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 100%; /* ✅ LARGURA TOTAL */
-  box-sizing: border-box; /* ✅ INCLUIR PADDING NA LARGURA */
 }
 
 .menu-avatar {
@@ -453,7 +435,6 @@
 .menu-user-details {
   flex: 1; /* ✅ OCUPAR ESPAÇO RESTANTE */
   min-width: 0; /* ✅ PERMITIR SHRINK */
-  overflow: hidden; /* ✅ SEM SCROLL */
 }
 
 .menu-user-details strong {
@@ -462,28 +443,25 @@
   font-weight: 600;
   margin-bottom: 2px;
   color: #2d3748;
-  line-height: 1.2;
-  white-space: nowrap; /* ✅ SEM QUEBRA DE LINHA */
-  overflow: hidden; /* ✅ SEM SCROLL */
-  text-overflow: ellipsis; /* ✅ RETICÊNCIAS SE MUITO LONGO */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-email {
   display: block;
   font-size: 12px;
   color: #718096;
-  margin-bottom: 3px;
-  line-height: 1.2;
-  white-space: nowrap; /* ✅ SEM QUEBRA DE LINHA */
-  overflow: hidden; /* ✅ SEM SCROLL */
-  text-overflow: ellipsis; /* ✅ RETICÊNCIAS SE MUITO LONGO */
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .user-status {
   display: flex;
   align-items: center;
   gap: 6px;
-  overflow: hidden; /* ✅ SEM SCROLL */
 }
 
 .level-badge {
@@ -493,147 +471,416 @@
   border-radius: 3px;
   font-size: 10px;
   font-weight: 500;
-  line-height: 1;
-  white-space: nowrap; /* ✅ SEM QUEBRA DE LINHA */
-  flex-shrink: 0; /* ✅ NÃO ENCOLHER */
+  white-space: nowrap;
 }
 
 .premium-status {
   color: #d69e2e;
   font-size: 10px;
   font-weight: 600;
-  line-height: 1;
-  white-space: nowrap; /* ✅ SEM QUEBRA DE LINHA */
-  flex-shrink: 0; /* ✅ NÃO ENCOLHER */
+  white-space: nowrap;
 }
 
 .free-status {
   color: #718096;
   font-size: 10px;
-  line-height: 1;
-  white-space: nowrap; /* ✅ SEM QUEBRA DE LINHA */
-  flex-shrink: 0; /* ✅ NÃO ENCOLHER */
+  white-space: nowrap;
 }
 
-/* Menu Items - SEM SCROLL HORIZONTAL */
-.user-dropdown-menu .mat-mdc-menu-item {
-  height: 42px !important;
-  padding: 0 16px !important;
-  transition: background-color 0.2s ease;
+.menu-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
   color: #2d3748;
-  overflow: visible !important; /* ✅ SEM SCROLL */
-  line-height: 1.2 !important;
-  min-height: 42px !important;
-  max-height: 42px !important;
-  width: 100% !important; /* ✅ LARGURA TOTAL */
-  box-sizing: border-box !important; /* ✅ INCLUIR PADDING NA LARGURA */
-  white-space: nowrap !important; /* ✅ SEM QUEBRA DE LINHA */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
 }
 
-.user-dropdown-menu .mat-mdc-menu-item:hover {
-  background: #f7fafc !important;
+.menu-item:hover {
+  background: #f8fafc;
 }
 
-.user-dropdown-menu .mat-mdc-menu-item mat-icon {
-  margin-right: 10px;
+.menu-item svg {
+  width: 18px;
+  height: 18px;
   color: #4a5568;
-  font-size: 18px;
-  flex-shrink: 0; /* ✅ NÃO ENCOLHER ÍCONES */
-}
-
-.user-dropdown-menu .mat-mdc-menu-item .mat-mdc-menu-item-text {
-  font-size: 14px !important;
-  line-height: 1.2 !important;
-  white-space: nowrap !important; /* ✅ SEM QUEBRA DE LINHA */
-  overflow: hidden !important; /* ✅ SEM SCROLL */
-  text-overflow: ellipsis !important; /* ✅ RETICÊNCIAS SE MUITO LONGO */
+  flex-shrink: 0;
 }
 
 .premium-menu-item {
-  background: #fffbf0 !important;
+  background: #fffbf0;
   border: 1px solid #fed7aa;
-  margin: 3px !important;
-  border-radius: 4px;
-  color: #c05621 !important;
-  height: 40px !important;
-  overflow: hidden !important; /* ✅ SEM SCROLL */
+  margin: 4px 12px;
+  border-radius: 6px;
+  color: #c05621;
+  position: relative;
 }
 
 .premium-menu-item:hover {
-  background: #fef3e2 !important;
+  background: #fef3e2;
 }
 
 .premium-menu-item .premium-icon {
-  color: #d69e2e !important;
+  color: #d69e2e;
 }
 
 .premium-menu-item .upgrade-arrow {
-  color: #d69e2e !important;
+  color: #d69e2e;
   margin-left: auto;
+  width: 16px;
+  height: 16px;
 }
 
 .logout-item {
-  color: #e53e3e !important;
-  border-top: 1px solid #fed7d7 !important;
-  margin-top: 2px !important;
-  overflow: hidden !important; /* ✅ SEM SCROLL */
+  color: #e53e3e;
+  border-top: 1px solid #fed7d7;
+  border-radius: 0 0 12px 12px;
 }
 
 .logout-item:hover {
-  background: #fef5f5 !important;
+  background: #fef5f5;
 }
 
-.logout-item mat-icon {
-  color: #e53e3e !important;
-}
-
-/* ============================================== */
-/* 🎯 FORÇA POSICIONAMENTO CORRETO DO MENU */
-/* ============================================== */
-
-@media (min-width: 769px) {
-  /* ✅ GARANTIR QUE O MENU APAREÇA COMPLETAMENTE */
-  .cdk-overlay-pane {
-    position: absolute !important;
-    overflow: visible !important; /* ✅ SEM SCROLL */
-  }
-  
-  /* ✅ AJUSTAR POSIÇÃO SE NECESSÁRIO */
-  .user-dropdown-menu {
-    position: relative !important;
-    top: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    overflow: visible !important; /* ✅ SEM SCROLL */
-  }
-  
-  /* ✅ FORÇAR ALTURA E LARGURA AUTOMÁTICA */
-  .mat-mdc-menu-content {
-    min-height: auto !important;
-    max-height: none !important;
-    min-width: auto !important;
-    max-width: none !important;
-    overflow: visible !important; /* ✅ SEM SCROLL */
-  }
+.logout-item svg {
+  color: #e53e3e;
 }
 
 /* ============================================== */
-/* 📱 MOBILE - MANTER SCROLL SÓ SE NECESSÁRIO */
+/* 🔐 AUTH SECTION - BOTÃO ENTRAR */
+/* ============================================== */
+
+.auth-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.header-login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.header-login-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ============================================== */
+/* 📱 MOBILE MENU BUTTON */
+/* ============================================== */
+
+.mobile-menu-btn {
+  margin-left: 12px;
+}
+
+/* ============================================== */
+/* 📱 MOBILE NAVIGATION OVERLAY */
+/* ============================================== */
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 85vw;
+  height: 100%;
+  background: white;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-nav-overlay.open .mobile-nav-content {
+  transform: translateX(0);
+}
+
+.mobile-user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mobile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.mobile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-avatar span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.mobile-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.mobile-user-info strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 4px;
+}
+
+.mobile-user-info span {
+  font-size: 12px;
+  color: #718096;
+}
+
+.mobile-divider {
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.mobile-nav-links {
+  padding: 16px 0;
+}
+
+.mobile-nav-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  background: transparent;
+  color: #374151;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.mobile-nav-button:hover {
+  background: #f8fafc;
+}
+
+.mobile-nav-button svg {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.mobile-nav-button.premium-mobile {
+  color: #c05621;
+  background: #fffbf0;
+  margin: 8px 16px;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.mobile-nav-button.premium-mobile svg {
+  color: #d69e2e;
+}
+
+.mobile-nav-button.logout-mobile {
+  color: #e53e3e;
+  border-top: 1px solid #fed7d7;
+  margin-top: 16px;
+}
+
+.mobile-nav-button.logout-mobile svg {
+  color: #e53e3e;
+}
+
+/* ============================================== */
+/* 📱 RESPONSIVE DESIGN */
 /* ============================================== */
 
 @media (max-width: 768px) {
-  .user-dropdown-menu {
-    max-height: 80vh; /* ✅ LIMITE NO MOBILE */
-    max-width: 100vw; /* ✅ LARGURA MÁXIMA NO MOBILE */
-    overflow-y: auto; /* ✅ SCROLL VERTICAL SÓ NO MOBILE */
-    overflow-x: hidden; /* ✅ SEM SCROLL HORIZONTAL NO MOBILE */
+  .app-header {
+    padding: 0 16px;
+    height: 64px;
   }
-  
-  .user-dropdown-menu .mat-mdc-menu-content {
-    max-height: 80vh !important;
-    max-width: 100vw !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important; /* ✅ SEM SCROLL HORIZONTAL NO MOBILE */
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .header-login-btn {
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .header-login-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0 12px;
+  }
+
+  .brand-section {
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .header-login-btn span {
+    display: none;
+  }
+
+  .header-login-btn {
+    width: 36px;
+    padding: 0;
+  }
+
+  .premium-badge span {
+    display: none;
+  }
+
+  .premium-badge {
+    padding: 6px;
+  }
+}
+
+/* ============================================== */
+/* 🌙 DARK MODE SUPPORT */
+/* ============================================== */
+
+@media (prefers-color-scheme: dark) {
+  .app-header {
+    background: rgba(30, 30, 30, 0.95);
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-button {
+    color: #d1d5db;
+  }
+
+  .nav-button:hover,
+  .nav-button.active {
+    background: rgba(55, 65, 81, 0.5);
+    color: #93c5fd;
+  }
+
+  .icon-button {
+    color: #d1d5db;
+  }
+
+  .icon-button:hover {
+    background: rgba(55, 65, 81, 0.5);
+    color: #93c5fd;
+  }
+
+  .user-button {
+    background: rgba(55, 65, 81, 0.3);
+    border-color: rgba(75, 85, 99, 0.5);
+    color: white;
+  }
+
+  .user-dropdown-menu {
+    background: #1f2937;
+    border-color: #374151;
+  }
+
+  .menu-header {
+    background: #111827;
+    border-bottom-color: #374151;
+  }
+
+  .menu-item {
+    color: #d1d5db;
+  }
+
+  .menu-item:hover {
+    background: #374151;
+  }
+
+  .mobile-nav-content {
+    background: #1f2937;
+  }
+
+  .mobile-nav-button {
+    color: #d1d5db;
+  }
+
+  .mobile-nav-button:hover {
+    background: #374151;
   }
 }
