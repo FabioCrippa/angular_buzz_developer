@@ -1,0 +1,18 @@
+<div class="help-container">
+  <button class="close-btn" (click)="closeHelp()" aria-label="Fechar Central de Ajuda">&times;</button>
+  <h2>Central de Ajuda</h2>
+  <p>Veja abaixo as dúvidas frequentes. Se não encontrar sua resposta, fale conosco!</p>
+
+  <div class="faq-list">
+    <div class="faq-item" *ngFor="let faq of faqs">
+      <h4>{{ faq.question }}</h4>
+      <p [innerHTML]="faq.answer"></p>
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <button class="contact-btn" (click)="openEmail()">
+      Não encontrou sua dúvida? Fale conosco por e-mail.
+    </button>
+  </div>
+</div>

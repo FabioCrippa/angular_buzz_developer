@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
   isLoading: boolean = true;
   
   // ✅ DADOS DINÂMICOS (OBRIGATÓRIOS PARA O TEMPLATE)
-  totalQuestions: number = 1500;
+  totalQuestions: number = 2500;
   totalAreas: number = 4;
   successRate: number = 92;
   
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
     },
     {
       question: 'As questões são atualizadas?',
-      answer: 'Sim! Nossa base tem <strong>mais de 1.500 questões</strong> constantemente atualizadas com base nos editais mais recentes e tendências do mercado tech.'
+      answer: 'Sim! Nossa base tem <strong>mais de 2.500+ questões</strong> constantemente atualizadas com base nos editais mais recentes e tendências do mercado tech.'
     },
     {
       question: 'Posso cancelar quando quiser?',
@@ -129,117 +129,159 @@ export class HomeComponent implements OnInit {
 
   // ✅ CONSTRUIR DADOS DAS ÁREAS COM CONFIGURAÇÃO MANUAL
   private buildAreasFromData(indexData: IndexData): AreaData[] {
-    const areaConfigs = {
-      'desenvolvimento-web': {
+    return [
+      {
+        name: 'desenvolvimento',
         displayName: 'Desenvolvimento Web',
-        icon: '',
-        description: 'Entrevistas técnicas e vagas tech',
-        features: ['React & Angular', 'JavaScript/TypeScript', 'CSS & HTML5', 'Node.js & DevOps'],
-        badge: 'Tech Jobs',
-        badgeClass: 'advanced'
+        icon: '💻',
+        description: 'Front-end, Metodologias, Design, Segurança, Entrevista Técnica',
+        questionCount:
+          (indexData.stats.byArea['desenvolvimento-web'] || 0) +
+          (indexData.stats.byArea['metodologias'] || 0) +
+          (indexData.stats.byArea['design'] || 0) +
+          (indexData.stats.byArea['seguranca'] || 0) +
+          (indexData.stats.byArea['entrevista'] || 0),
+        subjects: [
+          ...(indexData.structure['desenvolvimento-web'] || []),
+          ...(indexData.structure['metodologias'] || []),
+          ...(indexData.structure['design'] || []),
+          ...(indexData.structure['seguranca'] || []),
+          ...(indexData.structure['entrevista'] || [])
+        ],
+        features: [
+          'Metodologias Ágeis',
+          'Design UI/UX',
+          'Segurança Web',
+          'Entrevista Técnica'
+        ],
+        badge: 'Tech',
+        badgeClass: 'tech-badge'
       },
-      'portugues': {
+      {
+        name: 'portugues',
         displayName: 'Língua Portuguesa',
-        icon: '',
-        description: 'Base fundamental dos concursos',
-        features: ['Gramática completa', 'Interpretação de textos', 'Redação oficial', 'Questões CESPE/FCC'],
+        icon: '📚',
+        description: 'Gramática, interpretação e redação para concursos',
+        questionCount: indexData.stats.byArea['portugues'] || 0,
+        subjects: indexData.structure['portugues'] || [],
+        features: [
+          'Gramática completa',
+          'Interpretação de textos',
+          'Redação oficial'
+        ],
         badge: 'Concursos',
-        badgeClass: 'fundamental'
+        badgeClass: 'concursos-badge'
       },
-      'matematica': {
-        displayName: 'Matemática & R.L.',
-        icon: '',
-        description: 'Raciocínio lógico essencial',
-        features: ['Raciocínio lógico', 'Matemática básica', 'Porcentagem e juros', 'Estatística aplicada'],
-        badge: 'Diferencial',
-        badgeClass: 'intermediate'
+      {
+        name: 'matematica',
+        displayName: 'Matemática & Raciocínio Lógico',
+        icon: '🧮',
+        description: 'Matemática básica, avançada e raciocínio lógico',
+        questionCount: indexData.stats.byArea['matematica'] || 0,
+        subjects: indexData.structure['matematica'] || [],
+        features: [
+          'Matemática básica',
+          'Matemática avançada',
+          'Raciocínio lógico'
+        ],
+        badge: 'Concursos',
+        badgeClass: 'concursos-badge'
       },
-      'informatica': {
+      {
+        name: 'informatica',
         displayName: 'Informática',
-        icon: '',
-        description: 'Tecnologia em crescimento',
-        features: ['Windows 10/11', 'Office 365 completo', 'Internet e segurança', 'Conceitos de TI'],
-        badge: 'Em Alta',
-        badgeClass: 'advanced'
+        icon: '🖥️',
+        description: 'Windows, Office, TI e atualidades tecnológicas',
+        questionCount: indexData.stats.byArea['informatica'] || 0,
+        subjects: indexData.structure['informatica'] || [],
+        features: [
+          'Windows e Office',
+          'Conceitos de TI',
+          'Atualidades tecnológicas'
+        ],
+        badge: 'Concursos',
+        badgeClass: 'concursos-badge'
       }
-    };
-
-    return Object.entries(indexData.stats.byArea).map(([areaKey, questionCount]) => {
-      const config = areaConfigs[areaKey as keyof typeof areaConfigs];
-      const subjects = indexData.structure[areaKey] || [];
-      
-      return {
-        name: areaKey,
-        displayName: config?.displayName || this.capitalizeFirst(areaKey),
-        questionCount: questionCount as number,
-        subjects,
-        icon: config?.icon || '',
-        description: config?.description || 'Área de estudo importante',
-        features: config?.features || ['Questões atualizadas', 'Explicações detalhadas'],
-        badge: config?.badge || 'Disponível',
-        badgeClass: config?.badgeClass || 'basic'
-      };
-    });
+    ];
   }
 
   // ✅ DADOS DE FALLBACK CASO A API FALHE
   private setupFallbackData() {
     console.log('🔄 Usando dados de fallback');
-    
-    this.totalQuestions = 1500;
+
+    this.totalQuestions = 2500;
     this.totalAreas = 4;
     this.successRate = 92;
     
+    // Corrija o array para conter só as áreas principais:
     this.areas = [
       {
-        name: 'desenvolvimento-web',
+        name: 'desenvolvimento',
         displayName: 'Desenvolvimento Web',
-        questionCount: 558,
-        subjects: ['React', 'Angular', 'JavaScript', 'TypeScript'],
         icon: '💻',
-        description: 'Entrevistas técnicas e vagas tech',
-        features: ['⚛️ React & Angular', '🟨 JavaScript/TypeScript', '🎨 CSS & HTML5', '🔧 Node.js & DevOps'],
-        badge: 'Tech Jobs',
-        badgeClass: 'advanced'
+        description: 'React, Angular, JavaScript, Metodologias, Design, Segurança e Entrevista Técnica',
+        questionCount: 500,
+        subjects: ['React', 'Angular', 'JavaScript', 'Metodologias', 'Design', 'Segurança', 'Entrevista'],
+        features: [
+          'Metodologias Ágeis',
+          'Design UI/UX',
+          'Segurança Web',
+          'Entrevista Técnica'
+        ],
+        badge: 'Tech',
+        badgeClass: 'tech-badge'
       },
       {
         name: 'portugues',
         displayName: 'Língua Portuguesa',
-        questionCount: 428,
-        subjects: ['Gramática', 'Interpretação', 'Redação'],
         icon: '📚',
-        description: 'Base fundamental dos concursos',
-        features: ['✏️ Gramática completa', '📖 Interpretação de textos', '📝 Redação oficial', '🏛️ Questões CESPE/FCC'],
+        description: 'Gramática, interpretação e redação para concursos',
+        questionCount: 400,
+        subjects: ['Gramática', 'Interpretação', 'Redação'],
+        features: [
+          'Gramática completa',
+          'Interpretação de textos',
+          'Redação oficial'
+        ],
         badge: 'Concursos',
-        badgeClass: 'fundamental'
+        badgeClass: 'concursos-badge'
       },
       {
         name: 'matematica',
-        displayName: 'Matemática & R.L.',
-        questionCount: 312,
-        subjects: ['Raciocínio Lógico', 'Matemática Básica'],
+        displayName: 'Matemática & Raciocínio Lógico',
         icon: '🧮',
-        description: 'Raciocínio lógico essencial',
-        features: ['🧠 Raciocínio lógico', '📊 Matemática básica', '💰 Porcentagem e juros', '📈 Estatística aplicada'],
-        badge: 'Diferencial',
-        badgeClass: 'intermediate'
+        description: 'Matemática básica, avançada e raciocínio lógico',
+        questionCount: 350,
+        subjects: ['Matemática', 'Raciocínio Lógico'],
+        features: [
+          'Matemática básica',
+          'Matemática avançada',
+          'Raciocínio lógico'
+        ],
+        badge: 'Concursos',
+        badgeClass: 'concursos-badge'
       },
       {
         name: 'informatica',
         displayName: 'Informática',
-        questionCount: 202,
-        subjects: ['Windows', 'Office', 'Hardware'],
         icon: '🖥️',
-        description: 'Tecnologia em crescimento',
-        features: ['🪟 Windows 10/11', '📊 Office 365 completo', '🌐 Internet e segurança', '🔒 Conceitos de TI'],
-        badge: 'Em Alta',
-        badgeClass: 'advanced'
+        description: 'Windows, Office, TI e atualidades tecnológicas',
+        questionCount: 250,
+        subjects: ['Windows', 'Office', 'TI'],
+        features: [
+          'Windows e Office',
+          'Conceitos de TI',
+          'Atualidades tecnológicas'
+        ],
+        badge: 'Concursos',
+        badgeClass: 'concursos-badge'
       }
     ];
   }
 
   // ✅ MÉTODOS DE NAVEGAÇÃO (USADOS NO TEMPLATE)
   goToQuizArea(area: string) {
+    this.router.navigate(['/quiz', area]);
     console.log(`🎯 Navegando para área do quiz: ${area}`);
     
     const areaRoutes: { [key: string]: string } = {
@@ -256,6 +298,7 @@ export class HomeComponent implements OnInit {
   // ✅ MÉTODO CORRIGIDO PARA INICIAR TESTE GRÁTIS
   startFreeTrial(): void {
   console.log('🎯 Iniciando teste grátis...');
+  this.router.navigate(['/quiz']);
   
   // ✅ TESTE DE DIAGNÓSTICO
   const isAuth = this.authService.isAuthenticated();
@@ -303,6 +346,7 @@ export class HomeComponent implements OnInit {
 
   // ✅ MÉTODO PARA IR DIRETAMENTE AO DASHBOARD
   goToDashboard(): void {
+    this.router.navigate(['/dashboard']);
     console.log('📊 Navegando para dashboard...');
     
     // ✅ VERIFICAR AUTENTICAÇÃO
@@ -322,6 +366,7 @@ export class HomeComponent implements OnInit {
 
   // ✅ MÉTODO PARA IR A UMA ÁREA ESPECÍFICA
   goToArea(areaName: string): void {
+    this.router.navigate(['/area', areaName]);
     console.log(`📖 Navegando para área: ${areaName}`);
     
     const areaMapping: { [key: string]: string } = {
@@ -354,7 +399,8 @@ export class HomeComponent implements OnInit {
 
   // 🚀 MÉTODO PARA UPGRADE PRO
   upgradeToPro(): void {
-  console.log('💎 Iniciando upgrade para plano Pro...');
+    this.router.navigate(['/upgrade']);
+    console.log('💎 Iniciando upgrade para plano Pro...');
   
   // ✅ VERIFICAR AUTENTICAÇÃO
   if (this.authService.isAuthenticated()) {
@@ -380,44 +426,19 @@ export class HomeComponent implements OnInit {
 
   // 🆘 MÉTODO PARA CENTRAL DE AJUDA
   openHelp(): void {
-    console.log('❓ Abrindo central de ajuda...');
-    
-    // ✅ SIMULAR ABERTURA DE AJUDA
-    alert('📚 Central de Ajuda\n\n' +
-          'Entre em contato:\n' +
-          '📧 suporte@quizzfy.com\n' +
-          '📱 WhatsApp: (11) 99999-9999\n\n' +
-          'Horário: 9h às 18h');
-    
-    // ✅ OU ABRIR EM NOVA ABA
-    // window.open('mailto:suporte@quizzfy.com', '_blank');
-  }
+  this.router.navigate(['/help']);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
   // 📄 MÉTODO PARA TERMOS DE USO
   openTerms(): void {
-    console.log('📋 Abrindo termos de uso...');
-    
-    // ✅ SIMULAR MODAL DE TERMOS
-    alert('📋 Termos de Uso\n\n' +
-          'Funcionalidade em desenvolvimento.\n' +
-          'Em breve teremos nossa política completa!');
-    
-    // ✅ OU NAVEGAR PARA PÁGINA DE TERMOS
-    // this.router.navigate(['/terms']);
-  }
+  this.router.navigate(['/termos']);
+}
 
-  // 🔒 MÉTODO PARA POLÍTICA DE PRIVACIDADE  
-  openPrivacy(): void {
-    console.log('🔒 Abrindo política de privacidade...');
-    
-    // ✅ SIMULAR MODAL DE PRIVACIDADE
-    alert('🔒 Política de Privacidade\n\n' +
-          'Seus dados estão seguros conosco!\n' +
-          'Funcionalidade completa em desenvolvimento.');
-    
-    // ✅ OU NAVEGAR PARA PÁGINA DE PRIVACIDADE
-    // this.router.navigate(['/privacy']);
-  }
+// 📄 MÉTODO PARA PRIVACIDADE
+openPrivacy(): void {
+  this.router.navigate(['/privacidade']);
+}
 
   // ❓ MÉTODO PARA FAQ
   toggleFaq(index: number): void {

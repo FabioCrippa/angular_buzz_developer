@@ -8,6 +8,9 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { UpgradeComponent } from './pages/upgrade/upgrade.component'; // ✅ ADICIONAR
 import { AreaComponent } from './pages/area/area.component'; // ✅ ADICIONAR
 import { LoginComponent } from './shared/components/login/login.component'; // ✅ ADICIONAR ESTA LINHA CORRETA
+import { HelpComponent } from './pages/help/help.component';
+import { TermComponent } from './pages/term/term.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 // Guards
 import { AuthGuard } from './core/guards/auth.guard';
@@ -83,6 +86,24 @@ const routes: Routes = [
   { 
     path: 'favorites', 
     component: FavoritesComponent,
+    canActivate: [AuthGuard]
+  },
+
+  { 
+    path: 'help', 
+    component: HelpComponent, // ✅ COMPONENT TRADICIONAL
+    canActivate: [AuthGuard],
+  },
+
+  { 
+    path: 'termos', 
+    component: TermComponent, // ✅ COMPONENT TRADICIONAL
+    canActivate: [AuthGuard]
+  },
+
+  { 
+    path: 'privacidade', 
+    component: PrivacyComponent, // ✅ COMPONENT TRADICIONAL
     canActivate: [AuthGuard]
   },
 

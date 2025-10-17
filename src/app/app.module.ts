@@ -51,6 +51,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HelpComponent } from './pages/help/help.component';
+import { TermComponent } from './pages/term/term.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     FavoritesComponent,
     LoginComponent,
     HeaderComponent,
-    PremiumUpgradeDialogComponent
+    PremiumUpgradeDialogComponent,
+    HelpComponent,
+    TermComponent,
+    PrivacyComponent
   ],
   imports: [
     // ✅ SÓ MODULES VÃO AQUI
