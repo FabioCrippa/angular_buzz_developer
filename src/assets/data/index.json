@@ -7,7 +7,7 @@
   },
   "stats": {
     "totalQuestions": 565,
-    "totalAreas": 8,
+    "totalAreas": 4,
     "totalSubjects": 27,
     "byArea": {
       "desenvolvimento-web": 215,
@@ -23,10 +23,6 @@
   },
   "areas": [
     "desenvolvimento-web",
-    "metodologias",
-    "design",
-    "seguranca",
-    "entrevista",
     "portugues",
     "matematica",
     "informatica"

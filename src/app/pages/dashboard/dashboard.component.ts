@@ -84,15 +84,57 @@ export class DashboardComponent implements OnInit {
         
         this.totalQuestions = indexData.stats.totalQuestions;
         
-        this.areas = Object.entries(indexData.stats.byArea).map(([area, count]): Area => ({
-          name: area,
-          displayName: this.getAreaDisplayName(area),
-          questionCount: count,
-          subjects: indexData.structure[area] || [],
-          available: count > 0,
-          description: this.getAreaDescription(area),
-          stats: this.getAreaStats(area),
-          progress: this.getAreaProgress(area)
+        const areasDashboard = [
+          {
+            key: 'desenvolvimento-web',
+            displayName: 'Desenvolvimento Web',
+            icon: '💻',
+            questionCount:
+              (indexData.stats.byArea['desenvolvimento-web'] || 0) +
+              (indexData.stats.byArea['metodologias'] || 0) +
+              (indexData.stats.byArea['design'] || 0) +
+              (indexData.stats.byArea['seguranca'] || 0) +
+              (indexData.stats.byArea['entrevista'] || 0),
+            subjects: [
+              ...(indexData.structure['desenvolvimento-web'] || []),
+              ...(indexData.structure['metodologias'] || []),
+              ...(indexData.structure['design'] || []),
+              ...(indexData.structure['seguranca'] || []),
+              ...(indexData.structure['entrevista'] || [])
+            ]
+          },
+          {
+            key: 'portugues',
+            displayName: 'Português',
+            icon: '📚',
+            questionCount: indexData.stats.byArea['portugues'] || 0,
+            subjects: indexData.structure['portugues'] || []
+          },
+          {
+            key: 'matematica',
+            displayName: 'Matemática',
+            icon: '🧮',
+            questionCount: indexData.stats.byArea['matematica'] || 0,
+            subjects: indexData.structure['matematica'] || []
+          },
+          {
+            key: 'informatica',
+            displayName: 'Informática',
+            icon: '🖥️',
+            questionCount: indexData.stats.byArea['informatica'] || 0,
+            subjects: indexData.structure['informatica'] || []
+          }
+        ];
+        
+        this.areas = areasDashboard.map(area => ({
+          name: area.key,
+          displayName: area.displayName,
+          questionCount: area.questionCount,
+          subjects: area.subjects,
+          available: area.questionCount > 0,
+          description: this.getAreaDescription(area.key),
+          stats: this.getAreaStats(area.key),
+          progress: this.getAreaProgress(area.key)
         }));
 
         this.isLoading = false;

@@ -114,6 +114,12 @@ export class HomeComponent implements OnInit {
         this.areas = this.buildAreasFromData(data);
         this.isLoading = false;
         
+        // Atualizar propriedades usadas pelo template (heroStats é um getter somente)
+        this.totalQuestions = data.stats.totalQuestions;
+        this.totalAreas = this.areas.length; // Fixe para número real de áreas
+        // Atualiza successRate se a API fornecer; mantém valor atual caso contrário
+        this.successRate = (data.stats as any).successRate ?? this.successRate;
+        
         console.log('✅ Home carregada com sucesso:', {
           totalQuestions: this.totalQuestions,
           areas: this.areas.length
