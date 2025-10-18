@@ -12,7 +12,6 @@ import { MaterialModule } from './shared/material/material/material.module';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { QuizzComponent } from './pages/quizz/quizz.component';
-import { LoadingComponent } from './shared/components/loading/loading.component';
 import { AreaComponent } from './pages/area/area.component';
 import { UpgradeComponent } from './pages/upgrade/upgrade.component';
 import { ProgressComponent } from './pages/progress/progress.component';
@@ -62,7 +61,6 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
     HomeComponent,
     DashboardComponent,
     QuizzComponent,
-    LoadingComponent,
     AreaComponent,
     UpgradeComponent,
     ProgressComponent,

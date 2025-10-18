@@ -44,16 +44,6 @@ export class PremiumUpgradeDialogComponent implements OnInit {
       title: 'Favoritos Ilimitados',
       description: 'Salve quantas questões quiser'
     },
-    {
-      icon: 'offline_bolt',
-      title: 'Modo Offline',
-      description: 'Estude mesmo sem internet'
-    },
-    {
-      icon: 'support',
-      title: 'Suporte Prioritário',
-      description: 'Atendimento rápido e personalizado'
-    }
   ];
 
   constructor(

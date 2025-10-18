@@ -1,234 +1,283 @@
 .premium-dialog-container {
   position: relative;
-  padding: 0;
-  max-width: 500px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  max-width: 400px;
+  width: 96vw;
+  margin: 32px auto;
+  background: #fff;
   border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(102,126,234,0.13);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  overflow: hidden;
+  padding-bottom: 12px;
 }
 
 /* Header */
 .dialog-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 24px 24px 0;
-  position: relative;
+  justify-content: space-between;
+  padding: 18px 18px 0 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .premium-icon-container {
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(102,126,234,0.10);
 }
 
 .premium-icon {
-  font-size: 32px;
-  color: #ffd700;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
 .close-button {
-  color: rgba(255, 255, 255, 0.8);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .close-button:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(102,126,234,0.08);
 }
 
-/* Title Section */
+/* Título e subtítulo */
 .dialog-title {
-  padding: 16px 24px 24px;
+  padding: 16px 18px 0 18px;
   text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
 }
 
 .dialog-title h2 {
-  margin: 0 0 8px;
-  font-size: 24px;
-  font-weight: 600;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0 0 6px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .subtitle {
-  margin: 0;
-  font-size: 16px;
-  opacity: 0.9;
-  line-height: 1.5;
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  opacity: 0.93;
+  font-weight: 400;
 }
 
-/* Benefits Section */
+/* Benefícios */
 .benefits-section {
-  background: rgba(255, 255, 255, 0.95);
-  color: #333;
-  padding: 24px;
-  margin: 0 24px 24px;
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
+  background: #f8fafc;
+  color: #2d3748;
+  padding: 16px 18px 8px 18px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible; /* Garante que nada será cortado */
+  min-height: 0;     /* Permite o grid encolher se necessário */
+  max-width: 100%;   /* Nunca ultrapassa o container */
+  display: block;    /* Garante comportamento padrão */
 }
 
 .benefits-section h3 {
-  margin: 0 0 16px;
-  font-size: 18px;
+  margin: 0 0 10px 0;
+  font-size: 1.02rem;
   font-weight: 600;
-  color: #5a67d8;
+  color: #667eea;
   text-align: center;
 }
 
-.benefits-grid {
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px; /* Reduzido */
 }
 
-.benefit-item {
+.benefits-list li {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 8px;
+  gap: 6px; /* Reduzido */
+  background: #fff;
   border-radius: 8px;
-  transition: background-color 0.2s ease;
-}
-
-.benefit-item:hover {
-  background: rgba(90, 103, 216, 0.1);
+  padding: 6px 6px; /* Reduzido */
+  font-size: 0.92rem; /* Menor */
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(102,126,234,0.06);
+  min-width: 0; /* Permite encolher */
+  
 }
 
 .benefit-icon {
-  color: #5a67d8;
-  font-size: 20px;
-  min-width: 24px;
+  font-size: 1rem; /* Menor */
+  color: #ffd700;
+  flex-shrink: 0;
 }
 
-.benefit-content h4 {
-  margin: 0 0 4px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #2d3748;
-}
-
-.benefit-content p {
-  margin: 0;
-  font-size: 12px;
-  color: #718096;
-  line-height: 1.4;
-}
-
-/* Actions */
+/* Ações */
 .dialog-actions {
-  padding: 0 24px 24px;
-}
-
-.action-buttons {
+  padding: 16px 18px 0 18px;
+  background: #fff;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .upgrade-button,
 .login-button {
-  height: 48px;
-  border-radius: 24px;
-  font-weight: 600;
-  font-size: 16px;
-  text-transform: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  width: 100%;
+  height: 44px;
+  border-radius: 22px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
   color: #1a202c;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(255,215,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
-
 .upgrade-button:hover,
 .login-button:hover {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255,215,0,0.18);
+  transform: translateY(-2px) scale(1.03);
 }
 
 .free-button,
 .close-button-text {
-  height: 40px;
-  border-radius: 20px;
+  width: 100%;
+  height: 38px;
+  border-radius: 19px;
   font-weight: 500;
-  text-transform: none;
-  color: rgba(255, 255, 255, 0.9);
-  border-color: rgba(255, 255, 255, 0.3);
+  font-size: 0.98rem;
+  background: #f8fafc;
+  color: #667eea;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
-
 .free-button:hover,
 .close-button-text:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: #e0e7ff;
+  color: #764ba2;
 }
 
 /* Premium Badge */
 .premium-badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 27px;
+  right: 62px;
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(255, 215, 0, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #ffd700;
-  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: #fffbe6;
+  padding: 4px 10px;
+  border-radius: 13px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #bfa100;
+  border: 1px solid #ffe066;
+  box-shadow: 0 2px 8px rgba(255,215,0,0.08);
+  z-index: 2;
+}
+.premium-badge svg {
+  width: 15px;
+  height: 15px;
 }
 
-.premium-badge mat-icon {
-  font-size: 14px;
-}
-
-/* Responsive */
+/* Responsividade */
 @media (max-width: 600px) {
   .premium-dialog-container {
-    margin: 16px;
-    max-width: calc(100vw - 32px);
+    max-width: 99vw;
+    width: 99vw;
+    margin: 0;
+    border-radius: 0;
   }
-  
+  .dialog-header,
+  .dialog-title,
+  .benefits-section,
+  .dialog-actions {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
   .benefits-section {
-    margin: 0 16px 16px;
-    padding: 20px;
+    padding: 12px 8px 6px 8px;
   }
-  
-  .dialog-title h2 {
-    font-size: 20px;
+  .benefits-list {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
-  
-  .benefits-grid {
-    gap: 8px;
+  .premium-badge {
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+    padding: 3px 7px;
   }
-  
-  .action-buttons {
-    gap: 8px;
+  .premium-icon-container {
+    width: 36px;
+    height: 36px;
+  }
+  .premium-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .upgrade-button,
+  .login-button {
+    font-size: 0.98rem;
+    height: 38px;
+  }
+  .free-button,
+  .close-button-text {
+    font-size: 0.95rem;
+    height: 32px;
   }
 }
 
-/* Animations */
-.premium-dialog-container {
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.95);
+/* Dark mode (opcional) */
+@media (prefers-color-scheme: dark) {
+  .premium-dialog-container {
+    background: #181a23;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(102,126,234,0.22);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  .benefits-section {
+    background: #23263a;
+    color: #e2e8f0;
+  }
+  .benefits-list li {
+    background: #23263a;
+    color: #e2e8f0;
+  }
+  .dialog-actions {
+    background: #181a23;
+  }
+  .free-button,
+  .close-button-text {
+    background: #23263a;
+    color: #ffd700;
+    border: 1px solid #2d3748;
+  }
+  .free-button:hover,
+  .close-button-text:hover {
+    background: #181a23;
+    color: #ffb347;
+  }
+  .premium-badge {
+    background: #23263a;
+    color: #ffd700;
+    border: 1px solid #ffd700;
   }
 }
