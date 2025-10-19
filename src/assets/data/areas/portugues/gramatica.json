@@ -169,6 +169,69 @@
       "id": 2006,
       "category": "gramatica",
       "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a voz verbal da frase: 'O professor corrigiu as provas'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Voz ativa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Voz passiva",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Voz reflexiva",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Voz recíproca",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Na voz ativa, o sujeito (professor) pratica a ação (corrigir).",
+      "studyTip": "Voz ativa: sujeito faz a ação. Voz passiva: sujeito recebe a ação.",
+      "id": 2007,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a classificação do verbo 'cantar' na frase: 'Eles vão cantar no festival'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Verbo transitivo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Verbo intransitivo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Verbo de ligação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Verbo auxiliar",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Cantar' é intransitivo pois não exige complemento para completar seu sentido.",
+      "studyTip": "Verbos intransitivos não precisam de objeto; transitivos precisam.",
+      "id": 2008,
+      "category": "gramatica",
+      "difficulty": "fundamental"
     }
+
   ]
 }

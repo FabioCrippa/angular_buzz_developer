@@ -192,7 +192,7 @@
           </div>
 
           <button mat-icon-button matTooltip="Limpar filtros" (click)="clearFilters()">
-            <mat-icon>clear</mat-icon>
+            <mat-icon class="clear">clear</mat-icon>
           </button>
         </div>
 
@@ -262,7 +262,7 @@
                 (click)="toggleFavorite(question.id)"
                 [class.favorited]="question.isFavorite"
               >
-                <mat-icon>{{ question.isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+                <mat-icon class="favorite-icon">{{ question.isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
               </button>
             </div>
           </div>

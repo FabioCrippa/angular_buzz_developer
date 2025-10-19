@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MaterialModule } from './shared/material/material/material.module';
+// MaterialModule removed because './shared/material/material.module' was not found; using individual Material imports below.
 
 // ✅ COMPONENTS PARA DECLARATIONS
 import { HomeComponent } from './pages/home/home.component';
@@ -80,8 +80,8 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule,
     
+    // MaterialModule removed because './shared/material/material.module' was not found; using individual Material imports below.
     // ✅ MATERIAL MODULES BÁSICOS
     MatRadioModule,
     MatDialogModule,

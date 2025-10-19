@@ -452,6 +452,16 @@
   min-width: 150px;
 }
 
+.clear {
+  background: transparent !important;
+  color: #f56565 !important;
+  border-color: #f56565 !important;
+}
+
+.favorite-icon {
+  color: #f59e0b !important;
+}
+
 .quick-filters {
   display: flex;
   justify-content: center;

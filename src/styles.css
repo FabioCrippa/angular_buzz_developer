@@ -110,10 +110,6 @@ html {
     background: #fafafa !important; /* ✅ Fundo claro para área */
 }
 
-.area-container * {
-    color: inherit; /* ✅ Remove herança global de cor */
-}
-
 /* =============================================== */
 /* 📊 DASHBOARD - OVERRIDE CORES CLARAS */
 /* =============================================== */
@@ -124,3 +120,4 @@ html {
 .dashboard-container * {
     color: inherit; /* ✅ Remove herança global de cor */
 }
+
