@@ -62,12 +62,13 @@
 
 .dialog-title h2 {
   margin: 0 0 6px 0;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
 .subtitle {
-  margin: 0 0 12px 0;
+  width: 90%;
+  margin: 12px auto 0 auto;
   font-size: 1rem;
   opacity: 0.93;
   font-weight: 400;
@@ -201,7 +202,7 @@
 /* Responsividade */
 @media (max-width: 600px) {
   .premium-dialog-container {
-    max-width: 99vw;
+    max-width: 95vw;
     width: 99vw;
     margin: 0;
     border-radius: 0;
