@@ -222,7 +222,7 @@
   }
   .premium-badge {
     top: 8px;
-    right: 8px;
+    right: 62px;
     font-size: 10px;
     padding: 3px 7px;
   }
@@ -238,11 +238,15 @@
   .login-button {
     font-size: 0.98rem;
     height: 38px;
+    width: 90%;
+    margin: 0 10px 0 10px;
   }
   .free-button,
   .close-button-text {
     font-size: 0.95rem;
     height: 32px;
+    width: 90%;
+    margin: 0 10px 0 10px;
   }
 }
 
