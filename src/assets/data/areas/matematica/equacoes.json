@@ -1,0 +1,1564 @@
+{
+  "metadata": {
+    "area": "matematica",
+    "subject": "equacoes",
+    "name": "Equacoes",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 50,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "Qual é a solução da equação: x + 5 = 12?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 7",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 17",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = -7",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -17",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Subtraindo 5 de ambos os lados: x = 12 - 5 = 7.",
+      "studyTip": "Isolar o x é o primeiro passo para resolver equações simples.",
+      "id": 10001,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva a equação: 2x = 10.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 20",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 8",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 12",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Dividindo ambos os lados por 2: x = 10 / 2 = 5.",
+      "studyTip": "Equações do tipo ax = b são resolvidas dividindo ambos os lados por a.",
+      "id": 10002,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x - 3 = 4?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 1",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 7",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = -1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -7",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Somando 3 aos dois lados: x = 4 + 3 = 7.",
+      "studyTip": "Para resolver x - a = b, some a aos dois lados.",
+      "id": 10003,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: 3x + 2 = 11.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 5",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Subtraindo 2: 3x = 9. Dividindo por 3: x = 3.",
+      "studyTip": "Resolva primeiro a parte constante, depois isole o x.",
+      "id": 10004,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: 5x - 10 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 2",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 10",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -10",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Somando 10: 5x = 10. Dividindo por 5: x = 2.",
+      "studyTip": "Equações com subtração exigem soma para isolar o termo com x.",
+      "id": 10005,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x/4 = 3.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 12",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 7",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 4",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Multiplicando ambos os lados por 4: x = 3 × 4 = 12.",
+      "studyTip": "Multiplique para eliminar divisões em equações.",
+      "id": 10006,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x + x = 10.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 10",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 20",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 0",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "x + x = 2x. Então, 2x = 10 → x = 5.",
+      "studyTip": "Agrupe termos semelhantes antes de resolver.",
+      "id": 10007,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: 4x + 1 = 13?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 5",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Subtraindo 1: 4x = 12. Dividindo por 4: x = 3.",
+      "studyTip": "Siga a ordem: primeiro elimine constantes, depois divida.",
+      "id": 10008,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: 6x - 4 = 2.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 1",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 3",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 4",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Somando 4: 6x = 6. Dividindo por 6: x = 1.",
+      "studyTip": "Verifique cada passo para evitar erros simples.",
+      "id": 10009,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x/2 + 3 = 7?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 2",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 8",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 10",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Subtraindo 3: x/2 = 4. Multiplicando por 2: x = 8.",
+      "studyTip": "Equações com frações exigem multiplicação para eliminar o denominador.",
+      "id": 10010,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x - 8 = 3.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 11",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = -5",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -11",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Somando 8 aos dois lados: x = 3 + 8 = 11.",
+      "studyTip": "Para resolver x - a = b, some a aos dois lados da equação.",
+      "id": 10011,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: 7x = 21?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 7",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 4",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Dividindo ambos os lados por 7: x = 21 / 7 = 3.",
+      "studyTip": "Equações do tipo ax = b são resolvidas dividindo ambos os lados por a.",
+      "id": 10012,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x + 2x = 12.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 6",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 3",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 2",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "x + 2x = 3x → 3x = 12 → x = 4.",
+      "studyTip": "Agrupe os termos semelhantes antes de resolver.",
+      "id": 10013,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x/5 = 6?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 30",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 11",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1.2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 5",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Multiplicando ambos os lados por 5: x = 6 × 5 = 30.",
+      "studyTip": "Multiplique para eliminar o denominador em equações com frações.",
+      "id": 10014,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: 2x + 4 = 10.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 4",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Subtraindo 4: 2x = 6 → x = 3.",
+      "studyTip": "Resolva primeiro a parte constante, depois isole o x.",
+      "id": 10015,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x + 10 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = -10",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 10",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Subtraindo 10: x = -10.",
+      "studyTip": "Equações com soma são resolvidas com subtração.",
+      "id": 10016,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: 4x - 2 = 14.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 5",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 6",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Somando 2: 4x = 16 → x = 4.",
+      "studyTip": "Verifique cada passo para evitar erros simples.",
+      "id": 10017,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x/3 + 2 = 5?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 9",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 6",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Subtraindo 2: x/3 = 3 → x = 3 × 3 = 9.",
+      "studyTip": "Equações com frações exigem multiplicação para eliminar o denominador.",
+      "id": 10018,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x - x = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 0",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 1",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = qualquer número",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "x - x = 0 é verdadeiro para qualquer valor de x.",
+      "studyTip": "Equações que se anulam indicam infinitas soluções.",
+      "id": 10019,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: 0x = 5?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não existe solução",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = qualquer número",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "0x = 5 não tem solução, pois 0 vezes qualquer número é 0.",
+      "studyTip": "Equações impossíveis ocorrem quando há contradição matemática.",
+      "id": 10020,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² = 16?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 4 ou x = -4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 8",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 2 ou x = -2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 0",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A raiz quadrada de 16 é 4, então x = ±4.",
+      "studyTip": "Equações do tipo x² = a têm duas soluções: positiva e negativa.",
+      "id": 10021,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva a equação: x² - 9 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3 ou x = -3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 9",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 1 ou x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "x² = 9 → x = ±3.",
+      "studyTip": "Isolar o x² e aplicar a raiz quadrada é o método direto.",
+      "id": 10022,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - 4x = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 0 ou x = 4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = -2 ou x = 2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 1 ou x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Fatorando: x(x - 4) = 0 → x = 0 ou x = 4.",
+      "studyTip": "Fatorar é uma técnica útil para resolver equações do 2º grau incompletas.",
+      "id": 10023,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² + 2x = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 0 ou x = -2",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 2 ou x = -2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0 ou x = 2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1 ou x = 1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Fatorando: x(x + 2) = 0 → x = 0 ou x = -2.",
+      "studyTip": "Equações incompletas podem ser resolvidas por fatoração simples.",
+      "id": 10024,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - 1 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 1 ou x = -1",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 2 ou x = -2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "x² = 1 → x = ±1.",
+      "studyTip": "Sempre verifique se a equação pode ser resolvida por raiz quadrada direta.",
+      "id": 10025,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² + 5x = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 0 ou x = -5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 5 ou x = -5",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0 ou x = 5",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1 ou x = 1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Fatorando: x(x + 5) = 0 → x = 0 ou x = -5.",
+      "studyTip": "Fatoração é útil quando não há termo constante.",
+      "id": 10026,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - 25 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 5 ou x = -5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 25",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 1 ou x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "x² = 25 → x = ±5.",
+      "studyTip": "Equações do tipo x² = a são resolvidas com raiz quadrada.",
+      "id": 10027,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² + 3x = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 0 ou x = -3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 3 ou x = -3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0 ou x = 3",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1 ou x = 1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Fatorando: x(x + 3) = 0 → x = 0 ou x = -3.",
+      "studyTip": "Fatorar é uma forma rápida de resolver equações incompletas.",
+      "id": 10028,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - 36 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 6 ou x = -6",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 36",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 18 ou x = -18",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "x² = 36 → x = ±6.",
+      "studyTip": "Reconheça padrões de quadrados perfeitos para facilitar a resolução.",
+      "id": 10029,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² + 4x = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 0 ou x = -4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 4 ou x = -4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0 ou x = 4",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -2 ou x = 2",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Fatorando: x(x + 4) = 0 → x = 0 ou x = -4.",
+      "studyTip": "Fatoração é especialmente útil em equações sem termo constante.",
+      "id": 10030,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva a equação: x² - 5x + 6 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 2 ou x = 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -2 ou x = -3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1 ou x = 6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1 ou x = -6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aplicando Bhaskara: Δ = 25 - 24 = 1 → x = 2 ou x = 3.",
+      "studyTip": "Use a fórmula de Bhaskara: x = (-b ± √Δ) / 2a.",
+      "id": 10031,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² + 4x + 4 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = -2",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = -4",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 4",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 16 - 16 = 0 → raiz dupla: x = -2.",
+      "studyTip": "Quando Δ = 0, a equação tem uma única raiz real.",
+      "id": 10032,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² - 6x + 9 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 0",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 36 - 36 = 0 → raiz dupla: x = 3.",
+      "studyTip": "Equações com raízes iguais são chamadas de equações com raiz dupla.",
+      "id": 10033,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - x - 6 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3 ou x = -2",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -3 ou x = 2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1 ou x = 6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1 ou x = -6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 1 + 24 = 25 → x = 3 ou x = -2.",
+      "studyTip": "Identifique a, b e c corretamente antes de aplicar Bhaskara.",
+      "id": 10034,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² + x - 12 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3 ou x = -4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -3 ou x = 4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 2 ou x = -6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -2 ou x = 6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 1 + 48 = 49 → x = 3 ou x = -4.",
+      "studyTip": "Verifique se a equação pode ser fatorada antes de aplicar Bhaskara.",
+      "id": 10035,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - 7x + 12 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3 ou x = 4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -3 ou x = -4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 6 ou x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -6 ou x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 49 - 48 = 1 → x = 3 ou x = 4.",
+      "studyTip": "Fatoração também pode ser usada quando os coeficientes são simples.",
+      "id": 10036,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² + 2x - 8 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 2 ou x = -4",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -2 ou x = 4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1 ou x = -8",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1 ou x = 8",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 4 + 32 = 36 → x = 2 ou x = -4.",
+      "studyTip": "Sempre calcule o discriminante (Δ) antes de aplicar a fórmula.",
+      "id": 10037,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - 2x - 15 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 5 ou x = -3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -5 ou x = 3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 2 ou x = -15",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -2 ou x = 15",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 4 + 60 = 64 → x = 5 ou x = -3.",
+      "studyTip": "Raízes reais podem ser positivas ou negativas.",
+      "id": 10038,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva: x² + 6x + 9 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = -3",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = -6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 36 - 36 = 0 → raiz dupla: x = -3.",
+      "studyTip": "Equações com Δ = 0 têm uma única solução real.",
+      "id": 10039,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a solução da equação: x² - 10x + 25 = 0?",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -5",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 10",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -10",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 100 - 100 = 0 → raiz dupla: x = 5.",
+      "studyTip": "Reconheça padrões de quadrados perfeitos para facilitar a resolução.",
+      "id": 10040,
+      "category": "matematica-equacoes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Resolva a equação: 1x² - 2x - 3 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3.0 ou x = -1.0",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aplicando Bhaskara: Δ = 16 → x = 3.0 ou x = -1.0.",
+      "studyTip": "Use a fórmula de Bhaskara: x = (-b ± √Δ) / 2a e analise o valor do discriminante.",
+      "id": 10041,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 2x² - 4x - 2 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 2.41 ou x = -0.41",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aplicando Bhaskara: Δ = 32 → x = 2.41 ou x = -0.41.",
+      "studyTip": "Use a fórmula de Bhaskara: x = (-b ± √Δ) / 2a e analise o valor do discriminante.",
+      "id": 10042,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 1x² + 1x - 1 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 0.62 ou x = -1.62",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aplicando Bhaskara: Δ = 5 → x = 0.62 ou x = -1.62.",
+      "studyTip": "Use a fórmula de Bhaskara: x = (-b ± √Δ) / 2a e analise o valor do discriminante.",
+      "id": 10043,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 3x² - 5x + 2 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 1.0 ou x = 0.67",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aplicando Bhaskara: Δ = 1 → x = 1.0 ou x = 0.67.",
+      "studyTip": "Use a fórmula de Bhaskara: x = (-b ± √Δ) / 2a e analise o valor do discriminante.",
+      "id": 10044,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 1x² + 0x - 5 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 2.24 ou x = -2.24",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aplicando Bhaskara: Δ = 20 → x = 2.24 ou x = -2.24.",
+      "studyTip": "Use a fórmula de Bhaskara: x = (-b ± √Δ) / 2a e analise o valor do discriminante.",
+      "id": 10045,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 2x² + 3x + 5 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 1 ou x = -5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 2 ou x = -2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não possui raízes reais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 0",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A equação não possui raízes reais, pois o discriminante (Δ) é negativo.",
+      "studyTip": "Se Δ < 0, a equação não possui raízes reais.",
+      "id": 10046,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 1x² - 6x + 10 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3 ± √(-1)",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 3",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não possui raízes reais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = 0",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Δ = 36 - 40 = -4 → não há raízes reais.",
+      "studyTip": "Verifique o sinal de Δ antes de aplicar a fórmula.",
+      "id": 10047,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 4x² + 4x + 1 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = -0.5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0.5",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 0 → raiz dupla: x = -0.5.",
+      "studyTip": "Quando Δ = 0, há uma única solução real.",
+      "id": 10048,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 1x² - 1x - 6 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 3 ou x = -2",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = -3 ou x = 2",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1 ou x = -6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1 ou x = 6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 1 + 24 = 25 → x = 3 ou x = -2.",
+      "studyTip": "Identifique a, b e c corretamente antes de aplicar Bhaskara.",
+      "id": 10049,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Resolva a equação: 5x² - 2x - 3 = 0.",
+      "options": [
+        {
+          "id": 1,
+          "name": "x = 1.2 ou x = -0.5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "x = 0",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "x = 1",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "x = -1",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Δ = 64 → x = 1.2 ou x = -0.5.",
+      "studyTip": "Raízes irracionais podem aparecer quando Δ não é quadrado perfeito.",
+      "id": 10050,
+      "category": "matematica-equacoes",
+      "difficulty": "avancado"
+    }
+  ]
+}

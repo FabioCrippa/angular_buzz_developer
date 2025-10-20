@@ -1,0 +1,1564 @@
+{
+  "metadata": {
+    "area": "portugues",
+    "subject": "coesao",
+    "name": "Coesao",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 50,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "O que é coesão textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A estética do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A ligação entre as partes do texto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A presença de figuras de linguagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A quantidade de parágrafos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Coesão textual refere-se à conexão entre as partes do texto por meio de elementos linguísticos.",
+      "studyTip": "Observe os conectivos, pronomes e elipses que ligam as ideias no texto.",
+      "id": 4001,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos elementos abaixo é um mecanismo de coesão referencial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunções",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Pronomes",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Pontuação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Adjetivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Pronomes retomam ou antecipam termos, estabelecendo coesão referencial.",
+      "studyTip": "Identifique os pronomes que substituem ou retomam termos anteriores.",
+      "id": 4002,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão inadequada?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João comprou um carro. Ele é vermelho.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria foi ao mercado. Comprou frutas.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Pedro gosta de futebol. Ele joga aos sábados.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ana estuda muito. Por isso, passou na prova.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A ausência de conectivo entre as frases prejudica a coesão.",
+      "studyTip": "Use conectivos para ligar frases e evitar que fiquem soltas.",
+      "id": 4003,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual pode ser estabelecida por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Repetição de palavras",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de conectivos e pronomes",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de metáforas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de linguagem informal",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Conectivos e pronomes são recursos coesivos que ligam partes do texto.",
+      "studyTip": "Evite repetir palavras; prefira pronomes e conectivos adequados.",
+      "id": 4004,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica oposição?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Portanto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Porque",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Mas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Além disso",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O conectivo 'mas' indica oposição entre ideias.",
+      "studyTip": "Conheça os tipos de conectivos: adição, oposição, causa, consequência.",
+      "id": 4005,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão lexical ocorre quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Há repetição de palavras",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há substituição por sinônimos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Há uso de pronomes",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Há uso de conectivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coesão lexical é feita por meio de sinônimos e palavras relacionadas.",
+      "studyTip": "Evite repetir palavras; use sinônimos para manter a coesão lexical.",
+      "id": 4006,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por elipse?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João gosta de futebol. Pedro também.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "João gosta de futebol. Ele joga aos sábados.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "João gosta de futebol. Mas não joga.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "João gosta de futebol. Portanto, treina muito.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Na elipse, omite-se um termo que pode ser subentendido pelo contexto.",
+      "studyTip": "A elipse evita repetições, mantendo a fluidez textual.",
+      "id": 4007,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual conectivo indica causa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Porque",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Por isso",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contudo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'porque' introduz uma explicação ou causa.",
+      "studyTip": "Conectivos causais explicam o motivo de uma ação ou fato.",
+      "id": 4008,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão referencial pode ser feita por meio de:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adjetivos qualificativos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Pronomes e advérbios",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Verbos no infinitivo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Substantivos próprios",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Pronomes e advérbios retomam ou antecipam termos, garantindo coesão referencial.",
+      "studyTip": "Observe como os pronomes e advérbios substituem termos já mencionados.",
+      "id": 4009,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por substituição?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João comprou um carro. O veículo é novo.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "João comprou um carro. Ele é novo.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "João comprou um carro. João gosta de carros.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "João comprou um carro. E comprou uma moto.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A palavra 'veículo' substitui 'carro', mantendo a coesão lexical.",
+      "studyTip": "Use palavras equivalentes para evitar repetições e manter a coesão.",
+      "id": 4010,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica uma conclusão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Porém",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Portanto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Embora",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Enquanto",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O conectivo 'portanto' é usado para indicar uma conclusão lógica.",
+      "studyTip": "Conectivos conclusivos ajudam a finalizar ideias com clareza.",
+      "id": 4011,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão por substituição evita:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ambiguidade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Repetição excessiva",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de conectivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Progressão temática",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Substituir palavras por sinônimos ou expressões equivalentes evita repetições.",
+      "studyTip": "Use substituições para manter o texto fluido e evitar redundâncias.",
+      "id": 4012,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por referência anafórica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela comprou pão. Maria estava com fome.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria estava com fome. Ela comprou pão.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Maria comprou pão. Maria estava com fome.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela comprou pão. Estava com fome.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A referência 'ela' retoma 'Maria', caracterizando coesão anafórica.",
+      "studyTip": "Referência anafórica retoma termos já mencionados no texto.",
+      "id": 4013,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica uma explicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Porque",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Contudo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Embora",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Logo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'porque' introduz uma explicação ou justificativa.",
+      "studyTip": "Conectivos explicativos ajudam a esclarecer ideias anteriores.",
+      "id": 4014,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão sequencial é garantida por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conectivos que indicam ordem e tempo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de metáforas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de adjetivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de verbos no infinitivo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos como 'primeiramente', 'depois', 'em seguida' garantem coesão sequencial.",
+      "studyTip": "Use conectivos temporais para organizar a sequência de ideias.",
+      "id": 4015,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por catáfora?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela comprou pão. Maria estava com fome.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria estava com fome. Ela comprou pão.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela estava com fome. Maria comprou pão.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Maria comprou pão. Estava com fome.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Na catáfora, o pronome aparece antes do termo que será identificado.",
+      "studyTip": "Catáfora antecipa o termo que será explicado ou nomeado depois.",
+      "id": 4016,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão gramatical envolve:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conectivos, pronomes e tempos verbais",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Figuras de linguagem",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Palavras estrangeiras",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Adjetivos e advérbios",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A coesão gramatical é feita por elementos estruturais da língua.",
+      "studyTip": "Observe como os tempos verbais e pronomes mantêm a ligação entre frases.",
+      "id": 4017,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual conectivo indica adição de ideias?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Mas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Porque",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Além disso",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contudo",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Conectivos de adição como 'além disso' ampliam a ideia anterior.",
+      "studyTip": "Use conectivos de adição para enriquecer o conteúdo do texto.",
+      "id": 4018,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual contribui para:",
+      "options": [
+        {
+          "id": 1,
+          "name": "A clareza e fluidez do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A complexidade do vocabulário",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A quantidade de parágrafos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A presença de figuras de linguagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A coesão garante que o texto seja compreendido com facilidade.",
+      "studyTip": "Leia o texto em voz alta para perceber se há fluidez entre as frases.",
+      "id": 4019,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por repetição intencional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O carro é novo. O carro é bonito.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O carro é novo. Ele é bonito.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O carro é novo. O veículo é bonito.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O carro é novo. Portanto, é bonito.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A repetição intencional pode ser usada para dar ênfase e manter a coesão.",
+      "studyTip": "Use repetição com moderação e propósito claro.",
+      "id": 4020,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica contraste entre ideias?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Além disso",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Por isso",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Entretanto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Logo",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Conectivos como 'entretanto' indicam oposição ou contraste entre ideias.",
+      "studyTip": "Use conectivos de contraste para apresentar ideias contrárias ou ressalvas.",
+      "id": 4021,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão referencial é prejudicada quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Há uso de pronomes ambíguos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há uso de conectivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Há repetição de palavras",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Há uso de sinônimos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Pronomes ambíguos dificultam a identificação do referente, comprometendo a coesão.",
+      "studyTip": "Evite usar 'ele', 'ela', 'isso' sem clareza sobre a quem ou o quê se referem.",
+      "id": 4022,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por substituição lexical?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O carro é novo. O veículo é bonito.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O carro é novo. Ele é bonito.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O carro é novo. O carro é bonito.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O carro é novo. Portanto, é bonito.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A palavra 'veículo' substitui 'carro', mantendo a coesão lexical.",
+      "studyTip": "Use sinônimos ou expressões equivalentes para evitar repetição.",
+      "id": 4023,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica condição?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Se",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Porque",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Mas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Logo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'se' introduz uma condição para que algo aconteça.",
+      "studyTip": "Conectivos condicionais são úteis para hipóteses e possibilidades.",
+      "id": 4024,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual é importante porque:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita a compreensão do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumenta o número de palavras",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Deixa o texto mais informal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Permite o uso de gírias",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A coesão garante que as ideias estejam bem conectadas, facilitando a leitura.",
+      "studyTip": "Leia o texto e observe se há fluidez entre as frases e parágrafos.",
+      "id": 4025,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por repetição intencional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O carro é novo. O carro é bonito.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O carro é novo. Ele é bonito.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O carro é novo. O veículo é bonito.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O carro é novo. Portanto, é bonito.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A repetição pode ser usada para dar ênfase ou reforçar uma ideia.",
+      "studyTip": "Use repetição com moderação e propósito claro.",
+      "id": 4026,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica uma explicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Porque",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Contudo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Entretanto",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'porque' introduz uma explicação ou justificativa.",
+      "studyTip": "Use conectivos explicativos para esclarecer ideias anteriores.",
+      "id": 4027,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão por elipse ocorre quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um termo é omitido, mas subentendido",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há repetição de palavras",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Há uso de conectivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Há uso de metáforas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Na elipse, omite-se um termo que pode ser compreendido pelo contexto.",
+      "studyTip": "A elipse evita repetições e mantém a fluidez textual.",
+      "id": 4028,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por referência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João comprou um carro. Ele é vermelho.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "João comprou um carro. João gosta de carros.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "João comprou um carro. O carro é bonito.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "João comprou um carro. E comprou uma moto.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O pronome 'ele' retoma 'carro', estabelecendo coesão referencial.",
+      "studyTip": "Pronomes são usados para evitar repetição e manter a coesão.",
+      "id": 4029,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual está diretamente ligada à:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Organização gramatical e lexical",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Quantidade de parágrafos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de linguagem informal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Presença de figuras de linguagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A coesão depende da forma como os elementos linguísticos se conectam.",
+      "studyTip": "Observe como os pronomes, conectivos e sinônimos são usados no texto.",
+      "id": 4030,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica consequência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Por isso",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Embora",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contudo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'por isso' estabelece uma relação de consequência entre ideias.",
+      "studyTip": "Conectivos de consequência mostram o resultado de uma ação ou fato.",
+      "id": 4031,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão por substituição evita:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ambiguidade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Repetição desnecessária",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de conectivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Progressão temática",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Substituir termos por sinônimos ou expressões equivalentes evita repetições.",
+      "studyTip": "Use substituições para manter o texto fluido e evitar redundâncias.",
+      "id": 4032,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por elipse?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João gosta de futebol. Pedro também.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "João gosta de futebol. Ele joga aos sábados.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "João gosta de futebol. Mas não joga.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "João gosta de futebol. Portanto, treina muito.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Na elipse, omite-se um termo que pode ser subentendido pelo contexto.",
+      "studyTip": "A elipse evita repetições, mantendo a fluidez textual.",
+      "id": 4033,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica uma explicação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Porque",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Contudo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Entretanto",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'porque' introduz uma explicação ou justificativa.",
+      "studyTip": "Use conectivos explicativos para esclarecer ideias anteriores.",
+      "id": 4034,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão referencial é prejudicada quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Há uso de pronomes ambíguos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há uso de conectivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Há repetição de palavras",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Há uso de sinônimos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Pronomes ambíguos dificultam a identificação do referente, comprometendo a coesão.",
+      "studyTip": "Evite usar pronomes sem clareza sobre a quem ou o quê se referem.",
+      "id": 4035,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por catáfora?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela estava com fome. Maria comprou pão.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria estava com fome. Ela comprou pão.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela comprou pão. Maria estava com fome.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Maria comprou pão. Estava com fome.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Na catáfora, o pronome aparece antes do termo que será identificado.",
+      "studyTip": "Catáfora antecipa o termo que será explicado ou nomeado depois.",
+      "id": 4036,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão sequencial é garantida por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conectivos que indicam ordem e tempo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de metáforas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de adjetivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de verbos no infinitivo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos como 'primeiramente', 'depois', 'em seguida' garantem coesão sequencial.",
+      "studyTip": "Use conectivos temporais para organizar a sequência de ideias.",
+      "id": 4037,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica adição?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Além disso",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Porque",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contudo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos de adição como 'além disso' ampliam a ideia anterior.",
+      "studyTip": "Use conectivos de adição para enriquecer o conteúdo do texto.",
+      "id": 4038,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual contribui para:",
+      "options": [
+        {
+          "id": 1,
+          "name": "A clareza e fluidez do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A complexidade do vocabulário",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A quantidade de parágrafos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A presença de figuras de linguagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A coesão garante que o texto seja compreendido com facilidade.",
+      "studyTip": "Leia o texto em voz alta para perceber se há fluidez entre as frases.",
+      "id": 4039,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por referência anafórica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela comprou pão. Maria estava com fome.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria estava com fome. Ela comprou pão.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Maria comprou pão. Maria estava com fome.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela comprou pão. Estava com fome.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A referência 'ela' retoma 'Maria', caracterizando coesão anafórica.",
+      "studyTip": "Referência anafórica retoma termos já mencionados no texto.",
+      "id": 4040,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica uma ideia de tempo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Enquanto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Porque",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Logo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'enquanto' estabelece uma relação temporal entre ações.",
+      "studyTip": "Conectivos temporais ajudam a organizar eventos em ordem cronológica.",
+      "id": 4041,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual é comprometida quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Há uso excessivo de pronomes sem referência clara",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há uso de conectivos adequados",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Há progressão temática",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Há substituição lexical",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Pronomes sem referência clara geram ambiguidade e prejudicam a coesão.",
+      "studyTip": "Garanta que cada pronome tenha um referente explícito ou evidente.",
+      "id": 4042,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por conectivo de causa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela passou na prova porque estudou muito.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela passou na prova, mas estava nervosa.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela passou na prova, portanto está feliz.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela passou na prova, além disso ganhou um prêmio.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'porque' indica a causa da aprovação.",
+      "studyTip": "Conectivos causais explicam o motivo de uma ação ou fato.",
+      "id": 4043,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual pode ser feita por meio de:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conectivos, pronomes e elipses",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Figuras de linguagem",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Palavras estrangeiras",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Adjetivos e advérbios",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Esses elementos linguísticos conectam partes do texto, garantindo coesão.",
+      "studyTip": "Identifique os recursos que ligam frases e parágrafos.",
+      "id": 4044,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica uma ideia de concessão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Embora",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Porque",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Logo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Além disso",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'embora' introduz uma ideia que contraria parcialmente a anterior.",
+      "studyTip": "Conectivos concessivos mostram que algo ocorre apesar de uma condição.",
+      "id": 4045,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão referencial ocorre quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um termo é retomado por um pronome ou advérbio",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há uso de metáforas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Há repetição de palavras",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Há uso de conectivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Pronomes e advérbios retomam termos já mencionados, criando coesão.",
+      "studyTip": "Identifique os elementos que substituem ou retomam ideias anteriores.",
+      "id": 4046,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coesão por substituição pronominal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João comprou um carro. Ele é vermelho.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "João comprou um carro. O carro é vermelho.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "João comprou um carro. João gosta de carros.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "João comprou um carro. E comprou uma moto.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O pronome 'ele' substitui 'carro', mantendo a coesão referencial.",
+      "studyTip": "Use pronomes para evitar repetição e manter a fluidez textual.",
+      "id": 4047,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual é essencial para:",
+      "options": [
+        {
+          "id": 1,
+          "name": "A clareza e compreensão do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A quantidade de palavras",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A presença de figuras de linguagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A informalidade do texto",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Sem coesão, o texto pode se tornar confuso e difícil de entender.",
+      "studyTip": "Revise o texto verificando se as ideias estão bem conectadas.",
+      "id": 4048,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos conectivos abaixo indica finalidade?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Para que",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Porque",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Mas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Logo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O conectivo 'para que' indica a finalidade de uma ação.",
+      "studyTip": "Conectivos de finalidade mostram o objetivo de uma ação ou fato.",
+      "id": 4049,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coesão textual pode ser prejudicada por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso inadequado de conectivos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de pronomes com referência clara",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Substituição lexical adequada",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Progressão temática bem estruturada",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos mal utilizados podem gerar confusão e comprometer a coesão.",
+      "studyTip": "Estude os tipos de conectivos e seus usos corretos.",
+      "id": 4050,
+      "category": "coesao",
+      "difficulty": "fundamental"
+    }
+  ]
+}

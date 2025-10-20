@@ -3,23 +3,23 @@
     "name": "Angular Buzz Developer",
     "version": "2.0.0",
     "description": "Plataforma completa de questões técnicas para desenvolvedores e concursos",
-    "lastUpdated": "2025-10-02"
+    "lastUpdated": "2025-10-20"
   },
   "stats": {
-    "totalQuestions": 565,
-    "totalAreas": 4,
+    "totalQuestions": 698,
+    "totalAreas": 8,
     "totalSubjects": 27,
     "byArea": {
-      "desenvolvimento-web": 215,
+      "desenvolvimento-web": 214,
       "metodologias": 150,
       "design": 50,
-      "seguranca": 25,
+      "seguranca": 23,
       "entrevista": 80,
-      "portugues": 15,
+      "portugues": 156,
       "matematica": 15,
-      "informatica": 15
+      "informatica": 10
     },
-    "lastUpdated": "2025-10-02"
+    "lastUpdated": "2025-10-20"
   },
   "areas": [
     "desenvolvimento-web",

@@ -1,0 +1,1564 @@
+{
+  "metadata": {
+    "area": "matematica",
+    "subject": "porcentagem",
+    "name": "Porcentagem",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 50,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "Qual é 10% de 200?",
+      "options": [
+        {
+          "id": 1,
+          "name": "20",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "10",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "30",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "40",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "10% de 200 é 200 × 0,10 = 20.",
+      "studyTip": "Multiplique o valor pela porcentagem em forma decimal.",
+      "id": 20001,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se um produto custa R$100 e sofre um desconto de 25%, qual será o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$75",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$85",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$25",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$50",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "25% de 100 é 25. Valor final: 100 - 25 = 75.",
+      "studyTip": "Para descontos, subtraia o valor percentual do total.",
+      "id": 20002,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 50% de 80?",
+      "options": [
+        {
+          "id": 1,
+          "name": "40",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "30",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "20",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "60",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "50% de 80 é 80 × 0,50 = 40.",
+      "studyTip": "50% equivale à metade do valor.",
+      "id": 20003,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um salário de R$2.000 teve um aumento de 10%. Qual é o novo salário?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$2.200",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$2.100",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$2.020",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$2.500",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "10% de 2000 é 200. Novo salário: 2000 + 200 = 2100.",
+      "studyTip": "Para aumentos, some o valor percentual ao total.",
+      "id": 20004,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 25% de 120?",
+      "options": [
+        {
+          "id": 1,
+          "name": "30",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "25",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "20",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "40",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "25% de 120 é 120 × 0,25 = 30.",
+      "studyTip": "25% equivale a um quarto do valor.",
+      "id": 20005,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se um produto custa R$80 e tem um acréscimo de 15%, qual será o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$92",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$95",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$85",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$100",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "15% de 80 é 12. Valor final: 80 + 12 = 92.",
+      "studyTip": "Multiplique o valor pela porcentagem e some ao total.",
+      "id": 20006,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 5% de 300?",
+      "options": [
+        {
+          "id": 1,
+          "name": "15",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "30",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "25",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "10",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "5% de 300 é 300 × 0,05 = 15.",
+      "studyTip": "Para porcentagens pequenas, use multiplicação direta.",
+      "id": 20007,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma loja oferece 20% de desconto em um produto de R$150. Qual é o valor do desconto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$30",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$20",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$15",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$25",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20% de 150 é 150 × 0,20 = 30.",
+      "studyTip": "Desconto é calculado multiplicando o valor pela porcentagem.",
+      "id": 20008,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 75% de 80?",
+      "options": [
+        {
+          "id": 1,
+          "name": "60",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "40",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "20",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "70",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "75% de 80 é 80 × 0,75 = 60.",
+      "studyTip": "75% equivale a três quartos do valor.",
+      "id": 20009,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$200 teve um aumento de 20%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$240",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$220",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$260",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$280",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20% de 200 é 40. Valor final: 200 + 40 = 240.",
+      "studyTip": "Acréscimos são somados ao valor original.",
+      "id": 20010,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 30% de 90?",
+      "options": [
+        {
+          "id": 1,
+          "name": "27",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "30",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "18",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "45",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "30% de 90 é 90 × 0,30 = 27.",
+      "studyTip": "Multiplique o valor pela porcentagem em forma decimal.",
+      "id": 20011,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$250 teve um desconto de 10%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$225",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$240",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$235",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$250",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "10% de 250 é 25. Valor final: 250 - 25 = 225.",
+      "studyTip": "Descontos são subtraídos do valor original.",
+      "id": 20012,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 60% de 150?",
+      "options": [
+        {
+          "id": 1,
+          "name": "90",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "60",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "75",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "120",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "60% de 150 é 150 × 0,60 = 90.",
+      "studyTip": "Multiplique o valor pela porcentagem para encontrar o resultado.",
+      "id": 20013,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se um salário de R$1.500 aumenta 20%, qual será o novo valor?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$1.800",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$1.700",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$1.600",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$1.900",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20% de 1500 é 300. Novo salário: 1500 + 300 = 1800.",
+      "studyTip": "Para aumentos, some o valor percentual ao total.",
+      "id": 20014,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 12% de 50?",
+      "options": [
+        {
+          "id": 1,
+          "name": "6",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "5",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "7",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "8",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "12% de 50 é 50 × 0,12 = 6.",
+      "studyTip": "Transforme a porcentagem em decimal antes de multiplicar.",
+      "id": 20015,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$400 teve um acréscimo de 25%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$500",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$450",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$525",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$475",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "25% de 400 é 100. Valor final: 400 + 100 = 500.",
+      "studyTip": "Multiplique o valor pela porcentagem e some ao total.",
+      "id": 20016,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 80% de 250?",
+      "options": [
+        {
+          "id": 1,
+          "name": "200",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "180",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "220",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "240",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "80% de 250 é 250 × 0,80 = 200.",
+      "studyTip": "80% equivale a quatro quintos do valor.",
+      "id": 20017,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se um produto custa R$60 e tem 50% de desconto, qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$30",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$40",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$20",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$50",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "50% de 60 é 30. Valor final: 60 - 30 = 30.",
+      "studyTip": "Descontos são subtraídos do valor original.",
+      "id": 20018,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 15% de 200?",
+      "options": [
+        {
+          "id": 1,
+          "name": "30",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "25",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "35",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "40",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "15% de 200 é 200 × 0,15 = 30.",
+      "studyTip": "Multiplique o valor pela porcentagem em forma decimal.",
+      "id": 20019,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um valor de R$500 teve um desconto de 5%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$475",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$480",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$490",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$495",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "5% de 500 é 25. Valor final: 500 - 25 = 475.",
+      "studyTip": "Para descontos, subtraia o valor percentual do total.",
+      "id": 20020,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 40% de 300?",
+      "options": [
+        {
+          "id": 1,
+          "name": "120",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "100",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "140",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "150",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "40% de 300 é 300 × 0,40 = 120.",
+      "studyTip": "Multiplique o valor pela porcentagem em forma decimal.",
+      "id": 20021,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$180 teve um desconto de 20%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$144",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$160",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$150",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$170",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20% de 180 é 36. Valor final: 180 - 36 = 144.",
+      "studyTip": "Descontos são subtraídos do valor original.",
+      "id": 20022,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 10% de 450?",
+      "options": [
+        {
+          "id": 1,
+          "name": "45",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "40",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "50",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "35",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "10% de 450 é 450 × 0,10 = 45.",
+      "studyTip": "10% é sempre um décimo do valor.",
+      "id": 20023,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se um salário de R$2.500 aumenta 5%, qual será o novo valor?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$2.625",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$2.550",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$2.600",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$2.700",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "5% de 2500 é 125. Novo salário: 2500 + 125 = 2625.",
+      "studyTip": "Para aumentos, some o valor percentual ao total.",
+      "id": 20024,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 90% de 100?",
+      "options": [
+        {
+          "id": 1,
+          "name": "90",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "80",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "70",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "60",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "90% de 100 é 100 × 0,90 = 90.",
+      "studyTip": "Multiplique o valor pela porcentagem em forma decimal.",
+      "id": 20025,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$500 teve um acréscimo de 10%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$550",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$540",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$530",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$560",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "10% de 500 é 50. Valor final: 500 + 50 = 550.",
+      "studyTip": "Multiplique o valor pela porcentagem e some ao total.",
+      "id": 20026,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 2% de 1.000?",
+      "options": [
+        {
+          "id": 1,
+          "name": "20",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "200",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "10",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "50",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "2% de 1000 é 1000 × 0,02 = 20.",
+      "studyTip": "Porcentagens pequenas são úteis em cálculos de taxas.",
+      "id": 20027,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se um valor de R$1.200 tem um desconto de 15%, qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$1.020",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$1.050",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$1.080",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$1.100",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "15% de 1200 é 180. Valor final: 1200 - 180 = 1020.",
+      "studyTip": "Descontos são calculados com multiplicação e subtração.",
+      "id": 20028,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é 35% de 200?",
+      "options": [
+        {
+          "id": 1,
+          "name": "70",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "60",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "80",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "90",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "35% de 200 é 200 × 0,35 = 70.",
+      "studyTip": "Multiplique o valor pela porcentagem em forma decimal.",
+      "id": 20029,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um valor de R$1.000 teve um acréscimo de 12%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$1.120",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$1.100",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$1.150",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$1.130",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "12% de 1000 é 120. Valor final: 1000 + 120 = 1120.",
+      "studyTip": "Multiplique o valor pela porcentagem e some ao total.",
+      "id": 20030,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Joana comprou uma blusa que custava R$120 com 25% de desconto. Qual foi o valor pago?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$90",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$95",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$100",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$105",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "25% de 120 é 30. Valor final: 120 - 30 = 90.",
+      "studyTip": "Descontos são calculados multiplicando o valor pela porcentagem e subtraindo do total.",
+      "id": 20031,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Carlos recebeu um aumento de 15% no salário de R$2.000. Qual é o novo salário?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$2.300",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$2.250",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$2.200",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$2.100",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "15% de 2000 é 300. Novo salário: 2000 + 300 = 2300.",
+      "studyTip": "Aumentos são somados ao valor original após o cálculo da porcentagem.",
+      "id": 20032,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um celular que custava R$1.500 está com 20% de desconto. Qual é o valor com desconto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$1.200",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$1.250",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$1.300",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$1.350",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20% de 1500 é 300. Valor final: 1500 - 300 = 1200.",
+      "studyTip": "Multiplique o valor pela porcentagem e subtraia para encontrar o preço com desconto.",
+      "id": 20033,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um restaurante aumentou o preço de um prato de R$40 em 10%. Qual é o novo valor?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$44",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$45",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$46",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$48",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "10% de 40 é 4. Novo valor: 40 + 4 = 44.",
+      "studyTip": "Acréscimos são somados ao valor original.",
+      "id": 20034,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um aluno acertou 18 questões de uma prova com 20 perguntas. Qual foi sua porcentagem de acertos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "90%",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "85%",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "80%",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "95%",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "18 ÷ 20 = 0,9 → 0,9 × 100 = 90%.",
+      "studyTip": "Divida o número de acertos pelo total e multiplique por 100.",
+      "id": 20035,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma loja vendeu 80 unidades de um produto em um mês. No mês seguinte, vendeu 100. Qual foi o aumento percentual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "25%",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "20%",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "15%",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "30%",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aumento: 100 - 80 = 20 → 20 ÷ 80 = 0,25 → 25%.",
+      "studyTip": "Para aumento percentual: diferença ÷ valor inicial × 100.",
+      "id": 20036,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$600 teve um desconto de 15%. Qual é o valor com desconto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$510",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$520",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$530",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$540",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "15% de 600 é 90. Valor final: 600 - 90 = 510.",
+      "studyTip": "Multiplique o valor pela porcentagem e subtraia para encontrar o preço com desconto.",
+      "id": 20037,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O preço de uma passagem de ônibus subiu de R$4,00 para R$4,40. Qual foi o aumento percentual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "10%",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "8%",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "12%",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "15%",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aumento: 0,40 ÷ 4,00 = 0,10 → 10%.",
+      "studyTip": "Divida o aumento pelo valor original e multiplique por 100.",
+      "id": 20038,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um aluno tirou 7 em uma prova que vale 10. Qual foi sua porcentagem de aproveitamento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "70%",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "75%",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "65%",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "80%",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "7 ÷ 10 = 0,7 → 0,7 × 100 = 70%.",
+      "studyTip": "Porcentagem de aproveitamento é calculada dividindo a nota pela nota máxima.",
+      "id": 20039,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$1.000 teve um desconto de 30%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$700",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$750",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$800",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$850",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "30% de 1000 é 300. Valor final: 1000 - 300 = 700.",
+      "studyTip": "Multiplique o valor pela porcentagem e subtraia para encontrar o preço com desconto.",
+      "id": 20040,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Ana comprou um tênis por R$250 com 20% de desconto. Quanto ela pagou?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$200",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$210",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$220",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$230",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "20% de 250 é 50. Valor final: 250 - 50 = 200.",
+      "studyTip": "Multiplique o valor pela porcentagem e subtraia para encontrar o preço com desconto.",
+      "id": 20041,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um curso online custa R$600. Durante a promoção, ele teve 30% de desconto. Qual foi o valor pago?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$420",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$450",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$480",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$500",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "30% de 600 é 180. Valor final: 600 - 180 = 420.",
+      "studyTip": "Descontos são calculados com multiplicação e subtração.",
+      "id": 20042,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Pedro comprou um celular por R$1.800 e pagou 10% de entrada. Quanto ele pagou na entrada?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$180",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$200",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$150",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$250",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "10% de 1800 é 180.",
+      "studyTip": "Multiplique o valor total pela porcentagem para encontrar a entrada.",
+      "id": 20043,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um supermercado anunciou 15% de desconto em um produto de R$80. Qual é o valor com desconto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$68",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$70",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$72",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$74",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "15% de 80 é 12. Valor final: 80 - 12 = 68.",
+      "studyTip": "Multiplique o valor pela porcentagem e subtraia para encontrar o preço com desconto.",
+      "id": 20044,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em uma escola com 400 alunos, 25% participam de atividades extracurriculares. Quantos alunos participam?",
+      "options": [
+        {
+          "id": 1,
+          "name": "100",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "80",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "120",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "150",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "25% de 400 é 100.",
+      "studyTip": "Multiplique o total de alunos pela porcentagem para encontrar o número de participantes.",
+      "id": 20045,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um computador custa R$2.000 e está com 10% de desconto. Qual é o valor com desconto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$1.800",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$1.900",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$1.950",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$2.100",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "10% de 2000 é 200. Valor final: 2000 - 200 = 1800.",
+      "studyTip": "Multiplique o valor pela porcentagem e subtraia para encontrar o preço com desconto.",
+      "id": 20046,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um aluno fez 40 exercícios e acertou 32. Qual foi sua porcentagem de acertos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "80%",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "75%",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "85%",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "90%",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "32 ÷ 40 = 0,8 → 0,8 × 100 = 80%.",
+      "studyTip": "Divida o número de acertos pelo total e multiplique por 100.",
+      "id": 20047,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um produto de R$150 teve um acréscimo de 20%. Qual é o valor final?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$180",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$170",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$160",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$190",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20% de 150 é 30. Valor final: 150 + 30 = 180.",
+      "studyTip": "Multiplique o valor pela porcentagem e some ao total.",
+      "id": 20048,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma loja vendeu 300 produtos em janeiro e 360 em fevereiro. Qual foi o aumento percentual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "20%",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "15%",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "25%",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "30%",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Aumento: 60 ÷ 300 = 0,2 → 20%.",
+      "studyTip": "Para aumento percentual: diferença ÷ valor inicial × 100.",
+      "id": 20049,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um curso custa R$800 e está com 50% de desconto. Qual é o valor com desconto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$400",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$500",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$600",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$700",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "50% de 800 é 400. Valor final: 800 - 400 = 400.",
+      "studyTip": "50% equivale à metade do valor.",
+      "id": 20050,
+      "category": "matematica-porcentagem",
+      "difficulty": "fundamental"
+    }
+  ]
+}

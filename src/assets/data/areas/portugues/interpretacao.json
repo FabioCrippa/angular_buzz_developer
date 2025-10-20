@@ -2,171 +2,1561 @@
   "metadata": {
     "area": "portugues",
     "subject": "interpretacao",
-    "name": "Interpretação de Texto",
-    "description": "Compreensão textual, inferências, tipos de texto e análise literária.",
+    "name": "Interpretacao",
+    "description": "",
     "difficulty": "fundamental",
-    "lastUpdated": "2025-10-02",
-    "questionCount": 5,
-    "tags": [
-      "interpretação",
-      "leitura",
-      "compreensão",
-      "texto"
-    ]
+    "lastUpdated": "2025-10-20",
+    "questionCount": 50,
+    "tags": []
   },
   "questions": [
     {
-      "question": "Em um texto argumentativo, qual é a função principal do parágrafo de conclusão?",
+      "question": "O que se entende por interpretação de texto?",
       "options": [
         {
           "id": 1,
-          "name": "Apresentar novos argumentos",
+          "name": "A leitura superficial do texto",
           "alias": "A"
         },
         {
           "id": 2,
-          "name": "Retomar a tese e reforçar a argumentação",
+          "name": "A análise gramatical das palavras",
           "alias": "B"
         },
         {
           "id": 3,
-          "name": "Contradizer os argumentos anteriores",
+          "name": "A compreensão e análise do conteúdo",
           "alias": "C"
         },
         {
           "id": 4,
-          "name": "Fazer citações de autoridade",
+          "name": "A memorização de frases",
           "alias": "D"
         }
       ],
-      "correct": "B",
-      "explanation": "A conclusão deve retomar a tese inicial e sintetizar os argumentos apresentados no desenvolvimento.",
-      "studyTip": "Lembre-se: introdução apresenta, desenvolvimento argumenta, conclusão sintetiza.",
-      "id": 2102,
+      "correct": "C",
+      "explanation": "Interpretar um texto é compreender seu conteúdo, sentido e intenções.",
+      "studyTip": "Leia com atenção e reflita sobre o que o autor quer transmitir.",
+      "id": 5001,
       "category": "interpretacao",
       "difficulty": "fundamental"
     },
     {
-      "question": "Qual elemento NÃO é característica de um texto dissertativo-argumentativo?",
+      "question": "Ao interpretar um texto, é importante considerar:",
       "options": [
         {
           "id": 1,
-          "name": "Presença de tese",
+          "name": "A pontuação usada",
           "alias": "A"
         },
         {
           "id": 2,
-          "name": "Uso da 1ª pessoa",
+          "name": "O contexto e a intenção do autor",
           "alias": "B"
         },
         {
           "id": 3,
-          "name": "Argumentos consistentes",
+          "name": "A quantidade de parágrafos",
           "alias": "C"
         },
         {
           "id": 4,
-          "name": "Linguagem objetiva",
+          "name": "A presença de figuras de linguagem",
           "alias": "D"
         }
       ],
       "correct": "B",
-      "explanation": "Textos dissertativo-argumentativos geralmente usam 3ª pessoa para manter imparcialidade.",
-      "studyTip": "Dissertação: 3ª pessoa, impessoal. Narração: pode usar 1ª ou 3ª pessoa.",
-      "id": 2103,
+      "explanation": "O contexto e a intenção do autor são fundamentais para a interpretação.",
+      "studyTip": "Observe o gênero textual, o público-alvo e o objetivo da mensagem.",
+      "id": 5002,
       "category": "interpretacao",
       "difficulty": "fundamental"
     },
     {
-      "question": "No texto 'O Brasil é um país de contrastes', a palavra 'contrastes' sugere:",
+      "question": "Em um texto narrativo, a interpretação envolve:",
       "options": [
         {
           "id": 1,
-          "name": "Uniformidade",
+          "name": "Identificar os personagens e o enredo",
           "alias": "A"
         },
         {
           "id": 2,
-          "name": "Diversidade e diferenças",
+          "name": "Contar o número de palavras",
           "alias": "B"
         },
         {
           "id": 3,
-          "name": "Simplicidade",
+          "name": "Analisar apenas os verbos",
           "alias": "C"
         },
         {
           "id": 4,
-          "name": "Pequenez",
+          "name": "Ignorar o tempo verbal",
           "alias": "D"
         }
       ],
-      "correct": "B",
-      "explanation": "Contrastes indica diferenças marcantes, diversidade de situações opostas no mesmo contexto.",
-      "studyTip": "Sempre considere o contexto para interpretar palavras polissêmicas.",
-      "id": 2104,
+      "correct": "A",
+      "explanation": "A interpretação de narrativas exige atenção aos elementos da história.",
+      "studyTip": "Identifique quem faz o quê, onde, quando e por que.",
+      "id": 5003,
       "category": "interpretacao",
       "difficulty": "fundamental"
     },
     {
-      "question": "Em 'Chovia canivetes', temos um exemplo de linguagem:",
+      "question": "Qual é o objetivo da interpretação de texto?",
       "options": [
         {
           "id": 1,
-          "name": "Denotativa",
+          "name": "Decorar frases",
           "alias": "A"
         },
         {
           "id": 2,
-          "name": "Conotativa",
+          "name": "Entender o sentido e a mensagem",
           "alias": "B"
         },
         {
           "id": 3,
-          "name": "Técnica",
+          "name": "Corrigir erros gramaticais",
           "alias": "C"
         },
         {
           "id": 4,
-          "name": "Formal",
+          "name": "Identificar figuras de linguagem",
           "alias": "D"
         }
       ],
       "correct": "B",
-      "explanation": "Linguagem conotativa usa sentido figurado. 'Chover canivetes' = chover forte.",
-      "studyTip": "Denotativo = sentido literal. Conotativo = sentido figurado, subjetivo.",
-      "id": 2105,
+      "explanation": "Interpretar é compreender o que o texto comunica.",
+      "studyTip": "Leia com atenção e faça perguntas sobre o que está sendo dito.",
+      "id": 5004,
       "category": "interpretacao",
       "difficulty": "fundamental"
     },
     {
-      "question": "Qual conectivo indica oposição entre ideias?",
+      "question": "Em textos argumentativos, a interpretação deve focar em:",
       "options": [
         {
           "id": 1,
-          "name": "Portanto",
+          "name": "A sequência dos fatos",
           "alias": "A"
         },
         {
           "id": 2,
-          "name": "Entretanto",
+          "name": "Os argumentos e a tese defendida",
           "alias": "B"
         },
         {
           "id": 3,
-          "name": "Logo",
+          "name": "A descrição dos personagens",
           "alias": "C"
         },
         {
           "id": 4,
-          "name": "Assim",
+          "name": "A presença de rimas",
           "alias": "D"
         }
       ],
       "correct": "B",
-      "explanation": "'Entretanto' expressa contraste, oposição entre ideias do período.",
-      "studyTip": "Conectivos adversativos: mas, porém, contudo, todavia, entretanto, no entanto.",
-      "id": 2106,
+      "explanation": "Textos argumentativos apresentam uma tese e argumentos que a sustentam.",
+      "studyTip": "Identifique a opinião do autor e os fatos que a justificam.",
+      "id": 5005,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da inferência na interpretação de textos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Repetir o que está escrito",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Deduzir informações implícitas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ignorar o contexto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Traduzir o texto",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Inferir é deduzir informações que não estão explícitas no texto.",
+      "studyTip": "Leia nas entrelinhas e relacione ideias para fazer inferências.",
+      "id": 5006,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que significa interpretar um texto de forma crítica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Concordar com tudo que está escrito",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Analisar e questionar o conteúdo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ignorar a opinião do autor",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Focar apenas na gramática",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A interpretação crítica envolve refletir sobre o texto e formar opinião.",
+      "studyTip": "Compare o texto com seus conhecimentos e experiências.",
+      "id": 5007,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em textos poéticos, a interpretação deve considerar:",
+      "options": [
+        {
+          "id": 1,
+          "name": "A métrica e a rima",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O sentido figurado e as emoções",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A pontuação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A quantidade de versos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Textos poéticos usam linguagem conotativa para expressar sentimentos.",
+      "studyTip": "Busque o sentido além das palavras, considerando metáforas e símbolos.",
+      "id": 5008,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a importância do título na interpretação de um texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Serve apenas para chamar atenção",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ajuda a antecipar o tema e o conteúdo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "É irrelevante para a compreensão",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Indica o número de parágrafos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O título pode indicar o assunto e orientar a leitura do texto.",
+      "studyTip": "Leia o título com atenção antes de iniciar a leitura do texto.",
+      "id": 5009,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Ao interpretar um texto, é essencial:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ler rapidamente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ignorar palavras desconhecidas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Relacionar ideias e buscar sentido",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Focar apenas na estética",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Interpretar exige atenção às ideias e à construção do sentido.",
+      "studyTip": "Leia com calma, destaque palavras-chave e relacione informações.",
+      "id": 5010,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Leia o texto: 'O trânsito estava lento, mas João chegou a tempo.' Qual a relação entre as ideias?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Causa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Adição",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Oposição",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conclusão",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A conjunção 'mas' indica oposição entre o trânsito lento e a chegada pontual.",
+      "studyTip": "Identifique os conectivos e o sentido que eles estabelecem entre as frases.",
+      "id": 5011,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto publicitário: 'Compre agora e ganhe 50% de desconto!' Qual é a intenção principal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Informar sobre um produto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Convencer o leitor a comprar",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criticar o consumo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Narrar uma história",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A linguagem persuasiva visa convencer o leitor a realizar a compra.",
+      "studyTip": "Identifique o gênero textual e sua função comunicativa.",
+      "id": 5012,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Poema: 'O tempo passa, a vida voa, e a saudade fica.' O que o eu lírico expressa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Alegria com o tempo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Indiferença ao passado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Melancolia e nostalgia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Raiva do presente",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O poema transmite sentimentos de saudade e passagem do tempo.",
+      "studyTip": "Em textos poéticos, observe o tom emocional e o uso de figuras de linguagem.",
+      "id": 5013,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto jornalístico: 'A prefeitura anunciou novas medidas para melhorar o transporte público.' Qual é o foco da notícia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Crítica ao governo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Informar sobre ações da prefeitura",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Relatar um acidente",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Promover um evento",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto tem caráter informativo sobre medidas públicas.",
+      "studyTip": "Identifique o tipo de texto e sua função principal.",
+      "id": 5014,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Ela estudou muito, portanto passou na prova.' Qual é a relação entre as ideias?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Causa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Consequência",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Condição",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contraste",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O conectivo 'portanto' indica uma consequência lógica.",
+      "studyTip": "Observe os conectivos para entender a relação entre as frases.",
+      "id": 5015,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Se chover, o passeio será cancelado.' Qual é a relação entre as ideias?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Causa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Condição",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Conclusão",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Adição",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A conjunção 'se' estabelece uma condição para o cancelamento.",
+      "studyTip": "Conectivos condicionais indicam hipóteses ou possibilidades.",
+      "id": 5016,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Apesar do frio, ela saiu para correr.' Qual é o sentido da expressão 'apesar do frio'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Causa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Concessão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Conclusão",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Adição",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a ação ocorreu mesmo com uma dificuldade.",
+      "studyTip": "Concessão mostra que algo acontece apesar de um obstáculo.",
+      "id": 5017,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Ele não só estudou como também ajudou os colegas.' Qual é a relação entre as ações?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Oposição",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Adição",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Causa",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Condição",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão 'não só... como também' indica adição de ações.",
+      "studyTip": "Identifique expressões que ampliam ou somam ideias.",
+      "id": 5018,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'O menino chorava porque queria atenção.' Qual é o motivo do choro?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estava com fome",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Queria atenção",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estava com sono",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estava com medo",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto explicita que o choro era por desejo de atenção.",
+      "studyTip": "Busque no texto as informações explícitas antes de inferir.",
+      "id": 5019,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Ela olhou pela janela e viu o céu escuro. Pegou o guarda-chuva.' O que ela deduziu?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Que estava calor",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Que ia chover",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Que ia fazer sol",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Que estava tarde",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A ação de pegar o guarda-chuva indica que ela deduziu que ia chover.",
+      "studyTip": "Observe as ações dos personagens para entender suas deduções.",
+      "id": 5020,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Carlos acordou cedo, tomou café e saiu para trabalhar. No caminho, lembrou que havia esquecido os documentos em casa. Voltou correndo, pegou os papéis e chegou atrasado ao escritório.' Qual foi a causa do atraso de Carlos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele acordou tarde",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O trânsito estava ruim",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Esqueceu os documentos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tomou café devagar",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O texto indica que Carlos voltou para casa por ter esquecido os documentos, o que causou o atraso.",
+      "studyTip": "Identifique os eventos que provocam consequências no texto.",
+      "id": 5021,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'A campanha de vacinação começou nesta segunda-feira. Crianças entre 5 e 11 anos devem ser levadas aos postos de saúde com documento de identidade e cartão do SUS. A meta é vacinar 90% do público-alvo até o fim do mês.' Qual é o objetivo principal da campanha?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Distribuir documentos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Vacinar crianças",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Fechar postos de saúde",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Atualizar o cartão do SUS",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto informa que o objetivo é vacinar crianças entre 5 e 11 anos.",
+      "studyTip": "Leia com atenção os dados e metas apresentados em textos informativos.",
+      "id": 5022,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Mesmo com o céu nublado, Mariana decidiu ir à praia. Levou guarda-sol, protetor solar e um livro. Passou a tarde lendo e ouvindo o som das ondas. No fim do dia, voltou para casa relaxada.' O que o texto revela sobre Mariana?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela gosta de agitação",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela prefere dias chuvosos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela valoriza momentos tranquilos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela não gosta de ler",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O texto mostra que Mariana buscou tranquilidade e relaxamento na praia.",
+      "studyTip": "Observe as ações dos personagens para entender seus valores e preferências.",
+      "id": 5023,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'O novo parque da cidade foi inaugurado com diversas atrações: pista de caminhada, brinquedos para crianças, área de piquenique e espaço para eventos culturais. A população compareceu em peso e elogiou a iniciativa.' Qual é o tom do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Crítico",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Informativo e positivo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Neutro",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Negativo",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto informa e valoriza a inauguração do parque, com elogios da população.",
+      "studyTip": "Identifique o tom do texto observando as palavras e expressões utilizadas.",
+      "id": 5024,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Durante a aula, o professor explicou como funciona o ciclo da água. Falou sobre evaporação, condensação e precipitação. Os alunos fizeram perguntas e participaram ativamente.' Qual é o tema central do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A participação dos alunos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O ciclo da água",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A rotina escolar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A profissão de professor",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto gira em torno da explicação do ciclo da água durante a aula.",
+      "studyTip": "Identifique o assunto principal que organiza as informações do texto.",
+      "id": 5025,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Joana sempre gostou de animais. Quando encontrou um gato abandonado na rua, não pensou duas vezes: levou-o para casa, deu banho, comida e carinho. Hoje, o gato é seu companheiro inseparável.' O que o texto mostra sobre Joana?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela tem medo de gatos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela é indiferente aos animais",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela é cuidadosa e afetuosa",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela trabalha com animais",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "As ações de Joana revelam carinho e cuidado com o gato abandonado.",
+      "studyTip": "Observe as atitudes dos personagens para entender suas características.",
+      "id": 5026,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'O anúncio dizia: “Venha conhecer o novo restaurante da cidade! Ambiente agradável, comida caseira e preço justo.”' Qual é a função principal do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Narrar uma história",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Convencer o leitor a visitar o restaurante",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criticar a culinária local",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Informar sobre saúde",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto tem caráter persuasivo, típico de anúncios publicitários.",
+      "studyTip": "Identifique a intenção comunicativa do texto: informar, convencer, emocionar etc.",
+      "id": 5027,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Na floresta, os animais viviam em harmonia. Um dia, uma tempestade derrubou várias árvores. Os bichos se uniram para reconstruir seus abrigos e proteger os filhotes.' Qual valor é destacado no texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Competição",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Solidariedade",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Indiferença",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Isolamento",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto destaca a união dos animais diante da dificuldade.",
+      "studyTip": "Identifique valores e atitudes que os personagens demonstram em suas ações.",
+      "id": 5028,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'O menino olhava o céu estrelado e imaginava como seria viajar pelo espaço. Pensava em planetas distantes, naves espaciais e seres de outros mundos. Sonhava em ser astronauta.' O que o texto revela sobre o menino?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele tem medo do espaço",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele sonha em ser astronauta",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele prefere ficar na Terra",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele já viajou pelo espaço",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto mostra o desejo do menino de explorar o espaço.",
+      "studyTip": "Observe os pensamentos e desejos dos personagens para entender suas aspirações.",
+      "id": 5029,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Durante a feira de ciências, os alunos apresentaram projetos sobre energia renovável. Havia maquetes de painéis solares, turbinas eólicas e carros movidos a eletricidade. Os visitantes ficaram impressionados com a criatividade dos estudantes.' O que se pode concluir sobre os alunos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Eles não se interessam por ciência",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Eles são criativos e engajados",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Eles não participaram da feira",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Eles copiaram os projetos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto destaca a criatividade e o envolvimento dos alunos com os projetos.",
+      "studyTip": "Observe os resultados e reações descritas no texto para tirar conclusões.",
+      "id": 5030,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Com o avanço da tecnologia, muitas tarefas que antes exigiam esforço físico passaram a ser realizadas por máquinas. Isso trouxe mais conforto, mas também gerou preocupações com o desemprego e a dependência excessiva da automação.' Qual é o tema central do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A evolução da linguagem",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O impacto da tecnologia no trabalho",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A história das máquinas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A importância do esforço físico",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto discute como a tecnologia afeta o trabalho e levanta preocupações sociais.",
+      "studyTip": "Identifique o foco principal do texto e os problemas que ele apresenta.",
+      "id": 5031,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'A poluição dos rios tem se tornado um problema grave nas grandes cidades. O descarte irregular de lixo e esgoto compromete a qualidade da água e afeta diretamente a saúde da população. Medidas urgentes precisam ser tomadas para reverter esse cenário.' Qual é a intenção do autor?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criticar o uso da água potável",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Alertar sobre a poluição dos rios",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Promover o turismo fluvial",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ensinar a nadar em rios",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto tem caráter de alerta sobre os impactos da poluição hídrica.",
+      "studyTip": "Observe os verbos e expressões que indicam preocupação ou urgência.",
+      "id": 5032,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Durante a pandemia, muitas escolas adotaram o ensino remoto. Embora tenha sido uma solução emergencial, muitos alunos enfrentaram dificuldades de acesso à internet e falta de acompanhamento. A experiência mostrou a importância da inclusão digital na educação.' O que se pode concluir do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O ensino remoto foi fácil para todos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A inclusão digital é essencial",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A pandemia não afetou a educação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Todos os alunos tinham acesso à internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto destaca que a inclusão digital é fundamental para garantir acesso à educação.",
+      "studyTip": "Busque as ideias principais e as conclusões que o texto apresenta.",
+      "id": 5033,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Ana sempre foi muito tímida. Na escola, evitava falar em público e ficava nervosa em apresentações. Com o tempo, começou a participar de grupos de teatro e percebeu que podia superar seus medos. Hoje, é uma das alunas mais comunicativas da turma.' Qual transformação Ana vivenciou?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ficou mais tímida",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Passou a evitar o teatro",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Superou a timidez",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desistiu da escola",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O texto mostra que Ana venceu a timidez por meio do teatro.",
+      "studyTip": "Observe a evolução dos personagens ao longo do texto.",
+      "id": 5034,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'O uso excessivo de plástico tem causado sérios danos ao meio ambiente. Sacolas, garrafas e embalagens demoram centenas de anos para se decompor. A reciclagem e o uso de materiais biodegradáveis são alternativas importantes para reduzir esse impacto.' Qual solução o texto apresenta?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Aumentar o uso de plástico",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Evitar o uso de materiais biodegradáveis",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Investir em reciclagem e biodegradáveis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ignorar o problema ambiental",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O texto propõe a reciclagem e o uso de materiais biodegradáveis como solução.",
+      "studyTip": "Identifique as propostas e soluções que o texto apresenta para os problemas discutidos.",
+      "id": 5035,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Pedro sempre foi apaixonado por livros. Desde pequeno, passava horas na biblioteca da escola. Com o tempo, começou a escrever suas próprias histórias. Hoje, aos 18 anos, publicou seu primeiro livro de contos.' O que o texto revela sobre Pedro?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele não gosta de ler",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele é um leitor e escritor dedicado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele abandonou os estudos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele prefere filmes a livros",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto mostra o envolvimento de Pedro com a leitura e a escrita desde a infância.",
+      "studyTip": "Observe os hábitos e conquistas dos personagens para entender suas características.",
+      "id": 5036,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'A cidade de Sol Nascente passou por uma grande transformação nos últimos anos. Ruas foram asfaltadas, escolas reformadas e áreas de lazer construídas. Os moradores agora têm mais qualidade de vida e orgulho de onde vivem.' Qual é a ideia principal do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A cidade está em crise",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A cidade foi abandonada",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A cidade melhorou e os moradores estão satisfeitos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A cidade perdeu sua identidade",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O texto destaca melhorias na infraestrutura e na qualidade de vida dos moradores.",
+      "studyTip": "Busque palavras que indicam mudança, progresso ou retrocesso.",
+      "id": 5037,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Durante o recreio, Lucas viu um colega sendo zombado por outros alunos. Sem hesitar, se aproximou e pediu que parassem. Depois, conversou com o colega e o convidou para brincar. Sua atitude foi elogiada pelos professores.' Qual valor está presente na atitude de Lucas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Indiferença",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Solidariedade",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Competição",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Timidez",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Lucas demonstrou empatia e solidariedade ao defender o colega.",
+      "studyTip": "Observe as ações dos personagens para identificar valores humanos.",
+      "id": 5038,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'A professora pediu que os alunos escrevessem sobre seus sonhos. Alguns falaram em ser médicos, outros em viajar pelo mundo. Um aluno escreveu que queria plantar árvores e cuidar do meio ambiente. A turma aplaudiu sua ideia.' O que esse texto mostra sobre os alunos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Eles não têm sonhos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Eles valorizam causas importantes",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Eles não gostam de escrever",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Eles preferem profissões tradicionais",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto mostra que os alunos valorizam sonhos e causas como o meio ambiente.",
+      "studyTip": "Observe as reações dos personagens para entender os valores compartilhados.",
+      "id": 5039,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Na biblioteca, Sofia encontrou um livro antigo sobre astronomia. Fascinada pelas estrelas e planetas, passou a visitar o observatório da cidade. Hoje, ela pensa em seguir carreira como astrônoma.' O que motivou Sofia a escolher essa carreira?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A visita ao observatório",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O livro sobre astronomia",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A conversa com um astrônomo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A aula de matemática",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto mostra que o livro despertou o interesse de Sofia pela astronomia.",
+      "studyTip": "Identifique os elementos que influenciam as decisões dos personagens.",
+      "id": 5040,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Maria sempre teve uma alimentação desregrada. Com o tempo, começou a sentir cansaço constante e dores de cabeça. Após uma consulta médica, decidiu mudar seus hábitos: passou a comer frutas, verduras e praticar exercícios. Hoje, sente-se mais disposta e saudável.' O que o texto mostra sobre Maria?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela ignorou os sintomas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela mudou seus hábitos por recomendação médica",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela sempre teve uma vida saudável",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela parou de se alimentar",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto mostra que Maria mudou seus hábitos após perceber problemas de saúde.",
+      "studyTip": "Observe a sequência de ações e suas motivações no texto.",
+      "id": 5041,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Durante a infância, Lucas e Rafael eram inseparáveis. Brincavam juntos, estudavam na mesma escola e compartilhavam segredos. Com o tempo, seguiram caminhos diferentes, mas sempre mantiveram contato. Hoje, mesmo morando em cidades distantes, continuam amigos.' Qual valor é destacado no texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Competição",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Amizade verdadeira",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Distanciamento emocional",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Solidão",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto destaca a amizade duradoura entre Lucas e Rafael.",
+      "studyTip": "Identifique os sentimentos e relações entre os personagens.",
+      "id": 5042,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'A escola organizou uma campanha de arrecadação de alimentos para famílias carentes. Os alunos se mobilizaram, trouxeram doações e ajudaram na distribuição. A ação foi um sucesso e ensinou valores como solidariedade e empatia.' Qual foi o resultado da campanha escolar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Fracasso na arrecadação",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Desorganização dos alunos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Sucesso e aprendizado de valores",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Falta de participação",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O texto mostra que a campanha foi bem-sucedida e educativa.",
+      "studyTip": "Observe os resultados e os valores destacados no texto.",
+      "id": 5043,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Com o aumento da temperatura global, cientistas alertam para os riscos das mudanças climáticas. Derretimento de geleiras, aumento do nível do mar e eventos extremos como secas e enchentes são algumas das consequências previstas.' Qual é o alerta principal do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A temperatura está diminuindo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "As mudanças climáticas trazem riscos sérios",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "As geleiras estão se formando",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "As enchentes são causadas por chuvas leves",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto alerta sobre os efeitos negativos do aquecimento global.",
+      "studyTip": "Identifique os problemas e os riscos apresentados no texto.",
+      "id": 5044,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'João recebeu uma carta de seu avô, escrita à mão. Nela, o avô contava histórias da juventude, falava sobre valores e deixava conselhos para a vida. João se emocionou ao ler cada palavra e guardou a carta como um tesouro.' O que a carta representa para João?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um documento oficial",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Um presente sem valor",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uma lembrança afetiva e valiosa",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uma crítica ao comportamento de João",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A carta tem valor emocional e afetivo para João.",
+      "studyTip": "Observe os sentimentos expressos pelos personagens diante dos acontecimentos.",
+      "id": 5045,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'A biblioteca da escola passou por reformas e ganhou novos livros, computadores e espaços de leitura. Os alunos agora têm mais interesse em frequentar o local, que se tornou um ambiente agradável e estimulante.' Qual foi o impacto da reforma na biblioteca?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Diminuição do interesse dos alunos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumento da frequência e do interesse",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Fechamento da biblioteca",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desorganização do espaço",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A reforma tornou a biblioteca mais atrativa para os alunos.",
+      "studyTip": "Observe as mudanças e seus efeitos descritos no texto.",
+      "id": 5046,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Na feira de profissões, os estudantes puderam conhecer diferentes áreas de atuação. Médicos, engenheiros, artistas e professores falaram sobre suas rotinas e desafios. A atividade ajudou os alunos a refletirem sobre seus futuros.' Qual foi o objetivo da feira de profissões?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ensinar matemática",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Promover debates políticos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apresentar opções de carreira",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Vender produtos escolares",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A feira teve como objetivo orientar os alunos sobre o mercado de trabalho.",
+      "studyTip": "Identifique o propósito das ações descritas no texto.",
+      "id": 5047,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'O cachorro de rua apareceu na porta da escola todos os dias. Os alunos começaram a alimentá-lo e fizeram uma campanha para encontrar um lar. Em pouco tempo, uma família o adotou e ele ganhou um nome: Amigo.' O que o texto mostra sobre os alunos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Eles ignoraram o animal",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Eles se mobilizaram para ajudar",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Eles expulsaram o cachorro",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Eles ficaram com medo",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Os alunos demonstraram empatia e iniciativa ao ajudar o cachorro.",
+      "studyTip": "Observe as atitudes dos personagens diante de situações sociais.",
+      "id": 5048,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Durante a aula de ciências, os alunos aprenderam sobre os cuidados com o corpo humano. Falaram sobre higiene, alimentação e atividade física. A professora destacou que hábitos saudáveis ajudam na prevenção de doenças.' Qual é a mensagem principal do texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Doenças são inevitáveis",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Hábitos saudáveis são importantes para a saúde",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A higiene não é necessária",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A alimentação não influencia na saúde",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto destaca a importância de cuidar do corpo para evitar doenças.",
+      "studyTip": "Busque a ideia central que o texto quer transmitir ao leitor.",
+      "id": 5049,
+      "category": "interpretacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Texto: 'Na cidade de Esperança, um grupo de jovens criou um projeto para revitalizar praças abandonadas. Pintaram bancos, plantaram flores e organizaram eventos culturais. A iniciativa foi reconhecida pela prefeitura e inspirou outras comunidades.' O que se pode concluir sobre o projeto dos jovens?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Foi ignorado pela população",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Teve impacto positivo e inspirador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Foi criticado pela prefeitura",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Não teve resultados visíveis",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto mostra que o projeto teve reconhecimento e inspirou outras ações.",
+      "studyTip": "Observe os resultados e repercussões das ações descritas.",
+      "id": 5050,
       "category": "interpretacao",
       "difficulty": "fundamental"
     }

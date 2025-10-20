@@ -5,8 +5,8 @@
     "name": "Redação & Produção Textual",
     "description": "Técnicas de redação, estrutura textual, coesão e coerência.",
     "difficulty": "fundamental",
-    "lastUpdated": "2025-10-02",
-    "questionCount": 5,
+    "lastUpdated": "2025-10-20",
+    "questionCount": 45,
     "tags": [
       "redação",
       "escrita",
@@ -167,6 +167,1246 @@
       "explanation": "A conclusão deve retomar a tese, sintetizar argumentos e, idealmente, propor soluções ou reflexões.",
       "studyTip": "Conclusão eficaz: retomada + síntese + proposta/reflexão final.",
       "id": 2206,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal função da introdução em um texto dissertativo-argumentativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentar a conclusão",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Expor argumentos contrários",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apresentar o tema e a tese",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Narrar um fato",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A introdução deve apresentar o tema e a tese que será defendida ao longo do texto.",
+      "studyTip": "Na introdução, contextualize o tema e indique sua posição (tese).",
+      "id": 2207,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em um texto dissertativo, os parágrafos de desenvolvimento devem:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentar argumentos que sustentem a tese",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Contar uma história pessoal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Fazer perguntas ao leitor",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Repetir a introdução",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Os parágrafos de desenvolvimento devem apresentar argumentos que sustentem a tese.",
+      "studyTip": "Cada parágrafo do desenvolvimento deve conter uma ideia principal e exemplos que a sustentem.",
+      "id": 2208,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das opções apresenta coesão textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele foi ao mercado. Comprou frutas. Voltou.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele foi ao mercado, comprou frutas e voltou.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele mercado foi. Frutas comprou. Voltou.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele mercado frutas voltou.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B apresenta conectivos que ligam as ideias, garantindo fluidez e coesão.",
+      "studyTip": "Use conectivos para ligar ideias e garantir a fluidez do texto.",
+      "id": 2209,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um exemplo de linguagem denotativa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela é uma flor de pessoa.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O sol é uma bola de fogo no céu.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O cachorro latiu durante a noite.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele tem um coração de pedra.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A linguagem denotativa é objetiva e literal, como na frase 'O cachorro latiu durante a noite'.",
+      "studyTip": "Linguagem denotativa transmite a informação de forma direta e literal.",
+      "id": 2210,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual elemento é essencial em uma proposta de intervenção no texto dissertativo do Enem?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de gírias",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Citação de autores famosos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ação, agente, modo, efeito e detalhamento",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Opiniões pessoais sem justificativa",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A proposta de intervenção deve conter ação, agente, modo, efeito e detalhamento.",
+      "studyTip": "Uma boa proposta de intervenção é detalhada e viável, com todos os elementos exigidos.",
+      "id": 2211,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das frases apresenta erro de concordância verbal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Os alunos chegaram cedo.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A professora e os alunos chegou atrasado.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela gosta de estudar.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Todos participaram da reunião.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O verbo deveria concordar com o sujeito composto: 'A professora e os alunos chegaram atrasados'.",
+      "studyTip": "O verbo deve concordar com o sujeito em número e pessoa.",
+      "id": 2212,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das opções apresenta um exemplo de linguagem conotativa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O céu está azul.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele tem olhos azuis.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela tem um coração de ouro.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O mar está calmo hoje.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Coração de ouro' é uma metáfora, exemplo de linguagem conotativa.",
+      "studyTip": "Linguagem conotativa é subjetiva, expressa sentimentos e ideias com figuras de linguagem.",
+      "id": 2213,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a melhor estratégia para iniciar uma redação dissertativa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usar uma pergunta retórica",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Apresentar a tese diretamente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Contextualizar o tema com dados ou fatos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Começar com uma opinião pessoal",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Contextualizar com dados ou fatos ajuda a introduzir o tema de forma objetiva e fundamentada.",
+      "studyTip": "Uma introdução eficaz contextualiza o tema e prepara o leitor para a tese.",
+      "id": 2214,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta coesão referencial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Maria comprou um livro. Ela adorou a leitura.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria comprou um livro. Maria adorou a leitura.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Maria comprou um livro. Livro foi bom.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Maria comprou um livro. Leitura adorou.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O pronome 'ela' retoma 'Maria', criando coesão referencial entre as frases.",
+      "studyTip": "Use pronomes para evitar repetições e garantir coesão textual.",
+      "id": 2215,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal característica da linguagem formal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de gírias e expressões populares",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de linguagem técnica e culta",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de abreviações e emojis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de frases curtas e incompletas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A linguagem formal utiliza vocabulário técnico, normas gramaticais e evita gírias.",
+      "studyTip": "Em textos formais, prefira vocabulário culto e estruturas gramaticais corretas.",
+      "id": 2216,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal característica da coerência textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de palavras difíceis",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Organização lógica das ideias",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Presença de figuras de linguagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de conectivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coerência textual garante que as ideias estejam organizadas de forma lógica e compreensível.",
+      "studyTip": "Coerência é a lógica interna do texto; ideias devem se relacionar e fazer sentido.",
+      "id": 2217,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual conectivo é adequado para indicar uma causa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Portanto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Por isso",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Porque",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contudo",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Porque' é um conectivo que introduz a causa de uma ação ou fato.",
+      "studyTip": "Conectivos causais explicam o motivo de algo acontecer: porque, visto que, já que.",
+      "id": 2218,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das frases está escrita com linguagem informal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Solicito que envie os documentos até amanhã.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Me manda os papéis logo, beleza?",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Encaminhe os arquivos solicitados.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Favor enviar os documentos o quanto antes.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B utiliza expressões coloquiais como 'me manda' e 'beleza?', típicas da linguagem informal.",
+      "studyTip": "Evite gírias e expressões populares em textos formais; prefira construções objetivas e cultas.",
+      "id": 2219,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em um texto dissertativo, a tese é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "A conclusão do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A ideia principal que será defendida",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um exemplo que ilustra o tema",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uma citação de autoridade",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A tese é a posição do autor sobre o tema, que será defendida ao longo do texto.",
+      "studyTip": "Defina sua tese com clareza na introdução; ela orienta todo o desenvolvimento.",
+      "id": 2220,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das opções apresenta um exemplo de coesão por substituição?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João comprou um carro. O veículo é vermelho.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "João comprou um carro e uma moto.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "João comprou um carro, pois precisava se locomover.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "João comprou um carro. João está feliz.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A palavra 'veículo' substitui 'carro', evitando repetição e mantendo a coesão.",
+      "studyTip": "Use sinônimos ou pronomes para substituir termos e evitar repetições.",
+      "id": 2221,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma proposta de intervenção completa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "É preciso mudar isso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O governo deve criar campanhas educativas nas escolas para conscientizar os jovens sobre o tema.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A sociedade precisa refletir sobre o problema.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Seria bom se algo fosse feito.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A alternativa B apresenta ação, agente, meio e finalidade, compondo uma proposta completa.",
+      "studyTip": "Proposta de intervenção deve ser clara, viável e conter todos os elementos exigidos pelo Enem.",
+      "id": 2222,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das frases apresenta linguagem objetiva e clara?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A parada foi sinistra, tipo, muito louca mesmo.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A situação foi extremamente preocupante e exigiu medidas urgentes.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O bagulho ficou tenso, mano.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Foi um lance complicado, sabe?",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B utiliza vocabulário formal e transmite a mensagem de forma clara e objetiva.",
+      "studyTip": "Evite ambiguidades e gírias em textos formais; prefira termos precisos e diretos.",
+      "id": 2223,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a melhor forma de finalizar uma redação do Enem?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Com uma proposta de intervenção detalhada",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Com uma pergunta ao leitor",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Com uma frase de efeito",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Com uma citação famosa",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A proposta de intervenção é obrigatória no Enem e deve ser detalhada e viável.",
+      "studyTip": "Inclua ação, agente, meio, efeito e detalhamento na conclusão da redação do Enem.",
+      "id": 2224,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma linguagem impessoal, adequada ao texto dissertativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Acho que isso é muito importante.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Na minha opinião, isso é relevante.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "É necessário que medidas sejam tomadas.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Eu penso que devemos agir.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A frase C utiliza linguagem impessoal, evitando o uso da primeira pessoa.",
+      "studyTip": "Prefira construções impessoais em textos dissertativos para manter a objetividade.",
+      "id": 2225,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma estrutura típica de parágrafo argumentativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tese, argumento, exemplo e conclusão",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Introdução, desenvolvimento e conclusão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Opinião, pergunta e citação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Resumo, opinião e proposta",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Um parágrafo argumentativo bem estruturado apresenta uma ideia central (tese), desenvolve com argumentos e exemplifica.",
+      "studyTip": "Organize seus parágrafos com clareza: tese + argumento + exemplo + conclusão parcial.",
+      "id": 2226,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um exemplo de conectivo conclusivo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Porém",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Além disso",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Portanto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Embora",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Portanto' é um conectivo conclusivo, usado para indicar uma conclusão ou resultado.",
+      "studyTip": "Conectivos conclusivos: portanto, assim, logo, por isso.",
+      "id": 2227,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o papel dos exemplos em um parágrafo argumentativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Enfeitar o texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Contradizer a tese",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Comprovar os argumentos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Introduzir o tema",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Exemplos servem para comprovar e fortalecer os argumentos apresentados.",
+      "studyTip": "Use exemplos reais, dados ou fatos históricos para dar credibilidade ao seu argumento.",
+      "id": 2228,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das frases está adequada ao padrão culto da língua?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A gente vai tá resolvendo isso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Nós resolveremos essa questão em breve.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A galera vai resolver isso aí.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Vai ser resolvido, tipo, rapidão.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B utiliza linguagem formal, com conjugação verbal correta e vocabulário adequado.",
+      "studyTip": "Evite gírias e expressões informais em textos dissertativos; use o padrão culto da língua.",
+      "id": 2229,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função dos parágrafos de desenvolvimento em uma redação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentar a proposta de intervenção",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Expor e justificar os argumentos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Repetir a introdução",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Finalizar o texto",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Os parágrafos de desenvolvimento apresentam e justificam os argumentos que sustentam a tese.",
+      "studyTip": "Cada parágrafo deve conter uma ideia principal, desenvolvida com argumentos e exemplos.",
+      "id": 2230,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma estrutura adequada para a conclusão de uma redação do Enem?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Resumo do texto sem proposta",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Nova tese e novos argumentos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Retomada da tese e proposta de intervenção",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Citação de um autor famoso",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A conclusão deve retomar a tese e apresentar uma proposta de intervenção clara e viável.",
+      "studyTip": "Evite repetir ideias; conclua com síntese e proposta de solução para o problema discutido.",
+      "id": 2231,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um erro de regência verbal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Assisti ao filme ontem.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Prefiro estudar a descansar.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Obedeceu às regras da escola.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Chegou no trabalho atrasado.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O correto seria 'Chegou ao trabalho atrasado', pois o verbo 'chegar' exige a preposição 'a'.",
+      "studyTip": "Verifique a regência dos verbos para garantir correção gramatical no texto.",
+      "id": 2232,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma linguagem apropriada para o Enem?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tipo assim, é mó complicado isso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "É necessário que medidas sejam tomadas com urgência.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A galera precisa se ligar nesse problema.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Isso aí é muito sério, viu?",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B apresenta linguagem formal, objetiva e impessoal, adequada ao Enem.",
+      "studyTip": "Use linguagem clara, objetiva e impessoal em textos dissertativos-argumentativos.",
+      "id": 2233,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um erro de pontuação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela chegou, sentou, e começou a estudar.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela chegou, sentou e começou a estudar.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela chegou e começou a estudar.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela chegou, e começou a estudar.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Não se usa vírgula antes da conjunção 'e' quando liga verbos com o mesmo sujeito.",
+      "studyTip": "Evite vírgula entre verbos com o mesmo sujeito ligados por 'e'.",
+      "id": 2234,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma linguagem adequada para a proposta de intervenção?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O governo tem que fazer alguma coisa.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "É necessário que o Estado implemente políticas públicas eficazes.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Seria legal se alguém resolvesse isso.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tomara que isso mude logo.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B apresenta linguagem formal e especifica o agente e a ação, sendo adequada à proposta de intervenção.",
+      "studyTip": "Seja claro e objetivo na proposta de intervenção, indicando quem fará o quê e como.",
+      "id": 2235,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um erro de paralelismo sintático?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela gosta de ler, escrever e estudar.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela gosta de ler, de escrever e de estudar.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela gosta de ler, escrever e de estudar.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela gosta de ler e estudar.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A frase C quebra o paralelismo ao usar 'de' apenas antes de 'escrever' e 'estudar'.",
+      "studyTip": "Mantenha a mesma estrutura sintática em elementos coordenados para garantir clareza.",
+      "id": 2236,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um exemplo de linguagem impessoal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Acredito que isso seja importante.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "É necessário que se tomem medidas urgentes.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Na minha opinião, isso deve mudar.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Eu penso que devemos agir logo.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B utiliza estrutura impessoal, evitando o uso da primeira pessoa.",
+      "studyTip": "Prefira construções impessoais para manter a objetividade em textos formais.",
+      "id": 2237,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função dos conectivos em um texto dissertativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Enfeitar o texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ligar ideias e garantir coesão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Substituir palavras difíceis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Indicar o fim do texto",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Conectivos são essenciais para ligar ideias e garantir a coesão textual.",
+      "studyTip": "Use conectivos como 'além disso', 'por outro lado', 'portanto' para organizar o texto.",
+      "id": 2238,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma linguagem adequada para a introdução de uma redação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Esse assunto é muito da hora!",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O tema em questão é relevante para a sociedade contemporânea.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Tipo, esse tema é bem importante.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A galera precisa pensar nisso.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B apresenta linguagem formal e contextualiza o tema de forma adequada.",
+      "studyTip": "Na introdução, use linguagem formal e contextualize o tema com clareza.",
+      "id": 2239,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um erro de concordância nominal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela estava meio cansada.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estava bastante feliz com o resultado.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ficou nervoso e ansiosa com a situação.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estava só e triste.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Há erro de concordância entre 'nervoso' e 'ansiosa', que deveriam concordar com o sujeito.",
+      "studyTip": "Concordância nominal exige que os adjetivos concordem com o substantivo a que se referem.",
+      "id": 2240,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma linguagem conotativa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O tempo está nublado.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela tem um olhar que ilumina o dia.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A temperatura caiu para 15 graus.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O céu está encoberto por nuvens.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Um olhar que ilumina o dia' é uma metáfora, exemplo de linguagem conotativa.",
+      "studyTip": "Linguagem conotativa é subjetiva e expressa sentimentos por meio de figuras de linguagem.",
+      "id": 2241,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma proposta de intervenção com agente e ação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "É necessário mudar essa realidade.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O governo deve investir em educação ambiental.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Precisamos de mais consciência.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tomara que isso melhore.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase B apresenta o agente ('governo') e a ação ('investir em educação ambiental').",
+      "studyTip": "Na proposta de intervenção, identifique claramente quem fará o quê.",
+      "id": 2242,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um erro de coesão textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela estudou muito, por isso foi aprovada.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estudou muito. Foi aprovada.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela estudou muito. Por isso, foi aprovada.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela estudou muito, foi aprovada.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "A frase D apresenta uma falha de coesão por ausência de conectivo adequado entre as orações.",
+      "studyTip": "Use conectivos para ligar ideias e evitar frases soltas ou desconexas.",
+      "id": 2243,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma linguagem adequada para o desenvolvimento de uma redação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Além disso, é importante considerar os impactos sociais.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Isso aí é complicado demais.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Tipo, tem muita coisa errada nisso.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A galera precisa se ligar nesse problema.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A frase A apresenta linguagem formal e uso adequado de conectivo.",
+      "studyTip": "No desenvolvimento, use conectivos e linguagem formal para apresentar seus argumentos.",
+      "id": 2244,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta uma estrutura adequada para a introdução de uma redação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentação do tema e da tese",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Resumo da conclusão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Exposição de argumentos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Proposta de intervenção",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A introdução deve apresentar o tema e a tese que será defendida no texto.",
+      "studyTip": "A introdução é o momento de contextualizar o tema e indicar sua posição.",
+      "id": 2245,
+      "category": "redacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das alternativas apresenta um erro de linguagem formal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "É necessário que se tomem providências.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A sociedade precisa de mudanças urgentes.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A parada tá feia, mano.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Medidas devem ser adotadas pelo Estado.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A frase C utiliza gírias e linguagem informal, inadequadas para textos formais.",
+      "studyTip": "Evite gírias, expressões populares e linguagem coloquial em textos dissertativos.",
+      "id": 2246,
       "category": "redacao",
       "difficulty": "fundamental"
     }

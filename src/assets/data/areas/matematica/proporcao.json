@@ -1,0 +1,634 @@
+{
+  "metadata": {
+    "area": "matematica",
+    "subject": "proporcao",
+    "name": "Proporcao",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 20,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "Se 3 lápis custam R$6, quanto custam 5 lápis, mantendo a mesma proporção?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$10",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$9",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$12",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$8",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Cada lápis custa R$2. Então, 5 × 2 = R$10.",
+      "studyTip": "Divida para encontrar o valor unitário e depois multiplique.",
+      "id": 30001,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma receita para 4 pessoas leva 2 xícaras de arroz. Quantas xícaras são necessárias para 10 pessoas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "3",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "2 xícaras para 4 pessoas → 0,5 por pessoa. 10 × 0,5 = 5 xícaras.",
+      "studyTip": "Use regra de três ou calcule a quantidade por pessoa.",
+      "id": 30002,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 6 metros de tecido custam R$90, quanto custam 2 metros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$30",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$20",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$25",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$40",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "R$90 ÷ 6 = R$15 por metro. 2 × 15 = R$30.",
+      "studyTip": "Encontre o valor unitário e multiplique pela quantidade desejada.",
+      "id": 30003,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em uma escola, a proporção de alunos para professores é de 20 para 1. Se há 5 professores, quantos alunos há?",
+      "options": [
+        {
+          "id": 1,
+          "name": "100",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "80",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "120",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "90",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20 alunos por professor × 5 professores = 100 alunos.",
+      "studyTip": "Multiplique a razão pela quantidade de elementos correspondentes.",
+      "id": 30004,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 5 litros de tinta pintam 40 m², quantos metros quadrados serão pintados com 8 litros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "64",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "60",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "80",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "72",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "40 ÷ 5 = 8 m² por litro. 8 × 8 = 64 m².",
+      "studyTip": "Encontre a quantidade por unidade e multiplique.",
+      "id": 30005,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma viagem de 300 km foi feita em 5 horas. Mantendo a mesma velocidade, quanto tempo levaria para percorrer 180 km?",
+      "options": [
+        {
+          "id": 1,
+          "name": "3 horas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "2 horas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "4 horas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "6 horas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "300 ÷ 5 = 60 km/h. 180 ÷ 60 = 3 horas.",
+      "studyTip": "Use a fórmula: tempo = distância ÷ velocidade.",
+      "id": 30006,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 12 maçãs custam R$36, quanto custam 7 maçãs?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$21",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$18",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$24",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$30",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "R$36 ÷ 12 = R$3 por maçã. 7 × 3 = R$21.",
+      "studyTip": "Valor unitário × quantidade desejada.",
+      "id": 30007,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma fábrica produz 120 peças em 8 horas. Quantas peças são produzidas em 5 horas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "75",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "80",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "60",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "90",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "120 ÷ 8 = 15 peças por hora. 15 × 5 = 75 peças.",
+      "studyTip": "Divida para encontrar a produção por hora e multiplique pelo tempo.",
+      "id": 30008,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 2 pacotes de arroz pesam 5 kg, quanto pesam 5 pacotes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "12,5 kg",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "10 kg",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "15 kg",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "8 kg",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "5 ÷ 2 = 2,5 kg por pacote. 2,5 × 5 = 12,5 kg.",
+      "studyTip": "Encontre o peso por unidade e multiplique.",
+      "id": 30009,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma gráfica imprime 240 páginas em 3 horas. Quantas páginas imprime em 5 horas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "400",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "360",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "300",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "280",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "240 ÷ 3 = 80 páginas por hora. 80 × 5 = 400 páginas.",
+      "studyTip": "Divida para encontrar a produção por hora e multiplique pelo tempo.",
+      "id": 30010,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 4 garrafas de suco servem 12 pessoas, quantas garrafas são necessárias para servir 30 pessoas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "10",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "8",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "5",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Cada garrafa serve 3 pessoas. 30 ÷ 3 = 10 garrafas.",
+      "studyTip": "Divida para encontrar a quantidade por unidade e multiplique.",
+      "id": 30011,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma gráfica imprime 500 folhetos em 2 horas. Quantos folhetos ela imprime em 5 horas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "1.250",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "1.000",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "750",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "1.500",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "500 ÷ 2 = 250 por hora. 250 × 5 = 1.250 folhetos.",
+      "studyTip": "Encontre a produção por hora e multiplique pelo tempo.",
+      "id": 30012,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 3 quilos de maçã custam R$18, quanto custam 7 quilos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$42",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$36",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$40",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$45",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "R$18 ÷ 3 = R$6 por quilo. 6 × 7 = R$42.",
+      "studyTip": "Valor unitário × quantidade desejada.",
+      "id": 30013,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma receita usa 250g de farinha para 5 porções. Quantos gramas são necessários para 8 porções?",
+      "options": [
+        {
+          "id": 1,
+          "name": "400g",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "350g",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "300g",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "500g",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "250 ÷ 5 = 50g por porção. 50 × 8 = 400g.",
+      "studyTip": "Divida para encontrar a quantidade por porção e multiplique.",
+      "id": 30014,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 2 litros de tinta pintam 16 m², quantos litros são necessários para pintar 40 m²?",
+      "options": [
+        {
+          "id": 1,
+          "name": "5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "3",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "16 ÷ 2 = 8 m² por litro. 40 ÷ 8 = 5 litros.",
+      "studyTip": "Encontre a cobertura por litro e divida a área total.",
+      "id": 30015,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma escola tem 3 professores para cada 60 alunos. Quantos professores são necessários para 180 alunos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "9",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "6",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "12",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "15",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "180 ÷ 60 = 3 grupos. 3 × 3 = 9 professores.",
+      "studyTip": "Divida o total pelo grupo proporcional e multiplique.",
+      "id": 30016,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 5 operários constroem um muro em 10 dias, quantos dias levariam 10 operários para construir o mesmo muro?",
+      "options": [
+        {
+          "id": 1,
+          "name": "5 dias",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "10 dias",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "15 dias",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "20 dias",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Dobrar o número de operários reduz o tempo pela metade.",
+      "studyTip": "Essa é uma proporção inversa: mais operários, menos tempo.",
+      "id": 30017,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 8 litros de combustível permitem percorrer 96 km, quantos quilômetros são percorridos com 5 litros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "60 km",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "70 km",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "80 km",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "90 km",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "96 ÷ 8 = 12 km por litro. 12 × 5 = 60 km.",
+      "studyTip": "Encontre o rendimento por litro e multiplique.",
+      "id": 30018,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 6 caixas pesam 24 kg, quanto pesam 10 caixas iguais?",
+      "options": [
+        {
+          "id": 1,
+          "name": "40 kg",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "36 kg",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "30 kg",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "48 kg",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "24 ÷ 6 = 4 kg por caixa. 4 × 10 = 40 kg.",
+      "studyTip": "Divida para encontrar o peso por unidade e multiplique.",
+      "id": 30019,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma torneira enche um balde de 20 litros em 8 minutos. Quanto tempo levará para encher um balde de 35 litros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "14 minutos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "12 minutos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "10 minutos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "16 minutos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20 ÷ 8 = 2,5 litros por minuto. 35 ÷ 2,5 = 14 minutos.",
+      "studyTip": "Encontre a vazão por minuto e divida o volume desejado.",
+      "id": 30020,
+      "category": "matematica-proporcao",
+      "difficulty": "fundamental"
+    }
+  ]
+}

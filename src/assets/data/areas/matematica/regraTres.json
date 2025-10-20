@@ -1,0 +1,944 @@
+{
+  "metadata": {
+    "area": "matematica",
+    "subject": "regraTres",
+    "name": "RegraTres",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 30,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "Se 4 lápis custam R$8, quanto custam 10 lápis, mantendo a mesma proporção?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$20",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$18",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$16",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$15",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "R$8 ÷ 4 = R$2 por lápis. 10 × 2 = R$20.",
+      "studyTip": "Use a regra de três simples: se 4 → 8, então 10 → x.",
+      "id": 50001,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Uma máquina produz 120 peças em 6 horas. Quantas peças ela produz em 10 horas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "200",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "180",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "150",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "160",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "120 ÷ 6 = 20 peças por hora. 20 × 10 = 200.",
+      "studyTip": "Regra de três direta: mais tempo, mais produção.",
+      "id": 50002,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 3 kg de arroz custam R$21, quanto custam 5 kg?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$35",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$30",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$28",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$25",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "R$21 ÷ 3 = R$7 por kg. 7 × 5 = R$35.",
+      "studyTip": "Regra de três simples: divida para encontrar o valor unitário.",
+      "id": 50003,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 5 operários constroem um muro em 12 dias, quantos dias levariam 10 operários para fazer o mesmo trabalho?",
+      "options": [
+        {
+          "id": 1,
+          "name": "6",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "8",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "10",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "12",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Regra de três inversa: mais operários, menos tempo. 5 × 12 = 10 × x → x = 6.",
+      "studyTip": "Regra de três inversa: quando uma grandeza aumenta, a outra diminui.",
+      "id": 50004,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 2 litros de tinta pintam 16 m², quantos litros são necessários para pintar 40 m²?",
+      "options": [
+        {
+          "id": 1,
+          "name": "5",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "4",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "3",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "6",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "16 ÷ 2 = 8 m² por litro. 40 ÷ 8 = 5 litros.",
+      "studyTip": "Regra de três direta: mais área, mais tinta.",
+      "id": 50005,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 6 metros de tecido custam R$90, quanto custam 10 metros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$150",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$120",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$180",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$100",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "R$90 ÷ 6 = R$15 por metro. 15 × 10 = R$150.",
+      "studyTip": "Regra de três simples: encontre o valor unitário.",
+      "id": 50006,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 8 caixas pesam 32 kg, quanto pesam 5 caixas iguais?",
+      "options": [
+        {
+          "id": 1,
+          "name": "20 kg",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "25 kg",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "30 kg",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "28 kg",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "32 ÷ 8 = 4 kg por caixa. 4 × 5 = 20 kg.",
+      "studyTip": "Regra de três direta: menos caixas, menos peso.",
+      "id": 50007,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 3 funcionários fazem um serviço em 18 dias, quantos dias levariam 6 funcionários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "9",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "12",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "6",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "15",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Regra de três inversa: 3 × 18 = 6 × x → x = 9.",
+      "studyTip": "Mais pessoas, menos tempo: regra de três inversa.",
+      "id": 50008,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 10 litros de água enchem 5 garrafas, quantos litros são necessários para encher 8 garrafas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "16",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "14",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "12",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "18",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "10 ÷ 5 = 2 litros por garrafa. 2 × 8 = 16 litros.",
+      "studyTip": "Regra de três direta: mais garrafas, mais água.",
+      "id": 50009,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Se 2 metros de cabo custam R$18, quanto custam 7 metros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "R$63",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "R$60",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "R$54",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "R$48",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "R$18 ÷ 2 = R$9 por metro. 9 × 7 = R$63.",
+      "studyTip": "Regra de três simples: encontre o valor unitário.",
+      "id": 50010,
+      "category": "matematica-regra-de-tres",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um carro percorre 240 km em 4 horas. Qual é sua velocidade média?",
+      "options": [
+        {
+          "id": 1,
+          "name": "60 km/h",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "50 km/h",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "70 km/h",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "80 km/h",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Velocidade média = distância ÷ tempo → 240 ÷ 4 = 60 km/h.",
+      "studyTip": "Use a fórmula V = D ÷ T para calcular velocidade média.",
+      "id": 60001,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um ciclista percorre 90 km a uma velocidade média de 30 km/h. Quanto tempo ele leva?",
+      "options": [
+        {
+          "id": 1,
+          "name": "3 horas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "2 horas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "4 horas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "5 horas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Tempo = distância ÷ velocidade → 90 ÷ 30 = 3 horas.",
+      "studyTip": "Use T = D ÷ V para calcular o tempo.",
+      "id": 60002,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um ônibus viaja a 80 km/h durante 5 horas. Qual é a distância percorrida?",
+      "options": [
+        {
+          "id": 1,
+          "name": "400 km",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "350 km",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "300 km",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "450 km",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Distância = velocidade × tempo → 80 × 5 = 400 km.",
+      "studyTip": "Use D = V × T para calcular distância.",
+      "id": 60003,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um trem percorre 150 km em 2 horas e 30 minutos. Qual é sua velocidade média?",
+      "options": [
+        {
+          "id": 1,
+          "name": "60 km/h",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "50 km/h",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "55 km/h",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "65 km/h",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "2h30min = 2,5h → 150 ÷ 2,5 = 60 km/h.",
+      "studyTip": "Converta minutos em horas antes de calcular.",
+      "id": 60004,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um avião voa a 900 km/h. Quanto tempo leva para percorrer 2.700 km?",
+      "options": [
+        {
+          "id": 1,
+          "name": "3 horas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "2 horas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "4 horas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "5 horas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Tempo = 2700 ÷ 900 = 3 horas.",
+      "studyTip": "Divida a distância pela velocidade para encontrar o tempo.",
+      "id": 60005,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um caminhão percorre 360 km em 6 horas. Qual é sua velocidade média?",
+      "options": [
+        {
+          "id": 1,
+          "name": "60 km/h",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "50 km/h",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "70 km/h",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "80 km/h",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "360 ÷ 6 = 60 km/h.",
+      "studyTip": "Velocidade média é a razão entre distância e tempo.",
+      "id": 60006,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um pedestre caminha a 5 km/h. Quanto tempo ele leva para percorrer 20 km?",
+      "options": [
+        {
+          "id": 1,
+          "name": "4 horas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "5 horas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "3 horas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "6 horas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "20 ÷ 5 = 4 horas.",
+      "studyTip": "Use T = D ÷ V para calcular o tempo.",
+      "id": 60007,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um barco percorre 120 km em 3 horas. Qual é sua velocidade média?",
+      "options": [
+        {
+          "id": 1,
+          "name": "40 km/h",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "30 km/h",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "50 km/h",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "60 km/h",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "120 ÷ 3 = 40 km/h.",
+      "studyTip": "Velocidade média = distância ÷ tempo.",
+      "id": 60008,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um ciclista percorre 45 km em 1 hora e 30 minutos. Qual é sua velocidade média?",
+      "options": [
+        {
+          "id": 1,
+          "name": "30 km/h",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "25 km/h",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "35 km/h",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "40 km/h",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1h30min = 1,5h → 45 ÷ 1,5 = 30 km/h.",
+      "studyTip": "Converta o tempo para horas antes de calcular.",
+      "id": 60009,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Um carro viaja a 72 km/h. Qual distância ele percorre em 2 horas e 30 minutos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "180 km",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "150 km",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "160 km",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "175 km",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "2h30min = 2,5h → 72 × 2,5 = 180 km.",
+      "studyTip": "Multiplique a velocidade pelo tempo total em horas.",
+      "id": 60010,
+      "category": "matematica-velocidade-distancia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos centímetros há em 2 metros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "200 cm",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "20 cm",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "2.000 cm",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "2 cm",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1 metro = 100 cm → 2 × 100 = 200 cm.",
+      "studyTip": "Multiplique por 100 para converter metros em centímetros.",
+      "id": 70001,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos mililitros há em 3 litros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "3.000 ml",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "300 ml",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "30 ml",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "3 ml",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1 litro = 1.000 ml → 3 × 1.000 = 3.000 ml.",
+      "studyTip": "Multiplique por 1.000 para converter litros em mililitros.",
+      "id": 70002,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos metros há em 5.000 milímetros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "5 m",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "50 m",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "500 m",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "0,5 m",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1 metro = 1.000 mm → 5.000 ÷ 1.000 = 5 m.",
+      "studyTip": "Divida por 1.000 para converter milímetros em metros.",
+      "id": 70003,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos gramas há em 2,5 kg?",
+      "options": [
+        {
+          "id": 1,
+          "name": "2.500 g",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "250 g",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "25 g",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "2.050 g",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1 kg = 1.000 g → 2,5 × 1.000 = 2.500 g.",
+      "studyTip": "Multiplique por 1.000 para converter quilos em gramas.",
+      "id": 70004,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos minutos há em 2 horas e meia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "150 minutos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "120 minutos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "180 minutos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "90 minutos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "2,5 horas × 60 minutos = 150 minutos.",
+      "studyTip": "Multiplique o número de horas por 60 para converter em minutos.",
+      "id": 70005,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos centímetros há em 1,2 metros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "120 cm",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "12 cm",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "1.200 cm",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "100 cm",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1,2 × 100 = 120 cm.",
+      "studyTip": "Multiplique por 100 para converter metros em centímetros.",
+      "id": 70006,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos metros há em 3,5 km?",
+      "options": [
+        {
+          "id": 1,
+          "name": "3.500 m",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "350 m",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "35 m",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "3.050 m",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1 km = 1.000 m → 3,5 × 1.000 = 3.500 m.",
+      "studyTip": "Multiplique por 1.000 para converter quilômetros em metros.",
+      "id": 70007,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos segundos há em 2 minutos e 15 segundos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "135 segundos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "120 segundos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "150 segundos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "115 segundos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "2 × 60 = 120 + 15 = 135 segundos.",
+      "studyTip": "Multiplique os minutos por 60 e adicione os segundos.",
+      "id": 70008,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos milímetros há em 2,3 metros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "2.300 mm",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "230 mm",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "23 mm",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "2.030 mm",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1 metro = 1.000 mm → 2,3 × 1.000 = 2.300 mm.",
+      "studyTip": "Multiplique por 1.000 para converter metros em milímetros.",
+      "id": 70009,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Quantos litros há em 7.500 mililitros?",
+      "options": [
+        {
+          "id": 1,
+          "name": "7,5 litros",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "75 litros",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "0,75 litros",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "1,5 litros",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "7.500 ÷ 1.000 = 7,5 litros.",
+      "studyTip": "Divida por 1.000 para converter mililitros em litros.",
+      "id": 70010,
+      "category": "matematica-conversao-unidades",
+      "difficulty": "fundamental"
+    }
+  ]
+}

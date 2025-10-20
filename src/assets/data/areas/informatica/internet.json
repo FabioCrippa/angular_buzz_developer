@@ -1,0 +1,634 @@
+{
+  "metadata": {
+    "area": "informatica",
+    "subject": "internet",
+    "name": "Internet",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 20,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "O que é necessário para acessar a internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Computador e conexão de rede",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Apenas um teclado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Monitor e impressora",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Mouse e caixa de som",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Para acessar a internet é necessário um dispositivo e uma conexão de rede.",
+      "studyTip": "A internet depende de hardware e conexão para funcionar.",
+      "id": 90001,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função de um navegador de internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Acessar páginas da web",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Editar textos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criar planilhas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desenhar imagens",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Navegadores como Chrome e Firefox são usados para acessar sites.",
+      "studyTip": "Navegadores são essenciais para navegar na internet.",
+      "id": 90002,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos itens abaixo é um navegador de internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Google Chrome",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Microsoft Word",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Excel",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Paint",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Google Chrome é um navegador de internet.",
+      "studyTip": "Conheça os principais navegadores: Chrome, Firefox, Edge, Safari.",
+      "id": 90003,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que significa a sigla 'URL'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Endereço de uma página na internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Tipo de vírus de computador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Formato de imagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Modelo de impressora",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "URL é o endereço que identifica uma página na web.",
+      "studyTip": "Exemplo de URL: https://www.exemplo.com",
+      "id": 90004,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função de um motor de busca como o Google?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Encontrar informações na internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Editar vídeos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criar apresentações",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desenhar gráficos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Motores de busca ajudam a localizar conteúdos na web.",
+      "studyTip": "Use palavras-chave para encontrar o que precisa.",
+      "id": 90005,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos seguintes é um exemplo de site de busca?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Google",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "YouTube",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Facebook",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Instagram",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Google é um motor de busca.",
+      "studyTip": "Outros exemplos: Bing, Yahoo, DuckDuckGo.",
+      "id": 90006,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Para enviar um e-mail, é necessário:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ter uma conta de e-mail e acesso à internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ter uma impressora",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ter um editor de imagens",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ter um pendrive",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "É preciso estar conectado e ter uma conta de e-mail.",
+      "studyTip": "Serviços populares: Gmail, Outlook, Yahoo Mail.",
+      "id": 90007,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função de um link em uma página da internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Levar o usuário a outra página ou conteúdo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Apagar o texto da página",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Imprimir o conteúdo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Salvar o site no computador",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Links conectam páginas e conteúdos na web.",
+      "studyTip": "Links geralmente aparecem sublinhados ou em azul.",
+      "id": 90008,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos itens abaixo é necessário para navegar com segurança na internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Antivírus atualizado",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Monitor colorido",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Teclado sem fio",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Impressora multifuncional",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Um antivírus ajuda a proteger contra ameaças online.",
+      "studyTip": "Evite clicar em links suspeitos e mantenha o sistema atualizado.",
+      "id": 90009,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do serviço que permite conversar em tempo real pela internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Chat",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Download",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Upload",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Backup",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Chat é o serviço de troca de mensagens em tempo real.",
+      "studyTip": "Exemplos: WhatsApp Web, Messenger, Google Chat.",
+      "id": 90010,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos seguintes é um exemplo de navegador de internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Mozilla Firefox",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Microsoft Excel",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Adobe Photoshop",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Windows Explorer",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Mozilla Firefox é um navegador usado para acessar páginas da web.",
+      "studyTip": "Navegadores populares incluem Chrome, Firefox, Edge e Safari.",
+      "id": 90011,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função principal de um provedor de internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Oferecer acesso à internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Vender computadores",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criar sites",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Editar textos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Provedores como Vivo, Claro e TIM oferecem acesso à internet.",
+      "studyTip": "Sem um provedor, não é possível se conectar à internet.",
+      "id": 90012,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é Wi-Fi?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tecnologia de conexão sem fio",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Tipo de cabo de rede",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Sistema operacional",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Programa de edição de texto",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Wi-Fi permite conexão à internet sem uso de cabos.",
+      "studyTip": "Wi-Fi é comum em casas, escolas e locais públicos.",
+      "id": 90013,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos seguintes é um exemplo de rede social?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facebook",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Google",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Wikipedia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Outlook",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Facebook é uma rede social usada para comunicação e compartilhamento.",
+      "studyTip": "Outros exemplos: Instagram, TikTok, Twitter.",
+      "id": 90014,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é um site seguro?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um site que começa com 'https://'",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Um site que tem muitas imagens",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um site que abre rapidamente",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um site que tem vídeos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Sites seguros usam 'https://' e têm certificado de segurança.",
+      "studyTip": "Evite inserir dados pessoais em sites sem 'https://'.",
+      "id": 90015,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do botão 'Atualizar' no navegador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Recarregar a página",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Fechar o navegador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Salvar a página",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Imprimir a página",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O botão atualizar recarrega o conteúdo da página.",
+      "studyTip": "Use quando a página não carregar corretamente.",
+      "id": 90016,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do campo onde digitamos o endereço de um site?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Barra de endereços",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Barra de ferramentas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Área de trabalho",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Campo de busca",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A barra de endereços é onde digitamos URLs.",
+      "studyTip": "Fica na parte superior do navegador.",
+      "id": 90017,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é um download?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Transferência de arquivos da internet para o computador",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Envio de arquivos para a internet",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criação de arquivos online",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Impressão de arquivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Download é o ato de baixar arquivos da internet.",
+      "studyTip": "Exemplos: baixar músicas, vídeos, documentos.",
+      "id": 90018,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é um upload?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Envio de arquivos do computador para a internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Download de arquivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criação de documentos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Impressão de páginas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Upload é o envio de arquivos para servidores ou sites.",
+      "studyTip": "Exemplo: enviar uma foto para redes sociais.",
+      "id": 90019,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do botão 'Voltar' no navegador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Retornar à página anterior",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Fechar o navegador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ir para a página inicial",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Atualizar a página",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O botão 'Voltar' leva o usuário à página anterior visitada.",
+      "studyTip": "Útil para navegar entre páginas já acessadas.",
+      "id": 90020,
+      "category": "informatica-internet",
+      "difficulty": "fundamental"
+    }
+  ]
+}

@@ -1,0 +1,634 @@
+{
+  "metadata": {
+    "area": "informatica",
+    "subject": "editorTexto",
+    "name": "EditorTexto",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 20,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "Qual é a função do comando 'Ctrl + C' em um editor de texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Copiar o texto selecionado",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Colar o texto copiado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Recortar o texto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Selecionar tudo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + C' copia o conteúdo selecionado para a área de transferência.",
+      "studyTip": "Memorize os atalhos mais usados para agilizar o trabalho com textos.",
+      "id": 80001,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do comando 'Ctrl + V'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Copiar",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Colar",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Recortar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desfazer",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O comando 'Ctrl + V' cola o conteúdo da área de transferência.",
+      "studyTip": "Use 'Ctrl + V' após copiar ou recortar para inserir o conteúdo.",
+      "id": 80002,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual comando é usado para desfazer uma ação em um editor de texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + Z",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + Y",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + X",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + A",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + Z' desfaz a última ação realizada.",
+      "studyTip": "Esse comando é útil para corrigir erros rapidamente.",
+      "id": 80003,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do comando 'Ctrl + S'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Salvar o documento",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Abrir um novo documento",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Imprimir o documento",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fechar o editor",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + S' salva o documento atual.",
+      "studyTip": "Salve seu trabalho com frequência para evitar perdas.",
+      "id": 80004,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual comando seleciona todo o conteúdo de um documento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + A",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + T",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + E",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + P",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + A' seleciona todo o conteúdo do documento.",
+      "studyTip": "Esse comando é útil para aplicar formatação em todo o texto.",
+      "id": 80005,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do comando 'Ctrl + X'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Recortar o texto selecionado",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Copiar o texto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Colar o texto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desfazer a ação",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + X' recorta o conteúdo selecionado.",
+      "studyTip": "Use esse comando para mover texto de um lugar para outro.",
+      "id": 80006,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual comando abre a janela de impressão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + P",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + I",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + M",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + N",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + P' abre a janela de impressão.",
+      "studyTip": "Use esse comando para imprimir rapidamente seu documento.",
+      "id": 80007,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual comando cria um novo documento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + N",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + O",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + S",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + W",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + N' cria um novo documento.",
+      "studyTip": "Esse comando é útil para iniciar rapidamente um novo trabalho.",
+      "id": 80008,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual comando abre um documento existente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + O",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + N",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + S",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + P",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + O' abre um documento salvo anteriormente.",
+      "studyTip": "Use esse comando para acessar arquivos já criados.",
+      "id": 80009,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual comando fecha o documento atual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + W",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + Q",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + E",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + F",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando 'Ctrl + W' fecha o documento atual.",
+      "studyTip": "Esse comando é útil para fechar rapidamente sem usar o mouse.",
+      "id": 80010,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Joana está digitando um texto no editor e quer copiar uma frase para colar em outro parágrafo. Qual comando ela deve usar para copiar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + C",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + V",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + X",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + Z",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + C copia o texto selecionado para a área de transferência.",
+      "studyTip": "Copiar é diferente de recortar: o conteúdo original permanece.",
+      "id": 80011,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Carlos apagou uma palavra por engano no editor de texto. Qual comando ele pode usar para desfazer essa ação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + Z",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + X",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + C",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + V",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + Z desfaz a última ação realizada.",
+      "studyTip": "Esse comando é útil para corrigir erros rapidamente.",
+      "id": 80012,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Maria está escrevendo uma redação e quer salvar o documento para continuar depois. Qual comando ela deve usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + S",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + P",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + N",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + O",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + S salva o documento atual.",
+      "studyTip": "Salve com frequência para evitar perda de dados.",
+      "id": 80013,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Paulo quer imprimir seu trabalho diretamente do editor de texto. Qual comando ele deve usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + P",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + I",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + M",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + T",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + P abre a janela de impressão.",
+      "studyTip": "Esse comando é padrão em diversos programas.",
+      "id": 80014,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Laura quer selecionar todo o conteúdo do seu texto para mudar a fonte. Qual comando ela deve usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + A",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + E",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + T",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + F",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + A seleciona todo o conteúdo do documento.",
+      "studyTip": "Ideal para aplicar formatação em todo o texto.",
+      "id": 80015,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Rafael quer abrir um documento que já está salvo em seu computador. Qual comando ele deve usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + O",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + N",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + S",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + W",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + O abre um documento existente.",
+      "studyTip": "Esse comando é útil para acessar arquivos rapidamente.",
+      "id": 80016,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Fernanda quer criar um novo documento em branco. Qual comando ela deve usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + N",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + O",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + S",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + P",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + N cria um novo documento.",
+      "studyTip": "Ideal para iniciar um novo trabalho rapidamente.",
+      "id": 80017,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "João quer mover uma frase de um parágrafo para outro. Qual comando ele deve usar para recortar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + X",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + C",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + V",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + Z",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + X recorta o texto selecionado.",
+      "studyTip": "Recortar remove o conteúdo original e o prepara para ser colado.",
+      "id": 80018,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Beatriz quer aplicar negrito em uma palavra. Qual comando ela deve usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + B",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + I",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + U",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + E",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + B aplica negrito ao texto selecionado.",
+      "studyTip": "Use esse comando para destacar palavras importantes.",
+      "id": 80019,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Lucas quer aplicar itálico em uma citação. Qual comando ele deve usar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + I",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ctrl + B",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + U",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ctrl + T",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ctrl + I aplica itálico ao texto selecionado.",
+      "studyTip": "Itálico é usado para destacar trechos ou títulos de obras.",
+      "id": 80020,
+      "category": "informatica-editor-de-texto",
+      "difficulty": "fundamental"
+    }
+  ]
+}

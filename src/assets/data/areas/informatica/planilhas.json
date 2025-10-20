@@ -1,0 +1,634 @@
+{
+  "metadata": {
+    "area": "informatica",
+    "subject": "planilhas",
+    "name": "Planilhas",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 20,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "Qual é a função principal de uma planilha eletrônica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Organizar e calcular dados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Editar imagens",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criar apresentações",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Navegar na internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Planilhas são usadas para organizar dados e realizar cálculos.",
+      "studyTip": "Planilhas como Excel e Google Sheets são ferramentas de produtividade.",
+      "id": 100001,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos seguintes é um programa de planilha eletrônica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Microsoft Excel",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Microsoft Word",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Google Chrome",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "PowerPoint",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Excel é um dos programas mais usados para planilhas.",
+      "studyTip": "Outros exemplos: Google Sheets, LibreOffice Calc.",
+      "id": 100002,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em uma planilha, o que representa a célula A1?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A célula na coluna A e linha 1",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A célula na coluna 1 e linha A",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A primeira célula da linha 2",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A última célula da planilha",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A1 é a célula na interseção da coluna A com a linha 1.",
+      "studyTip": "As células são identificadas por letra (coluna) e número (linha).",
+      "id": 100003,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual fórmula soma os valores das células A1 até A5?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=SOMA(A1:A5)",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=SOMA(A1+A5)",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=A1+A5",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=SOMA(A1;A5)",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A fórmula correta para somar um intervalo é =SOMA(A1:A5).",
+      "studyTip": "Use dois pontos (:) para indicar intervalo de células.",
+      "id": 100004,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual símbolo é usado para iniciar uma fórmula em uma célula?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "+",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "-",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "*",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Todas as fórmulas começam com o sinal de igual (=).",
+      "studyTip": "Sem o sinal de igual, o conteúdo será tratado como texto.",
+      "id": 100005,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função calcula a média de um intervalo de células?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=MÉDIA()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=SOMA()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=MÉDIO()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=MEDIA()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A função correta é =MÉDIA().",
+      "studyTip": "Use =MÉDIA(A1:A5) para calcular a média dos valores.",
+      "id": 100006,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função retorna o maior valor de um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=MÁXIMO()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=MAIOR()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=MAX()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=VALOR()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A função =MÁXIMO() retorna o maior valor de um intervalo.",
+      "studyTip": "Use =MÁXIMO(A1:A10) para encontrar o maior número.",
+      "id": 100007,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função retorna o menor valor de um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=MÍNIMO()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=MENOR()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=MIN()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=VALOR()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A função =MÍNIMO() retorna o menor valor de um intervalo.",
+      "studyTip": "Use =MÍNIMO(A1:A10) para encontrar o menor número.",
+      "id": 100008,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual tecla é usada para confirmar a entrada de uma fórmula?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Enter",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Esc",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Tab",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Shift",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Pressionar Enter confirma a fórmula digitada.",
+      "studyTip": "Após digitar a fórmula, pressione Enter para aplicar.",
+      "id": 100009,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função conta quantas células têm números em um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=CONT.NÚM()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=CONT.VALORES()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=CONT.TEXTO()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=CONT()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=CONT.NÚM() conta apenas as células com números.",
+      "studyTip": "Use para saber quantos valores numéricos há em um intervalo.",
+      "id": 100010,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função é usada para contar todas as células preenchidas em um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=CONT.VALORES()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=CONT.NÚM()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=SOMA()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=MÉDIA()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=CONT.VALORES() conta todas as células com conteúdo, sejam números ou textos.",
+      "studyTip": "Use essa função para saber quantas células estão preenchidas.",
+      "id": 100011,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função retorna o número total de células vazias em um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=CONT.VAZIO()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=CONT.NULO()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=CONT.VAZIAS()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=CONT.NADA()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=CONT.VAZIO() conta as células que não têm nenhum conteúdo.",
+      "studyTip": "Útil para verificar espaços em branco em planilhas.",
+      "id": 100012,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função pode ser usada para somar apenas os valores maiores que 10 em um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=SOMASE()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=SOMA()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=SOMA.MAIOR()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=SOMA.SE()",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "=SOMA.SE() permite somar valores que atendem a um critério.",
+      "studyTip": "Use =SOMA.SE(A1:A10;\">10\") para somar valores maiores que 10.",
+      "id": 100013,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função pode ser usada para verificar se uma célula está vazia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=É.VAZIO()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=É.NULO()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=É.CÉLULA.VAZIA()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=É.NADA()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=É.VAZIO() retorna VERDADEIRO se a célula estiver vazia.",
+      "studyTip": "Útil para criar fórmulas condicionais.",
+      "id": 100014,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função pode ser usada para juntar o conteúdo de duas células?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=CONCATENAR()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=JUNTAR()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=UNIR()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=SOMA.TEXTO()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=CONCATENAR() une textos de diferentes células.",
+      "studyTip": "Exemplo: =CONCATENAR(A1;\" \";B1) une os conteúdos com espaço.",
+      "id": 100015,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função pode ser usada para verificar se dois valores são iguais?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=SE()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=IGUAL()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=COMPARAR()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=VERIFICAR()",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "=IGUAL() retorna VERDADEIRO se os valores forem iguais.",
+      "studyTip": "Use para comparar textos ou números.",
+      "id": 100016,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função pode ser usada para aplicar uma condição e retornar um valor?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=SE()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=SOMA()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=MÉDIA()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=CONT.SE()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=SE() permite aplicar lógica condicional.",
+      "studyTip": "Exemplo: =SE(A1>10;\"Maior\";\"Menor\")",
+      "id": 100017,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função conta quantas vezes um valor aparece em um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=CONT.SE()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=CONT.VALORES()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=CONT.NÚM()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=CONT.TEXTO()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=CONT.SE() conta quantas vezes um valor específico aparece.",
+      "studyTip": "Exemplo: =CONT.SE(A1:A10;\"João\")",
+      "id": 100018,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função retorna a posição de um valor dentro de um intervalo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=CORRESP()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=LOCALIZAR()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=POSIÇÃO()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=ENCONTRAR()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=CORRESP() retorna a posição de um valor dentro de um intervalo.",
+      "studyTip": "Use com PROCV ou PROCH para buscas avançadas.",
+      "id": 100019,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual função retorna um valor de uma célula com base em uma busca vertical?",
+      "options": [
+        {
+          "id": 1,
+          "name": "=PROCV()",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "=PROCH()",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "=BUSCAR()",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "=LOCALIZAR()",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "=PROCV() busca um valor na primeira coluna e retorna da mesma linha.",
+      "studyTip": "Exemplo: =PROCV(\"João\";A1:B10;2;FALSO)",
+      "id": 100020,
+      "category": "informatica-planilhas",
+      "difficulty": "fundamental"
+    }
+  ]
+}

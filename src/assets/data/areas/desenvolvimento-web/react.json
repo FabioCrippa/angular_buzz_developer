@@ -1,0 +1,1254 @@
+{
+  "metadata": {
+    "area": "desenvolvimento-web",
+    "subject": "react",
+    "name": "React",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 40,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "O que são props em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Valores passados para componentes",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Funções de backend",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estilos CSS",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Comandos do terminal",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Props são propriedades que permitem passar dados entre componentes.",
+      "studyTip": "Use props para tornar componentes reutilizáveis e dinâmicos.",
+      "id": 200104,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual hook é usado para gerenciar estado em componentes funcionais?",
+      "options": [
+        {
+          "id": 1,
+          "name": "useState",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "useEffect",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "useContext",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "useRef",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O hook useState permite criar e atualizar estados em componentes funcionais.",
+      "studyTip": "Ideal para armazenar valores que mudam com a interação do usuário.",
+      "id": 200105,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Para que serve o hook useEffect?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executar efeitos colaterais em componentes",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Criar estilos CSS",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Renderizar HTML estático",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Gerenciar rotas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useEffect é usado para lidar com efeitos como chamadas de API ou manipulação do DOM.",
+      "studyTip": "Use dependências para controlar quando o efeito deve ser executado.",
+      "id": 200106,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual comando instala o React usando o Create React App?",
+      "options": [
+        {
+          "id": 1,
+          "name": "npx create-react-app nome-do-projeto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "npm install react",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "react-start nome-do-projeto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "npx react-init",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O comando npx create-react-app cria uma estrutura inicial de projeto React.",
+      "studyTip": "Use esse comando para começar rapidamente com boas práticas.",
+      "id": 200107,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é o Virtual DOM no React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma representação leve do DOM real",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Um banco de dados virtual",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uma linguagem de programação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um sistema de rotas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O Virtual DOM permite atualizações eficientes na interface sem manipular diretamente o DOM real.",
+      "studyTip": "React compara o Virtual DOM com o DOM real para aplicar mudanças de forma otimizada.",
+      "id": 200108,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Como se chama a função que retorna o JSX em um componente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "return",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "renderHTML",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "display",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "show",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A função return dentro do componente retorna o JSX que será renderizado.",
+      "studyTip": "Todo componente React deve retornar um único elemento JSX.",
+      "id": 200109,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual extensão de arquivo é usada para componentes com JSX?",
+      "options": [
+        {
+          "id": 1,
+          "name": ".jsx",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": ".html",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": ".js",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": ".json",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Arquivos com JSX geralmente usam a extensão .jsx para indicar que contêm HTML dentro do JavaScript.",
+      "studyTip": "Você também pode usar .js, mas .jsx ajuda na organização do projeto.",
+      "id": 200110,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal vantagem de usar componentes reutilizáveis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilita a manutenção e escalabilidade do código",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumenta o tamanho do projeto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Diminui a performance",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Evita o uso de JavaScript",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Componentes reutilizáveis tornam o código mais organizado e fácil de manter.",
+      "studyTip": "Crie componentes pequenos e com responsabilidade única.",
+      "id": 200111,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Como se chama o processo de passar dados de um componente pai para um filho?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Passagem de props",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Herança de classe",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Importação de módulos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Renderização condicional",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Props são usados para passar dados de um componente pai para um filho.",
+      "studyTip": "Props são imutáveis dentro do componente filho.",
+      "id": 200112,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do hook usado para acessar valores globais em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "useContext",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "useGlobal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "useState",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "useEffect",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useContext permite acessar dados compartilhados entre componentes sem passar props manualmente.",
+      "studyTip": "Combine com Context API para gerenciar estados globais.",
+      "id": 200113,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o papel do ReactDOM?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Renderizar componentes React no DOM real",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Criar banco de dados",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Executar comandos do terminal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Gerar arquivos CSS",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "ReactDOM conecta os componentes React ao DOM real do navegador.",
+      "studyTip": "Use ReactDOM.render para iniciar a aplicação.",
+      "id": 200114,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Como se chama o processo de atualizar a interface com base em mudanças de estado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Reatividade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Compilação",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Importação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Virtualização",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Reatividade é a capacidade de atualizar a interface automaticamente quando o estado muda.",
+      "studyTip": "React é reativo por natureza, graças ao uso de hooks como useState.",
+      "id": 200115,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do hook useRef?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar uma referência para elementos DOM ou valores persistentes",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Atualizar o estado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Renderizar componentes",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Gerenciar rotas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useRef permite acessar diretamente elementos DOM ou armazenar valores que não causam re-renderização.",
+      "studyTip": "Ideal para manipular inputs ou guardar valores entre renderizações.",
+      "id": 200116,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome da ferramenta que permite navegar entre páginas em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "React Router",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "React DOM",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "React Navigator",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "React Pages",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "React Router é a biblioteca usada para criar rotas e navegação entre páginas.",
+      "studyTip": "Use BrowserRouter, Routes e Route para configurar a navegação.",
+      "id": 200117,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Como se chama o hook que executa uma função apenas uma vez após o componente montar?",
+      "options": [
+        {
+          "id": 1,
+          "name": "useEffect com array de dependências vazio",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "useState",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "useRef",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "useMemo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useEffect com `[]` como dependência executa a função apenas uma vez após o componente montar.",
+      "studyTip": "Ideal para chamadas de API ou inicializações.",
+      "id": 200118,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a estrutura básica de um componente funcional em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma função que retorna JSX",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uma classe com métodos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um arquivo JSON",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um script de terminal",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Componentes funcionais são funções que retornam JSX para renderização.",
+      "studyTip": "Use arrow functions para criar componentes simples e legíveis.",
+      "id": 200119,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual hook é usado para memorizar valores calculados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "useMemo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "useEffect",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "useState",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "useRef",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useMemo memoriza valores para evitar cálculos desnecessários em renderizações.",
+      "studyTip": "Use quando o cálculo é pesado ou depende de valores específicos.",
+      "id": 200120,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do Context API?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Compartilhar dados entre componentes sem passar props manualmente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Criar estilos CSS globais",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Renderizar componentes em tempo real",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Gerenciar rotas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Context API permite compartilhar dados entre componentes sem a necessidade de props.",
+      "studyTip": "Combine com useContext para acessar os dados facilmente.",
+      "id": 200121,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a vantagem de usar o React em projetos web?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Facilidade na criação de interfaces dinâmicas e reutilizáveis",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Redução da velocidade de carregamento",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Eliminação do uso de JavaScript",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Criação automática de banco de dados",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "React facilita a criação de interfaces modernas e eficientes.",
+      "studyTip": "Ideal para aplicações SPA (Single Page Application).",
+      "id": 200122,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do método map em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Renderizar listas de elementos dinamicamente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Criar rotas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Atualizar o estado global",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Executar efeitos colaterais",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O método map é usado para iterar sobre arrays e renderizar elementos dinamicamente.",
+      "studyTip": "Sempre use uma key única ao renderizar listas.",
+      "id": 200123,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a diferença entre estado local e estado global em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estado local é usado dentro de um componente, enquanto o global é compartilhado entre vários",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estado local é mais rápido que o global",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estado global não pode ser alterado",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estado local é usado apenas em classes",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O estado local é mantido dentro de um componente, enquanto o estado global é acessado por múltiplos componentes.",
+      "studyTip": "Use Context API ou bibliotecas como Redux para gerenciar estado global.",
+      "id": 200124,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "O que acontece quando você atualiza o estado com useState?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O componente é re-renderizado com o novo valor",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O valor é perdido após o reload",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O estado não muda",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O componente é removido",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Atualizar o estado com useState causa uma nova renderização do componente com o valor atualizado.",
+      "studyTip": "Evite atualizar o estado diretamente, sempre use a função de atualização.",
+      "id": 200125,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Como evitar re-renderizações desnecessárias em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usando React.memo e useMemo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Atualizando o estado constantemente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Utilizando apenas componentes de classe",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ignorando o Virtual DOM",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "React.memo e useMemo ajudam a memorizar componentes e valores, evitando re-renderizações desnecessárias.",
+      "studyTip": "Use essas ferramentas em componentes que recebem props complexas ou fazem cálculos pesados.",
+      "id": 200126,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Qual hook permite executar código antes da desmontagem do componente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "useEffect com função de limpeza (cleanup)",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "useState",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "useRef",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "useCallback",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A função de limpeza dentro do useEffect é executada antes da desmontagem do componente.",
+      "studyTip": "Ideal para remover listeners, cancelar requisições ou limpar timers.",
+      "id": 200127,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Como o React identifica quais partes do DOM precisam ser atualizadas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Comparando o Virtual DOM com o DOM anterior",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Atualizando todo o DOM",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Usando o CSS",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Executando scripts externos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "React usa o Virtual DOM para comparar com o DOM anterior e aplicar apenas as mudanças necessárias.",
+      "studyTip": "Essa abordagem melhora a performance da aplicação.",
+      "id": 200128,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Qual é a função do hook useCallback?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Memorizar funções para evitar recriação em renderizações",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Atualizar o estado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Renderizar componentes",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Criar rotas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useCallback memoriza funções, evitando que sejam recriadas em cada renderização.",
+      "studyTip": "Use quando passar funções como props para componentes filhos.",
+      "id": 200129,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Como React trata eventos como onClick?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usa uma sintaxe semelhante ao JavaScript, mas com camelCase",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Usa atributos HTML padrão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Executa diretamente no DOM",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ignora eventos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Eventos em React usam camelCase e funções como manipuladores.",
+      "studyTip": "Exemplo: `<button onClick={handleClick}>Clique</button>`.",
+      "id": 200130,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Qual é a função do hook useReducer?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Gerenciar estados complexos com múltiplas ações",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Criar rotas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Renderizar listas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Atualizar o DOM manualmente",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useReducer é útil para estados que dependem de múltiplas ações e lógica mais estruturada.",
+      "studyTip": "É semelhante ao Redux, mas integrado ao React.",
+      "id": 200131,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Como React lida com formulários controlados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O valor do input é controlado pelo estado do componente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O valor é definido apenas pelo HTML",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O React ignora os inputs",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O valor é armazenado em arquivos externos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Em formulários controlados, o valor do input é sincronizado com o estado do componente.",
+      "studyTip": "Use o evento onChange para atualizar o estado.",
+      "id": 200132,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Qual é a vantagem de usar keys em listas renderizadas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ajuda o React a identificar quais itens mudaram",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumenta o tempo de renderização",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Evita o uso de props",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Remove a necessidade de estado",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Keys ajudam o React a otimizar a renderização de listas, identificando mudanças com precisão.",
+      "studyTip": "Use valores únicos e estáveis como key.",
+      "id": 200133,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Qual é a principal vantagem do React Fiber?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Melhor gerenciamento de renderizações assíncronas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Renderização baseada em XML",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Integração com bancos de dados",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Criação automática de componentes",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "React Fiber é a reescrita do core do React que permite renderizações assíncronas e interrupções.",
+      "studyTip": "Ajuda na criação de interfaces mais responsivas e fluidas.",
+      "id": 200134,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Como o React lida com a reconciliação de componentes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Compara o Virtual DOM atual com o anterior e aplica mudanças mínimas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Renderiza todos os componentes novamente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Executa scripts externos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ignora mudanças no estado",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A reconciliação permite que o React atualize apenas o que mudou, otimizando a performance.",
+      "studyTip": "Evite mutações diretas no estado para garantir reconciliação eficiente.",
+      "id": 200135,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Qual é a função do hook useImperativeHandle?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Permitir que componentes filhos exponham métodos para o componente pai",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Criar efeitos colaterais",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Atualizar o estado global",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Renderizar listas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useImperativeHandle é usado com forwardRef para expor funções específicas de um componente filho.",
+      "studyTip": "Útil em componentes personalizados que precisam interagir com o DOM.",
+      "id": 200136,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "O que é o Suspense no React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um componente que permite lidar com carregamento de recursos assíncronos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uma função de roteamento",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um hook para estado global",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um método de renderização condicional",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Suspense permite mostrar fallback enquanto componentes assíncronos estão sendo carregados.",
+      "studyTip": "Combine com lazy para carregamento dinâmico de componentes.",
+      "id": 200137,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Como funciona o lazy loading de componentes em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Carrega componentes sob demanda usando React.lazy",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Renderiza todos os componentes no início",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ignora componentes filhos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Executa componentes em segundo plano",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "React.lazy permite importar componentes dinamicamente, melhorando a performance.",
+      "studyTip": "Use com Suspense para exibir um fallback durante o carregamento.",
+      "id": 200138,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Qual é a diferença entre useMemo e useCallback?",
+      "options": [
+        {
+          "id": 1,
+          "name": "useMemo memoriza valores, useCallback memoriza funções",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ambos são usados para memorizar valores",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "useMemo é usado para efeitos colaterais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "useCallback é usado para renderizar JSX",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useMemo evita recalcular valores, enquanto useCallback evita recriar funções.",
+      "studyTip": "Use quando há dependências que mudam com frequência.",
+      "id": 200139,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Como o React garante a imutabilidade do estado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ao exigir que o estado seja atualizado com funções que retornam novos valores",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Permitindo alterações diretas no objeto de estado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Usando variáveis globais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Executando scripts externos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "React exige que o estado seja tratado como imutável, criando novos objetos ao atualizá-lo.",
+      "studyTip": "Use spread operator ou métodos como map para criar novos arrays ou objetos.",
+      "id": 200140,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "O que é o Context.Provider em React?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Componente que fornece dados para os componentes filhos via Context API",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Hook para atualizar o estado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Função para renderizar listas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Método de roteamento",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Context.Provider permite que componentes filhos acessem dados compartilhados.",
+      "studyTip": "Combine com useContext para consumir os dados no componente filho.",
+      "id": 200141,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Como o React trata componentes controlados vs não controlados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Controlados têm seu valor gerenciado pelo estado, não controlados usam o DOM diretamente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ambos são gerenciados pelo estado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não controlados são mais seguros",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Controlados não funcionam com formulários",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Componentes controlados usam o estado do React para gerenciar valores, enquanto os não controlados usam referências ao DOM.",
+      "studyTip": "Use useRef para acessar valores em componentes não controlados.",
+      "id": 200142,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Qual é a função do hook useLayoutEffect?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executar efeitos imediatamente após o layout ser calculado",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Executar efeitos após o render",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Atualizar o estado global",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Renderizar componentes condicionalmente",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "useLayoutEffect é semelhante ao useEffect, mas é executado antes da pintura do navegador.",
+      "studyTip": "Use quando o efeito precisa afetar o layout visual imediatamente.",
+      "id": 200143,
+      "category": "desenvolvimento-web-react",
+      "difficulty": "avancado"
+    }
+  ]
+}

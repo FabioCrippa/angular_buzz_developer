@@ -1,0 +1,1254 @@
+{
+  "metadata": {
+    "area": "portugues",
+    "subject": "coerencia",
+    "name": "Coerencia",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 40,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "O que é coerência textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A repetição de palavras",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A organização lógica das ideias",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O uso de figuras de linguagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A presença de rimas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Coerência textual é a lógica interna do texto, que permite ao leitor compreendê-lo como um todo.",
+      "studyTip": "Leia o texto como um todo e veja se as ideias fazem sentido entre si.",
+      "id": 3001,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos fatores abaixo contribui para a coerência de um texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de conectivos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de palavras difíceis",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de metáforas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de rimas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos ajudam a ligar ideias, contribuindo para a coerência textual.",
+      "studyTip": "Conectivos como 'portanto', 'porque', 'além disso' são essenciais para a progressão lógica.",
+      "id": 3002,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual frase apresenta problema de coerência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele saiu cedo, pois tinha compromisso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela comprou pão, mas esqueceu o leite.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O sol estava quente, então nevou.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estava cansado, por isso dormiu.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A frase contradiz a lógica climática, comprometendo a coerência.",
+      "studyTip": "Evite contradições ou informações incompatíveis no mesmo contexto.",
+      "id": 3003,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual depende principalmente de:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ortografia correta",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Sentido lógico entre as ideias",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de figuras de linguagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Número de parágrafos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coerência está relacionada à lógica e sentido entre as partes do texto.",
+      "studyTip": "Sempre revise se as ideias estão conectadas e fazem sentido juntas.",
+      "id": 3004,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos elementos abaixo pode prejudicar a coerência de um texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Contradições entre ideias",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de conectivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Progressão temática",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Referência adequada",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Contradições quebram a lógica do texto, prejudicando sua coerência.",
+      "studyTip": "Evite ideias que se anulam ou se contradizem no mesmo texto.",
+      "id": 3005,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A ausência de coerência em um texto pode causar:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Dificuldade de compreensão",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Melhora na estética textual",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Aumento da criatividade",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Maior clareza",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Sem coerência, o leitor pode não entender o texto corretamente.",
+      "studyTip": "Sempre revise seu texto pensando no leitor: está claro e lógico?",
+      "id": 3006,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual está diretamente relacionada à:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Organização das ideias",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Quantidade de palavras",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de adjetivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Presença de figuras de linguagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Organizar bem as ideias é essencial para garantir a coerência do texto.",
+      "studyTip": "Planeje o texto antes de escrever: introdução, desenvolvimento e conclusão.",
+      "id": 3007,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos textos abaixo é incoerente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João foi ao mercado e comprou frutas.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria estudou muito, então passou na prova.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O cachorro miou alto durante a noite.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pedro gosta de futebol e joga aos sábados.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Cachorros não miam, o que torna a frase incoerente.",
+      "studyTip": "Verifique se as informações são compatíveis com a realidade ou contexto.",
+      "id": 3008,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual pode ser comprometida por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Falta de progressão temática",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de conectivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de linguagem formal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de pontuação correta",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Sem progressão temática, o texto fica confuso e perde coerência.",
+      "studyTip": "Cada parágrafo deve desenvolver uma ideia que se conecta à anterior.",
+      "id": 3009,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é mais relacionada à:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Forma do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conteúdo e sentido",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ortografia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pontuação",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coerência diz respeito ao conteúdo e à lógica entre as ideias.",
+      "studyTip": "Leia o texto como leitor: ele faz sentido? Está claro?",
+      "id": 3010,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma sequência coerente de ideias?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estava com fome, então dormi.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estava cansado, por isso fui descansar.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estava com frio, então tomei sorvete.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estava com sede, então comi pão.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A sequência lógica entre cansaço e descanso garante a coerência.",
+      "studyTip": "Observe se a causa e consequência fazem sentido.",
+      "id": 3011,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em um texto dissertativo, a coerência é mantida quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "As ideias são organizadas e bem fundamentadas.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há uso excessivo de adjetivos.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O autor utiliza linguagem informal.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O texto possui muitas metáforas.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A coerência exige organização e fundamentação lógica das ideias.",
+      "studyTip": "Evite contradições e mantenha o foco no tema proposto.",
+      "id": 3012,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A quebra de coerência pode ocorrer quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "O texto apresenta ideias desconexas.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O texto tem muitos parágrafos.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O texto tem linguagem formal.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O texto tem pontuação correta.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ideias desconexas dificultam a compreensão e comprometem a coerência.",
+      "studyTip": "Use tópicos frasais e conectivos para manter a unidade do texto.",
+      "id": 3013,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual está relacionada à capacidade de:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Convencer o leitor com argumentos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Organizar ideias de forma lógica",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Utilizar palavras difíceis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fazer uso de figuras de linguagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coerência depende da lógica entre as ideias, não da complexidade da linguagem.",
+      "studyTip": "Prefira clareza à complexidade: o leitor precisa entender sua mensagem.",
+      "id": 3014,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos elementos abaixo ajuda a manter a coerência em um texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de conectivos adequados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de palavras rebuscadas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de frases curtas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de metáforas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos estabelecem relações entre ideias, promovendo a coerência.",
+      "studyTip": "Aprenda os tipos de conectivos: adição, oposição, causa, consequência.",
+      "id": 3015,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é prejudicada quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Há contradições no conteúdo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O texto tem linguagem clara",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O texto tem estrutura organizada",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O texto tem progressão temática",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Contradições quebram o sentido lógico do texto.",
+      "studyTip": "Revise o texto para garantir que todas as ideias se complementam.",
+      "id": 3016,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma relação coerente de causa e consequência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estava com sono, então foi correr.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estava com sede, então bebeu água.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estava com frio, então tomou sorvete.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estava com fome, então foi estudar.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A ação de beber água é consequência lógica da sede.",
+      "studyTip": "Verifique se a ação está relacionada à situação anterior.",
+      "id": 3017,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é essencial para:",
+      "options": [
+        {
+          "id": 1,
+          "name": "A estética do texto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A compreensão do leitor",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A quantidade de palavras",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A presença de figuras de linguagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Sem coerência, o leitor não consegue entender o texto.",
+      "studyTip": "Escreva pensando no leitor: o texto está claro e lógico?",
+      "id": 3018,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos fatores abaixo pode garantir a coerência em uma redação do Enem?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de argumentos bem conectados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de linguagem informal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uso de frases curtas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de palavras difíceis",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Argumentos bem conectados garantem a progressão lógica do texto.",
+      "studyTip": "Planeje os parágrafos com ideias que se complementam.",
+      "id": 3019,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em um texto coerente, as ideias devem:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Se contradizer",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estar desconectadas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estar organizadas e relacionadas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ser aleatórias",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A coerência exige que as ideias estejam conectadas e façam sentido juntas.",
+      "studyTip": "Use esquemas e mapas mentais para organizar suas ideias antes de escrever.",
+      "id": 3020,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos fatores abaixo é essencial para manter a coerência em um texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de linguagem rebuscada",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Progressão lógica das ideias",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Presença de figuras de linguagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uso de palavras estrangeiras",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coerência depende da progressão lógica entre as ideias do texto.",
+      "studyTip": "Planeje o texto com começo, meio e fim bem definidos.",
+      "id": 3021,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em um texto coerente, os parágrafos devem:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ser independentes entre si",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estar conectados por ideias e argumentos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ser curtos e sem desenvolvimento",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conter apenas exemplos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A conexão entre os parágrafos garante a coerência do texto.",
+      "studyTip": "Use conectivos para ligar os parágrafos e manter o fluxo de ideias.",
+      "id": 3022,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma incoerência semântica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O bebê chorou porque estava com fome.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O avião nadou pelo oceano.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela estudou e passou na prova.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O cachorro latiu ao ver o carteiro.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Aviões não nadam, o que torna a frase incoerente semanticamente.",
+      "studyTip": "Verifique se os verbos e sujeitos são compatíveis com a realidade.",
+      "id": 3023,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual pode ser comprometida por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de conectivos adequados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Contradições internas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Progressão temática",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Referência clara",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Contradições internas quebram o sentido lógico do texto.",
+      "studyTip": "Evite afirmar algo e depois negar sem justificativa.",
+      "id": 3024,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos exemplos abaixo apresenta coerência temporal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ontem ele irá ao cinema.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Hoje ele foi ao cinema.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Amanhã ele foi ao cinema.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ontem ele está no cinema.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A frase está temporalmente coerente: 'hoje' e 'foi' indicam passado recente.",
+      "studyTip": "Verifique se os tempos verbais estão de acordo com os marcadores temporais.",
+      "id": 3025,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é prejudicada quando há:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conectivos bem utilizados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Progressão lógica",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Informações contraditórias",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Referência clara",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Informações contraditórias dificultam a compreensão do texto.",
+      "studyTip": "Revise o texto para garantir que todas as ideias se complementam.",
+      "id": 3026,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coerência espacial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele entrou na sala e saiu pela janela.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela estava na cozinha e foi para o quarto.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele estava no telhado e desceu para o céu.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela subiu a escada e caiu para cima.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A movimentação entre cômodos é espacialmente coerente.",
+      "studyTip": "Verifique se os deslocamentos no texto fazem sentido físico.",
+      "id": 3027,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é garantida quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "As ideias se contradizem",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há clareza e lógica entre as partes do texto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O texto é escrito com palavras difíceis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O texto tem muitos adjetivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coerência depende da clareza e da lógica entre as ideias.",
+      "studyTip": "Evite excesso de ornamentos e foque na clareza do conteúdo.",
+      "id": 3028,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dos fatores abaixo contribui para a coerência textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de conectivos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de palavras aleatórias",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Mudança brusca de assunto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contradições",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos ajudam a estabelecer relações entre ideias.",
+      "studyTip": "Use conectivos para indicar causa, consequência, oposição, adição etc.",
+      "id": 3029,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma incoerência lógica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele acordou cedo para estudar.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela foi ao médico porque estava doente.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele comeu tanto que ficou com fome.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela dormiu porque estava cansada.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Comer muito normalmente sacia a fome, não a provoca.",
+      "studyTip": "Evite relações de causa e consequência que não fazem sentido.",
+      "id": 3030,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma sequência de ideias coerente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela acordou, escovou os dentes e foi dormir.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele saiu de casa, pegou o ônibus e chegou ao trabalho.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela estudou, brincou e esqueceu tudo.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele comeu, correu e ficou com fome.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A sequência de ações é lógica e cronológica, mantendo a coerência.",
+      "studyTip": "Organize os eventos em ordem lógica e temporal.",
+      "id": 3031,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Em um texto, a mudança repentina de assunto pode causar:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Mais clareza",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mais interesse",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Perda de coerência",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Melhor organização",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Mudanças abruptas de assunto dificultam a compreensão e quebram a coerência.",
+      "studyTip": "Use transições suaves entre os tópicos do texto.",
+      "id": 3032,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é mantida quando:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Há repetição de ideias",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Há relação lógica entre as partes do texto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Há uso de palavras difíceis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Há frases curtas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A coerência depende da lógica entre as ideias, não da forma ou estilo.",
+      "studyTip": "Evite contradições e mantenha o foco no tema central.",
+      "id": 3033,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma incoerência temporal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ontem ele foi ao cinema.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Hoje ele está estudando.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Amanhã ele estudou para a prova.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Agora ele está comendo.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O uso de 'amanhã' com verbo no passado ('estudou') gera incoerência temporal.",
+      "studyTip": "Verifique se os tempos verbais estão de acordo com os marcadores temporais.",
+      "id": 3034,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é prejudicada quando o autor:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresenta argumentos contraditórios",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Utiliza conectivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Organiza os parágrafos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Mantém o foco no tema",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Argumentos contraditórios quebram a lógica do texto.",
+      "studyTip": "Revise os argumentos para garantir que se complementam.",
+      "id": 3035,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma incoerência espacial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele entrou pela porta e saiu pela janela.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela estava na sala e foi para o quarto.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele estava no chão e subiu para o teto.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela estava no céu e desceu para o porão.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "A transição do céu para o porão é espacialmente incoerente.",
+      "studyTip": "Verifique se os deslocamentos físicos fazem sentido no contexto.",
+      "id": 3036,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é favorecida por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uso de conectivos e progressão temática",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uso de palavras difíceis",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Mudança constante de assunto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Contradições entre ideias",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Conectivos e progressão temática garantem a fluidez e lógica do texto.",
+      "studyTip": "Planeje o texto com uma linha de raciocínio clara.",
+      "id": 3037,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta coerência entre causa e consequência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele estudou muito, então passou na prova.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela dormiu, então ficou cansada.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele comeu, então ficou com fome.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela correu, então ficou parada.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Estudar muito e passar na prova é uma relação lógica de causa e consequência.",
+      "studyTip": "Evite relações que contradizem o senso comum ou a lógica.",
+      "id": 3038,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "A coerência textual é comprometida quando há:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conectivos bem utilizados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Progressão temática",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Informações incompatíveis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Referência clara",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Informações incompatíveis geram confusão e comprometem a coerência.",
+      "studyTip": "Verifique se os dados e fatos apresentados são compatíveis entre si.",
+      "id": 3039,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual alternativa apresenta uma incoerência de referência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "João saiu cedo. Ele foi ao médico.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria comprou pão. Ela também comprou leite.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Pedro e Lucas jogaram bola. Ele fez um gol.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ana estudou muito. Por isso, ela passou.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A referência 'ele' é ambígua, pois pode se referir a Pedro ou Lucas.",
+      "studyTip": "Evite pronomes ambíguos; prefira repetir o nome quando necessário.",
+      "id": 3040,
+      "category": "coerencia",
+      "difficulty": "fundamental"
+    }
+  ]
+}

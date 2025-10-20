@@ -5,8 +5,8 @@
     "name": "Angular Framework",
     "description": "Framework Angular, componentes, services, RxJS e arquitetura de SPAs.",
     "difficulty": "fundamental",
-    "lastUpdated": "2025-10-02",
-    "questionCount": 25,
+    "lastUpdated": "2025-10-20",
+    "questionCount": 24,
     "tags": [
       "framework",
       "spa",
@@ -291,30 +291,6 @@
         {
           "id": 2,
           "name": "Receber dados de um componente pai",
-          "alias": "b"
-        },
-        {
-          "id": 3,
-          "name": "Definir um serviço global",
-          "alias": "c"
-        }
-      ],
-      "correct": "a",
-      "category": "angular",
-      "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
-    },
-    {
-      "id": 413,
-      "question": "Qual é o propósito do `ngFor` no Angular?",
-      "options": [
-        {
-          "id": 1,
-          "name": "Iterar sobre uma lista e renderizar elementos dinamicamente",
-          "alias": "a"
-        },
-        {
-          "id": 2,
-          "name": "Condicionalmente renderizar elementos",
           "alias": "b"
         },
         {

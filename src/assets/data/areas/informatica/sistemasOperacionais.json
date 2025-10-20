@@ -1,11 +1,11 @@
 {
   "metadata": {
     "area": "informatica",
-    "subject": "sistemas-operacionais",
+    "subject": "sistemasOperacionais",
     "name": "Sistemas Operacionais",
     "description": "Conceitos de SO, Windows, Linux e gerenciamento de recursos.",
     "difficulty": "fundamental",
-    "lastUpdated": "2025-10-02",
+    "lastUpdated": "2025-10-20",
     "questionCount": 5,
     "tags": [
       "windows",

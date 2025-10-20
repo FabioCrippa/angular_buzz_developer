@@ -1,0 +1,727 @@
+{
+  "metadata": {
+    "area": "portugues",
+    "subject": "semantica",
+    "name": "Semantica",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 23,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "Na frase 'Ela está com a pulga atrás da orelha', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela está com coceira",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela está desconfiada",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela está com medo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela está distraída",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão 'com a pulga atrás da orelha' indica desconfiança ou suspeita.",
+      "studyTip": "Identifique expressões idiomáticas que revelam estados emocionais ou atitudes.",
+      "id": 9024,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o sentido da palavra 'banco' na frase: 'Ele foi ao banco resolver um problema'? ",
+      "options": [
+        {
+          "id": 1,
+          "name": "Assento",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Instituição financeira",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Margem de rio",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Reserva de dados",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Nesse contexto, 'banco' refere-se a uma instituição financeira.",
+      "studyTip": "Palavras polissêmicas mudam de sentido conforme o contexto em que são usadas.",
+      "id": 9025,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está com a bola toda', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele está jogando futebol",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está com poder ou prestígio",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está com brinquedos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está com raiva",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão 'estar com a bola toda' indica que alguém está em alta ou com prestígio.",
+      "studyTip": "Expressões populares podem indicar status social ou emocional.",
+      "id": 9026,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está entre a cruz e a espada', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele está em um lugar religioso",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está em uma situação difícil",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está em uma batalha",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está em dúvida sobre religião",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a pessoa está em uma situação complicada, sem boas opções.",
+      "studyTip": "Expressões idiomáticas muitas vezes indicam dilemas ou dificuldades.",
+      "id": 9027,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o sinônimo da palavra 'bonito'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Feio",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Agradável",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Belo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Triste",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Belo' é sinônimo de 'bonito'.",
+      "studyTip": "Sinônimos ajudam a variar o vocabulário e melhorar a escrita.",
+      "id": 9028,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ela está com o coração na mão', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela está apaixonada",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela está com medo ou aflita",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela está segurando algo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela está fazendo cirurgia",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica aflição ou ansiedade.",
+      "studyTip": "Observe o contexto emocional das expressões idiomáticas.",
+      "id": 9029,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o antônimo da palavra 'alto'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Grande",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Baixo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Forte",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Claro",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Baixo' é o oposto de 'alto'.",
+      "studyTip": "Antônimos são úteis para entender contrastes de sentido.",
+      "id": 9030,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está com os nervos à flor da pele', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele está com problemas de pele",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está muito sensível ou irritado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está calmo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está com febre",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a pessoa está emocionalmente instável ou irritada.",
+      "studyTip": "Expressões figuradas revelam estados emocionais e devem ser interpretadas com atenção.",
+      "id": 9031,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o sentido da palavra 'cabo' na frase: 'O cabo do exército foi promovido'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Fio elétrico",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ponta de objeto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Posto militar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Local geográfico",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Nesse contexto, 'cabo' refere-se a uma patente militar.",
+      "studyTip": "Palavras polissêmicas exigem atenção ao contexto para interpretação correta.",
+      "id": 9032,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está com a língua afiada', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele fala com facilidade e crítica",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está com dor na boca",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está com fome",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está estudando idiomas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A expressão indica que a pessoa fala com sarcasmo ou crítica.",
+      "studyTip": "Expressões idiomáticas podem indicar traços de personalidade.",
+      "id": 9033,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o sinônimo da palavra 'trabalho'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Emprego",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Lazer",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Descanso",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Férias",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Emprego' é sinônimo de 'trabalho' em muitos contextos.",
+      "studyTip": "Sinônimos variam conforme o contexto; observe o uso em frases.",
+      "id": 9034,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ela está com os olhos maiores que a barriga', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela está com fome",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela exagerou na quantidade",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela está com problema de visão",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela está grávida",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a pessoa pegou mais comida do que consegue comer.",
+      "studyTip": "Expressões populares muitas vezes envolvem exagero ou comportamento.",
+      "id": 9035,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o antônimo da palavra 'triste'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Alegre",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Chateado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Sério",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Bravo",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Alegre' é o oposto de 'triste'.",
+      "studyTip": "Antônimos ajudam a entender contrastes de sentimentos e emoções.",
+      "id": 9036,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está com a corda no pescoço', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele está sendo enforcado",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está em situação difícil",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está brincando",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está fazendo exercício",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a pessoa está em apuros ou sob pressão.",
+      "studyTip": "Expressões idiomáticas podem indicar situações de risco ou tensão.",
+      "id": 9037,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o sinônimo da palavra 'inteligente'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Esperto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Lento",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ignorante",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Distraído",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Esperto' pode ser sinônimo de 'inteligente', dependendo do contexto.",
+      "studyTip": "Sinônimos podem variar conforme o uso; observe o contexto.",
+      "id": 9038,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está com o pé atrás', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele está andando para trás",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está desconfiado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está com dor no pé",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está dançando",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica desconfiança ou cautela.",
+      "studyTip": "Muitas expressões populares indicam atitudes ou sentimentos.",
+      "id": 9039,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o antônimo da palavra 'rápido'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Veloz",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ágil",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Devagar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Correndo",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Devagar' é o oposto de 'rápido'.",
+      "studyTip": "Antônimos ajudam a entender contrastes de ação ou velocidade.",
+      "id": 9040,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ela está com a mão na massa', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ela está cozinhando",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela está trabalhando",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ela está suja",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela está comendo",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a pessoa está envolvida diretamente em uma tarefa.",
+      "studyTip": "Expressões idiomáticas podem indicar envolvimento ou ação.",
+      "id": 9041,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o sentido da palavra 'banco' na frase: 'Ele sentou no banco da praça'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Instituição financeira",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Assento público",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Reserva de dados",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Posto militar",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Nesse contexto, 'banco' refere-se a um assento.",
+      "studyTip": "Palavras polissêmicas mudam de sentido conforme o contexto.",
+      "id": 9042,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está com a cara fechada', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele está com o rosto coberto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está bravo ou sério",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está dormindo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está com frio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a pessoa está com semblante sério ou irritado.",
+      "studyTip": "Expressões faciais são frequentemente usadas em linguagem figurada.",
+      "id": 9043,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o sinônimo da palavra 'fácil'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Difícil",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Simples",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Complicado",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Demorado",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Simples' é sinônimo de 'fácil'.",
+      "studyTip": "Sinônimos ajudam a compreender melhor o significado das palavras.",
+      "id": 9044,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele está com a cabeça quente', o sentido é:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele está com febre",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ele está bravo ou irritado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele está pensando muito",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ele está com calor",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A expressão indica que a pessoa está irritada ou nervosa.",
+      "studyTip": "Expressões populares podem indicar estados emocionais intensos.",
+      "id": 9045,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o antônimo da palavra 'bom'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ótimo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ruim",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Legal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Interessante",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Ruim' é o oposto de 'bom'.",
+      "studyTip": "Antônimos ajudam a construir argumentos e contrastes em textos.",
+      "id": 9046,
+      "category": "semantica",
+      "difficulty": "fundamental"
+    }
+  ]
+}

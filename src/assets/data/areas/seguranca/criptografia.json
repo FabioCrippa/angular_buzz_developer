@@ -5,8 +5,8 @@
     "name": "Criptografia & Segurança",
     "description": "Segurança, criptografia, autenticação e proteção de dados.",
     "difficulty": "advanced",
-    "lastUpdated": "2025-10-02",
-    "questionCount": 25,
+    "lastUpdated": "2025-10-20",
+    "questionCount": 23,
     "tags": [
       "seguranca",
       "autenticacao",
@@ -374,54 +374,6 @@
       "correct": "a",
       "explanation": "ECC oferece segurança equivalente ao RSA com chaves menores, sendo mais eficiente.",
       "category": "criptografia"
-    },
-    {
-      "id": 1416,
-      "question": "O que é um hash criptográfico?",
-      "options": [
-        {
-          "id": 1,
-          "name": "Uma função que transforma dados em um valor fixo e irreversível",
-          "alias": "a"
-        },
-        {
-          "id": 2,
-          "name": "Um método para compactar arquivos",
-          "alias": "b"
-        },
-        {
-          "id": 3,
-          "name": "Uma técnica de armazenamento de dados",
-          "alias": "c"
-        }
-      ],
-      "correct": "a",
-      "category": "criptografia",
-      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
-    },
-    {
-      "id": 1417,
-      "question": "Qual é a função da criptografia em blockchain?",
-      "options": [
-        {
-          "id": 1,
-          "name": "Garantir a segurança e integridade das transações registradas",
-          "alias": "a"
-        },
-        {
-          "id": 2,
-          "name": "Compactar os blocos de dados",
-          "alias": "b"
-        },
-        {
-          "id": 3,
-          "name": "Acelerar a transmissão de informações",
-          "alias": "c"
-        }
-      ],
-      "correct": "a",
-      "category": "criptografia",
-      "explanation": "Criptografia protege dados através de algoritmos matemáticos, garantindo confidencialidade, integridade e autenticidade."
     },
     {
       "id": 1418,

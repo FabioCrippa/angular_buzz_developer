@@ -1,0 +1,634 @@
+{
+  "metadata": {
+    "area": "informatica",
+    "subject": "segurancaInformacao",
+    "name": "SegurancaInformacao",
+    "description": "",
+    "difficulty": "fundamental",
+    "lastUpdated": "2025-10-20",
+    "questionCount": 20,
+    "tags": []
+  },
+  "questions": [
+    {
+      "question": "O que é um antivírus?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Programa que protege o computador contra ameaças",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Programa para editar textos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Programa para navegar na internet",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Programa para desenhar",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Antivírus detecta e elimina vírus e outras ameaças digitais.",
+      "studyTip": "Mantenha o antivírus sempre atualizado.",
+      "id": 100101,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é uma boa prática de segurança ao criar senhas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usar letras, números e símbolos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Usar apenas o nome",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Usar datas de nascimento",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Usar a mesma senha em todos os sites",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Senhas fortes combinam letras maiúsculas, minúsculas, números e símbolos.",
+      "studyTip": "Evite senhas óbvias e troque-as regularmente.",
+      "id": 100102,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é phishing?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Golpe que tenta enganar o usuário para obter dados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Programa de edição de imagem",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Tipo de vírus que apaga arquivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Sistema de backup automático",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Phishing é uma tentativa de fraude por meio de mensagens falsas.",
+      "studyTip": "Nunca clique em links suspeitos ou forneça dados pessoais sem verificar.",
+      "id": 100103,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função de um firewall?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Controlar o acesso à rede e bloquear ameaças",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumentar a velocidade da internet",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Melhorar a qualidade da imagem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Organizar arquivos no computador",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O firewall monitora e controla o tráfego de rede, protegendo contra acessos não autorizados.",
+      "studyTip": "Mantenha o firewall ativado para maior segurança.",
+      "id": 100104,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual atitude ajuda a proteger seus dados pessoais na internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Evitar compartilhar informações em sites desconhecidos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Publicar senhas em redes sociais",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Usar redes públicas sem proteção",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Aceitar qualquer link recebido por mensagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Evitar sites desconhecidos reduz o risco de roubo de dados.",
+      "studyTip": "Verifique sempre a segurança dos sites antes de inserir dados.",
+      "id": 100105,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é backup?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Cópia de segurança dos arquivos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Programa para editar vídeos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Sistema de navegação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tipo de vírus",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Backup é uma cópia dos dados para evitar perda em caso de falha.",
+      "studyTip": "Faça backups regularmente em locais seguros.",
+      "id": 100106,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é uma forma segura de acessar sites bancários?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Digitar o endereço diretamente no navegador",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Clicar em links recebidos por e-mail",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Usar redes públicas de Wi-Fi",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Compartilhar a senha com amigos",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Digitar o endereço evita redirecionamentos para sites falsos.",
+      "studyTip": "Verifique se o site começa com 'https://' e tem cadeado de segurança.",
+      "id": 100107,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é um software malicioso?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Programa criado para causar danos ou roubar dados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Programa para criar apresentações",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Programa para editar textos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Programa para navegar na internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Softwares maliciosos incluem vírus, trojans e spywares.",
+      "studyTip": "Evite instalar programas de fontes desconhecidas.",
+      "id": 100108,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o objetivo de um ataque de ransomware?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Bloquear o acesso aos dados e exigir pagamento",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumentar a velocidade do computador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Corrigir erros do sistema",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Atualizar o antivírus",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Ransomware criptografa os dados e exige resgate para liberá-los.",
+      "studyTip": "Evite abrir anexos suspeitos e mantenha o sistema atualizado.",
+      "id": 100109,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual das opções abaixo representa uma boa prática de segurança digital?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Atualizar o sistema operacional e os programas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Desativar o antivírus",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Usar senhas fáceis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Compartilhar dados bancários por mensagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Atualizações corrigem falhas e aumentam a segurança do sistema.",
+      "studyTip": "Mantenha todos os softwares atualizados para evitar vulnerabilidades.",
+      "id": 100110,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a melhor forma de proteger seus dados em um computador público?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Evitar salvar senhas e sair das contas após o uso",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Deixar as contas abertas para facilitar o acesso",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Salvar arquivos pessoais na área de trabalho",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Compartilhar a senha com o próximo usuário",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Em computadores públicos, é essencial não salvar senhas e sair das contas.",
+      "studyTip": "Evite acessar dados sensíveis em dispositivos compartilhados.",
+      "id": 100111,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o risco de usar redes Wi-Fi públicas sem proteção?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Exposição a ataques e roubo de dados",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumento da velocidade de conexão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Melhoria na segurança do dispositivo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Atualização automática do antivírus",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Redes públicas podem ser inseguras e facilitar o roubo de informações.",
+      "studyTip": "Use VPNs e evite acessar dados bancários em redes abertas.",
+      "id": 100112,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é uma senha forte?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma senha com letras, números e símbolos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uma senha com o nome do usuário",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uma senha com apenas números",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uma senha com menos de 4 caracteres",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Senhas fortes combinam diferentes tipos de caracteres.",
+      "studyTip": "Evite usar informações pessoais óbvias.",
+      "id": 100113,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o objetivo de um software de criptografia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Proteger dados por meio de codificação",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Apagar arquivos do computador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Aumentar a velocidade da internet",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desinstalar programas automaticamente",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Criptografia transforma dados em códigos para proteger informações.",
+      "studyTip": "É usada em mensagens, arquivos e conexões seguras.",
+      "id": 100114,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é uma prática recomendada ao receber e-mails de remetentes desconhecidos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não clicar em links ou baixar anexos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Responder com seus dados pessoais",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Compartilhar o e-mail com amigos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Salvar o e-mail na área de trabalho",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Links e anexos podem conter vírus ou golpes de phishing.",
+      "studyTip": "Verifique o remetente e o conteúdo antes de interagir.",
+      "id": 100115,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função de uma VPN?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Criar uma conexão segura e privada na internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumentar o brilho da tela",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Desinstalar programas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Editar textos online",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "VPN protege a navegação e oculta o endereço IP do usuário.",
+      "studyTip": "Ideal para usar redes públicas com mais segurança.",
+      "id": 100116,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é engenharia social na segurança da informação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Manipulação psicológica para obter informações",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Criação de redes sociais",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Desenvolvimento de softwares",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Instalação de antivírus",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Engenharia social explora a confiança para obter dados confidenciais.",
+      "studyTip": "Desconfie de pedidos urgentes ou emocionais por dados.",
+      "id": 100117,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o papel da autenticação em dois fatores?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adicionar uma camada extra de segurança",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Reduzir a segurança da conta",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Compartilhar a senha com outro usuário",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Desativar o antivírus",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Autenticação em dois fatores exige dois métodos de verificação.",
+      "studyTip": "Combine senha com código enviado por SMS ou app.",
+      "id": 100118,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o risco de usar a mesma senha em vários sites?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Se um site for invadido, todos os outros ficam vulneráveis",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aumenta a segurança",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Facilita o backup",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Melhora a velocidade de navegação",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Senhas repetidas facilitam ataques em cadeia.",
+      "studyTip": "Use senhas diferentes e gerenciadores de senha.",
+      "id": 100119,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é uma medida eficaz para proteger arquivos importantes?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Fazer backup regularmente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Deixar os arquivos abertos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Compartilhar com desconhecidos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Salvar apenas em redes públicas",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Backups evitam perda de dados em caso de falhas ou ataques.",
+      "studyTip": "Use HD externo, nuvem ou pendrive para guardar cópias.",
+      "id": 100120,
+      "category": "informatica-seguranca-da-informacao",
+      "difficulty": "fundamental"
+    }
+  ]
+}
