@@ -5,8 +5,8 @@
     "name": "Hardware & Componentes",
     "description": "Componentes de computador, arquitetura e funcionamento de hardware.",
     "difficulty": "fundamental",
-    "lastUpdated": "2025-10-20",
-    "questionCount": 5,
+    "lastUpdated": "2025-10-21",
+    "questionCount": 25,
     "tags": [
       "componentes",
       "computador",
@@ -167,6 +167,626 @@
       "explanation": "USB-C é reversível, suporta alta velocidade, vídeo, áudio e carregamento em uma única porta.",
       "studyTip": "Evolução USB: 1.1 → 2.0 → 3.0 → 3.1 → USB-C (Type-C).",
       "id": 4006,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por realizar os cálculos e executar instruções em um computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Memória RAM",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Placa-mãe",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Processador (CPU)",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "HD",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O processador é o cérebro do computador, responsável por executar instruções e cálculos.",
+      "studyTip": "Conheça os principais componentes e suas funções: CPU, RAM, HD, placa-mãe.",
+      "id": 5001,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da memória RAM em um computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Armazenar dados permanentemente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Executar programas temporariamente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Controlar dispositivos de entrada",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Gerar imagens na tela",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A RAM armazena temporariamente dados e instruções usados durante a execução de programas.",
+      "studyTip": "Memória RAM é volátil: perde os dados ao desligar o computador.",
+      "id": 5002,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por armazenar dados de forma permanente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Memória RAM",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Processador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Disco rígido (HD)",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Placa de vídeo",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O HD armazena arquivos, programas e o sistema operacional de forma permanente.",
+      "studyTip": "HD e SSD são tipos de armazenamento permanente, com o SSD sendo mais rápido.",
+      "id": 5003,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente conecta todos os outros dispositivos internos do computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Placa-mãe",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Fonte de alimentação",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Cooler",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Monitor",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A placa-mãe é a base que interliga processador, memória, HD e outros componentes.",
+      "studyTip": "A placa-mãe define compatibilidade entre os componentes do sistema.",
+      "id": 5004,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo é considerado de entrada de dados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Monitor",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Teclado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Impressora",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Caixa de som",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O teclado permite inserir dados e comandos no computador, sendo um dispositivo de entrada.",
+      "studyTip": "Dispositivos de entrada enviam dados ao computador; os de saída exibem ou reproduzem.",
+      "id": 5005,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por resfriar o processador e evitar superaquecimento?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Placa-mãe",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Cooler",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Fonte de alimentação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Memória RAM",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O cooler é um dispositivo de ventilação que dissipa o calor gerado pelo processador.",
+      "studyTip": "O superaquecimento pode causar travamentos e danos ao hardware. O cooler é essencial.",
+      "id": 5006,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo é considerado de saída de dados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Mouse",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Teclado",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Monitor",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Scanner",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O monitor exibe as informações processadas pelo computador, sendo um dispositivo de saída.",
+      "studyTip": "Dispositivos de saída mostram os resultados das operações realizadas pelo computador.",
+      "id": 5007,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por fornecer energia elétrica aos demais dispositivos do computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Placa de vídeo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Fonte de alimentação",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Placa-mãe",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Memória RAM",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A fonte de alimentação converte a energia elétrica da tomada para alimentar os componentes internos.",
+      "studyTip": "Fontes com potência inadequada podem causar instabilidade ou falhas no sistema.",
+      "id": 5008,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo é usado para digitalizar documentos físicos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Impressora",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Monitor",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Scanner",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Teclado",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O scanner converte documentos físicos em arquivos digitais.",
+      "studyTip": "Scanners são dispositivos de entrada, pois enviam dados para o computador.",
+      "id": 5009,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por gerar imagens para o monitor?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Placa de som",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Placa de rede",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Placa de vídeo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Processador",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A placa de vídeo processa os dados gráficos e envia as imagens para o monitor.",
+      "studyTip": "Placas de vídeo dedicadas são essenciais para jogos e aplicações gráficas pesadas.",
+      "id": 5010,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por armazenar temporariamente os dados enquanto o computador está ligado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "HD",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "SSD",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Memória RAM",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Processador",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A memória RAM armazena dados temporários usados durante a execução de programas.",
+      "studyTip": "RAM é volátil: perde os dados ao desligar o computador.",
+      "id": 5011,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo permite controlar o cursor na tela e realizar cliques?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Teclado",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mouse",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Monitor",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Impressora",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O mouse é um dispositivo de entrada que permite movimentar o cursor e interagir com a interface gráfica.",
+      "studyTip": "Dispositivos de entrada enviam comandos ou dados ao computador.",
+      "id": 5012,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por conectar o computador à rede local ou à internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Placa de vídeo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Placa de som",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Placa de rede",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fonte de alimentação",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A placa de rede permite a comunicação entre o computador e outros dispositivos por meio de redes.",
+      "studyTip": "Placas de rede podem ser cabeadas (Ethernet) ou sem fio (Wi-Fi).",
+      "id": 5013,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal vantagem de um SSD em relação a um HD tradicional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Maior capacidade de armazenamento",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Menor consumo de energia",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Maior velocidade de leitura e gravação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Maior resistência a vírus",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "SSDs são mais rápidos que HDs por não possuírem partes mecânicas.",
+      "studyTip": "SSDs aceleram a inicialização do sistema e a abertura de programas.",
+      "id": 5014,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo é usado para reproduzir sons emitidos pelo computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Microfone",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Caixa de som",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Scanner",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Webcam",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A caixa de som é um dispositivo de saída que reproduz sons gerados pelo computador.",
+      "studyTip": "Dispositivos de saída mostram ou reproduzem os resultados das operações do computador.",
+      "id": 5015,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por armazenar instruções que são executadas durante a inicialização do computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Memória RAM",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "BIOS/UEFI",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "HD",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Placa de vídeo",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A BIOS ou UEFI contém instruções básicas para iniciar o sistema e carregar o sistema operacional.",
+      "studyTip": "BIOS/UEFI é armazenada em memória ROM e executa o POST (Power-On Self Test).",
+      "id": 5016,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo permite a entrada de áudio no computador?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Caixa de som",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Microfone",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Scanner",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Monitor",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O microfone capta sons e envia sinais de áudio para o computador, sendo um dispositivo de entrada.",
+      "studyTip": "Dispositivos de entrada capturam dados externos e os enviam ao sistema.",
+      "id": 5017,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por armazenar permanentemente o sistema operacional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Memória RAM",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Processador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "HD ou SSD",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Placa-mãe",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O sistema operacional é instalado em dispositivos de armazenamento como HD ou SSD.",
+      "studyTip": "HDs são mais lentos e baratos; SSDs são mais rápidos e duráveis.",
+      "id": 5018,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual componente é responsável por processar gráficos em jogos e vídeos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Placa de rede",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Placa de vídeo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Placa de som",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fonte de alimentação",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A placa de vídeo é responsável por renderizar imagens e vídeos, especialmente em jogos e softwares gráficos.",
+      "studyTip": "Placas dedicadas têm memória própria e melhor desempenho gráfico.",
+      "id": 5019,
+      "category": "hardware",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo é usado para capturar imagens em tempo real?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Webcam",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Scanner",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Monitor",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Impressora",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A webcam é um dispositivo de entrada que captura imagens e vídeos em tempo real.",
+      "studyTip": "Webcams são comuns em videochamadas e transmissões ao vivo.",
+      "id": 5020,
       "category": "hardware",
       "difficulty": "fundamental"
     }

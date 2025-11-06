@@ -1,38 +1,46 @@
 const fs = require('fs');
 const path = require('path');
-const readline = require('readline');
 
 const indexPath = path.join(__dirname, '../src/assets/data/index.json');
 const areasDir = path.join(__dirname, '../src/assets/data/areas');
 
-function getJsonFiles(dir) {
-  let results = [];
-  const list = fs.readdirSync(dir, { withFileTypes: true });
-  list.forEach(entry => {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      results = results.concat(getJsonFiles(fullPath));
-    } else if (entry.isFile() && entry.name.endsWith('.json')) {
-      results.push(fullPath);
-    }
-  });
-  return results;
+function getQuestions(json) {
+  if (Array.isArray(json.questions)) return json.questions;
+  if (Array.isArray(json)) return json;
+  return [];
 }
 
-function countQuestionsInFile(filePath) {
-  try {
-    const data = fs.readFileSync(filePath, 'utf8');
-    const json = JSON.parse(data);
-    if (Array.isArray(json.questions)) {
-      return json.questions.length;
-    }
-    if (Array.isArray(json)) {
-      return json.length;
-    }
-    return 0;
-  } catch (e) {
-    return 0;
+function fixStructure(json, area, subject, questions) {
+  // Se for array, converte para objeto com metadata e questions
+  if (Array.isArray(json)) {
+    return {
+      metadata: {
+        area,
+        subject,
+        name: subject.charAt(0).toUpperCase() + subject.slice(1),
+        description: '',
+        difficulty: 'fundamental',
+        lastUpdated: new Date().toISOString().slice(0, 10),
+        questionCount: questions.length,
+        tags: []
+      },
+      questions
+    };
   }
+  // Se não tem metadata, adiciona
+  if (!json.metadata) {
+    json.metadata = {
+      area,
+      subject,
+      name: subject.charAt(0).toUpperCase() + subject.slice(1),
+      description: '',
+      difficulty: 'fundamental',
+      lastUpdated: new Date().toISOString().slice(0, 10),
+      questionCount: questions.length,
+      tags: []
+    };
+  }
+  return json;
 }
 
 function checkDuplicates(questions) {
@@ -56,7 +64,7 @@ function checkDuplicates(questions) {
   return { duplicateIds, duplicateQuestions };
 }
 
-function removeDuplicates(questions) {
+function removeDuplicatesAndFixIds(questions) {
   const seenIds = new Set();
   const seenQuestions = new Set();
   const filtered = [];
@@ -77,82 +85,75 @@ function removeDuplicates(questions) {
   return filtered;
 }
 
-function askYesNo(question) {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  return new Promise(resolve => {
-    rl.question(question, answer => {
-      rl.close();
-      resolve(answer.trim().toLowerCase() === 's');
-    });
-  });
+function updateMetadata(json, questions, area, subject) {
+  if (!json.metadata) json.metadata = {};
+  json.metadata.area = area;
+  json.metadata.subject = subject;
+  json.metadata.questionCount = questions.length;
+  json.metadata.lastUpdated = new Date().toISOString().slice(0, 10);
 }
 
 async function main() {
-  // Carrega o index.json atual
+  // Carrega o index.json atual (estrutura reorganizada)
   const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'));
-  const structure = index.structure;
+  const areas = index.areas;
 
   let totalQuestions = 0;
   let byArea = {};
   let totalSubjects = 0;
+  let report = [];
 
-  for (const area of Object.keys(structure)) {
+  for (const area of Object.keys(areas)) {
     let areaTotal = 0;
-    for (const subject of structure[area]) {
-      const subjectFile = path.join(areasDir, area, `${subject}.json`);
-      let count = 0;
-      if (fs.existsSync(subjectFile)) {
-        let fileChanged = false;
-        let fileData = fs.readFileSync(subjectFile, 'utf8');
-        let json = JSON.parse(fileData);
-        let questions = Array.isArray(json.questions) ? json.questions : (Array.isArray(json) ? json : []);
-        // Verifica duplicatas
-        const { duplicateIds, duplicateQuestions } = checkDuplicates(questions);
-        if (duplicateIds.length > 0 || duplicateQuestions.length > 0) {
-          console.log(`\nArquivo: ${subjectFile}`);
-          if (duplicateIds.length > 0) {
-            console.log(`  IDs duplicados: ${duplicateIds.map(d => d.id).join(', ')}`);
-          }
-          if (duplicateQuestions.length > 0) {
-            console.log(`  Perguntas duplicadas:`);
-            duplicateQuestions.forEach(d => console.log(`    - ${d.question}`));
-          }
-          const corrigir = await askYesNo('Deseja remover duplicadas e corrigir IDs? (s/n): ');
-          if (corrigir) {
-            questions = removeDuplicates(questions);
-            if (Array.isArray(json.questions)) {
-              json.questions = questions;
-            } else if (Array.isArray(json)) {
-              json = questions;
-            }
+    const subareas = areas[area].subareas;
+    for (const subarea of Object.keys(subareas)) {
+      for (const subject of subareas[subarea]) {
+        const subjectFile = path.join(areasDir, area, `${subject}.json`);
+        let count = 0;
+        if (fs.existsSync(subjectFile)) {
+          let fileChanged = false;
+          let fileData = fs.readFileSync(subjectFile, 'utf8');
+          let json = JSON.parse(fileData);
+          let questions = getQuestions(json);
+
+          // Corrige estrutura se necessário
+          json = fixStructure(json, area, subject, questions);
+
+          // Verifica duplicatas
+          const { duplicateIds, duplicateQuestions } = checkDuplicates(json.questions);
+          if (duplicateIds.length > 0 || duplicateQuestions.length > 0) {
+            report.push({
+              file: subjectFile,
+              duplicateIds: duplicateIds.map(d => d.id),
+              duplicateQuestions: duplicateQuestions.map(d => d.question)
+            });
+            json.questions = removeDuplicatesAndFixIds(json.questions);
             fileChanged = true;
-            console.log('  Duplicatas removidas e IDs corrigidos.');
+          }
+
+          count = json.questions.length;
+
+          // Atualiza metadata sempre
+          updateMetadata(json, json.questions, area, subject);
+          fileChanged = true;
+
+          // Salva arquivo corrigido
+          if (fileChanged) {
+            fs.writeFileSync(subjectFile, JSON.stringify(json, null, 2));
           }
         }
-        count = questions.length;
-        // Atualiza metadata
-        if (json.metadata) {
-          json.metadata.questionCount = count;
-          json.metadata.lastUpdated = new Date().toISOString().slice(0, 10);
-          fileChanged = true;
-        }
-        if (fileChanged) {
-          fs.writeFileSync(subjectFile, JSON.stringify(json, null, 2));
-        }
+        areaTotal += count;
+        totalSubjects += 1;
       }
-      areaTotal += count;
-      totalSubjects += 1;
     }
     byArea[area] = areaTotal;
     totalQuestions += areaTotal;
   }
 
   // Atualiza stats
+  if (!index.stats) index.stats = {};
   index.stats.totalQuestions = totalQuestions;
-  index.stats.totalAreas = Object.keys(structure).length;
+  index.stats.totalAreas = Object.keys(areas).length;
   index.stats.totalSubjects = totalSubjects;
   index.stats.byArea = byArea;
   index.stats.lastUpdated = new Date().toISOString().slice(0, 10);
@@ -165,6 +166,24 @@ async function main() {
   // Salva index.json atualizado
   fs.writeFileSync(indexPath, JSON.stringify(index, null, 2));
   console.log('\nindex.json atualizado com sucesso!');
+
+  // Relatório de correções
+  if (report.length > 0) {
+    console.log('\nCorreções realizadas:');
+    report.forEach(r => {
+      console.log(`Arquivo: ${r.file}`);
+      if (r.duplicateIds.length > 0) {
+        console.log(`  IDs duplicados corrigidos: ${r.duplicateIds.join(', ')}`);
+      }
+      if (r.duplicateQuestions.length > 0) {
+        console.log(`  Perguntas duplicadas removidas:`);
+        r.duplicateQuestions.forEach(q => console.log(`    - ${q}`));
+      }
+    });
+  } else {
+    console.log('\nNenhuma duplicata encontrada.');
+  }
 }
 
 main();
+// node scripts/updateIndex.js

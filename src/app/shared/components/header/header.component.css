@@ -521,6 +521,7 @@
 }
 
 .premium-menu-item {
+  width: 90%;
   background: #fffbf0;
   border: 1px solid #fed7aa;
   margin: 4px 12px;

@@ -3,30 +3,46 @@
     "name": "Angular Buzz Developer",
     "version": "2.0.0",
     "description": "Plataforma completa de questões técnicas para desenvolvedores e concursos",
-    "lastUpdated": "2025-10-20"
+    "lastUpdated": "2025-10-21"
   },
   "stats": {
-    "totalQuestions": 698,
-    "totalAreas": 8,
+    "totalQuestions": 768,
+    "totalAreas": 4,
     "totalSubjects": 27,
     "byArea": {
-      "desenvolvimento-web": 214,
-      "metodologias": 150,
-      "design": 50,
-      "seguranca": 23,
-      "entrevista": 80,
-      "portugues": 156,
+      "desenvolvimento-web": 517,
+      "portugues": 181,
       "matematica": 15,
-      "informatica": 10
+      "informatica": 55
     },
-    "lastUpdated": "2025-10-20"
+    "lastUpdated": "2025-10-21"
   },
-  "areas": [
-    "desenvolvimento-web",
-    "portugues",
-    "matematica",
-    "informatica"
-  ],
+  "areas": {
+    "desenvolvimento-web": {
+      "displayName": "Desenvolvimento Web",
+      "icon": "💻",
+      "difficulty": "Alto",
+      "description": "HTML, CSS, JavaScript, Angular, TypeScript, DevOps, Metodologias, Design e Segurança"
+    },
+    "portugues": {
+      "displayName": "Português",
+      "icon": "📚",
+      "difficulty": "Médio",
+      "description": "Gramática, Interpretação, Redação, Coerência e Coesão"
+    },
+    "matematica": {
+      "displayName": "Matemática",
+      "icon": "🔢",
+      "difficulty": "Alto",
+      "description": "Álgebra, Geometria e Raciocínio Lógico"
+    },
+    "informatica": {
+      "displayName": "Informática",
+      "icon": "💾",
+      "difficulty": "Médio",
+      "description": "Hardware, Redes e Sistemas Operacionais"
+    }
+  },
   "structure": {
     "desenvolvimento-web": [
       "angular",
@@ -36,40 +52,38 @@
       "html",
       "javascript",
       "responsividade",
-      "typescript"
-    ],
-    "metodologias": [
+      "typescript",
       "ci-cd",
       "code-review",
       "devops",
       "scrum",
       "testes-unitarios",
-      "versionamento"
-    ],
-    "design": [
+      "versionamento",
       "figma",
-      "micro-front-end"
-    ],
-    "seguranca": [
-      "criptografia"
-    ],
-    "entrevista": [
+      "micro-front-end",
+      "criptografia",
       "entrevista-tecnica"
     ],
     "portugues": [
       "gramatica",
       "interpretacao",
-      "redacao"
+      "redacao",
+      "coerencia",
+      "coesao",
+      "ortografia"
     ],
     "matematica": [
       "algebra",
       "geometria",
-      "raciocinio-logico"
+      "raciocinio-logico",
+      "basica"
     ],
     "informatica": [
       "hardware",
       "redes",
-      "sistemas-operacionais"
+      "sistemas-operacionais",
+      "conceitos",
+      "software"
     ]
   }
 }

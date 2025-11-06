@@ -5,8 +5,8 @@
     "name": "Redes & Internet",
     "description": "Conceitos de rede, protocolos, internet e conectividade.",
     "difficulty": "fundamental",
-    "lastUpdated": "2025-10-20",
-    "questionCount": 5,
+    "lastUpdated": "2025-10-21",
+    "questionCount": 30,
     "tags": [
       "internet",
       "protocolos",
@@ -167,6 +167,781 @@
       "explanation": "Na topologia estrela, todos os dispositivos se conectam a um hub ou switch central.",
       "studyTip": "Estrela = hub central. Anel = círculo. Barramento = linha. Malha = todos com todos.",
       "id": 4106,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que significa a sigla 'IP' em redes de computadores?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Internet Protocol",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Internal Port",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Input Processor",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Interface Package",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "IP significa 'Internet Protocol', que identifica dispositivos em uma rede e permite comunicação entre eles.",
+      "studyTip": "O endereço IP é como o 'número de telefone' de um dispositivo na rede.",
+      "id": 6001,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo é usado para conectar diferentes redes e encaminhar pacotes entre elas?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Switch",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Modem",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Roteador",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Hub",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O roteador conecta redes distintas e encaminha pacotes entre elas, como entre sua rede doméstica e a internet.",
+      "studyTip": "Roteadores trabalham na camada de rede e são essenciais para acesso à internet.",
+      "id": 6002,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função de um switch em uma rede local?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Distribuir sinal de internet via Wi-Fi",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conectar dispositivos e encaminhar dados de forma inteligente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Traduzir endereços IP",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Proteger contra vírus",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O switch conecta dispositivos em uma rede local e encaminha os dados apenas para o destino correto.",
+      "studyTip": "Switches operam na camada de enlace e são mais eficientes que hubs.",
+      "id": 6003,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual tecnologia permite a conexão sem fio entre dispositivos em uma rede?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ethernet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Bluetooth",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Wi-Fi",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "USB",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Wi-Fi é a tecnologia que permite conexão sem fio à internet ou redes locais.",
+      "studyTip": "Wi-Fi usa padrões IEEE 802.11 e é comum em redes domésticas e públicas.",
+      "id": 6004,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do protocolo DNS na internet?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Proteger dados com criptografia",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Traduzir nomes de domínio em endereços IP",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Controlar o tráfego de rede",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Gerenciar permissões de usuários",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O DNS converte nomes de sites (como www.exemplo.com) em endereços IP compreensíveis pelos computadores.",
+      "studyTip": "Sem DNS, teríamos que memorizar números IP em vez de nomes de sites.",
+      "id": 6005,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é um endereço MAC?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Número de IP público",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Identificador de rede Wi-Fi",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Endereço físico da placa de rede",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Código de segurança da rede",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O endereço MAC é um identificador único atribuído à placa de rede de um dispositivo.",
+      "studyTip": "Endereços MAC são usados para controle de acesso e identificação na camada de enlace.",
+      "id": 6006,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do protocolo TCP na comunicação de dados?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Transmitir dados sem verificação",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Garantir entrega confiável e ordenada",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Criptografar pacotes de rede",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Controlar o acesso à rede",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O TCP garante que os dados sejam entregues corretamente e na ordem certa.",
+      "studyTip": "TCP é confiável, enquanto o UDP é mais rápido, porém sem garantia de entrega.",
+      "id": 6007,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo é usado para ampliar o sinal de uma rede Wi-Fi?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Switch",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Repetidor",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Modem",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Firewall",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O repetidor recebe o sinal Wi-Fi e o retransmite para ampliar a cobertura.",
+      "studyTip": "Repetidores são úteis em locais com sinal fraco ou barreiras físicas.",
+      "id": 6008,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é uma rede LAN?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Rede de longa distância",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Rede sem fio pública",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Rede local de computadores",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Rede de satélite",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "LAN (Local Area Network) conecta dispositivos em uma área limitada, como uma casa ou escritório.",
+      "studyTip": "LANs são comuns em ambientes domésticos e corporativos.",
+      "id": 6009,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função de um firewall em uma rede?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Aumentar a velocidade da internet",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Proteger contra acessos não autorizados",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Distribuir sinal Wi-Fi",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Traduzir nomes de domínio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O firewall monitora e controla o tráfego de rede, bloqueando acessos suspeitos.",
+      "studyTip": "Firewalls podem ser físicos ou softwares, atuando como barreiras de segurança.",
+      "id": 6010,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é uma rede WAN?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Rede sem fio doméstica",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Rede de área ampla que cobre grandes distâncias",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Rede local de computadores",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Rede de dispositivos móveis",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "WAN (Wide Area Network) conecta redes em locais geográficos diferentes, como cidades ou países.",
+      "studyTip": "Compare LAN (local), MAN (metropolitana) e WAN (ampla) para entender os tipos de rede.",
+      "id": 6011,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual protocolo é usado para envio de e-mails?",
+      "options": [
+        {
+          "id": 1,
+          "name": "HTTP",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "SMTP",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "FTP",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "DNS",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "SMTP (Simple Mail Transfer Protocol) é usado para enviar e-mails entre servidores.",
+      "studyTip": "SMTP envia, POP3 e IMAP recebem. Memorize essa tríade dos protocolos de e-mail.",
+      "id": 6012,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é um modem?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Dispositivo que conecta computadores em rede local",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Dispositivo que converte sinais digitais em analógicos e vice-versa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Dispositivo que protege a rede contra vírus",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Dispositivo que armazena dados em nuvem",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O modem permite a comunicação entre o computador e a internet, convertendo sinais.",
+      "studyTip": "Modem = modulador/demodulador. Ele conecta sua rede à operadora de internet.",
+      "id": 6013,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do protocolo HTTPS?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Transferir arquivos entre servidores",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Acessar páginas da web com segurança",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Enviar e-mails com criptografia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Traduzir nomes de domínio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "HTTPS é a versão segura do HTTP, usando criptografia para proteger dados na web.",
+      "studyTip": "Sites com HTTPS têm cadeado na barra de endereço e são mais seguros.",
+      "id": 6014,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal diferença entre um hub e um switch?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O hub conecta à internet, o switch não",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O switch envia dados apenas ao destino correto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O hub é mais rápido que o switch",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O switch funciona apenas com redes sem fio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O switch identifica o destino dos dados e os envia diretamente, enquanto o hub distribui para todos.",
+      "studyTip": "Switch é inteligente, hub é simples. Prefira switches em redes modernas.",
+      "id": 6015,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que significa a sigla Wi-Fi?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Wireless Fidelity",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Wide Frequency Internet",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Web Interface",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Wireless Internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Wi-Fi é uma marca registrada que significa 'Wireless Fidelity', usada para redes sem fio.",
+      "studyTip": "Wi-Fi é baseada nos padrões IEEE 802.11 e permite conexão sem cabos.",
+      "id": 6016,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do protocolo FTP?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Enviar e-mails",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Transferir arquivos entre computadores",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Acessar páginas da web",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Traduzir nomes de domínio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "FTP (File Transfer Protocol) é usado para enviar e receber arquivos entre sistemas conectados à rede.",
+      "studyTip": "FTP pode ser acessado por navegadores ou programas específicos como FileZilla.",
+      "id": 6017,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é um endereço IP dinâmico?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um IP que muda a cada conexão",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Um IP fixo atribuído manualmente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um IP usado apenas em redes locais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um IP que pertence ao roteador",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Endereços IP dinâmicos são atribuídos automaticamente e podem mudar a cada nova conexão.",
+      "studyTip": "Serviços como DHCP são responsáveis por distribuir IPs dinâmicos na rede.",
+      "id": 6018,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual dispositivo conecta vários computadores em uma rede local e envia os dados para todos os dispositivos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Switch",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Hub",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Roteador",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Modem",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O hub transmite os dados recebidos para todos os dispositivos conectados, sem distinção.",
+      "studyTip": "Hubs são menos eficientes que switches, pois não identificam o destino dos dados.",
+      "id": 6019,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do protocolo POP3?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Enviar e-mails",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Receber e-mails e armazená-los localmente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Acessar páginas da web",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Transferir arquivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "POP3 (Post Office Protocol 3) permite baixar e-mails do servidor para o computador local.",
+      "studyTip": "POP3 baixa os e-mails e geralmente os remove do servidor; IMAP mantém os e-mails online.",
+      "id": 6020,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do protocolo IMAP?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Enviar e-mails",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Receber e-mails mantendo-os no servidor",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Transferir arquivos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Traduzir nomes de domínio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "IMAP permite acessar e-mails diretamente no servidor, mantendo-os sincronizados em vários dispositivos.",
+      "studyTip": "IMAP é ideal para quem acessa e-mails em diferentes aparelhos, pois mantém tudo online.",
+      "id": 6021,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é uma VPN?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um tipo de roteador",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Uma rede privada virtual que protege a conexão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um protocolo de envio de e-mails",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um servidor de arquivos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "VPN (Virtual Private Network) cria uma conexão segura e criptografada entre o usuário e a internet.",
+      "studyTip": "VPNs são úteis para proteger dados em redes públicas e acessar conteúdos restritos.",
+      "id": 6022,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal função do protocolo HTTP?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Transferir arquivos entre servidores",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Acessar páginas da web",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Enviar e-mails",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Traduzir nomes de domínio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "HTTP (Hypertext Transfer Protocol) é usado para acessar e transferir informações em páginas da web.",
+      "studyTip": "HTTP é o protocolo base da navegação web; HTTPS é sua versão segura.",
+      "id": 6023,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do DHCP em uma rede?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Atribuir endereços IP automaticamente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Traduzir nomes de domínio",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Proteger contra acessos não autorizados",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Enviar e-mails",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "DHCP (Dynamic Host Configuration Protocol) distribui endereços IP automaticamente aos dispositivos da rede.",
+      "studyTip": "Sem DHCP, seria necessário configurar manualmente cada IP na rede.",
+      "id": 6024,
+      "category": "redes",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O que é uma rede peer-to-peer (P2P)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Rede onde todos os dispositivos são clientes",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Rede onde todos os dispositivos compartilham recursos diretamente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Rede com servidor centralizado",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Rede sem conexão com a internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Na rede P2P, os dispositivos se comunicam diretamente, sem depender de um servidor central.",
+      "studyTip": "P2P é comum em compartilhamento de arquivos, como torrents.",
+      "id": 6025,
       "category": "redes",
       "difficulty": "fundamental"
     }

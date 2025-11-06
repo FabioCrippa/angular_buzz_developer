@@ -53,6 +53,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { HelpComponent } from './pages/help/help.component';
 import { TermComponent } from './pages/term/term.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
     PremiumUpgradeDialogComponent,
     HelpComponent,
     TermComponent,
-    PrivacyComponent
+    PrivacyComponent,
   ],
   imports: [
     // ✅ SÓ MODULES VÃO AQUI
@@ -112,7 +113,8 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
     MatSortModule,          // ✅ PARA ordenação
     MatTableModule,         // ✅ PARA tabelas
     MatDatepickerModule,    // ✅ PARA date pickers
-    MatNativeDateModule     // ✅ PARA datas nativas
+    MatNativeDateModule,     // ✅ PARA datas nativas
+    MatProgressBarModule    // ✅ PARA barras de progresso
   ],
   providers: [
     // Services serão injetados automaticamente se tiverem @Injectable({providedIn: 'root'})

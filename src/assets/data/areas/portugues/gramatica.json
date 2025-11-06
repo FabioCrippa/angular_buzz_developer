@@ -5,8 +5,8 @@
     "name": "Gramática & Português",
     "description": "Questões de gramática, morfologia, sintaxe e norma culta da língua portuguesa.",
     "difficulty": "fundamental",
-    "lastUpdated": "2025-10-20",
-    "questionCount": 61,
+    "lastUpdated": "2025-10-21",
+    "questionCount": 86,
     "tags": [
       "gramática",
       "português",
@@ -1903,6 +1903,2350 @@
       "explanation": "'Que' retoma 'menina' e introduz uma oração subordinada adjetiva, sendo pronome relativo.",
       "studyTip": "Pronomes relativos ligam orações e retomam termos anteriores.",
       "id": 2062,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ela chegou cedo, mas não encontrou ninguém', qual é a função da palavra 'mas'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Preposição",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conjunção coordenativa adversativa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio de negação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pronome indefinido",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A palavra 'mas' estabelece oposição entre as orações, sendo uma conjunção coordenativa adversativa.",
+      "studyTip": "Conjunções adversativas indicam contraste ou oposição entre ideias.",
+      "id": 3001,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a classe gramatical da palavra 'rapidamente' na frase: 'Ele correu rapidamente para o abrigo'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adjetivo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Advérbio de modo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Substantivo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Verbo",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Rapidamente' modifica o verbo 'correu', indicando o modo como a ação foi realizada.",
+      "studyTip": "Advérbios de modo respondem à pergunta 'como?' e geralmente terminam em '-mente'.",
+      "id": 3002,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Os alunos, cansados, foram embora', qual é a função do termo 'cansados'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adjunto adnominal",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Predicativo do sujeito",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Complemento nominal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Objeto direto",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Cansados' caracteriza o sujeito 'os alunos' após o verbo, funcionando como predicativo do sujeito.",
+      "studyTip": "Predicativo do sujeito atribui uma característica ao sujeito por meio de verbos de ligação ou ação.",
+      "id": 3003,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'lhe' na frase: 'Entreguei-lhe o documento'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Objeto direto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Objeto indireto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Adjunto adnominal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Complemento nominal",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Lhe' indica a quem foi entregue o documento, funcionando como objeto indireto.",
+      "studyTip": "Pronomes oblíquos como 'lhe' costumam exercer função de objeto indireto.",
+      "id": 3004,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'O livro que você me deu é interessante', qual é a função da palavra 'que'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunção subordinativa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Pronome relativo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio interrogativo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Preposição",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Que' retoma 'livro' e introduz uma oração subordinada adjetiva, sendo pronome relativo.",
+      "studyTip": "Pronomes relativos retomam termos anteriores e ligam orações.",
+      "id": 3005,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Eles chegaram quando o evento já havia começado', qual é a função da oração 'quando o evento já havia começado'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Oração subordinada adjetiva",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Oração subordinada substantiva",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Oração subordinada adverbial temporal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Oração coordenada explicativa",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A oração indica o momento em que a ação principal ocorreu, sendo adverbial temporal.",
+      "studyTip": "Orações adverbiais indicam circunstâncias como tempo, causa, condição, etc.",
+      "id": 3006,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função sintática do termo 'um presente' na frase: 'Ela ganhou um presente'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sujeito",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Objeto direto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Objeto indireto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Adjunto adnominal",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Um presente' completa o sentido do verbo 'ganhou' sem preposição, sendo objeto direto.",
+      "studyTip": "Verbos transitivos diretos exigem objeto direto, sem preposição.",
+      "id": 3007,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Apesar da chuva, o jogo continuou', qual é a função da expressão 'Apesar da chuva'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adjunto adnominal",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Complemento nominal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Oração subordinada adverbial concessiva",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Adjunto adverbial de concessão",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "A expressão indica uma concessão à ação principal, funcionando como adjunto adverbial.",
+      "studyTip": "Adjuntos adverbiais indicam circunstâncias e podem ser confundidos com orações subordinadas.",
+      "id": 3008,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'se' na frase: 'Vendeu-se a casa rapidamente'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Pronome reflexivo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Índice de indeterminação do sujeito",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Partícula apassivadora",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conjunção subordinativa",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O 'se' indica que a casa foi vendida por alguém, funcionando como partícula apassivadora.",
+      "studyTip": "A partícula apassivadora transforma a voz ativa em passiva sintética.",
+      "id": 3009,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele não apenas estudou, como também trabalhou', qual é a função da expressão 'como também'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunção alternativa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conjunção explicativa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Conjunção aditiva",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conjunção adversativa",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Como também' adiciona uma ideia à anterior, funcionando como conjunção aditiva.",
+      "studyTip": "Conjunções aditivas ligam ideias semelhantes ou complementares.",
+      "id": 3010,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'João, meu amigo, chegou ontem', qual é a função do termo 'meu amigo'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Vocativo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Aposto explicativo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Adjunto adnominal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Objeto direto",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Meu amigo' explica quem é João, funcionando como aposto explicativo.",
+      "studyTip": "O aposto explicativo esclarece ou detalha o termo anterior e vem entre vírgulas.",
+      "id": 3011,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'não' na frase: 'Ele não respondeu à pergunta'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Advérbio de negação",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Preposição",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Conjunção coordenativa",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pronome indefinido",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Não' modifica o verbo 'respondeu', negando a ação, sendo advérbio de negação.",
+      "studyTip": "Advérbios de negação são usados para negar ações ou ideias.",
+      "id": 3012,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Maria gosta de estudar à noite', qual é a função da expressão 'à noite'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Complemento nominal",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Adjunto adverbial de tempo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Objeto indireto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Predicativo do sujeito",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'À noite' indica quando a ação ocorre, funcionando como adjunto adverbial de tempo.",
+      "studyTip": "Adjuntos adverbiais de tempo respondem à pergunta 'quando?'.",
+      "id": 3013,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'por' na frase: 'Ele passou por aqui ontem'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunção",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Preposição",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio de lugar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pronome",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "'Por' liga o verbo 'passou' ao complemento 'aqui', funcionando como preposição.",
+      "studyTip": "Preposições ligam palavras e indicam relações de sentido.",
+      "id": 3014,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Se chover, ficaremos em casa', qual é a função da oração 'Se chover'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Oração subordinada adverbial condicional",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Oração subordinada adjetiva",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Oração coordenada alternativa",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Oração subordinada substantiva",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A oração 'Se chover' indica uma condição para a ação principal, sendo condicional.",
+      "studyTip": "Orações adverbiais condicionais expressam hipóteses ou possibilidades.",
+      "id": 3015,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'A professora explicou a matéria com clareza', qual é a função da expressão 'com clareza'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Objeto direto",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Complemento nominal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Adjunto adverbial de modo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Predicativo do objeto",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Com clareza' indica o modo como a ação foi realizada, funcionando como adjunto adverbial de modo.",
+      "studyTip": "Adjuntos adverbiais de modo respondem à pergunta 'como?' e indicam a maneira da ação.",
+      "id": 3016,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'que' na frase: 'Não sabia que ela viria'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunção subordinativa integrante",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Pronome relativo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio interrogativo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Preposição",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Que' introduz uma oração subordinada substantiva, funcionando como conjunção integrante.",
+      "studyTip": "Conjunções integrantes ligam orações subordinadas que completam o sentido de verbos.",
+      "id": 3017,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'O aluno respondeu com segurança', qual é a função da expressão 'com segurança'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adjunto adverbial de modo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Complemento nominal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Objeto indireto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Predicativo do sujeito",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Com segurança' indica como a ação foi realizada, sendo adjunto adverbial de modo.",
+      "studyTip": "Expressões que indicam maneira ou forma da ação são adjuntos adverbiais de modo.",
+      "id": 3018,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'onde' na frase: 'A cidade onde nasci é tranquila'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Advérbio interrogativo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conjunção subordinativa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Pronome relativo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Preposição",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Onde' retoma 'cidade' e introduz uma oração subordinada adjetiva, sendo pronome relativo.",
+      "studyTip": "Pronomes relativos como 'onde' indicam lugar e retomam termos anteriores.",
+      "id": 3019,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele é médico e escritor', qual é a função da palavra 'e'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunção coordenativa aditiva",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Preposição",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio de adição",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pronome indefinido",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'E' liga dois termos com valor de adição, funcionando como conjunção coordenativa aditiva.",
+      "studyTip": "Conjunções aditivas unem ideias semelhantes ou complementares.",
+      "id": 3020,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ela estava feliz com o resultado', qual é a função do termo 'feliz'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adjunto adnominal",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Objeto direto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Predicativo do sujeito",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Complemento nominal",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Feliz' atribui uma característica ao sujeito 'ela' por meio do verbo de ligação 'estava'.",
+      "studyTip": "Predicativo do sujeito aparece com verbos de ligação e caracteriza o sujeito.",
+      "id": 3021,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'por que' na pergunta: 'Por que você saiu tão cedo?'",
+      "options": [
+        {
+          "id": 1,
+          "name": "Preposição",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conjunção explicativa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio interrogativo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Pronome relativo",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Por que' é usado em perguntas diretas e funciona como advérbio interrogativo de causa.",
+      "studyTip": "Use 'por que' separado e sem acento em perguntas diretas ou indiretas.",
+      "id": 3022,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'A decisão foi tomada pelos diretores', qual é a voz verbal empregada?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Voz ativa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Voz passiva analítica",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Voz reflexiva",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Voz passiva sintética",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A estrutura 'foi tomada pelos diretores' indica voz passiva analítica.",
+      "studyTip": "Voz passiva analítica usa verbo auxiliar + particípio + agente da passiva.",
+      "id": 3023,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da palavra 'se' na frase: 'Precisa-se de funcionários'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Partícula apassivadora",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Índice de indeterminação do sujeito",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Pronome reflexivo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conjunção condicional",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O 'se' indica que a ação recai sobre o objeto, funcionando como partícula apassivadora.",
+      "studyTip": "Verbo transitivo direto + 'se' = voz passiva sintética.",
+      "id": 3024,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Na frase 'Ele saiu, portanto está cansado', qual é a função da palavra 'portanto'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunção coordenativa conclusiva",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conjunção subordinativa causal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio de tempo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Preposição",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Portanto' indica uma conclusão lógica entre as orações, sendo conjunção conclusiva.",
+      "studyTip": "Conjunções conclusivas expressam resultado ou consequência.",
+      "id": 3025,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual a sequência correta das vogais encontradas na palavra 'papagaio'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "a – p – g – i",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "a – o – i – p",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "a – a – a – i – o",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "p – p – g",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A palavra 'papagaio' contém as vogais: a, a, a, i, o.",
+      "studyTip": "Identificar vogais exige atenção à fonética e ortografia.",
+      "id": 2001,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Complete corretamente as lacunas: 'Agora que há uma câmera de ________, isto provavelmente não _____ acontecerá, mas _____ vezes em que, no meio de uma noite __________, o poeta levantava de seu banco...'",
+      "options": [
+        {
+          "id": 1,
+          "name": "investigassão, mas, ouve, chuvosa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "investigassão, mais, houve, chuvoza",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "investigação, mais, houve, chuvosa",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "investigação, mas, houve, chuvosa",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "A forma correta é: 'investigação, mas, houve, chuvosa'.",
+      "studyTip": "Observe ortografia, sentido lógico e concordância.",
+      "id": 2002,
+      "category": "gramatica",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Escolha a alternativa em que ambas as palavras devem ser graficamente acentuadas por serem proparoxítonas.",
+      "options": [
+        {
+          "id": 1,
+          "name": "paralelepipedo – enigmatico",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "antonimo – esperteza",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "vandalo – tolerancia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "máximo – rubrica",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "pássaro – cadáver",
+          "alias": "E"
+        }
+      ],
+      "correct": "E",
+      "explanation": "Ambas são proparoxítonas e devem ser acentuadas graficamente.",
+      "studyTip": "Toda proparoxítona é acentuada, independentemente da terminação.",
+      "id": 2003,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "O dito popular 'Água mole em pedra dura, tanto bate até que fura' só não significa:",
+      "options": [
+        {
+          "id": 1,
+          "name": "força de vontade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "perseverança",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "insistência",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "preguiça",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "persistência",
+          "alias": "E"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O provérbio expressa esforço contínuo, não preguiça.",
+      "studyTip": "Provérbios podem ser usados para avaliar interpretação e semântica.",
+      "id": 2004,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O sentido e a estruturação da frase 'Embora um filme de mistério seja diferente de um filme de terror...' não se alteram se substituirmos 'embora' por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "desde que",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "uma vez que",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "por mais que",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "contanto que",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "para que",
+          "alias": "E"
+        }
+      ],
+      "correct": "C",
+      "explanation": "‘Por mais que’ mantém o sentido concessivo da conjunção ‘embora’.",
+      "studyTip": "Conjunções concessivas indicam contraste entre ideias.",
+      "id": 2005,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Escolha a alternativa em que ambas as palavras devem ser graficamente acentuadas por serem proparoxítonas.",
+      "options": [
+        {
+          "id": 1,
+          "name": "paralelepipedo – enigmatico",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "antonimo – esperteza",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "vandalo – tolerancia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "máximo – rubrica",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "pássaro – cadáver",
+          "alias": "E"
+        }
+      ],
+      "correct": "E",
+      "explanation": "Ambas são proparoxítonas e devem ser acentuadas graficamente.",
+      "studyTip": "Toda proparoxítona é acentuada, independentemente da terminação.",
+      "id": 2006,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "O dito popular 'Água mole em pedra dura, tanto bate até que fura' só não significa:",
+      "options": [
+        {
+          "id": 1,
+          "name": "força de vontade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "perseverança",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "insistência",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "preguiça",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "persistência",
+          "alias": "E"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O provérbio expressa esforço contínuo, não preguiça.",
+      "studyTip": "Provérbios podem ser usados para avaliar interpretação e semântica.",
+      "id": 2007,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O sentido e a estruturação da frase 'Embora um filme de mistério seja diferente de um filme de terror...' não se alteram se substituirmos 'embora' por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "desde que",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "uma vez que",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "por mais que",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "contanto que",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "para que",
+          "alias": "E"
+        }
+      ],
+      "correct": "C",
+      "explanation": "‘Por mais que’ mantém o sentido concessivo da conjunção ‘embora’.",
+      "studyTip": "Conjunções concessivas indicam contraste entre ideias.",
+      "id": 2008,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Na frase 'Ele saiu, portanto está cansado', qual é a função da palavra 'portanto'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Conjunção coordenativa conclusiva",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Conjunção subordinativa causal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Advérbio de tempo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Preposição",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "'Portanto' indica uma conclusão lógica entre as orações.",
+      "studyTip": "Conjunções conclusivas expressam resultado ou consequência.",
+      "id": 2009,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso da crase está incorreto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Vou à escola todos os dias.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Entreguei o presente à minha mãe.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Cheguei à tarde para a reunião.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Assistimos à peça no teatro.",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "Fui à pé para o trabalho.",
+          "alias": "E"
+        }
+      ],
+      "correct": "E",
+      "explanation": "Não se usa crase antes de palavras masculinas como 'pé'.",
+      "studyTip": "A crase ocorre na fusão da preposição 'a' com o artigo definido feminino 'a'.",
+      "id": 2010,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Na correspondência oficial, 'subscritor' é o mesmo que:",
+      "options": [
+        {
+          "id": 1,
+          "name": "destinatário",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "procurador",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "signatário",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "mensageiro",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Subscritor é quem assina o documento, ou seja, o signatário.",
+      "studyTip": "Conheça os termos técnicos da redação oficial para evitar confusões.",
+      "id": 2020,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "As aspas no trecho 'problema que o banimento “pretende” solucionar' indicam:",
+      "options": [
+        {
+          "id": 1,
+          "name": "uso de palavra da linguagem informal",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "emprego de neologismo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "transcrição de palavra usada em outro texto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "realce irônico da palavra",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "As aspas indicam ironia quanto à intenção real do banimento.",
+      "studyTip": "Aspas podem indicar citação, ironia ou destaque. Observe o contexto.",
+      "id": 2021,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Escolha a alternativa em que ambas as palavras devem ser graficamente acentuadas por serem proparoxítonas.",
+      "options": [
+        {
+          "id": 1,
+          "name": "paralelepipedo – enigmatico",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "antonimo – esperteza",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "vandalo – tolerancia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "máximo – rubrica",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "pássaro – cadáver",
+          "alias": "E"
+        }
+      ],
+      "correct": "E",
+      "explanation": "Ambas são proparoxítonas e devem ser acentuadas graficamente.",
+      "studyTip": "Toda proparoxítona é acentuada, independentemente da terminação.",
+      "id": 2022,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "O dito popular 'Água mole em pedra dura, tanto bate até que fura' só não significa:",
+      "options": [
+        {
+          "id": 1,
+          "name": "força de vontade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "perseverança",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "insistência",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "preguiça",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "persistência",
+          "alias": "E"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O provérbio expressa esforço contínuo, não preguiça.",
+      "studyTip": "Provérbios podem ser usados para avaliar interpretação e semântica.",
+      "id": 2023,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "O sentido e a estruturação da frase 'Embora um filme de mistério seja diferente de um filme de terror...' não se alteram se substituirmos 'embora' por:",
+      "options": [
+        {
+          "id": 1,
+          "name": "desde que",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "uma vez que",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "por mais que",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "contanto que",
+          "alias": "D"
+        },
+        {
+          "id": 5,
+          "name": "para que",
+          "alias": "E"
+        }
+      ],
+      "correct": "C",
+      "explanation": "‘Por mais que’ mantém o sentido concessivo da conjunção ‘embora’.",
+      "studyTip": "Conjunções concessivas indicam contraste entre ideias.",
+      "id": 2024,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Qual das alternativas apresenta erro de concordância verbal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Fazem dois anos que não nos vemos.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Havia muitas pessoas na reunião.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Bateu à porta um estranho.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Faz frio nesta época do ano.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O verbo 'fazer' indicando tempo é impessoal e deve permanecer no singular.",
+      "studyTip": "Verbos impessoais como 'fazer' e 'haver' não variam com o sujeito.",
+      "id": 2025,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o pronome está corretamente empregado:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Entre eu e você, tudo está resolvido.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela trouxe o presente para mim fazer a entrega.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Isso é para eu fazer agora.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Vi ele na festa ontem.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Após preposição seguida de verbo no infinitivo, usa-se pronome reto: 'para eu fazer'.",
+      "studyTip": "Pronomes retos exercem função de sujeito; oblíquos, de objeto.",
+      "id": 2026,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de regência verbal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Assisti ao filme ontem.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Prefiro estudar a sair.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Cheguei no local combinado.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Obedeço às regras da escola.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O verbo 'chegar' exige a preposição 'a': o correto é 'Cheguei ao local'.",
+      "studyTip": "Verifique sempre a preposição exigida pelo verbo para evitar erros de regência.",
+      "id": 2027,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que a colocação pronominal está correta:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Me disseram que você chegou.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Disseram-me que você chegou.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não se preocupe com isso.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Jamais me esquecerei de você.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A ênclise ('Disseram-me') é adequada em contextos formais sem palavra atrativa.",
+      "studyTip": "A ênclise é preferida quando o verbo inicia a oração e não há palavra atrativa.",
+      "id": 2028,
+      "category": "gramatica",
+      "difficulty": "avancado"
+    },
+    {
+      "question": "Qual alternativa apresenta erro de ortografia segundo o Acordo Ortográfico?",
+      "options": [
+        {
+          "id": 1,
+          "name": "ideia",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "heroico",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "micro-ondas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "auto-escola",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Com o novo acordo, o hífen caiu em 'autoescola'.",
+      "studyTip": "O Acordo Ortográfico eliminou o hífen em compostos com prefixos como 'auto', 'infra', 'extra'.",
+      "id": 2029,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de pontuação:",
+      "options": [
+        {
+          "id": 1,
+          "name": "João, que é médico, chegou cedo.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria chegou, e logo saiu.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele disse que viria, mas não veio.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fiz o trabalho e entreguei no prazo.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Não se usa vírgula antes da conjunção 'e' quando liga orações com o mesmo sujeito.",
+      "studyTip": "A vírgula antes do 'e' só é usada em casos de sujeitos diferentes ou orações longas.",
+      "id": 2030,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de colocação pronominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não se preocupe com isso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Jamais me esquecerei de você.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Me disseram que você chegou.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Disseram-me que você chegou.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
+      "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
+      "id": 2031,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o verbo está corretamente conjugado:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Se ele ver o problema, resolverá.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Se ele vir o problema, resolverá.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Se ele vê o problema, resolverá.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Se ele ver o problema, resolveria.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O futuro do subjuntivo do verbo 'ver' é 'vir': 'Se ele vir o problema...'.",
+      "studyTip": "Fique atento à conjugação dos verbos irregulares no futuro do subjuntivo.",
+      "id": 2032,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de uso do tempo verbal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Quando ele chegou, todos já tinham saído.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Se eu tivesse estudado, teria passado.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Se eu estudasse, teria passado.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Se eu estudar, passarei.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A estrutura correta seria: 'Se eu tivesse estudado, teria passado'.",
+      "studyTip": "Evite misturar tempos verbais incompatíveis em períodos condicionais.",
+      "id": 2033,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de uso do tempo verbal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Quando ele chegou, todos já tinham saído.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Se eu tivesse estudado, teria passado.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Se eu estudasse, teria passado.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Se eu estudar, passarei.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A estrutura correta seria: 'Se eu tivesse estudado, teria passado'.",
+      "studyTip": "Evite misturar tempos verbais incompatíveis em períodos condicionais.",
+      "id": 2035,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso do hífen está correto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "auto-escola",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "microondas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "bem-estar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "infraestrutura",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Bem-estar' mantém o hífen por envolver palavras que formam uma unidade sem perda de sentido.",
+      "studyTip": "O uso do hífen depende da combinação de prefixos e radicais; consulte as regras do Acordo Ortográfico.",
+      "id": 2036,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de colocação pronominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não se preocupe com isso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Jamais me esquecerei de você.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Me disseram que você chegou.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Disseram-me que você chegou.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
+      "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
+      "id": 2037,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o verbo está corretamente conjugado:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Se ele ver o problema, resolverá.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Se ele vir o problema, resolverá.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Se ele vê o problema, resolverá.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Se ele ver o problema, resolveria.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O futuro do subjuntivo do verbo 'ver' é 'vir': 'Se ele vir o problema...'.",
+      "studyTip": "Fique atento à conjugação dos verbos irregulares no futuro do subjuntivo.",
+      "id": 2038,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de pontuação:",
+      "options": [
+        {
+          "id": 1,
+          "name": "João, que é médico, chegou cedo.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria chegou, e logo saiu.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele disse que viria, mas não veio.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fiz o trabalho e entreguei no prazo.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Não se usa vírgula antes da conjunção 'e' quando liga orações com o mesmo sujeito.",
+      "studyTip": "A vírgula antes do 'e' só é usada em casos de sujeitos diferentes ou orações longas.",
+      "id": 2039,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso da vírgula está incorreto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "O aluno, que chegou atrasado, perdeu a explicação inicial.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Joana, trouxe os documentos solicitados.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Carlos, meu primo, mora em Recife.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O professor, atento, percebeu o erro.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Não se deve usar vírgula entre sujeito e predicado: 'Joana trouxe os documentos'.",
+      "studyTip": "Evite separar sujeito e verbo com vírgula, salvo em casos de intercalação.",
+      "id": 2040,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de regência nominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tenho necessidade de descanso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Tenho aversão à violência.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Tenho dúvida sobre o assunto.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tenho simpatia com a causa.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O correto é 'simpatia por': 'Tenho simpatia por a causa'.",
+      "studyTip": "Alguns nomes exigem preposições específicas; consulte listas de regência nominal.",
+      "id": 2041,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de concordância nominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estava cansado e com fome.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela estava triste e calada.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estava cansada e com fome.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estava cansado e com fome, as meninas.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "A concordância nominal está incorreta: 'as meninas' exige 'cansadas e com fome'.",
+      "studyTip": "A concordância nominal deve respeitar o gênero e número do sujeito.",
+      "id": 2042,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso do pronome oblíquo está incorreto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Entregaram-me os documentos.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Me entregaram os documentos.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Os documentos foram entregues a mim.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A mim foram entregues os documentos.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Não se inicia oração com pronome oblíquo átono: o correto é 'Entregaram-me'.",
+      "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
+      "id": 2043,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de ortografia:",
+      "options": [
+        {
+          "id": 1,
+          "name": "exceção",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "precisão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "sessão",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "secção",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Com o Acordo Ortográfico, 'secção' passou a ser grafada como 'seção'.",
+      "studyTip": "O novo acordo simplificou grafias como 'secção', 'ação', 'ideia'.",
+      "id": 2044,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de regência verbal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Assisti ao filme ontem.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Prefiro estudar a sair.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Cheguei no local combinado.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Obedeço às regras da escola.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O verbo 'chegar' exige a preposição 'a': o correto é 'Cheguei ao local'.",
+      "studyTip": "Verifique sempre a preposição exigida pelo verbo para evitar erros de regência.",
+      "id": 2045,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de concordância verbal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Fazem dois anos que não nos vemos.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Havia muitas pessoas na reunião.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Bateu à porta um estranho.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Faz frio nesta época do ano.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O verbo 'fazer' indicando tempo é impessoal e deve permanecer no singular.",
+      "studyTip": "Verbos impessoais como 'fazer' e 'haver' não variam com o sujeito.",
+      "id": 2046,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso da crase está incorreto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Vou à escola todos os dias.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Entreguei o presente à minha mãe.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Cheguei à tarde para a reunião.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fui à pé para o trabalho.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Não se usa crase antes de palavras masculinas como 'pé'.",
+      "studyTip": "A crase ocorre na fusão da preposição 'a' com o artigo definido feminino 'a'.",
+      "id": 2047,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso do hífen está correto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "auto-escola",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "microondas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "bem-estar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "infraestrutura",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Bem-estar' mantém o hífen por envolver palavras que formam uma unidade sem perda de sentido.",
+      "studyTip": "O uso do hífen depende da combinação de prefixos e radicais; consulte as regras do Acordo Ortográfico.",
+      "id": 2048,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de colocação pronominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não se preocupe com isso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Jamais me esquecerei de você.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Me disseram que você chegou.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Disseram-me que você chegou.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
+      "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
+      "id": 2049,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de regência nominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tenho necessidade de descanso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Tenho aversão à violência.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Tenho dúvida sobre o assunto.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tenho simpatia com a causa.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O correto é 'simpatia por': 'Tenho simpatia por a causa'.",
+      "studyTip": "Alguns nomes exigem preposições específicas; consulte listas de regência nominal.",
+      "id": 2050,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de concordância nominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estava cansado e com fome.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela estava triste e calada.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Estava cansada e com fome.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Estava cansado e com fome, as meninas.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "A concordância nominal está incorreta: 'as meninas' exige 'cansadas e com fome'.",
+      "studyTip": "A concordância nominal deve respeitar o gênero e número do sujeito.",
+      "id": 2051,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso do pronome oblíquo está incorreto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Entregaram-me os documentos.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Me entregaram os documentos.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Os documentos foram entregues a mim.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A mim foram entregues os documentos.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Não se inicia oração com pronome oblíquo átono: o correto é 'Entregaram-me'.",
+      "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
+      "id": 2052,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de ortografia:",
+      "options": [
+        {
+          "id": 1,
+          "name": "exceção",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "precisão",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "sessão",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "secção",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Com o Acordo Ortográfico, 'secção' passou a ser grafada como 'seção'.",
+      "studyTip": "O novo acordo simplificou grafias como 'secção', 'ação', 'ideia'.",
+      "id": 2053,
+      "category": "gramatica",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso da vírgula está incorreto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "O aluno, que chegou atrasado, perdeu a explicação inicial.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Joana, trouxe os documentos solicitados.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Carlos, meu primo, mora em Recife.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O professor, atento, percebeu o erro.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Não se deve usar vírgula entre sujeito e predicado: 'Joana trouxe os documentos'.",
+      "studyTip": "Evite separar sujeito e verbo com vírgula, salvo em casos de intercalação.",
+      "id": 2054,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de uso do tempo verbal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Quando ele chegou, todos já tinham saído.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Se eu tivesse estudado, teria passado.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Se eu estudasse, teria passado.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Se eu estudar, passarei.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A estrutura correta seria: 'Se eu tivesse estudado, teria passado'.",
+      "studyTip": "Evite misturar tempos verbais incompatíveis em períodos condicionais.",
+      "id": 2055,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o verbo está corretamente conjugado:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Se ele ver o problema, resolverá.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Se ele vir o problema, resolverá.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Se ele vê o problema, resolverá.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Se ele ver o problema, resolveria.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O futuro do subjuntivo do verbo 'ver' é 'vir': 'Se ele vir o problema...'.",
+      "studyTip": "Fique atento à conjugação dos verbos irregulares no futuro do subjuntivo.",
+      "id": 2056,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de pontuação:",
+      "options": [
+        {
+          "id": 1,
+          "name": "João, que é médico, chegou cedo.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria chegou, e logo saiu.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ele disse que viria, mas não veio.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fiz o trabalho e entreguei no prazo.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Não se usa vírgula antes da conjunção 'e' quando liga orações com o mesmo sujeito.",
+      "studyTip": "A vírgula antes do 'e' só é usada em casos de sujeitos diferentes ou orações longas.",
+      "id": 2057,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que há erro de colocação pronominal:",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não se preocupe com isso.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Jamais me esquecerei de você.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Me disseram que você chegou.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Disseram-me que você chegou.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
+      "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
+      "id": 2058,
+      "category": "gramatica",
+      "difficulty": "intermediario"
+    },
+    {
+      "question": "Assinale a alternativa em que o uso do hífen está correto:",
+      "options": [
+        {
+          "id": 1,
+          "name": "auto-escola",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "microondas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "bem-estar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "infraestrutura",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "'Bem-estar' mantém o hífen por envolver palavras que formam uma unidade sem perda de sentido.",
+      "studyTip": "O uso do hífen depende da combinação de prefixos e radicais; consulte as regras do Acordo Ortográfico.",
+      "id": 2059,
       "category": "gramatica",
       "difficulty": "fundamental"
     }

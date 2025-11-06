@@ -6,6 +6,8 @@ import { Observable, forkJoin, of, Subscription } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FreeTrialService } from '../../core/services/free-trial.service';
+import { ProgressService } from 'src/app/core/services/progress.service';
+import { Title } from '@angular/platform-browser';
 
 // ✅ INTERFACES ESSENCIAIS
 interface QuestionOption {
@@ -95,6 +97,9 @@ export class QuizzComponent implements OnInit, OnDestroy {
   showExplanation: boolean = false;
   quizCompleted: boolean = false;
   
+  // ✅ ADICIONE ESTA PROPRIEDADE PARA FAVORITOS
+  favoriteQuestions: Set<number> = new Set<number>();
+  
   // Estatísticas
   score: number = 0;
   correctAnswers: number = 0;
@@ -133,9 +138,8 @@ export class QuizzComponent implements OnInit, OnDestroy {
   };
 
   // ✅ CACHE DE QUESTÕES E FAVORITOS
-  private questionCache = new Map<string, any>();
-  private subscriptions: Subscription[] = [];
-  private favoriteQuestions: Set<number> = new Set();
+  questionCache = new Map<string, any>();
+  subscriptions: Subscription[] = [];
 
   // ✅ PROPRIEDADES PARA CONTROLE DE TENTATIVAS
   isFreeTrial: boolean = true;
@@ -175,9 +179,11 @@ export class QuizzComponent implements OnInit, OnDestroy {
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
-    private router: Router, // ✅ MANTER private
+    private router: Router,
     private snackBar: MatSnackBar,
-    private freeTrialService: FreeTrialService // ✅ MANTER private
+    private freeTrialService: FreeTrialService,
+    private progressService: ProgressService, // <-- Adicione esta linha
+    private titleService: Title // <-- Adicione esta linha
   ) {}
 
   // ✅ GETTERS PARA ESTADO
@@ -231,42 +237,20 @@ export class QuizzComponent implements OnInit, OnDestroy {
     this.loadSoundPreference();
     this.loadFavorites();
     
-    // Definir título dinâmico
-    this.updateTitle();
-    
-    // Verificar parâmetros da rota
-    this.route.paramMap.subscribe(params => {
-      this.area = params.get('area') || '';
-      this.subject = params.get('subject') || '';
-      
-      // Atualizar título quando parâmetros mudarem
-      this.updateTitle();
-      
-      console.log('📍 Parâmetros da rota:', { area: this.area, subject: this.subject });
-    });
-    
-    this.route.queryParamMap.subscribe(params => {
-      this.mode = params.get('mode') as 'area' | 'subject' | 'mixed' || 'mixed';
-      this.isFreeTrial = params.get('type') === 'free-trial';
-      
-      // Atualizar título quando query params mudarem
-      this.updateTitle();
-      
-      console.log('🔍 Query params:', { mode: this.mode, isFreeTrial: this.isFreeTrial });
-    });
-    
-    this.setState(QuizState.INITIALIZING);
-    
+    // ✅ UMA ÚNICA SUBSCRIÇÃO PARA OS PARÂMETROS
     const routeParamsSub = this.route.params.subscribe(params => {
       this.area = params['area'] || '';
       this.subject = params['subject'] || '';
       
-      console.log('📋 Parâmetros da rota:', { 
-        area: this.area, 
-        subject: this.subject 
-      });
+      console.log('📍 Parâmetros da rota capturados:');
+      console.log('📍 Area:', this.area);
+      console.log('📍 Subject:', this.subject);
+      
+      // Atualizar título quando parâmetros mudarem
+      this.updateTitle();
     });
 
+    // ✅ UMA ÚNICA SUBSCRIÇÃO PARA QUERY PARAMS
     const queryParamsSub = this.route.queryParams.subscribe(queryParams => {
       const queryMode = queryParams['mode'];
       const queryType = queryParams['type'];
@@ -281,26 +265,43 @@ export class QuizzComponent implements OnInit, OnDestroy {
         console.log('🎲 Modo definido: Quiz Misto (Teste Grátis)');
       } else if (this.area && this.subject) {
         this.mode = 'subject';
+        console.log('📖 Modo definido: Subject');
       } else if (this.area) {
         this.mode = 'area';
+        console.log('📚 Modo definido: Area');
       } else {
         this.mode = 'mixed';
         this.isFreeTrial = true;
         console.log('🎲 Modo padrão: Quiz Misto');
       }
       
+      console.log(`🎯 Modo final determinado: ${this.mode} | Trial: ${this.isFreeTrial}`);
+      
+      // Verificar trial apenas se necessário
       if (this.isFreeTrial) {
         this.checkTrialLimits();
       }
       
-      console.log(`🎯 Modo final determinado: ${this.mode} | Trial: ${this.isFreeTrial}`);
-      
-      this.startTime = new Date();
-      this.startTimer();
-      this.loadAppIndex();
+      // Inicializar o quiz apenas após ter todos os parâmetros
+      this.initializeQuiz();
     });
 
     this.subscriptions.push(routeParamsSub, queryParamsSub);
+    this.setState(QuizState.INITIALIZING);
+  }
+
+  // ✅ ADICIONE ESTE NOVO MÉTODO PARA INICIALIZAR O QUIZ
+  private initializeQuiz(): void {
+    console.log('🎯 Inicializando quiz com parâmetros:', {
+      area: this.area,
+      subject: this.subject,
+      mode: this.mode,
+      isFreeTrial: this.isFreeTrial
+    });
+    
+    this.startTime = new Date();
+    this.startTimer();
+    this.loadAppIndex();
   }
 
   // ✅ ngOnDestroy
@@ -325,7 +326,7 @@ export class QuizzComponent implements OnInit, OnDestroy {
         sub.unsubscribe();
       }
     });
-    
+
     if (this.timer) {
       clearInterval(this.timer);
       this.timer = null;
@@ -442,6 +443,31 @@ export class QuizzComponent implements OnInit, OnDestroy {
     const currentQ = this.currentQuestion;
     const isCorrect = this.selectedAnswer === currentQ.correct;
     
+    // ✅ ADICIONE ESTES LOGS PARA DEBUG
+    console.log('🔍 Dados da área atual no quiz:');
+    console.log('📍 this.area:', this.area);
+    console.log('📍 this.subject:', this.subject);
+    console.log('📍 Route params:', this.route.snapshot.params);
+
+    // Calcular tempo gasto na questão
+    const questionTimeSpent = this.questionStartTime 
+      ? Math.floor((Date.now() - this.questionStartTime.getTime()) / 1000)
+      : 30;
+
+    // ✅ SALVAR PROGRESSO NO PROGRESSSERVICE
+    const answerData = {
+      area: this.area || 'desenvolvimento-web', // área atual ou padrão
+      questionId: currentQ.id,
+      correct: isCorrect,
+      timeSpent: questionTimeSpent,
+      date: new Date().toISOString(),
+      subarea: this.subject // opcional
+    };
+
+    console.log('💾 Dados que serão salvos:', answerData);
+
+    this.progressService.addAnswer(answerData);
+
     this.answers[currentQ.id] = this.selectedAnswer;
     this.analytics.questionsAnswered++;
     
@@ -449,10 +475,10 @@ export class QuizzComponent implements OnInit, OnDestroy {
       this.correctAnswers++;
       this.analytics.correctAnswers++;
       this.showSuccessMessage('🎉 Correto!');
-      this.playCorrectSound(); // ✅ ADICIONAR SOM
+      this.playCorrectSound();
     } else {
       this.showErrorMessage('❌ Incorreto');
-      this.playIncorrectSound(); // ✅ ADICIONAR SOM
+      this.playIncorrectSound();
     }
 
     this.showExplanation = true;
@@ -1009,7 +1035,7 @@ export class QuizzComponent implements OnInit, OnDestroy {
         console.log('✅ Index carregado:', indexData);
         
         this.appInfo = indexData.appInfo;
-        this.availableAreas = indexData.areas || Object.keys(indexData.structure || {});
+        this.availableAreas = Object.keys(indexData.areas || {});
         this.areaStructure = indexData.structure || {};
         this.areaStats = indexData.stats?.byArea || {};
         
@@ -1556,4 +1582,175 @@ export class QuizzComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Método para verificar o progresso salvo (debug)
+  checkProgress(): void {
+    const stats = this.progressService.getStats();
+    const areaStats = this.progressService.getAreaStats(this.area || 'desenvolvimento-web');
+    
+    console.log('📊 Estatísticas gerais:', stats);
+    console.log('📊 Estatísticas da área atual:', areaStats);
+    
+    this.showSuccessMessage(`Progresso: ${stats.totalCompleted} questões respondidas`);
+  }
+
+  // Método para carregar questões de uma área específica
+  private loadQuestionsByArea(area: string): void {
+    console.log('📚 Carregando questões da área:', area);
+    
+    if (!area) {
+      this.showError('Área não especificada');
+      return;
+    }
+    
+    this.isLoading = true;
+    
+    // Mapear área para arquivos disponíveis
+    const areaFiles: { [key: string]: string[] } = {
+      'desenvolvimento-web': [
+        'assets/data/desenvolvimento-web/html-css.json',
+        'assets/data/desenvolvimento-web/javascript.json',
+        'assets/data/desenvolvimento-web/react.json',
+        'assets/data/desenvolvimento-web/nodejs.json'
+      ],
+      'portugues': [
+        'assets/data/portugues/ortografia.json',
+        'assets/data/portugues/gramatica.json',
+        'assets/data/portugues/interpretacao.json'
+      ],
+      'matematica': [
+        'assets/data/matematica/basica.json',
+        'assets/data/matematica/algebra.json',
+        'assets/data/matematica/geometria.json'
+      ],
+      'informatica': [
+        'assets/data/informatica/conceitos.json',
+        'assets/data/informatica/hardware.json',
+        'assets/data/informatica/software.json'
+      ]
+    };
+    
+    const files = areaFiles[area];
+    if (!files || files.length === 0) {
+      console.warn(`⚠️ Nenhum arquivo encontrado para área: ${area}`);
+      this.showError(`Área "${area}" não possui questões disponíveis`);
+      return;
+    }
+    
+    // Carregar arquivos da área
+    const requests = files.map(file => 
+      this.http.get<any>(file).pipe(
+        catchError(error => {
+          console.warn(`⚠️ Erro ao carregar ${file}:`, error);
+          return of(null);
+        })
+      )
+    );
+    
+    forkJoin(requests).subscribe({
+      next: (results) => {
+        const validResults = results.filter(result => result && result.questions);
+        
+        if (validResults.length === 0) {
+          this.showError(`Nenhuma questão válida encontrada para a área: ${area}`);
+          return;
+        }
+        
+        // Combinar questões da área
+        let areaQuestions: any[] = [];
+        validResults.forEach(result => {
+          if (result.questions && Array.isArray(result.questions)) {
+            areaQuestions = [...areaQuestions, ...result.questions];
+          }
+        });
+        
+        if (areaQuestions.length === 0) {
+          this.showError(`Nenhuma questão encontrada para a área: ${area}`);
+          return;
+        }
+        
+        // Embaralhar e limitar (30 questões para área específica)
+        const shuffledQuestions = this.shuffleArray(areaQuestions);
+        const limitedQuestions = shuffledQuestions.slice(0, 30);
+        
+        const questionData = {
+          metadata: {
+            area: area,
+            subject: this.getCategoryTitle(area),
+            name: `Quiz de ${this.getCategoryTitle(area)}`,
+            description: `Questões específicas da área de ${this.getCategoryTitle(area)}`,
+            questionCount: limitedQuestions.length
+          },
+          questions: limitedQuestions
+        };
+        
+        console.log(`🎉 ${limitedQuestions.length} questões de ${area} carregadas!`);
+        this.processQuestionsData(questionData, this.getCategoryTitle(area));
+        
+        this.isLoading = false;
+        this.setState(QuizState.READY);
+        
+      },
+      error: (error) => {
+        console.error(`❌ Erro ao carregar questões da área ${area}:`, error);
+        this.hasError = true;
+        this.errorMessage = `Erro ao carregar questões da área: ${area}`;
+        this.isLoading = false;
+        this.showErrorMessage(`Erro ao carregar questões da área: ${area}`);
+      }
+    });
+  }
+
+  // ✅ MÉTODO PARA CARREGAR QUESTÕES POR MATÉRIA ESPECÍFICA
+  private loadQuestionsBySubject(area: string, subject: string): void {
+    console.log(`📖 Carregando questões: ${area}/${subject}`);
+    
+    if (!area || !subject) {
+      this.showError('Área e matéria devem ser especificadas');
+      return;
+    }
+    
+    this.isLoading = true;
+    
+    // Construir caminho do arquivo
+    const filePath = `assets/data/${area}/${subject}.json`;
+    
+    this.http.get<any>(filePath).subscribe({
+      next: (data: any) => {
+        if (!data || !data.questions || data.questions.length === 0) {
+          console.warn(`⚠️ Nenhuma questão encontrada em: ${filePath}`);
+          this.loadEmergencyQuestions();
+          return;
+        }
+        
+        // Embaralhar questões da matéria
+        const shuffledQuestions = this.shuffleArray(data.questions);
+        const limitedQuestions = shuffledQuestions.slice(0, 25);
+        
+        const questionData = {
+          metadata: {
+            area: area,
+            subject: subject,
+            name: `${this.getCategoryTitle(area)} - ${subject}`,
+            description: `Questões específicas de ${subject}`,
+            questionCount: limitedQuestions.length
+          },
+          questions: limitedQuestions
+        };
+        
+        console.log(`🎉 ${limitedQuestions.length} questões de ${subject} carregadas!`);
+        this.processQuestionsData(questionData, `${this.getCategoryTitle(area)} - ${subject}`);
+        
+        this.isLoading = false;
+        this.setState(QuizState.READY);
+        
+      },
+      error: (error) => {
+        console.error(`❌ Erro ao carregar ${filePath}:`, error);
+        this.hasError = true;
+        this.errorMessage = `Erro ao carregar questões de ${subject}`;
+        this.isLoading = false;
+        this.showErrorMessage(`Erro ao carregar questões de ${subject}`);
+      }
+    });
+  }
 } // ✅ CHAVE DE FECHAMENTO DA CLASSE QuizzComponent

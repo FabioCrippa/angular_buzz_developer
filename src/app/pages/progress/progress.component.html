@@ -29,7 +29,7 @@
           <p class="page-subtitle">Acompanhe sua evolução detalhada em todas as áreas</p>
           <p class="last-access">
             <mat-icon>schedule</mat-icon>
-            Último acesso: {{ progressData.lastAccess | date:'dd/MM/yyyy HH:mm' }}
+            Último acesso: {{ formatLastAccess(progressData.lastAccess) }}
           </p>
         </div>
         <div class="header-actions">
@@ -68,7 +68,7 @@
           <div class="stat-content">
             <span class="stat-number">{{ progressData.overallStats.averageAccuracy }}%</span>
             <span class="stat-label">Precisão Média</span>
-            <span class="stat-sublabel">em todas as áreas</span>
+            <span class="stat-sublabel">em {{ progressData.areasProgress.length }} área(s) estudada(s)</span>
           </div>
         </div>
 
@@ -90,7 +90,7 @@
           <div class="stat-content">
             <span class="stat-number">{{ progressData.overallStats.streak }}</span>
             <span class="stat-label">Sequência</span>
-            <span class="stat-sublabel">dias consecutivos</span>
+            <span class="stat-sublabel">dia(s) consecutivo(s)</span>
           </div>
         </div>
       </div>
@@ -210,21 +210,24 @@
 
           <!-- 🎯 AREA ACTIONS -->
           <div class="area-actions">
+            <!-- Botão principal: Quiz direto -->
             <button 
-              mat-raised-button 
-              color="primary" 
+              class="btn btn-primary" 
               (click)="startQuizForArea(area.name); $event.stopPropagation()"
             >
-              <mat-icon>play_arrow</mat-icon>
-              {{ area.progress === 0 ? 'Começar' : 'Continuar' }}
+              <span class="btn-icon">▶️</span>
+              <span class="btn-text">{{ area.progress === 0 ? 'Começar Quiz' : 'Continuar Quiz' }}</span>
+              <span class="btn-shine"></span>
             </button>
             
+            <!-- Botão secundário: Explorar área -->
             <button 
-              mat-icon-button 
-              matTooltip="Ver detalhes"
-              (click)="$event.stopPropagation()"
+              class="btn btn-secondary"
+              (click)="navigateToArea(area.name); $event.stopPropagation()"
             >
-              <mat-icon>info</mat-icon>
+              <span class="btn-icon">🔍</span>
+              <span class="btn-text">Explorar</span>
+              <span class="btn-shine"></span>
             </button>
           </div>
 
@@ -256,7 +259,7 @@
         <div class="recommendation-card study-card">
           <mat-icon class="rec-icon">school</mat-icon>
           <h3>Continue Estudando</h3>
-          <p>Você tem {{ getInProgressAreasCount() }} áreas em progresso. Continue praticando!</p>
+          <p>Você tem {{ getInProgressAreasCount() }} área(s) em progresso. Continue praticando!</p>
           <button mat-stroked-button (click)="startQuizForArea(getNextAreaToStudy())">
             Próxima Área
           </button>
@@ -274,10 +277,51 @@
         <div class="recommendation-card streak-card">
           <mat-icon class="rec-icon">local_fire_department</mat-icon>
           <h3>Manter Sequência</h3>
-          <p>Você está há {{ progressData.overallStats.streak }} dias estudando!</p>
+          <p>Você está há {{ progressData.overallStats.streak }} dia(s) estudando!</p>
           <button mat-stroked-button (click)="navigateToDashboard()">
             Estudar Hoje
           </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🆕 NEW AREAS SECTION - VERSÃO CORRIGIDA -->
+    <section class="new-areas-section" *ngIf="getAvailableAreasToStart().length > 0">
+      <h2 class="section-title">Começar Nova Área</h2>
+      
+      <div class="new-areas-grid">
+        <div 
+          *ngFor="let area of getAvailableAreasToStart()" 
+          class="new-area-card"
+        >
+          <!-- ✅ CONTEÚDO PRINCIPAL -->
+          <div class="new-area-content">
+            <div class="new-area-icon">{{ area.icon }}</div>
+            <h3>{{ area.displayName }}</h3>
+            <p class="area-description">{{ area.description }}</p>
+            <div class="area-meta">
+              <span class="question-count">
+                <mat-icon>quiz</mat-icon>
+                {{ area.questionCount }} questões
+              </span>
+              <span class="difficulty" [class]="'difficulty-' + area.difficulty.toLowerCase()">
+                <mat-icon>bar_chart</mat-icon>
+                {{ area.difficulty }}
+              </span>
+            </div>
+          </div>
+          
+          <!-- ✅ AÇÕES SEMPRE NO FINAL -->
+          <div class="new-area-actions">
+            <button 
+              mat-raised-button 
+              color="primary"
+              (click)="startQuizForArea(area.name)"
+            >
+              <mat-icon>play_arrow</mat-icon>
+              Começar
+            </button>
+          </div>
         </div>
       </div>
     </section>

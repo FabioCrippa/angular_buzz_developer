@@ -6,7 +6,7 @@
     "description": "Conceitos de SO, Windows, Linux e gerenciamento de recursos.",
     "difficulty": "fundamental",
     "lastUpdated": "2025-10-20",
-    "questionCount": 5,
+    "questionCount": 21,
     "tags": [
       "windows",
       "linux",
@@ -167,6 +167,502 @@
       "explanation": "Memória virtual usa espaço do HD/SSD como extensão da RAM quando esta fica cheia.",
       "studyTip": "Memória virtual = 'RAM extra' no disco. Mais lenta que RAM real, mas evita travamentos.",
       "id": 4206,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a principal função de um sistema operacional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executar jogos e aplicativos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Gerenciar recursos do computador e permitir a interação com o usuário",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Proteger contra vírus",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conectar à internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O sistema operacional gerencia hardware, software e recursos como memória e processador, além de permitir a interação com o usuário.",
+      "studyTip": "Conheça as funções básicas: gerenciamento de processos, memória, dispositivos e interface com o usuário.",
+      "id": 7001,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual sistema operacional é desenvolvido pela Microsoft?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Linux",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "macOS",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Windows",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Android",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O Windows é o sistema operacional mais popular da Microsoft, usado em desktops e notebooks.",
+      "studyTip": "Associe os sistemas operacionais às empresas: Windows (Microsoft), macOS (Apple), Linux (comunitário), Android (Google).",
+      "id": 7002,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do gerenciador de tarefas em um sistema operacional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Instalar programas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Monitorar e encerrar processos em execução",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Atualizar o sistema",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Executar jogos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O gerenciador de tarefas permite visualizar o uso de recursos e encerrar programas que não estão respondendo.",
+      "studyTip": "Use o atalho Ctrl + Shift + Esc para abrir rapidamente o gerenciador de tarefas no Windows.",
+      "id": 7003,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do sistema operacional gratuito e de código aberto mais utilizado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Windows",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "macOS",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Linux",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Chrome OS",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O Linux é um sistema operacional gratuito e de código aberto, usado em servidores e também em desktops.",
+      "studyTip": "Distribuições populares do Linux incluem Ubuntu, Fedora e Debian.",
+      "id": 7004,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da área de trabalho (desktop) em um sistema operacional?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executar comandos do sistema",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Armazenar arquivos temporários",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Servir como interface gráfica para acesso a arquivos e programas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Controlar a rede local",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A área de trabalho é a interface gráfica principal onde o usuário acessa arquivos, pastas e aplicativos.",
+      "studyTip": "A área de trabalho facilita a navegação e organização dos recursos do sistema.",
+      "id": 7005,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do Windows Explorer no sistema operacional Windows?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executar programas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Gerenciar arquivos e pastas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Acessar a internet",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Editar imagens",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O Windows Explorer é o gerenciador de arquivos do sistema, permitindo copiar, mover, excluir e organizar documentos e pastas.",
+      "studyTip": "Explore as funções do Windows Explorer: renomear, visualizar propriedades e organizar arquivos.",
+      "id": 7006,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do sistema operacional utilizado em smartphones da Apple?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Android",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Windows Phone",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "iOS",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Symbian",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O iOS é o sistema operacional exclusivo dos dispositivos móveis da Apple, como iPhone e iPad.",
+      "studyTip": "Associe sistemas operacionais móveis aos fabricantes: iOS (Apple), Android (diversos), HarmonyOS (Huawei).",
+      "id": 7007,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da lixeira no sistema operacional Windows?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Armazenar arquivos temporários",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Excluir permanentemente os arquivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Armazenar arquivos excluídos temporariamente",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Executar programas",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A lixeira guarda arquivos excluídos temporariamente, permitindo restaurá-los ou excluí-los definitivamente.",
+      "studyTip": "Arquivos na lixeira ainda ocupam espaço no disco até serem removidos permanentemente.",
+      "id": 7008,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do sistema operacional gratuito que possui diversas distribuições como Ubuntu e Fedora?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Windows",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Linux",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "macOS",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Chrome OS",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Linux é um sistema operacional gratuito e de código aberto, com várias distribuições como Ubuntu, Fedora e Debian.",
+      "studyTip": "Cada distribuição Linux tem características próprias, mas todas compartilham o mesmo núcleo (kernel).",
+      "id": 7009,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o atalho de teclado para abrir o menu Iniciar no Windows?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ctrl + Esc",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Alt + Tab",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ctrl + Alt + Del",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Shift + Esc",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O atalho Ctrl + Esc abre o menu Iniciar, especialmente útil em teclados sem a tecla Windows.",
+      "studyTip": "Conheça os atalhos do Windows: Ctrl+Esc (menu iniciar), Alt+Tab (alternar janelas), Ctrl+Alt+Del (segurança).",
+      "id": 7010,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do Painel de Controle no sistema operacional Windows?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Executar programas de terceiros",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Configurar e gerenciar recursos do sistema",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Acessar a internet",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Editar documentos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O Painel de Controle permite configurar hardware, software, contas de usuário, rede e segurança.",
+      "studyTip": "Explore os principais itens do Painel de Controle: Sistema, Rede, Programas, Segurança.",
+      "id": 7011,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do sistema operacional usado na maioria dos smartphones que não são da Apple?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Windows Phone",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Symbian",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Android",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "iOS",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O Android é o sistema operacional mais utilizado em smartphones de diversas marcas.",
+      "studyTip": "Android é baseado em Linux e desenvolvido pelo Google.",
+      "id": 7012,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função do botão 'Iniciar' no sistema operacional Windows?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Desligar o computador diretamente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Acessar programas, configurações e arquivos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Executar comandos do sistema",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Abrir o navegador de internet",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O botão Iniciar é o ponto central para acessar aplicativos, configurações e recursos do sistema.",
+      "studyTip": "O menu Iniciar pode ser personalizado com atalhos e blocos dinâmicos.",
+      "id": 7013,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do sistema operacional desenvolvido pela Apple para computadores?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Windows",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Linux",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "macOS",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Chrome OS",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O macOS é o sistema operacional usado em computadores da Apple, como MacBook e iMac.",
+      "studyTip": "macOS é conhecido por sua estabilidade, segurança e integração com o ecossistema Apple.",
+      "id": 7014,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é a função da barra de tarefas no sistema operacional Windows?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Exibir arquivos excluídos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mostrar programas em execução e permitir acesso rápido",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Executar comandos do sistema",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Configurar dispositivos de hardware",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A barra de tarefas exibe os programas abertos e permite alternar entre eles ou fixar atalhos.",
+      "studyTip": "Você pode personalizar a barra de tarefas com ícones, notificações e área de trabalho virtual.",
+      "id": 7015,
+      "category": "sistemas-operacionais",
+      "difficulty": "fundamental"
+    },
+    {
+      "question": "Qual é o nome do sistema operacional usado em servidores web?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Windows Server",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Linux",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "macOS Server",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Unix",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Linux é amplamente utilizado em servidores web devido à sua estabilidade, segurança e custo-benefício.",
+      "studyTip": "Distribuições como Ubuntu Server, CentOS e Debian são populares para servidores.",
+      "id": 7016,
       "category": "sistemas-operacionais",
       "difficulty": "fundamental"
     }

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.join(__dirname, '../src/assets/data/areas/portugues/redacao.json');
+const filePath = path.join(__dirname, '../src/assets/data/areas/portugues/gramatica.json');
 
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {

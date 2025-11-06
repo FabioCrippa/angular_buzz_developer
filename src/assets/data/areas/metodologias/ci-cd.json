@@ -5,7 +5,7 @@
     "name": "CI/CD & Deploy",
     "description": "Integração e entrega contínua, pipelines automatizados e deploy.",
     "difficulty": "intermediate",
-    "lastUpdated": "2025-10-20",
+    "lastUpdated": "2025-10-21",
     "questionCount": 25,
     "tags": [
       "pipeline",

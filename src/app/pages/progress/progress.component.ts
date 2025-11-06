@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CommonModule, DatePipe } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { ProgressService } from 'src/app/core/services/progress.service';
+import { DataService } from 'src/app/core/services/data.service';
 
 interface AreaProgress {
   name: string;
@@ -19,6 +16,7 @@ interface AreaProgress {
   lastActivity: string;
   icon: string;
   difficulty: string;
+  description?: string; // ✅ Adicione esta linha
 }
 
 interface ProgressData {
@@ -40,14 +38,17 @@ interface ProgressData {
 })
 export class ProgressComponent implements OnInit {
   
+  // ✅ ADICIONE ESTA PROPRIEDADE
+  indexData: any = null;
+  
   progressData: ProgressData = {
     totalQuestions: 0,
     areasProgress: [],
-    lastAccess: '',
+    lastAccess: new Date().toISOString(), // ✅ Sempre uma data válida
     overallStats: {
       totalCompleted: 0,
       averageAccuracy: 0,
-      totalTimeSpent: '0h',
+      totalTimeSpent: '0h 0min', // ✅ Formato padrão
       streak: 0
     }
   };
@@ -56,136 +57,138 @@ export class ProgressComponent implements OnInit {
   hasError: boolean = false;
   errorMessage: string = '';
   
-  // Filtros e ordenação
   sortBy: 'progress' | 'accuracy' | 'name' = 'progress';
   filterBy: 'all' | 'completed' | 'inProgress' | 'notStarted' = 'all';
 
   constructor(
     private router: Router,
     private titleService: Title,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private progressService: ProgressService,
+    private dataService: DataService
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Meu Progresso - Quizzfy');
-    this.loadProgressData();
+    this.isLoading = true;
+    
+    this.dataService.getIndex().subscribe({
+      next: (indexJson: any) => {
+        this.loadProgressData(indexJson);
+      },
+      error: (error) => {
+        console.error('Erro ao carregar index.json:', error);
+        this.hasError = true;
+        this.errorMessage = 'Erro ao carregar dados do sistema';
+        this.isLoading = false;
+        this.showErrorMessage('Erro ao carregar progresso');
+      }
+    });
   }
 
-  // ===============================================
-  // 📊 CARREGAMENTO DE DADOS
-  // ===============================================
-  
-  private loadProgressData(): void {
+  private loadProgressData(indexJson: any): void {
     this.isLoading = true;
     this.hasError = false;
 
+    // ✅ ADICIONE ESTA LINHA PARA SALVAR O INDEX
+    this.indexData = indexJson;
+
     try {
-      // Carregar dados do localStorage
-      const savedProgressData = localStorage.getItem('progressData');
-      
-      if (savedProgressData) {
-        const baseData = JSON.parse(savedProgressData);
-        this.processProgressData(baseData);
-      } else {
-        // Dados simulados se não houver dados salvos
-        this.generateSampleData();
+      if (!indexJson || !indexJson.areas || !indexJson.stats) {
+        throw new Error('Estrutura do index.json inválida');
       }
+
+      const stats = this.progressService.getStats();
       
+      // No método loadProgressData(), logo após capturar as áreas:
+      const areasObj = indexJson.areas;
+      const areaNames = Object.keys(areasObj);
+
+      const areaDisplayNames: { [key: string]: string } = {};
+      
+      areaNames.forEach(area => {
+        if (areasObj[area] && typeof areasObj[area] === 'object') {
+          areaDisplayNames[area] = areasObj[area].displayName || this.formatDisplayName(area);
+        } else {
+          areaDisplayNames[area] = this.formatDisplayName(area);
+        }
+      });
+
+      const areaQuestionCounts: { [key: string]: number } = indexJson.stats.byArea || {};
+
+      let lastActivity = '';
+      let lastActivityDate = 0;
+      
+      if (stats.lastActivity) {
+        lastActivity = stats.lastActivity;
+        lastActivityDate = new Date(stats.lastActivity).getTime();
+      } else {
+        areaNames.forEach(area => {
+          const areaStats = this.progressService.getAreaStats(area);
+          if (areaStats.lastActivity) {
+            const d = new Date(areaStats.lastActivity).getTime();
+            if (d > lastActivityDate) {
+              lastActivityDate = d;
+              lastActivity = areaStats.lastActivity;
+            }
+          }
+        });
+      }
+
+      // No método loadProgressData(), substitua a criação do areasProgress:
+      const areasProgress: AreaProgress[] = areaNames.map(area => {
+        const areaStats = this.progressService.getAreaStats(area);
+        const questionCount = areaQuestionCounts[area] || 0;
+        const areaData = this.indexData.areas[area] || {};
+        
+        return {
+          name: area,
+          displayName: areaDisplayNames[area],
+          progress: questionCount ? Math.round((areaStats.completed / questionCount) * 100) : 0,
+          questionCount,
+          completed: areaStats.completed,
+          accuracy: areaStats.accuracy,
+          timeSpent: this.formatTime(areaStats.totalTime),
+          lastActivity: areaStats.lastActivity 
+            ? new Date(areaStats.lastActivity).toLocaleDateString('pt-BR') 
+            : 'Nunca',
+          icon: this.getAreaIcon(area),
+          difficulty: this.getAreaDifficulty(area),
+          description: areaData.description || '' // ✅ Adicione esta linha
+        };
+      })
+      // ✅ FILTRAR APENAS ÁREAS COM PROGRESSO
+      .filter(area => area.completed > 0); // Só mostra áreas onde respondeu pelo menos 1 questão
+
+      // ✅ CORRIJA O CÁLCULO DA PRECISÃO MÉDIA
+      // Use a precisão geral do serviço, não a média das áreas
+      const averageAccuracy = stats.accuracy; // ✅ Use direto do serviço
+
+      this.progressData = {
+        totalQuestions: Object.values(areaQuestionCounts).reduce((sum: number, count: number) => sum + count, 0),
+        areasProgress,
+        lastAccess: lastActivity || new Date().toISOString(),
+        overallStats: {
+          totalCompleted: stats.totalCompleted,
+          averageAccuracy: averageAccuracy,
+          totalTimeSpent: this.formatTime(stats.totalTime), // ✅ Certifique-se que está usando stats.totalTime
+          streak: stats.streak
+        }
+      };
+
+      // ✅ ADICIONE ESTE LOG FINAL TAMBÉM
+      console.log('🔍 ProgressData.overallStats final:', this.progressData.overallStats);
+
       this.isLoading = false;
       this.showSuccessMessage('Progresso carregado com sucesso!');
       
     } catch (error) {
-      console.error('Erro ao carregar progresso:', error);
+      console.error('Erro ao processar progresso:', error);
       this.hasError = true;
-      this.errorMessage = 'Erro ao carregar dados de progresso';
+      this.errorMessage = 'Erro ao processar dados de progresso';
       this.isLoading = false;
       this.showErrorMessage('Erro ao carregar progresso');
     }
-  }
-
-  private processProgressData(baseData: any): void {
-    // Enriquecer dados com estatísticas detalhadas
-    const areasProgress: AreaProgress[] = baseData.areasProgress?.map((area: any) => ({
-      name: area.name,
-      displayName: area.displayName,
-      progress: area.progress || 0,
-      questionCount: area.questionCount || 0,
-      completed: Math.floor((area.progress || 0) * (area.questionCount || 0) / 100),
-      accuracy: this.getAreaAccuracy(area.name),
-      timeSpent: this.getAreaTimeSpent(area.name),
-      lastActivity: this.getLastActivity(area.name),
-      icon: this.getAreaIcon(area.name),
-      difficulty: this.getAreaDifficulty(area.name)
-    })) || [];
-
-    this.progressData = {
-      totalQuestions: baseData.totalQuestions || 0,
-      areasProgress,
-      lastAccess: baseData.lastAccess || new Date().toISOString(),
-      overallStats: this.calculateOverallStats(areasProgress)
-    };
-  }
-
-  private generateSampleData(): void {
-    // Gerar dados de exemplo se não houver dados salvos
-    const sampleAreas = [
-      { name: 'desenvolvimento-web', displayName: 'Desenvolvimento Web', questionCount: 150 },
-      { name: 'portugues', displayName: 'Português', questionCount: 120 },
-      { name: 'matematica', displayName: 'Matemática', questionCount: 100 },
-      { name: 'informatica', displayName: 'Informática', questionCount: 80 }
-    ];
-
-    const areasProgress: AreaProgress[] = sampleAreas.map(area => ({
-      name: area.name,
-      displayName: area.displayName,
-      progress: Math.floor(Math.random() * 100),
-      questionCount: area.questionCount,
-      completed: 0,
-      accuracy: Math.floor(Math.random() * 40) + 60,
-      timeSpent: `${Math.floor(Math.random() * 5) + 1}h ${Math.floor(Math.random() * 60)}min`,
-      lastActivity: this.getRandomDate(),
-      icon: this.getAreaIcon(area.name),
-      difficulty: this.getAreaDifficulty(area.name)
-    }));
-
-    // Calcular completed baseado no progresso
-    areasProgress.forEach(area => {
-      area.completed = Math.floor(area.progress * area.questionCount / 100);
-    });
-
-    this.progressData = {
-      totalQuestions: sampleAreas.reduce((sum, area) => sum + area.questionCount, 0),
-      areasProgress,
-      lastAccess: new Date().toISOString(),
-      overallStats: this.calculateOverallStats(areasProgress)
-    };
-  }
-
-  // ===============================================
-  // 📈 CÁLCULOS E ESTATÍSTICAS
-  // ===============================================
-  
-  private calculateOverallStats(areas: AreaProgress[]): ProgressData['overallStats'] {
-    const totalCompleted = areas.reduce((sum, area) => sum + area.completed, 0);
-    const averageAccuracy = areas.reduce((sum, area) => sum + area.accuracy, 0) / areas.length;
-    const totalMinutes = areas.reduce((sum, area) => {
-      const match = area.timeSpent.match(/(\d+)h\s*(\d+)min/);
-      if (match) {
-        return sum + (parseInt(match[1]) * 60) + parseInt(match[2]);
-      }
-      return sum;
-    }, 0);
-    
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
-    const totalTimeSpent = `${hours}h ${minutes}min`;
-    
-    return {
-      totalCompleted,
-      averageAccuracy: Math.round(averageAccuracy),
-      totalTimeSpent,
-      streak: Math.floor(Math.random() * 15) + 1 // Simulado
-    };
   }
 
   // ===============================================
@@ -193,15 +196,39 @@ export class ProgressComponent implements OnInit {
   // ===============================================
   
   startQuizForArea(areaName: string): void {
-    const area = this.progressData.areasProgress.find(a => a.name === areaName);
-    if (!area) return;
-
-    this.showSuccessMessage(`Iniciando quiz de ${area.displayName}...`);
-    
-    setTimeout(() => {
-      this.router.navigate(['/area', areaName]);
-    }, 500);
+  console.log('🎯 [Progress] Iniciando quiz para área:', areaName);
+  
+  if (!areaName || areaName.trim() === '') {
+    this.showErrorMessage('Nome da área inválido');
+    return;
   }
+  
+  this.showSuccessMessage(`Iniciando quiz de ${areaName}...`);
+  
+  // ✅ TENTE DIFERENTES VARIAÇÕES DA ROTA:
+  
+  // Opção 1: Se a rota é /quiz (sem duplo z)
+  this.router.navigate(['/quiz'], {
+    queryParams: { 
+      area: areaName, 
+      limit: 10 
+    }
+  }).then(success => {
+    if (success) {
+      console.log('✅ [Progress] Navegação para quiz bem-sucedida');
+    } else {
+      console.error('❌ [Progress] Falha na navegação para quiz');
+      // ✅ FALLBACK: Se não conseguir ir para quiz, vai para área
+      console.log('🔄 [Progress] Tentando navegar para área como fallback');
+      this.navigateToArea(areaName);
+    }
+  }).catch(error => {
+    console.error('❌ [Progress] Erro na navegação para quiz:', error);
+    // ✅ FALLBACK: Se der erro, vai para área
+    console.log('🔄 [Progress] Navegando para área como fallback');
+    this.navigateToArea(areaName);
+  });
+}
 
   navigateToDashboard(): void {
     this.router.navigate(['/dashboard']);
@@ -229,9 +256,8 @@ export class ProgressComponent implements OnInit {
   }
 
   get filteredAndSortedAreas(): AreaProgress[] {
-    let filtered = this.progressData.areasProgress;
+    let filtered = [...this.progressData.areasProgress]; // ✅ Clone para evitar mutação
 
-    // Aplicar filtro
     switch (this.filterBy) {
       case 'completed':
         filtered = filtered.filter(area => area.progress >= 100);
@@ -242,9 +268,11 @@ export class ProgressComponent implements OnInit {
       case 'notStarted':
         filtered = filtered.filter(area => area.progress === 0);
         break;
+      default:
+        // 'all' - não filtra
+        break;
     }
 
-    // Aplicar ordenação
     return filtered.sort((a, b) => {
       switch (this.sortBy) {
         case 'progress':
@@ -252,7 +280,7 @@ export class ProgressComponent implements OnInit {
         case 'accuracy':
           return b.accuracy - a.accuracy;
         case 'name':
-          return a.displayName.localeCompare(b.displayName);
+          return a.displayName.localeCompare(b.displayName, 'pt-BR'); // ✅ Localização PT-BR
         default:
           return 0;
       }
@@ -263,66 +291,62 @@ export class ProgressComponent implements OnInit {
   // 🎨 FUNÇÕES AUXILIARES
   // ===============================================
   
+  // ✅ Novo método para formatar nomes de exibição
+  private formatDisplayName(areaName: string): string {
+    return areaName
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+
   private getAreaIcon(areaName: string): string {
+    // ✅ Agora pega do index.json se disponível, senão usa fallback
+    const areaData = this.indexData?.areas?.[areaName];
+    if (areaData?.icon) {
+      return areaData.icon;
+    }
+    
+    // ✅ Fallbacks atualizados
     const icons: { [key: string]: string } = {
       'desenvolvimento-web': '💻',
+      'metodologias': '⚙️',
+      'design': '🎨',
+      'seguranca': '🔒',
+      'entrevista': '💼',
       'portugues': '📚',
       'matematica': '🔢',
-      'informatica': '💾',
-      'direito': '⚖️',
-      'administracao': '📊',
-      'contabilidade': '💰',
-      'economia': '📈'
+      'informatica': '💾'
     };
     return icons[areaName] || '📖';
   }
 
   private getAreaDifficulty(areaName: string): string {
+    // ✅ Agora pega do index.json se disponível, senão usa fallback
+    const areaData = this.indexData?.areas?.[areaName];
+    if (areaData?.difficulty) {
+      return areaData.difficulty;
+    }
+    
+    // ✅ Fallbacks atualizados
     const difficulties: { [key: string]: string } = {
       'desenvolvimento-web': 'Alto',
+      'metodologias': 'Médio',
+      'design': 'Médio',
+      'seguranca': 'Alto',
+      'entrevista': 'Alto',
       'portugues': 'Médio',
       'matematica': 'Alto',
-      'informatica': 'Médio',
-      'direito': 'Alto',
-      'administracao': 'Médio',
-      'contabilidade': 'Alto',
-      'economia': 'Médio'
+      'informatica': 'Médio'
     };
     return difficulties[areaName] || 'Médio';
   }
 
-  private getAreaAccuracy(areaName: string): number {
-    const saved = localStorage.getItem(`accuracy_${areaName}`);
-    return saved ? parseInt(saved) : Math.floor(Math.random() * 40) + 60;
-  }
-
-  private getAreaTimeSpent(areaName: string): string {
-    const saved = localStorage.getItem(`timeSpent_${areaName}`);
-    if (saved) return saved;
-    
-    const hours = Math.floor(Math.random() * 5) + 1;
-    const minutes = Math.floor(Math.random() * 60);
-    return `${hours}h ${minutes}min`;
-  }
-
-  private getLastActivity(areaName: string): string {
-    const saved = localStorage.getItem(`lastActivity_${areaName}`);
-    return saved || this.getRandomDate();
-  }
-
-  private getRandomDate(): string {
-    const days = Math.floor(Math.random() * 30);
-    const date = new Date();
-    date.setDate(date.getDate() - days);
-    return date.toLocaleDateString('pt-BR');
-  }
-
   getProgressColor(progress: number): string {
-    if (progress >= 80) return '#22c55e'; // Verde
-    if (progress >= 60) return '#3b82f6'; // Azul  
-    if (progress >= 40) return '#f59e0b'; // Amarelo
-    if (progress >= 20) return '#f97316'; // Laranja
-    return '#ef4444'; // Vermelho
+    if (progress >= 80) return '#22c55e';
+    if (progress >= 60) return '#3b82f6';
+    if (progress >= 40) return '#f59e0b';
+    if (progress >= 20) return '#f97316';
+    return '#ef4444';
   }
 
   getAccuracyColor(accuracy: number): string {
@@ -390,7 +414,7 @@ export class ProgressComponent implements OnInit {
       area => area.progress === 0
     );
     
-    return notStarted.length > 0 ? notStarted[0].name : this.progressData.areasProgress[0]?.name;
+    return notStarted.length > 0 ? notStarted[0].name : this.progressData.areasProgress[0]?.name || '';
   }
 
   // ===============================================
@@ -398,7 +422,136 @@ export class ProgressComponent implements OnInit {
   // ===============================================
 
   reloadData(): void {
-    console.log('🔄 Recarregando dados do progresso...');
-    this.loadProgressData();
+    this.ngOnInit();
+  }
+
+  // ✅ Formatação melhorada do tempo
+  private formatTime(totalSeconds: number): string {
+  console.log('🕐 Formatando tempo - entrada:', totalSeconds, 'segundos');
+  
+  if (!totalSeconds || totalSeconds === 0) {
+    return '0s';
+  }
+  
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = Math.floor(totalSeconds % 60);
+  
+  let formatted = '';
+  
+  if (hours > 0) {
+    // Se tem horas: "2h 15min 30s"
+    formatted = `${hours}h ${minutes}min ${seconds}s`;
+  } else if (minutes > 0) {
+    // Se tem minutos: "15min 30s"
+    formatted = `${minutes}min ${seconds}s`;
+  } else {
+    // Só segundos: "30s"
+    formatted = `${seconds}s`;
+  }
+  
+  console.log('🕐 Tempo formatado - saída:', formatted);
+  return formatted;
+}
+
+  // ✅ Adicione este método no seu progress.component.ts
+
+  debugProgress(): void {
+    console.log('🔍 Debug do Progresso:');
+    
+    const history = this.progressService.getHistory();
+    console.log('📝 Histórico de respostas:', history);
+    
+    // ✅ VERIFIQUE OS TEMPOS INDIVIDUALMENTE
+    console.log('⏱️ Tempos por resposta:', history.map(h => ({ id: h.questionId, time: h.timeSpent, date: h.date })));
+    
+    const stats = this.progressService.getStats();
+    console.log('📊 Estatísticas gerais:', stats);
+    
+    console.log('📋 Dados do componente:', this.progressData);
+    
+    if (history.length === 0) {
+      this.showErrorMessage('❌ Nenhuma resposta encontrada no histórico');
+    } else {
+      this.showSuccessMessage(`✅ ${history.length} respostas encontradas`);
+    }
+  }
+
+  // Adicione estes métodos após os métodos existentes:
+
+  // ✅ MÉTODO PARA ÁREAS DISPONÍVEIS PARA COMEÇAR
+  getAvailableAreasToStart(): AreaProgress[] {
+    if (!this.indexData?.areas) return [];
+    
+    const startedAreas = this.progressData.areasProgress.map(a => a.name);
+    const allAreas = Object.keys(this.indexData.areas);
+    
+    return allAreas
+      .filter(areaName => !startedAreas.includes(areaName))
+      .map(areaName => {
+        const areaData = this.indexData.areas[areaName];
+        const questionCount = this.indexData.stats?.byArea?.[areaName] || 0;
+        
+        return {
+          name: areaName,
+          displayName: areaData.displayName || this.formatDisplayName(areaName),
+          description: areaData.description || 'Área de estudo disponível',
+          icon: areaData.icon || this.getAreaIcon(areaName),
+          difficulty: areaData.difficulty || 'Médio',
+          questionCount,
+          progress: 0,
+          completed: 0,
+          accuracy: 0,
+          timeSpent: '0s',
+          lastActivity: 'Nunca'
+        };
+      });
+  }
+
+  // ✅ MÉTODO PARA FORMATAR DATA DE ÚLTIMO ACESSO
+  formatLastAccess(dateString: string): string {
+    if (!dateString) return 'Nunca';
+    
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    } catch {
+      return 'Data inválida';
+    }
+  }
+
+  // Adicione este método temporário para debug:
+  debugAvailableAreas(): void {
+    console.log('🔍 DEBUG - Available Areas to Start:');
+    const areas = this.getAvailableAreasToStart();
+    console.log('📋 Áreas disponíveis:', areas);
+    console.log('📋 IndexData:', this.indexData);
+    console.log('📋 Started areas:', this.progressData.areasProgress.map(a => a.name));
+    
+    if (areas.length === 0) {
+      this.showErrorMessage('❌ Nenhuma área disponível para começar');
+    } else {
+      this.showSuccessMessage(`✅ ${areas.length} áreas disponíveis para começar`);
+    }
+  }
+
+  // ✅ NO progress.component.ts, ADICIONE este método:
+
+  navigateToArea(areaName: string): void {
+    console.log('🔍 [Progress] Navegando para área:', areaName);
+    
+    this.showSuccessMessage(`Explorando ${areaName}...`);
+    
+    this.router.navigate(['/area', areaName]).then(success => {
+      if (!success) {
+        this.showErrorMessage('Erro ao navegar para a área');
+      }
+    });
   }
 }

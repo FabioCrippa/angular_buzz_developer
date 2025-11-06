@@ -512,20 +512,67 @@
 
 .area-actions {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 0.75rem;
+  align-items: stretch; /* ✅ Garante mesma altura */
   margin-top: 1.5rem;
+  flex-wrap: nowrap; /* ✅ Mantém em linha */
 }
 
 .area-actions .mat-mdc-raised-button {
-  flex: 1;
-  margin-right: 1rem;
-  border-radius: 12px !important;
+  flex: 0 0 auto; /* ✅ Não expande, largura automática baseada no conteúdo */
+  min-width: 120px;
+  max-width: 140px;
+  background: #374151;
+  color: white;
+  border: 1px solid #374151;
+}
+
+.area-actions .mat-mdc-raised-button:hover {
+  background: #4b5563;
+  border-color: #4b5563;
+}
+
+.area-actions .mat-mdc-raised-button:active {
+  background: #1f2937;
+  border-color: #1f2937;
 }
 
 .area-actions .mat-mdc-icon-button {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
+}
+
+/* ✅ CORREÇÃO: Botão Info mais visível */
+.area-actions button[mat-icon-button] {
+  color: #6c757d !important; /* Cor mais escura */
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+}
+
+.area-actions button[mat-icon-button]:hover {
+  color: #495057 !important;
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+  transform: scale(1.05);
+}
+
+/* ✅ CORREÇÃO: Botão Continuar com largura adequada */
+.area-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinha à esquerda */
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.area-actions button[mat-raised-button] {
+  flex: 0 0 auto; /* ✅ NÃO expande para preencher */
+  min-width: 120px; /* Largura mínima fixa */
+  max-width: 150px; /* Largura máxima */
+  padding: 8px 16px;
+  font-size: 0.9rem;
 }
 
 /* =============================================== */
@@ -759,15 +806,428 @@
 }
 
 /* =============================================== */
-/* 🎯 UTILITY CLASSES */
-/* =============================================== */
+/* 🆕 NEW AREAS SECTION */
+.new-areas-section {
+  margin-top: 2rem;
+}
 
-.text-success { color: #22c55e; }
-.text-warning { color: #f59e0b; }
-.text-danger { color: #ef4444; }
-.text-info { color: #3b82f6; }
+.new-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
 
-.bg-success { background-color: #dcfce7; }
-.bg-warning { background-color: #fef3c7; }
-.bg-danger { background-color: #fecaca; }
-.bg-info { background-color: #dbeafe; }
+.new-area-card {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border: 2px dashed #adb5bd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* ✅ FLEXBOX para controlar layout */
+  display: flex;
+  flex-direction: column;
+  min-height: 280px; /* Altura mínima fixa */
+  justify-content: space-between; /* Espaça conteúdo uniformemente */
+}
+
+/* ✅ Área de conteúdo principal (cresce conforme necessário) */
+.new-area-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ✅ Área de ações sempre no final */
+.new-area-actions {
+  flex-shrink: 0; /* Não encolhe */
+  margin-top: auto; /* Empurra para o final */
+  padding-top: 1rem;
+}
+
+/* ✅ Descrição com altura limitada */
+.area-description {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  /* ✅ Limita a 2 linhas para manter consistência */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8rem; /* 2 linhas × 1.4 line-height */
+}
+
+/* ✅ Meta info com altura fixa */
+.area-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 2rem;
+}
+
+.question-count, .difficulty {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-weight: 600; /* ✅ Mais negrito */
+  font-size: 0.85rem;
+  border: 1px solid;
+  transition: all 0.2s ease;
+}
+
+/* ✅ RESTAURAR: Question count com azul vibrante */
+.question-count {
+  color: #0d6efd !important;
+  background-color: #cfe2ff !important;
+  border-color: #9ec5fe !important;
+}
+
+.question-count mat-icon {
+  color: #0a58ca !important; /* Ícone ainda mais escuro */
+  font-size: 16px;
+}
+
+/* ✅ RESTAURAR: Dificuldades com cores vibrantes */
+.difficulty-alto { 
+  color: #dc3545 !important; 
+  background-color: #f8d7da !important;
+  border-color: #f1aeb5 !important;
+}
+
+.difficulty-alto mat-icon {
+  color: #b02a37 !important;
+}
+
+.difficulty-médio { 
+  color: #fd7e14 !important; 
+  background-color: #fdebd4 !important;
+  border-color: #fac99b !important;
+}
+
+.difficulty-médio mat-icon {
+  color: #e55a00 !important;
+}
+
+.difficulty-baixo { 
+  color: #198754 !important; 
+  background-color: #d1e7dd !important;
+  border-color: #a3cfbb !important;
+}
+
+.difficulty-baixo mat-icon {
+  color: #146c43 !important;
+}
+
+/* ✅ HOVER: Efeitos mais evidentes */
+.new-area-card:hover .question-count {
+  background-color: #b6d7ff !important;
+  border-color: #7cc5fe !important;
+  transform: scale(1.02);
+}
+
+.new-area-card:hover .difficulty-alto {
+  background-color: #f5c2c7 !important;
+  border-color: #ea868f !important;
+  transform: scale(1.02);
+}
+
+.new-area-card:hover .difficulty-médio {
+  background-color: #fdd8b5 !important;
+  border-color: #f7b584 !important;
+  transform: scale(1.02);
+}
+
+.new-area-card:hover .difficulty-baixo {
+  background-color: #badbcc !important;
+  border-color: #86c7a0 !important;
+}
+
+/* ✅ CORREÇÃO: H3 dos cards de nova área mais visível */
+.new-area-card h3 {
+  color: #2d3748 !important; /* Cor mais escura */
+  font-weight: 700; /* Mais negrito */
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* ✅ HOVER: H3 ainda mais destacado no hover */
+.new-area-card:hover h3 {
+  color: #1a202c !important; /* Ainda mais escuro no hover */
+}
+
+/* ✅ MELHORIA: Ícone da nova área também mais visível */
+.new-area-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  filter: brightness(1.1); /* Ícone mais brilhante */
+}
+
+.new-area-card:hover .new-area-icon {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* ✅ MELHORIA: Card hover mais evidente */
+.new-area-card:hover {
+  border-color: #007bff;
+  border-style: solid; /* ✅ Muda para sólida no hover */
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #fff, #f8f9fa);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* ✅ MELHORIA: Botão da nova área */
+.new-area-card button[mat-raised-button] {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 8px !important;
+  font-weight: 600;
+}
+
+/* ✅ RESPONSIVO: Ajustes para mobile */
+@media (max-width: 768px) {
+  .new-areas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .area-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .new-area-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ✅ NO progress.component.css, adicione estes estilos: */
+
+.area-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.primary-action {
+  flex: 1;
+  min-width: 140px;
+}
+
+.secondary-action {
+  flex: 0;
+  min-width: 100px;
+}
+
+/* 🔥 BOTÕES CUSTOMIZADOS - LARGURA MAIOR PARA TEXTO COMPLETO */
+.area-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch; /* ✅ Garante mesma altura */
+  margin-top: 1.5rem;
+  flex-wrap: nowrap; /* ✅ Mantém em linha */
+}
+
+/* ✨ BASE DOS BOTÕES */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem; /* ✅ Padding aumentado */
+  border: none;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 42px; /* ✅ ALTURA FIXA para ambos os botões */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap; /* ✅ Texto em linha única */
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 🎯 BOTÃO PRIMARY - LARGURA MAIOR */
+.btn-primary {
+  flex: 0 0 auto; /* ✅ Não expande, largura automática baseada no conteúdo */
+  min-width: 160px; /* ✅ AUMENTADO de 120px para 160px */
+  max-width: 200px; /* ✅ AUMENTADO de 140px para 200px */
+  background: #374151;
+  color: white;
+  border: 1px solid #374151;
+}
+
+.btn-primary:hover {
+  background: #4b5563;
+  border-color: #4b5563;
+}
+
+.btn-primary:active {
+  background: #1f2937;
+  border-color: #1f2937;
+}
+
+/* 🎨 BOTÃO SECONDARY - LARGURA MAIOR */
+.btn-secondary {
+  flex: 0 0 auto; /* ✅ Não expande, largura automática baseada no conteúdo */
+  min-width: 120px; /* ✅ AUMENTADO de 90px para 120px */
+  max-width: 150px; /* ✅ AUMENTADO de 110px para 150px */
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  color: #1f2937;
+}
+
+.btn-secondary:active {
+  background: #e5e7eb;
+  border-color: #6b7280;
+}
+
+/* ✨ ELEMENTOS DOS BOTÕES */
+.btn-icon {
+  font-size: 0.95rem; /* ✅ Ícone ligeiramente maior */
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* ✅ Ícone não encolhe */
+}
+
+.btn-text {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis; /* ✅ Reticências se o texto for muito longo */
+  flex: 1; /* ✅ Texto ocupa espaço disponível */
+}
+
+/* 🎯 ESTADOS ESPECIAIS - CORES MAIS SUAVES */
+.area-progress-card.completed .btn-primary {
+  background: #059669;
+  border-color: #059669;
+}
+
+.area-progress-card.completed .btn-primary:hover {
+  background: #047857;
+  border-color: #047857;
+}
+
+.area-progress-card.completed .btn-secondary {
+  color: #059669;
+  border-color: #a7f3d0;
+  background: #ecfdf5;
+}
+
+.area-progress-card.completed .btn-secondary:hover {
+  background: #d1fae5;
+  border-color: #6ee7b7;
+}
+
+/* ⚠️ PROGRESSO BAIXO */
+.area-progress-card.progress-low .btn-primary,
+.area-progress-card.progress-none .btn-primary {
+  background: #d97706;
+  border-color: #d97706;
+}
+
+.area-progress-card.progress-low .btn-primary:hover,
+.area-progress-card.progress-none .btn-primary:hover {
+  background: #b45309;
+  border-color: #b45309;
+}
+
+.area-progress-card.progress-low .btn-secondary,
+.area-progress-card.progress-none .btn-secondary {
+  color: #d97706;
+  border-color: #fed7a1;
+  background: #fffbeb;
+}
+
+.area-progress-card.progress-low .btn-secondary:hover,
+.area-progress-card.progress-none .btn-secondary:hover {
+  background: #fef3c7;
+  border-color: #fbbf24;
+}
+
+/* 📱 RESPONSIVO - Ajustado para telas menores */
+@media (max-width: 768px) {
+  .area-actions {
+    flex-wrap: wrap; /* ✅ Permite quebrar em telas médias se necessário */
+    gap: 0.5rem;
+  }
+  
+  .btn-primary {
+    min-width: 140px; /* ✅ Ainda generoso no tablet */
+    max-width: 180px;
+  }
+  
+  .btn-secondary {
+    min-width: 100px;
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 480px) {
+  .area-actions {
+    flex-direction: column; /* ✅ Empilha apenas em telas muito pequenas */
+    gap: 0.5rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    flex: none;
+  }
+  
+  .btn {
+    height: 44px; /* ✅ Altura ligeiramente maior no mobile */
+    font-size: 0.95rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* 🎯 FOCUS ACESSIBILIDADE */
+.btn:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ✅ REMOVER conflitos com estilos antigos do Material */
+.area-actions .mat-mdc-raised-button,
+.area-actions .mat-mdc-icon-button {
+  display: none !important; /* ✅ Esconde botões do Material se existirem */
+}
+
+/* Remover estilos antigos */
+.btn-shine,
+.btn-primary::before,
+.btn-secondary::before {
+  display: none;
+}

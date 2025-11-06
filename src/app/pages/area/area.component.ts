@@ -9,6 +9,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
 import { FormsModule } from '@angular/forms';
+import { ProgressService } from '../../core/services/progress.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of, forkJoin } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 interface AreaQuestion {
   id: string;
@@ -73,7 +77,9 @@ export class AreaComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private titleService: Title,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private progressService: ProgressService,
+    private http: HttpClient  // ✅ ADICIONE ESTA LINHA
   ) {}
 
   ngOnInit(): void {
@@ -132,9 +138,10 @@ export class AreaComponent implements OnInit {
         subjects: ['HTML/CSS', 'JavaScript', 'React', 'Angular', 'Node.js', 'APIs', 'Databases'],
         difficulty: { easy: 45, medium: 75, hard: 30 },
         userProgress: {
-          completed: Math.floor(Math.random() * 100) + 20,
-          accuracy: Math.floor(Math.random() * 30) + 70,
-          timeSpent: `${Math.floor(Math.random() * 10) + 5}h`
+          // ✅ TROCAR APENAS ESTAS LINHAS:
+          completed: this.getUserProgress(areaName).completed,
+          accuracy: this.getUserProgress(areaName).accuracy,
+          timeSpent: this.getUserProgress(areaName).timeSpent
         }
       },
       'portugues': {
@@ -147,14 +154,15 @@ export class AreaComponent implements OnInit {
         subjects: ['Gramática', 'Interpretação', 'Literatura', 'Redação', 'Ortografia', 'Sintaxe'],
         difficulty: { easy: 40, medium: 60, hard: 20 },
         userProgress: {
-          completed: Math.floor(Math.random() * 80) + 15,
-          accuracy: Math.floor(Math.random() * 25) + 75,
-          timeSpent: `${Math.floor(Math.random() * 8) + 3}h`
+          // ✅ TROCAR APENAS ESTAS LINHAS:
+          completed: this.getUserProgress(areaName).completed,
+          accuracy: this.getUserProgress(areaName).accuracy,
+          timeSpent: this.getUserProgress(areaName).timeSpent
         }
       },
       'matematica': {
         name: 'matematica',
-        displayName: 'Matemática',
+        displayName: 'Matemática', 
         description: 'Álgebra, geometria, cálculo, estatística e matemática aplicada',
         icon: '🔢',
         color: '#f59e0b',
@@ -162,9 +170,10 @@ export class AreaComponent implements OnInit {
         subjects: ['Álgebra', 'Geometria', 'Cálculo', 'Estatística', 'Trigonometria', 'Funções'],
         difficulty: { easy: 30, medium: 45, hard: 25 },
         userProgress: {
-          completed: Math.floor(Math.random() * 70) + 10,
-          accuracy: Math.floor(Math.random() * 20) + 60,
-          timeSpent: `${Math.floor(Math.random() * 12) + 4}h`
+          // ✅ TROCAR APENAS ESTAS LINHAS:
+          completed: this.getUserProgress(areaName).completed,
+          accuracy: this.getUserProgress(areaName).accuracy,
+          timeSpent: this.getUserProgress(areaName).timeSpent
         }
       },
       'informatica': {
@@ -177,9 +186,10 @@ export class AreaComponent implements OnInit {
         subjects: ['SO', 'Redes', 'Segurança', 'Hardware', 'Software', 'Algoritmos'],
         difficulty: { easy: 25, medium: 35, hard: 20 },
         userProgress: {
-          completed: Math.floor(Math.random() * 60) + 15,
-          accuracy: Math.floor(Math.random() * 25) + 70,
-          timeSpent: `${Math.floor(Math.random() * 6) + 2}h`
+          // ✅ TROCAR APENAS ESTAS LINHAS:
+          completed: this.getUserProgress(areaName).completed,
+          accuracy: this.getUserProgress(areaName).accuracy,
+          timeSpent: this.getUserProgress(areaName).timeSpent
         }
       }
     };
@@ -190,10 +200,38 @@ export class AreaComponent implements OnInit {
   private generateAreaQuestions(): void {
     if (!this.areaData) return;
 
+    console.log('🔍 [Area] Tentando carregar questões reais para:', this.areaName);
+    
+    // ✅ TENTA CARREGAR QUESTÕES REAIS PRIMEIRO
+    this.loadRealQuestions(this.areaName).subscribe({
+      next: (realQuestions) => {
+        if (realQuestions && realQuestions.length > 0) {
+          console.log(`✅ [Area] ${realQuestions.length} questões reais carregadas!`);
+          this.questions = realQuestions;
+          this.showSuccessMessage(`${realQuestions.length} questões carregadas da base real!`);
+        } else {
+          console.log('⚠️ [Area] Nenhuma questão real encontrada, usando dados mock...');
+          this.generateMockQuestions();
+          this.showSuccessMessage('Usando questões de exemplo (dados mock)');
+        }
+      },
+      error: (error) => {
+        console.warn('⚠️ [Area] Erro ao carregar questões reais:', error);
+        this.generateMockQuestions();
+        this.showSuccessMessage('Usando questões de exemplo (erro no carregamento)');
+      }
+    });
+  }
+
+  // ✅ RENOMEIE o método getSampleQuestions() atual para generateMockQuestions():
+
+  private generateMockQuestions(): void {
+    if (!this.areaData) return;
+
     const sampleQuestions: Partial<AreaQuestion>[] = this.getSampleQuestions(this.areaName);
     
     this.questions = sampleQuestions.map((q, index) => ({
-      id: `${this.areaName}-${index + 1}`,
+      id: `${this.areaName}-mock-${index + 1}`,
       question: q.question || `Questão ${index + 1} de ${this.areaData!.displayName}`,
       subject: q.subject || this.areaData!.subjects[index % this.areaData!.subjects.length],
       difficulty: q.difficulty || this.getRandomDifficulty(),
@@ -205,6 +243,8 @@ export class AreaComponent implements OnInit {
       popularity: Math.floor(Math.random() * 100) + 1,
       isFavorite: Math.random() > 0.8
     }));
+
+    console.log(`🎲 [Area] ${this.questions.length} questões mock geradas`);
   }
 
   private getSampleQuestions(areaName: string): Partial<AreaQuestion>[] {
@@ -558,5 +598,155 @@ export class AreaComponent implements OnInit {
         }
       });
     }, 500);
+  }
+
+  private getUserProgress(areaName: string): { completed: number; accuracy: number; timeSpent: string } {
+    console.log('🔍 [Area] Buscando progresso para área:', areaName);
+    
+    try {
+      // Busca progresso real do ProgressService
+      const history = this.progressService.getHistory().filter(h => h.area === areaName);
+      const totalCompleted = history.length;
+      const totalCorrect = history.filter(h => h.correct).length;
+      const totalTimeSeconds = history.reduce((sum, h) => sum + (Number(h.timeSpent) || 0), 0);
+      
+      const accuracy = totalCompleted > 0 ? Math.round((totalCorrect / totalCompleted) * 100) : 0;
+      const timeSpent = this.formatTimeFromSeconds(totalTimeSeconds);
+      
+      console.log('✅ [Area] Progresso encontrado:', { completed: totalCompleted, accuracy, timeSpent });
+      
+      return {
+        completed: totalCompleted,
+        accuracy: accuracy,
+        timeSpent: timeSpent
+      };
+    } catch (error) {
+      console.warn('⚠️ [Area] Erro ao buscar progresso, usando dados padrão:', error);
+      
+      // Fallback para dados mock se der erro
+      return {
+        completed: Math.floor(Math.random() * 50) + 10,
+        accuracy: Math.floor(Math.random() * 30) + 70,
+        timeSpent: `${Math.floor(Math.random() * 10) + 2}h`
+      };
+    }
+  }
+
+  private formatTimeFromSeconds(totalSeconds: number): string {
+    if (totalSeconds === 0) return '0min';
+    
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+    
+    if (hours > 0) {
+      return minutes > 0 ? `${hours}h ${minutes}min` : `${hours}h`;
+    } else if (minutes > 0) {
+      return seconds > 0 ? `${minutes}min ${seconds}s` : `${minutes}min`;
+    } else {
+      return `${seconds}s`;
+    }
+  }
+
+  // ✅ ADICIONE este método novo:
+
+  private loadRealQuestions(areaName: string): Observable<AreaQuestion[]> {
+    console.log('📁 [Area] Tentando carregar index.json...');
+    
+    // Primeiro carrega o index.json para ver a estrutura
+    return this.http.get<any>('assets/data/index.json').pipe(
+      catchError(error => {
+        console.warn('⚠️ [Area] index.json não encontrado:', error);
+        return of(null);
+      }),
+      map(indexData => {
+        if (!indexData || !indexData.structure || !indexData.structure[areaName]) {
+          console.warn('⚠️ [Area] Estrutura não encontrada no index para:', areaName);
+          return [];
+        }
+        
+        const subjects = indexData.structure[areaName];
+        console.log('📋 [Area] Subjects encontrados:', subjects);
+        
+        // Tenta carregar cada arquivo de subject
+        const requests = subjects.map((subject: string) => 
+          this.http.get<any>(`assets/data/${areaName}/${subject}.json`).pipe(
+            catchError(error => {
+              console.warn(`⚠️ [Area] Arquivo não encontrado: ${subject}.json`);
+              return of(null);
+            }),
+            map(result => ({
+              subject: subject,
+              data: result
+            }))
+          )
+        );
+        
+        // Executa todas as requisições
+        return forkJoin(requests);
+      }),
+      map((results: any) => {
+        if (!Array.isArray(results)) {
+          return [];
+        }
+        
+        // Processa os resultados
+        let allQuestions: AreaQuestion[] = [];
+        
+        results.forEach((result: any) => {
+          if (result && result.data && result.data.questions && Array.isArray(result.data.questions)) {
+            console.log(`📝 [Area] Processando ${result.data.questions.length} questões de ${result.subject}`);
+            
+            const processedQuestions = result.data.questions.map((q: any, index: number) => ({
+              id: q.id || `${areaName}-${result.subject}-${index}`,
+              question: q.question || q.pergunta || 'Questão sem texto',
+              subject: this.formatSubjectName(result.subject),
+              difficulty: this.normalizeDifficulty(q.difficulty || q.dificuldade || 'Médio'),
+              options: q.options || q.alternativas || ['Opção A', 'Opção B', 'Opção C', 'Opção D'],
+              correctAnswer: q.correctAnswer || q.respostaCorreta || 0,
+              explanation: q.explanation || q.explicacao || 'Sem explicação disponível.',
+              tags: q.tags || q.categorias || [this.formatSubjectName(result.subject)],
+              estimatedTime: q.estimatedTime || q.tempoEstimado || '2min',
+              popularity: q.popularity || Math.floor(Math.random() * 100) + 1,
+              isFavorite: this.isQuestionFavorite(q.id || `${areaName}-${result.subject}-${index}`)
+            }));
+            
+            allQuestions = [...allQuestions, ...processedQuestions];
+          }
+        });
+        
+        console.log(`🎯 [Area] Total de questões processadas: ${allQuestions.length}`);
+        return allQuestions;
+      }),
+      catchError(error => {
+        console.error('❌ [Area] Erro no processamento de questões:', error);
+        return of([]);
+      })
+    );
+  }
+
+  // ✅ ADICIONE estes métodos auxiliares:
+
+  private formatSubjectName(subject: string): string {
+    return subject
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+
+  private normalizeDifficulty(difficulty: string): 'Fácil' | 'Médio' | 'Difícil' {
+    const normalized = difficulty.toLowerCase();
+    if (normalized.includes('fac') || normalized.includes('easy')) return 'Fácil';
+    if (normalized.includes('dif') || normalized.includes('hard')) return 'Difícil';
+    return 'Médio';
+  }
+
+  private isQuestionFavorite(questionId: string): boolean {
+    try {
+      const favorites = JSON.parse(localStorage.getItem('favoriteQuestions') || '[]');
+      return favorites.includes(questionId);
+    } catch {
+      return false;
+    }
   }
 }
