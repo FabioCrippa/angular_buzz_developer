@@ -641,3 +641,86 @@
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
+
+/* PREMIUM INFO STYLES */
+.premium-info {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  color: white;
+}
+
+.premium-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.premium-card i {
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.premium-content h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.premium-content p {
+  margin: 0.5rem 0 0 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* MODE INDICATOR */
+.mode-indicator {
+  margin-top: 0.5rem;
+}
+
+.premium-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.free-badge {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* PREMIUM RESULTS INFO */
+.premium-status {
+  color: #667eea;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.premium-benefits {
+  color: #28a745;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+/* TRIAL INFO ADJUSTMENTS */
+.trial-info {
+  border: 2px dashed #17a2b8;
+  border-radius: 8px;
+  padding: 1rem;
+  background: rgba(23, 162, 184, 0.1);
+  margin: 1rem 0;
+}

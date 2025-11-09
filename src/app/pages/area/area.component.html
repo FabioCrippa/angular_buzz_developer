@@ -1,5 +1,5 @@
-<!-- Area Content -->
-<div *ngIf="!isLoading && !hasError && areaData" class="area-container">
+<!-- ✅ ÁREA PREMIUM/FREE - SEM ANGULAR MATERIAL -->
+<div class="area-container" *ngIf="!isLoading && !hasError && areaData">
 
   <!-- ✅ LOADING STATE -->
   <div *ngIf="isLoading" class="loading-container">
@@ -10,16 +10,16 @@
 
   <!-- ✅ ERROR STATE -->
   <div *ngIf="hasError" class="error-container">
-    <mat-icon class="error-icon">error_outline</mat-icon>
+    <div class="error-icon">⚠️</div>
     <h2 class="error-title">Área não encontrada</h2>
     <p class="error-message">{{ errorMessage }}</p>
     <div class="error-actions">
-      <button mat-stroked-button (click)="navigateToDashboard()">
-        <mat-icon>dashboard</mat-icon>
+      <button class="btn btn-outline" (click)="navigateToDashboard()">
+        <span class="btn-icon">🏠</span>
         Voltar ao Dashboard
       </button>
-      <button mat-raised-button color="primary" (click)="reloadData()">
-        <mat-icon>refresh</mat-icon>
+      <button class="btn btn-primary" (click)="reloadData()">
+        <span class="btn-icon">🔄</span>
         Tentar Novamente
       </button>
     </div>
@@ -28,18 +28,49 @@
   <!-- ✅ MAIN CONTENT -->
   <div *ngIf="!isLoading && !hasError && areaData">
 
+    <!-- 🏷️ PREMIUM STATUS BAR -->
+    <div class="premium-status-bar" [class]="isPremium ? 'premium' : 'free'">
+      <div class="status-content">
+        <!-- Premium User -->
+        <div *ngIf="isPremium" class="premium-indicator">
+          <span class="premium-crown">👑</span>
+          <span class="status-text">
+            <strong>Usuário Premium</strong> - Acesso completo a todos os recursos
+          </span>
+          <span class="unlimited-badge">ILIMITADO</span>
+        </div>
+        
+        <!-- Free User -->
+        <div *ngIf="!isPremium" class="free-indicator">
+          <span class="free-icon">ℹ️</span>
+          <span class="status-text">
+            <strong>Usuário Free</strong> - {{ remainingQuizzes }} quiz{{ remainingQuizzes !== 1 ? 's' : '' }} restante{{ remainingQuizzes !== 1 ? 's' : '' }} hoje
+          </span>
+          <button class="btn btn-upgrade" (click)="navigateToUpgrade()">
+            <span class="btn-icon">⭐</span>
+            Upgrade Premium
+          </button>
+        </div>
+      </div>
+      
+      <!-- 🧪 BOTÃO DE TESTE (remover em produção) -->
+      <button class="test-toggle" (click)="togglePremiumForTesting()">
+        {{ isPremium ? '⭐' : '🌟' }}
+      </button>
+    </div>
+
     <!-- 📚 BREADCRUMB -->
     <div class="breadcrumb">
-      <button mat-button (click)="navigateToDashboard()" class="breadcrumb-item">
-        <mat-icon>home</mat-icon>
+      <button class="breadcrumb-item" (click)="navigateToDashboard()">
+        <span class="breadcrumb-icon">🏠</span>
         Dashboard
       </button>
-      <mat-icon class="breadcrumb-separator">chevron_right</mat-icon>
+      <span class="breadcrumb-separator">›</span>
       <span class="breadcrumb-current">{{ areaData.displayName }}</span>
     </div>
 
     <!-- 🎯 AREA HEADER -->
-    <header class="area-header" [style.background]="'linear-gradient(135deg, ' + areaData.color + ', ' + areaData.color + '80)'">
+    <header class="area-header" [style.background]="'linear-gradient(135deg, ' + areaData.color + ', ' + areaData.color + 'CC)'">
       <div class="header-content">
         <div class="header-main">
           <div class="area-icon-large">{{ areaData.icon }}</div>
@@ -48,38 +79,67 @@
             <p class="area-description">{{ areaData.description }}</p>
             <div class="area-meta">
               <span class="meta-item">
-                <mat-icon>quiz</mat-icon>
+                <span class="meta-icon">❓</span>
                 {{ areaData.totalQuestions }} questões
               </span>
               <span class="meta-item">
-                <mat-icon>category</mat-icon>
+                <span class="meta-icon">📚</span>
                 {{ areaData.subjects.length }} assuntos
               </span>
             </div>
           </div>
         </div>
         <div class="header-actions">
-          <button mat-stroked-button (click)="navigateToFavorites()">
-            <mat-icon>favorite</mat-icon>
+          <button class="btn btn-outline-white" (click)="navigateToFavorites()">
+            <span class="btn-icon">❤️</span>
             Favoritos
           </button>
-          <button mat-raised-button color="primary" (click)="startAreaQuiz()">
-            <mat-icon>play_arrow</mat-icon>
+          
+          <!-- Quiz Button com validação Premium -->
+          <button 
+            class="btn btn-primary-white"
+            (click)="startAreaQuiz()"
+            [disabled]="!canTakeQuiz"
+            [class.disabled]="!canTakeQuiz"
+          >
+            <span class="btn-icon">▶️</span>
             Quiz da Área
+            <span *ngIf="!isPremium && remainingQuizzes > 0" class="quiz-count">({{ remainingQuizzes }})</span>
           </button>
         </div>
       </div>
     </header>
 
+    <!-- 🚫 LIMITE DIÁRIO ATINGIDO -->
+    <div *ngIf="!isPremium && !canTakeQuiz" class="limit-warning">
+      <span class="warning-icon">⏰</span>
+      <div class="warning-content">
+        <h3>Limite diário atingido!</h3>
+        <p>Você utilizou todos os seus 5 quizzes gratuitos de hoje. Volte amanhã ou faça upgrade para Premium!</p>
+        <button class="btn btn-upgrade" (click)="navigateToUpgrade()">
+          <span class="btn-icon">⭐</span>
+          Quizzes Ilimitados - Premium
+        </button>
+      </div>
+    </div>
+
     <!-- 📊 USER PROGRESS -->
     <section class="progress-section">
-      <h2 class="section-title">Seu Progresso</h2>
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">📈</span>
+          Seu Progresso
+        </h2>
+        <!-- Premium Badge -->
+        <div *ngIf="!isPremium" class="premium-feature-badge" title="Estatísticas avançadas disponíveis no Premium">
+          <span class="premium-badge-icon">👑</span>
+          <span>Estatísticas Premium</span>
+        </div>
+      </div>
       
       <div class="progress-grid">
         <div class="progress-card completed-card">
-          <div class="progress-icon">
-            <mat-icon>check_circle</mat-icon>
-          </div>
+          <div class="progress-icon">✅</div>
           <div class="progress-content">
             <span class="progress-number">{{ areaData.userProgress.completed }}</span>
             <span class="progress-label">Questões Resolvidas</span>
@@ -88,9 +148,7 @@
         </div>
 
         <div class="progress-card accuracy-card">
-          <div class="progress-icon">
-            <mat-icon>trending_up</mat-icon>
-          </div>
+          <div class="progress-icon">📊</div>
           <div class="progress-content">
             <span class="progress-number">{{ areaData.userProgress.accuracy }}%</span>
             <span class="progress-label">Taxa de Acerto</span>
@@ -99,9 +157,7 @@
         </div>
 
         <div class="progress-card time-card">
-          <div class="progress-icon">
-            <mat-icon>schedule</mat-icon>
-          </div>
+          <div class="progress-icon">⏱️</div>
           <div class="progress-content">
             <span class="progress-number">{{ areaData.userProgress.timeSpent }}</span>
             <span class="progress-label">Tempo de Estudo</span>
@@ -110,9 +166,7 @@
         </div>
 
         <div class="progress-card level-card">
-          <div class="progress-icon">
-            <mat-icon>emoji_events</mat-icon>
-          </div>
+          <div class="progress-icon">🏆</div>
           <div class="progress-content">
             <span class="progress-number">{{ getProgressPercentage() }}%</span>
             <span class="progress-label">Completude</span>
@@ -141,16 +195,27 @@
     <!-- 🔍 FILTERS & SEARCH -->
     <section class="filters-section">
       <div class="filters-header">
-        <h2 class="section-title">Explorar Questões</h2>
+        <h2 class="section-title">
+          <span class="section-icon">🔄</span>
+          Questões para Revisar
+          <span class="title-count" *ngIf="hasWrongQuestions">({{ wrongQuestionsCount }})</span>
+        </h2>
         <div class="results-count">
-          <span class="count-badge">{{ filteredQuestions.length }} questões encontradas</span>
+          <span class="count-badge wrong-questions" *ngIf="hasWrongQuestions">
+            <span class="badge-icon">🔄</span>
+            {{ filteredQuestions.length }} questões para revisar
+          </span>
+          <span class="count-badge no-errors" *ngIf="!hasWrongQuestions">
+            <span class="badge-icon">✅</span>
+            Nenhuma questão para revisar
+          </span>
         </div>
       </div>
 
       <div class="filters-content">
         <!-- Search Bar -->
         <div class="search-group">
-          <mat-icon class="search-icon">search</mat-icon>
+          <span class="search-icon">🔍</span>
           <input 
             type="text" 
             placeholder="Buscar questões, assuntos, tags..." 
@@ -159,255 +224,252 @@
           >
         </div>
 
-        <!-- Filter Controls -->
-        <div class="filter-controls">
+        <!-- Filter Controls com Premium Lock -->
+        <div class="filter-controls" [class.premium-locked]="!isPremium">
           <div class="filter-group">
             <label class="filter-label">Assunto:</label>
-            <mat-select [(value)]="selectedSubject" class="filter-select">
-              <mat-option value="all">Todos os Assuntos</mat-option>
-              <mat-option *ngFor="let subject of areaData.subjects" [value]="subject">
+            <select 
+              [(ngModel)]="selectedSubject" 
+              class="filter-select"
+              [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
+            >
+              <option value="all">Todos os Assuntos</option>
+              <option *ngFor="let subject of areaData.subjects" [value]="subject">
                 {{ subject }}
-              </mat-option>
-            </mat-select>
+              </option>
+            </select>
           </div>
 
           <div class="filter-group">
             <label class="filter-label">Dificuldade:</label>
-            <mat-select [(value)]="selectedDifficulty" class="filter-select">
-              <mat-option value="all">Todas</mat-option>
-              <mat-option value="Fácil">Fácil ({{ areaData.difficulty.easy }})</mat-option>
-              <mat-option value="Médio">Médio ({{ areaData.difficulty.medium }})</mat-option>
-              <mat-option value="Difícil">Difícil ({{ areaData.difficulty.hard }})</mat-option>
-            </mat-select>
+            <select 
+              [(ngModel)]="selectedDifficulty" 
+              class="filter-select"
+              [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
+            >
+              <option value="all">Todas</option>
+              <option value="Fácil">Fácil ({{ areaData.difficulty.easy }})</option>
+              <option value="Médio">Médio ({{ areaData.difficulty.medium }})</option>
+              <option value="Difícil">Difícil ({{ areaData.difficulty.hard }})</option>
+            </select>
           </div>
 
           <div class="filter-group">
             <label class="filter-label">Ordenar por:</label>
-            <mat-select [(value)]="sortBy" class="filter-select">
-              <mat-option value="popularity">Mais Populares</mat-option>
-              <mat-option value="difficulty">Por Dificuldade</mat-option>
-              <mat-option value="subject">Por Assunto</mat-option>
-              <mat-option value="recent">Mais Recentes</mat-option>
-            </mat-select>
+            <select 
+              [(ngModel)]="sortBy" 
+              class="filter-select"
+              [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
+            >
+              <option value="popularity">Mais Populares</option>
+              <option value="difficulty">Por Dificuldade</option>
+              <option value="subject">Por Assunto</option>
+              <option value="recent">Mais Recentes</option>
+            </select>
           </div>
 
-          <button mat-icon-button matTooltip="Limpar filtros" (click)="clearFilters()">
-            <mat-icon class="clear">clear</mat-icon>
+          <button 
+            class="btn btn-icon-only"
+            title="Limpar filtros"
+            (click)="clearFilters()"
+            [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
+          >
+            <span class="btn-icon">🗑️</span>
           </button>
+
+          <!-- Premium Lock Overlay -->
+          <div *ngIf="!isPremium" class="premium-lock-overlay" (click)="navigateToUpgrade()">
+            <span class="lock-icon">🔒</span>
+            <span class="lock-text">Filtros Premium</span>
+          </div>
         </div>
 
-        <!-- Quick Filter Buttons -->
-        <div class="quick-filters">
-          <button 
-            mat-stroked-button 
-            [color]="selectedDifficulty === 'Fácil' ? 'primary' : ''"
-            (click)="selectedDifficulty = selectedDifficulty === 'Fácil' ? 'all' : 'Fácil'"
-          >
-            <mat-icon>trending_down</mat-icon>
-            Fácil
-          </button>
-          <button 
-            mat-stroked-button 
-            [color]="selectedDifficulty === 'Médio' ? 'primary' : ''"
-            (click)="selectedDifficulty = selectedDifficulty === 'Médio' ? 'all' : 'Médio'"
-          >
-            <mat-icon>trending_flat</mat-icon>
-            Médio
-          </button>
-          <button 
-            mat-stroked-button 
-            [color]="selectedDifficulty === 'Difícil' ? 'primary' : ''"
-            (click)="selectedDifficulty = selectedDifficulty === 'Difícil' ? 'all' : 'Difícil'"
-          >
-            <mat-icon>trending_up</mat-icon>
-            Difícil
-          </button>
-          <button 
-            mat-stroked-button 
-            (click)="startCustomQuiz()"
-            [disabled]="filteredQuestions.length === 0"
-            class="custom-quiz-btn"
-          >
-            <mat-icon>play_arrow</mat-icon>
-            Quiz Personalizado
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 📝 QUESTIONS GRID -->
-    <section class="questions-section">
-      <div class="questions-grid">
-        <div 
-          *ngFor="let question of paginatedQuestions; trackBy: trackQuestion" 
-          class="question-card"
-          [class.favorite]="question.isFavorite"
-        >
-          
-          <!-- Question Header -->
-          <div class="question-header">
-            <div class="question-meta">
-              <span class="subject-tag" [style.background-color]="areaData.color + '20'" [style.color]="areaData.color">
-                {{ question.subject }}
-              </span>
-              <span class="difficulty-badge" [style.color]="getDifficultyColor(question.difficulty)">
-                <mat-icon>{{ getDifficultyIcon(question.difficulty) }}</mat-icon>
-                {{ question.difficulty }}
-              </span>
+        <!-- Smart Quiz Section -->
+        <div class="smart-quiz-section">
+          <!-- Indicador do Modo Inteligente -->
+          <div class="smart-mode-indicator">
+            <div class="mode-badge" [class]="getUserMode()">
+              <span class="mode-icon">{{ getModeIcon() }}</span>
+              <span>{{ getModeText() }}</span>
             </div>
-            <div class="question-actions">
+            <p class="mode-description">{{ getModeDescription() }}</p>
+          </div>
+
+          <!-- Botões de Quiz -->
+          <div class="quiz-options">
+            <!-- Quiz Normal -->
+            <div class="quiz-option-wrapper">
               <button 
-                mat-icon-button 
-                matTooltip="Adicionar/Remover favorito"
-                (click)="toggleFavorite(question.id)"
-                [class.favorited]="question.isFavorite"
+                class="quiz-btn primary-quiz"
+                (click)="startAreaQuiz()"
+                [disabled]="!canTakeQuiz"
+                [class.disabled]="!canTakeQuiz"
               >
-                <mat-icon class="favorite-icon">{{ question.isFavorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+                <span class="quiz-icon">❓</span>
+                <div class="btn-content">
+                  <span class="btn-title">Quiz Normal</span>
+                  <span class="btn-subtitle">
+                    <span *ngIf="isPremium">10 questões aleatórias</span>
+                    <span *ngIf="!isPremium">{{ remainingQuizzes }} restante{{ remainingQuizzes !== 1 ? 's' : '' }}</span>
+                  </span>
+                </div>
               </button>
-            </div>
-          </div>
-
-          <!-- Question Content -->
-          <div class="question-content">
-            <h3 class="question-text">{{ question.question }}</h3>
-            
-            <div class="question-details">
-              <div class="question-tags" *ngIf="question.tags.length > 0">
-                <mat-icon>label</mat-icon>
-                <span *ngFor="let tag of question.tags.slice(0, 3)" class="tag">{{ tag }}</span>
-                <span *ngIf="question.tags.length > 3" class="more-tags">+{{ question.tags.length - 3 }}</span>
-              </div>
               
-              <div class="question-stats">
-                <span class="stat-item">
-                  <mat-icon>schedule</mat-icon>
-                  {{ question.estimatedTime }}
-                </span>
-                <span class="stat-item">
-                  <mat-icon>trending_up</mat-icon>
-                  {{ question.popularity }}% popularidade
-                </span>
+              <!-- Aviso de limite -->
+              <div *ngIf="!canTakeQuiz" class="quiz-limit-warning">
+                <span class="warning-small-icon">⏰</span>
+                <span>Limite diário atingido</span>
+              </div>
+            </div>
+
+            <!-- Quiz Inteligente - PREMIUM ONLY -->
+            <div class="quiz-option-wrapper">
+              <button 
+                class="quiz-btn smart-quiz"
+                [disabled]="!isPremium || getWrongQuestions().length === 0 || !canTakeQuiz"
+                (click)="startWrongQuestionsQuiz()"
+                [class.premium-locked]="!isPremium"
+                [style.background-color]="isPremium ? areaData.color : '#ccc'"
+              >
+                <span class="quiz-icon">{{ isPremium ? '🔄' : '🔒' }}</span>
+                <div class="btn-content">
+                  <span class="btn-title">Quiz Inteligente</span>
+                  <span class="btn-subtitle">
+                    <span *ngIf="isPremium">{{ getSmartQuizSubtitle() }}</span>
+                    <span *ngIf="!isPremium">Recurso Premium</span>
+                  </span>
+                </div>
+                
+                <!-- Premium Badge -->
+                <div *ngIf="!isPremium" class="premium-badge">
+                  <span>👑</span>
+                </div>
+              </button>
+              
+              <!-- Upgrade Message -->
+              <div *ngIf="!isPremium" class="upgrade-message">
+                <span>Upgrade para desbloquear</span>
+                <button class="btn btn-small btn-accent" (click)="navigateToUpgrade()">Premium</button>
+              </div>
+            </div>
+
+            <!-- Quiz Filtrado - PREMIUM ONLY -->
+            <div class="quiz-option-wrapper">
+              <button 
+                class="quiz-btn filter-quiz"
+                (click)="startCustomQuiz()"
+                [disabled]="!isPremium || filteredQuestions.length === 0 || !canTakeQuiz"
+                [class.premium-locked]="!isPremium"
+              >
+                <span class="quiz-icon">{{ isPremium ? '🎛️' : '🔒' }}</span>
+                <div class="btn-content">
+                  <span class="btn-title">Quiz Filtrado</span>
+                  <span class="btn-subtitle">
+                    <span *ngIf="isPremium">{{ filteredQuestions.length }} questões selecionadas</span>
+                    <span *ngIf="!isPremium">Recurso Premium</span>
+                  </span>
+                </div>
+                
+                <!-- Premium Badge -->
+                <div *ngIf="!isPremium" class="premium-badge">
+                  <span>👑</span>
+                </div>
+              </button>
+              
+              <!-- Upgrade Message -->
+              <div *ngIf="!isPremium" class="upgrade-message">
+                <span>Filtros avançados no Premium</span>
+                <button class="btn btn-small btn-accent" (click)="navigateToUpgrade()">Upgrade</button>
               </div>
             </div>
           </div>
-
-          <!-- Question Actions -->
-          <div class="question-card-actions">
-            <button 
-              mat-stroked-button 
-              (click)="viewQuestion(question)"
-              class="view-btn"
-            >
-              <mat-icon>visibility</mat-icon>
-              Visualizar
-            </button>
-            
-            <button 
-              mat-raised-button 
-              [style.background-color]="areaData.color"
-              style="color: white"
-              (click)="startSingleQuestionQuiz(question)"
-            >
-              <mat-icon>play_arrow</mat-icon>
-              Responder
-            </button>
-          </div>
-
-          <!-- Favorite Indicator -->
-          <div *ngIf="question.isFavorite" class="favorite-indicator">
-            <mat-icon>favorite</mat-icon>
-          </div>
-
         </div>
-      </div>
-
-      <!-- Empty State -->
-      <div *ngIf="filteredQuestions.length === 0" class="empty-state">
-        <mat-icon>search_off</mat-icon>
-        <h3>Nenhuma questão encontrada</h3>
-        <p>Tente ajustar os filtros ou termo de busca</p>
-        <button mat-raised-button color="primary" (click)="clearFilters()">
-          <mat-icon>clear</mat-icon>
-          Limpar Filtros
-        </button>
       </div>
     </section>
 
-    <!-- 📄 PAGINATION -->
-    <section class="pagination-section" *ngIf="totalPages > 1">
-      <div class="pagination-info">
-        <span>
-          Página {{ currentPage }} de {{ totalPages }} 
-          ({{ filteredQuestions.length }} questões)
-        </span>
-      </div>
-      
-      <div class="pagination-controls">
-        <button 
-          mat-icon-button 
-          [disabled]="currentPage === 1"
-          (click)="changePage(currentPage - 1)"
-          matTooltip="Página anterior"
-        >
-          <mat-icon>chevron_left</mat-icon>
-        </button>
-        
-        <div class="page-numbers">
+    <!-- ✅ INFO SECTION -->
+    <div class="info-section" *ngIf="!hasWrongQuestions">
+      <div class="info-card">
+        <span class="info-icon">💡</span>
+        <div class="info-content">
+          <h3>Como funciona a Revisão Inteligente</h3>
+          <p>
+            Esta área mostra apenas as questões que você errou, permitindo focar no que realmente precisa melhorar. 
+            <strong>Faça alguns quizzes</strong> para começar a gerar sua lista personalizada de revisão!
+          </p>
           <button 
-            *ngFor="let page of getPageNumbers()" 
-            mat-button
-            [color]="page === currentPage ? 'primary' : ''"
-            (click)="changePage(page)"
-            [disabled]="page === currentPage"
+            class="btn btn-primary"
+            (click)="startAreaQuiz()"
+            [disabled]="!canTakeQuiz"
           >
-            {{ page }}
+            <span class="btn-icon">❓</span>
+            Fazer Primeiro Quiz
           </button>
         </div>
-        
-        <button 
-          mat-icon-button 
-          [disabled]="currentPage === totalPages"
-          (click)="changePage(currentPage + 1)"
-          matTooltip="Próxima página"
-        >
-          <mat-icon>chevron_right</mat-icon>
-        </button>
       </div>
-    </section>
+    </div>
 
-    <!-- 🎯 QUICK ACTIONS -->
-    <section class="quick-actions-section">
-      <h2 class="section-title">Ações Rápidas</h2>
+    <!-- 💎 PREMIUM UPGRADE BANNER -->
+    <div *ngIf="!isPremium" class="premium-upgrade-banner">
+      <div class="banner-content">
+        <div class="banner-icon">
+          <span>👑</span>
+        </div>
+        <div class="banner-text">
+          <h3>Desbloqueie Todo o Potencial!</h3>
+          <p>
+            Quiz inteligente, filtros avançados, estatísticas detalhadas e muito mais. 
+            Acelere seu aprendizado com o Quizzfy Premium!
+          </p>
+        </div>
+        <div class="banner-actions">
+          <button class="btn btn-premium" (click)="navigateToUpgrade()">
+            <span class="btn-icon">⭐</span>
+            Upgrade Premium
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎯 QUICK ACTIONS (apenas para Premium) -->
+    <section class="quick-actions-section" *ngIf="isPremium">
+      <h2 class="section-title">
+        <span class="section-icon">👑</span>
+        Ações Premium
+      </h2>
       
       <div class="quick-actions-grid">
         <div class="quick-action-card" (click)="startAreaQuiz()">
-          <mat-icon class="action-icon">quiz</mat-icon>
-          <h3>Quiz Completo</h3>
-          <p>10 questões aleatórias desta área</p>
-          <button mat-stroked-button>Iniciar</button>
+          <span class="action-icon">❓</span>
+          <h3>Quiz Ilimitado</h3>
+          <p>Quantos quizzes quiser, sem limites diários</p>
+          <button class="btn btn-outline">Iniciar</button>
         </div>
 
-        <div class="quick-action-card" (click)="startCustomQuiz()">
-          <mat-icon class="action-icon">tune</mat-icon>
-          <h3>Quiz Personalizado</h3>
-          <p>Com base nos filtros aplicados</p>
-          <button mat-stroked-button [disabled]="filteredQuestions.length === 0">
-            Configurar
+        <div class="quick-action-card" (click)="startWrongQuestionsQuiz()" 
+             [class.disabled]="getWrongQuestions().length === 0">
+          <span class="action-icon" [style.color]="getWrongQuestions().length > 0 ? areaData.color : '#ccc'">
+            🔄
+          </span>
+          <h3>Quiz Inteligente</h3>
+          <p>{{ getSmartQuizDescription() }}</p>
+          <button class="btn btn-outline" [disabled]="getWrongQuestions().length === 0">
+            {{ getWrongQuestions().length > 0 ? 'Revisar' : 'Sem erros' }}
           </button>
         </div>
 
-        <div class="quick-action-card" (click)="navigateToFavorites()">
-          <mat-icon class="action-icon">favorite</mat-icon>
-          <h3>Favoritos</h3>
-          <p>Suas questões marcadas como favoritas</p>
-          <button mat-stroked-button>Ver Favoritos</button>
+        <div class="quick-action-card premium-feature">
+          <span class="action-icon">📊</span>
+          <h3>Estatísticas Avançadas</h3>
+          <p>Análise detalhada do seu desempenho</p>
+          <button class="btn btn-outline">Ver Estatísticas</button>
         </div>
 
-        <div class="quick-action-card" (click)="navigateToDashboard()">
-          <mat-icon class="action-icon">dashboard</mat-icon>
-          <h3>Dashboard</h3>
-          <p>Voltar à visão geral</p>
-          <button mat-stroked-button>Dashboard</button>
+        <div class="quick-action-card premium-feature">
+          <span class="action-icon">📥</span>
+          <h3>Exportar Progresso</h3>
+          <p>Download do seu histórico de estudos</p>
+          <button class="btn btn-outline">Exportar</button>
         </div>
       </div>
     </section>

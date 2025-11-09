@@ -74,21 +74,20 @@
       </div>
       <div class="stat-item">
         <button mat-icon-button (click)="toggleFavorite()" 
-                [color]="isFavorite() ? 'accent' : ''" 
                 title="Favoritar questão">
-          <mat-icon>{{ isFavorite() ? 'favorite' : 'favorite_border' }}</mat-icon>
+          <mat-icon>favorite_border</mat-icon>
         </button>
       </div>
       <div class="stat-item">
         <button mat-icon-button (click)="pauseQuiz()" 
-                [title]="isPaused ? 'Continuar' : 'Pausar'">
-          <mat-icon>{{ isPaused ? 'play_arrow' : 'pause' }}</mat-icon>
+                [title]="isPaused() ? 'Continuar' : 'Pausar'">
+          <mat-icon>{{ isPaused() ? 'play_arrow' : 'pause' }}</mat-icon>
         </button>
       </div>
     </div>
 
     <!-- ✅ PAUSE OVERLAY -->
-    <div class="pause-overlay" *ngIf="isPaused">
+    <div class="pause-overlay" *ngIf="isPaused()">
       <div class="pause-card">
         <mat-icon style="font-size: 3rem; color: #667eea;">pause_circle_filled</mat-icon>
         <h2>Quiz Pausado</h2>
@@ -245,31 +244,45 @@
       </div>
     </div>
 
-    <!-- ✅ TRIAL WARNING -->
+    <!-- ✅ TRIAL WARNING - Só aparece se for FREE TRIAL -->
     <div class="trial-warning" *ngIf="isFreeTrial && showTrialWarning">
       <div class="trial-card">
         <i class="fas fa-gift"></i>
         <div class="trial-content">
-          <h4>Plano Gratuito</h4>
+          <h4>🆓 Plano Gratuito</h4>
           <p>{{ trialMessage }}</p>
-          <!-- ✅ MOSTRAR OUTRAS ÁREAS DISPONÍVEIS SE HOUVER -->
-          <div class="available-areas" *ngIf="hasOtherAreasAvailable()">
-            <small>
-              <strong>Áreas ainda disponíveis:</strong> 
-              {{ getAvailableAreasFormatted() }}
-            </small>
-          </div>
+          <!-- Áreas disponíveis removidas do template para evitar chamada a método inexistente -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ PREMIUM INFO - Só aparece se for PREMIUM -->
+    <div class="premium-info" *ngIf="!isFreeTrial">
+      <div class="premium-card">
+        <i class="fas fa-crown"></i>
+        <div class="premium-content">
+          <h4>👑 Modo Premium Ativo</h4>
+          <p>Quizzes ilimitados • Sem restrições • Recursos exclusivos</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ✅ QUIZ COMPLETED STATE -->
+  <!-- ✅ QUIZ COMPLETED STATE - VERSÃO CORRIGIDA -->
   <div *ngIf="!isLoading && !hasError && quizCompleted" class="quiz-completed">
     <div class="results-container">
       <div class="results-header">
         <i class="fas fa-trophy"></i>
-        <h2>Quiz Concluído!</h2>
+        <h2>🎉 Quiz Concluído!</h2>
+        <!-- ✅ INDICADOR PREMIUM/FREE -->
+        <div class="mode-indicator">
+          <span *ngIf="!isFreeTrial" class="premium-badge">
+            <i class="fas fa-crown"></i> PREMIUM
+          </span>
+          <span *ngIf="isFreeTrial" class="free-badge">
+            <i class="fas fa-gift"></i> GRATUITO
+          </span>
+        </div>
       </div>
       
       <div class="score-display">
@@ -280,7 +293,7 @@
           <p><strong>{{ correctAnswers }}</strong> de <strong>{{ totalQuestions }}</strong> questões corretas</p>
           <p>Tempo: <strong>{{ getFinalTimeFormatted() }}</strong></p>
           
-          <!-- ✅ INFO DO TRIAL -->
+          <!-- ✅ INFO DO TRIAL - SÓ SE FOR GRATUITO -->
           <div class="trial-info" *ngIf="isFreeTrial">
             <p class="trial-status">
               <i class="fas fa-gift"></i>
@@ -289,29 +302,42 @@
             </p>
             
             <!-- ✅ MOSTRAR TOTAL DE TENTATIVAS RESTANTES -->
-            <p class="trial-total" *ngIf="getTotalRemainingAttempts() > 0">
+            <p class="trial-total" *ngIf="remainingAttempts > 0">
               <i class="fas fa-chart-bar"></i>
-              Total de tentativas hoje: <strong>{{ getTotalRemainingAttempts() }}</strong>
+              Total de tentativas hoje: <strong>{{ remainingAttempts }}</strong>
             </p>
             
             <!-- ✅ MENSAGEM QUANDO TODAS ESGOTADAS -->
-            <p class="trial-exhausted" *ngIf="getTotalRemainingAttempts() === 0">
+            <p class="trial-exhausted" *ngIf="remainingAttempts === 0">
               <i class="fas fa-clock"></i>
               Todas as tentativas foram utilizadas. Elas serão renovadas automaticamente à meia-noite.
+            </p>
+          </div>
+
+          <!-- ✅ INFO PREMIUM - SÓ SE FOR PREMIUM -->
+          <div class="premium-info" *ngIf="!isFreeTrial">
+            <p class="premium-status">
+              <i class="fas fa-crown"></i>
+              <strong>Modo Premium:</strong> Quizzes ilimitados ativados
+            </p>
+            <p class="premium-benefits">
+              <i class="fas fa-check-circle"></i>
+              Sem limites • Recursos completos • Estatísticas avançadas
             </p>
           </div>
         </div>
       </div>
 
       <div class="results-actions">
+        <!-- ✅ BOTÃO REFAZER - DIFERENTE PARA PREMIUM VS FREE -->
         <button class="btn btn-primary" 
                 (click)="restartQuiz()"
-                [disabled]="isRestarting || (isFreeTrial && !canStartQuizInArea(area || 'desenvolvimento-web'))">
+                [disabled]="isRestarting || (isFreeTrial && remainingAttempts === 0)">
           <i class="fas" 
              [class.fa-redo]="!isRestarting" 
              [class.fa-spinner]="isRestarting"
              [class.fa-spin]="isRestarting"></i>
-          {{ isRestarting ? 'Reiniciando...' : (isFreeTrial && !canStartQuizInArea(area || 'desenvolvimento-web') ? 'Sem tentativas' : 'Refazer Quiz') }}
+          {{ isRestarting ? 'Reiniciando...' : (isFreeTrial && remainingAttempts === 0 ? 'Refazer (Sem tentativas)' : 'Refazer Quiz') }}
         </button>
         
         <button class="btn btn-secondary" 
@@ -324,12 +350,22 @@
           {{ isNavigating ? 'Carregando...' : 'Voltar ao Início' }}
         </button>
         
+        <!-- ✅ BOTÃO UPGRADE - SÓ APARECE SE FOR GRATUITO E SEM TENTATIVAS -->
         <button class="btn btn-success" 
-                *ngIf="isFreeTrial && hasExhaustedTrialAttempts()"
+                *ngIf="isFreeTrial && remainingAttempts === 0"
                 (click)="navigateToUpgrade()"
                 [disabled]="isNavigating">
           <i class="fas fa-crown"></i>
           Upgrade para Premium
+        </button>
+
+        <!-- ✅ BOTÃO NOVO QUIZ - SÓ APARECE SE FOR PREMIUM -->
+        <button class="btn btn-info" 
+                *ngIf="!isFreeTrial"
+                (click)="startNewPremiumQuiz()"
+                [disabled]="isNavigating">
+          <i class="fas fa-plus"></i>
+          Novo Quiz Premium
         </button>
       </div>
     </div>
@@ -337,31 +373,11 @@
 
   <!-- ✅ MANTER APENAS ESTA VERSÃO MELHORADA: -->
   <div class="quiz-shortcuts" 
-       *ngIf="!showExplanation && currentQuestion && !isPaused"
+       *ngIf="!showExplanation && currentQuestion && !isPaused()"
        (keydown)="handleKeyboardShortcut($event)"
        tabindex="-1"
        [attr.aria-hidden]="true"
        style="position: absolute; left: -9999px; opacity: 0;">
     <!-- Hidden element for keyboard shortcuts -->
   </div>
-
-  <!-- ✅ CORRIGIR OS IDs DO ÁUDIO: -->
-  <div class="audio-controls" *ngIf="currentQuestion">
-    <button mat-icon-button 
-            (click)="toggleSound()"
-            [title]="soundEnabled ? 'Desativar sons' : 'Ativar sons'">
-      <mat-icon>{{ soundEnabled ? 'volume_up' : 'volume_off' }}</mat-icon>
-    </button>
-    
-    <!-- ✅ ÁUDIO COM IDs CORRETOS -->
-    <audio id="correctSound" preload="none" *ngIf="soundEnabled">
-      <source src="assets/sounds/correct.mp3" type="audio/mpeg">
-      <source src="assets/sounds/correct.ogg" type="audio/ogg">
-    </audio>
-    <audio id="incorrectSound" preload="none" *ngIf="soundEnabled">
-      <source src="assets/sounds/incorrect.mp3" type="audio/mpeg">
-      <source src="assets/sounds/incorrect.ogg" type="audio/ogg">
-    </audio>
-  </div>
 </div>
-

@@ -1,76 +1,112 @@
-/* ============================================== */
-/* 🎨 HEADER COMPONENT - CLEAN & SIMPLE - FIXED */
-/* ============================================== */
+/* =============================================== */
+/* 🦉 SOWLFY - HEADER COMPONENT CSS COMPLETO */
+/* =============================================== */
 
+/* filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\src\app\shared\components\header\header.component.css */
+
+/* ✅ RESET E BASE */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* =============================================== */
+/* 🦉 HEADER PRINCIPAL */
+/* =============================================== */
 .app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 2px 20px rgba(102, 126, 234, 0.15);
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  color: #333;
-  height: 72px; /* ✅ AUMENTEI DE 64px PARA 72px */
-  padding: 0 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.app-header:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+.app-header.logged-in {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* ============================================== */
-/* 🏠 BRAND SECTION */
-/* ============================================== */
+.app-header.premium {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb347 50%, #667eea 100%);
+  box-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
+}
 
+/* =============================================== */
+/* 🦉 LOGO E BRAND */
+/* =============================================== */
 .brand-section {
   display: flex;
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  padding: 8px 0;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 .brand-section:hover {
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
 }
 
 .logo-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* ✅ AUMENTEI DE 36px PARA 40px */
-  height: 40px; /* ✅ AUMENTEI DE 36px PARA 40px */
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 10px;
-  transition: transform 0.2s ease;
 }
 
-.brand-section:hover .logo-container {
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
   transform: scale(1.05);
 }
 
-.brand-icon {
-  color: white;
+.logo-fallback {
+  font-size: 32px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .brand-name {
-  font-size: 20px; /* ✅ AUMENTEI DE 18px PARA 20px */
-  font-weight: 700;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.5px;
+}
+
+.brand-tagline {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .premium-badge {
@@ -78,78 +114,93 @@
   align-items: center;
   gap: 4px;
   background: linear-gradient(135deg, #ffd700, #ffb347);
-  color: #1a202c;
-  padding: 6px 10px; /* ✅ AUMENTEI PADDING */
+  color: #333;
+  padding: 4px 8px;
   border-radius: 12px;
-  font-size: 11px; /* ✅ AUMENTEI DE 10px PARA 11px */
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   text-transform: uppercase;
-  height: fit-content; /* ✅ ADICIONEI PARA CONTROLAR ALTURA */
+  letter-spacing: 0.5px;
   box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  animation: premiumGlow 2s ease-in-out infinite alternate;
 }
 
-.premium-badge svg {
-  width: 14px;
-  height: 14px;
+@keyframes premiumGlow {
+  0% { box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3); }
+  100% { box-shadow: 0 4px 16px rgba(255, 215, 0, 0.6); }
 }
 
-/* ============================================== */
-/* 🧭 DESKTOP NAVIGATION */
-/* ============================================== */
-
+/* =============================================== */
+/* 🧭 NAVEGAÇÃO DESKTOP */
+/* =============================================== */
 .desktop-nav {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: 32px;
 }
 
 .nav-button {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #6b7280;
-  background: transparent;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 8px;
-  padding: 10px 16px; /* ✅ AUMENTEI PADDING VERTICAL */
+  color: white;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
-  height: 44px; /* ✅ ALTURA FIXA PARA CONSISTÊNCIA */
-  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .nav-button:hover {
-  background: #f8fafc;
-  color: #667eea;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-button.active {
-  background: #edf2f7;
-  color: #667eea;
-  font-weight: 600;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-button svg {
-  width: 18px;
-  height: 18px;
   flex-shrink: 0;
 }
 
-/* ============================================== */
-/* 🌟 SPACER */
-/* ============================================== */
-
+/* =============================================== */
+/* 📱 SPACER */
+/* =============================================== */
 .spacer {
   flex: 1;
 }
 
-/* ============================================== */
-/* 🔔 NOTIFICATION BUTTON */
-/* ============================================== */
+/* =============================================== */
+/* 🔔 HEADER ACTIONS */
+/* =============================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trial-info {
+  display: flex;
+  align-items: center;
+}
+
+.trial-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
 .icon-button {
   display: flex;
@@ -157,22 +208,19 @@
   justify-content: center;
   width: 44px;
   height: 44px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 8px;
-  color: #6b7280;
+  border-radius: 50%;
+  color: white;
   cursor: pointer;
-  transition: all 0.2s ease;
-  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .icon-button:hover {
-  background: #f8fafc;
-  color: #667eea;
-}
-
-.notification-btn {
-  margin-right: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .icon-wrapper {
@@ -183,57 +231,44 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background: #ef4444;
+  background: #ff4757;
   color: white;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-/* ============================================== */
-/* 💎 UPGRADE BUTTON */
-/* ============================================== */
 
 .upgrade-button {
   display: flex;
   align-items: center;
   gap: 6px;
+  padding: 8px 16px;
   background: linear-gradient(135deg, #ffd700, #ffb347);
-  color: #1a202c;
   border: none;
-  border-radius: 8px;
-  padding: 0 16px;
-  height: 36px;
-  font-size: 13px;
+  border-radius: 20px;
+  color: #333;
   font-weight: 600;
+  font-size: 13px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  margin-right: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
 
 .upgrade-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.5);
 }
 
-.upgrade-button svg {
-  width: 16px;
-  height: 16px;
-}
-
-/* ============================================== */
-/* 👤 USER SECTION */
-/* ============================================== */
-
+/* =============================================== */
+/* 👤 USUÁRIO LOGADO */
+/* =============================================== */
 .user-section {
-  display: flex;
-  align-items: center;
   position: relative;
 }
 
@@ -241,24 +276,20 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  color: #2d3748;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px 8px 8px;
+  color: white;
   cursor: pointer;
-  transition: all 0.2s ease;
-  min-height: 48px; /* ✅ ALTURA ADEQUADA */
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .user-button:hover {
-  background: #edf2f7;
-  border-color: #cbd5e0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
-
-/* ============================================== */
-/* 👤 USER AVATAR */
-/* ============================================== */
 
 .user-avatar {
   position: relative;
@@ -266,15 +297,13 @@
   height: 36px;
   border-radius: 50%;
   overflow: hidden;
-  background: #e2e8f0;
+  background: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
 .user-avatar.premium-avatar {
-  background: linear-gradient(45deg, #ffd700, #ffb347);
   border: 2px solid #ffd700;
 }
 
@@ -282,49 +311,44 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
 }
 
 .avatar-initials {
+  font-weight: 700;
   font-size: 14px;
-  font-weight: 600;
-  color: #4a5568;
+  color: white;
 }
 
 .premium-ring {
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
   border: 2px solid #ffd700;
   border-radius: 50%;
-  opacity: 0.8;
-  pointer-events: none;
+  animation: premiumRing 2s linear infinite;
 }
 
-/* ============================================== */
-/* 📊 USER INFO */
-/* ============================================== */
+@keyframes premiumRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 .user-info {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  height: 36px; /* ✅ ALTURA IGUAL AO AVATAR */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
 .user-name {
-  font-size: 15px;
   font-weight: 600;
-  line-height: 1;
+  font-size: 14px;
   max-width: 120px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #2d3748;
-  margin: 0;
+  white-space: nowrap;
 }
 
 .user-stats {
@@ -332,73 +356,57 @@
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  color: #718096;
+  opacity: 0.9;
 }
 
 .level {
-  background: #edf2f7;
-  color: #4a5568;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 1;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
 .streak {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  height: 22px;
-  font-size: 11px;
-  white-space: nowrap;
+  font-weight: 600;
 }
 
 .dropdown-arrow {
-  color: #a0aec0;
-  transition: transform 0.2s ease;
-  margin-left: 4px; /* ✅ PEQUENO ESPAÇAMENTO */
+  transition: transform 0.3s ease;
 }
 
 .user-button:hover .dropdown-arrow {
   transform: rotate(180deg);
 }
 
-/* ============================================== */
+/* =============================================== */
 /* 📋 USER DROPDOWN MENU */
-/* ============================================== */
-
+/* =============================================== */
 .user-dropdown-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   right: 0;
+  width: 280px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e2e8f0;
-  min-width: 280px;
-  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transform: translateY(-10px) scale(0.95);
   visibility: hidden;
-  transition: all 0.2s ease;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  margin-top: 8px;
 }
 
 .user-dropdown-menu.open {
   opacity: 1;
-  transform: translateY(0) scale(1);
   visibility: visible;
+  transform: translateY(0);
 }
 
 .menu-header {
-  padding: 20px;
-  background: #f8fafc;
-  border-bottom: 1px solid #e2e8f0;
-  border-radius: 12px 12px 0 0;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .menu-user-info {
@@ -408,89 +416,82 @@
 }
 
 .menu-avatar {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: #e2e8f0;
+  overflow: hidden;
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0; /* ✅ NÃO ENCOLHER */
 }
 
 .menu-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
 }
 
 .menu-avatar span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #4a5568;
+  font-weight: 700;
+  color: #666;
 }
 
 .menu-user-details {
-  flex: 1; /* ✅ OCUPAR ESPAÇO RESTANTE */
-  min-width: 0; /* ✅ PERMITIR SHRINK */
+  flex: 1;
 }
 
 .menu-user-details strong {
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 2px;
-  color: #2d3748;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
 .user-email {
   display: block;
+  color: #666;
   font-size: 12px;
-  color: #718096;
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-bottom: 6px;
 }
 
 .user-status {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .level-badge {
-  background: #edf2f7;
-  color: #4a5568;
-  padding: 2px 6px;
-  border-radius: 3px;
+  background: #667eea;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
   font-size: 10px;
-  font-weight: 500;
-  white-space: nowrap;
+  font-weight: 600;
 }
 
 .premium-status {
-  color: #d69e2e;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 12px;
   font-size: 10px;
   font-weight: 600;
-  white-space: nowrap;
 }
 
 .free-status {
-  color: #718096;
+  background: #e0e0e0;
+  color: #666;
+  padding: 2px 8px;
+  border-radius: 12px;
   font-size: 10px;
-  white-space: nowrap;
+  font-weight: 600;
 }
 
 .menu-divider {
   height: 1px;
-  background: #e2e8f0;
-  margin: 0;
+  background: #f0f0f0;
+  margin: 8px 0;
 }
 
 .menu-item {
@@ -498,126 +499,126 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 16px;
+  background: none;
   border: none;
-  background: transparent;
-  color: #2d3748;
+  color: #333;
   font-size: 14px;
-  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   text-align: left;
 }
 
 .menu-item:hover {
-  background: #f8fafc;
+  background: #f8f9fa;
+  color: #667eea;
 }
 
 .menu-item svg {
-  width: 18px;
-  height: 18px;
-  color: #4a5568;
   flex-shrink: 0;
+  color: #666;
+}
+
+.menu-item:hover svg {
+  color: #667eea;
 }
 
 .premium-menu-item {
-  width: 90%;
-  background: #fffbf0;
-  border: 1px solid #fed7aa;
-  margin: 4px 12px;
-  border-radius: 6px;
-  color: #c05621;
-  position: relative;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  color: #333;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 0 8px;
 }
 
 .premium-menu-item:hover {
-  background: #fef3e2;
+  background: linear-gradient(135deg, #ffb347, #ffd700);
+  transform: translateY(-1px);
 }
 
-.premium-menu-item .premium-icon {
-  color: #d69e2e;
+.premium-icon {
+  color: #333 !important;
 }
 
-.premium-menu-item .upgrade-arrow {
-  color: #d69e2e;
+.upgrade-arrow {
   margin-left: auto;
-  width: 16px;
-  height: 16px;
 }
 
 .logout-item {
-  color: #e53e3e;
-  border-top: 1px solid #fed7d7;
-  border-radius: 0 0 12px 12px;
+  color: #dc3545;
 }
 
 .logout-item:hover {
-  background: #fef5f5;
+  background: #fff5f5;
+  color: #dc3545;
 }
 
 .logout-item svg {
-  color: #e53e3e;
+  color: #dc3545 !important;
 }
 
-/* ============================================== */
-/* 🔐 AUTH SECTION - BOTÃO ENTRAR */
-/* ============================================== */
-
+/* =============================================== */
+/* 🔐 AUTH SECTION */
+/* =============================================== */
 .auth-section {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
-.header-login-btn {
+.auth-button {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  height: 40px;
-  padding: 0 20px;
+  padding: 10px 16px;
   border: none;
-  border-radius: 10px;
-  font-size: 14px;
+  border-radius: 8px;
   font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  font-family: inherit;
   text-decoration: none;
 }
 
-.header-login-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+.auth-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.header-login-btn svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+.auth-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-/* ============================================== */
-/* 📱 MOBILE MENU BUTTON */
-/* ============================================== */
+.auth-button.primary {
+  background: white;
+  color: #667eea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
+.auth-button.primary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* =============================================== */
+/* 📱 MOBILE STYLES */
+/* =============================================== */
 .mobile-menu-btn {
-  margin-left: 12px;
+  display: none;
 }
-
-/* ============================================== */
-/* 📱 MOBILE NAVIGATION OVERLAY */
-/* ============================================== */
 
 .mobile-nav-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
+  backdrop-filter: blur(10px);
+  z-index: 1002;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -629,17 +630,17 @@
 }
 
 .mobile-nav-content {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 70px;
   right: 0;
-  width: 300px;
-  max-width: 85vw;
-  height: 100%;
+  width: 100%;
+  max-width: 320px;
   background: white;
+  border-radius: 0 0 0 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 20px;
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  overflow-y: auto;
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-nav-overlay.open .mobile-nav-content {
@@ -650,20 +651,18 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 24px 20px;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 16px 0;
 }
 
 .mobile-avatar {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: #e2e8f0;
+  overflow: hidden;
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
 }
 
 .mobile-avatar img {
@@ -673,215 +672,190 @@
 }
 
 .mobile-avatar span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #4a5568;
+  font-weight: 700;
+  color: #666;
 }
 
 .mobile-user-info {
   flex: 1;
-  min-width: 0;
 }
 
 .mobile-user-info strong {
   display: block;
+  color: #333;
   font-size: 16px;
-  font-weight: 600;
-  color: #2d3748;
   margin-bottom: 4px;
 }
 
 .mobile-user-info span {
+  display: block;
+  color: #666;
   font-size: 12px;
-  color: #718096;
+}
+
+.mobile-status {
+  background: #667eea;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 4px;
 }
 
 .mobile-divider {
   height: 1px;
-  background: #e2e8f0;
+  background: #f0f0f0;
+  margin: 16px 0;
 }
 
 .mobile-nav-links {
-  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .mobile-nav-button {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   width: 100%;
-  padding: 16px 20px;
+  padding: 16px;
+  background: none;
   border: none;
-  background: transparent;
-  color: #374151;
+  color: #333;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   text-align: left;
+  border-radius: 8px;
 }
 
 .mobile-nav-button:hover {
-  background: #f8fafc;
-}
-
-.mobile-nav-button svg {
-  width: 20px;
-  height: 20px;
-  color: #6b7280;
-  flex-shrink: 0;
+  background: #f8f9fa;
+  color: #667eea;
 }
 
 .mobile-nav-button.premium-mobile {
-  color: #c05621;
-  background: #fffbf0;
-  margin: 8px 16px;
-  border-radius: 8px;
-  padding: 12px 16px;
-}
-
-.mobile-nav-button.premium-mobile svg {
-  color: #d69e2e;
+  background: linear-gradient(135deg, #ffd700, #ffb347);
+  color: #333;
+  font-weight: 600;
 }
 
 .mobile-nav-button.logout-mobile {
-  color: #e53e3e;
-  border-top: 1px solid #fed7d7;
-  margin-top: 16px;
+  color: #dc3545;
 }
 
-.mobile-nav-button.logout-mobile svg {
-  color: #e53e3e;
+.mobile-nav-button.logout-mobile:hover {
+  background: #fff5f5;
 }
 
-/* ============================================== */
-/* 📱 RESPONSIVE DESIGN */
-/* ============================================== */
-
+/* =============================================== */
+/* 📱 RESPONSIVE BREAKPOINTS */
+/* =============================================== */
 @media (max-width: 768px) {
   .app-header {
-    padding: 0 16px;
-    height: 64px;
-  }
-
-  .brand-name {
-    font-size: 18px;
+    padding: 8px 16px;
+    min-height: 60px;
   }
 
   .desktop-nav {
     display: none;
   }
 
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .auth-button span {
+    display: none;
+  }
+
+  .upgrade-button span {
+    display: none;
+  }
+
+  .trial-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
   .user-info {
     display: none;
   }
 
-  .header-login-btn {
-    height: 36px;
-    padding: 0 16px;
-    font-size: 13px;
-  }
-
-  .header-login-btn svg {
-    width: 16px;
-    height: 16px;
+  .user-button {
+    padding: 8px;
   }
 }
 
 @media (max-width: 480px) {
   .app-header {
-    padding: 0 12px;
-  }
-
-  .brand-section {
-    gap: 8px;
+    padding: 8px 12px;
   }
 
   .brand-name {
-    font-size: 16px;
+    font-size: 20px;
   }
 
-  .header-login-btn span {
+  .logo-container {
+    width: 32px;
+    height: 32px;
+  }
+
+  .trial-info {
     display: none;
-  }
-
-  .header-login-btn {
-    width: 36px;
-    padding: 0;
-  }
-
-  .premium-badge span {
-    display: none;
-  }
-
-  .premium-badge {
-    padding: 6px;
   }
 }
 
-/* ============================================== */
-/* 🌙 DARK MODE SUPPORT */
-/* ============================================== */
+/* =============================================== */
+/* 🌙 DARK THEME SUPPORT */
+/* =============================================== */
+.dark-theme .user-dropdown-menu {
+  background: #2a2a2a;
+  border-color: #444;
+}
 
-@media (prefers-color-scheme: dark) {
-  .app-header {
-    background: rgba(30, 30, 30, 0.95);
-    color: white;
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
+.dark-theme .menu-header {
+  border-bottom-color: #444;
+}
 
-  .nav-button {
-    color: #d1d5db;
-  }
+.dark-theme .menu-user-details strong {
+  color: white;
+}
 
-  .nav-button:hover,
-  .nav-button.active {
-    background: rgba(55, 65, 81, 0.5);
-    color: #93c5fd;
-  }
+.dark-theme .user-email {
+  color: #ccc;
+}
 
-  .icon-button {
-    color: #d1d5db;
-  }
+.dark-theme .menu-divider {
+  background: #444;
+}
 
-  .icon-button:hover {
-    background: rgba(55, 65, 81, 0.5);
-    color: #93c5fd;
-  }
+.dark-theme .menu-item {
+  color: white;
+}
 
-  .user-button {
-    background: rgba(55, 65, 81, 0.3);
-    border-color: rgba(75, 85, 99, 0.5);
-    color: white;
-  }
+.dark-theme .menu-item:hover {
+  background: #3a3a3a;
+  color: #667eea;
+}
 
-  .user-dropdown-menu {
-    background: #1f2937;
-    border-color: #374151;
-  }
+.dark-theme .mobile-nav-content {
+  background: #2a2a2a;
+}
 
-  .menu-header {
-    background: #111827;
-    border-bottom-color: #374151;
-  }
+.dark-theme .mobile-nav-button {
+  color: white;
+}
 
-  .menu-item {
-    color: #d1d5db;
-  }
-
-  .menu-item:hover {
-    background: #374151;
-  }
-
-  .mobile-nav-content {
-    background: #1f2937;
-  }
-
-  .mobile-nav-button {
-    color: #d1d5db;
-  }
-
-  .mobile-nav-button:hover {
-    background: #374151;
-  }
+.dark-theme .mobile-nav-button:hover {
+  background: #3a3a3a;
+  color: #667eea;
 }

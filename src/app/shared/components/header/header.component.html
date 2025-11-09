@@ -1,18 +1,39 @@
+<!-- =============================================== -->
+<!-- 🦉 SOWLFY - HEADER COMPONENT ATUALIZADO -->
+<!-- =============================================== -->
+
+<!-- filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\src\app\shared\components\header\header.component.html -->
 <header class="app-header" [class.logged-in]="isLoggedIn" [class.premium]="isPremium">
   
   <!-- =============================================== -->
-  <!-- 🏠 LOGO E BRAND -->
+  <!-- 🦉 LOGO E BRAND SOWLFY -->
   <!-- =============================================== -->
   <div class="brand-section" (click)="navigateToHome()">
     <div class="logo-container">
-      <svg class="brand-icon" viewBox="0 0 24 24" width="24" height="24">
-        <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" fill="currentColor"/>
-      </svg>
+      <!-- ✅ LOGO PERSONALIZADO DO SOWLFY COM CAMINHO CORRETO -->
+      <img 
+        src="assets/img/logo_sowlfy1.png" 
+        alt="SOWLFY Logo" 
+        class="brand-logo"
+        (error)="onLogoError($event)"
+        *ngIf="!logoError"
+      >
+      
+      <!-- ✅ FALLBACK CASO O LOGO NÃO CARREGUE -->
+      <div class="logo-fallback" *ngIf="logoError">
+        🦉
+      </div>
     </div>
-    <span class="brand-name">Quizzfy</span>
+    
+    <div class="brand-text">
+      <span class="brand-name">SOWLFY</span>
+      <span class="brand-tagline">Preparação Inteligente</span>
+    </div>
+    
+    <!-- ✅ BADGE PREMIUM -->
     <span class="premium-badge" *ngIf="isPremium">
       <svg viewBox="0 0 24 24" width="16" height="16">
-        <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zM15.5 3H8.5c-.83 0-1.5.67-1.5 1.5S7.67 6 8.5 6h7c.83 0 1.5-.67 1.5-1.5S16.33 3 15.5 3z" fill="currentColor"/>
+        <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
       </svg>
       <span>PRO</span>
     </span>
@@ -26,23 +47,25 @@
       class="nav-button"
       [class.active]="isCurrentRoute('/')"
       (click)="navigateToHome()"
+      title="Página Inicial"
     >
       <svg viewBox="0 0 24 24" width="18" height="18">
         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
       </svg>
-      Início
+      <span>Início</span>
     </button>
 
     <button 
       class="nav-button"
       [class.active]="isCurrentRoute('/dashboard')"
       (click)="navigateToDashboard()"
-      *ngIf="isLoggedIn"
+      *ngIf="isLoggedIn || showDashboardForGuests"
+      title="Dashboard"
     >
       <svg viewBox="0 0 24 24" width="18" height="18">
         <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
       </svg>
-      Dashboard
+      <span>Dashboard</span>
     </button>
 
     <button 
@@ -50,11 +73,12 @@
       [class.active]="isCurrentRoute('/progress')"
       (click)="navigateToProgress()"
       *ngIf="isLoggedIn"
+      title="Meu Progresso"
     >
       <svg viewBox="0 0 24 24" width="18" height="18">
         <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
       </svg>
-      Progresso
+      <span>Progresso</span>
     </button>
 
     <button 
@@ -62,11 +86,12 @@
       [class.active]="isCurrentRoute('/favorites')"
       (click)="navigateToFavorites()"
       *ngIf="isLoggedIn"
+      title="Questões Favoritas"
     >
       <svg viewBox="0 0 24 24" width="18" height="18">
         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
       </svg>
-      Favoritos
+      <span>Favoritos</span>
     </button>
   </nav>
 
@@ -76,36 +101,45 @@
   <div class="spacer"></div>
 
   <!-- =============================================== -->
-  <!-- 🔔 NOTIFICAÇÕES -->
+  <!-- 🔔 NOTIFICAÇÕES E TRIAL INFO -->
   <!-- =============================================== -->
-  <button 
-    class="icon-button notification-btn"
-    (click)="openNotifications()"
-    *ngIf="isLoggedIn"
-    title="Notificações"
-  >
-    <div class="icon-wrapper">
-      <svg viewBox="0 0 24 24" width="20" height="20">
-        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
-      </svg>
-      <span class="notification-badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+  <div class="header-actions">
+    
+    <!-- ✅ INFO DE TENTATIVAS FREE TRIAL -->
+    <div class="trial-info" *ngIf="isFreeTrial && !isLoggedIn">
+      <span class="trial-badge">
+        🆓 {{ remainingAttempts || 3 }} tentativas restantes
+      </span>
     </div>
-  </button>
+    
+    <!-- ✅ NOTIFICAÇÕES (PARA USUÁRIOS LOGADOS) -->
+    <button 
+      class="icon-button notification-btn"
+      (click)="openNotifications()"
+      *ngIf="isLoggedIn"
+      title="Notificações"
+    >
+      <div class="icon-wrapper">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/>
+        </svg>
+        <span class="notification-badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+      </div>
+    </button>
 
-  <!-- =============================================== -->
-  <!-- 💎 UPGRADE BUTTON (PARA NÃO PREMIUM) -->
-  <!-- =============================================== -->
-  <button 
-    class="upgrade-button"
-    (click)="openPremiumDialog()"
-    *ngIf="isLoggedIn && !isPremium"
-    title="Fazer upgrade para Premium"
-  >
-    <svg viewBox="0 0 24 24" width="16" height="16">
-      <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
-    </svg>
-    Upgrade
-  </button>
+    <!-- ✅ UPGRADE BUTTON (PARA NÃO PREMIUM) -->
+    <button 
+      class="upgrade-button"
+      (click)="openPremiumDialog()"
+      *ngIf="!isPremium"
+      title="Upgrade para SOWLFY Pro"
+    >
+      <svg viewBox="0 0 24 24" width="16" height="16">
+        <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
+      </svg>
+      <span *ngIf="!isMobile()">Upgrade Pro</span>
+    </button>
+  </div>
 
   <!-- =============================================== -->
   <!-- 👤 USUÁRIO LOGADO - MENU DROPDOWN -->
@@ -116,6 +150,7 @@
     <button 
       class="user-button"
       (click)="toggleUserMenu()"
+      title="Menu do usuário"
     >
       <div class="user-avatar" [class.premium-avatar]="isPremium">
         <img 
@@ -131,7 +166,7 @@
       </div>
       
       <div class="user-info" *ngIf="!isMobile()">
-        <span class="user-name">{{ currentUser?.name }}</span>
+        <span class="user-name">{{ currentUser?.name || 'Usuário' }}</span>
         <div class="user-stats">
           <span class="level">Nv. {{ getUserLevel() }}</span>
           <span class="streak" *ngIf="getUserStreak() > 0">
@@ -162,11 +197,11 @@
             </span>
           </div>
           <div class="menu-user-details">
-            <strong>{{ currentUser?.name }}</strong>
-            <span class="user-email">{{ currentUser?.email }}</span>
+            <strong>{{ currentUser?.name || 'Usuário SOWLFY' }}</strong>
+            <span class="user-email">{{ currentUser?.email || 'usuario@sowlfy.com' }}</span>
             <div class="user-status">
               <span class="level-badge">Nível {{ getUserLevel() }}</span>
-              <span class="premium-status" *ngIf="isPremium">✨ Premium</span>
+              <span class="premium-status" *ngIf="isPremium">✨ Pro</span>
               <span class="free-status" *ngIf="!isPremium">🆓 Gratuito</span>
             </div>
           </div>
@@ -176,45 +211,45 @@
       <div class="menu-divider"></div>
 
       <!-- Opções do Menu -->
-      <button class="menu-item" (click)="navigateToDashboard()">
+      <button class="menu-item" (click)="navigateToDashboard(); closeUserMenu()">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
         </svg>
         <span>Dashboard</span>
       </button>
 
-      <button class="menu-item" (click)="navigateToProfile()">
+      <button class="menu-item" (click)="navigateToProfile(); closeUserMenu()">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
         </svg>
-        <span>Perfil</span>
+        <span>Meu Perfil</span>
       </button>
 
-      <button class="menu-item" (click)="navigateToProgress()">
+      <button class="menu-item" (click)="navigateToProgress(); closeUserMenu()">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
         </svg>
         <span>Meu Progresso</span>
       </button>
 
-      <button class="menu-item" (click)="navigateToFavorites()">
+      <button class="menu-item" (click)="navigateToFavorites(); closeUserMenu()">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/>
         </svg>
-        <span>Favoritos</span>
+        <span>Questões Favoritas</span>
       </button>
 
       <!-- Upgrade Premium -->
       <div class="menu-divider" *ngIf="!isPremium"></div>
       <button 
         class="menu-item premium-menu-item"
-        (click)="openPremiumDialog()"
+        (click)="openPremiumDialog(); closeUserMenu()"
         *ngIf="!isPremium"
       >
         <svg class="premium-icon" viewBox="0 0 24 24" width="18" height="18">
           <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
         </svg>
-        <span>Upgrade Premium</span>
+        <span>Upgrade SOWLFY Pro</span>
         <svg class="upgrade-arrow" viewBox="0 0 24 24" width="16" height="16">
           <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="currentColor"/>
         </svg>
@@ -223,7 +258,7 @@
       <div class="menu-divider"></div>
 
       <!-- Configurações -->
-      <button class="menu-item" (click)="navigateToSettings()">
+      <button class="menu-item" (click)="navigateToSettings(); closeUserMenu()">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.82,11.69,4.82,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" fill="currentColor"/>
         </svg>
@@ -231,15 +266,15 @@
       </button>
 
       <!-- Theme Toggle -->
-      <button class="menu-item" (click)="toggleTheme()">
+      <button class="menu-item" (click)="toggleTheme(); closeUserMenu()">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" fill="currentColor"/>
         </svg>
-        <span>Alternar Tema</span>
+        <span>{{ isDarkTheme ? 'Tema Claro' : 'Tema Escuro' }}</span>
       </button>
 
       <!-- Logout -->
-      <button class="menu-item logout-item" (click)="logout()">
+      <button class="menu-item logout-item" (click)="logout(); closeUserMenu()">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" fill="currentColor"/>
         </svg>
@@ -251,18 +286,31 @@
   </div>
 
   <!-- =============================================== -->
-  <!-- 🔐 USUÁRIO NÃO LOGADO - BOTÃO ENTRAR -->
+  <!-- 🔐 USUÁRIO NÃO LOGADO - BOTÕES AUTH -->
   <!-- =============================================== -->
   <div class="auth-section" *ngIf="!isLoggedIn">
     <button 
       type="button"
       (click)="openLoginDialog()"
-      class="auth-button primary login-btn header-login-btn"
+      class="auth-button secondary login-btn"
+      title="Fazer Login"
     >
       <svg viewBox="0 0 24 24" width="18" height="18">
         <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z" fill="currentColor"/>
       </svg>
       <span *ngIf="!isMobile()">Entrar</span>
+    </button>
+    
+    <button 
+      type="button"
+      (click)="openSignupDialog()"
+      class="auth-button primary signup-btn"
+      title="Criar Conta"
+    >
+      <svg viewBox="0 0 24 24" width="18" height="18">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+      </svg>
+      <span *ngIf="!isMobile()">Cadastrar</span>
     </button>
   </div>
 
@@ -273,6 +321,7 @@
     class="icon-button mobile-menu-btn"
     (click)="toggleMobileMenu()"
     *ngIf="isMobile()"
+    title="Menu"
   >
     <svg viewBox="0 0 24 24" width="20" height="20" *ngIf="!isMobileMenuOpen">
       <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/>
@@ -308,8 +357,10 @@
         </span>
       </div>
       <div class="mobile-user-info">
-        <strong>{{ currentUser?.name }}</strong>
+        <strong>{{ currentUser?.name || 'Usuário' }}</strong>
         <span>Nível {{ getUserLevel() }} • 🔥 {{ getUserStreak() }}</span>
+        <span class="mobile-status" *ngIf="isPremium">✨ SOWLFY Pro</span>
+        <span class="mobile-status" *ngIf="!isPremium">🆓 Gratuito</span>
       </div>
     </div>
 
@@ -324,7 +375,7 @@
         Início
       </button>
 
-      <button class="mobile-nav-button" (click)="navigateToDashboard(); closeMobileMenu()" *ngIf="isLoggedIn">
+      <button class="mobile-nav-button" (click)="navigateToDashboard(); closeMobileMenu()">
         <svg viewBox="0 0 24 24" width="20" height="20">
           <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="currentColor"/>
         </svg>
@@ -345,11 +396,11 @@
         Favoritos
       </button>
 
-      <button class="mobile-nav-button premium-mobile" (click)="openPremiumDialog(); closeMobileMenu()" *ngIf="isLoggedIn && !isPremium">
+      <button class="mobile-nav-button premium-mobile" (click)="openPremiumDialog(); closeMobileMenu()" *ngIf="!isPremium">
         <svg viewBox="0 0 24 24" width="20" height="20">
           <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10z" fill="currentColor"/>
         </svg>
-        Upgrade Premium
+        Upgrade SOWLFY Pro
       </button>
 
       <button class="mobile-nav-button" (click)="openLoginDialog(); closeMobileMenu()" *ngIf="!isLoggedIn">
@@ -357,6 +408,13 @@
           <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z" fill="currentColor"/>
         </svg>
         Fazer Login
+      </button>
+
+      <button class="mobile-nav-button" (click)="openSignupDialog(); closeMobileMenu()" *ngIf="!isLoggedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+        </svg>
+        Criar Conta
       </button>
 
       <button class="mobile-nav-button logout-mobile" (click)="logout(); closeMobileMenu()" *ngIf="isLoggedIn">

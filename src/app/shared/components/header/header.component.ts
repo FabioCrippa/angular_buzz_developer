@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+// ===============================================
+// 🦉 SOWLFY - HEADER COMPONENT TYPESCRIPT
+// ===============================================
+
+// filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\src\app\shared\components\header\header.component.ts
+
+import { Component, OnInit, OnDestroy, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { Router, NavigationEnd, Event } from '@angular/router'; // ✅ IMPORTAR Event
 import { Subject, takeUntil, filter } from 'rxjs';
 
@@ -15,27 +21,33 @@ import { PremiumUpgradeDialogComponent } from '../premium-upgrade-dialog/premium
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+openSignupDialog() {
+throw new Error('Method not implemented.');
+}
   
   @ViewChild('menuTrigger') menuTrigger!: ElementRef;
   
-  // Estado do componente
-  currentUser: User | null = null;
-  isLoggedIn: boolean = false;
-  isPremium: boolean = false;
-  currentRoute: string = '';
+  // ✅ PROPRIEDADES DO USUÁRIO
+  isLoggedIn = false;
+  isPremium = false;
+  isFreeTrial = true;
+  currentUser: any = null;
+  
+  // ✅ PROPRIEDADES DA UI
+  isUserMenuOpen = false;
+  isMobileMenuOpen = false;
+  currentRoute = '';
+  logoError = false;
+  isDarkTheme = false;
+  
+  // ✅ NOTIFICAÇÕES E TENTATIVAS
+  notificationCount = 0;
+  remainingAttempts = 3;
+  showDashboardForGuests = true; // Dashboard disponível para guests
   
   // Controle de subscriptions
   private destroy$ = new Subject<void>();
   
-  // Menu mobile
-  isMobileMenuOpen: boolean = false;
-  
-  // Menu dropdown do usuário
-  isUserMenuOpen: boolean = false;
-  
-  // Notificações (placeholder para futuras features)
-  notificationCount: number = 0;
-
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -44,6 +56,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    console.log('🦉 SOWLFY Header inicializado');
+    
     this.subscribeToAuthChanges();
     this.subscribeToRouteChanges();
     this.initializeNotifications();
@@ -99,10 +113,39 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // ===============================================
 
   openLoginDialog(): void {
-    // ✅ NAVEGAR DIRETAMENTE PARA A PÁGINA DE LOGIN
-    this.router.navigate(['/login']);
-    this.closeMobileMenu();
-    this.closeUserMenu();
+    console.log('🔐 Abrindo modal de login...');
+    // ✅ SIMULAR LOGIN PARA DESENVOLVIMENTO
+    this.simulateLogin();
+  }
+
+  // Simula um login rápido para desenvolvimento/local
+  private simulateLogin(): void {
+    const mockUser: any = {
+      id: 'dev-user',
+      name: 'Developer',
+      email: 'dev@example.com',
+      isPremium: false
+    };
+
+    this.currentUser = mockUser;
+    this.isLoggedIn = true;
+    this.isPremium = !!mockUser.isPremium;
+
+    try {
+      localStorage.setItem('currentUser', JSON.stringify(mockUser));
+      localStorage.setItem('isPremium', String(this.isPremium));
+    } catch (e) {
+      // Falha ao persistir, ignorar em dev
+    }
+
+    this.snackBar.open(`Bem-vindo, ${mockUser.name}! (modo dev)`, 'Fechar', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+
+    // Atualiza notificações locais com base no usuário simulado
+    this.updateNotifications(mockUser);
   }
 
   // ✅ MANTER O MÉTODO PARA COMPATIBILIDADE (CASO SEJA USADO EM OUTROS LUGARES)
@@ -132,22 +175,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logout(): void {
-    const userName = this.currentUser?.name || '';
+    console.log('🚪 Fazendo logout...');
     
-    this.authService.logout();
+    const confirmLogout = confirm('🚪 Tem certeza que deseja sair?');
     
-    this.snackBar.open(
-      `Até logo, ${userName}! 👋`,
-      'Fechar',
-      {
-        duration: 3000,
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-        panelClass: ['success-snackbar']
-      }
-    );
-
-    this.closeUserMenu();
+    if (confirmLogout) {
+      // ✅ LIMPAR DADOS DO USUÁRIO
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('isPremium');
+      
+      this.isLoggedIn = false;
+      this.isPremium = false;
+      this.currentUser = null;
+      
+      this.closeMenus();
+      this.router.navigate(['/']);
+      
+      alert('👋 Logout realizado com sucesso!\n\nVolte sempre ao SOWLFY!');
+    }
   }
 
   private showWelcomeMessage(user: User): void {
@@ -168,178 +213,207 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   // ===============================================
-  // 💎 PREMIUM
-  // ===============================================
-
-  openPremiumDialog(): void {
-    const dialogRef = this.dialog.open(PremiumUpgradeDialogComponent, {
-      width: '500px',
-      maxWidth: '95vw',
-      data: {
-        context: {
-          url: this.currentRoute,
-          feature: 'Upgrade Premium',
-          reason: 'header_upgrade_click',
-          timestamp: new Date().toISOString()
+    // 💎 PREMIUM
+    // ===============================================
+  
+    openPremiumDialog(): void {
+      console.log('💎 Abrindo modal premium...');
+      
+      const confirmUpgrade = confirm(
+        '👑 Upgrade para SOWLFY Pro?\n\n' +
+        '✅ Tentativas ilimitadas\n' +
+        '✅ 2.500+ questões\n' +
+        '✅ Relatórios detalhados\n' +
+        '✅ Quiz inteligente\n\n' +
+        'Apenas R$ 39,90/mês'
+      );
+      
+      if (confirmUpgrade) {
+        // ✅ SIMULAR UPGRADE
+        this.isPremium = true;
+        this.isFreeTrial = false;
+        localStorage.setItem('isPremium', 'true');
+        
+        alert('🎉 SOWLFY Pro ativado!\n\nAgora você tem acesso total à plataforma!');
+        this.checkUserStatus();
+        this.closeMenus();
+      }
+    }
+  
+    // Atualiza o estado do usuário no componente (corrige referência faltante)
+    private checkUserStatus(): void {
+      // Tenta recuperar usuário salvo localmente
+      const storedUser = localStorage.getItem('currentUser');
+      if (storedUser) {
+        try {
+          this.currentUser = JSON.parse(storedUser);
+        } catch {
+          this.currentUser = null;
         }
       }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === 'upgrade') {
-        this.navigateToUpgrade();
-      }
-    });
-
-    this.closeUserMenu();
-  }
-
-  // ===============================================
+  
+      // Atualiza flags baseadas no storage e no usuário atual
+      const storedPremium = localStorage.getItem('isPremium');
+      this.isPremium = storedPremium === 'true' || !!this.currentUser?.isPremium;
+      this.isFreeTrial = !this.isPremium;
+  
+      // Atualiza notificações ou outras informações dependentes do usuário
+      this.updateNotifications(this.currentUser);
+    }
+    
+    // ===============================================
   // 🧭 NAVEGAÇÃO
   // ===============================================
 
   navigateToHome(): void {
+    console.log('🏠 Navegando para home...');
     this.router.navigate(['/']);
-    this.closeMobileMenu();
-    this.closeUserMenu();
+    this.closeMenus();
   }
-
+  
   navigateToDashboard(): void {
-    if (this.isLoggedIn) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.openLoginDialog();
-    }
-    this.closeMobileMenu();
-    this.closeUserMenu();
+    console.log('📊 Navegando para dashboard...');
+    this.router.navigate(['/dashboard']);
+    this.closeMenus();
   }
-
-  navigateToProfile(): void {
-    if (this.isLoggedIn) {
-      this.router.navigate(['/profile']);
-    } else {
-      this.openLoginDialog();
-    }
-    this.closeMobileMenu();
-    this.closeUserMenu();
-  }
-
+  
   navigateToProgress(): void {
-    if (this.isLoggedIn) {
-      this.router.navigate(['/progress']);
-    } else {
-      this.openLoginDialog();
-    }
-    this.closeMobileMenu();
-    this.closeUserMenu();
+    console.log('📈 Navegando para progresso...');
+    this.router.navigate(['/progress']);
+    this.closeMenus();
   }
-
+  
   navigateToFavorites(): void {
-    if (this.isLoggedIn) {
-      this.router.navigate(['/favorites']);
-    } else {
-      this.openLoginDialog();
-    }
-    this.closeMobileMenu();
-    this.closeUserMenu();
+    console.log('❤️ Navegando para favoritos...');
+    this.router.navigate(['/favorites']);
+    this.closeMenus();
   }
-
-  navigateToUpgrade(): void {
-    this.router.navigate(['/upgrade']);
-    this.closeMobileMenu();
-    this.closeUserMenu();
+  
+  navigateToProfile(): void {
+    console.log('👤 Navegando para perfil...');
+    this.router.navigate(['/profile']);
+    this.closeMenus();
   }
-
+  
   navigateToSettings(): void {
-    if (this.isLoggedIn) {
-      this.router.navigate(['/settings']);
-    } else {
-      this.openLoginDialog();
+    console.log('⚙️ Navegando para configurações...');
+    this.router.navigate(['/settings']);
+    this.closeMenus();
+  }
+  
+  // ===============================================
+  // 🔧 MÉTODOS DE UI
+  // ===============================================
+  
+  isCurrentRoute(route: string): boolean {
+    if (route === '/') {
+      return this.currentRoute === '/' || this.currentRoute === '';
     }
-    this.closeMobileMenu();
-    this.closeUserMenu();
+    return this.currentRoute.startsWith(route);
   }
-
-  // ===============================================
-  // 📱 MOBILE MENU
-  // ===============================================
-
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  
+  isMobile(): boolean {
+    return window.innerWidth <= 768;
   }
-
-  closeMobileMenu(): void {
-    this.isMobileMenuOpen = false;
-  }
-
-  // ===============================================
-  // 👤 CONTROLE DO MENU DO USUÁRIO
-  // ===============================================
-
+  
   toggleUserMenu(): void {
     this.isUserMenuOpen = !this.isUserMenuOpen;
+    if (this.isUserMenuOpen) {
+      this.isMobileMenuOpen = false;
+    }
   }
-
+  
   closeUserMenu(): void {
     this.isUserMenuOpen = false;
   }
-
+  
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    if (this.isMobileMenuOpen) {
+      this.isUserMenuOpen = false;
+    }
+  }
+  
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
+  
+  private closeMenus(): void {
+    this.isUserMenuOpen = false;
+    this.isMobileMenuOpen = false;
+  }
+  
   // ===============================================
-  // 🎯 UTILITÁRIOS
+  // 👤 MÉTODOS DO USUÁRIO
   // ===============================================
-
+  
   getUserInitials(): string {
     if (!this.currentUser?.name) return 'U';
     
     const names = this.currentUser.name.split(' ');
     if (names.length >= 2) {
-      return `${names[0][0]}${names[names.length - 1][0]}`.toUpperCase();
+      return (names[0][0] + names[1][0]).toUpperCase();
     }
-    return this.currentUser.name.substring(0, 2).toUpperCase();
+    return names[0][0].toUpperCase();
   }
-
+  
   getUserLevel(): number {
-    return this.currentUser?.stats?.level || 1;
+    // ✅ CALCULAR NÍVEL BASEADO EM PROGRESSO
+    const totalAnswered = parseInt(localStorage.getItem('totalAnswered') || '0');
+    return Math.floor(totalAnswered / 50) + 1;
   }
-
+  
   getUserStreak(): number {
-    return this.currentUser?.stats?.streak || 0;
+    // ✅ STREAK DE DIAS CONSECUTIVOS
+    return parseInt(localStorage.getItem('currentStreak') || '0');
   }
-
-  isCurrentRoute(route: string): boolean {
-    return this.currentRoute === route || this.currentRoute.startsWith(route + '/');
-  }
-
-  isMobile(): boolean {
-    if (typeof window === 'undefined') return false;
-    return window.innerWidth < 768;
-  }
-
+  
   // ===============================================
-  // 🔔 NOTIFICAÇÕES (PLACEHOLDER)
+  // 🔔 OUTROS MÉTODOS
   // ===============================================
-
+  
   openNotifications(): void {
-    this.snackBar.open(
-      'Sistema de notificações em breve! 🔔',
-      'Ok',
-      { duration: 2000 }
-    );
-    
-    // Reset contador
+    console.log('🔔 Abrindo notificações...');
+    alert('🔔 Notificações\n\n📚 2 novas questões adicionadas\n🎯 Meta semanal: 80% concluída');
     this.notificationCount = 0;
   }
-
-  // ===============================================
-  // 🎨 THEME (PLACEHOLDER PARA FUTURO)
-  // ===============================================
-
+  
   toggleTheme(): void {
-    // Placeholder para toggle de tema
-    this.snackBar.open(
-      'Theme toggle em breve! 🌙',
-      'Ok',
-      { duration: 2000 }
-    );
+    console.log('🎨 Alternando tema...');
+    this.isDarkTheme = !this.isDarkTheme;
+    
+    if (this.isDarkTheme) {
+      document.body.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      localStorage.setItem('theme', 'light');
+    }
+    
+    this.closeMenus();
+  }
+  
+  onLogoError(event: any): void {
+    console.warn('⚠️ Erro ao carregar logo, usando fallback');
+    this.logoError = true;
+  }
+  
+  // ===============================================
+  // 📱 RESPONSIVE HANDLERS
+  // ===============================================
+  
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    if (!this.isMobile()) {
+      this.isMobileMenuOpen = false;
+    }
+  }
+  
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: any): void {
+    // ✅ FECHAR MENUS AO CLICAR FORA
+    if (!event.target.closest('.user-section') && !event.target.closest('.mobile-nav-overlay')) {
+      this.closeMenus();
+    }
   }
 }

@@ -72,7 +72,7 @@ const routes: Routes = [
   },
 
   { 
-    path: 'area/:name', 
+    path: 'area/:id', 
     component: AreaComponent, // ✅ COMPONENT TRADICIONAL
     canActivate: [AuthGuard]
   },
