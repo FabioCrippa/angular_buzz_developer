@@ -7,7 +7,7 @@
         <path d="M12 2L2 9l10 13 10-13-10-7z" fill="#ffd700" stroke="#bfa100" stroke-width="1.5"/>
       </svg>
     </div>
-    <button class="close-button" (click)="onClose()" aria-label="Fechar">
+    <button class="close-button" (click)="close()" aria-label="Fechar">
       <!-- Close SVG -->
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
         <path d="M18 6L6 18" stroke="#667eea" stroke-width="2" stroke-linecap="round"/>
@@ -18,7 +18,7 @@
 
   <!-- Title -->
   <div class="dialog-title">
-    <h2>Desbloqueie o {{ featureName }}</h2>
+    <h2>Desbloqueie este recurso</h2>
     <p class="subtitle">
       Tenha acesso ilimitado e recursos exclusivos para turbinar seus estudos!
     </p>
@@ -40,7 +40,7 @@
       *ngIf="isLoggedIn"
       type="button"
       class="upgrade-button"
-      (click)="onUpgrade(); trackEvent('upgrade_clicked')"
+      (click)="onTryFree()"
     >
       <!-- Diamond SVG -->
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -52,7 +52,7 @@
       *ngIf="isLoggedIn"
       type="button"
       class="free-button"
-      (click)="onTryFree(); trackEvent('continue_free')"
+      (click)="onTryFree()"
     >
       Continuar Grátis
     </button>
@@ -60,7 +60,7 @@
       *ngIf="!isLoggedIn"
       type="button"
       class="login-button"
-      (click)="onLogin(); trackEvent('login_clicked')"
+      (click)="onLogin()"
     >
       Fazer Login
     </button>
@@ -68,7 +68,7 @@
       *ngIf="!isLoggedIn"
       type="button"
       class="close-button-text"
-      (click)="onClose(); trackEvent('dialog_closed')"
+      (click)="close()"
     >
       Fechar
     </button>

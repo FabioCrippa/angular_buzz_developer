@@ -1,7 +1,14 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+// ===============================================
+// 💎 PREMIUM-UPGRADE-DIALOG - VERSÃO MELHORADA
+// ===============================================
+
+// filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\src\app\shared\components\premium-upgrade-dialog\premium-upgrade-dialog.component.ts
+
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { AuthService, User } from '../../../core/services/auth.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth.service';
+import { Subject, takeUntil } from 'rxjs';
 
 export interface PremiumDialogData {
   context?: {
@@ -17,81 +24,126 @@ export interface PremiumDialogData {
   templateUrl: './premium-upgrade-dialog.component.html',
   styleUrls: ['./premium-upgrade-dialog.component.css']
 })
-export class PremiumUpgradeDialogComponent implements OnInit {
+export class PremiumUpgradeDialogComponent implements OnInit, OnDestroy {
+onLogin() {
+throw new Error('Method not implemented.');
+}
+onTryFree() {
+throw new Error('Method not implemented.');
+}
   
-  featureName: string = 'Funcionalidade Premium';
-  userName: string = '';
-  isLoggedIn: boolean = false;
+  // ✅ PROPRIEDADES
+  userName = '';
+  isLoggedIn = false;
+  isPremium = false;
   
+  // ✅ CONTROLE DE SUBSCRIPTIONS
+  private destroy$ = new Subject<void>();
+  
+  // ✅ BENEFÍCIOS PREMIUM
   premiumBenefits = [
     {
-      icon: 'analytics',
+      icon: '🚀',
+      title: 'Quizzes Ilimitados',
+      description: 'Pratique quanto quiser, sem restrições'
+    },
+    {
+      icon: '📊',
       title: 'Relatórios Avançados',
       description: 'Análises detalhadas do seu progresso'
     },
     {
-      icon: 'quiz',
-      title: 'Quiz Ilimitados',
-      description: 'Acesso a todos os níveis e categorias'
+      icon: '🎯',
+      title: 'Quiz Inteligente',
+      description: 'IA personalizada para seu aprendizado'
     },
     {
-      icon: 'trending_up',
-      title: 'Estatísticas Completas',
-      description: 'Acompanhe cada detalhe da sua evolução'
-    },
-    {
-      icon: 'bookmark',
+      icon: '⭐',
       title: 'Favoritos Ilimitados',
-      description: 'Salve quantas questões quiser'
+      description: 'Salve todas as questões importantes'
     },
+    {
+      icon: '📈',
+      title: 'Estatísticas Completas',
+      description: 'Métricas avançadas de desempenho'
+    },
+    {
+      icon: '🎮',
+      title: 'Recursos Exclusivos',
+      description: 'Acesso antecipado a novas funcionalidades'
+    }
   ];
 
   constructor(
-    private dialogRef: MatDialogRef<PremiumUpgradeDialogComponent>,
     private authService: AuthService,
     private router: Router,
-    @Inject(MAT_DIALOG_DATA) public data: PremiumDialogData
+    @Inject(MAT_DIALOG_DATA) public data: PremiumDialogData,
+    private dialogRef: MatDialogRef<PremiumUpgradeDialogComponent>
   ) {}
 
   ngOnInit(): void {
-    this.initializeComponent();
+    console.log('💎 Premium Dialog inicializado com contexto:', this.data?.context);
+    
+    // ✅ CORRIGIDO: SUBSCRIBER CORRETAMENTE AO OBSERVABLE
+    this.authService.currentUser$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(user => {
+        this.userName = user?.name || '';
+        this.isLoggedIn = !!user;
+        this.isPremium = user?.isPremium || false;
+        
+        console.log('👤 Dados do usuário carregados:', {
+          userName: this.userName,
+          isLoggedIn: this.isLoggedIn,
+          isPremium: this.isPremium
+        });
+      });
+    
+    this.loadAnalytics();
   }
 
-  private initializeComponent(): void {
-    // Verificar estado do usuário
-    const user = this.authService.getCurrentUser();
-    this.isLoggedIn = !!user;
-    this.userName = user?.name || '';
-    
-    // Definir nome da funcionalidade baseado no contexto
-    if (this.data?.context?.feature) {
-      this.featureName = this.data.context.feature;
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  // ✅ RESTO DOS MÉTODOS PERMANECEM IGUAIS...
+  
+  private loadAnalytics(): void {
+    // Track evento de abertura do dialog
+    try {
+      const analytics = {
+        event: 'premium_dialog_opened',
+        timestamp: new Date().toISOString(),
+        context: this.data?.context || {},
+        user: this.userName || 'anonymous'
+      };
+      
+      console.log('📊 Analytics Premium Dialog:', analytics);
+      // TODO: Enviar para Google Analytics ou seu sistema de analytics
+    } catch (error) {
+      console.warn('⚠️ Erro ao carregar analytics:', error);
     }
   }
 
-  onUpgrade(): void {
+  selectPlan(): void {
+    console.log('💳 Usuário selecionou upgrade premium');
+    
+    if (!this.isLoggedIn) {
+      this.dialogRef.close('login');
+      return;
+    }
+    
     this.dialogRef.close('upgrade');
   }
 
-  onLogin(): void {
-    this.dialogRef.close('login');
-  }
-
-  onClose(): void {
-    this.dialogRef.close('cancel');
-  }
-
-  onTryFree(): void {
+  continueWithFree(): void {
+    console.log('🆓 Usuário escolheu continuar com plano gratuito');
     this.dialogRef.close('free');
   }
 
-  // Método para analytics/tracking
-  trackEvent(action: string): void {
-    console.log('Premium Dialog Event:', {
-      action,
-      feature: this.featureName,
-      user: this.userName,
-      timestamp: new Date().toISOString()
-    });
+  close(): void {
+    console.log('❌ Dialog fechado sem ação');
+    this.dialogRef.close('cancel');
   }
 }

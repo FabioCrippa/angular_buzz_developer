@@ -10,16 +10,16 @@
   <!-- =============================================== -->
   <div class="brand-section" (click)="navigateToHome()">
     <div class="logo-container">
-      <!-- ✅ LOGO PERSONALIZADO DO SOWLFY COM CAMINHO CORRETO -->
+      <!-- ✅ ÍCONE PERSONALIZADO DO SOWLFY -->
       <img 
-        src="assets/img/logo_sowlfy1.png" 
-        alt="SOWLFY Logo" 
+        src="assets/img/icon_sowlfy.png" 
+        alt="SOWLFY Icon" 
         class="brand-logo"
         (error)="onLogoError($event)"
         *ngIf="!logoError"
       >
       
-      <!-- ✅ FALLBACK CASO O LOGO NÃO CARREGUE -->
+      <!-- ✅ FALLBACK CASO O ÍCONE NÃO CARREGUE -->
       <div class="logo-fallback" *ngIf="logoError">
         🦉
       </div>

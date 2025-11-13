@@ -1,0 +1,14 @@
+// ===============================================
+// 📋 ESLINTIGNORE
+// ===============================================
+
+// filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\.eslintignore
+
+// node_modules/
+// dist/
+// functions/lib/
+// functions/node_modules/
+// *.js
+// *.d.ts
+// coverage/
+// .angular/

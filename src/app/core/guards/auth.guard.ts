@@ -1,74 +1,53 @@
+// ===============================================
+// 🛡️ AUTH.GUARD.TS - CORREÇÃO
+// ===============================================
+
+// filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\src\app\core\guards\auth.guard.ts
+
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable, map, take } from 'rxjs';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate, CanActivateChild {
-
+export class AuthGuard implements CanActivate {
+  
   constructor(
     private authService: AuthService,
-    private router: Router,
-    private snackBar: MatSnackBar
+    private router: Router
   ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.checkAuth(state.url);
-  }
-
-  canActivateChild(
-    childRoute: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean> | Promise<boolean> | boolean {
+    
     return this.checkAuth(state.url);
   }
 
   private checkAuth(url: string): Observable<boolean> {
-    return this.authService.currentUser$.pipe(
-      take(1),
-      map(user => {
-        if (user && this.authService.isAuthenticated()) {
-          // Usuário autenticado - permitir acesso
-          this.authService.refreshSession(); // Atualizar sessão
-          return true;
-        } else {
-          // Usuário não autenticado - redirecionar para login
-          this.handleUnauthorizedAccess(url);
-          return false;
+    if (this.authService.isAuthenticated()) {
+      // ✅ CORRIGIDO: Usar refreshUserData() em vez de refreshSession()
+      this.authService.refreshUserData().subscribe({
+        next: () => console.log('✅ Dados do usuário atualizados'),
+        error: (error) => {
+          console.warn('⚠️ Erro ao atualizar dados:', error);
+          // Se der erro, não bloquear o acesso, apenas avisar
         }
-      })
-    );
-  }
-
-  private handleUnauthorizedAccess(attemptedUrl: string): void {
-    // Salvar URL que o usuário tentou acessar
-    if (attemptedUrl && attemptedUrl !== '/') {
-      localStorage.setItem('redirectAfterLogin', attemptedUrl);
+      });
+      
+      return of(true);
     }
 
-    // Mostrar mensagem
-    this.snackBar.open(
-      'Faça login para acessar esta página',
-      'Login',
-      {
-        duration: 5000,
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-        panelClass: ['warning-snackbar']
-      }
-    ).onAction().subscribe(() => {
-      this.router.navigate(['/login']);
+    // ✅ USUÁRIO NÃO AUTENTICADO
+    console.log('🔐 Usuário não autenticado, redirecionando para home');
+    this.router.navigate(['/'], {
+      queryParams: { returnUrl: url }
     });
-
-    // Redirecionar para login
-    setTimeout(() => {
-      this.router.navigate(['/login']);
-    }, 2000);
+    
+    return of(false);
   }
 }

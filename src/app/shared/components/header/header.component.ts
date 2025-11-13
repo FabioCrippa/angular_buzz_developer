@@ -14,6 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginComponent } from '../login/login.component';
 import { PremiumUpgradeDialogComponent } from '../premium-upgrade-dialog/premium-upgrade-dialog.component';
+import { PaymentService } from '../../../core/services/payment.service';
 
 @Component({
   selector: 'app-header',
@@ -21,9 +22,6 @@ import { PremiumUpgradeDialogComponent } from '../premium-upgrade-dialog/premium
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-openSignupDialog() {
-throw new Error('Method not implemented.');
-}
   
   @ViewChild('menuTrigger') menuTrigger!: ElementRef;
   
@@ -32,6 +30,12 @@ throw new Error('Method not implemented.');
   isPremium = false;
   isFreeTrial = true;
   currentUser: any = null;
+
+  // Getter for compatibility: existing code sometimes checks isAuthenticated
+  // Keep this in sync with isLoggedIn/currentUser so older checks keep working.
+  get isAuthenticated(): boolean {
+    return this.isLoggedIn || !!this.currentUser;
+  }
   
   // ✅ PROPRIEDADES DA UI
   isUserMenuOpen = false;
@@ -52,7 +56,8 @@ throw new Error('Method not implemented.');
     private authService: AuthService,
     private router: Router,
     private dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private paymentService: PaymentService // ← ADICIONAR ESTA LINHA
   ) {}
 
   ngOnInit(): void {
@@ -113,39 +118,24 @@ throw new Error('Method not implemented.');
   // ===============================================
 
   openLoginDialog(): void {
-    console.log('🔐 Abrindo modal de login...');
-    // ✅ SIMULAR LOGIN PARA DESENVOLVIMENTO
-    this.simulateLogin();
-  }
-
-  // Simula um login rápido para desenvolvimento/local
-  private simulateLogin(): void {
-    const mockUser: any = {
-      id: 'dev-user',
-      name: 'Developer',
-      email: 'dev@example.com',
-      isPremium: false
-    };
-
-    this.currentUser = mockUser;
-    this.isLoggedIn = true;
-    this.isPremium = !!mockUser.isPremium;
-
-    try {
-      localStorage.setItem('currentUser', JSON.stringify(mockUser));
-      localStorage.setItem('isPremium', String(this.isPremium));
-    } catch (e) {
-      // Falha ao persistir, ignorar em dev
-    }
-
-    this.snackBar.open(`Bem-vindo, ${mockUser.name}! (modo dev)`, 'Fechar', {
-      duration: 3000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+    console.log('🔐 Abrindo sistema de login...');
+    
+    // ✅ USAR MOCK LOGIN ENQUANTO NÃO TEM API
+    this.authService.mockLogin('usuario@sowlfy.com').subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.showWelcomeMessage(response.user);
+        }
+      },
+      error: (error) => {
+        console.error('❌ Erro no login:', error);
+        this.snackBar.open(
+          'Erro no login. Tente novamente.',
+          'Fechar',
+          { duration: 3000 }
+        );
+      }
     });
-
-    // Atualiza notificações locais com base no usuário simulado
-    this.updateNotifications(mockUser);
   }
 
   // ✅ MANTER O MÉTODO PARA COMPATIBILIDADE (CASO SEJA USADO EM OUTROS LUGARES)
@@ -174,6 +164,247 @@ throw new Error('Method not implemented.');
     });
   }
 
+  // 📝 ADICIONAR NO HEADER.COMPONENT.TS
+  // ===============================================
+
+  openSignupDialog(): void {
+    console.log('📝 Iniciando cadastro SOWLFY...');
+    
+    // ✅ PROMPT PERSONALIZADO E AMIGÁVEL
+    const email = prompt(
+      '🦉 Bem-vindo ao SOWLFY!\n\n' +
+      '📧 Digite seu email para criar sua conta gratuita:\n' +
+      '• Acesso imediato ao dashboard\n' +
+      '• 3 tentativas grátis por dia\n' +
+      '• Progresso salvo automaticamente\n' +
+      '• Upgrade disponível a qualquer momento'
+    );
+    
+    if (email && this.isValidEmail(email)) {
+      // ✅ FEEDBACK VISUAL IMEDIATO
+      this.snackBar.open(
+        '⚡ Criando sua conta SOWLFY...',
+        '',
+        { 
+          duration: 2000,
+          panelClass: ['info-snackbar'],
+          horizontalPosition: 'center',
+          verticalPosition: 'top'
+        }
+      );
+      
+      // ✅ CRIAR CONTA COM MOCK LOGIN
+      this.authService.mockLogin(email).subscribe({
+        next: (response) => {
+          if (response.success) {
+            // ✅ PERSONALIZAR DADOS DO USUÁRIO
+            const userName = email.split('@')[0];
+            const capitalizedName = userName.charAt(0).toUpperCase() + userName.slice(1);
+            response.user.name = capitalizedName;
+            response.user.email = email.toLowerCase();
+            
+            this.showWelcomeMessage(response.user);
+            
+            // ✅ MENSAGEM DE SUCESSO COM AÇÃO
+            const snackBarRef = this.snackBar.open(
+              `🎉 Olá, ${capitalizedName}! Conta criada com sucesso!`,
+              'Ver Dashboard',
+              { 
+                duration: 6000,
+                panelClass: ['success-snackbar'],
+                horizontalPosition: 'center',
+                verticalPosition: 'top'
+              }
+            );
+            
+            // ✅ AÇÃO DO BOTÃO "VER DASHBOARD"
+            snackBarRef.onAction().subscribe(() => {
+              this.router.navigate(['/dashboard']);
+              this.closeMenus();
+            });
+            
+            // ✅ AUTO REDIRECT APÓS 3 SEGUNDOS
+            setTimeout(() => {
+              this.router.navigate(['/dashboard']);
+              this.closeMenus();
+            }, 3000);
+            
+            // ✅ SALVAR DADOS EXTRAS DE CADASTRO
+            try {
+              localStorage.setItem('sowlfy_signup_data', JSON.stringify({
+                signupDate: new Date().toISOString(),
+                email: email.toLowerCase(),
+                source: 'header_signup',
+                welcomeShown: true
+              }));
+            } catch (error) {
+              console.warn('⚠️ Erro ao salvar dados de cadastro:', error);
+            }
+          }
+        },
+        error: (error) => {
+          console.error('❌ Erro no cadastro:', error);
+          this.snackBar.open(
+            'Ops! Erro no cadastro. Tente novamente em alguns segundos.',
+            'Fechar',
+            { 
+              duration: 4000,
+              panelClass: ['error-snackbar'],
+              horizontalPosition: 'center',
+              verticalPosition: 'top'
+            }
+          );
+        }
+      });
+      
+    } else if (email) {
+      // ✅ FEEDBACK DE EMAIL INVÁLIDO
+      this.snackBar.open(
+        '📧 Email inválido. Digite um email válido como: seu@email.com',
+        'OK',
+        { 
+          duration: 4000,
+          panelClass: ['warning-snackbar'],
+          horizontalPosition: 'center',
+          verticalPosition: 'top'
+        }
+      );
+    }
+    // ✅ Se cancelou (email = null), não faz nada
+  }
+
+  // ✅ MÉTODO AUXILIAR PARA VALIDAÇÃO (ADICIONAR APÓS openSignupDialog)
+  private isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email.trim());
+  }
+
+  // ✅ MÉTODO ALTERNATIVO USANDO MODAL (MAIS PROFISSIONAL)
+  openSignupModal(): void {
+    console.log('📝 Abrindo modal de cadastro profissional...');
+    
+    const dialogRef = this.dialog.open(LoginComponent, {
+      width: '450px',
+      maxWidth: '95vw',
+      maxHeight: '95vh',
+      panelClass: 'signup-dialog',
+      backdropClass: 'signup-backdrop',
+      disableClose: false,
+      autoFocus: true,
+      data: { 
+        mode: 'register',
+        title: 'Criar Conta SOWLFY',
+        subtitle: 'Comece sua jornada de aprendizado hoje!'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result?.success) {
+        this.showWelcomeMessage(result.user);
+        this.snackBar.open(
+          '🎉 Conta criada com sucesso! Bem-vindo ao SOWLFY!',
+          'Fechar',
+          { 
+            duration: 5000,
+            panelClass: ['success-snackbar']
+          }
+        );
+        
+        // ✅ REDIRECIONAR PARA ONBOARDING/DASHBOARD
+        setTimeout(() => {
+          this.router.navigate(['/dashboard']);
+          this.closeMenus();
+        }, 2000);
+      }
+    });
+  }
+
+  // ✅ VERSÃO AVANÇADA COM VALIDAÇÕES MÚLTIPLAS
+  openAdvancedSignup(): void {
+    console.log('📝 Cadastro avançado com validações...');
+    
+    // ✅ COLETAR DADOS BÁSICOS
+    const name = prompt('👤 Qual é seu nome completo?');
+    if (!name || name.trim().length < 2) {
+      alert('❌ Nome deve ter pelo menos 2 caracteres.');
+      return;
+    }
+    
+    const email = prompt('📧 Digite seu melhor email:');
+    if (!email || !this.isValidEmail(email)) {
+      alert('❌ Email inválido. Digite um email válido.');
+      return;
+    }
+    
+    const acceptTerms = confirm(
+      '📋 Termos de Uso SOWLFY\n\n' +
+      '✅ Aceito os termos de uso\n' +
+      '✅ Aceito receber emails educacionais\n' +
+      '✅ Confirmo que sou maior de idade\n\n' +
+      'Clique OK para aceitar e criar sua conta.'
+    );
+    
+    if (!acceptTerms) {
+      alert('❌ É necessário aceitar os termos para criar sua conta.');
+      return;
+    }
+    
+    // ✅ CRIAR CONTA COM DADOS COLETADOS
+    this.snackBar.open(
+      '⏳ Criando sua conta personalizada...',
+      '',
+      { duration: 3000 }
+    );
+    
+    // ✅ SIMULAR CADASTRO COM DADOS REAIS
+    setTimeout(() => {
+      const mockUserData = {
+        name: name.trim(),
+        email: email.toLowerCase().trim(),
+        acceptedTerms: true,
+        createdAt: new Date()
+      };
+      
+      // ✅ USAR MOCK LOGIN COM DADOS PERSONALIZADOS
+      this.authService.mockLogin(email).subscribe({
+        next: (response) => {
+          if (response.success) {
+            // ✅ PERSONALIZAR USUÁRIO COM DADOS COLETADOS
+            response.user.name = name.trim();
+            response.user.email = email.toLowerCase().trim();
+            
+            this.showWelcomeMessage(response.user);
+            this.snackBar.open(
+              `🎉 Olá, ${name}! Sua conta foi criada com sucesso!`,
+              'Fechar',
+              { 
+                duration: 6000,
+                panelClass: ['success-snackbar']
+              }
+            );
+            
+            // ✅ SALVAR DADOS EXTRAS NO LOCALSTORAGE
+            localStorage.setItem('userSignupData', JSON.stringify(mockUserData));
+            
+            // ✅ REDIRECIONAR PARA DASHBOARD
+            setTimeout(() => {
+              this.router.navigate(['/dashboard']);
+              this.closeMenus();
+            }, 3000);
+          }
+        },
+        error: (error) => {
+          console.error('❌ Erro no cadastro avançado:', error);
+          this.snackBar.open(
+            'Erro no cadastro. Tente novamente.',
+            'Fechar',
+            { duration: 3000 }
+          );
+        }
+      });
+    }, 1500);
+  }
+  
   logout(): void {
     console.log('🚪 Fazendo logout...');
     
@@ -195,21 +426,33 @@ throw new Error('Method not implemented.');
     }
   }
 
-  private showWelcomeMessage(user: User): void {
-    const message = user.isPremium 
-      ? `Bem-vindo de volta, ${user.name}! ✨ Premium ativo`
-      : `Olá, ${user.name}! 🎉`;
-      
-    this.snackBar.open(
-      message,
-      'Fechar',
-      {
-        duration: 4000,
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom',
-        panelClass: [user.isPremium ? 'premium-snackbar' : 'success-snackbar']
-      }
-    );
+  // ✅ MÉTODO MELHORADO showWelcomeMessage (ATUALIZAR SE EXISTIR)
+  private showWelcomeMessage(user: any): void {
+    const welcomeMessages = [
+      `🎉 Bem-vindo ao SOWLFY, ${user.name}!`,
+      `🚀 Ótimo ter você aqui, ${user.name}!`,
+      `🦉 Olá, ${user.name}! Pronto para aprender?`,
+      `✨ Sua jornada SOWLFY começou, ${user.name}!`,
+      `🎯 Vamos acelerar seus estudos, ${user.name}!`
+    ];
+    
+    const randomMessage = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
+    
+    console.log(randomMessage);
+    
+    // ✅ TOAST DE BOAS-VINDAS EXTRA
+    setTimeout(() => {
+      this.snackBar.open(
+        `👋 Dica: Acesse seu Dashboard para começar a praticar!`,
+        'Entendi',
+        { 
+          duration: 5000,
+          panelClass: ['info-snackbar'],
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom'
+        }
+      );
+    }, 4000);
   }
 
   // ===============================================
@@ -217,27 +460,39 @@ throw new Error('Method not implemented.');
     // ===============================================
   
     openPremiumDialog(): void {
-      console.log('💎 Abrindo modal premium...');
+      console.log('💎 Abrindo sistema de upgrade premium...');
       
-      const confirmUpgrade = confirm(
-        '👑 Upgrade para SOWLFY Pro?\n\n' +
-        '✅ Tentativas ilimitadas\n' +
-        '✅ 2.500+ questões\n' +
-        '✅ Relatórios detalhados\n' +
-        '✅ Quiz inteligente\n\n' +
-        'Apenas R$ 39,90/mês'
-      );
-      
-      if (confirmUpgrade) {
-        // ✅ SIMULAR UPGRADE
-        this.isPremium = true;
-        this.isFreeTrial = false;
-        localStorage.setItem('isPremium', 'true');
+      const dialogRef = this.dialog.open(PremiumUpgradeDialogComponent, {
+        width: '600px',
+        maxWidth: '95vw',
+        maxHeight: '95vh',
+        panelClass: 'premium-dialog',
+        backdropClass: 'premium-backdrop',
+        disableClose: false,
+        data: {
+          context: {
+            url: this.currentRoute,
+            feature: 'header_upgrade',
+            reason: 'Acesso premium solicitado via header',
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent
+          },
+          plans: this.paymentService.plans // ← PASSAR PLANOS REAIS
+        }
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('💎 Premium dialog closed with result:', result);
         
-        alert('🎉 SOWLFY Pro ativado!\n\nAgora você tem acesso total à plataforma!');
-        this.checkUserStatus();
-        this.closeMenus();
-      }
+        if (result === 'upgrade') {
+          this.handleUpgradeSelection();
+        } else if (result === 'login') {
+          this.openLoginDialog();
+        } else if (result?.planId) {
+          // Se selecionou plano específico
+          this.handleUpgradeSelection(result.planId);
+        }
+      });
     }
   
     // Atualiza o estado do usuário no componente (corrige referência faltante)
@@ -415,5 +670,93 @@ throw new Error('Method not implemented.');
     if (!event.target.closest('.user-section') && !event.target.closest('.mobile-nav-overlay')) {
       this.closeMenus();
     }
+  }
+  
+  // ✅ SUBSTITUIR O MÉTODO openPremiumDialog():
+  private handleUpgradeSelection(planId: string = 'sowlfy-pro-monthly'): void {
+    console.log(`💳 Iniciando upgrade Stripe para: ${planId}`);
+    
+    if (!this.isAuthenticated) {
+      this.snackBar.open(
+        '🔐 Faça login primeiro para fazer upgrade',
+        'Login',
+        { duration: 4000 }
+      ).onAction().subscribe(() => this.openLoginDialog());
+      return;
+    }
+
+    // ✅ VERIFICAR SE STRIPE ESTÁ PRONTO
+    if (!this.paymentService.isStripeReady()) {
+      this.snackBar.open(
+        '⏳ Carregando sistema de pagamento seguro...',
+        '',
+        { duration: 2000 }
+      );
+      
+      // Tentar novamente em 2 segundos
+      setTimeout(() => this.handleUpgradeSelection(planId), 2000);
+      return;
+    }
+
+    // ✅ MOSTRAR LOADING
+    this.snackBar.open(
+      '💳 Redirecionando para checkout seguro Stripe...',
+      '',
+      { duration: 3000, panelClass: ['info-snackbar'] }
+    );
+
+    // ✅ REDIRECIONAR PARA STRIPE CHECKOUT REAL
+    this.paymentService.redirectToCheckout(planId).subscribe({
+      next: () => {
+        console.log('✅ Redirecionando para Stripe Checkout...');
+        // Usuário será redirecionado para o Stripe
+      },
+      error: (error) => {
+        console.warn('⚠️ Stripe falhou, usando backup:', error);
+        
+        this.snackBar.open(
+          '⚠️ Problema no checkout. Usando modo de teste...',
+          'OK',
+          { duration: 3000, panelClass: ['warning-snackbar'] }
+        );
+        
+        // ✅ FALLBACK PARA MOCK SE STRIPE FALHAR
+        this.handleMockUpgrade(planId);
+      }
+    });
+  }
+
+  // ✅ MÉTODO DE BACKUP (CASO STRIPE FALHE):
+  private handleMockUpgrade(planId: string): void {
+    this.paymentService.mockUpgradeToPremium(planId).subscribe({
+      next: (success) => {
+        if (success) {
+          const plan = this.paymentService.getPlanById(planId);
+          this.snackBar.open(
+            `🎉 Upgrade para ${plan?.name} realizado! (modo teste)`,
+            'Ver Dashboard',
+            { duration: 6000, panelClass: ['success-snackbar'] }
+          ).onAction().subscribe(() => {
+            this.router.navigate(['/dashboard']);
+          });
+          
+          this.isPremium = true;
+          this.isFreeTrial = false;
+          
+          setTimeout(() => {
+            this.router.navigate(['/dashboard']);
+            this.closeMenus();
+          }, 3000);
+        }
+      },
+      error: (error) => {
+        console.error('❌ Erro no mock upgrade:', error);
+        this.snackBar.open(
+          'Erro no upgrade. Tente novamente.',
+          'Fechar',
+          { duration: 3000, panelClass: ['error-snackbar'] }
+        );
+      }
+    });
   }
 }

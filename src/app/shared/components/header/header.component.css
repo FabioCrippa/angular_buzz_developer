@@ -62,6 +62,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* ✅ FUNDO SUTIL PARA DESTACAR O ÍCONE */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 
 .brand-logo {
@@ -70,10 +80,12 @@
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease;
+  /* ✅ AJUSTE ESPECÍFICO PARA ÍCONE */
+  border-radius: 8px; /* Caso o ícone seja quadrado */
 }
 
 .brand-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(5deg); /* ✅ ANIMAÇÃO DIVERTIDA PARA ÍCONE */
 }
 
 .logo-fallback {
@@ -197,7 +209,7 @@
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 400;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -249,6 +261,7 @@
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
+  margin: 0 10px;
   background: linear-gradient(135deg, #ffd700, #ffb347);
   border: none;
   border-radius: 20px;
@@ -257,7 +270,7 @@
   font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
 }
 
 .upgrade-button:hover {
