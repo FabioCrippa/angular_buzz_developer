@@ -81,7 +81,7 @@ export class PaymentService {
     {
       id: 'sowlfy-pro-monthly',
       name: 'SOWLFY Pro',
-      price: 29.90,
+      price: 39.90, // ✅ CORRIGIDO DE 29.90 PARA 39.90
       currency: 'BRL',
       interval: 'month',
       intervalCount: 1,
