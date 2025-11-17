@@ -1739,3 +1739,141 @@ section {
     font-size: 0.8rem;
   }
 }
+
+/* =============================================== */
+/* 🎨 CSS REDES SOCIAIS SOWLFY */
+/* =============================================== */
+
+/* ✅ REDES SOCIAIS SECTION */
+.social-media {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .social-icon {
+    font-size: 1.2rem;
+  }
+  
+  .social-text {
+    font-weight: 500;
+  }
+}
+
+/* ✅ CORES ESPECÍFICAS DAS REDES */
+.social-link.facebook {
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #166fe5, #3b96e8);
+  }
+}
+
+.social-link.instagram {
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #d12959, #eb5534, #f9c441);
+  }
+}
+
+.social-link.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  
+  &:hover {
+    background: linear-gradient(135deg, #22c55e, #0f766e);
+  }
+}
+
+/* ✅ REDES SOCIAIS MOBILE (FOOTER BOTTOM) */
+.footer-social-mobile {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.social-label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.social-links-compact {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  &.facebook { background: #1877f2; }
+  &.instagram { background: #1877f2; }
+}
+
+/* ✅ DESKTOP: ESCONDER REDES COMPACTAS */
+@media (min-width: 769px) {
+  .footer-social-mobile {
+    display: none;
+  }
+}
+
+/* ✅ MOBILE: ESCONDER REDES GRANDES */
+@media (max-width: 768px) {
+  .social-media {
+    display: none;
+  }
+}

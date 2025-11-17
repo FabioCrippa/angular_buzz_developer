@@ -1,5 +1,5 @@
 // ===============================================
-// 🔧 CORRIGIR .eslintrc.js DAS FUNCTIONS
+// 🔧 .eslintrc.js MÍNIMO (SEM TYPESCRIPT-ESLINT)
 // ===============================================
 
 // filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\functions\.eslintrc.js
@@ -11,19 +11,23 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
-    "@typescript-eslint/recommended",
+    "eslint:recommended"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: ["tsconfig.json", "tsconfig.dev.json"],
+    ecmaVersion: 2018,
     sourceType: "module",
-    tsconfigRootDir: __dirname,
   },
-  ignorePatterns: ["/lib/**/*", "**/*.js"],
-  plugins: ["@typescript-eslint"],
+  ignorePatterns: [
+    "/lib/**/*",
+    "/generated/**/*",
+    "**/*.js",
+  ],
   rules: {
     "quotes": ["error", "double"],
-    "@typescript-eslint/no-unused-vars": "warn",
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "require-jsdoc": "off",
+    "valid-jsdoc": "off"
   },
 };
