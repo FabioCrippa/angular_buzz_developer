@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router'; // ✅ ADICIONAR IMPORT
 import { Title } from '@angular/platform-browser';
@@ -143,7 +143,6 @@ export class DashboardComponent implements OnInit {
         this.showSuccessMessage(`${this.areas.length} áreas carregadas com sucesso!`);
       },
       error: (error) => {
-        console.error('Erro ao carregar dados do dashboard:', error);
         this.hasError = true;
         this.errorMessage = 'Erro ao carregar dados do dashboard. Tente recarregar a página.';
         this.isLoading = false;
@@ -178,7 +177,6 @@ export class DashboardComponent implements OnInit {
     // ✅ NAVEGAÇÃO COM DELAY PARA UX
     setTimeout(() => {
       this.router.navigate(['/area', areaName]).catch(error => {
-        console.error('Erro na navegação:', error);
         this.showErrorMessage('Erro ao navegar para a área');
       });
     }, 500);
@@ -210,7 +208,6 @@ export class DashboardComponent implements OnInit {
     
     setTimeout(() => {
       this.router.navigate(['/quiz', 'random']).catch(error => {
-        console.error('Erro ao iniciar quiz:', error);
         this.showErrorMessage('Erro ao iniciar quiz aleatório');
       });
     }, 500);
@@ -235,7 +232,6 @@ export class DashboardComponent implements OnInit {
     
     setTimeout(() => {
       this.router.navigate(['/progress']).catch(error => {
-        console.error('Erro ao visualizar progresso:', error);
         this.showErrorMessage('Erro ao carregar progresso');
       });
     }, 500);
@@ -254,7 +250,6 @@ export class DashboardComponent implements OnInit {
     
     setTimeout(() => {
       this.router.navigate(['/favorites']).catch(error => {
-        console.error('Erro ao visualizar favoritos:', error);
         this.showErrorMessage('Erro ao carregar favoritos');
       });
     }, 500);
@@ -262,7 +257,6 @@ export class DashboardComponent implements OnInit {
 
   // ✅ RECARGA DE DADOS
   reloadData(): void {
-    console.log('🔄 Recarregando dados do dashboard...');
     this.isLoading = true;
     this.hasError = false;
     
@@ -276,7 +270,6 @@ export class DashboardComponent implements OnInit {
   // 🚀 NAVEGAÇÃO PARA UPGRADE
   // ===============================================
   navigateToUpgrade(): void {
-    console.log('💎 Navegando para upgrade premium...');
     
     // ✅ FEEDBACK VISUAL
     this.showSuccessMessage('Carregando planos premium...');

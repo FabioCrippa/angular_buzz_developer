@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -110,7 +110,6 @@ export class FavoritesComponent implements OnInit {
       this.showSuccessMessage('Favoritos carregados com sucesso!');
       
     } catch (error) {
-      console.error('Erro ao carregar favoritos:', error);
       this.hasError = true;
       this.errorMessage = 'Erro ao carregar questões favoritas';
       this.isLoading = false;
@@ -430,7 +429,6 @@ export class FavoritesComponent implements OnInit {
     this.showSuccessMessage('Abrindo questão...');
     
     // Em uma aplicação real, abriria modal ou navegaria para página da questão
-    console.log('Visualizando questão:', question);
   }
 
   navigateToDashboard(): void {
@@ -447,7 +445,6 @@ export class FavoritesComponent implements OnInit {
   }
 
   reloadData(): void {
-    console.log('🔄 Recarregando favoritos...');
     this.showSuccessMessage('Recarregando dados...');
     this.loadFavoritesData();
   }

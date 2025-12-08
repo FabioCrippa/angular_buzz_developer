@@ -1,0 +1,63 @@
+<!-- =============================================== -->
+<!-- ❌ PÁGINA DE FALHA DO PAGAMENTO -->
+<!-- =============================================== -->
+
+<div class="payment-container failure">
+  
+  <div class="failure-section">
+    <div class="failure-icon">
+      <mat-icon>cancel</mat-icon>
+    </div>
+    
+    <h1>😔 Pagamento Não Aprovado</h1>
+    <p class="subtitle">Não foi possível processar seu pagamento</p>
+    
+    <div class="info-box warning">
+      <mat-icon>info</mat-icon>
+      <div>
+        <p><strong>Motivo:</strong></p>
+        <p>{{ reason || 'Pagamento recusado ou cancelado' }}</p>
+      </div>
+    </div>
+
+    <div class="reasons-section">
+      <h3>Possíveis causas:</h3>
+      <ul>
+        <li>Saldo insuficiente</li>
+        <li>Cartão vencido ou bloqueado</li>
+        <li>Dados incorretos</li>
+        <li>Cancelamento manual</li>
+        <li>Limite de crédito excedido</li>
+      </ul>
+    </div>
+
+    <div class="info-box info">
+      <mat-icon>lightbulb</mat-icon>
+      <div>
+        <p><strong>O que fazer?</strong></p>
+        <p>Verifique os dados do seu cartão, entre em contato com seu banco ou tente outro método de pagamento.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="tryAgain()">
+        <mat-icon>replay</mat-icon>
+        Tentar Novamente
+      </button>
+      <button mat-stroked-button (click)="contactSupport()">
+        <mat-icon>support_agent</mat-icon>
+        Falar com Suporte
+      </button>
+      <button mat-button (click)="goHome()">
+        <mat-icon>home</mat-icon>
+        Voltar ao Início
+      </button>
+    </div>
+
+    <p class="help-text">
+      <mat-icon>help_outline</mat-icon>
+      Nenhum valor foi cobrado da sua conta.
+    </p>
+  </div>
+
+</div>

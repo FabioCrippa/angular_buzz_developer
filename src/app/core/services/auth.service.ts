@@ -1,4 +1,4 @@
-// ===============================================
+﻿// ===============================================
 // 🔐 AUTH.SERVICE.TS - VERSÃO PRODUÇÃO COMPLETA
 // ===============================================
 
@@ -75,10 +75,9 @@ export class AuthService {
   // 🔧 CONFIGURAÇÃO
   // ===============================================
   
-  // ✅ CONFIGURAR PARA SEU BACKEND
-  private readonly API_URL = 'https://api.sowlfy.com/v1'; // ← PRODUÇÃO
-  // private readonly API_URL = 'http://localhost:3000/api/v1'; // ← DESENVOLVIMENTO
-  // private readonly API_URL = 'https://jsonplaceholder.typicode.com'; // ← MOCK TESTE
+  // ✅ CONFIGURAR PARA SEU BACKEND REAL
+  private readonly API_URL = 'http://localhost:3000/api'; // ← DESENVOLVIMENTO
+  // private readonly API_URL = 'https://api.sowlfy.com/v1'; // ← PRODUÇÃO
   
   private readonly STORAGE_KEYS = {
     USER: 'sowlfy_user',
@@ -102,7 +101,6 @@ export class AuthService {
   public error$ = this.errorSubject.asObservable();
   
   constructor(private http: HttpClient) {
-    console.log('🔐 AuthService inicializado');
     this.initializeAuth();
   }
 
@@ -116,7 +114,6 @@ export class AuthService {
       this.setupTokenRefresh();
       this.validateStoredToken();
     } catch (error) {
-      console.warn('⚠️ Erro na inicialização do auth:', error);
       this.clearAllUserData();
     }
   }
@@ -130,13 +127,10 @@ export class AuthService {
         const user = JSON.parse(storedUser);
         if (this.isTokenValid(token)) {
           this.currentUserSubject.next(user);
-          console.log('✅ Usuário restaurado do storage');
         } else {
-          console.log('🔐 Token expirado, limpando dados');
           this.clearAllUserData();
         }
       } catch (error) {
-        console.error('❌ Erro ao parsear usuário do storage:', error);
         this.clearAllUserData();
       }
     }
@@ -157,11 +151,11 @@ export class AuthService {
 
   login(email: string, password: string, rememberMe: boolean = true): Observable<LoginResponse> {
     if (!email || !password) {
-      return throwError(() => new Error('Email e senha são obrigatórios'));
+      return throwError(() => ({ code: 'INVALID_DATA', message: 'Email e senha são obrigatórios' }));
     }
 
     if (!this.isValidEmail(email)) {
-      return throwError(() => new Error('Email inválido'));
+      return throwError(() => ({ code: 'INVALID_DATA', message: 'Email inválido' }));
     }
 
     this.isLoadingSubject.next(true);
@@ -174,24 +168,39 @@ export class AuthService {
       deviceInfo: this.getDeviceInfo()
     };
 
-    return this.http.post<LoginResponse>(`${this.API_URL}/auth/login`, payload)
-      .pipe(
-        timeout(10000), // 10s timeout
-        retry(1), // 1 retry em caso de erro de rede
-        tap(response => {
-          if (response.success && response.user && response.token) {
-            this.setCurrentUser(response.user, response.token, response.refreshToken);
-            console.log('✅ Login realizado com sucesso:', response.user.email);
-          }
-        }),
-        catchError(error => this.handleAuthError('LOGIN', error)),
-        tap(() => this.isLoadingSubject.next(false))
-      );
+    return this.http.post<LoginResponse>(`${this.API_URL}/auth/login`, payload, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      })
+    }).pipe(
+      timeout(10000), // 10s timeout
+      retry(1), // 1 retry em caso de erro de rede
+      tap(response => {
+        if (response.success && response.user && response.token) {
+          this.setCurrentUser(response.user, response.token, response.refreshToken);
+        }
+      }),
+      catchError(error => {
+        // ✅ FALLBACK LOCAL SE API NÃO DISPONÍVEL
+        if (error.status === 0 || error.name === 'TimeoutError') {
+          return this.handleLocalAuth(email, password, 'login').pipe(
+            tap(response => {
+              if (response.success && response.user && response.token) {
+                this.setCurrentUser(response.user, response.token, response.refreshToken);
+              }
+            })
+          );
+        }
+        return this.handleAuthError('LOGIN', error);
+      }),
+      tap(() => this.isLoadingSubject.next(false))
+    );
   }
 
   register(userData: RegisterRequest): Observable<LoginResponse> {
     if (!this.validateRegisterData(userData)) {
-      return throwError(() => new Error('Dados de cadastro inválidos'));
+      return throwError(() => ({ code: 'INVALID_DATA', message: 'Dados de cadastro inválidos' }));
     }
 
     this.isLoadingSubject.next(true);
@@ -204,19 +213,34 @@ export class AuthService {
       deviceInfo: this.getDeviceInfo()
     };
 
-    return this.http.post<LoginResponse>(`${this.API_URL}/auth/register`, payload)
-      .pipe(
-        timeout(15000), // 15s timeout para registro
-        retry(1),
-        tap(response => {
-          if (response.success && response.user && response.token) {
-            this.setCurrentUser(response.user, response.token, response.refreshToken);
-            console.log('✅ Cadastro realizado com sucesso:', response.user.email);
-          }
-        }),
-        catchError(error => this.handleAuthError('REGISTER', error)),
-        tap(() => this.isLoadingSubject.next(false))
-      );
+    return this.http.post<LoginResponse>(`${this.API_URL}/auth/register`, payload, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      })
+    }).pipe(
+      timeout(15000), // 15s timeout para registro
+      retry(1),
+      tap(response => {
+        if (response.success && response.user && response.token) {
+          this.setCurrentUser(response.user, response.token, response.refreshToken);
+        }
+      }),
+      catchError(error => {
+        // ✅ FALLBACK LOCAL SE API NÃO DISPONÍVEL  
+        if (error.status === 0 || error.name === 'TimeoutError') {
+          return this.handleLocalAuth(userData.email, userData.password, 'register', userData).pipe(
+            tap(response => {
+              if (response.success && response.user && response.token) {
+                this.setCurrentUser(response.user, response.token, response.refreshToken);
+              }
+            })
+          );
+        }
+        return this.handleAuthError('REGISTER', error);
+      }),
+      tap(() => this.isLoadingSubject.next(false))
+    );
   }
 
   logout(everywhere: boolean = false): Observable<boolean> {
@@ -235,7 +259,6 @@ export class AuthService {
       tap(() => {
         this.clearAllUserData();
         this.currentUserSubject.next(null);
-        console.log('✅ Logout realizado com sucesso');
       }),
       map(() => true),
       catchError(() => {
@@ -259,7 +282,10 @@ export class AuthService {
   isAuthenticated(): boolean {
     const user = this.currentUserSubject.value;
     const token = this.getAuthToken();
-    return !!(user && token && this.isTokenValid(token));
+    
+    // Se tem usuário e token, consideraautenticado
+    // Token validation é feita no background
+    return !!(user && token);
   }
 
   isPremium(): boolean {
@@ -284,7 +310,6 @@ export class AuthService {
       tap(user => {
         this.currentUserSubject.next(user);
         this.saveUserToStorage(user);
-        console.log('✅ Dados do usuário atualizados');
       }),
       catchError(error => {
         if (error.status === 401) {
@@ -345,7 +370,6 @@ export class AuthService {
         localStorage.setItem(this.STORAGE_KEYS.REFRESH_TOKEN, refreshToken);
       }
     } catch (error) {
-      console.error('❌ Erro ao salvar dados do usuário:', error);
     }
   }
 
@@ -353,7 +377,6 @@ export class AuthService {
     try {
       localStorage.setItem(this.STORAGE_KEYS.USER, JSON.stringify(user));
     } catch (error) {
-      console.warn('⚠️ Erro ao salvar usuário no localStorage:', error);
     }
   }
 
@@ -411,11 +434,9 @@ export class AuthService {
       next: (response) => {
         if (response.success && response.token) {
           localStorage.setItem(this.STORAGE_KEYS.TOKEN, response.token);
-          console.log('🔄 Token renovado automaticamente');
         }
       },
       error: () => {
-        console.log('⚠️ Erro ao renovar token, usuário deve fazer login novamente');
         this.logout().subscribe();
       }
     });
@@ -424,14 +445,12 @@ export class AuthService {
   private validateStoredToken(): void {
     const token = this.getAuthToken();
     if (token && !this.isTokenValid(token)) {
-      console.log('🔐 Token armazenado inválido, limpando dados');
       this.clearAllUserData();
       this.currentUserSubject.next(null);
     }
   }
 
   private handleAuthError(operation: string, error: any): Observable<never> {
-    console.error(`❌ Erro ${operation}:`, error);
     
     let errorMessage = 'Erro inesperado';
     let errorCode = 'UNKNOWN';
@@ -479,33 +498,107 @@ export class AuthService {
   }
 
   // ===============================================
-  // 🧪 MÉTODOS DE DESENVOLVIMENTO (REMOVER EM PRODUÇÃO)
+  // 🔄 AUTENTICAÇÃO LOCAL (FALLBACK)
   // ===============================================
 
-  // ✅ MOCK LOGIN PARA DESENVOLVIMENTO - REMOVER QUANDO TIVER API
-  mockLogin(email?: string): Observable<LoginResponse> {
-    console.warn('⚠️ USANDO MOCK LOGIN - REMOVER EM PRODUÇÃO');
+  private handleLocalAuth(email: string, password: string, type: 'login' | 'register', userData?: RegisterRequest): Observable<LoginResponse> {
     
-    this.isLoadingSubject.next(true);
-    
-    const mockUser: User = {
-      id: `mock-${Date.now()}`,
-      name: email ? email.split('@')[0].replace(/[^a-zA-Z]/g, '') : 'Developer',
-      email: email || 'dev@sowlfy.com',
-      isPremium: Math.random() > 0.5, // 50% chance premium para testes
-      plan: Math.random() > 0.5 ? 'pro' : 'free',
-      avatar: `https://ui-avatars.com/api/?name=${email}&size=128&background=667eea&color=fff`,
-      createdAt: new Date(),
+    // Simular delay de rede
+    return timer(1000).pipe(
+      map(() => {
+        const storedUsers = this.getStoredUsers();
+        
+        if (type === 'login') {
+          // ✅ VERIFICAR SE USUÁRIO EXISTE LOCALMENTE
+          const existingUser = storedUsers.find(u => u.email === email.toLowerCase());
+          
+          if (!existingUser) {
+            throw { code: 'INVALID_CREDENTIALS', message: 'Usuário não encontrado' };
+          }
+          
+          // ✅ VERIFICAR SENHA (SIMULADO)
+          const storedPassword = localStorage.getItem(`sowlfy_pwd_${email.toLowerCase()}`);
+          if (storedPassword !== password) {
+            throw { code: 'INVALID_CREDENTIALS', message: 'Senha incorreta' };
+          }
+          
+          const user = this.createUserFromData(existingUser);
+          const token = this.generateLocalToken(user);
+          
+          return {
+            success: true,
+            user,
+            token,
+            refreshToken: `refresh-local-${Date.now()}`,
+            message: 'Login realizado com sucesso (modo local)'
+          };
+          
+        } else {
+          // ✅ REGISTRO LOCAL
+          const existingUser = storedUsers.find(u => u.email === email.toLowerCase());
+          
+          if (existingUser) {
+            throw { code: 'EMAIL_EXISTS', message: 'Email já cadastrado' };
+          }
+          
+          const newUserData = {
+            id: `local-${Date.now()}`,
+            name: userData!.name,
+            email: email.toLowerCase(),
+            createdAt: new Date().toISOString(),
+            plan: 'free' as const,
+            isPremium: false
+          };
+          
+          // ✅ SALVAR USUÁRIO E SENHA LOCALMENTE
+          storedUsers.push(newUserData);
+          localStorage.setItem('sowlfy_users', JSON.stringify(storedUsers));
+          localStorage.setItem(`sowlfy_pwd_${email.toLowerCase()}`, password);
+          
+          const user = this.createUserFromData(newUserData);
+          const token = this.generateLocalToken(user);
+          
+          return {
+            success: true,
+            user,
+            token,
+            refreshToken: `refresh-local-${Date.now()}`,
+            message: 'Cadastro realizado com sucesso (modo local)'
+          };
+        }
+      }),
+      catchError(error => throwError(() => error))
+    );
+  }
+
+  private getStoredUsers(): any[] {
+    try {
+      const stored = localStorage.getItem('sowlfy_users');
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  private createUserFromData(userData: any): User {
+    return {
+      id: userData.id,
+      name: userData.name,
+      email: userData.email,
+      isPremium: userData.isPremium || false,
+      plan: userData.plan || 'free',
+      avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(userData.name)}&size=128&background=667eea&color=fff`,
+      createdAt: new Date(userData.createdAt || Date.now()),
       lastLoginAt: new Date(),
       stats: {
-        level: Math.floor(Math.random() * 20) + 1,
-        xp: Math.floor(Math.random() * 5000),
-        streak: Math.floor(Math.random() * 30),
-        totalQuestions: Math.floor(Math.random() * 500),
-        correctAnswers: Math.floor(Math.random() * 400),
-        timeStudied: Math.floor(Math.random() * 1000),
-        quizzesCompleted: Math.floor(Math.random() * 50),
-        averageScore: Math.floor(Math.random() * 40) + 60 // 60-100%
+        level: 1,
+        xp: 0,
+        streak: 0,
+        totalQuestions: 0,
+        correctAnswers: 0,
+        timeStudied: 0,
+        quizzesCompleted: 0,
+        averageScore: 0
       },
       preferences: {
         soundEnabled: true,
@@ -514,30 +607,18 @@ export class AuthService {
         language: 'pt-BR'
       }
     };
-
-    return timer(1500).pipe( // Simula delay da API
-      map(() => ({
-        success: true,
-        user: mockUser,
-        token: this.generateMockToken(mockUser),
-        refreshToken: `refresh-${Date.now()}`,
-        message: 'Login realizado com sucesso (mock)'
-      })),
-      tap(response => {
-        this.setCurrentUser(response.user, response.token, response.refreshToken);
-        this.isLoadingSubject.next(false);
-      })
-    );
   }
 
-  private generateMockToken(user: User): string {
+  private generateLocalToken(user: User): string {
     const header = btoa(JSON.stringify({ typ: 'JWT', alg: 'HS256' }));
     const payload = btoa(JSON.stringify({
       sub: user.id,
       email: user.email,
+      name: user.name,
+      iat: Math.floor(Date.now() / 1000),
       exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60) // 24h
     }));
-    const signature = btoa('mock-signature');
+    const signature = btoa('local-signature');
     
     return `${header}.${payload}.${signature}`;
   }

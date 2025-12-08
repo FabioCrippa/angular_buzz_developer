@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Optional } from '@angular/core'; // ✅ ADICIONAR Optional
+﻿import { Component, OnInit, Inject, Optional } from '@angular/core'; // ✅ ADICIONAR Optional
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService, User } from '../../../core/services/auth.service';
@@ -25,6 +25,9 @@ export class LoginComponent implements OnInit {
   
   selectedTabIndex: number = 0;
   isDialog: boolean = false; // ✅ ADICIONAR PROPRIEDADE
+  isSelectionMode: boolean = false; // ✅ MODO DE SELEÇÃO
+  dialogTitle: string = 'Login';
+  dialogSubtitle: string = '';
   
   constructor(
     private fb: FormBuilder,
@@ -37,9 +40,15 @@ export class LoginComponent implements OnInit {
     // ✅ DETECTAR SE É DIALOG
     this.isDialog = !!this.dialogRef;
     
-    // ✅ DEFINIR TAB INICIAL BASEADO EM DATA
-    if (this.data?.mode === 'register') {
-      this.selectedTabIndex = 1;
+    // ✅ CONFIGURAR BASEADO NO DATA
+    if (this.data) {
+      this.dialogTitle = this.data.title || 'Login';
+      this.dialogSubtitle = this.data.subtitle || '';
+      this.isSelectionMode = this.data.mode === 'selection';
+      
+      if (this.data.mode === 'register') {
+        this.selectedTabIndex = 1;
+      }
     }
   }
 
@@ -95,23 +104,31 @@ export class LoginComponent implements OnInit {
     this.errorMessage = '';
     this.successMessage = '';
 
-    this.authService.login(email, password, rememberMe).subscribe({ // ✅ PASSAR TODOS OS PARÂMETROS
+    this.authService.login(email, password, rememberMe).subscribe({
       next: (result) => {
         this.isLoading = false;
         
         if (result.success) {
-          this.successMessage = result.message;
+          this.successMessage = '✅ Login realizado com sucesso!';
           
-          // ✅ COMPORTAMENTO DIFERENTE PARA DIALOG VS PÁGINA
+          // Mostrar mensagem de sucesso
+          this.snackBar.open(this.successMessage, 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top',
+            panelClass: ['success-snackbar']
+          });
+          
+          // Redirecionar após delay
           if (this.isDialog) {
             setTimeout(() => {
               this.dialogRef?.close({ success: true, user: result.user });
-            }, 1000);
+            }, 800);
           } else {
             setTimeout(() => {
               const redirectUrl = this.getRedirectUrl();
               this.router.navigate([redirectUrl]);
-            }, 1500);
+            }, 1000);
           }
           
         } else {
@@ -120,8 +137,14 @@ export class LoginComponent implements OnInit {
       },
       error: (error) => {
         this.isLoading = false;
-        this.errorMessage = 'Erro no servidor. Tente novamente.';
-        console.error('Login error:', error);
+        this.errorMessage = error.message || 'Erro no servidor. Tente novamente.';
+        
+        this.snackBar.open(this.errorMessage, 'Fechar', {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar']
+        });
       }
     });
   }
@@ -144,17 +167,25 @@ export class LoginComponent implements OnInit {
         this.isLoading = false;
         
         if (result.success) {
-          this.successMessage = result.message;
+          this.successMessage = '🎉 Cadastro realizado com sucesso!';
           
-          // ✅ COMPORTAMENTO DIFERENTE PARA DIALOG VS PÁGINA
+          // Mostrar mensagem de sucesso
+          this.snackBar.open(this.successMessage, 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top',
+            panelClass: ['success-snackbar']
+          });
+          
+          // Redirecionar após delay
           if (this.isDialog) {
             setTimeout(() => {
               this.dialogRef?.close({ success: true, user: result.user });
-            }, 1000);
+            }, 800);
           } else {
             setTimeout(() => {
               this.router.navigate(['/dashboard']);
-            }, 1500);
+            }, 1000);
           }
           
         } else {
@@ -163,8 +194,14 @@ export class LoginComponent implements OnInit {
       },
       error: (error) => {
         this.isLoading = false;
-        this.errorMessage = 'Erro no servidor. Tente novamente.';
-        console.error('Register error:', error);
+        this.errorMessage = error.message || 'Erro no servidor. Tente novamente.';
+        
+        this.snackBar.open(this.errorMessage, 'Fechar', {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar']
+        });
       }
     });
   }
@@ -261,7 +298,7 @@ export class LoginComponent implements OnInit {
 
   fillDemoCredentials(): void {
     this.loginForm.patchValue({
-      email: 'demo@buzzdeveloper.com',
+      email: 'demo@sowlfy.com',
       password: 'demo123'
     });
     
@@ -292,6 +329,99 @@ export class LoginComponent implements OnInit {
   onNoClick(): void {
     if (this.isDialog) {
       this.dialogRef?.close();
+    }
+  }
+
+  // ===============================================
+  // 🔄 ADICIONAR NO LOGIN.COMPONENT.TS (onLoginSuccess)
+  // ===============================================
+
+  onLoginSuccess(): void {
+    
+    // ✅ VERIFICAR INTENÇÕES SALVAS
+    this.handlePostLoginRedirect();
+  }
+
+  private handlePostLoginRedirect(): void {
+    try {
+      // ✅ VERIFICAR INTENÇÃO DE QUIZ
+      const userIntention = localStorage.getItem('userIntention');
+      if (userIntention) {
+        const intention = JSON.parse(userIntention);
+        localStorage.removeItem('userIntention');
+        
+        
+        if (intention.action === 'start_free_trial') {
+          // ✅ QUERIA INICIAR QUIZ GRÁTIS
+          this.router.navigate(['/quiz'], {
+            queryParams: intention.params
+          });
+          return;
+        }
+      }
+      
+      // ✅ VERIFICAR INTENÇÃO DE REDIRECT
+      const redirectIntention = localStorage.getItem('redirectIntention');
+      if (redirectIntention) {
+        const intention = JSON.parse(redirectIntention);
+        localStorage.removeItem('redirectIntention');
+        
+        
+        this.router.navigate([intention.route], {
+          queryParams: intention.params
+        });
+        return;
+      }
+      
+      // ✅ VERIFICAR INTENÇÃO DE UPGRADE
+      const upgradeIntention = localStorage.getItem('upgradeIntention');
+      if (upgradeIntention) {
+        localStorage.removeItem('upgradeIntention');
+        
+        
+        this.router.navigate(['/payment'], {
+          queryParams: { plan: upgradeIntention }
+        });
+        return;
+      }
+      
+      // ✅ SEM INTENÇÃO ESPECÍFICA - DASHBOARD PADRÃO
+      this.router.navigate(['/dashboard']);
+      
+    } catch (error) {
+      // ✅ FALLBACK
+      this.router.navigate(['/dashboard']);
+    }
+  }
+  
+  // ===============================================
+  // 🎯 MÉTODOS DE SELEÇÃO
+  // ===============================================
+  
+  // ✅ ESCOLHER LOGIN
+  selectLogin(): void {
+    if (this.dialogRef) {
+      this.dialogRef.close({ action: 'login' });
+    } else {
+      this.selectedTabIndex = 0;
+      this.isSelectionMode = false;
+    }
+  }
+  
+  // ✅ ESCOLHER CADASTRO
+  selectRegister(): void {
+    if (this.dialogRef) {
+      this.dialogRef.close({ action: 'register' });
+    } else {
+      this.selectedTabIndex = 1;
+      this.isSelectionMode = false;
+    }
+  }
+  
+  // ✅ FECHAR MODAL
+  closeDialog(): void {
+    if (this.dialogRef) {
+      this.dialogRef.close();
     }
   }
 }

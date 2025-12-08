@@ -1,0 +1,143 @@
+<div class="settings-container">
+  
+  <!-- Header -->
+  <div class="settings-header">
+    <button class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </button>
+    <h1>⚙️ Configurações</h1>
+    <p class="subtitle">Personalize sua experiência no SOWLFY</p>
+  </div>
+
+  <!-- Settings Content -->
+  <div class="settings-content">
+    
+    <!-- Notificações -->
+    <mat-card class="settings-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>notifications</mat-icon>
+        <mat-card-title>Notificações</mat-card-title>
+        <mat-card-subtitle>Gerencie como você recebe notificações</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Notificações por Email</strong>
+            <span>Receba atualizações importantes por email</span>
+          </div>
+          <mat-slide-toggle 
+            [(ngModel)]="settings.notifications.email"
+            (change)="saveSettings()"
+            color="primary"
+          ></mat-slide-toggle>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Lembrete Diário</strong>
+            <span>Receba lembretes para estudar todos os dias</span>
+          </div>
+          <mat-slide-toggle 
+            [(ngModel)]="settings.notifications.dailyReminder"
+            (change)="saveSettings()"
+            color="primary"
+          ></mat-slide-toggle>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Preferências -->
+    <mat-card class="settings-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>tune</mat-icon>
+        <mat-card-title>Preferências</mat-card-title>
+        <mat-card-subtitle>Personalize sua experiência</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Tema</strong>
+            <span>Escolha entre tema claro ou escuro</span>
+          </div>
+          <mat-select 
+            [(ngModel)]="settings.preferences.theme"
+            (selectionChange)="saveSettings()"
+          >
+            <mat-option value="light">☀️ Claro</mat-option>
+            <mat-option value="dark">🌙 Escuro</mat-option>
+            <mat-option value="auto">🔄 Automático</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Questões por Quiz</strong>
+            <span>Número padrão de questões em cada quiz</span>
+          </div>
+          <mat-select 
+            [(ngModel)]="settings.preferences.questionsPerQuiz"
+            (selectionChange)="saveSettings()"
+          >
+            <mat-option [value]="5">5 questões</mat-option>
+            <mat-option [value]="10">10 questões</mat-option>
+            <mat-option [value]="15">15 questões</mat-option>
+            <mat-option [value]="20">20 questões</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Efeitos Sonoros</strong>
+            <span>Reproduzir sons ao acertar/errar questões</span>
+          </div>
+          <mat-slide-toggle 
+            [(ngModel)]="settings.preferences.soundEffects"
+            (change)="saveSettings()"
+            color="primary"
+          ></mat-slide-toggle>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Conta e Segurança -->
+    <mat-card class="settings-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>security</mat-icon>
+        <mat-card-title>Conta e Segurança</mat-card-title>
+        <mat-card-subtitle>Gerencie sua conta</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        
+        <div class="setting-item action-item">
+          <div class="setting-info">
+            <strong>Alterar Senha</strong>
+            <span>Mude sua senha para mais segurança</span>
+          </div>
+          <button mat-raised-button color="primary" (click)="changePassword()">
+            <mat-icon>lock</mat-icon>
+            Alterar
+          </button>
+        </div>
+
+        <div class="setting-item action-item">
+          <div class="setting-info">
+            <strong>Limpar Cache</strong>
+            <span>Remove dados temporários</span>
+          </div>
+          <button mat-raised-button (click)="clearCache()">
+            <mat-icon>delete_sweep</mat-icon>
+            Limpar
+          </button>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+</div>

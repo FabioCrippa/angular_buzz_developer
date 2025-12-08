@@ -1,9 +1,9 @@
-# BuzzDeveloper
+# SOWLFY - Plataforma de Preparação Profissional
 
 ![Tela do Quiz](./src/assets/img/tela-home.png.png)
 ## Resumo do Projeto
 
-BuzzDeveloper é um quiz interativo desenvolvido em **Angular** para testar e aprimorar conhecimentos em front-end. O projeto abrange temas como HTML, CSS, JavaScript, Angular, DevOps, Scrum, criptografia, micro front-end, testes unitários e mais.
+SOWLFY é uma plataforma completa de preparação profissional desenvolvida em **Angular** para testar e aprimorar conhecimentos em diversas áreas. O projeto abrange temas como Desenvolvimento Web, Português, Matemática, Informática e muito mais, com sistema de progresso, favoritos e planos premium.
 
 ## Funcionalidades
 

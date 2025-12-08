@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -33,7 +33,6 @@ export class QuizService {
         return questions;
       }),
       catchError(error => {
-        console.error(`Erro ao carregar questões de ${areaName}:`, error);
         return of([]);
       })
     );

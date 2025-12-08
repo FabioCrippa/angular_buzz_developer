@@ -1,4 +1,4 @@
-// ===============================================
+﻿// ===============================================
 // 📱 HOME COMPONENT - VERSÃO FINAL SOWLFY
 // ===============================================
 
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FreeTrialService } from '../../core/services/free-trial.service';
 import { ProgressService } from '../../core/services/progress.service';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -113,10 +114,6 @@ export class HomeComponent implements OnInit {
       answer: 'Perfeitamente! Nossa plataforma é <strong>100% responsiva</strong> e funciona em qualquer dispositivo - celular, tablet ou computador.'
     },
     {
-      question: 'Vocês oferecem certificados?',
-      answer: 'Sim! Usuários premium recebem <strong>certificados digitais</strong> ao completar módulos de estudo e atingir metas de performance.'
-    },
-    {
       question: 'Como são criadas as questões?',
       answer: 'Nossas questões são criadas por <strong>especialistas</strong> em cada área e baseadas em provas reais de concursos e entrevistas técnicas de grandes empresas.'
     }
@@ -131,11 +128,11 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private freeTrialService: FreeTrialService,
-    private progressService: ProgressService
+    private progressService: ProgressService,
+    private authService: AuthService
   ) {}
   
   ngOnInit(): void {
-    console.log('🏠 SOWLFY Home carregada');
     this.loadDynamicStats();
   }
   
@@ -151,37 +148,135 @@ export class HomeComponent implements OnInit {
           (userProgress.correctAnswers / userProgress.totalAnswered) * 100
         );
       }
-      
-      console.log('📊 Stats atualizadas:', this.heroStats);
     } catch (error) {
-      console.warn('⚠️ Erro ao carregar stats dinâmicas:', error);
     }
+  }
+  
+  // ===============================================
+  // 🆓 COMEÇAR PREPARAÇÃO COM AUTH
+  // ===============================================
+
+  startFreeTrial(): void {
+    
+    if (this.authService.isAuthenticated()) {
+      // ✅ USUÁRIO LOGADO - VERIFICAR TENTATIVAS E INICIAR QUIZ
+      this.executeFreeTrial();
+    } else {
+      // ❌ NÃO LOGADO - FLUXO DE CADASTRO/LOGIN
+      this.showFreeTrialAuthFlow();
+    }
+  }
+
+  // ✅ FLUXO ESPECÍFICO PARA TESTE GRÁTIS
+  private showFreeTrialAuthFlow(): void {
+    const message = `🆓 Preparação Grátis SOWLFY\n\n` +
+                   `Para começar suas 3 tentativas gratuitas, você precisa:\n\n` +
+                   `📝 Criar uma conta grátis (30 segundos)\n` +
+                   `🔐 Ou fazer login se já tem conta\n\n` +
+                   `🎁 Após login você receberá:\n` +
+                   `• 3 tentativas gratuitas por dia\n` +
+                   `• Acesso a questões de 4 áreas\n` +
+                   `• Histórico de progresso\n\n` +
+                   `Vamos começar?`;
+    
+    // ✅ SALVAR INTENÇÃO ESPECÍFICA PARA QUIZ
+    this.saveQuizIntention();
+    
+    if (confirm(message)) {
+      // ✅ USUÁRIO CONFIRMOU - VERIFICAR SE TEM CONTA
+      this.chooseAuthMethod();
+    }
+  }
+
+  // ✅ ESCOLHER MÉTODO DE AUTENTICAÇÃO
+  private chooseAuthMethod(): void {
+    const choice = confirm(
+      `🤔 Escolha sua opção:\n\n` +
+      `✅ Clique OK se JÁ TEM CONTA (ir para Login)\n` +
+      `📝 Clique CANCELAR se é NOVO USUÁRIO (ir para Cadastro)`
+    );
+    
+    if (choice) {
+      // ✅ TEM CONTA - IR PARA LOGIN
+      this.router.navigate(['/auth/login']);
+    } else {
+      // ✅ NOVO USUÁRIO - IR PARA CADASTRO
+      this.router.navigate(['/auth/register']);
+    }
+  }
+
+  // ✅ SALVAR INTENÇÃO ESPECÍFICA PARA QUIZ
+  private saveQuizIntention(): void {
+    const intention = {
+      action: 'start_free_trial',
+      route: '/quiz',
+      params: {
+        mode: 'area',
+        area: 'desenvolvimento-web',
+        count: 5
+      },
+      timestamp: Date.now(),
+      message: 'Iniciar preparação grátis - Quiz Desenvolvimento Web'
+    };
+    
+    localStorage.setItem('userIntention', JSON.stringify(intention));
   }
   
   // ✅ INICIAR TESTE GRÁTIS
-  startFreeTrial(): void {
-    console.log('🆓 Iniciando teste grátis...');
-    
-    // ✅ VERIFICAR SE AINDA TEM TENTATIVAS
-    const remaining = this.freeTrialService.getRemainingAttempts('desenvolvimento-web');
-    
-    if (remaining > 0) {
+  private executeFreeTrial(): void {
+    try {
+      // ✅ VERIFICAR SE JÁ É PREMIUM
+      const isPremium = localStorage.getItem('isPremium') === 'true';
+      
+      if (isPremium) {
+        this.router.navigate(['/dashboard']);
+        return;
+      }
+      
+      // ✅ VERIFICAR TENTATIVAS RESTANTES
+      const remaining = this.freeTrialService.getRemainingAttempts('desenvolvimento-web');
+      
+      if (remaining > 0) {
+        // ✅ TEM TENTATIVAS - INICIAR QUIZ DIRETAMENTE
+        this.router.navigate(['/quiz'], {
+          queryParams: {
+            mode: 'area',
+            area: 'desenvolvimento-web',
+            count: 5
+          }
+        });
+      } else {
+        // ✅ SEM TENTATIVAS - MOSTRAR OPÇÕES
+        const message = `🚀 Suas 3 tentativas gratuitas de hoje acabaram!\n\n` +
+                       `👑 Quer continuar praticando?\n\n` +
+                       `• Upgrade para Premium = Acesso Ilimitado\n` +
+                       `• Ou volte amanhã para mais 3 tentativas gratuitas\n\n` +
+                       `Fazer upgrade agora?`;
+        
+        if (confirm(message)) {
+          this.upgradeToPro();
+        } else {
+          this.router.navigate(['/dashboard']);
+        }
+      }
+      
+    } catch (error) {
+      // ✅ FALLBACK - IR PARA DASHBOARD
+      alert('🔧 Redirecionando para o painel...');
       this.router.navigate(['/dashboard']);
-    } else {
-      // ✅ SEM TENTATIVAS - MOSTRAR UPGRADE
-      this.upgradeToPro();
     }
   }
   
-  // ✅ IR PARA DASHBOARD
+  // ===============================================
+  // 📊 DASHBOARD COM VERIFICAÇÃO DE AUTH
+  // ===============================================
+  
   goToDashboard(): void {
-    console.log('📊 Navegando para dashboard...');
-    this.router.navigate(['/dashboard']);
+    this.checkAuthAndRedirect('acessar seu dashboard', '/dashboard');
   }
   
   // ✅ IR PARA ÁREA ESPECÍFICA
   goToArea(areaName: string): void {
-    console.log(`📁 Navegando para área: ${areaName}`);
     
     // ✅ MAPEAR NOMES PARA ROTA CORRETA
     const areaMap: { [key: string]: string } = {
@@ -202,23 +297,24 @@ export class HomeComponent implements OnInit {
     });
   }
   
-  // ✅ UPGRADE PARA PRO
+  // ✅ UPGRADE PARA PRO - REDIRECIONAR PARA PÁGINA DE UPGRADE
   upgradeToPro(): void {
-    console.log('👑 Upgrade para Premium...');
     
-    // ✅ SIMULAR UPGRADE (remover em produção)
+    // ✅ REDIRECIONAR PARA PÁGINA DE UPGRADE COM MERCADO PAGO
+    this.router.navigate(['/upgrade'], {
+      queryParams: {
+        source: 'home',
+        ref: 'upgrade-button'
+      }
+    });
+  }
+  
+  // ✅ MÉTODO LEGADO (MANTER PARA COMPATIBILIDADE)
+  upgradeToPro_OLD(): void {
+    // ✅ SIMULAR UPGRADE (modo de teste - desativado)
     const isPremium = localStorage.getItem('isPremium') === 'true';
     
     if (!isPremium) {
-      // ✅ ATIVAR PREMIUM
-      localStorage.setItem('isPremium', 'true');
-      localStorage.setItem('premiumActivatedAt', new Date().toISOString());
-      
-      alert('🎉 Premium ativado! Agora você tem acesso ilimitado a todas as funcionalidades!');
-      
-      // ✅ RECARREGAR PARA APLICAR MUDANÇAS
-      window.location.reload();
-    } else {
       alert('👑 Você já é Premium! Aproveite todos os recursos ilimitados.');
     }
   }
@@ -230,17 +326,177 @@ export class HomeComponent implements OnInit {
   
   // ✅ LINKS DO FOOTER
   openHelp(): void {
-    console.log('❓ Abrindo central de ajuda...');
     alert('🚧 Central de Ajuda em desenvolvimento!\n\nPor enquanto, use os FAQs abaixo para tirar suas dúvidas.');
   }
   
   openTerms(): void {
-    console.log('📄 Abrindo termos de uso...');
     alert('📋 Termos de Uso\n\nO SOWLFY é uma plataforma educacional para preparação profissional.\n\n- Uso responsável da plataforma\n- Conteúdo para fins educacionais\n- Política de cancelamento flexível');
   }
   
   openPrivacy(): void {
-    console.log('🔒 Abrindo política de privacidade...');
     alert('🛡️ Política de Privacidade\n\nSeus dados estão seguros conosco:\n\n- Dados armazenados localmente\n- Não compartilhamos informações pessoais\n- Conformidade com LGPD\n- Criptografia SSL');
+  }
+  
+  // ===============================================
+  // 🔧 ADICIONAR ESTES MÉTODOS NO FINAL DA CLASSE
+  // ===============================================
+  
+  // ✅ ADICIONAR DEPOIS DO método openPrivacy():
+
+  // ✅ VER TODAS AS ÁREAS
+  goToAllAreas(): void {
+    this.checkAuthAndRedirect(
+      'ver todas as áreas de estudo',
+      '/dashboard',
+      { view: 'areas' }
+    );
+  }
+
+  // ✅ IR PARA ÁREA MAIS POPULAR
+  goToPopularArea(): void {
+    this.goToArea('desenvolvimento-web');
+  }
+
+  // ✅ INICIAR JORNADA (MÉTODO ALTERNATIVO)
+  startJourney(): void {
+    
+    // ✅ IR DIRETO PARA DASHBOARD
+    this.router.navigate(['/dashboard']);
+    
+    // ✅ MOSTRAR BOAS-VINDAS
+    setTimeout(() => {
+      alert('🎉 Bem-vindo ao SOWLFY!\n\nEscolha uma área de estudo e comece a praticar. Boa sorte! 🍀');
+    }, 1000);
+  }
+
+  // ✅ ABRIR FAQ (ROLAR PARA SEÇÃO)
+  openFaq(): void {
+    
+    // ✅ TENTAR ROLAR PARA SEÇÃO FAQ
+    const faqSection = document.querySelector('.faq-section');
+    if (faqSection) {
+      faqSection.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+    } else {
+      // ✅ FALLBACK SE NÃO ENCONTRAR SEÇÃO
+      alert('📋 Role a página para baixo para ver as Perguntas Frequentes (FAQ)!');
+    }
+  }
+
+  // ✅ POLÍTICA DE REEMBOLSO
+  openRefund(): void {
+    
+    const refundPolicy = `💰 Política de Reembolso SOWLFY\n\n` +
+                        `✅ 7 dias de garantia total\n` +
+                        `✅ Reembolso de 100% do valor pago\n` +
+                        `✅ Sem perguntas ou burocracias\n` +
+                        `✅ Processamento em até 5 dias úteis\n` +
+                        `✅ Dinheiro de volta na mesma forma de pagamento\n\n` +
+                        `📧 Para solicitar: contato@sowlfy.com\n\n` +
+                        `Sua satisfação é nossa prioridade!`;
+    
+    alert(refundPolicy);
+  }
+
+  // ✅ COMEÇAR ÁREA ESPECÍFICA (MÉTODO HELPER)
+  startSpecificArea(areaName: string): void {
+    
+    // ✅ VERIFICAR TENTATIVAS
+    const remaining = this.freeTrialService.getRemainingAttempts(areaName);
+    
+    if (remaining > 0) {
+      // ✅ INICIAR QUIZ DA ÁREA
+      this.router.navigate(['/quiz'], {
+        queryParams: {
+          mode: 'area',
+          area: areaName,
+          count: 5
+        }
+      });
+    } else {
+      // ✅ SEM TENTATIVAS
+      const message = `⏱️ Tentativas da área "${areaName}" esgotadas hoje!\n\n` +
+                     `Escolha:\n` +
+                     `👑 Upgrade Premium (acesso ilimitado)\n` +
+                     `🔄 Tentar outra área\n` +
+                     `⏰ Voltar amanhã`;
+      
+      alert(message);
+      
+      // ✅ SUGERIR UPGRADE
+      if (confirm('Fazer upgrade para Premium agora?')) {
+        this.upgradeToPro();
+      }
+    }
+  }
+
+  // ✅ DEBUG - TESTAR BOTÃO
+  testButton(): void {
+    alert('✅ Botão está funcionando corretamente!\n\nMetódo executado com sucesso.');
+  }
+
+  // ===============================================
+  // 🔐 ADICIONAR NO HOME.COMPONENT.TS
+  // ===============================================
+  
+  // ✅ ADICIONAR ESTE MÉTODO:
+  private checkAuthAndRedirect(actionName: string, targetRoute: string, params?: any): void {
+    
+    if (this.authService.isAuthenticated()) {
+      // ✅ USUÁRIO LOGADO - EXECUTAR AÇÃO
+      this.router.navigate([targetRoute], params ? { queryParams: params } : {});
+    } else {
+      // ❌ USUÁRIO NÃO LOGADO - MOSTRAR OPÇÕES
+      this.showAuthOptions(actionName, targetRoute, params);
+    }
+  }
+
+  // ✅ MOSTRAR OPÇÕES DE AUTENTICAÇÃO
+  private showAuthOptions(actionName: string, targetRoute: string, params?: any): void {
+    const message = `🔐 Acesso Restrito\n\n` +
+                   `Para ${actionName}, você precisa estar logado.\n\n` +
+                   `✅ Já tem conta? Faça login\n` +
+                   `📝 Não tem conta? Crie uma conta grátis\n\n` +
+                   `O que deseja fazer?`;
+    
+    // ✅ SALVAR INTENÇÃO PARA REDIRECIONAR APÓS LOGIN
+    this.saveRedirectIntention(targetRoute, params);
+    
+    // ✅ MOSTRAR CONFIRMAÇÃO
+    if (confirm(message + '\n\n(Clique OK para ir ao Login ou Cancelar)')) {
+      this.router.navigate(['/auth/login']);
+    } else {
+      // ✅ USUÁRIO CANCELOU - OPCIONAL: MOSTRAR CADASTRO
+      this.showSignupOption();
+    }
+  }
+
+  // ✅ OPÇÃO DE CADASTRO CASO USUÁRIO CANCELE LOGIN
+  private showSignupOption(): void {
+    const signupMessage = `📝 Ainda não tem conta?\n\n` +
+                         `✨ Criar conta é grátis e leva menos de 1 minuto!\n\n` +
+                         `🎁 Benefícios:\n` +
+                         `• 3 tentativas grátis por dia\n` +
+                         `• Acesso a 4 áreas de estudo\n` +
+                         `• Histórico de progresso\n\n` +
+                         `Criar conta agora?`;
+    
+    if (confirm(signupMessage)) {
+      this.router.navigate(['/auth/register']);
+    }
+  }
+
+  // ✅ SALVAR INTENÇÃO DE REDIRECIONAMENTO
+  private saveRedirectIntention(route: string, params?: any): void {
+    const intention = {
+      route,
+      params: params || {},
+      timestamp: Date.now(),
+      action: route === '/dashboard' ? 'acessar dashboard' : 'continuar navegação'
+    };
+    
+    localStorage.setItem('redirectIntention', JSON.stringify(intention));
   }
 }

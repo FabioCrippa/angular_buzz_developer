@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface PremiumFeatures {
@@ -161,7 +161,6 @@ export class PremiumService {
         };
       }
     } catch (error) {
-      console.warn('Erro ao carregar status premium:', error);
     }
     
     return this.getFreeStatus();
@@ -212,7 +211,6 @@ export class PremiumService {
     try {
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(status));
     } catch (error) {
-      console.warn('Erro ao salvar status premium:', error);
     }
   }
 
@@ -227,7 +225,6 @@ export class PremiumService {
         }
       }
     } catch (error) {
-      console.warn('Erro ao carregar contagem diária:', error);
     }
     return 0;
   }
@@ -238,7 +235,6 @@ export class PremiumService {
       const data = { date: today, count };
       localStorage.setItem(this.DAILY_QUIZ_KEY, JSON.stringify(data));
     } catch (error) {
-      console.warn('Erro ao salvar contagem diária:', error);
     }
   }
 
@@ -259,7 +255,6 @@ export class PremiumService {
           });
         }
       } catch (error) {
-        console.warn('Erro ao resetar contagem diária:', error);
       }
     }
   }

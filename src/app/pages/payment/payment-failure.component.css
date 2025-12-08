@@ -1,0 +1,142 @@
+/* =============================================== */
+/* ❌ ESTILOS DA PÁGINA DE FALHA */
+/* =============================================== */
+
+.payment-container.failure {
+  background: linear-gradient(135deg, #f44336 0%, #e91e63 100%);
+}
+
+.failure-section {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.failure-icon mat-icon {
+  font-size: 80px;
+  width: 80px;
+  height: 80px;
+  color: #f44336;
+}
+
+.failure-section h1 {
+  color: #333;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0 0 2rem 0;
+}
+
+/* INFO BOXES */
+.info-box {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+
+.info-box.warning {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+}
+
+.info-box.info {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+}
+
+.info-box mat-icon {
+  color: inherit;
+  flex-shrink: 0;
+}
+
+.info-box p {
+  margin: 0.25rem 0;
+  color: #333;
+}
+
+/* RAZÕES */
+.reasons-section {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.reasons-section h3 {
+  color: #333;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.reasons-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+.reasons-section li {
+  padding: 0.5rem 0;
+  color: #666;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.reasons-section li::before {
+  content: "•";
+  color: #f44336;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* AÇÕES */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.actions button {
+  width: 100%;
+}
+
+/* TEXTO DE AJUDA */
+.help-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #4caf50;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+.help-text mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .failure-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .failure-section h1 {
+    font-size: 1.5rem;
+  }
+}

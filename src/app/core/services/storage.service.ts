@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -150,7 +150,6 @@ export class StorageService {
       const item = localStorage.getItem(key);
       return item ? JSON.parse(item) : null;
     } catch (error) {
-      console.error(`Erro ao recuperar ${key}:`, error);
       return null;
     }
   }
@@ -159,7 +158,6 @@ export class StorageService {
     try {
       localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-      console.error(`Erro ao salvar ${key}:`, error);
     }
   }
 
@@ -235,7 +233,6 @@ export class StorageService {
       
       return true;
     } catch (error) {
-      console.error('Erro ao importar dados:', error);
       return false;
     }
   }

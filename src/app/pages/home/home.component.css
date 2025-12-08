@@ -422,7 +422,7 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.2rem;
-  max-width: 920px; /* ✅ AUMENTADO: de 900px para 920px */
+  max-width: 1024px; /* ✅ AUMENTADO: de 900px para 920px */
   margin: 0 auto 2rem;
   align-items: stretch;
 }
@@ -437,7 +437,7 @@ section {
   display: flex;
   flex-direction: column;
   background: var(--white);
-  height: 350px; /* ✅ AUMENTADO: de 320px para 350px */
+  height: 380px; /* ✅ AUMENTADO: de 320px para 350px */
   overflow: hidden; /* ✅ MANTIDO por segurança */
 }
 
@@ -830,7 +830,7 @@ section {
 
 .pricing-card {
   background: var(--white);
-  padding: 2rem;
+  padding: 1rem;
   border-radius: var(--radius);
   border: 2px solid white;
   text-align: center;
@@ -849,11 +849,11 @@ section {
 }
 
 .plan-price {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .price-amount {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary);
 }
@@ -1807,7 +1807,7 @@ section {
   color: white;
   
   &:hover {
-    background: linear-gradient(135deg, #d12959, #eb5534, #f9c441);
+    background: linear-gradient(135deg, #166fe5, #3b96e8);
   }
 }
 

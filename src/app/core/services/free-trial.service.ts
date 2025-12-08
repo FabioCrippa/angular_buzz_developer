@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 
 interface TrialData {
   date: string;
@@ -16,7 +16,6 @@ export class FreeTrialService {
   private readonly AVAILABLE_AREAS = ['desenvolvimento-web', 'portugues', 'matematica', 'informatica'];
 
   constructor() {
-    console.log('🔧 FreeTrialService inicializado - 3 tentativas por área/dia');
   }
 
   // ✅ OBTER DADOS DO TRIAL
@@ -29,14 +28,12 @@ export class FreeTrialService {
         // ✅ VERIFICAR SE É NOVO DIA (RESET À MEIA-NOITE)
         const today = this.getTodayString();
         if (data.date !== today) {
-          console.log('🌅 Novo dia detectado - resetando tentativas às 00:00');
           return this.resetTrialData();
         }
         
         return data;
       }
     } catch (error) {
-      console.warn('⚠️ Erro ao carregar dados do trial:', error);
     }
     
     return this.resetTrialData();
@@ -56,7 +53,6 @@ export class FreeTrialService {
     };
     
     this.saveTrialData(data);
-    console.log('🔄 Tentativas resetadas - 3 por área disponível:', data);
     return data;
   }
 
@@ -65,7 +61,6 @@ export class FreeTrialService {
     try {
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
     } catch (error) {
-      console.error('❌ Erro ao salvar dados do trial:', error);
     }
   }
 
@@ -80,7 +75,6 @@ export class FreeTrialService {
     const attempts = data.attempts[area] || 0;
     const canStart = attempts < this.MAX_ATTEMPTS_PER_DAY;
     
-    console.log(`🎯 Verificando área "${area}": ${attempts}/${this.MAX_ATTEMPTS_PER_DAY} tentativas usadas`);
     return canStart;
   }
 
@@ -96,7 +90,6 @@ export class FreeTrialService {
   // ✅ REGISTRAR TENTATIVA EM UMA ÁREA ESPECÍFICA
   registerAttempt(area: string): boolean {
     if (!this.canStartQuiz(area)) {
-      console.warn(`❌ Não é possível iniciar quiz em ${area} - limite atingido`);
       return false;
     }
 
@@ -107,7 +100,6 @@ export class FreeTrialService {
     this.saveTrialData(data);
     
     const remaining = this.getRemainingAttempts(area);
-    console.log(`✅ Tentativa registrada em "${area}": ${data.attempts[area]}/${this.MAX_ATTEMPTS_PER_DAY} (${remaining} restantes)`);
     
     return true;
   }
@@ -199,19 +191,12 @@ export class FreeTrialService {
   // ✅ MÉTODO PARA LIMPAR DADOS (DESENVOLVIMENTO/TESTES)
   clearTrialData(): void {
     localStorage.removeItem(this.STORAGE_KEY);
-    console.log('🧹 Dados do trial limpos - todas as tentativas resetadas');
   }
 
   // ✅ MÉTODO PARA DEBUG/LOG COMPLETO
   logTrialStatus(): void {
     const stats = this.getTrialStats();
     const summary = this.getDailySummary();
-    
-    console.log('📊 STATUS COMPLETO DO TRIAL GRATUITO:', {
-      estatisticas: stats,
-      porArea: summary,
-      areasDisponiveis: this.getAvailableAreas(),
-      areasEsgotadas: this.getExhaustedAreas()
-    });
+    // Log removed for production
   }
 }

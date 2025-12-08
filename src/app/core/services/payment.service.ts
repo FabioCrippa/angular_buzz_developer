@@ -1,4 +1,4 @@
-// ===============================================
+﻿// ===============================================
 // 🔧 SUBSTITUIR TODO O CONTEÚDO DO PAYMENT.SERVICE.TS
 // ===============================================
 
@@ -9,7 +9,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
-import { loadStripe, Stripe } from '@stripe/stripe-js'; // ← NOVO IMPORT
+import { loadStripe, Stripe } from '@stripe/stripe-js';
+import { MercadopagoService } from './mercadopago.service'; // ← NOVO IMPORT
 
 export interface PaymentPlan {
   id: string;
@@ -103,9 +104,9 @@ export class PaymentService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService
+    private authService: AuthService,
+    private mercadoPagoService: MercadopagoService // ← NOVO SERVIÇO
   ) {
-    console.log('💳 PaymentService inicializado');
     this.initializeStripe();
     this.initializePaymentService();
   }
@@ -113,19 +114,15 @@ export class PaymentService {
   // ✅ INICIALIZAR STRIPE
   private async initializeStripe(): Promise<void> {
     try {
-      console.log('🔧 Carregando Stripe...');
       this.stripe = await loadStripe(this.STRIPE_PUBLIC_KEY, {
         locale: 'pt-BR'
       });
       
       if (this.stripe) {
         this.stripeLoaded = true;
-        console.log('✅ Stripe carregado com sucesso!');
       } else {
-        console.error('❌ Falha ao carregar Stripe');
       }
     } catch (error) {
-      console.error('❌ Erro ao inicializar Stripe:', error);
     }
   }
 
@@ -161,7 +158,6 @@ export class PaymentService {
       tap(() => this.paymentLoadingSubject.next(false)),
       catchError(error => {
         this.paymentLoadingSubject.next(false);
-        console.error('❌ Erro checkout:', error);
         return throwError(() => error);
       })
     );
@@ -233,6 +229,22 @@ export class PaymentService {
 
   loadCurrentSubscription(): Observable<Subscription | null> {
     return of(null); // Placeholder
+  }
+
+  // ===============================================
+  // 💳 MERCADO PAGO INTEGRATION
+  // ===============================================
+
+  redirectToMercadoPago(planId: string): Observable<void> {
+    return this.mercadoPagoService.redirectToCheckout(planId);
+  }
+
+  verifyMercadoPagoPayment(collectionId: string): Observable<any> {
+    return this.mercadoPagoService.verifyPayment(collectionId);
+  }
+
+  getMercadoPagoPlans(): Observable<any[]> {
+    return this.mercadoPagoService.getPlans();
   }
 
   // ✅ MOCK UPGRADE PARA TESTES

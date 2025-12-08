@@ -1,0 +1,182 @@
+<div class="profile-container">
+  
+  <!-- Header -->
+  <div class="profile-header">
+    <button class="back-button" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </button>
+    <h1>👤 Meu Perfil</h1>
+    <p class="subtitle">Gerencie suas informações pessoais</p>
+  </div>
+
+  <!-- Profile Content -->
+  <div class="profile-content">
+    
+    <!-- Avatar Section -->
+    <div class="avatar-section">
+      <div class="avatar-wrapper">
+        <img 
+          *ngIf="currentUser?.avatar" 
+          [src]="currentUser.avatar" 
+          [alt]="currentUser.name"
+          class="avatar-img"
+        >
+        <div *ngIf="!currentUser?.avatar" class="avatar-placeholder">
+          {{ formData.name ? formData.name.charAt(0).toUpperCase() : '?' }}
+        </div>
+        <button 
+          *ngIf="isEditing" 
+          class="change-avatar-btn" 
+          (click)="changeAvatar()"
+          mat-mini-fab
+          color="primary"
+        >
+          <mat-icon>photo_camera</mat-icon>
+        </button>
+      </div>
+      
+      <div class="user-stats">
+        <div class="stat-item">
+          <span class="stat-label">Nível</span>
+          <span class="stat-value">{{ getUserLevel() }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">XP</span>
+          <span class="stat-value">{{ getUserXP() }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Status</span>
+          <span class="stat-value" [class.premium]="currentUser?.isPremium">
+            {{ currentUser?.isPremium ? '✨ Pro' : '🆓 Free' }}
+          </span>
+        </div>
+      </div>
+
+      <!-- XP Progress -->
+      <div class="xp-progress">
+        <div class="progress-header">
+          <span>Progresso para o próximo nível</span>
+          <span>{{ getUserXP() }} / {{ getNextLevelXP() }} XP</span>
+        </div>
+        <mat-progress-bar 
+          mode="determinate" 
+          [value]="getXPProgress()"
+          color="accent"
+        ></mat-progress-bar>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      
+      <div class="section-header">
+        <h2>Informações Pessoais</h2>
+        <button 
+          *ngIf="!isEditing"
+          mat-raised-button 
+          color="primary" 
+          (click)="toggleEdit()"
+        >
+          <mat-icon>edit</mat-icon>
+          Editar
+        </button>
+      </div>
+
+      <form class="profile-form">
+        
+        <!-- Nome -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nome Completo</mat-label>
+          <input 
+            matInput 
+            [(ngModel)]="formData.name"
+            name="name"
+            [readonly]="!isEditing"
+            placeholder="Seu nome completo"
+          >
+          <mat-icon matPrefix>person</mat-icon>
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input 
+            matInput 
+            type="email"
+            [(ngModel)]="formData.email"
+            name="email"
+            [readonly]="!isEditing"
+            placeholder="seu@email.com"
+          >
+          <mat-icon matPrefix>email</mat-icon>
+        </mat-form-field>
+
+        <!-- Telefone -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Telefone</mat-label>
+          <input 
+            matInput 
+            [(ngModel)]="formData.phone"
+            name="phone"
+            [readonly]="!isEditing"
+            placeholder="(00) 00000-0000"
+          >
+          <mat-icon matPrefix>phone</mat-icon>
+        </mat-form-field>
+
+        <!-- Localização -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Localização</mat-label>
+          <input 
+            matInput 
+            [(ngModel)]="formData.location"
+            name="location"
+            [readonly]="!isEditing"
+            placeholder="Cidade, Estado"
+          >
+          <mat-icon matPrefix>location_on</mat-icon>
+        </mat-form-field>
+
+        <!-- Bio -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Sobre você</mat-label>
+          <textarea 
+            matInput 
+            [(ngModel)]="formData.bio"
+            name="bio"
+            [readonly]="!isEditing"
+            rows="4"
+            placeholder="Conte um pouco sobre você e seus objetivos..."
+          ></textarea>
+          <mat-icon matPrefix>info</mat-icon>
+        </mat-form-field>
+
+        <!-- Ações -->
+        <div class="form-actions" *ngIf="isEditing">
+          <button 
+            mat-raised-button 
+            type="button"
+            (click)="toggleEdit()"
+            [disabled]="isLoading"
+          >
+            Cancelar
+          </button>
+          <button 
+            mat-raised-button 
+            color="primary"
+            type="button"
+            (click)="saveProfile()"
+            [disabled]="isLoading"
+          >
+            <mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner>
+            <span *ngIf="!isLoading">Salvar Alterações</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

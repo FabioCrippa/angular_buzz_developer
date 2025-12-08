@@ -1,0 +1,88 @@
+<!-- =============================================== -->
+<!-- ✅ PÁGINA DE SUCESSO DO PAGAMENTO -->
+<!-- =============================================== -->
+
+<div class="payment-container success">
+  
+  <!-- VERIFICANDO PAGAMENTO -->
+  <div class="verification-section" *ngIf="isVerifying">
+    <mat-spinner diameter="60"></mat-spinner>
+    <h2>Verificando seu pagamento...</h2>
+    <p>Aguarde enquanto confirmamos sua transação</p>
+  </div>
+
+  <!-- PAGAMENTO APROVADO -->
+  <div class="success-section" *ngIf="!isVerifying && paymentVerified">
+    <div class="success-icon">
+      <mat-icon>check_circle</mat-icon>
+    </div>
+    
+    <h1>🎉 Pagamento Aprovado!</h1>
+    <p class="subtitle">Bem-vindo ao SOWLFY Premium</p>
+    
+    <div class="payment-details">
+      <div class="detail-item">
+        <span class="label">ID da Transação:</span>
+        <span class="value">{{ paymentInfo?.id }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Valor:</span>
+        <span class="value">R$ {{ paymentInfo?.transaction_amount | number:'1.2-2' }}</span>
+      </div>
+      <div class="detail-item" *ngIf="paymentInfo?.date_approved">
+        <span class="label">Data de Aprovação:</span>
+        <span class="value">{{ paymentInfo?.date_approved | date:'dd/MM/yyyy HH:mm' }}</span>
+      </div>
+    </div>
+
+    <div class="benefits-section">
+      <h3>✨ Agora você tem acesso a:</h3>
+      <ul class="benefits-list">
+        <li><mat-icon>done</mat-icon> Tentativas ilimitadas em todos os quizzes</li>
+        <li><mat-icon>done</mat-icon> 2.500+ questões premium</li>
+        <li><mat-icon>done</mat-icon> Relatórios detalhados de performance</li>
+        <li><mat-icon>done</mat-icon> Quiz inteligente personalizado</li>
+        <li><mat-icon>done</mat-icon> Analytics avançado</li>
+        <li><mat-icon>done</mat-icon> Suporte prioritário</li>
+      </ul>
+    </div>
+
+    <div class="countdown-section">
+      <p>Redirecionando em {{ countdown }} segundos...</p>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="redirectToDashboard()">
+        <mat-icon>dashboard</mat-icon>
+        Ir para Dashboard
+      </button>
+      <button mat-raised-button color="accent" (click)="goToQuiz()">
+        <mat-icon>quiz</mat-icon>
+        Começar Quiz
+      </button>
+    </div>
+  </div>
+
+  <!-- ERRO NA VERIFICAÇÃO -->
+  <div class="error-section" *ngIf="!isVerifying && !paymentVerified">
+    <div class="error-icon">
+      <mat-icon>error_outline</mat-icon>
+    </div>
+    
+    <h2>⚠️ Não foi possível verificar o pagamento</h2>
+    <p>{{ errorMessage }}</p>
+    
+    <p class="help-text">
+      Se você realizou o pagamento, ele será processado em breve.
+      Verifique seu email para confirmação ou entre em contato com o suporte.
+    </p>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="redirectToDashboard()">
+        <mat-icon>home</mat-icon>
+        Voltar ao Início
+      </button>
+    </div>
+  </div>
+
+</div>

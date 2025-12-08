@@ -11,6 +11,11 @@ import { LoginComponent } from './shared/components/login/login.component'; // �
 import { HelpComponent } from './pages/help/help.component';
 import { TermComponent } from './pages/term/term.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { PaymentSuccessComponent } from './pages/payment/payment-success.component';
+import { PaymentFailureComponent } from './pages/payment/payment-failure.component';
+import { PaymentPendingComponent } from './pages/payment/payment-pending.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 // Guards
 import { AuthGuard } from './core/guards/auth.guard';
@@ -33,7 +38,7 @@ const routes: Routes = [
     path: 'login', 
     component: LoginComponent,
     data: { 
-      title: 'Login - BuzzDeveloper',
+      title: 'Login - SOWLFY',
       description: 'Faça login para acessar sua conta'
     }
   },
@@ -90,6 +95,26 @@ const routes: Routes = [
   },
 
   { 
+    path: 'profile', 
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+    data: { 
+      title: 'Meu Perfil - SOWLFY',
+      description: 'Gerencie suas informações pessoais'
+    }
+  },
+
+  { 
+    path: 'settings', 
+    component: SettingsComponent,
+    canActivate: [AuthGuard],
+    data: { 
+      title: 'Configurações - SOWLFY',
+      description: 'Personalize sua experiência'
+    }
+  },
+
+  { 
     path: 'help', 
     component: HelpComponent, // ✅ COMPONENT TRADICIONAL
     canActivate: [AuthGuard],
@@ -112,12 +137,44 @@ const routes: Routes = [
   // ===============================================
   { 
     path: 'upgrade', 
-    component: UpgradeComponent, // ✅ COMPONENT TRADICIONAL
+    component: UpgradeComponent,
     data: { 
-      title: 'Upgrade Premium - BuzzDeveloper',
+      title: 'Upgrade Premium - SOWLFY',
       description: 'Desbloqueie todo o potencial da plataforma com nossos planos premium'
     }
-    // Nota: Não precisa de guard, qualquer um pode ver a página de upgrade
+  },
+
+  // ===============================================
+  // 💳 ROTAS DE PAGAMENTO
+  // ===============================================
+  { 
+    path: 'payment/success', 
+    component: PaymentSuccessComponent,
+    canActivate: [AuthGuard],
+    data: { 
+      title: 'Pagamento Aprovado - SOWLFY',
+      description: 'Seu pagamento foi aprovado com sucesso!'
+    }
+  },
+
+  { 
+    path: 'payment/failure', 
+    component: PaymentFailureComponent,
+    canActivate: [AuthGuard],
+    data: { 
+      title: 'Pagamento Não Aprovado - SOWLFY',
+      description: 'Houve um problema com seu pagamento'
+    }
+  },
+
+  { 
+    path: 'payment/pending', 
+    component: PaymentPendingComponent,
+    canActivate: [AuthGuard],
+    data: { 
+      title: 'Pagamento Pendente - SOWLFY',
+      description: 'Seu pagamento está sendo processado'
+    }
   },
 
   { 

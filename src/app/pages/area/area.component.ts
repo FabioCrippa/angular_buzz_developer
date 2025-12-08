@@ -1124,7 +1124,6 @@ Clique em "Upgrade Premium" para desbloquear!`);
 
   getProgressPercentage(): number {
     if (!this.areaData || this.areaData.totalQuestions === 0) {
-      console.warn('⚠️ totalQuestions é 0, retornando 0%');
       return 0;
     }
     
@@ -1132,11 +1131,6 @@ Clique em "Upgrade Premium" para desbloquear!`);
     
     // ✅ Verificar se o resultado é válido
     if (!isFinite(percentage) || isNaN(percentage)) {
-      console.warn('⚠️ Percentual inválido calculado:', {
-        completed: this.areaData.userProgress.completed,
-        total: this.areaData.totalQuestions,
-        result: percentage
-      });
       return 0;
     }
     
@@ -1217,7 +1211,6 @@ Clique em "Upgrade Premium" para desbloquear!`);
       }
       
     } catch (error) {
-      console.error('Erro ao toggle favorito:', error);
       this.showErrorMessage('Erro ao atualizar favoritos');
     }
   }

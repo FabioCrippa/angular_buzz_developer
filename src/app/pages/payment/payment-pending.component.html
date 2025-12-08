@@ -1,0 +1,78 @@
+<!-- =============================================== -->
+<!-- ⏳ PÁGINA DE PAGAMENTO PENDENTE -->
+<!-- =============================================== -->
+
+<div class="payment-container pending">
+  
+  <div class="pending-section">
+    <div class="pending-icon">
+      <mat-icon>schedule</mat-icon>
+    </div>
+    
+    <h1>⏳ Pagamento Pendente</h1>
+    <p class="subtitle">Seu pagamento está sendo processado</p>
+    
+    <div class="info-box info">
+      <mat-icon>info</mat-icon>
+      <div>
+        <p><strong>ID do Pagamento:</strong></p>
+        <p>{{ paymentId }}</p>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h3>O que acontece agora?</h3>
+      
+      <div class="instruction-card" *ngIf="paymentMethod === 'boleto' || paymentMethod === 'ticket'">
+        <mat-icon>receipt</mat-icon>
+        <div>
+          <h4>Boleto Bancário</h4>
+          <p>Você receberá o boleto por email. O pagamento será confirmado em até 3 dias úteis após o pagamento.</p>
+        </div>
+      </div>
+
+      <div class="instruction-card" *ngIf="paymentMethod === 'pix'">
+        <mat-icon>qr_code</mat-icon>
+        <div>
+          <h4>PIX</h4>
+          <p>Complete o pagamento via PIX. A confirmação é geralmente instantânea.</p>
+        </div>
+      </div>
+
+      <div class="instruction-card" *ngIf="paymentMethod !== 'boleto' && paymentMethod !== 'ticket' && paymentMethod !== 'pix'">
+        <mat-icon>payment</mat-icon>
+        <div>
+          <h4>Processando Pagamento</h4>
+          <p>Estamos verificando seu pagamento. Isso pode levar alguns minutos.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box warning">
+      <mat-icon>email</mat-icon>
+      <div>
+        <p><strong>Fique atento ao seu email</strong></p>
+        <p>Você receberá uma confirmação assim que o pagamento for aprovado.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="checkStatus()">
+        <mat-icon>refresh</mat-icon>
+        Verificar Status
+      </button>
+      <button mat-stroked-button (click)="goHome()">
+        <mat-icon>home</mat-icon>
+        Voltar ao Início
+      </button>
+    </div>
+
+    <div class="help-section">
+      <p>
+        <mat-icon>help_outline</mat-icon>
+        Precisa de ajuda? Entre em contato com nosso suporte.
+      </p>
+    </div>
+  </div>
+
+</div>

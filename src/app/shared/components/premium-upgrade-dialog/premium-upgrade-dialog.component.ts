@@ -1,4 +1,4 @@
-// ===============================================
+﻿// ===============================================
 // 💎 PREMIUM-UPGRADE-DIALOG - VERSÃO MELHORADA
 // ===============================================
 
@@ -82,7 +82,6 @@ throw new Error('Method not implemented.');
   ) {}
 
   ngOnInit(): void {
-    console.log('💎 Premium Dialog inicializado com contexto:', this.data?.context);
     
     // ✅ CORRIGIDO: SUBSCRIBER CORRETAMENTE AO OBSERVABLE
     this.authService.currentUser$
@@ -119,15 +118,12 @@ throw new Error('Method not implemented.');
         user: this.userName || 'anonymous'
       };
       
-      console.log('📊 Analytics Premium Dialog:', analytics);
       // TODO: Enviar para Google Analytics ou seu sistema de analytics
     } catch (error) {
-      console.warn('⚠️ Erro ao carregar analytics:', error);
     }
   }
 
   selectPlan(): void {
-    console.log('💳 Usuário selecionou upgrade premium');
     
     if (!this.isLoggedIn) {
       this.dialogRef.close('login');
@@ -138,12 +134,10 @@ throw new Error('Method not implemented.');
   }
 
   continueWithFree(): void {
-    console.log('🆓 Usuário escolheu continuar com plano gratuito');
     this.dialogRef.close('free');
   }
 
   close(): void {
-    console.log('❌ Dialog fechado sem ação');
     this.dialogRef.close('cancel');
   }
 }

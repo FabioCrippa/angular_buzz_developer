@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -77,7 +77,6 @@ export class ProgressComponent implements OnInit {
         this.loadProgressData(indexJson);
       },
       error: (error) => {
-        console.error('Erro ao carregar index.json:', error);
         this.hasError = true;
         this.errorMessage = 'Erro ao carregar dados do sistema';
         this.isLoading = false;
@@ -177,13 +176,11 @@ export class ProgressComponent implements OnInit {
       };
 
       // ✅ ADICIONE ESTE LOG FINAL TAMBÉM
-      console.log('🔍 ProgressData.overallStats final:', this.progressData.overallStats);
 
       this.isLoading = false;
       this.showSuccessMessage('Progresso carregado com sucesso!');
       
     } catch (error) {
-      console.error('Erro ao processar progresso:', error);
       this.hasError = true;
       this.errorMessage = 'Erro ao processar dados de progresso';
       this.isLoading = false;
@@ -196,7 +193,6 @@ export class ProgressComponent implements OnInit {
   // ===============================================
   
   startQuizForArea(areaName: string): void {
-  console.log('🎯 [Progress] Iniciando quiz para área:', areaName);
   
   if (!areaName || areaName.trim() === '') {
     this.showErrorMessage('Nome da área inválido');
@@ -215,17 +211,12 @@ export class ProgressComponent implements OnInit {
     }
   }).then(success => {
     if (success) {
-      console.log('✅ [Progress] Navegação para quiz bem-sucedida');
     } else {
-      console.error('❌ [Progress] Falha na navegação para quiz');
       // ✅ FALLBACK: Se não conseguir ir para quiz, vai para área
-      console.log('🔄 [Progress] Tentando navegar para área como fallback');
       this.navigateToArea(areaName);
     }
   }).catch(error => {
-    console.error('❌ [Progress] Erro na navegação para quiz:', error);
     // ✅ FALLBACK: Se der erro, vai para área
-    console.log('🔄 [Progress] Navegando para área como fallback');
     this.navigateToArea(areaName);
   });
 }
@@ -427,7 +418,6 @@ export class ProgressComponent implements OnInit {
 
   // ✅ Formatação melhorada do tempo
   private formatTime(totalSeconds: number): string {
-  console.log('🕐 Formatando tempo - entrada:', totalSeconds, 'segundos');
   
   if (!totalSeconds || totalSeconds === 0) {
     return '0s';
@@ -450,25 +440,19 @@ export class ProgressComponent implements OnInit {
     formatted = `${seconds}s`;
   }
   
-  console.log('🕐 Tempo formatado - saída:', formatted);
   return formatted;
 }
 
   // ✅ Adicione este método no seu progress.component.ts
 
   debugProgress(): void {
-    console.log('🔍 Debug do Progresso:');
     
     const history = this.progressService.getHistory();
-    console.log('📝 Histórico de respostas:', history);
     
     // ✅ VERIFIQUE OS TEMPOS INDIVIDUALMENTE
-    console.log('⏱️ Tempos por resposta:', history.map(h => ({ id: h.questionId, time: h.timeSpent, date: h.date })));
     
     const stats = this.progressService.getStats();
-    console.log('📊 Estatísticas gerais:', stats);
     
-    console.log('📋 Dados do componente:', this.progressData);
     
     if (history.length === 0) {
       this.showErrorMessage('❌ Nenhuma resposta encontrada no histórico');
@@ -528,11 +512,7 @@ export class ProgressComponent implements OnInit {
 
   // Adicione este método temporário para debug:
   debugAvailableAreas(): void {
-    console.log('🔍 DEBUG - Available Areas to Start:');
     const areas = this.getAvailableAreasToStart();
-    console.log('📋 Áreas disponíveis:', areas);
-    console.log('📋 IndexData:', this.indexData);
-    console.log('📋 Started areas:', this.progressData.areasProgress.map(a => a.name));
     
     if (areas.length === 0) {
       this.showErrorMessage('❌ Nenhuma área disponível para começar');
@@ -544,7 +524,6 @@ export class ProgressComponent implements OnInit {
   // ✅ NO progress.component.ts, ADICIONE este método:
 
   navigateToArea(areaName: string): void {
-    console.log('🔍 [Progress] Navegando para área:', areaName);
     
     this.showSuccessMessage(`Explorando ${areaName}...`);
     

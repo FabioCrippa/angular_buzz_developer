@@ -6,8 +6,9 @@
 
 export const environment = {
   production: true,
-  apiUrl: "https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/api", // ✅ CORRETO
+  apiUrl: "https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/api",
   stripePublicKey: "pk_test_51SSO1CPeMRCkgPBhhTGAFm950miNFGoiM3lmHquSOEtUj9vWK68NB2fbPMRqzS4PxHTThtnaUWrrUeDecYfV18ai00lpSDQElH",
+  mercadoPagoPublicKey: "APP_USR-d11ca329-064b-4623-af41-1b56a4f75eb0",
   appName: "SOWLFY",
   version: "1.0.0",
   firebase: {

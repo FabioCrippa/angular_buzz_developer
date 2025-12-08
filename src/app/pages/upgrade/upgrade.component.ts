@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PaymentService } from '../../core/services/payment.service';
+import { MercadopagoService } from '../../core/services/mercadopago.service';
 
 interface PricingPlan {
   id: string;
@@ -139,23 +141,18 @@ export class UpgradeComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private paymentService: PaymentService,
+    private mercadoPagoService: MercadopagoService
   ) {}
 
   ngOnInit(): void {
-    console.log('🚀 Inicializando página de upgrade...');
     
     // Capturar parâmetros da URL
     this.route.queryParams.subscribe(params => {
       this.source = params['source'] || 'direct';
       this.currentArea = params['area'] || '';
       this.currentScore = parseInt(params['score']) || 0;
-      
-      console.log('📊 Parâmetros de upgrade:', {
-        source: this.source,
-        area: this.currentArea,
-        score: this.currentScore
-      });
     });
   }
 
@@ -165,49 +162,67 @@ export class UpgradeComponent implements OnInit {
 
   selectPlan(planId: string): void {
     this.selectedPlan = planId;
-    console.log('📦 Plano selecionado:', planId);
-    
+
     // Analytics
     this.trackPlanSelection(planId);
   }
 
   async startCheckout(plan: PricingPlan): Promise<void> {
     if (this.isLoading) return;
-    
-    console.log('💳 Iniciando checkout para:', plan.name);
-    
+
+
     if (plan.id === 'free') {
       this.showMessage('Você já está no plano gratuito!');
       return;
     }
-    
+
     this.isLoading = true;
-    this.selectedPlan = plan.id; // ✅ DEFINIR PLANO SELECIONADO PARA LOADING
-    
+    this.selectedPlan = plan.id;
+
     try {
-      // Simular processo de checkout
-      this.showMessage('Redirecionando para pagamento...');
-      
+      this.showMessage('Redirecionando para pagamento via Mercado Pago...');
+
       // Analytics
       this.trackCheckoutStart(plan);
-      
-      // Aqui você integraria com Stripe, PagSeguro, etc.
-      await this.simulateCheckout(plan);
-      
+
+      // ✅ REDIRECIONAR PARA MERCADO PAGO
+      await this.redirectToMercadoPagoCheckout(plan);
+
     } catch (error) {
-      console.error('❌ Erro no checkout:', error);
       this.showMessage('Erro ao processar pagamento. Tente novamente.', true);
-    } finally {
       this.isLoading = false;
     }
   }
 
-  private async simulateCheckout(plan: PricingPlan): Promise<void> {
-    // Simular delay de checkout
-    await new Promise(resolve => setTimeout(resolve, 2000));
+  private async redirectToMercadoPagoCheckout(plan: PricingPlan): Promise<void> {
+    // Verificar se está logado
+    const userStr = localStorage.getItem('sowlfy_user');
+    if (!userStr) {
+      this.isLoading = false;
+      this.showMessage('⚠️ Você precisa fazer login primeiro!', true);
+      
+      // Salvar onde estava para redirecionar depois
+      localStorage.setItem('redirectAfterLogin', '/upgrade');
+      
+      // Redirecionar para login
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 1500);
+      return;
+    }
     
-    // Por enquanto, apenas mostrar mensagem
-    this.showMessage(`Checkout simulado para ${plan.name}. Funcionalidade em desenvolvimento!`);
+    // Mapear ID do plano para o formato do MP
+    const mpPlanId = plan.id === 'monthly' ? 'sowlfy-pro-monthly' : 'sowlfy-pro-yearly';
+    
+    this.paymentService.redirectToMercadoPago(mpPlanId).subscribe({
+      next: () => {
+        // O usuário será redirecionado para o checkout do MP
+      },
+      error: (error) => {
+        this.showMessage('Erro ao acessar o checkout. Tente novamente.', true);
+        this.isLoading = false;
+      }
+    });
   }
 
   toggleFaq(index: number): void {
@@ -271,22 +286,12 @@ export class UpgradeComponent implements OnInit {
   // 📊 ANALYTICS
   // ===============================================
 
-  private trackPlanSelection(planId: string): void {
-    console.log('📊 Analytics: Plano selecionado', {
-      plan: planId,
-      source: this.source,
-      area: this.currentArea,
-      score: this.currentScore
-    });
+  public trackPlanSelection(planId: string): void {
+    // Analytics tracking
   }
 
   private trackCheckoutStart(plan: PricingPlan): void {
-    console.log('📊 Analytics: Checkout iniciado', {
-      plan: plan.id,
-      price: plan.price,
-      source: this.source,
-      area: this.currentArea
-    });
+    // Analytics tracking
   }
 
   private showMessage(message: string, isError: boolean = false): void {

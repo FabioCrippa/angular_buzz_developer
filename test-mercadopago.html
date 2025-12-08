@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Mercado Pago - SOWLFY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .status {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .status.loading {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .status.success {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .status.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        .info-card {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .label {
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .value {
+            color: #333;
+            font-family: monospace;
+        }
+        
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .logs {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .log-line {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Teste Mercado Pago</h1>
+        <p class="subtitle">Verificação de Integração - SOWLFY</p>
+        
+        <div id="status" class="status loading">
+            ⏳ Inicializando testes...
+        </div>
+        
+        <div class="info-card">
+            <div class="info-row">
+                <span class="label">Backend:</span>
+                <span class="value" id="backend-status">Verificando...</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Public Key:</span>
+                <span class="value" id="public-key">Carregando...</span>
+            </div>
+            <div class="info-row">
+                <span class="label">SDK Status:</span>
+                <span class="value" id="sdk-status">Carregando...</span>
+            </div>
+        </div>
+        
+        <button id="test-btn" onclick="testarFluxoCompleto()">
+            🚀 Testar Criação de Preferência
+        </button>
+        
+        <div class="logs" id="logs">
+            <div class="log-line">📝 Logs de teste aparecerão aqui...</div>
+        </div>
+    </div>
+    
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        const API_URL = 'http://localhost:3000';
+        const MP_PUBLIC_KEY = 'APP_USR-d11ca329-064b-4623-af41-1b56a4f75eb0';
+        let mp = null;
+        
+        function log(message, type = 'info') {
+            const logsDiv = document.getElementById('logs');
+            const timestamp = new Date().toLocaleTimeString();
+            const icon = type === 'success' ? '✅' : type === 'error' ? '❌' : '📝';
+            logsDiv.innerHTML += `<div class="log-line">[${timestamp}] ${icon} ${message}</div>`;
+            logsDiv.scrollTop = logsDiv.scrollHeight;
+            console.log(message);
+        }
+        
+        async function inicializar() {
+            try {
+                log('🔧 Inicializando Mercado Pago SDK...');
+                
+                // Verificar se o SDK carregou
+                if (typeof MercadoPago === 'undefined') {
+                    throw new Error('SDK do Mercado Pago não carregou');
+                }
+                
+                mp = new MercadoPago(MP_PUBLIC_KEY, {
+                    locale: 'pt-BR'
+                });
+                
+                document.getElementById('sdk-status').textContent = '✅ Carregado';
+                document.getElementById('public-key').textContent = MP_PUBLIC_KEY.substring(0, 20) + '...';
+                log('✅ Mercado Pago SDK inicializado com sucesso', 'success');
+                
+                // Testar backend
+                await testarBackend();
+                
+                document.getElementById('status').className = 'status success';
+                document.getElementById('status').textContent = '✅ Sistema pronto para testes!';
+                
+            } catch (error) {
+                log('❌ Erro na inicialização: ' + error.message, 'error');
+                document.getElementById('status').className = 'status error';
+                document.getElementById('status').textContent = '❌ Erro na inicialização';
+                document.getElementById('sdk-status').textContent = '❌ Erro';
+            }
+        }
+        
+        async function testarBackend() {
+            try {
+                log('🔍 Testando conexão com backend...');
+                
+                const response = await fetch(`${API_URL}/health`);
+                const data = await response.json();
+                
+                if (data.status === 'ok') {
+                    document.getElementById('backend-status').textContent = '✅ Online';
+                    log('✅ Backend respondendo corretamente', 'success');
+                    log(`📊 Serviços: ${JSON.stringify(data.services)}`, 'info');
+                } else {
+                    throw new Error('Backend com problemas');
+                }
+                
+            } catch (error) {
+                log('❌ Backend offline ou com erro: ' + error.message, 'error');
+                document.getElementById('backend-status').textContent = '❌ Offline';
+            }
+        }
+        
+        async function testarFluxoCompleto() {
+            const btn = document.getElementById('test-btn');
+            btn.disabled = true;
+            btn.textContent = '⏳ Testando...';
+            
+            try {
+                log('🚀 Iniciando teste de criação de preferência...');
+                
+                // Simular dados de usuário
+                const mockUser = {
+                    id: 999,
+                    email: 'teste@sowlfy.com'
+                };
+                
+                log(`👤 Usuário teste: ${mockUser.email}`);
+                log('📦 Plano selecionado: SOWLFY Pro Mensal (R$ 39,90)');
+                
+                const payload = {
+                    planId: 'sowlfy-pro-monthly',
+                    userId: mockUser.id,
+                    userEmail: mockUser.email
+                };
+                
+                log('📤 Enviando requisição para o backend...');
+                
+                const response = await fetch(`${API_URL}/api/payments/create-preference`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer fake-token-for-test'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    log('✅ Preferência criada com sucesso!', 'success');
+                    log(`🆔 ID da preferência: ${data.preference.id}`);
+                    log(`🔗 URL de checkout: ${data.preference.init_point}`);
+                    log(`💰 Plano: ${data.plan.title} - R$ ${data.plan.price}`);
+                    
+                    // Perguntar se quer abrir o checkout
+                    if (confirm('Preferência criada! Deseja abrir o checkout do Mercado Pago?')) {
+                        log('🌐 Abrindo checkout em nova aba...');
+                        window.open(data.preference.init_point, '_blank');
+                    }
+                    
+                    document.getElementById('status').className = 'status success';
+                    document.getElementById('status').textContent = '🎉 Teste concluído com sucesso!';
+                } else {
+                    throw new Error(data.message || 'Erro ao criar preferência');
+                }
+                
+            } catch (error) {
+                log('❌ Erro no teste: ' + error.message, 'error');
+                document.getElementById('status').className = 'status error';
+                document.getElementById('status').textContent = '❌ Teste falhou';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🔄 Testar Novamente';
+            }
+        }
+        
+        // Inicializar ao carregar a página
+        window.addEventListener('load', inicializar);
+    </script>
+</body>
+</html>

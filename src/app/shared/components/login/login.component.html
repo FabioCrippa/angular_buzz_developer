@@ -1,24 +1,51 @@
 <div class="login-container">
-  
-  <!-- Background Decorativo -->
-  <div class="login-background">
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
-    <div class="bg-shape shape-3"></div>
-  </div>
 
   <!-- Card Principal -->
   <div class="login-card">
     
     <!-- Header -->
     <div class="login-header">
-      <div class="logo">🚀</div>
-      <h1 class="brand-name">Quizzfy</h1>
-      <p class="brand-subtitle">Sua plataforma de aprendizado</p>
+      <h1 class="brand-name">{{ isDialog ? dialogTitle : 'SOWLFY' }}</h1>
+      <p class="brand-subtitle">{{ isDialog && dialogSubtitle ? dialogSubtitle : 'Sua plataforma de aprendizado inteligente' }}</p>
     </div>
 
-    <!-- Mensagens de Status -->
-    <div class="status-messages" *ngIf="errorMessage || successMessage">
+    <!-- Modo de Seleção -->
+    <div class="selection-mode" *ngIf="isSelectionMode">
+      <div class="selection-buttons">
+        <button 
+          type="button"
+          class="selection-btn login-selection"
+          (click)="selectLogin()"
+        >
+          <div class="btn-icon">🔐</div>
+          <h3>Fazer Login</h3>
+          <p>Já tenho uma conta SOWLFY</p>
+        </button>
+        
+        <button 
+          type="button"
+          class="selection-btn register-selection"
+          (click)="selectRegister()"
+        >
+          <div class="btn-icon">📝</div>
+          <h3>Criar Conta</h3>
+          <p>Quero criar uma conta gratuita</p>
+        </button>
+      </div>
+      
+      
+      
+      <!-- Botão Fechar -->
+      <button type="button" class="close-btn" (click)="closeDialog()" *ngIf="isDialog">
+        ✕
+      </button>
+    </div>
+
+    <!-- Formulários de Login/Registro -->
+    <div class="auth-forms" *ngIf="!isSelectionMode">
+      
+      <!-- Mensagens de Status -->
+      <div class="status-messages" *ngIf="errorMessage || successMessage">
       <div *ngIf="errorMessage" class="message error-message">
         <svg viewBox="0 0 24 24" width="18" height="18">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/>
@@ -304,6 +331,9 @@
 
       </div>
 
+    </div>
+    
+    <!-- Fim dos formulários de Auth -->
     </div>
 
   </div>

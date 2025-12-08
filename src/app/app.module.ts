@@ -27,6 +27,11 @@ import { PremiumUpgradeDialogComponent } from './shared/components/premium-upgra
 import { HelpComponent } from './pages/help/help.component';
 import { TermComponent } from './pages/term/term.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { PaymentSuccessComponent } from './pages/payment/payment-success.component';
+import { PaymentFailureComponent } from './pages/payment/payment-failure.component';
+import { PaymentPendingComponent } from './pages/payment/payment-pending.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 // ✅ GUARDS E SERVICES
 import { PremiumGuard } from './core/guards/premium.guard';
@@ -77,7 +82,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     PremiumUpgradeDialogComponent,
     HelpComponent,
     TermComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    PaymentSuccessComponent,
+    PaymentFailureComponent,
+    PaymentPendingComponent,
+    ProfileComponent,
+    SettingsComponent
   ],
   imports: [
     // ✅ CORE MODULES

@@ -1,4 +1,4 @@
-// ===============================================
+﻿// ===============================================
 // 🛡️ AUTH.GUARD.TS - CORREÇÃO
 // ===============================================
 
@@ -30,11 +30,10 @@ export class AuthGuard implements CanActivate {
 
   private checkAuth(url: string): Observable<boolean> {
     if (this.authService.isAuthenticated()) {
-      // ✅ CORRIGIDO: Usar refreshUserData() em vez de refreshSession()
+      // ✅ USUÁRIO LOGADO, PERMITIR ACESSO
       this.authService.refreshUserData().subscribe({
-        next: () => console.log('✅ Dados do usuário atualizados'),
+        next: () => {},
         error: (error) => {
-          console.warn('⚠️ Erro ao atualizar dados:', error);
           // Se der erro, não bloquear o acesso, apenas avisar
         }
       });
@@ -42,10 +41,18 @@ export class AuthGuard implements CanActivate {
       return of(true);
     }
 
-    // ✅ USUÁRIO NÃO AUTENTICADO
-    console.log('🔐 Usuário não autenticado, redirecionando para home');
+    // ✅ USUÁRIO NÃO AUTENTICADO - REDIRECIONAMENTO INTELIGENTE
+    
+    // ✅ SALVAR URL PARA REDIRECT APÓS LOGIN
+    localStorage.setItem('sowlfy_redirect_after_login', url);
+    
+    // ✅ REDIRECIONAR PARA HOME COM INFORMAÇÃO SOBRE LOGIN NECESSÁRIO
     this.router.navigate(['/'], {
-      queryParams: { returnUrl: url }
+      queryParams: { 
+        returnUrl: url,
+        authRequired: 'true',
+        message: 'login_required'
+      }
     });
     
     return of(false);

@@ -1,4 +1,4 @@
-// ✅ VERSÃO CORRIGIDA - quizz.component.ts
+﻿// ✅ VERSÃO CORRIGIDA - quizz.component.ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -251,7 +251,6 @@ throw new Error('Method not implemented.');
 
   // ✅ ngOnInit
   ngOnInit(): void {
-    console.log('🚀 Inicializando QuizComponent...');
     
     // Carregar preferências
     this.loadSoundPreference();
@@ -262,14 +261,10 @@ throw new Error('Method not implemented.');
       this.area = params['area'] || '';
       this.subject = params['subject'] || '';
       
-      console.log('📍 Parâmetros da rota capturados:');
-      console.log('📍 Area:', this.area);
-      console.log('📍 Subject:', this.subject);
     });
 
     // ✅ CORRIGIR A LÓGICA DE QUERY PARAMS PARA DETECTAR ÁREA ESPECÍFICA
     const queryParamsSub = this.route.queryParams.subscribe(queryParams => {
-      console.log('🔍 Query parameters recebidos:', queryParams);
       
       const queryMode = queryParams['mode'];
       const queryArea = queryParams['area']; // ✅ CAPTURAR ÁREA DOS QUERY PARAMS
@@ -281,43 +276,33 @@ throw new Error('Method not implemented.');
       // ✅ PRIORIZAR ÁREA E SUBJECT DOS QUERY PARAMS (VINDOS DA HOME)
       if (queryArea) {
         this.area = queryArea;
-        console.log(`📁 Área definida via query param: ${this.area}`);
       }
       
       if (querySubject) {
         this.subject = querySubject;
-        console.log(`📖 Subject definido via query param: ${this.subject}`);
       }
       
       // ✅ DETERMINAR MODO CORRETO BASEADO NOS PARÂMETROS
       if (queryMode === 'area' && this.area) {
         this.mode = 'area';
-        console.log(`📁 MODO ÁREA ESPECÍFICA: ${this.area}`);
       } else if (queryMode === 'subject' && this.area && this.subject) {
         this.mode = 'subject';
-        console.log(`📖 MODO SUBJECT ESPECÍFICO: ${this.area}/${this.subject}`);
       } else if (queryMode === 'smart') {
         this.mode = 'smart';
-        console.log('🧠 MODO QUIZ INTELIGENTE');
       } else if (queryMode === 'custom') {
         this.mode = 'custom';
-        console.log('🎯 MODO QUIZ PERSONALIZADO');
       } else {
         this.mode = 'mixed';
-        console.log('🔀 MODO QUIZ MISTO/ALEATÓRIO');
       }
       
       // ✅ LÓGICA CORRIGIDA PARA PREMIUM
       if (premiumParam === 'true') {
         this.isFreeTrial = false;
-        console.log('👑 MODO PREMIUM DETECTADO via parâmetro premium=true');
       } else if (queryType === 'free-trial' || queryMode === 'mixed') {
         this.isFreeTrial = true;
-        console.log('🆓 MODO GRATUITO DETECTADO via type=free-trial ou mode=mixed');
       } else {
         const savedPremiumStatus = localStorage.getItem('testPremiumStatus');
         this.isFreeTrial = savedPremiumStatus !== 'true';
-        console.log('🔍 PREMIUM STATUS RECUPERADO DO LOCALSTORAGE:', savedPremiumStatus);
       }
       
       console.log(`🎯 CONFIGURAÇÃO FINAL:`, {
@@ -335,7 +320,6 @@ throw new Error('Method not implemented.');
         this.canStartQuiz = true;
         this.remainingAttempts = -1;
         this.showTrialWarning = false;
-        console.log('👑 USUÁRIO PREMIUM: Acesso ilimitado confirmado');
       }
       
       // ✅ ATUALIZAR TÍTULO BASEADO NA CONFIGURAÇÃO
@@ -349,10 +333,8 @@ throw new Error('Method not implemented.');
     this.setState(QuizState.INITIALIZING);
   }
   checkTrialLimits() {
-    console.log('🔍 Verificando limites de trial...');
     
     if (!this.isFreeTrial) {
-      console.log('👑 Usuário Premium - sem limites');
       this.canStartQuiz = true;
       this.showTrialWarning = false;
       this.remainingAttempts = -1; // Ilimitado
@@ -396,7 +378,6 @@ throw new Error('Method not implemented.');
     
     this.title = title;
     this.titleService.setTitle(title);
-    console.log('📝 Título atualizado:', title);
   }
   loadFavorites() {
     try {
@@ -404,10 +385,8 @@ throw new Error('Method not implemented.');
       if (saved) {
         const favorites = JSON.parse(saved);
         this.favoriteQuestions = new Set(favorites);
-        console.log('⭐ Favoritos carregados:', this.favoriteQuestions.size);
       }
     } catch (error) {
-      console.warn('⚠️ Erro ao carregar favoritos:', error);
       this.favoriteQuestions = new Set();
     }
   }
@@ -415,9 +394,7 @@ throw new Error('Method not implemented.');
     try {
       const saved = localStorage.getItem('soundEnabled');
       this.soundEnabled = saved ? JSON.parse(saved) : true;
-      console.log('🔊 Preferência de som carregada:', this.soundEnabled);
     } catch (error) {
-      console.warn('⚠️ Erro ao carregar preferência de som:', error);
       this.soundEnabled = true;
     }
   }
@@ -425,7 +402,6 @@ throw new Error('Method not implemented.');
   // ✅ ADICIONE/SUBSTITUA estes métodos também:
 
   private loadAreaQuestionsWithIndex(): void {
-    console.log(`📁 [ÁREA ESPECÍFICA] Carregando questões da área: ${this.area}`);
     
     if (!this.area) {
       this.showError('Área não especificada para modo área');
@@ -444,11 +420,9 @@ throw new Error('Method not implemented.');
     // ✅ TENTAR CARREGAR QUESTÕES REAIS DA ÁREA ESPECÍFICA
     this.tryLoadRealQuestions().then(success => {
       if (!success) {
-        console.log(`⚡ Gerando questões de emergência FILTRADAS para ${this.area}...`);
         this.generateEmergencyQuestionsForArea(this.area);
       }
     }).catch(error => {
-      console.error('❌ Erro ao carregar questões da área:', error);
       this.generateEmergencyQuestionsForArea(this.area);
     });
   }
@@ -458,7 +432,6 @@ throw new Error('Method not implemented.');
   }
 
   generateEmergencyQuestionsForArea(targetArea?: string) {
-    console.log('🚨 Gerando questões de emergência...');
     this.loadingMessage = 'Carregando questões demonstrativas...';
     
     // ✅ QUESTÕES DE EMERGÊNCIA BALANCEADAS POR ÁREA
@@ -615,11 +588,9 @@ throw new Error('Method not implemented.');
     // ✅ FILTRAR APENAS QUESTÕES DA ÁREA ESPECIFICADA
     const filteredQuestions = emergencyQuestions.filter(q => q.category === targetArea);
     
-    console.log(`🎯 Questões filtradas para ${targetArea}:`, filteredQuestions.length);
     
     if (filteredQuestions.length === 0) {
       // ✅ SE NÃO HÁ QUESTÕES DA ÁREA, USAR TODAS MAS AVISAR
-      console.warn(`⚠️ Nenhuma questão de emergência para ${targetArea}, usando questões mistas`);
       this.generateEmergencyQuestions(); // Usar método original
       return;
     }
@@ -639,7 +610,6 @@ throw new Error('Method not implemented.');
     this.isLoading = false;
     this.startTimer();
     
-    console.log(`✅ ${selectedQuestions.length} questões de ${targetArea} carregadas`);
     
     // ✅ MENSAGEM ESPECÍFICA PARA ÁREA
     const categoryTitle = this.getCategoryTitle(targetArea);
@@ -655,7 +625,6 @@ throw new Error('Method not implemented.');
   }
 
   private loadSubjectQuestionsWithIndex(): void {
-    console.log(`🎯 Carregando questões: ${this.area} > ${this.subject}`);
     
     if (!this.area || !this.subject) {
       this.showError('Área e subject são obrigatórios');
@@ -665,7 +634,6 @@ throw new Error('Method not implemented.');
     // ✅ USAR O MESMO SISTEMA DE EMERGÊNCIA
     this.tryLoadRealQuestions().then(success => {
       if (!success) {
-        console.log(`⚡ Gerando questões de emergência para ${this.area}/${this.subject}...`);
         this.generateEmergencyQuestions();
       }
     });
@@ -673,12 +641,10 @@ throw new Error('Method not implemented.');
 
   // ✅ CORRIGIR O MÉTODO initializeQuiz PARA EVITAR ERRO LINHA 1236
   private initializeQuiz(): void {
-    console.log('🎯 Inicializando quiz...');
     
     try {
       // ✅ VERIFICAÇÃO MAIS ROBUSTA
       if (!this.mode) {
-        console.warn('⚠️ Mode não definido, usando mixed');
         this.mode = 'mixed';
       }
       
@@ -689,7 +655,6 @@ throw new Error('Method not implemented.');
       this.loadQuestionsBasedOnMode();
       
     } catch (error) {
-      console.error('❌ Erro ao inicializar quiz:', error);
       this.hasError = true;
       this.errorMessage = 'Erro ao inicializar quiz. Tente novamente.';
       this.isLoading = false;
@@ -697,10 +662,6 @@ throw new Error('Method not implemented.');
   }
   // ✅ IMPLEMENTAÇÃO REAL:
   loadQuestionsBasedOnMode(): void {
-    console.log(`🎯 Carregando questões no modo: ${this.mode}`);
-    console.log(`📁 Área solicitada: ${this.area || 'NENHUMA'}`);
-    console.log(`📖 Subject solicitado: ${this.subject || 'NENHUM'}`);
-    console.log(`👤 Usuário: ${this.isFreeTrial ? 'FREE TRIAL' : 'PREMIUM'}`);
     
     // ✅ REGISTRAR TENTATIVA APENAS SE FOR FREE TRIAL
     if (this.isFreeTrial && this.canStartQuiz) {
@@ -717,30 +678,24 @@ throw new Error('Method not implemented.');
         }
         
         this.remainingAttempts = this.freeTrialService.getRemainingAttempts(areaToRegister);
-        console.log(`✅ Tentativa FREE registrada! Restantes: ${this.remainingAttempts}`);
       }
     } else if (!this.isFreeTrial) {
-      console.log('👑 USUÁRIO PREMIUM: Sem limites de tentativas');
     }
     
     // ✅ CARREGAR QUESTÕES BASEADO NO MODO COM VALIDAÇÃO ESPECÍFICA
     switch (this.mode) {
       case 'area':
         if (this.area) {
-          console.log(`📁 Carregando questões da ÁREA ESPECÍFICA: ${this.area}`);
           this.loadAreaQuestionsWithIndex();
         } else {
-          console.warn('⚠️ Modo área sem área especificada, usando misto');
           this.loadMixedQuestionsWithIndex();
         }
         break;
         
       case 'subject':
         if (this.area && this.subject) {
-          console.log(`📖 Carregando questões do SUBJECT ESPECÍFICO: ${this.area}/${this.subject}`);
           this.loadSubjectQuestionsWithIndex();
         } else {
-          console.warn('⚠️ Modo subject sem área/subject, usando área ou misto');
           if (this.area) {
             this.mode = 'area';
             this.loadAreaQuestionsWithIndex();
@@ -752,7 +707,6 @@ throw new Error('Method not implemented.');
         
       case 'smart':
         if (!this.isFreeTrial) {
-          console.log('🧠 Carregando Quiz Inteligente Premium...');
           this.loadSmartQuestions();
         } else {
           this.showError('Quiz Inteligente é exclusivo para usuários Premium');
@@ -761,7 +715,6 @@ throw new Error('Method not implemented.');
         
       case 'custom':
         if (!this.isFreeTrial) {
-          console.log('🎯 Carregando Quiz Personalizado Premium...');
           this.loadCustomQuestions();
         } else {
           this.showError('Quiz Personalizado é exclusivo para usuários Premium');
@@ -770,7 +723,6 @@ throw new Error('Method not implemented.');
         
       case 'mixed':
       default:
-        console.log('🔀 Carregando questões MISTAS/ALEATÓRIAS...');
         this.loadMixedQuestionsWithIndex();
         break;
     }
@@ -778,7 +730,6 @@ throw new Error('Method not implemented.');
 
   // ✅ ngOnDestroy
   ngOnDestroy(): void {
-    console.log('🧹 Destruindo QuizComponent...');
     
     // Desativar listeners de teclado
     this.keyboardListenerActive = false;
@@ -811,7 +762,6 @@ throw new Error('Method not implemented.');
 
   // ✅ MÉTODOS DE ESTADO
   private setState(newState: QuizState): void {
-    console.log(`🔄 Estado: ${this.currentState} → ${newState}`);
     
     const previousState = this.currentState;
     this.currentState = newState;
@@ -821,13 +771,11 @@ throw new Error('Method not implemented.');
     this.quizCompleted = newState === QuizState.COMPLETED;
     
     if ((newState === QuizState.COMPLETED || newState === QuizState.ERROR) && this.timer) {
-      console.log('⏹️ Parando timer - estado final alcançado');
       clearInterval(this.timer);
       this.timer = null;
     }
     
     if (newState === QuizState.IN_PROGRESS && !this.timer) {
-      console.log('▶️ Iniciando timer - quiz em progresso');
       this.startTimer();
     }
   }
@@ -956,7 +904,6 @@ throw new Error('Method not implemented.');
 
   // ✅ PRÓXIMA QUESTÃO
   nextQuestion(): void {
-    console.log('➡️ Próxima questão...');
     
     if (this.selectedAnswer && !this.showExplanation) {
       this.submitAnswer();
@@ -990,7 +937,6 @@ throw new Error('Method not implemented.');
 
   // ✅ COMPLETAR QUIZ
   completeQuiz(): void {
-    console.log('🏁 Finalizando quiz...');
     
     this.finalTime = Math.floor((new Date().getTime() - this.startTime.getTime()) / 1000);
     const finalMinutes = Math.floor(this.finalTime / 60);
@@ -1049,7 +995,6 @@ throw new Error('Method not implemented.');
     }
     
     this.isRestarting = true;
-    console.log('🔄 Reiniciando quiz...');
     
     try {
       // Limpar timer
@@ -1095,7 +1040,6 @@ throw new Error('Method not implemented.');
       this.showSuccessMessage('🔄 Quiz reiniciado com sucesso!');
       
     } catch (error) {
-      console.error('❌ Erro ao reiniciar quiz:', error);
       this.showErrorMessage('Erro ao reiniciar o quiz. Tente novamente.');
     } finally {
       this.isRestarting = false;
@@ -1104,7 +1048,6 @@ throw new Error('Method not implemented.');
 
   // ✅ RECARREGAR QUESTÕES
   reloadQuestions(): void {
-    console.log('🔄 Recarregando questões...');
     
     this.isLoading = true;
     this.hasError = false;
@@ -1129,13 +1072,11 @@ throw new Error('Method not implemented.');
     if (this.isNavigating) return;
     
     this.isNavigating = true;
-    console.log('🏠 Voltando para home...');
     
     try {
       // Salvar estatísticas se necessário
       if (this.isFreeTrial) {
         const summary = this.freeTrialService.getDailySummary();
-        console.log('📊 Resumo diário das tentativas:', summary);
       }
       
       // Limpar timer se ativo
@@ -1151,7 +1092,6 @@ throw new Error('Method not implemented.');
       this.router.navigate(['/']);
       
     } catch (error) {
-      console.error('❌ Erro ao navegar para home:', error);
       this.showErrorMessage('Erro ao navegar. Tente novamente.');
     } finally {
       this.isNavigating = false;
@@ -1169,7 +1109,6 @@ throw new Error('Method not implemented.');
       return;
     }
     
-    console.log('⏸️ Pausando quiz...');
     
     // ✅ PAUSAR TIMER
     if (this.timer) {
@@ -1194,7 +1133,6 @@ throw new Error('Method not implemented.');
       return;
     }
     
-    console.log('▶️ Retomando quiz...');
     
     // ✅ AJUSTAR TEMPO DE INÍCIO PARA COMPENSAR PAUSA
     const pausedTime = this.timeSpent * 1000; // Converter para milliseconds
@@ -1254,7 +1192,6 @@ throw new Error('Method not implemented.');
       return;
     }
     
-    console.log('🚪 Abandonando quiz...');
     
     // ✅ REGISTRAR ABANDONO NAS ANALYTICS
     this.analytics.abandonedAt = this.currentQuestionIndex;
@@ -1301,11 +1238,9 @@ throw new Error('Method not implemented.');
       };
       
       localStorage.setItem('savedQuizState', JSON.stringify(quizState));
-      console.log('💾 Estado do quiz salvo:', quizState);
       
       this.showSuccessMessage('💾 Progresso salvo automaticamente');
     } catch (error) {
-      console.warn('⚠️ Erro ao salvar estado do quiz:', error);
     }
   }
 
@@ -1323,7 +1258,6 @@ throw new Error('Method not implemented.');
       if (quizState.mode !== this.mode || 
           quizState.area !== this.area || 
           quizState.subject !== this.subject) {
-        console.log('🔄 Estado salvo é de outro quiz, ignorando...');
         return false;
       }
       
@@ -1355,7 +1289,6 @@ throw new Error('Method not implemented.');
       return true;
       
     } catch (error) {
-      console.warn('⚠️ Erro ao carregar estado salvo:', error);
       localStorage.removeItem('savedQuizState');
       return false;
     }
@@ -1365,9 +1298,7 @@ throw new Error('Method not implemented.');
   clearSavedQuizState(): void {
     try {
       localStorage.removeItem('savedQuizState');
-      console.log('🗑️ Estado salvo do quiz removido');
     } catch (error) {
-      console.warn('⚠️ Erro ao remover estado salvo:', error);
     }
   }
 
@@ -1464,9 +1395,7 @@ throw new Error('Method not implemented.');
     try {
       const favoritesArray = Array.from(this.favoriteQuestions);
       localStorage.setItem('favoriteQuestions', JSON.stringify(favoritesArray));
-      console.log('💾 Favoritos salvos:', favoritesArray.length);
     } catch (error) {
-      console.warn('⚠️ Erro ao salvar favoritos:', error);
     }
   }
 
@@ -1500,7 +1429,6 @@ throw new Error('Method not implemented.');
         }
       }
     } catch (error) {
-      console.warn('⚠️ Erro ao reproduzir som de acerto:', error);
     }
   }
 
@@ -1520,7 +1448,6 @@ throw new Error('Method not implemented.');
         }
       }
     } catch (error) {
-      console.warn('⚠️ Erro ao reproduzir som de erro:', error);
     }
   }
 
@@ -1545,7 +1472,6 @@ throw new Error('Method not implemented.');
       oscillator.start(audioContext.currentTime);
       oscillator.stop(audioContext.currentTime + duration / 1000);
     } catch (error) {
-      console.warn('⚠️ Erro ao gerar beep:', error);
     }
   }
 
@@ -1564,7 +1490,6 @@ throw new Error('Method not implemented.');
         this.playCorrectSound();
       }
     } catch (error) {
-      console.warn('⚠️ Erro ao salvar preferência de som:', error);
     }
   }
 
@@ -1622,7 +1547,6 @@ throw new Error('Method not implemented.');
   // ✅ TAMBÉM CORRIJA OS MÉTODOS QUE ESTAVAM COM throw new Error:
 
   showError(message: string): void {
-    console.error('❌ Erro no quiz:', message);
     this.hasError = true;
     this.errorMessage = message;
     this.isLoading = false;
@@ -1642,7 +1566,6 @@ throw new Error('Method not implemented.');
   // ✅ TAMBÉM IMPLEMENTE OS MÉTODOS DE CARREGAMENTO QUE ESTAVAM VAZIOS:
 
   private loadSmartQuestions(): void {
-    console.log('🧠 Carregando Quiz Inteligente Premium...');
     
     // ✅ TEMPORÁRIO: Usar questões de emergência até implementar carregamento real
     this.showSuccessMessage('🧠 Quiz Inteligente: usando questões demonstrativas');
@@ -1650,7 +1573,6 @@ throw new Error('Method not implemented.');
   }
 
   private loadCustomQuestions(): void {
-    console.log('🎯 Carregando Quiz Personalizado Premium...');
     
     // ✅ TEMPORÁRIO: Usar questões de emergência até implementar carregamento real
     this.showSuccessMessage('🎯 Quiz Personalizado: usando questões demonstrativas');
@@ -1660,19 +1582,16 @@ throw new Error('Method not implemented.');
   // ✅ MÉTODO DE CARREGAMENTO MISTO (IMPLEMENTAÇÃO COMPLETA)
   private async loadMixedQuestionsWithIndex(): Promise<void> {
     try {
-      console.log('🎯 Carregando questões mistas...');
       this.loadingMessage = 'Preparando questões de múltiplas áreas...';
       
       // ✅ TENTAR CARREGAR QUESTÕES REAIS PRIMEIRO
       const success = await this.tryLoadRealQuestions();
       
       if (!success) {
-        console.log('⚡ Fallback para questões de emergência...');
         this.generateEmergencyQuestions();
       }
       
     } catch (error) {
-      console.error('❌ Erro ao carregar questões mistas:', error);
       this.generateEmergencyQuestions();
     }
   }
@@ -1680,16 +1599,12 @@ throw new Error('Method not implemented.');
   // ✅ TENTATIVA DE CARREGAMENTO REAL
   private async tryLoadRealQuestions(): Promise<boolean> {
     try {
-      console.log('🔍 Tentando carregar questões reais...');
       this.loadingMessage = 'Verificando questões disponíveis...';
       
       // ✅ VERIFICAR SE INDEX.JSON EXISTE
-      console.log('📁 Verificando assets/data/index.json...');
       const indexResponse = await fetch('assets/data/index.json');
       
       if (!indexResponse.ok) {
-        console.warn(`⚠️ Index.json não acessível: HTTP ${indexResponse.status}`);
-        console.warn('📁 Verifique se o arquivo existe em: src/assets/data/index.json');
         return false;
       }
       
@@ -1701,7 +1616,6 @@ throw new Error('Method not implemented.');
       });
       
       if (!indexData.structure || Object.keys(indexData.structure).length === 0) {
-        console.warn('⚠️ Index.json não contém estrutura válida');
         return false;
       }
       
@@ -1715,36 +1629,28 @@ throw new Error('Method not implemented.');
           // ✅ CAMINHO CORRETO COM /areas/
           const testFile = `assets/data/areas/${areaKey}/${firstSubject}.json`;
           
-          console.log(`🧪 Testando arquivo: ${testFile}`);
           
           try {
             const testResponse = await fetch(testFile);
             if (testResponse.ok) {
               const testData = await testResponse.json();
               if (testData.questions && Array.isArray(testData.questions) && testData.questions.length > 0) {
-                console.log(`✅ Questões encontradas em ${areaKey}/${firstSubject}: ${testData.questions.length}`);
                 foundQuestions = true;
                 break; // Encontrou pelo menos um arquivo válido
               } else {
-                console.warn(`⚠️ Arquivo ${testFile} não contém questões válidas`);
               }
             } else {
-              console.warn(`⚠️ Arquivo ${testFile} não acessível: HTTP ${testResponse.status}`);
             }
           } catch (fileError) {
-            console.warn(`⚠️ Erro ao acessar ${testFile}:`, fileError);
           }
         }
       }
       
       if (!foundQuestions) {
-        console.warn('⚠️ Nenhuma questão real encontrada em qualquer arquivo');
-        console.warn('📁 Verifique se os arquivos de questões existem em: src/assets/data/areas/[area]/[subject].json');
         return false;
       }
       
       // ✅ SE CHEGOU ATÉ AQUI, TEM QUESTÕES REAIS
-      console.log('✅ Questões reais disponíveis! Iniciando carregamento...');
       
       // ✅ CARREGAR QUESTÕES BASEADO NO MODO
       switch (this.mode) {
@@ -1763,8 +1669,6 @@ throw new Error('Method not implemented.');
       return true;
       
     } catch (error) {
-      console.error('❌ Erro ao verificar questões reais:', error);
-      console.warn('📁 Verifique se a pasta assets/data/areas/ e seus arquivos existem');
       return false;
     }
   }
@@ -1772,14 +1676,12 @@ throw new Error('Method not implemented.');
   // ✅ CORRIGIR O loadMixedQuestionsFromReal COM CAMINHO CORRETO:
   private async loadMixedQuestionsFromReal(indexData: any): Promise<void> {
     try {
-      console.log('📄 Carregando questões reais mistas...');
       
       const allQuestions: Question[] = [];
       const limit = this.getQuestionLimit();
       
       // ✅ CARREGAR ALGUMAS QUESTÕES DE CADA ÁREA (CAMINHO CORRIGIDO)
       for (const [areaKey, subjects] of Object.entries(indexData.structure)) {
-        console.log(`📁 Processando área: ${areaKey}`);
         
         const areaSubjects = subjects as string[];
         const firstSubject = areaSubjects[0];
@@ -1804,11 +1706,9 @@ throw new Error('Method not implemented.');
                   }));
               
                 allQuestions.push(...areaQuestions);
-                console.log(`  ✅ ${areaQuestions.length} questões de ${areaKey}`);
               }
             }
           } catch (error) {
-            console.warn(`  ⚠️ Erro ao carregar ${areaKey}:`, error);
           }
         }
       }
@@ -1829,11 +1729,9 @@ throw new Error('Method not implemented.');
       this.isLoading = false;
       this.startTimer();
     
-      console.log(`✅ ${finalQuestions.length} questões reais carregadas`);
       this.showSuccessMessage(`🎯 Quiz iniciado com ${finalQuestions.length} questões reais!`);
     
     } catch (error) {
-      console.error('❌ Erro ao carregar questões reais mistas:', error);
       throw error;
     }
   }
@@ -1841,7 +1739,6 @@ throw new Error('Method not implemented.');
   // ✅ TAMBÉM CORRIGIR OS OUTROS MÉTODOS DE CARREGAMENTO:
   private async loadAreaQuestionsFromReal(indexData: any): Promise<void> {
     try {
-      console.log(`📁 Carregando questões reais da área: ${this.area}`);
       
       if (!indexData.structure[this.area]) {
         throw new Error(`Área '${this.area}' não encontrada no index`);
@@ -1867,11 +1764,9 @@ throw new Error('Method not implemented.');
               }));
               
               areaQuestions.push(...questionsWithMeta);
-              console.log(`  ✅ ${fileData.questions.length} questões de ${subject}`);
             }
           }
         } catch (error) {
-          console.warn(`  ⚠️ Erro ao carregar ${this.area}/${subject}:`, error);
         }
       }
       
@@ -1892,18 +1787,15 @@ throw new Error('Method not implemented.');
       this.isLoading = false;
       this.startTimer();
       
-      console.log(`✅ ${selectedQuestions.length} questões reais da área carregadas`);
       this.showSuccessMessage(`🎯 Quiz ${this.getCategoryTitle(this.area)} iniciado com ${selectedQuestions.length} questões!`);
       
     } catch (error) {
-      console.error('❌ Erro ao carregar questões da área:', error);
       throw error;
     }
   }
 
   private async loadSubjectQuestionsFromReal(indexData: any): Promise<void> {
     try {
-      console.log(`📖 Carregando questões reais do subject: ${this.area}/${this.subject}`);
       
       if (!indexData.structure[this.area] || !indexData.structure[this.area].includes(this.subject)) {
         throw new Error(`Subject '${this.subject}' não encontrado na área '${this.area}'`);
@@ -1943,18 +1835,15 @@ throw new Error('Method not implemented.');
       this.isLoading = false;
       this.startTimer();
       
-      console.log(`✅ ${selectedQuestions.length} questões reais do subject carregadas`);
       this.showSuccessMessage(`🎯 Quiz ${this.subject} iniciado com ${selectedQuestions.length} questões!`);
       
     } catch (error) {
-      console.error('❌ Erro ao carregar questões do subject:', error);
       throw error;
     }
   }
 
   // ✅ MÉTODO PARA DEBUG COM CAMINHOS CORRETOS:
   async debugFileStructure(): Promise<void> {
-    console.log('🔍 DEBUG: Verificando estrutura de arquivos...');
     
     const filesToCheck = [
       'assets/data/index.json',
@@ -1973,13 +1862,10 @@ throw new Error('Method not implemented.');
           console.log(`✅ ${file}: OK (${JSON.stringify(data).length} bytes)`);
           
           if (file.includes('.json') && !file.includes('index.json')) {
-            console.log(`   📊 Questões: ${data.questions?.length || 0}`);
           }
         } else {
-          console.warn(`❌ ${file}: HTTP ${response.status}`);
         }
       } catch (error) {
-        console.error(`❌ ${file}: Erro -`, error);
       }
     }
   }
@@ -1996,7 +1882,6 @@ throw new Error('Method not implemented.');
         return Math.min(Math.max(parsed, 5), 100);
       }
     } catch (e) {
-      console.warn('🔍 Erro ao obter limit das query params, usando padrão', e);
     }
     // Valor padrão caso não haja parâmetro válido
     return 20;

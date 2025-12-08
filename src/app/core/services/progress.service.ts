@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 
 export interface UserAnswer {
   area: string;
@@ -62,7 +62,6 @@ export class ProgressService {
     const uniqueDates = [...new Set(history.map(a => a.date.slice(0, 10)))]
       .sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
 
-    console.log('📅 Datas únicas para streak:', uniqueDates);
 
     let streak = 0;
     const today = new Date();
@@ -77,7 +76,6 @@ export class ProgressService {
     if (uniqueDates.includes(todayStr)) {
       foundToday = true;
       streak = 1;
-      console.log('✅ Estudou hoje! Streak iniciado em 1');
     }
     
     // Se não estudou hoje, verifica se estudou ontem (grace period)
@@ -89,9 +87,7 @@ export class ProgressService {
       if (uniqueDates.includes(yesterdayStr)) {
         streak = 1;
         currentCheckDate = yesterday;
-        console.log('⏰ Não estudou hoje, mas estudou ontem. Streak = 1');
       } else {
-        console.log('❌ Não estudou hoje nem ontem. Streak = 0');
         streak = 0;
       }
     }
@@ -103,20 +99,16 @@ export class ProgressService {
         prevDay.setDate(currentCheckDate.getDate() - 1);
         const prevDayStr = prevDay.toISOString().slice(0, 10);
         
-        console.log(`🔍 Verificando dia anterior: ${prevDayStr}`);
         
         if (uniqueDates.includes(prevDayStr)) {
           streak++;
           currentCheckDate = prevDay;
-          console.log(`✅ Encontrou ${prevDayStr}! Streak agora: ${streak}`);
         } else {
-          console.log(`❌ Não encontrou ${prevDayStr}. Parando streak em: ${streak}`);
           break;
         }
       }
     }
 
-    console.log(`🔥 STREAK FINAL: ${streak} dias consecutivos`);
 
     const lastActivity = history.length > 0 
       ? history.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0].date 
