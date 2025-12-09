@@ -124,7 +124,7 @@ export class MercadopagoService {
   // 💳 CRIAR PREFERÊNCIA DE PAGAMENTO
   // ===============================================
 
-  createPreference(planId: string): Observable<PaymentPreference> {
+  createPreference(planId: string): Observable<any> {
     this.paymentLoadingSubject.next(true);
 
     const token = localStorage.getItem('sowlfy_token');
@@ -148,16 +148,41 @@ export class MercadopagoService {
 
     return this.http.post<{
       success: boolean;
-      preference: PaymentPreference;
+      subscription?: { checkout_url: string; plan_id: string };
+      preference?: PaymentPreference;
       plan: MercadoPagoPlan;
     }>(
       `${this.API_URL}/api/payments/create-preference`,
       payload,
       { headers }
     ).pipe(
-      map(response => response.preference),
-      tap(preference => {
-        this.currentPreferenceSubject.next(preference);
+      map(response => {
+        // ✅ ASSINATURA (NOVO)
+        if (response.subscription) {
+          return {
+            checkout_url: response.subscription.checkout_url,
+            plan_id: response.subscription.plan_id,
+            type: 'subscription' as const,
+            // Mock campos necessários para compatibilidade
+            id: '',
+            init_point: response.subscription.checkout_url,
+            sandbox_init_point: response.subscription.checkout_url
+          };
+        }
+        // ✅ PAGAMENTO ÚNICO (LEGADO)
+        if (response.preference) {
+          return {
+            ...response.preference,
+            type: 'payment' as const
+          };
+        }
+        throw new Error('Resposta inválida do servidor');
+      }),
+      tap(data => {
+        if (data.type === 'payment') {
+          const { type, ...preference } = data;
+          this.currentPreferenceSubject.next(preference as PaymentPreference);
+        }
         this.paymentLoadingSubject.next(false);
       }),
       catchError(error => {
@@ -174,11 +199,18 @@ export class MercadopagoService {
   redirectToCheckout(planId: string): Observable<void> {
     return new Observable(observer => {
       this.createPreference(planId).subscribe({
-        next: (preference) => {
+        next: (data) => {
           try {
-            // Em sandbox, usar sandbox_init_point
-            // Em produção, usar init_point
-            const checkoutUrl = preference.sandbox_init_point || preference.init_point;
+            let checkoutUrl: string | null = null;
+            
+            // ✅ ASSINATURA (NOVO - LINK DIRETO)
+            if (data.type === 'subscription' && data.checkout_url) {
+              checkoutUrl = data.checkout_url;
+            }
+            // ✅ PAGAMENTO ÚNICO (LEGADO)
+            else if (data.type === 'payment') {
+              checkoutUrl = data.sandbox_init_point || data.init_point;
+            }
             
             if (checkoutUrl) {
               window.location.href = checkoutUrl;
