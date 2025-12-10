@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, of, BehaviorSubject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 import { AuthService } from './auth.service';
 import { loadStripe, Stripe } from '@stripe/stripe-js';
 import { MercadopagoService } from './mercadopago.service'; // ← NOVO IMPORT
@@ -47,8 +48,8 @@ export interface Subscription {
 export class PaymentService {
   
   // ✅ CONFIGURAÇÕES
-  private readonly API_URL = 'http://localhost:3000'; // ← BACKEND LOCAL
-  private readonly STRIPE_PUBLIC_KEY = 'pk_test_51SSO1CPeMRCkgPBhhTGAFm950miNFGoiM3lmHquSOEtUj9vWK68NB2fbPMRqzS4PxHTThtnaUWrrUeDecYfV18ai00lpSDQElH';
+  private readonly API_URL = environment.apiUrl; // Usa environment
+  private readonly STRIPE_PUBLIC_KEY = environment.stripePublicKey;
   
   // ✅ STRIPE PROPERTIES
   private stripe: Stripe | null = null;

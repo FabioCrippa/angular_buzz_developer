@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
+import { environment } from '../../../environments/environment';
 
 // Declaração global para Mercado Pago
 declare global {
@@ -46,8 +47,8 @@ export interface PaymentInfo {
 export class MercadopagoService {
 
   // ✅ CONFIGURAÇÕES
-  private readonly API_URL = 'http://localhost:3000';
-  private readonly MP_PUBLIC_KEY = 'APP_USR-d11ca329-064b-4623-af41-1b56a4f75eb0';
+  private readonly API_URL = environment.apiUrl;
+  private readonly MP_PUBLIC_KEY = environment.mercadoPagoPublicKey;
   
   // ✅ STATE MANAGEMENT
   private mpLoadedSubject = new BehaviorSubject<boolean>(false);

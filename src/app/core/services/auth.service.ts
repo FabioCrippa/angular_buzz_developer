@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable, throwError, of, timer } from 'rxjs';
 import { map, catchError, tap, retry, timeout } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 
 // ===============================================
 // 📝 INTERFACES
@@ -76,8 +77,7 @@ export class AuthService {
   // ===============================================
   
   // ✅ CONFIGURAR PARA SEU BACKEND REAL
-  private readonly API_URL = 'http://localhost:3000/api'; // ← DESENVOLVIMENTO
-  // private readonly API_URL = 'https://api.sowlfy.com/v1'; // ← PRODUÇÃO
+  private readonly API_URL = `${environment.apiUrl}/api`; // Usa environment
   
   private readonly STORAGE_KEYS = {
     USER: 'sowlfy_user',
