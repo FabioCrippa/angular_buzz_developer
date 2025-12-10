@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular_buzz_developer';
+  title = 'SOWLFY';
+  version = '1.0.0'; // Force rebuild
 }
