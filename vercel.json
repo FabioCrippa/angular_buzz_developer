@@ -1,22 +1,5 @@
 {
-  "version": 2,
-  "name": "sowlfy",
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/buzz_developter"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "buildCommand": "ng build --configuration production",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist/buzz_developter",
   "framework": "angular",
   "rewrites": [
