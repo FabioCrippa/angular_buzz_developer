@@ -4,3 +4,5 @@ node_modules
 *.log
 backend/node_modules
 functions
+dist
+.vercel
