@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   
   // API URLs
-  apiUrl: 'http://localhost:3000',
+  apiUrl: 'https://api.sowlfy.com.br',
   
   // Stripe
   stripePublicKey: "pk_test_51SSO1CPeMRCkgPBhhTGAFm950miNFGoiM3lmHquSOEtUj9vWK68NB2fbPMRqzS4PxHTThtnaUWrrUeDecYfV18ai00lpSDQElH",
