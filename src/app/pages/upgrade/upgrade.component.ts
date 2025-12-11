@@ -195,28 +195,16 @@ export class UpgradeComponent implements OnInit {
   }
 
   private async redirectToMercadoPagoCheckout(plan: PricingPlan): Promise<void> {
-    // Verificar se está logado
+    // Pegar email do usuário
     const userStr = localStorage.getItem('sowlfy_user');
-    if (!userStr) {
-      this.isLoading = false;
-      this.showMessage('⚠️ Você precisa fazer login primeiro!', true);
-      
-      // Salvar onde estava para redirecionar depois
-      localStorage.setItem('redirectAfterLogin', '/upgrade');
-      
-      // Redirecionar para login
-      setTimeout(() => {
-        this.router.navigate(['/login']);
-      }, 1500);
-      return;
-    }
+    const user = userStr ? JSON.parse(userStr) : null;
+    const email = user?.email || 'teste@sowlfy.com.br';
     
-    // Mapear ID do plano para o formato do MP
-    const mpPlanId = plan.id === 'monthly' ? 'sowlfy-pro-monthly' : 'sowlfy-pro-yearly';
-    
-    this.paymentService.redirectToMercadoPago(mpPlanId).subscribe({
-      next: () => {
-        // O usuário será redirecionado para o checkout do MP
+    // Chamar API para criar assinatura
+    this.paymentService.createSubscription(email).subscribe({
+      next: (response: any) => {
+        console.log('Assinatura criada:', response);
+        // O redirect acontece automaticamente para o Mercado Pago
       },
       error: (error) => {
         this.showMessage('Erro ao acessar o checkout. Tente novamente.', true);

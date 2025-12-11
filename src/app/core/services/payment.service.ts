@@ -248,6 +248,23 @@ export class PaymentService {
     return this.mercadoPagoService.getPlans();
   }
 
+  // ✅ CRIAR ASSINATURA MERCADO PAGO
+  createSubscription(email: string): Observable<any> {
+    return this.http.post(`${this.API_URL}/api/payments/create-subscription`, { email })
+      .pipe(
+        tap((response: any) => {
+          // Redirecionar para o checkout do Mercado Pago
+          if (response.init_point) {
+            window.location.href = response.init_point;
+          }
+        }),
+        catchError(error => {
+          console.error('Erro ao criar assinatura:', error);
+          return throwError(() => error);
+        })
+      );
+  }
+
   // ✅ MOCK UPGRADE PARA TESTES
   mockUpgradeToPremium(planId: string = 'sowlfy-pro-monthly'): Observable<boolean> {
     return new Observable(observer => {

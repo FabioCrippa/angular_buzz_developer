@@ -1,8 +1,0 @@
-node_modules
-.angular
-.git
-*.log
-backend/node_modules
-functions
-dist
-.vercel
