@@ -1,4 +1,3 @@
 // Entry point for Render.com deployment
-// This file redirects to the actual backend server
-
+console.log('Starting SOWLFY Backend...');
 require('./backend/server.js');
