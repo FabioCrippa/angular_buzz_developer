@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 3000;
 // ===============================================
 let db;
 
+console.log('🔍 Verificando variável FIREBASE_SERVICE_ACCOUNT...');
+console.log('Existe?', !!process.env.FIREBASE_SERVICE_ACCOUNT);
+console.log('Primeiros 50 caracteres:', process.env.FIREBASE_SERVICE_ACCOUNT ? process.env.FIREBASE_SERVICE_ACCOUNT.substring(0, 50) : 'undefined');
+
 try {
   if (process.env.FIREBASE_SERVICE_ACCOUNT) {
     console.log('🔑 Usando FIREBASE_SERVICE_ACCOUNT da variável de ambiente');
