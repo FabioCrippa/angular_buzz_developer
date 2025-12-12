@@ -9,24 +9,36 @@ const PORT = process.env.PORT || 3000;
 // ===============================================
 // 🔥 FIREBASE ADMIN INITIALIZATION
 // ===============================================
-// Inicializar com credenciais padrão do ambiente (para Render/Cloud)
-// ou com variável de ambiente FIREBASE_SERVICE_ACCOUNT
+let db;
+
 try {
   if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+    console.log('🔑 Usando FIREBASE_SERVICE_ACCOUNT da variável de ambiente');
     const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+    
+    // Validar se o JSON tem os campos necessários
+    if (!serviceAccount.project_id) {
+      throw new Error('FIREBASE_SERVICE_ACCOUNT não contém project_id');
+    }
+    
+    console.log('📋 Project ID:', serviceAccount.project_id);
+    
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount)
+      credential: admin.credential.cert(serviceAccount),
+      projectId: serviceAccount.project_id
     });
   } else {
-    // Para ambiente local - usar credenciais do Firebase CLI
+    console.log('🔑 Usando credenciais padrão do ambiente');
     admin.initializeApp();
   }
-  console.log('✅ Firebase Admin inicializado');
+  
+  db = admin.firestore();
+  console.log('✅ Firebase Admin inicializado com sucesso');
 } catch (error) {
   console.error('⚠️ Erro ao inicializar Firebase Admin:', error.message);
+  console.error('Stack:', error.stack);
+  // Não inicializar db se houver erro
 }
-
-const db = admin.firestore();
 
 // CORS simples para local
 app.use(cors());
