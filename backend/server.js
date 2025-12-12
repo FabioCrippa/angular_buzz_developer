@@ -193,25 +193,41 @@ app.post('/api/payments/webhook', async (req, res) => {
 // ===============================================
 app.post('/api/payments/test-premium', async (req, res) => {
   try {
+    console.log('🧪 Teste Premium iniciado');
     const { email } = req.body;
+    console.log('📧 Email recebido:', email);
     
+    if (!email) {
+      console.log('❌ Email não fornecido');
+      return res.status(400).json({ error: 'Email não fornecido' });
+    }
+
+    console.log('🔍 Buscando usuário no Firestore...');
     const usersRef = db.collection('users');
     const snapshot = await usersRef.where('email', '==', email).get();
+    console.log('📊 Documentos encontrados:', snapshot.size);
 
     if (snapshot.empty) {
+      console.log('❌ Usuário não encontrado');
       return res.status(404).json({ error: 'Usuário não encontrado' });
     }
 
     const userDoc = snapshot.docs[0];
+    console.log('👤 Usuário encontrado:', userDoc.id);
+    console.log('📝 Atualizando para Premium...');
+    
     await userDoc.ref.update({
       isPremium: true,
       plan: 'premium',
       updatedAt: admin.firestore.FieldValue.serverTimestamp()
     });
 
-    res.json({ success: true, message: 'Usuário atualizado para Premium!' });
+    console.log('✅ Usuário atualizado com sucesso!');
+    res.json({ success: true, message: 'Usuário atualizado para Premium!', userId: userDoc.id });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error('❌ Erro no teste premium:', error);
+    console.error('Stack:', error.stack);
+    res.status(500).json({ error: error.message, details: error.stack });
   }
 });
 

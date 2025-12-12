@@ -14,13 +14,13 @@ export const environment = {
   // Mercado Pago (PRODUÇÃO)
   mercadoPagoPublicKey: "APP_USR-d11ca329-064b-4623-af41-1b56a4f75eb0",
   
-  // Firebase (se usar)
+  // Firebase
   firebase: {
-    apiKey: "",
-    authDomain: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: "AIzaSyA_NLiMUJVRv_jRN0JWBNQ4M4YY9LvKiQM",
+    authDomain: "angular-buzz-developer.firebaseapp.com",
+    projectId: "angular-buzz-developer",
+    storageBucket: "angular-buzz-developer.firebasestorage.app",
+    messagingSenderId: "991526111359",
+    appId: "1:991526111359:web:307165b8942ca621bc574a"
   }
 };

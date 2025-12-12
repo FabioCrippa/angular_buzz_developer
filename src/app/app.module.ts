@@ -66,6 +66,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
+// ✅ FIREBASE MODULES
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     // ✅ TODOS OS COMPONENTS
@@ -126,7 +132,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDialogModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    
+    // ✅ FIREBASE CONFIGURATION
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [
     // ✅ GUARDS E SERVICES
