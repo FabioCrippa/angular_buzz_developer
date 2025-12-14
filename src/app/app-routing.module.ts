@@ -37,6 +37,7 @@ const routes: Routes = [
   { 
     path: 'login', 
     component: LoginComponent,
+    canActivate: [GuestGuard],
     data: { 
       title: 'Login - SOWLFY',
       description: 'Faça login para acessar sua conta'
@@ -114,22 +115,34 @@ const routes: Routes = [
     }
   },
 
+  // ===============================================
+  // 📄 PÁGINAS PÚBLICAS (SEM LOGIN)
+  // ===============================================
   { 
     path: 'help', 
-    component: HelpComponent, // ✅ COMPONENT TRADICIONAL
-    canActivate: [AuthGuard],
+    component: HelpComponent,
+    data: { 
+      title: 'Ajuda - SOWLFY',
+      description: 'Central de ajuda e suporte'
+    }
   },
 
   { 
     path: 'termos', 
-    component: TermComponent, // ✅ COMPONENT TRADICIONAL
-    canActivate: [AuthGuard]
+    component: TermComponent,
+    data: { 
+      title: 'Termos de Uso - SOWLFY',
+      description: 'Termos e condições de uso'
+    }
   },
 
   { 
     path: 'privacidade', 
-    component: PrivacyComponent, // ✅ COMPONENT TRADICIONAL
-    canActivate: [AuthGuard]
+    component: PrivacyComponent,
+    data: { 
+      title: 'Política de Privacidade - SOWLFY',
+      description: 'Como tratamos seus dados'
+    }
   },
 
   // ===============================================

@@ -223,8 +223,13 @@ export class LoginComponent implements OnInit {
   }
 
   private getRedirectUrl(): string {
-    const redirectUrl = localStorage.getItem('redirectAfterLogin');
-    localStorage.removeItem('redirectAfterLogin');
+    // ✅ BUSCAR URL SALVA PELO AUTH GUARD
+    const redirectUrl = localStorage.getItem('sowlfy_redirect_after_login');
+    
+    // ✅ LIMPAR STORAGE
+    localStorage.removeItem('sowlfy_redirect_after_login');
+    
+    // ✅ RETORNAR URL SALVA OU DASHBOARD COMO PADRÃO
     return redirectUrl || '/dashboard';
   }
 

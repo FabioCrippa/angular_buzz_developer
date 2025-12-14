@@ -41,17 +41,16 @@ export class AuthGuard implements CanActivate {
       return of(true);
     }
 
-    // ✅ USUÁRIO NÃO AUTENTICADO - REDIRECIONAMENTO INTELIGENTE
+    // ✅ USUÁRIO NÃO AUTENTICADO - REDIRECIONAMENTO PARA LOGIN
     
     // ✅ SALVAR URL PARA REDIRECT APÓS LOGIN
     localStorage.setItem('sowlfy_redirect_after_login', url);
     
-    // ✅ REDIRECIONAR PARA HOME COM INFORMAÇÃO SOBRE LOGIN NECESSÁRIO
-    this.router.navigate(['/'], {
+    // ✅ REDIRECIONAR PARA LOGIN
+    this.router.navigate(['/login'], {
       queryParams: { 
         returnUrl: url,
-        authRequired: 'true',
-        message: 'login_required'
+        message: 'Faça login para continuar'
       }
     });
     

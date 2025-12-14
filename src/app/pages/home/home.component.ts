@@ -157,51 +157,18 @@ export class HomeComponent implements OnInit {
   // ===============================================
 
   startFreeTrial(): void {
-    
     if (this.authService.isAuthenticated()) {
       // ✅ USUÁRIO LOGADO - VERIFICAR TENTATIVAS E INICIAR QUIZ
       this.executeFreeTrial();
     } else {
-      // ❌ NÃO LOGADO - FLUXO DE CADASTRO/LOGIN
-      this.showFreeTrialAuthFlow();
-    }
-  }
-
-  // ✅ FLUXO ESPECÍFICO PARA TESTE GRÁTIS
-  private showFreeTrialAuthFlow(): void {
-    const message = `🆓 Preparação Grátis SOWLFY\n\n` +
-                   `Para começar suas 3 tentativas gratuitas, você precisa:\n\n` +
-                   `📝 Criar uma conta grátis (30 segundos)\n` +
-                   `🔐 Ou fazer login se já tem conta\n\n` +
-                   `🎁 Após login você receberá:\n` +
-                   `• 3 tentativas gratuitas por dia\n` +
-                   `• Acesso a questões de 4 áreas\n` +
-                   `• Histórico de progresso\n\n` +
-                   `Vamos começar?`;
-    
-    // ✅ SALVAR INTENÇÃO ESPECÍFICA PARA QUIZ
-    this.saveQuizIntention();
-    
-    if (confirm(message)) {
-      // ✅ USUÁRIO CONFIRMOU - VERIFICAR SE TEM CONTA
-      this.chooseAuthMethod();
-    }
-  }
-
-  // ✅ ESCOLHER MÉTODO DE AUTENTICAÇÃO
-  private chooseAuthMethod(): void {
-    const choice = confirm(
-      `🤔 Escolha sua opção:\n\n` +
-      `✅ Clique OK se JÁ TEM CONTA (ir para Login)\n` +
-      `📝 Clique CANCELAR se é NOVO USUÁRIO (ir para Cadastro)`
-    );
-    
-    if (choice) {
-      // ✅ TEM CONTA - IR PARA LOGIN
-      this.router.navigate(['/auth/login']);
-    } else {
-      // ✅ NOVO USUÁRIO - IR PARA CADASTRO
-      this.router.navigate(['/auth/register']);
+      // ❌ NÃO LOGADO - REDIRECIONAR PARA LOGIN
+      this.saveQuizIntention();
+      this.router.navigate(['/login'], {
+        queryParams: { 
+          returnUrl: '/quiz',
+          message: 'Faça login para começar sua preparação grátis'
+        }
+      });
     }
   }
 
@@ -261,9 +228,9 @@ export class HomeComponent implements OnInit {
       }
       
     } catch (error) {
-      // ✅ FALLBACK - IR PARA DASHBOARD
-      alert('🔧 Redirecionando para o painel...');
-      this.router.navigate(['/dashboard']);
+      // ❌ ERRO - REDIRECIONAR PARA LOGIN
+      console.error('Erro ao executar free trial:', error);
+      this.router.navigate(['/login']);
     }
   }
   
@@ -272,15 +239,25 @@ export class HomeComponent implements OnInit {
   // ===============================================
   
   goToDashboard(): void {
-    this.checkAuthAndRedirect('acessar seu dashboard', '/dashboard');
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      localStorage.setItem('sowlfy_redirect_after_login', '/dashboard');
+      this.router.navigate(['/login'], {
+        queryParams: { 
+          returnUrl: '/dashboard',
+          message: 'Faça login para acessar seu dashboard'
+        }
+      });
+    }
   }
   
   // ✅ IR PARA ÁREA ESPECÍFICA
   goToArea(areaName: string): void {
-    
     // ✅ MAPEAR NOMES PARA ROTA CORRETA
     const areaMap: { [key: string]: string } = {
       'desenvolvimento': 'desenvolvimento-web',
+      'desenvolvimento-web': 'desenvolvimento-web',
       'portugues': 'portugues',
       'matematica': 'matematica',
       'informatica': 'informatica'
@@ -288,13 +265,26 @@ export class HomeComponent implements OnInit {
     
     const mappedArea = areaMap[areaName] || areaName;
     
-    this.router.navigate(['/quiz'], {
-      queryParams: {
-        mode: 'area',
-        area: mappedArea,
-        count: 5
-      }
-    });
+    if (this.authService.isAuthenticated()) {
+      // ✅ LOGADO - IR PARA QUIZ
+      this.router.navigate(['/quiz'], {
+        queryParams: {
+          mode: 'area',
+          area: mappedArea,
+          count: 5
+        }
+      });
+    } else {
+      // ❌ NÃO LOGADO - IR PARA LOGIN
+      const targetUrl = `/quiz?mode=area&area=${mappedArea}&count=5`;
+      localStorage.setItem('sowlfy_redirect_after_login', targetUrl);
+      this.router.navigate(['/login'], {
+        queryParams: { 
+          returnUrl: targetUrl,
+          message: `Faça login para acessar ${areaMap[mappedArea] || mappedArea}`
+        }
+      });
+    }
   }
   
   // ✅ UPGRADE PARA PRO - REDIRECIONAR PARA PÁGINA DE UPGRADE
@@ -326,15 +316,15 @@ export class HomeComponent implements OnInit {
   
   // ✅ LINKS DO FOOTER
   openHelp(): void {
-    alert('🚧 Central de Ajuda em desenvolvimento!\n\nPor enquanto, use os FAQs abaixo para tirar suas dúvidas.');
+    this.router.navigate(['/help']);
   }
   
   openTerms(): void {
-    alert('📋 Termos de Uso\n\nO SOWLFY é uma plataforma educacional para preparação profissional.\n\n- Uso responsável da plataforma\n- Conteúdo para fins educacionais\n- Política de cancelamento flexível');
+    this.router.navigate(['/termos']);
   }
   
   openPrivacy(): void {
-    alert('🛡️ Política de Privacidade\n\nSeus dados estão seguros conosco:\n\n- Dados armazenados localmente\n- Não compartilhamos informações pessoais\n- Conformidade com LGPD\n- Criptografia SSL');
+    this.router.navigate(['/privacidade']);
   }
   
   // ===============================================
@@ -345,11 +335,17 @@ export class HomeComponent implements OnInit {
 
   // ✅ VER TODAS AS ÁREAS
   goToAllAreas(): void {
-    this.checkAuthAndRedirect(
-      'ver todas as áreas de estudo',
-      '/dashboard',
-      { view: 'areas' }
-    );
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/dashboard'], { queryParams: { view: 'areas' } });
+    } else {
+      localStorage.setItem('sowlfy_redirect_after_login', '/dashboard?view=areas');
+      this.router.navigate(['/login'], {
+        queryParams: { 
+          returnUrl: '/dashboard',
+          message: 'Faça login para ver todas as áreas'
+        }
+      });
+    }
   }
 
   // ✅ IR PARA ÁREA MAIS POPULAR
@@ -359,45 +355,29 @@ export class HomeComponent implements OnInit {
 
   // ✅ INICIAR JORNADA (MÉTODO ALTERNATIVO)
   startJourney(): void {
-    
-    // ✅ IR DIRETO PARA DASHBOARD
-    this.router.navigate(['/dashboard']);
-    
-    // ✅ MOSTRAR BOAS-VINDAS
-    setTimeout(() => {
-      alert('🎉 Bem-vindo ao SOWLFY!\n\nEscolha uma área de estudo e comece a praticar. Boa sorte! 🍀');
-    }, 1000);
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.router.navigate(['/login'], {
+        queryParams: { returnUrl: '/dashboard' }
+      });
+    }
   }
 
   // ✅ ABRIR FAQ (ROLAR PARA SEÇÃO)
   openFaq(): void {
-    
-    // ✅ TENTAR ROLAR PARA SEÇÃO FAQ
     const faqSection = document.querySelector('.faq-section');
     if (faqSection) {
       faqSection.scrollIntoView({ 
         behavior: 'smooth', 
         block: 'start' 
       });
-    } else {
-      // ✅ FALLBACK SE NÃO ENCONTRAR SEÇÃO
-      alert('📋 Role a página para baixo para ver as Perguntas Frequentes (FAQ)!');
     }
   }
 
   // ✅ POLÍTICA DE REEMBOLSO
   openRefund(): void {
-    
-    const refundPolicy = `💰 Política de Reembolso SOWLFY\n\n` +
-                        `✅ 7 dias de garantia total\n` +
-                        `✅ Reembolso de 100% do valor pago\n` +
-                        `✅ Sem perguntas ou burocracias\n` +
-                        `✅ Processamento em até 5 dias úteis\n` +
-                        `✅ Dinheiro de volta na mesma forma de pagamento\n\n` +
-                        `📧 Para solicitar: contato@sowlfy.com\n\n` +
-                        `Sua satisfação é nossa prioridade!`;
-    
-    alert(refundPolicy);
+    this.router.navigate(['/help'], { fragment: 'reembolso' });
   }
 
   // ✅ COMEÇAR ÁREA ESPECÍFICA (MÉTODO HELPER)
@@ -437,66 +417,5 @@ export class HomeComponent implements OnInit {
     alert('✅ Botão está funcionando corretamente!\n\nMetódo executado com sucesso.');
   }
 
-  // ===============================================
-  // 🔐 ADICIONAR NO HOME.COMPONENT.TS
-  // ===============================================
-  
-  // ✅ ADICIONAR ESTE MÉTODO:
-  private checkAuthAndRedirect(actionName: string, targetRoute: string, params?: any): void {
-    
-    if (this.authService.isAuthenticated()) {
-      // ✅ USUÁRIO LOGADO - EXECUTAR AÇÃO
-      this.router.navigate([targetRoute], params ? { queryParams: params } : {});
-    } else {
-      // ❌ USUÁRIO NÃO LOGADO - MOSTRAR OPÇÕES
-      this.showAuthOptions(actionName, targetRoute, params);
-    }
-  }
 
-  // ✅ MOSTRAR OPÇÕES DE AUTENTICAÇÃO
-  private showAuthOptions(actionName: string, targetRoute: string, params?: any): void {
-    const message = `🔐 Acesso Restrito\n\n` +
-                   `Para ${actionName}, você precisa estar logado.\n\n` +
-                   `✅ Já tem conta? Faça login\n` +
-                   `📝 Não tem conta? Crie uma conta grátis\n\n` +
-                   `O que deseja fazer?`;
-    
-    // ✅ SALVAR INTENÇÃO PARA REDIRECIONAR APÓS LOGIN
-    this.saveRedirectIntention(targetRoute, params);
-    
-    // ✅ MOSTRAR CONFIRMAÇÃO
-    if (confirm(message + '\n\n(Clique OK para ir ao Login ou Cancelar)')) {
-      this.router.navigate(['/auth/login']);
-    } else {
-      // ✅ USUÁRIO CANCELOU - OPCIONAL: MOSTRAR CADASTRO
-      this.showSignupOption();
-    }
-  }
-
-  // ✅ OPÇÃO DE CADASTRO CASO USUÁRIO CANCELE LOGIN
-  private showSignupOption(): void {
-    const signupMessage = `📝 Ainda não tem conta?\n\n` +
-                         `✨ Criar conta é grátis e leva menos de 1 minuto!\n\n` +
-                         `🎁 Benefícios:\n` +
-                         `• 3 tentativas grátis por dia\n` +
-                         `• Acesso a 4 áreas de estudo\n` +
-                         `• Histórico de progresso\n\n` +
-                         `Criar conta agora?`;
-    
-    if (confirm(signupMessage)) {
-      this.router.navigate(['/auth/register']);
-    }
-  }
-
-  // ✅ SALVAR INTENÇÃO DE REDIRECIONAMENTO
-  private saveRedirectIntention(route: string, params?: any): void {
-    const intention = {
-      route,
-      params: params || {},
-      timestamp: Date.now(),
-      action: route === '/dashboard' ? 'acessar dashboard' : 'continuar navegação'
-    };
-    
-    localStorage.setItem('redirectIntention', JSON.stringify(intention));
-  }
 }

@@ -22,11 +22,12 @@ export class GuestGuard implements CanActivate {
       take(1),
       map(user => {
         if (user && this.authService.isAuthenticated()) {
-          // Usuário já está logado - redirecionar para dashboard
+          // ✅ Usuário já está logado - redirecionar para dashboard
+          console.log('🚫 GuestGuard: Usuário autenticado, redirecionando para dashboard');
           this.router.navigate(['/dashboard']);
           return false;
         } else {
-          // Usuário não está logado - permitir acesso à página
+          // ✅ Usuário não está logado - permitir acesso à página de guest (login/register)
           return true;
         }
       })

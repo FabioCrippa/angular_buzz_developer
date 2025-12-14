@@ -416,8 +416,6 @@ export class AreaComponent implements OnInit {
     console.log('👑 Status Premium:', this.isPremium);
   }
 
-  // ✅ SUBSTITUA o loadUserQuizLimits:
-
   private async loadUserQuizLimits(): Promise<void> {
     try {
       if (this.isPremium) {

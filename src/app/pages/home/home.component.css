@@ -410,6 +410,109 @@ section {
 }
 
 /* =============================================== */
+/* ✅ BANNER DE AUTENTICAÇÃO OBRIGATÓRIA */
+/* =============================================== */
+
+.auth-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--white);
+  padding: 2.5rem 0;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.auth-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.banner-icon {
+  font-size: 4rem;
+  flex-shrink: 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-text h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fbbf24;
+}
+
+.banner-text p {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.banner-benefits {
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 1 !important;
+  color: var(--white);
+  margin-top: 0.5rem;
+}
+
+.banner-actions {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.banner-actions .btn {
+  width: 100%;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.btn-accent {
+  background: #fbbf24;
+  color: #1f2937;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-accent:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: var(--transition-normal);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+/* =============================================== */
 /* ✅ ÁREAS SECTION - SEM SCROLL, TAMANHO OTIMIZADO */
 /* =============================================== */
 
@@ -635,6 +738,30 @@ section {
   .btn {
     width: 100%;
     max-width: 280px;
+  }
+
+  /* ✅ BANNER MOBILE */
+  .auth-banner-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  .banner-icon {
+    font-size: 3rem;
+  }
+
+  .banner-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .banner-text p {
+    font-size: 0.95rem;
+  }
+
+  .banner-actions {
+    width: 100%;
+    max-width: 300px;
   }
   
   .areas-grid,

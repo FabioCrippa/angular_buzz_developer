@@ -360,11 +360,26 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    const user = this.currentUserSubject.value;
+    // ✅ VERIFICA PRIMEIRO O LOCALSTORAGE PARA EVITAR PROBLEMAS DE TIMING
     const token = this.getAuthToken();
+    const storedUser = localStorage.getItem(this.STORAGE_KEYS.USER);
     
-    // Se tem usuário e token, consideraautenticado
-    // Token validation é feita no background
+    // Se tem token E dados de usuário salvos, considera autenticado
+    if (token && storedUser) {
+      try {
+        const userData = JSON.parse(storedUser);
+        // Se currentUserSubject ainda está null, popula ele
+        if (!this.currentUserSubject.value && userData) {
+          this.currentUserSubject.next(userData);
+        }
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+    
+    // Fallback: verifica o Subject (pode ser null em carregamento inicial)
+    const user = this.currentUserSubject.value;
     return !!(user && token);
   }
 

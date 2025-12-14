@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SOWLFY';
-  version = '1.0.0'; // Force rebuild
+  version = '1.0.0';
 }
