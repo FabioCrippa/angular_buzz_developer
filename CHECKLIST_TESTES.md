@@ -36,7 +36,7 @@
 ### 1.2 Login
 - [ok] Acessar página de login
 - [ok] Login com email e senha corretos funciona
-- [ok] Mensagem de erro com credenciais inválidas. Melhorias: trocar mensagem "Erro ao processar autenticação" por "Email ou senha inválidos".
+- [ok] Mensagem de erro com credenciais inválidas. [ok] Melhorias: trocar mensagem "Erro ao processar autenticação" por "Email ou senha inválidos".
 
 - [ok] Carrega dados do usuário do Firestore
 - [ok] Carrega `isPremium`, `plan`, `stats`
@@ -76,24 +76,24 @@
 ### 2.1 Limite de 3 Tentativas/Dia
 - [ok] Usuário gratuito inicia com 3 tentativas disponíveis.
 - [ok] Cada quiz completo desconta 1 tentativa na área de desenvolvimento web
-- [x] Cada quiz completo desconta 1 tentativa na área de português
-- [x] Cada quiz completo desconta 1 tentativa na área de matemática
-- [x] Cada quiz completo desconta 1 tentativa na área de informática
-- [x] Contador de tentativas visível no dashboard
+- [ok] Cada quiz completo desconta 1 tentativa na área de português
+- [ok] Cada quiz completo desconta 1 tentativa na área de matemática
+- [ok] Cada quiz completo desconta 1 tentativa na área de informática
+- [ok] Contador de tentativas visível no dashboard
 - [ok] Contador de tentativas visível na área de desenvolvimento web
-- [x] Contador de tentativas visível na área de português
-- [x] Contador de tentativas visível na área de matemática
-- [x] Contador de tentativas visível na área de informática
+- [ok] Contador de tentativas visível na área de português
+- [ok] Contador de tentativas visível na área de matemática
+- [ok] Contador de tentativas visível na área de informática
 - [ok] Mensagem clara quando atinge limite na área de desenvolvimento web
-- [x] Mensagem clara quando atinge limite na área de português
-- [x] Mensagem clara quando atinge limite na área de matemática
-- [x] Mensagem clara quando atinge limite na área de informática
-- [x] Não permite iniciar novo quiz sem tentativas
+- [ok] Mensagem clara quando atinge limite na área de português
+- [ok] Mensagem clara quando atinge limite na área de matemática
+- [ok] Mensagem clara quando atinge limite na área de informática
+- [x] Não permite iniciar novo quiz sem tentativas. [] O usuário inicia um novo quiz quando esgota as tentativas.
 - [x] Botão "Fazer Quiz" desabilitado sem tentativas
 - [ok] Exibe mensagem incentivando upgrade para Premium para a área de desenvolvimento web
-- [x] Exibe mensagem incentivando upgrade para Premium para a área de português
-- [x] Exibe mensagem incentivando upgrade para Premium para a área de matemática
-- [x] Exibe mensagem incentivando upgrade para Premium para a área de informática
+- [ok] Exibe mensagem incentivando upgrade para Premium para a área de português
+- [ok] Exibe mensagem incentivando upgrade para Premium para a área de matemática
+- [ok] Exibe mensagem incentivando upgrade para Premium para a área de informática
 
 ### 2.2 Reset de Tentativas
 - [ ] Tentativas resetam à meia-noite (00:00)

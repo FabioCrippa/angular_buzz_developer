@@ -476,9 +476,21 @@ export class AuthService {
   }
 
   private clearAllUserData(): void {
+    // Limpar dados principais do usuário
     Object.values(this.STORAGE_KEYS).forEach(key => {
       localStorage.removeItem(key);
     });
+    
+    // ✅ LIMPAR TENTATIVAS DO FREE TRIAL DO USUÁRIO ATUAL
+    // Remove todas as chaves que começam com 'buzz_developer_free_trial_'
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith('buzz_developer_free_trial_')) {
+        localStorage.removeItem(key);
+      }
+    });
+    
+    // Limpar também sessionStorage
+    sessionStorage.clear();
   }
 
   private getAuthToken(): string | null {

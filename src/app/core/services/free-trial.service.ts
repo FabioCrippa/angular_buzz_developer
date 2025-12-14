@@ -1,9 +1,11 @@
 ﻿import { Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
 
 interface TrialData {
   date: string;
   attempts: { [area: string]: number };
   lastAttempt: string;
+  userId: string; // ✅ ADICIONAR USERID
 }
 
 @Injectable({
@@ -11,17 +13,50 @@ interface TrialData {
 })
 export class FreeTrialService {
   
-  private readonly STORAGE_KEY = 'buzz_developer_free_trial';
+  private readonly STORAGE_KEY_PREFIX = 'buzz_developer_free_trial'; // ✅ AGORA É UM PREFIXO
   private readonly MAX_ATTEMPTS_PER_DAY = 3; // ✅ 3 TENTATIVAS POR ÁREA POR DIA
   private readonly AVAILABLE_AREAS = ['desenvolvimento-web', 'portugues', 'matematica', 'informatica'];
 
-  constructor() {
+  constructor(private authService: AuthService) {
+  }
+
+  // ✅ OBTER CHAVE DE STORAGE ESPECÍFICA DO USUÁRIO
+  private getStorageKey(): string {
+    // Obter userId de forma síncrona do localStorage
+    const storedUser = localStorage.getItem('sowlfy_user');
+    let userId = 'anonymous';
+    
+    if (storedUser) {
+      try {
+        const userData = JSON.parse(storedUser);
+        userId = userData.id || userData.uid || 'anonymous';
+      } catch (error) {
+        userId = 'anonymous';
+      }
+    }
+    
+    return `${this.STORAGE_KEY_PREFIX}_${userId}`;
+  }
+
+  // ✅ OBTER USERID ATUAL DE FORMA SÍNCRONA
+  private getCurrentUserId(): string {
+    const storedUser = localStorage.getItem('sowlfy_user');
+    if (storedUser) {
+      try {
+        const userData = JSON.parse(storedUser);
+        return userData.id || userData.uid || 'anonymous';
+      } catch (error) {
+        return 'anonymous';
+      }
+    }
+    return 'anonymous';
   }
 
   // ✅ OBTER DADOS DO TRIAL
   private getTrialData(): TrialData {
     try {
-      const stored = localStorage.getItem(this.STORAGE_KEY);
+      const storageKey = this.getStorageKey(); // ✅ USAR CHAVE ESPECÍFICA DO USUÁRIO
+      const stored = localStorage.getItem(storageKey);
       if (stored) {
         const data = JSON.parse(stored);
         
@@ -49,7 +84,8 @@ export class FreeTrialService {
         'matematica': 0,
         'informatica': 0
       },
-      lastAttempt: ''
+      lastAttempt: '',
+      userId: this.getCurrentUserId() // ✅ VINCULAR AO USUÁRIO
     };
     
     this.saveTrialData(data);
@@ -59,7 +95,8 @@ export class FreeTrialService {
   // ✅ SALVAR DADOS DO TRIAL
   private saveTrialData(data: TrialData): void {
     try {
-      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
+      const storageKey = this.getStorageKey(); // ✅ USAR CHAVE ESPECÍFICA DO USUÁRIO
+      localStorage.setItem(storageKey, JSON.stringify(data));
     } catch (error) {
     }
   }
@@ -161,7 +198,8 @@ export class FreeTrialService {
 
   // ✅ VERIFICAR SE É UM NOVO USUÁRIO (PRIMEIRA VEZ)
   isNewUser(): boolean {
-    const stored = localStorage.getItem(this.STORAGE_KEY);
+    const storageKey = this.getStorageKey(); // ✅ USAR CHAVE ESPECÍFICA DO USUÁRIO
+    const stored = localStorage.getItem(storageKey);
     return !stored;
   }
 
@@ -174,6 +212,7 @@ export class FreeTrialService {
     usedAttempts: number;
     remainingAttempts: number;
     isNewUser: boolean;
+    userId: string;
   } {
     const summary = this.getDailySummary();
     
@@ -184,13 +223,25 @@ export class FreeTrialService {
       totalAttempts: this.AVAILABLE_AREAS.length * this.MAX_ATTEMPTS_PER_DAY,
       usedAttempts: this.getTotalUsedAttempts(),
       remainingAttempts: this.getTotalRemainingAttempts(),
-      isNewUser: this.isNewUser()
+      isNewUser: this.isNewUser(),
+      userId: this.getCurrentUserId()
     };
   }
 
-  // ✅ MÉTODO PARA LIMPAR DADOS (DESENVOLVIMENTO/TESTES)
+  // ✅ MÉTODO PARA LIMPAR DADOS DO USUÁRIO ATUAL (DESENVOLVIMENTO/TESTES)
   clearTrialData(): void {
-    localStorage.removeItem(this.STORAGE_KEY);
+    const storageKey = this.getStorageKey();
+    localStorage.removeItem(storageKey);
+  }
+
+  // ✅ MÉTODO PARA LIMPAR DADOS DE TODOS OS USUÁRIOS (APENAS PARA LIMPEZA COMPLETA)
+  clearAllTrialData(): void {
+    // Remove todas as chaves que começam com o prefixo
+    Object.keys(localStorage).forEach(key => {
+      if (key.startsWith(this.STORAGE_KEY_PREFIX)) {
+        localStorage.removeItem(key);
+      }
+    });
   }
 
   // ✅ MÉTODO PARA DEBUG/LOG COMPLETO

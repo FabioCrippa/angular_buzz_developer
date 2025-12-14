@@ -252,6 +252,9 @@ throw new Error('Method not implemented.');
   // ✅ ngOnInit
   ngOnInit(): void {
     
+    // Definir estado inicial
+    this.setState(QuizState.INITIALIZING);
+    
     // Carregar preferências
     this.loadSoundPreference();
     this.loadFavorites();
@@ -330,7 +333,6 @@ throw new Error('Method not implemented.');
     });
 
     this.subscriptions.push(routeParamsSub, queryParamsSub);
-    this.setState(QuizState.INITIALIZING);
   }
   checkTrialLimits() {
     
@@ -648,6 +650,36 @@ throw new Error('Method not implemented.');
         this.mode = 'mixed';
       }
       
+      // ✅ VERIFICAR TENTATIVAS ANTES DE INICIAR (FREE TRIAL)
+      if (this.isFreeTrial) {
+        const areaKey = this.area || 'desenvolvimento-web';
+        const remaining = this.freeTrialService.getRemainingAttempts(areaKey);
+        
+        console.log('🔍 Verificando tentativas:', { areaKey, remaining, isFreeTrial: this.isFreeTrial });
+        
+        if (remaining <= 0) {
+          // Não mostra erro nem redireciona - apenas bloqueia e mostra a landing page
+          this.canStartQuiz = false;
+          this.showTrialWarning = true;
+          this.remainingAttempts = 0;
+          this.trialMessage = `Você esgotou suas tentativas diárias para ${this.getCategoryTitle(areaKey)}.`;
+          
+          // Definir estados para mostrar landing page
+          this.currentState = QuizState.READY;
+          this.isLoading = false;
+          this.hasError = false;
+          this.quizCompleted = false;
+          
+          console.log('⚠️ Landing page de tentativas esgotadas deve aparecer', {
+            isLoading: this.isLoading,
+            canStartQuiz: this.canStartQuiz,
+            isFreeTrial: this.isFreeTrial,
+            hasError: this.hasError
+          });
+          return;
+        }
+      }
+      
       this.setState(QuizState.LOADING);
       this.loadingMessage = 'Preparando suas questões...';
       
@@ -663,23 +695,11 @@ throw new Error('Method not implemented.');
   // ✅ IMPLEMENTAÇÃO REAL:
   loadQuestionsBasedOnMode(): void {
     
-    // ✅ REGISTRAR TENTATIVA APENAS SE FOR FREE TRIAL
-    if (this.isFreeTrial && this.canStartQuiz) {
-      let areaToRegister = this.area;
-      if (this.mode === 'mixed' && !this.area) {
-        areaToRegister = 'desenvolvimento-web';
-      }
-      
-      if (areaToRegister) {
-        const registered = this.freeTrialService.registerAttempt(areaToRegister);
-        if (!registered) {
-          this.showError('Limite de tentativas diárias excedido!');
-          return;
-        }
-        
-        this.remainingAttempts = this.freeTrialService.getRemainingAttempts(areaToRegister);
-      }
-    } else if (!this.isFreeTrial) {
+    // ✅ NÃO REGISTRAR TENTATIVA AQUI - SERÁ REGISTRADA APENAS AO COMPLETAR O QUIZ
+    // Apenas verificar se ainda tem tentativas disponíveis
+    if (this.isFreeTrial && !this.canStartQuiz) {
+      this.showError('Limite de tentativas diárias excedido!');
+      return;
     }
     
     // ✅ CARREGAR QUESTÕES BASEADO NO MODO COM VALIDAÇÃO ESPECÍFICA
@@ -905,6 +925,18 @@ throw new Error('Method not implemented.');
   // ✅ PRÓXIMA QUESTÃO
   nextQuestion(): void {
     
+    // ✅ VERIFICAR SE AINDA TEM TENTATIVAS (FREE TRIAL)
+    if (this.isFreeTrial) {
+      const areaKey = this.area || 'desenvolvimento-web';
+      const remaining = this.freeTrialService.getRemainingAttempts(areaKey);
+      
+      if (remaining <= 0 && !this.quizCompleted) {
+        this.showErrorMessage(`Tentativas esgotadas para ${this.getCategoryTitle(areaKey)}!`);
+        this.completeQuiz();
+        return;
+      }
+    }
+    
     if (this.selectedAnswer && !this.showExplanation) {
       this.submitAnswer();
       return;
@@ -955,15 +987,35 @@ throw new Error('Method not implemented.');
     this.score = Math.round((this.correctAnswers / this.totalQuestions) * 100);
     this.analytics.endTime = new Date();
     
+    // ✅ REGISTRAR TENTATIVA APENAS AO COMPLETAR O QUIZ (FREE TRIAL)
+    if (this.isFreeTrial) {
+      const areaKey = this.area || 'desenvolvimento-web';
+      
+      // Registrar a tentativa agora que o quiz foi completado
+      const registered = this.freeTrialService.registerAttempt(areaKey);
+      
+      if (registered) {
+        console.log(`✅ Tentativa registrada para ${areaKey}`);
+      }
+      
+      // Atualizar tentativas restantes
+      const remaining = this.freeTrialService.getRemainingAttempts(areaKey);
+      this.remainingAttempts = remaining;
+      this.canStartQuiz = remaining > 0;
+    }
+    
     // ✅ MENSAGEM DIFERENCIADA PARA PREMIUM VS FREE
     let completionMessage = `🎉 Quiz concluído! ${this.score}% de acertos`;
     
     if (this.isFreeTrial) {
-      const remaining = this.freeTrialService.getRemainingAttempts(this.area || 'desenvolvimento-web');
+      const remaining = this.remainingAttempts;
       if (remaining > 0) {
         completionMessage += ` | ${remaining} tentativas restantes hoje`;
       } else {
-        completionMessage += ` | Tentativas diárias esgotadas`;
+        completionMessage += ` | ⚠️ Tentativas esgotadas! Escolha outra área ou faça upgrade`;
+        // Atualizar flag para mostrar landing page
+        this.canStartQuiz = false;
+        this.showTrialWarning = true;
       }
     } else {
       // ✅ PREMIUM
@@ -980,7 +1032,7 @@ throw new Error('Method not implemented.');
       isPremium: !this.isFreeTrial,
       isFreeTrial: this.isFreeTrial,
       mode: this.mode,
-      remainingAttempts: this.isFreeTrial ? this.freeTrialService.getRemainingAttempts(this.area || 'desenvolvimento-web') : 'Ilimitado'
+      remainingAttempts: this.isFreeTrial ? this.remainingAttempts : 'Ilimitado'
     });
   }
 
@@ -1542,6 +1594,48 @@ throw new Error('Method not implemented.');
     }
 
     return titles[category] || category;
+  }
+
+  // ✅ MÉTODO PARA OBTER ÁREAS DISPONÍVEIS (COM TENTATIVAS RESTANTES)
+  getAvailableAreas(): Array<{key: string, title: string, remaining: number}> {
+    const allAreas = [
+      { key: 'desenvolvimento-web', title: 'Desenvolvimento Web 💻' },
+      { key: 'portugues', title: 'Português 📚' },
+      { key: 'matematica', title: 'Matemática 🔢' },
+      { key: 'informatica', title: 'Informática 💾' }
+    ];
+
+    if (!this.isFreeTrial) {
+      // Premium tem acesso a todas as áreas
+      return allAreas.map(area => ({ ...area, remaining: -1 }));
+    }
+
+    // Para free trial, filtrar apenas áreas com tentativas disponíveis
+    return allAreas
+      .map(area => ({
+        ...area,
+        remaining: this.freeTrialService.getRemainingAttempts(area.key)
+      }))
+      .filter(area => area.remaining > 0);
+  }
+
+  // ✅ MÉTODO PARA NAVEGAR PARA ÁREA ESPECÍFICA
+  goToArea(areaKey: string): void {
+    this.router.navigate(['/quiz'], {
+      queryParams: {
+        mode: 'area',
+        area: areaKey
+      }
+    });
+  }
+
+  // ✅ MÉTODOS DE NAVEGAÇÃO
+  goToDashboard(): void {
+    this.router.navigate(['/dashboard']);
+  }
+
+  goToUpgrade(): void {
+    this.router.navigate(['/upgrade']);
   }
 
   // ✅ TAMBÉM CORRIJA OS MÉTODOS QUE ESTAVAM COM throw new Error:

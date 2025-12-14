@@ -2,6 +2,7 @@
   Container principal do quiz. Utiliza uma classe para facilitar a estilização e garantir responsividade.
 -->
 <div class="quiz-container">
+
   <!-- ✅ LOADING STATE -->
   <div *ngIf="isLoading" class="loading-container">
     <div class="loading-spinner">
@@ -28,8 +29,101 @@
     </div>
   </div>
 
+  <!-- ✅ TENTATIVAS ESGOTADAS - LANDING PAGE DE CONVERSÃO -->
+  <div *ngIf="!isLoading && !hasError && !canStartQuiz && isFreeTrial" class="exhausted-container">
+    <div class="exhausted-content">
+      <div class="exhausted-icon">
+        <i class="fas fa-battery-empty"></i>
+      </div>
+      
+      <h2 class="exhausted-title">Tentativas Esgotadas</h2>
+      <p class="exhausted-subtitle">
+        Você usou suas <strong>3 tentativas diárias</strong> para 
+        <strong>{{ getCategoryTitle(area || 'desenvolvimento-web') }}</strong>
+      </p>
+
+      <div class="exhausted-stats">
+        <div class="stat-box">
+          <div class="stat-number">3/3</div>
+          <div class="stat-label">Tentativas Usadas</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">{{ remainingAttempts }}</div>
+          <div class="stat-label">Restantes Hoje</div>
+        </div>
+      </div>
+
+      <div class="options-section">
+        <h3>Escolha uma opção:</h3>
+        
+        <!-- OPÇÃO 1: PREMIUM -->
+        <div class="option-card premium-card" (click)="goToUpgrade()">
+          <div class="option-icon premium-icon">
+            <i class="fas fa-crown"></i>
+          </div>
+          <div class="option-content">
+            <h4>🚀 Upgrade para Premium</h4>
+            <p>Acesso ilimitado a todas as áreas</p>
+            <ul class="benefits-list">
+              <li><i class="fas fa-check"></i> Quizzes ilimitados</li>
+              <li><i class="fas fa-check"></i> Todas as áreas desbloqueadas</li>
+              <li><i class="fas fa-check"></i> Quiz inteligente personalizado</li>
+              <li><i class="fas fa-check"></i> Estatísticas avançadas</li>
+              <li><i class="fas fa-check"></i> Sem anúncios</li>
+            </ul>
+            <button class="btn btn-premium-large">
+              <i class="fas fa-crown"></i>
+              Assinar Premium Agora
+            </button>
+          </div>
+        </div>
+
+        <!-- OPÇÃO 2: OUTRAS ÁREAS -->
+        <div class="option-card areas-card">
+          <div class="option-icon areas-icon">
+            <i class="fas fa-th-large"></i>
+          </div>
+          <div class="option-content">
+            <h4>📚 Explorar Outras Áreas</h4>
+            
+            <ng-container *ngIf="getAvailableAreas().length > 0; else noAreasAvailable">
+              <p>Você ainda tem tentativas em {{ getAvailableAreas().length }} área(s)</p>
+              <div class="areas-available">
+                <span *ngFor="let area of getAvailableAreas()" 
+                      class="area-badge clickable"
+                      (click)="goToArea(area.key)"
+                      [title]="'Clique para jogar - ' + area.remaining + ' tentativas restantes'">
+                  {{ area.title }}
+                  <span class="badge-counter">{{ area.remaining }}</span>
+                </span>
+              </div>
+              <p class="hint-text">💡 Clique em uma área para iniciar o quiz</p>
+            </ng-container>
+            
+            <ng-template #noAreasAvailable>
+              <p>Você esgotou todas as tentativas diárias em todas as áreas!</p>
+              <p class="upgrade-message">⚠️ Faça upgrade para Premium e tenha acesso ilimitado</p>
+            </ng-template>
+            
+            <button class="btn btn-secondary-large" (click)="goToDashboard()">
+              <i class="fas fa-th-large"></i>
+              Ver Dashboard Completo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="back-link">
+        <a (click)="goToDashboard()" class="link-back">
+          <i class="fas fa-arrow-left"></i>
+          Voltar ao Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ✅ QUIZ ACTIVE STATE -->
-  <div *ngIf="!isLoading && !hasError && !quizCompleted && currentQuestion" class="quiz-active">
+  <div *ngIf="!isLoading && !hasError && !quizCompleted && currentQuestion && canStartQuiz" class="quiz-active">
     
     <!-- ✅ HEADER -->
     <div class="quiz-header">
@@ -246,12 +340,22 @@
 
     <!-- ✅ TRIAL WARNING - Só aparece se for FREE TRIAL -->
     <div class="trial-warning" *ngIf="isFreeTrial && showTrialWarning">
-      <div class="trial-card">
-        <i class="fas fa-gift"></i>
+      <div class="trial-card" [class.warning-exhausted]="!canStartQuiz">
+        <i class="fas" [class.fa-gift]="canStartQuiz" [class.fa-exclamation-circle]="!canStartQuiz"></i>
         <div class="trial-content">
-          <h4>🆓 Plano Gratuito</h4>
+          <h4 *ngIf="canStartQuiz">🆓 Plano Gratuito</h4>
+          <h4 *ngIf="!canStartQuiz">⚠️ Tentativas Esgotadas</h4>
           <p>{{ trialMessage }}</p>
-          <!-- Áreas disponíveis removidas do template para evitar chamada a método inexistente -->
+          <div class="trial-actions" *ngIf="!canStartQuiz">
+            <button class="btn btn-primary" (click)="goToDashboard()">
+              <i class="fas fa-th-large"></i>
+              Escolher Outra Área
+            </button>
+            <button class="btn btn-premium" (click)="goToUpgrade()">
+              <i class="fas fa-crown"></i>
+              Upgrade Premium
+            </button>
+          </div>
         </div>
       </div>
     </div>
