@@ -51,7 +51,7 @@
         </div>
         
         <p class="guarantee-text">
-          ✨ 3 tentativas grátis por dia • Sem cartão • Cancele quando quiser
+          ✨ 1 tentativa grátis por dia • Sem cartão • Cancele quando quiser
         </p>
       </div>
     </div>
@@ -78,10 +78,12 @@
             <p class="card-description">{{ area.description }}</p>
           </div>
           
-          <div class="card-stats">
+          <!-- Question count -->
+           
+          <!-- <div class="card-stats">
             <span class="stat">{{ area.questionCount }} questões</span>
             <span class="stat">{{ area.subjects.length }} disciplinas</span>
-          </div>
+          </div> -->
           
           <ul class="card-features">
             <li *ngFor="let feature of area.features">{{ feature }}</li>
@@ -138,7 +140,7 @@
           </div>
           
           <ul class="plan-features">
-            <li class="included">✅ <strong>3 tentativas por dia</strong></li>
+            <li class="included">✅ <strong>1 tentativa por dia</strong></li>
             <li class="included">✅ <strong>Acesso às 4 áreas</strong></li>
             <li class="included">✅ <strong>Feedback básico</strong></li>
             <li class="excluded">❌ Simulados cronometrados</li>

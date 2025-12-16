@@ -17,7 +17,7 @@
   },
   "questions": [
     {
-      "id": 101,
+      "id": 1049,
       "question": "Qual propriedade CSS é usada para alterar a cor do texto?",
       "options": [
         {
@@ -41,7 +41,7 @@
       "explanation": "A propriedade 'color' define a cor do texto. Aceita valores em hexadecimal, RGB, HSL ou nomes de cores predefinidos."
     },
     {
-      "id": 102,
+      "id": 1050,
       "question": "Qual é a diferença entre `inline`, `block` e `inline-block` no CSS?",
       "options": [
         {
@@ -65,7 +65,7 @@
       "explanation": "display: inline não quebra linha e ignora width/height. block quebra linha e aceita dimensões. inline-block combina ambos os comportamentos."
     },
     {
-      "id": 103,
+      "id": 1051,
       "question": "Qual é o propósito do `box-sizing` no CSS?",
       "options": [
         {
@@ -89,7 +89,7 @@
       "explanation": "box-sizing: border-box faz com que width inclua padding e border, facilitando cálculos de layout responsivo."
     },
     {
-      "id": 104,
+      "id": 1052,
       "question": "Qual propriedade CSS é usada para alterar o tamanho da fonte?",
       "options": [
         {
@@ -113,7 +113,7 @@
       "explanation": "A propriedade 'font-size' controla o tamanho da fonte, aceita valores em px, em, rem, %, etc."
     },
     {
-      "id": 105,
+      "id": 1053,
       "question": "Qual propriedade CSS é usada para alterar a cor de fundo?",
       "options": [
         {
@@ -137,7 +137,7 @@
       "explanation": "A propriedade 'background-color' define a cor de fundo de um elemento."
     },
     {
-      "id": 106,
+      "id": 1054,
       "question": "Qual propriedade CSS é usada para centralizar texto?",
       "options": [
         {
@@ -161,7 +161,7 @@
       "explanation": "A propriedade 'text-align' controla o alinhamento horizontal do texto dentro de um elemento."
     },
     {
-      "id": 107,
+      "id": 1055,
       "question": "O que é CSS e qual sua função?",
       "options": [
         {
@@ -185,7 +185,7 @@
       "explanation": "CSS (Cascading Style Sheets) é uma linguagem de estilo usada para definir a apresentação de documentos HTML."
     },
     {
-      "id": 108,
+      "id": 1056,
       "question": "Qual a diferença entre CSS inline, interno e externo?",
       "options": [
         {
@@ -209,7 +209,7 @@
       "explanation": "CSS inline tem maior especificidade, interno fica no <head>, externo em arquivo separado. Externo é mais maintível."
     },
     {
-      "id": 109,
+      "id": 1057,
       "question": "O que é a especificidade no CSS?",
       "options": [
         {
@@ -233,7 +233,7 @@
       "explanation": "Especificidade determina qual regra CSS se aplica quando há conflitos: IDs (100) > Classes (10) > Elementos (1)."
     },
     {
-      "id": 110,
+      "id": 1058,
       "question": "O que é um pseudo-elemento no CSS?",
       "options": [
         {
@@ -257,7 +257,7 @@
       "explanation": "Pseudo-elementos como ::before e ::after permitem estilizar partes específicas de elementos ou criar conteúdo virtual."
     },
     {
-      "id": 111,
+      "id": 1059,
       "question": "Qual é a função do `z-index` no CSS?",
       "options": [
         {
@@ -281,7 +281,7 @@
       "explanation": "z-index controla a ordem de empilhamento de elementos posicionados. Valores maiores ficam na frente."
     },
     {
-      "id": 112,
+      "id": 1060,
       "question": "O que é o modelo de caixa (box model) no CSS?",
       "options": [
         {
@@ -305,7 +305,7 @@
       "explanation": "O box model define como elementos são renderizados: content, padding, border e margin formam o tamanho total."
     },
     {
-      "id": 113,
+      "id": 1061,
       "question": "Qual a diferença entre `relative`, `absolute` e `fixed` no posicionamento CSS?",
       "options": [
         {
@@ -329,7 +329,7 @@
       "explanation": "position: relative move elemento relativo à posição original. absolute posiciona relativo ao ancestral posicionado. fixed relativo à viewport."
     },
     {
-      "id": 114,
+      "id": 1062,
       "question": "O que são media queries no CSS?",
       "options": [
         {
@@ -353,7 +353,7 @@
       "explanation": "Media queries permitem aplicar estilos diferentes baseados em características do dispositivo como largura da tela."
     },
     {
-      "id": 115,
+      "id": 1063,
       "question": "Qual a função da propriedade `flex-grow` no Flexbox?",
       "options": [
         {
@@ -377,7 +377,7 @@
       "explanation": "flex-grow define quanto um item flex pode crescer em relação aos outros itens no mesmo container."
     },
     {
-      "id": 116,
+      "id": 1064,
       "question": "O que é a propriedade `grid-template-columns` no CSS Grid?",
       "options": [
         {
@@ -401,7 +401,7 @@
       "explanation": "grid-template-columns define o número e tamanho das colunas em um layout CSS Grid."
     },
     {
-      "id": 117,
+      "id": 1065,
       "question": "Qual é o propósito da propriedade CSS 'display: grid'?",
       "options": [
         {
@@ -425,7 +425,7 @@
       "category": "css"
     },
     {
-      "id": 118,
+      "id": 1066,
       "question": "O que faz a propriedade CSS 'transform'?",
       "options": [
         {
@@ -449,7 +449,7 @@
       "category": "css"
     },
     {
-      "id": 119,
+      "id": 1067,
       "question": "Qual é a função da propriedade CSS 'transition'?",
       "options": [
         {
@@ -473,7 +473,7 @@
       "category": "css"
     },
     {
-      "id": 120,
+      "id": 1068,
       "question": "O que é CSS Custom Properties (CSS Variables)?",
       "options": [
         {
@@ -497,7 +497,7 @@
       "category": "css"
     },
     {
-      "id": 121,
+      "id": 1069,
       "question": "O que é o CSS-in-JS e quais suas vantagens?",
       "options": [
         {
@@ -521,7 +521,7 @@
       "category": "css"
     },
     {
-      "id": 122,
+      "id": 1070,
       "question": "Qual é a função da propriedade CSS 'contain'?",
       "options": [
         {
@@ -545,7 +545,7 @@
       "category": "css"
     },
     {
-      "id": 123,
+      "id": 1071,
       "question": "O que são CSS Logical Properties?",
       "options": [
         {
@@ -569,7 +569,7 @@
       "category": "css"
     },
     {
-      "id": 124,
+      "id": 1072,
       "question": "O que é CSS Subgrid?",
       "options": [
         {
@@ -593,7 +593,7 @@
       "category": "css"
     },
     {
-      "id": 125,
+      "id": 1073,
       "question": "Qual é a função da propriedade 'aspect-ratio' em CSS?",
       "options": [
         {
@@ -617,7 +617,7 @@
       "category": "css"
     },
     {
-      "id": 126,
+      "id": 1074,
       "question": "O que é CSS Cascade Layers (@layer)?",
       "options": [
         {
@@ -641,7 +641,7 @@
       "category": "css"
     },
     {
-      "id": 127,
+      "id": 1075,
       "question": "Para que serve a função CSS 'clamp()'?",
       "options": [
         {
@@ -665,7 +665,7 @@
       "category": "css"
     },
     {
-      "id": 128,
+      "id": 1076,
       "question": "O que é CSS Houdini?",
       "options": [
         {
@@ -689,7 +689,7 @@
       "category": "css"
     },
     {
-      "id": 129,
+      "id": 1077,
       "question": "Qual é a função da propriedade 'scroll-behavior'?",
       "options": [
         {
@@ -713,7 +713,7 @@
       "category": "css"
     },
     {
-      "id": 130,
+      "id": 1078,
       "question": "O que são CSS Scroll Snap properties?",
       "options": [
         {
@@ -737,7 +737,7 @@
       "category": "css"
     },
     {
-      "id": 131,
+      "id": 1079,
       "question": "Para que serve a propriedade 'overscroll-behavior'?",
       "options": [
         {
@@ -761,7 +761,7 @@
       "category": "css"
     },
     {
-      "id": 132,
+      "id": 1080,
       "question": "O que é CSS Paint API?",
       "options": [
         {
@@ -785,7 +785,7 @@
       "category": "css"
     },
     {
-      "id": 133,
+      "id": 1081,
       "question": "Qual é a diferença entre 'gap' e 'margin' em CSS Grid/Flexbox?",
       "options": [
         {
@@ -809,7 +809,7 @@
       "category": "css"
     },
     {
-      "id": 134,
+      "id": 1082,
       "question": "O que é o CSS Feature Queries (@supports)?",
       "options": [
         {
@@ -833,7 +833,7 @@
       "category": "css"
     },
     {
-      "id": 135,
+      "id": 1083,
       "question": "O que é o CSS Object Fit e quando usá-lo?",
       "options": [
         {

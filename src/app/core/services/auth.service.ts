@@ -476,21 +476,63 @@ export class AuthService {
   }
 
   private clearAllUserData(): void {
+    console.log('🧹 Limpando todos os dados do usuário...');
+    console.log('📦 localStorage ANTES:', Object.keys(localStorage));
+    
     // Limpar dados principais do usuário
     Object.values(this.STORAGE_KEYS).forEach(key => {
+      console.log('🗑️ Removendo STORAGE_KEY:', key);
       localStorage.removeItem(key);
     });
     
-    // ✅ LIMPAR TENTATIVAS DO FREE TRIAL DO USUÁRIO ATUAL
-    // Remove todas as chaves que começam com 'buzz_developer_free_trial_'
+    // ✅ LIMPAR TODAS AS CHAVES RELACIONADAS AO USUÁRIO
+    const keysToRemove: string[] = [];
+    
     Object.keys(localStorage).forEach(key => {
-      if (key.startsWith('buzz_developer_free_trial_')) {
-        localStorage.removeItem(key);
+      // Ignorar apenas chaves do sistema Angular/Firebase
+      if (key.startsWith('firebase:') || key.startsWith('_grecaptcha')) {
+        return; // Manter essas chaves
       }
+      
+      // REMOVER TUDO RELACIONADO AO USUÁRIO:
+      const shouldRemove = 
+        key.startsWith('buzz_developer_') || // Free trial
+        key.startsWith('userProgress') ||     // Progress
+        key.startsWith('sowlfy_') ||          // Auth data
+        key.includes('quiz') ||               // Quiz states
+        key.includes('Quiz') ||
+        key.includes('favorite') ||
+        key.includes('Favorite') ||
+        key.includes('premium') ||
+        key.includes('Premium') ||
+        key.includes('test') ||
+        key.includes('Test') ||
+        key.includes('intention') ||
+        key.includes('Intention') ||
+        key.includes('selected') ||           // Selected area/data
+        key.includes('daily') ||              // Daily limits
+        key.includes('saved') ||              // Saved states
+        key.includes('redirect') ||           // Redirect data
+        key.includes('progress') ||           // Progress data
+        key.includes('Progress');
+      
+      if (shouldRemove) {
+        keysToRemove.push(key);
+      }
+    });
+    
+    // Remover todas as chaves coletadas
+    console.log('🗑️ Chaves a remover:', keysToRemove);
+    keysToRemove.forEach(key => {
+      console.log('  ➡️ Removendo:', key);
+      localStorage.removeItem(key);
     });
     
     // Limpar também sessionStorage
     sessionStorage.clear();
+    
+    console.log('📦 localStorage DEPOIS:', Object.keys(localStorage));
+    console.log('✅ Limpeza completa finalizada');
   }
 
   private getAuthToken(): string | null {

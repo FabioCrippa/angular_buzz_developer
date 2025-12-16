@@ -16,7 +16,7 @@
   },
   "questions": [
     {
-      "id": 401,
+      "id": 1000,
       "question": "Qual é o propósito do `ngFor` no Angular?",
       "options": [
         {
@@ -40,7 +40,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 402,
+      "id": 1001,
       "question": "Qual é o propósito do `ngModel` no Angular?",
       "options": [
         {
@@ -64,7 +64,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 403,
+      "id": 1002,
       "question": "Qual é o propósito do `ng-content` no Angular?",
       "options": [
         {
@@ -88,7 +88,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 404,
+      "id": 1003,
       "question": "Qual comando é usado para criar um novo componente no Angular CLI?",
       "options": [
         {
@@ -112,7 +112,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 405,
+      "id": 1004,
       "question": "Qual é o propósito do arquivo `angular.json` em um projeto Angular?",
       "options": [
         {
@@ -136,7 +136,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 406,
+      "id": 1005,
       "question": "Qual decorator é usado para definir um componente no Angular?",
       "options": [
         {
@@ -160,7 +160,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 407,
+      "id": 1006,
       "question": "Qual é o propósito do `RouterModule` no Angular?",
       "options": [
         {
@@ -184,7 +184,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 408,
+      "id": 1007,
       "question": "Qual é o ciclo de vida do Angular que é chamado após a criação do componente?",
       "options": [
         {
@@ -208,7 +208,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 409,
+      "id": 1008,
       "question": "Qual é o propósito do `HttpClientModule` no Angular?",
       "options": [
         {
@@ -232,7 +232,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 410,
+      "id": 1009,
       "question": "Qual é o comando para rodar um projeto Angular localmente?",
       "options": [
         {
@@ -256,7 +256,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 411,
+      "id": 1010,
       "question": "Qual é o propósito do `@Input` no Angular?",
       "options": [
         {
@@ -280,7 +280,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 412,
+      "id": 1011,
       "question": "Qual é o propósito do `@Output` no Angular?",
       "options": [
         {
@@ -304,7 +304,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 414,
+      "id": 1012,
       "question": "Qual é o propósito do `ngIf` no Angular?",
       "options": [
         {
@@ -328,7 +328,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 415,
+      "id": 1013,
       "question": "Qual é o propósito do `@Injectable` no Angular?",
       "options": [
         {
@@ -352,7 +352,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 416,
+      "id": 1014,
       "question": "Qual é o propósito do `ngOnDestroy` no Angular?",
       "options": [
         {
@@ -376,7 +376,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 417,
+      "id": 1015,
       "question": "Qual é o propósito do `@NgModule` no Angular?",
       "options": [
         {
@@ -400,7 +400,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 418,
+      "id": 1016,
       "question": "Qual é o propósito do `ngClass` no Angular?",
       "options": [
         {
@@ -424,7 +424,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 419,
+      "id": 1017,
       "question": "Qual é o propósito do `ngStyle` no Angular?",
       "options": [
         {
@@ -448,7 +448,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 420,
+      "id": 1018,
       "question": "Qual é o propósito do `async` no Angular?",
       "options": [
         {
@@ -472,7 +472,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 421,
+      "id": 1019,
       "question": "Qual é o propósito do `FormGroup` no Angular?",
       "options": [
         {
@@ -496,7 +496,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 422,
+      "id": 1020,
       "question": "Qual é o propósito do `FormControl` no Angular?",
       "options": [
         {
@@ -520,7 +520,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 423,
+      "id": 1021,
       "question": "Qual é o propósito do `ReactiveFormsModule` no Angular?",
       "options": [
         {
@@ -544,7 +544,7 @@
       "explanation": "Angular é um framework TypeScript para construir aplicações web escaláveis com arquitetura baseada em componentes."
     },
     {
-      "id": 424,
+      "id": 1022,
       "question": "O que são Angular Signals e quando usá-los?",
       "options": [
         {
@@ -568,7 +568,7 @@
       "category": "angular"
     },
     {
-      "id": 425,
+      "id": 1023,
       "question": "O que é Angular Universal?",
       "options": [
         {

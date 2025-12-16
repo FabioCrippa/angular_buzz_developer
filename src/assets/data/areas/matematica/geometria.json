@@ -42,7 +42,7 @@
       "correct": "B",
       "explanation": "Área = (base × altura)/2 = (3 × 4)/2 = 6 cm²",
       "studyTip": "Em triângulo retângulo, use os catetos como base e altura.",
-      "id": 3102,
+      "id": 3005,
       "category": "geometria",
       "difficulty": "fundamental"
     },
@@ -73,7 +73,7 @@
       "correct": "A",
       "explanation": "Perímetro do quadrado = 4 × lado = 4 × 5 = 20 cm",
       "studyTip": "Perímetro = soma de todos os lados. Área = lado × lado (quadrado).",
-      "id": 3103,
+      "id": 3006,
       "category": "geometria",
       "difficulty": "fundamental"
     },
@@ -104,7 +104,7 @@
       "correct": "B",
       "explanation": "Área = π × r² = 3,14 × 3² = 3,14 × 9 = 28,26 cm²",
       "studyTip": "Círculo: Área = πr², Perímetro = 2πr. Use π ≈ 3,14.",
-      "id": 3104,
+      "id": 3007,
       "category": "geometria",
       "difficulty": "fundamental"
     },
@@ -135,7 +135,7 @@
       "correct": "B",
       "explanation": "A soma dos ângulos internos de qualquer triângulo é sempre 180°.",
       "studyTip": "Triângulo = 180°, Quadrilátero = 360°, Pentágono = 540°. Fórmula: (n-2)×180°",
-      "id": 3105,
+      "id": 3008,
       "category": "geometria",
       "difficulty": "fundamental"
     },
@@ -166,7 +166,7 @@
       "correct": "B",
       "explanation": "Volume do cubo = aresta³ = 2³ = 8 cm³",
       "studyTip": "Cubo: V = a³. Paralelepípedo: V = comprimento × largura × altura.",
-      "id": 3106,
+      "id": 3009,
       "category": "geometria",
       "difficulty": "fundamental"
     }

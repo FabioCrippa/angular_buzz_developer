@@ -42,7 +42,7 @@
       "correct": "B",
       "explanation": "HTTP (HyperText Transfer Protocol) e sua versão segura HTTPS são usados para navegação web.",
       "studyTip": "HTTP = web, FTP = arquivos, SMTP = envio email, POP3/IMAP = recebimento email.",
-      "id": 4102,
+      "id": 4025,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -73,7 +73,7 @@
       "correct": "B",
       "explanation": "IP v4 tem 4 octetos de 0 a 255. Apenas 192.168.1.1 está dentro dessa faixa.",
       "studyTip": "IPv4: 4 números de 0 a 255 separados por ponto. IPv6: usa hexadecimal com ':'.",
-      "id": 4103,
+      "id": 4026,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -104,7 +104,7 @@
       "correct": "B",
       "explanation": "DNS (Domain Name System) traduz nomes de domínio (google.com) em endereços IP.",
       "studyTip": "DNS é como uma 'lista telefônica' da internet: nome → número (IP).",
-      "id": 4104,
+      "id": 4027,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -135,7 +135,7 @@
       "correct": "B",
       "explanation": "WPA2 (Wi-Fi Protected Access 2) é um protocolo de segurança que criptografa dados na rede Wi-Fi.",
       "studyTip": "Evolução Wi-Fi: WEP (fraco) → WPA → WPA2 → WPA3 (mais seguro).",
-      "id": 4105,
+      "id": 4028,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -166,7 +166,7 @@
       "correct": "C",
       "explanation": "Na topologia estrela, todos os dispositivos se conectam a um hub ou switch central.",
       "studyTip": "Estrela = hub central. Anel = círculo. Barramento = linha. Malha = todos com todos.",
-      "id": 4106,
+      "id": 4029,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -197,7 +197,7 @@
       "correct": "A",
       "explanation": "IP significa 'Internet Protocol', que identifica dispositivos em uma rede e permite comunicação entre eles.",
       "studyTip": "O endereço IP é como o 'número de telefone' de um dispositivo na rede.",
-      "id": 6001,
+      "id": 4030,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -228,7 +228,7 @@
       "correct": "C",
       "explanation": "O roteador conecta redes distintas e encaminha pacotes entre elas, como entre sua rede doméstica e a internet.",
       "studyTip": "Roteadores trabalham na camada de rede e são essenciais para acesso à internet.",
-      "id": 6002,
+      "id": 4031,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -259,7 +259,7 @@
       "correct": "B",
       "explanation": "O switch conecta dispositivos em uma rede local e encaminha os dados apenas para o destino correto.",
       "studyTip": "Switches operam na camada de enlace e são mais eficientes que hubs.",
-      "id": 6003,
+      "id": 4032,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -290,7 +290,7 @@
       "correct": "C",
       "explanation": "Wi-Fi é a tecnologia que permite conexão sem fio à internet ou redes locais.",
       "studyTip": "Wi-Fi usa padrões IEEE 802.11 e é comum em redes domésticas e públicas.",
-      "id": 6004,
+      "id": 4033,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -321,7 +321,7 @@
       "correct": "B",
       "explanation": "O DNS converte nomes de sites (como www.exemplo.com) em endereços IP compreensíveis pelos computadores.",
       "studyTip": "Sem DNS, teríamos que memorizar números IP em vez de nomes de sites.",
-      "id": 6005,
+      "id": 4034,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -352,7 +352,7 @@
       "correct": "C",
       "explanation": "O endereço MAC é um identificador único atribuído à placa de rede de um dispositivo.",
       "studyTip": "Endereços MAC são usados para controle de acesso e identificação na camada de enlace.",
-      "id": 6006,
+      "id": 4035,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -383,7 +383,7 @@
       "correct": "B",
       "explanation": "O TCP garante que os dados sejam entregues corretamente e na ordem certa.",
       "studyTip": "TCP é confiável, enquanto o UDP é mais rápido, porém sem garantia de entrega.",
-      "id": 6007,
+      "id": 4036,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -414,7 +414,7 @@
       "correct": "B",
       "explanation": "O repetidor recebe o sinal Wi-Fi e o retransmite para ampliar a cobertura.",
       "studyTip": "Repetidores são úteis em locais com sinal fraco ou barreiras físicas.",
-      "id": 6008,
+      "id": 4037,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -445,7 +445,7 @@
       "correct": "C",
       "explanation": "LAN (Local Area Network) conecta dispositivos em uma área limitada, como uma casa ou escritório.",
       "studyTip": "LANs são comuns em ambientes domésticos e corporativos.",
-      "id": 6009,
+      "id": 4038,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -476,7 +476,7 @@
       "correct": "B",
       "explanation": "O firewall monitora e controla o tráfego de rede, bloqueando acessos suspeitos.",
       "studyTip": "Firewalls podem ser físicos ou softwares, atuando como barreiras de segurança.",
-      "id": 6010,
+      "id": 4039,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -507,7 +507,7 @@
       "correct": "B",
       "explanation": "WAN (Wide Area Network) conecta redes em locais geográficos diferentes, como cidades ou países.",
       "studyTip": "Compare LAN (local), MAN (metropolitana) e WAN (ampla) para entender os tipos de rede.",
-      "id": 6011,
+      "id": 4040,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -538,7 +538,7 @@
       "correct": "B",
       "explanation": "SMTP (Simple Mail Transfer Protocol) é usado para enviar e-mails entre servidores.",
       "studyTip": "SMTP envia, POP3 e IMAP recebem. Memorize essa tríade dos protocolos de e-mail.",
-      "id": 6012,
+      "id": 4041,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -569,7 +569,7 @@
       "correct": "B",
       "explanation": "O modem permite a comunicação entre o computador e a internet, convertendo sinais.",
       "studyTip": "Modem = modulador/demodulador. Ele conecta sua rede à operadora de internet.",
-      "id": 6013,
+      "id": 4042,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -600,7 +600,7 @@
       "correct": "B",
       "explanation": "HTTPS é a versão segura do HTTP, usando criptografia para proteger dados na web.",
       "studyTip": "Sites com HTTPS têm cadeado na barra de endereço e são mais seguros.",
-      "id": 6014,
+      "id": 4043,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -631,7 +631,7 @@
       "correct": "B",
       "explanation": "O switch identifica o destino dos dados e os envia diretamente, enquanto o hub distribui para todos.",
       "studyTip": "Switch é inteligente, hub é simples. Prefira switches em redes modernas.",
-      "id": 6015,
+      "id": 4044,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -662,7 +662,7 @@
       "correct": "A",
       "explanation": "Wi-Fi é uma marca registrada que significa 'Wireless Fidelity', usada para redes sem fio.",
       "studyTip": "Wi-Fi é baseada nos padrões IEEE 802.11 e permite conexão sem cabos.",
-      "id": 6016,
+      "id": 4045,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -693,7 +693,7 @@
       "correct": "B",
       "explanation": "FTP (File Transfer Protocol) é usado para enviar e receber arquivos entre sistemas conectados à rede.",
       "studyTip": "FTP pode ser acessado por navegadores ou programas específicos como FileZilla.",
-      "id": 6017,
+      "id": 4046,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -724,7 +724,7 @@
       "correct": "A",
       "explanation": "Endereços IP dinâmicos são atribuídos automaticamente e podem mudar a cada nova conexão.",
       "studyTip": "Serviços como DHCP são responsáveis por distribuir IPs dinâmicos na rede.",
-      "id": 6018,
+      "id": 4047,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -755,7 +755,7 @@
       "correct": "B",
       "explanation": "O hub transmite os dados recebidos para todos os dispositivos conectados, sem distinção.",
       "studyTip": "Hubs são menos eficientes que switches, pois não identificam o destino dos dados.",
-      "id": 6019,
+      "id": 4048,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -786,7 +786,7 @@
       "correct": "B",
       "explanation": "POP3 (Post Office Protocol 3) permite baixar e-mails do servidor para o computador local.",
       "studyTip": "POP3 baixa os e-mails e geralmente os remove do servidor; IMAP mantém os e-mails online.",
-      "id": 6020,
+      "id": 4049,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -817,7 +817,7 @@
       "correct": "B",
       "explanation": "IMAP permite acessar e-mails diretamente no servidor, mantendo-os sincronizados em vários dispositivos.",
       "studyTip": "IMAP é ideal para quem acessa e-mails em diferentes aparelhos, pois mantém tudo online.",
-      "id": 6021,
+      "id": 4050,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -848,7 +848,7 @@
       "correct": "B",
       "explanation": "VPN (Virtual Private Network) cria uma conexão segura e criptografada entre o usuário e a internet.",
       "studyTip": "VPNs são úteis para proteger dados em redes públicas e acessar conteúdos restritos.",
-      "id": 6022,
+      "id": 4051,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -879,7 +879,7 @@
       "correct": "B",
       "explanation": "HTTP (Hypertext Transfer Protocol) é usado para acessar e transferir informações em páginas da web.",
       "studyTip": "HTTP é o protocolo base da navegação web; HTTPS é sua versão segura.",
-      "id": 6023,
+      "id": 4052,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -910,7 +910,7 @@
       "correct": "A",
       "explanation": "DHCP (Dynamic Host Configuration Protocol) distribui endereços IP automaticamente aos dispositivos da rede.",
       "studyTip": "Sem DHCP, seria necessário configurar manualmente cada IP na rede.",
-      "id": 6024,
+      "id": 4053,
       "category": "redes",
       "difficulty": "fundamental"
     },
@@ -941,7 +941,7 @@
       "correct": "B",
       "explanation": "Na rede P2P, os dispositivos se comunicam diretamente, sem depender de um servidor central.",
       "studyTip": "P2P é comum em compartilhamento de arquivos, como torrents.",
-      "id": 6025,
+      "id": 4054,
       "category": "redes",
       "difficulty": "fundamental"
     }

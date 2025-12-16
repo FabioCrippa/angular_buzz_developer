@@ -38,14 +38,14 @@
       
       <h2 class="exhausted-title">Tentativas Esgotadas</h2>
       <p class="exhausted-subtitle">
-        Você usou suas <strong>3 tentativas diárias</strong> para 
+        Você usou sua <strong>tentativa diária</strong> para 
         <strong>{{ getCategoryTitle(area || 'desenvolvimento-web') }}</strong>
       </p>
 
       <div class="exhausted-stats">
         <div class="stat-box">
-          <div class="stat-number">3/3</div>
-          <div class="stat-label">Tentativas Usadas</div>
+          <div class="stat-number">1/1</div>
+          <div class="stat-label">Tentativa Usada</div>
         </div>
         <div class="stat-box">
           <div class="stat-number">{{ remainingAttempts }}</div>
@@ -155,7 +155,7 @@
          [class.mobile-view]="isMobile()"
          [class.tablet-view]="isTablet()">
       <div class="stat-item">
-        <div class="stat-value">{{ currentQuestionIndex + 1 }}</div>
+        <div class="stat-value">{{ currentQuestionIndex + 1 }}/{{ questions.length }}</div>
         <div class="stat-label">Questão</div>
       </div>
       <div class="stat-item">
@@ -402,13 +402,13 @@
             <p class="trial-status">
               <i class="fas fa-gift"></i>
               Tentativas restantes em {{ getCategoryTitle(area || 'desenvolvimento-web') }}: 
-              <strong>{{ getCurrentAreaRemainingAttempts() }}</strong>
+              <strong>{{ remainingAttempts }}</strong>
             </p>
             
-            <!-- ✅ MOSTRAR TOTAL DE TENTATIVAS RESTANTES -->
+            <!-- ✅ MENSAGEM QUANDO AINDA TEM TENTATIVAS -->
             <p class="trial-total" *ngIf="remainingAttempts > 0">
-              <i class="fas fa-chart-bar"></i>
-              Total de tentativas hoje: <strong>{{ remainingAttempts }}</strong>
+              <i class="fas fa-check-circle"></i>
+              Você ainda pode fazer mais {{ remainingAttempts }} quiz(s) nesta área hoje!
             </p>
             
             <!-- ✅ MENSAGEM QUANDO TODAS ESGOTADAS -->

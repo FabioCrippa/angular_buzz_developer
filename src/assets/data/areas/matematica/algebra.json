@@ -42,7 +42,7 @@
       "correct": "B",
       "explanation": "2x + 5 = 13 → 2x = 13 - 5 → 2x = 8 → x = 4",
       "studyTip": "Sempre isole a variável: passe números para um lado, variáveis para outro.",
-      "id": 3002,
+      "id": 3000,
       "category": "algebra",
       "difficulty": "fundamental"
     },
@@ -73,7 +73,7 @@
       "correct": "B",
       "explanation": "Somando as equações: 2x = 8 → x = 4. Substituindo: 4 + y = 7 → y = 3",
       "studyTip": "Método da adição: some as equações para eliminar uma variável.",
-      "id": 3003,
+      "id": 3001,
       "category": "algebra",
       "difficulty": "fundamental"
     },
@@ -104,7 +104,7 @@
       "correct": "B",
       "explanation": "Função do 1º grau f(x) = ax + b sempre gera uma reta no plano cartesiano.",
       "studyTip": "1º grau = reta, 2º grau = parábola, 3º grau = cúbica.",
-      "id": 3004,
+      "id": 3002,
       "category": "algebra",
       "difficulty": "fundamental"
     },
@@ -135,7 +135,7 @@
       "correct": "B",
       "explanation": "3x - 2 = 7, então 3x = 9. Logo, 6x = 18 e 6x - 4 = 18 - 4 = 14",
       "studyTip": "Observe relações entre expressões para resolver mais rapidamente.",
-      "id": 3005,
+      "id": 3003,
       "category": "algebra",
       "difficulty": "fundamental"
     },
@@ -166,7 +166,7 @@
       "correct": "A",
       "explanation": "Fatorando: (x-2)(x-3) = 0, então x = 2 ou x = 3. Verificação: 2+3=5 e 2×3=6 ✓",
       "studyTip": "Para x² + bx + c = 0, procure dois números que somem -b e multipliquem c.",
-      "id": 3006,
+      "id": 3004,
       "category": "algebra",
       "difficulty": "fundamental"
     }

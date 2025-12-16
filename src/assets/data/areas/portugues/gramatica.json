@@ -42,7 +42,7 @@
       "correct": "B",
       "explanation": "O pronome 'que' é relativo pois retoma o termo 'livro' e introduz uma oração subordinada adjetiva.",
       "studyTip": "Para identificar: substitua por 'o qual/a qual'. Se fizer sentido, é pronome relativo.",
-      "id": 2002,
+      "id": 2000,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -73,7 +73,7 @@
       "correct": "B",
       "explanation": "O verbo 'fazer' indicando tempo é impessoal, deve ficar no singular: 'Faz dois anos'.",
       "studyTip": "Verbos impessoais (haver, fazer indicando tempo) sempre ficam no singular.",
-      "id": 2003,
+      "id": 2001,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -104,7 +104,7 @@
       "correct": "C",
       "explanation": "Após o Acordo Ortográfico, 'heroína' mantém o acento por ser paroxítona terminada em 'a'.",
       "studyTip": "Memorize: ditongos abertos 'ei' e 'oi' não são mais acentuados em paroxítonas.",
-      "id": 2004,
+      "id": 2002,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -135,7 +135,7 @@
       "correct": "A",
       "explanation": "Metáfora é a comparação implícita, sem conectivo, entre 'mãos' e 'geleiras'.",
       "studyTip": "Metáfora = comparação sem 'como'. Comparação = com 'como', 'tal qual'.",
-      "id": 2005,
+      "id": 2003,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -166,7 +166,7 @@
       "correct": "A",
       "explanation": "O correto é 'preocupada'. O adjetivo concorda com o sexo da pessoa, não com a expressão de tratamento.",
       "studyTip": "Pronomes de tratamento: verbo na 3ª pessoa, adjetivo concorda com o sexo da pessoa.",
-      "id": 2006,
+      "id": 2004,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -197,7 +197,7 @@
       "correct": "A",
       "explanation": "Na voz ativa, o sujeito (professor) pratica a ação (corrigir).",
       "studyTip": "Voz ativa: sujeito faz a ação. Voz passiva: sujeito recebe a ação.",
-      "id": 2007,
+      "id": 2005,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -228,7 +228,7 @@
       "correct": "B",
       "explanation": "'Cantar' é intransitivo pois não exige complemento para completar seu sentido.",
       "studyTip": "Verbos intransitivos não precisam de objeto; transitivos precisam.",
-      "id": 2008,
+      "id": 2006,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -259,7 +259,7 @@
       "correct": "D",
       "explanation": "A frase apresenta sujeito indeterminado, pois o verbo 'chover' não tem sujeito específico.",
       "studyTip": "Sujeito indeterminado ocorre com verbos que não se referem a um agente específico.",
-      "id": 2009,
+      "id": 2007,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -290,7 +290,7 @@
       "correct": "B",
       "explanation": "O advérbio 'rapidamente' modifica o verbo 'corre', indicando a maneira como a ação é realizada.",
       "studyTip": "Advérbios modificam verbos, adjetivos ou outros advérbios, indicando modo, tempo, lugar, etc.",
-      "id": 2010,
+      "id": 2008,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -321,7 +321,7 @@
       "correct": "B",
       "explanation": "'Tinha estudado' está no pretérito mais-que-perfeito composto, indicando uma ação anterior a outra no passado.",
       "studyTip": "Pretérito mais-que-perfeito indica ação passada anterior a outra ação também passada.",
-      "id": 2011,
+      "id": 2009,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -352,7 +352,7 @@
       "correct": "C",
       "explanation": "'Amizade' é um substantivo abstrato, pois designa uma qualidade ou estado, não um objeto concreto.",
       "studyTip": "Substantivos abstratos nomeiam sentimentos, qualidades, estados ou ações.",
-      "id": 2012,
+      "id": 2010,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -383,7 +383,7 @@
       "correct": "C",
       "explanation": "A conjunção 'mas' indica uma ideia de oposição entre as orações.",
       "studyTip": "Conjunções adversativas expressam contraste ou oposição entre ideias.",
-      "id": 2013,
+      "id": 2011,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -414,7 +414,7 @@
       "correct": "B",
       "explanation": "'Felizmente' é um advérbio de modo, pois indica a maneira como algo aconteceu.",
       "studyTip": "Advérbios podem indicar modo, tempo, lugar, intensidade, entre outros.",
-      "id": 2014,
+      "id": 2012,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -445,7 +445,7 @@
       "correct": "B",
       "explanation": "O adjetivo 'estudioso' caracteriza o substantivo 'aluno'.",
       "studyTip": "Adjetivos qualificam ou caracterizam os substantivos.",
-      "id": 2015,
+      "id": 2013,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -476,7 +476,7 @@
       "correct": "D",
       "explanation": "Em verbos que indicam fenômenos da natureza, o sujeito é inexistente.",
       "studyTip": "Fenômenos naturais geralmente têm sujeito inexistente.",
-      "id": 2016,
+      "id": 2014,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -507,7 +507,7 @@
       "correct": "C",
       "explanation": "A vírgula isola o aposto 'meu amigo', que explica quem é João.",
       "studyTip": "Apostos explicativos devem ser isolados por vírgulas.",
-      "id": 2017,
+      "id": 2015,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -538,7 +538,7 @@
       "correct": "C",
       "explanation": "O pronome 'me' funciona como objeto indireto, sendo um pronome oblíquo átono.",
       "studyTip": "Pronomes oblíquos átonos substituem complementos verbais e não vêm precedidos de preposição.",
-      "id": 2018,
+      "id": 2016,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -569,7 +569,7 @@
       "correct": "B",
       "explanation": "O plural correto de 'cidadão' é 'cidadãos'.",
       "studyTip": "Alguns substantivos terminados em -ão têm plural irregular, como 'cidadão' → 'cidadãos'.",
-      "id": 2019,
+      "id": 2017,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -600,7 +600,7 @@
       "correct": "A",
       "explanation": "'Não' é um advérbio de negação, pois modifica o verbo 'foi' negando a ação.",
       "studyTip": "Advérbios de negação indicam que a ação verbal não ocorreu.",
-      "id": 2020,
+      "id": 2018,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -631,7 +631,7 @@
       "correct": "A",
       "explanation": "O 'que' retoma 'livro' e introduz uma oração subordinada adjetiva, sendo um pronome relativo.",
       "studyTip": "Pronomes relativos retomam um termo anterior e ligam orações.",
-      "id": 2021,
+      "id": 2019,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -662,7 +662,7 @@
       "correct": "A",
       "explanation": "'Estudarei' está no futuro do presente, indicando uma ação que ocorrerá posteriormente.",
       "studyTip": "Futuro do presente expressa ações que ainda vão acontecer.",
-      "id": 2022,
+      "id": 2020,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -693,7 +693,7 @@
       "correct": "B",
       "explanation": "O artigo definido 'o' determina o substantivo 'menino', indicando que é conhecido.",
       "studyTip": "Artigos definidos especificam e determinam os substantivos de forma precisa.",
-      "id": 2023,
+      "id": 2021,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -724,7 +724,7 @@
       "correct": "B",
       "explanation": "'Muito' intensifica o adjetivo 'feliz', sendo um advérbio de intensidade.",
       "studyTip": "Advérbios de intensidade modificam adjetivos, advérbios ou verbos, indicando grau.",
-      "id": 2024,
+      "id": 2022,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -755,7 +755,7 @@
       "correct": "A",
       "explanation": "A preposição 'a' liga o verbo 'foi' ao substantivo 'mercado', indicando direção.",
       "studyTip": "Preposições ligam palavras e estabelecem relações de sentido entre elas.",
-      "id": 2025,
+      "id": 2023,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -786,7 +786,7 @@
       "correct": "B",
       "explanation": "O verbo 'ser' liga o sujeito 'ela' à característica 'professora'.",
       "studyTip": "Verbos de ligação unem o sujeito a um predicativo, indicando estado ou qualidade.",
-      "id": 2026,
+      "id": 2024,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -817,7 +817,7 @@
       "correct": "B",
       "explanation": "'Aquele' é um pronome demonstrativo que indica algo distante no tempo ou no espaço.",
       "studyTip": "Pronomes demonstrativos indicam a posição de algo em relação às pessoas do discurso.",
-      "id": 2027,
+      "id": 2025,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -848,7 +848,7 @@
       "correct": "C",
       "explanation": "O verbo 'estuda-se' está na voz passiva sintética, com sujeito indeterminado.",
       "studyTip": "O sujeito indeterminado ocorre com verbos na 3ª pessoa acompanhados do pronome 'se'.",
-      "id": 2028,
+      "id": 2026,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -879,7 +879,7 @@
       "correct": "B",
       "explanation": "'Porém' expressa oposição entre as ideias das duas orações.",
       "studyTip": "Conjunções adversativas indicam contraste entre ideias.",
-      "id": 2029,
+      "id": 2027,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -910,7 +910,7 @@
       "correct": "A",
       "explanation": "A palavra 'se' introduz uma condição para a realização da ação.",
       "studyTip": "Conjunções condicionais indicam uma hipótese ou condição para que algo aconteça.",
-      "id": 2030,
+      "id": 2028,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -941,7 +941,7 @@
       "correct": "C",
       "explanation": "'Também' indica inclusão, mostrando que outra pessoa compartilha da mesma ação.",
       "studyTip": "Advérbios de inclusão indicam que algo ou alguém se junta a uma ação ou característica.",
-      "id": 2031,
+      "id": 2029,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -972,7 +972,7 @@
       "correct": "B",
       "explanation": "O verbo 'haver' com sentido de existir é impessoal e não possui sujeito.",
       "studyTip": "Quando 'haver' tem sentido de existir, é impessoal e fica na 3ª pessoa do singular.",
-      "id": 2032,
+      "id": 2030,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1003,7 +1003,7 @@
       "correct": "B",
       "explanation": "'Com alegria' indica a maneira como a ação foi realizada, sendo um adjunto adverbial de modo.",
       "studyTip": "Adjuntos adverbiais indicam circunstâncias como tempo, lugar, modo, causa, etc.",
-      "id": 2033,
+      "id": 2031,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1034,7 +1034,7 @@
       "correct": "A",
       "explanation": "'Nós' é um pronome pessoal do caso reto, funcionando como sujeito da oração.",
       "studyTip": "Pronomes pessoais do caso reto exercem a função de sujeito na oração.",
-      "id": 2034,
+      "id": 2032,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1065,7 +1065,7 @@
       "correct": "A",
       "explanation": "'Trabalhador' é um substantivo comum que designa uma pessoa que trabalha.",
       "studyTip": "Substantivos comuns nomeiam seres de forma genérica, sem especificar.",
-      "id": 2035,
+      "id": 2033,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1096,7 +1096,7 @@
       "correct": "A",
       "explanation": "O predicado é verbal, pois o núcleo é o verbo 'correu', que indica ação.",
       "studyTip": "Predicado verbal tem como núcleo um verbo que expressa ação.",
-      "id": 2036,
+      "id": 2034,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1127,7 +1127,7 @@
       "correct": "A",
       "explanation": "O 'que' introduz uma oração subordinada substantiva, funcionando como conjunção integrante.",
       "studyTip": "Conjunções integrantes ligam orações subordinadas substantivas ao verbo principal.",
-      "id": 2037,
+      "id": 2035,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1158,7 +1158,7 @@
       "correct": "C",
       "explanation": "'Rapaz' é um substantivo comum, pois nomeia um ser de forma genérica.",
       "studyTip": "Substantivos comuns não especificam nomes próprios, mas categorias gerais.",
-      "id": 2038,
+      "id": 2036,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1189,7 +1189,7 @@
       "correct": "B",
       "explanation": "'Inteligente' é um adjetivo que qualifica o substantivo 'menina'.",
       "studyTip": "Adjetivos atribuem características aos substantivos.",
-      "id": 2039,
+      "id": 2037,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1220,7 +1220,7 @@
       "correct": "A",
       "explanation": "'Nunca' indica o tempo em que a ação ocorre, sendo um advérbio de tempo.",
       "studyTip": "Advérbios de tempo indicam quando a ação verbal ocorre.",
-      "id": 2040,
+      "id": 2038,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1251,7 +1251,7 @@
       "correct": "C",
       "explanation": "O verbo 'gostar' exige preposição, sendo transitivo indireto.",
       "studyTip": "Verbos transitivos indiretos exigem complemento precedido de preposição.",
-      "id": 2041,
+      "id": 2039,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1282,7 +1282,7 @@
       "correct": "C",
       "explanation": "'Seu' indica posse, referindo-se ao livro que pertence a 'ele'.",
       "studyTip": "Pronomes possessivos indicam posse e concordam com o objeto possuído.",
-      "id": 2042,
+      "id": 2040,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1313,7 +1313,7 @@
       "correct": "B",
       "explanation": "'Onde' retoma 'cidade' e introduz uma oração subordinada adjetiva, sendo pronome relativo.",
       "studyTip": "Pronomes relativos retomam um termo anterior e ligam orações, como 'que', 'onde', 'cujo'.",
-      "id": 2043,
+      "id": 2041,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1344,7 +1344,7 @@
       "correct": "B",
       "explanation": "'Brincavam' está no pretérito imperfeito, indicando uma ação contínua no passado.",
       "studyTip": "O pretérito imperfeito expressa ações habituais ou contínuas no passado.",
-      "id": 2044,
+      "id": 2042,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1375,7 +1375,7 @@
       "correct": "C",
       "explanation": "A conjunção 'e' liga duas orações com sentido de adição.",
       "studyTip": "Conjunções aditivas indicam soma ou acréscimo de ideias.",
-      "id": 2045,
+      "id": 2043,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1406,7 +1406,7 @@
       "correct": "A",
       "explanation": "'Com' é uma preposição que liga o verbo 'saiu' ao complemento 'os amigos'.",
       "studyTip": "Preposições estabelecem relações entre palavras, como causa, companhia, direção.",
-      "id": 2046,
+      "id": 2044,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1437,7 +1437,7 @@
       "correct": "D",
       "explanation": "O verbo 'fazer' com sentido de fenômeno natural é impessoal, sem sujeito.",
       "studyTip": "Verbos que indicam fenômenos naturais são impessoais e têm sujeito inexistente.",
-      "id": 2047,
+      "id": 2045,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1468,7 +1468,7 @@
       "correct": "B",
       "explanation": "'Dele' indica posse, sendo um pronome possessivo.",
       "studyTip": "Pronomes possessivos indicam a quem pertence algo.",
-      "id": 2048,
+      "id": 2046,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1499,7 +1499,7 @@
       "correct": "A",
       "explanation": "'Por que' é um advérbio interrogativo que introduz uma pergunta sobre causa ou motivo.",
       "studyTip": "Use 'por que' separado e sem acento em perguntas diretas ou indiretas.",
-      "id": 2049,
+      "id": 2047,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1530,7 +1530,7 @@
       "correct": "A",
       "explanation": "'Isso' é um pronome demonstrativo que retoma ou antecipa uma ideia.",
       "studyTip": "Pronomes demonstrativos indicam algo próximo ou distante no tempo ou espaço.",
-      "id": 2050,
+      "id": 2048,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1561,7 +1561,7 @@
       "correct": "A",
       "explanation": "'Como' estabelece uma comparação entre 'ela' e 'um anjo', sendo conjunção comparativa.",
       "studyTip": "Conjunções comparativas indicam relação de semelhança entre elementos.",
-      "id": 2051,
+      "id": 2049,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1592,7 +1592,7 @@
       "correct": "A",
       "explanation": "'Quando' indica o momento em que a ação ocorreu, funcionando como conjunção temporal.",
       "studyTip": "Conjunções temporais indicam o tempo em que a ação acontece.",
-      "id": 2052,
+      "id": 2050,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1623,7 +1623,7 @@
       "correct": "B",
       "explanation": "'Lhe' é um pronome oblíquo átono que funciona como objeto indireto.",
       "studyTip": "Pronomes oblíquos átonos substituem complementos verbais e não vêm precedidos de preposição.",
-      "id": 2053,
+      "id": 2051,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1654,7 +1654,7 @@
       "correct": "B",
       "explanation": "'Felicidade' é um substantivo abstrato, pois representa um sentimento.",
       "studyTip": "Substantivos abstratos nomeiam sentimentos, qualidades, estados ou ações.",
-      "id": 2054,
+      "id": 2052,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1685,7 +1685,7 @@
       "correct": "A",
       "explanation": "O 'se' indica que a ação recai sobre o próprio sujeito, sendo reflexivo.",
       "studyTip": "Pronomes reflexivos indicam que o sujeito pratica e recebe a ação verbal.",
-      "id": 2055,
+      "id": 2053,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1716,7 +1716,7 @@
       "correct": "A",
       "explanation": "'Alguns' é um pronome indefinido, pois indica quantidade imprecisa.",
       "studyTip": "Pronomes indefinidos referem-se de forma vaga ou imprecisa aos seres.",
-      "id": 2056,
+      "id": 2054,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1747,7 +1747,7 @@
       "correct": "B",
       "explanation": "'Rápido' modifica o verbo 'corre', indicando o modo da ação.",
       "studyTip": "Advérbios de modo indicam como a ação verbal é realizada.",
-      "id": 2057,
+      "id": 2055,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1778,7 +1778,7 @@
       "correct": "B",
       "explanation": "'Mas' expressa oposição entre as ideias das duas orações.",
       "studyTip": "Conjunções adversativas indicam contraste entre ideias.",
-      "id": 2058,
+      "id": 2056,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1809,7 +1809,7 @@
       "correct": "A",
       "explanation": "'Ainda' indica que a ação não ocorreu até o momento presente, sendo advérbio de tempo.",
       "studyTip": "Advérbios de tempo indicam quando a ação verbal ocorre ou ocorreu.",
-      "id": 2059,
+      "id": 2057,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1840,7 +1840,7 @@
       "correct": "A",
       "explanation": "'Muito' intensifica o adjetivo 'bonita', sendo um advérbio de intensidade.",
       "studyTip": "Advérbios de intensidade modificam adjetivos, advérbios ou verbos.",
-      "id": 2060,
+      "id": 2058,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1871,7 +1871,7 @@
       "correct": "C",
       "explanation": "'Comprei' exige um complemento sem preposição, sendo um verbo transitivo direto.",
       "studyTip": "Verbos transitivos diretos exigem objeto direto, sem preposição.",
-      "id": 2061,
+      "id": 2059,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1902,7 +1902,7 @@
       "correct": "B",
       "explanation": "'Que' retoma 'menina' e introduz uma oração subordinada adjetiva, sendo pronome relativo.",
       "studyTip": "Pronomes relativos ligam orações e retomam termos anteriores.",
-      "id": 2062,
+      "id": 2060,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1933,7 +1933,7 @@
       "correct": "B",
       "explanation": "A palavra 'mas' estabelece oposição entre as orações, sendo uma conjunção coordenativa adversativa.",
       "studyTip": "Conjunções adversativas indicam contraste ou oposição entre ideias.",
-      "id": 3001,
+      "id": 2061,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1964,7 +1964,7 @@
       "correct": "B",
       "explanation": "'Rapidamente' modifica o verbo 'correu', indicando o modo como a ação foi realizada.",
       "studyTip": "Advérbios de modo respondem à pergunta 'como?' e geralmente terminam em '-mente'.",
-      "id": 3002,
+      "id": 2062,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -1995,7 +1995,7 @@
       "correct": "B",
       "explanation": "'Cansados' caracteriza o sujeito 'os alunos' após o verbo, funcionando como predicativo do sujeito.",
       "studyTip": "Predicativo do sujeito atribui uma característica ao sujeito por meio de verbos de ligação ou ação.",
-      "id": 3003,
+      "id": 2063,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2026,7 +2026,7 @@
       "correct": "B",
       "explanation": "'Lhe' indica a quem foi entregue o documento, funcionando como objeto indireto.",
       "studyTip": "Pronomes oblíquos como 'lhe' costumam exercer função de objeto indireto.",
-      "id": 3004,
+      "id": 2064,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2057,7 +2057,7 @@
       "correct": "B",
       "explanation": "'Que' retoma 'livro' e introduz uma oração subordinada adjetiva, sendo pronome relativo.",
       "studyTip": "Pronomes relativos retomam termos anteriores e ligam orações.",
-      "id": 3005,
+      "id": 2065,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2088,7 +2088,7 @@
       "correct": "C",
       "explanation": "A oração indica o momento em que a ação principal ocorreu, sendo adverbial temporal.",
       "studyTip": "Orações adverbiais indicam circunstâncias como tempo, causa, condição, etc.",
-      "id": 3006,
+      "id": 2066,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2119,7 +2119,7 @@
       "correct": "B",
       "explanation": "'Um presente' completa o sentido do verbo 'ganhou' sem preposição, sendo objeto direto.",
       "studyTip": "Verbos transitivos diretos exigem objeto direto, sem preposição.",
-      "id": 3007,
+      "id": 2067,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2150,7 +2150,7 @@
       "correct": "D",
       "explanation": "A expressão indica uma concessão à ação principal, funcionando como adjunto adverbial.",
       "studyTip": "Adjuntos adverbiais indicam circunstâncias e podem ser confundidos com orações subordinadas.",
-      "id": 3008,
+      "id": 2068,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2181,7 +2181,7 @@
       "correct": "C",
       "explanation": "O 'se' indica que a casa foi vendida por alguém, funcionando como partícula apassivadora.",
       "studyTip": "A partícula apassivadora transforma a voz ativa em passiva sintética.",
-      "id": 3009,
+      "id": 2069,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2212,7 +2212,7 @@
       "correct": "C",
       "explanation": "'Como também' adiciona uma ideia à anterior, funcionando como conjunção aditiva.",
       "studyTip": "Conjunções aditivas ligam ideias semelhantes ou complementares.",
-      "id": 3010,
+      "id": 2070,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2243,7 +2243,7 @@
       "correct": "B",
       "explanation": "'Meu amigo' explica quem é João, funcionando como aposto explicativo.",
       "studyTip": "O aposto explicativo esclarece ou detalha o termo anterior e vem entre vírgulas.",
-      "id": 3011,
+      "id": 2071,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2274,7 +2274,7 @@
       "correct": "A",
       "explanation": "'Não' modifica o verbo 'respondeu', negando a ação, sendo advérbio de negação.",
       "studyTip": "Advérbios de negação são usados para negar ações ou ideias.",
-      "id": 3012,
+      "id": 2072,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2305,7 +2305,7 @@
       "correct": "B",
       "explanation": "'À noite' indica quando a ação ocorre, funcionando como adjunto adverbial de tempo.",
       "studyTip": "Adjuntos adverbiais de tempo respondem à pergunta 'quando?'.",
-      "id": 3013,
+      "id": 2073,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2336,7 +2336,7 @@
       "correct": "B",
       "explanation": "'Por' liga o verbo 'passou' ao complemento 'aqui', funcionando como preposição.",
       "studyTip": "Preposições ligam palavras e indicam relações de sentido.",
-      "id": 3014,
+      "id": 2074,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2367,7 +2367,7 @@
       "correct": "A",
       "explanation": "A oração 'Se chover' indica uma condição para a ação principal, sendo condicional.",
       "studyTip": "Orações adverbiais condicionais expressam hipóteses ou possibilidades.",
-      "id": 3015,
+      "id": 2075,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2398,7 +2398,7 @@
       "correct": "C",
       "explanation": "'Com clareza' indica o modo como a ação foi realizada, funcionando como adjunto adverbial de modo.",
       "studyTip": "Adjuntos adverbiais de modo respondem à pergunta 'como?' e indicam a maneira da ação.",
-      "id": 3016,
+      "id": 2076,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2429,7 +2429,7 @@
       "correct": "A",
       "explanation": "'Que' introduz uma oração subordinada substantiva, funcionando como conjunção integrante.",
       "studyTip": "Conjunções integrantes ligam orações subordinadas que completam o sentido de verbos.",
-      "id": 3017,
+      "id": 2077,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2460,7 +2460,7 @@
       "correct": "A",
       "explanation": "'Com segurança' indica como a ação foi realizada, sendo adjunto adverbial de modo.",
       "studyTip": "Expressões que indicam maneira ou forma da ação são adjuntos adverbiais de modo.",
-      "id": 3018,
+      "id": 2078,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2491,7 +2491,7 @@
       "correct": "C",
       "explanation": "'Onde' retoma 'cidade' e introduz uma oração subordinada adjetiva, sendo pronome relativo.",
       "studyTip": "Pronomes relativos como 'onde' indicam lugar e retomam termos anteriores.",
-      "id": 3019,
+      "id": 2079,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2522,7 +2522,7 @@
       "correct": "A",
       "explanation": "'E' liga dois termos com valor de adição, funcionando como conjunção coordenativa aditiva.",
       "studyTip": "Conjunções aditivas unem ideias semelhantes ou complementares.",
-      "id": 3020,
+      "id": 2080,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2553,7 +2553,7 @@
       "correct": "C",
       "explanation": "'Feliz' atribui uma característica ao sujeito 'ela' por meio do verbo de ligação 'estava'.",
       "studyTip": "Predicativo do sujeito aparece com verbos de ligação e caracteriza o sujeito.",
-      "id": 3021,
+      "id": 2081,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2584,7 +2584,7 @@
       "correct": "C",
       "explanation": "'Por que' é usado em perguntas diretas e funciona como advérbio interrogativo de causa.",
       "studyTip": "Use 'por que' separado e sem acento em perguntas diretas ou indiretas.",
-      "id": 3022,
+      "id": 2082,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2615,7 +2615,7 @@
       "correct": "B",
       "explanation": "A estrutura 'foi tomada pelos diretores' indica voz passiva analítica.",
       "studyTip": "Voz passiva analítica usa verbo auxiliar + particípio + agente da passiva.",
-      "id": 3023,
+      "id": 2083,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2646,7 +2646,7 @@
       "correct": "A",
       "explanation": "O 'se' indica que a ação recai sobre o objeto, funcionando como partícula apassivadora.",
       "studyTip": "Verbo transitivo direto + 'se' = voz passiva sintética.",
-      "id": 3024,
+      "id": 2084,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2677,7 +2677,7 @@
       "correct": "A",
       "explanation": "'Portanto' indica uma conclusão lógica entre as orações, sendo conjunção conclusiva.",
       "studyTip": "Conjunções conclusivas expressam resultado ou consequência.",
-      "id": 3025,
+      "id": 2085,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2708,7 +2708,7 @@
       "correct": "C",
       "explanation": "A palavra 'papagaio' contém as vogais: a, a, a, i, o.",
       "studyTip": "Identificar vogais exige atenção à fonética e ortografia.",
-      "id": 2001,
+      "id": 2086,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2739,7 +2739,7 @@
       "correct": "D",
       "explanation": "A forma correta é: 'investigação, mas, houve, chuvosa'.",
       "studyTip": "Observe ortografia, sentido lógico e concordância.",
-      "id": 2002,
+      "id": 2087,
       "category": "gramatica",
       "difficulty": "avancado"
     },
@@ -2775,7 +2775,7 @@
       "correct": "E",
       "explanation": "Ambas são proparoxítonas e devem ser acentuadas graficamente.",
       "studyTip": "Toda proparoxítona é acentuada, independentemente da terminação.",
-      "id": 2003,
+      "id": 2088,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -2811,7 +2811,7 @@
       "correct": "D",
       "explanation": "O provérbio expressa esforço contínuo, não preguiça.",
       "studyTip": "Provérbios podem ser usados para avaliar interpretação e semântica.",
-      "id": 2004,
+      "id": 2089,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2847,7 +2847,7 @@
       "correct": "C",
       "explanation": "‘Por mais que’ mantém o sentido concessivo da conjunção ‘embora’.",
       "studyTip": "Conjunções concessivas indicam contraste entre ideias.",
-      "id": 2005,
+      "id": 2090,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -2883,7 +2883,7 @@
       "correct": "E",
       "explanation": "Ambas são proparoxítonas e devem ser acentuadas graficamente.",
       "studyTip": "Toda proparoxítona é acentuada, independentemente da terminação.",
-      "id": 2006,
+      "id": 2091,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -2919,7 +2919,7 @@
       "correct": "D",
       "explanation": "O provérbio expressa esforço contínuo, não preguiça.",
       "studyTip": "Provérbios podem ser usados para avaliar interpretação e semântica.",
-      "id": 2007,
+      "id": 2092,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -2955,7 +2955,7 @@
       "correct": "C",
       "explanation": "‘Por mais que’ mantém o sentido concessivo da conjunção ‘embora’.",
       "studyTip": "Conjunções concessivas indicam contraste entre ideias.",
-      "id": 2008,
+      "id": 2093,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -2986,7 +2986,7 @@
       "correct": "A",
       "explanation": "'Portanto' indica uma conclusão lógica entre as orações.",
       "studyTip": "Conjunções conclusivas expressam resultado ou consequência.",
-      "id": 2009,
+      "id": 2094,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3022,7 +3022,7 @@
       "correct": "E",
       "explanation": "Não se usa crase antes de palavras masculinas como 'pé'.",
       "studyTip": "A crase ocorre na fusão da preposição 'a' com o artigo definido feminino 'a'.",
-      "id": 2010,
+      "id": 2095,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3053,7 +3053,7 @@
       "correct": "C",
       "explanation": "Subscritor é quem assina o documento, ou seja, o signatário.",
       "studyTip": "Conheça os termos técnicos da redação oficial para evitar confusões.",
-      "id": 2020,
+      "id": 2096,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3084,7 +3084,7 @@
       "correct": "D",
       "explanation": "As aspas indicam ironia quanto à intenção real do banimento.",
       "studyTip": "Aspas podem indicar citação, ironia ou destaque. Observe o contexto.",
-      "id": 2021,
+      "id": 2097,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3120,7 +3120,7 @@
       "correct": "E",
       "explanation": "Ambas são proparoxítonas e devem ser acentuadas graficamente.",
       "studyTip": "Toda proparoxítona é acentuada, independentemente da terminação.",
-      "id": 2022,
+      "id": 2098,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3156,7 +3156,7 @@
       "correct": "D",
       "explanation": "O provérbio expressa esforço contínuo, não preguiça.",
       "studyTip": "Provérbios podem ser usados para avaliar interpretação e semântica.",
-      "id": 2023,
+      "id": 2099,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3192,7 +3192,7 @@
       "correct": "C",
       "explanation": "‘Por mais que’ mantém o sentido concessivo da conjunção ‘embora’.",
       "studyTip": "Conjunções concessivas indicam contraste entre ideias.",
-      "id": 2024,
+      "id": 2100,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3223,7 +3223,7 @@
       "correct": "A",
       "explanation": "O verbo 'fazer' indicando tempo é impessoal e deve permanecer no singular.",
       "studyTip": "Verbos impessoais como 'fazer' e 'haver' não variam com o sujeito.",
-      "id": 2025,
+      "id": 2101,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3254,7 +3254,7 @@
       "correct": "C",
       "explanation": "Após preposição seguida de verbo no infinitivo, usa-se pronome reto: 'para eu fazer'.",
       "studyTip": "Pronomes retos exercem função de sujeito; oblíquos, de objeto.",
-      "id": 2026,
+      "id": 2102,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3285,7 +3285,7 @@
       "correct": "C",
       "explanation": "O verbo 'chegar' exige a preposição 'a': o correto é 'Cheguei ao local'.",
       "studyTip": "Verifique sempre a preposição exigida pelo verbo para evitar erros de regência.",
-      "id": 2027,
+      "id": 2103,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3316,7 +3316,7 @@
       "correct": "B",
       "explanation": "A ênclise ('Disseram-me') é adequada em contextos formais sem palavra atrativa.",
       "studyTip": "A ênclise é preferida quando o verbo inicia a oração e não há palavra atrativa.",
-      "id": 2028,
+      "id": 2104,
       "category": "gramatica",
       "difficulty": "avancado"
     },
@@ -3347,7 +3347,7 @@
       "correct": "D",
       "explanation": "Com o novo acordo, o hífen caiu em 'autoescola'.",
       "studyTip": "O Acordo Ortográfico eliminou o hífen em compostos com prefixos como 'auto', 'infra', 'extra'.",
-      "id": 2029,
+      "id": 2105,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3378,7 +3378,7 @@
       "correct": "B",
       "explanation": "Não se usa vírgula antes da conjunção 'e' quando liga orações com o mesmo sujeito.",
       "studyTip": "A vírgula antes do 'e' só é usada em casos de sujeitos diferentes ou orações longas.",
-      "id": 2030,
+      "id": 2106,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3409,7 +3409,7 @@
       "correct": "C",
       "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
       "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
-      "id": 2031,
+      "id": 2107,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3440,7 +3440,7 @@
       "correct": "B",
       "explanation": "O futuro do subjuntivo do verbo 'ver' é 'vir': 'Se ele vir o problema...'.",
       "studyTip": "Fique atento à conjugação dos verbos irregulares no futuro do subjuntivo.",
-      "id": 2032,
+      "id": 2108,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3471,7 +3471,7 @@
       "correct": "C",
       "explanation": "A estrutura correta seria: 'Se eu tivesse estudado, teria passado'.",
       "studyTip": "Evite misturar tempos verbais incompatíveis em períodos condicionais.",
-      "id": 2033,
+      "id": 2109,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3502,7 +3502,7 @@
       "correct": "C",
       "explanation": "A estrutura correta seria: 'Se eu tivesse estudado, teria passado'.",
       "studyTip": "Evite misturar tempos verbais incompatíveis em períodos condicionais.",
-      "id": 2035,
+      "id": 2110,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3533,7 +3533,7 @@
       "correct": "C",
       "explanation": "'Bem-estar' mantém o hífen por envolver palavras que formam uma unidade sem perda de sentido.",
       "studyTip": "O uso do hífen depende da combinação de prefixos e radicais; consulte as regras do Acordo Ortográfico.",
-      "id": 2036,
+      "id": 2111,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3564,7 +3564,7 @@
       "correct": "C",
       "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
       "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
-      "id": 2037,
+      "id": 2112,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3595,7 +3595,7 @@
       "correct": "B",
       "explanation": "O futuro do subjuntivo do verbo 'ver' é 'vir': 'Se ele vir o problema...'.",
       "studyTip": "Fique atento à conjugação dos verbos irregulares no futuro do subjuntivo.",
-      "id": 2038,
+      "id": 2113,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3626,7 +3626,7 @@
       "correct": "B",
       "explanation": "Não se usa vírgula antes da conjunção 'e' quando liga orações com o mesmo sujeito.",
       "studyTip": "A vírgula antes do 'e' só é usada em casos de sujeitos diferentes ou orações longas.",
-      "id": 2039,
+      "id": 2114,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3657,7 +3657,7 @@
       "correct": "B",
       "explanation": "Não se deve usar vírgula entre sujeito e predicado: 'Joana trouxe os documentos'.",
       "studyTip": "Evite separar sujeito e verbo com vírgula, salvo em casos de intercalação.",
-      "id": 2040,
+      "id": 2115,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3688,7 +3688,7 @@
       "correct": "D",
       "explanation": "O correto é 'simpatia por': 'Tenho simpatia por a causa'.",
       "studyTip": "Alguns nomes exigem preposições específicas; consulte listas de regência nominal.",
-      "id": 2041,
+      "id": 2116,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3719,7 +3719,7 @@
       "correct": "D",
       "explanation": "A concordância nominal está incorreta: 'as meninas' exige 'cansadas e com fome'.",
       "studyTip": "A concordância nominal deve respeitar o gênero e número do sujeito.",
-      "id": 2042,
+      "id": 2117,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3750,7 +3750,7 @@
       "correct": "B",
       "explanation": "Não se inicia oração com pronome oblíquo átono: o correto é 'Entregaram-me'.",
       "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
-      "id": 2043,
+      "id": 2118,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3781,7 +3781,7 @@
       "correct": "D",
       "explanation": "Com o Acordo Ortográfico, 'secção' passou a ser grafada como 'seção'.",
       "studyTip": "O novo acordo simplificou grafias como 'secção', 'ação', 'ideia'.",
-      "id": 2044,
+      "id": 2119,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3812,7 +3812,7 @@
       "correct": "C",
       "explanation": "O verbo 'chegar' exige a preposição 'a': o correto é 'Cheguei ao local'.",
       "studyTip": "Verifique sempre a preposição exigida pelo verbo para evitar erros de regência.",
-      "id": 2045,
+      "id": 2120,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3843,7 +3843,7 @@
       "correct": "A",
       "explanation": "O verbo 'fazer' indicando tempo é impessoal e deve permanecer no singular.",
       "studyTip": "Verbos impessoais como 'fazer' e 'haver' não variam com o sujeito.",
-      "id": 2046,
+      "id": 2121,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3874,7 +3874,7 @@
       "correct": "D",
       "explanation": "Não se usa crase antes de palavras masculinas como 'pé'.",
       "studyTip": "A crase ocorre na fusão da preposição 'a' com o artigo definido feminino 'a'.",
-      "id": 2047,
+      "id": 2122,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3905,7 +3905,7 @@
       "correct": "C",
       "explanation": "'Bem-estar' mantém o hífen por envolver palavras que formam uma unidade sem perda de sentido.",
       "studyTip": "O uso do hífen depende da combinação de prefixos e radicais; consulte as regras do Acordo Ortográfico.",
-      "id": 2048,
+      "id": 2123,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -3936,7 +3936,7 @@
       "correct": "C",
       "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
       "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
-      "id": 2049,
+      "id": 2124,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3967,7 +3967,7 @@
       "correct": "D",
       "explanation": "O correto é 'simpatia por': 'Tenho simpatia por a causa'.",
       "studyTip": "Alguns nomes exigem preposições específicas; consulte listas de regência nominal.",
-      "id": 2050,
+      "id": 2125,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -3998,7 +3998,7 @@
       "correct": "D",
       "explanation": "A concordância nominal está incorreta: 'as meninas' exige 'cansadas e com fome'.",
       "studyTip": "A concordância nominal deve respeitar o gênero e número do sujeito.",
-      "id": 2051,
+      "id": 2126,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -4029,7 +4029,7 @@
       "correct": "B",
       "explanation": "Não se inicia oração com pronome oblíquo átono: o correto é 'Entregaram-me'.",
       "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
-      "id": 2052,
+      "id": 2127,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -4060,7 +4060,7 @@
       "correct": "D",
       "explanation": "Com o Acordo Ortográfico, 'secção' passou a ser grafada como 'seção'.",
       "studyTip": "O novo acordo simplificou grafias como 'secção', 'ação', 'ideia'.",
-      "id": 2053,
+      "id": 2128,
       "category": "gramatica",
       "difficulty": "fundamental"
     },
@@ -4091,7 +4091,7 @@
       "correct": "B",
       "explanation": "Não se deve usar vírgula entre sujeito e predicado: 'Joana trouxe os documentos'.",
       "studyTip": "Evite separar sujeito e verbo com vírgula, salvo em casos de intercalação.",
-      "id": 2054,
+      "id": 2129,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -4122,7 +4122,7 @@
       "correct": "C",
       "explanation": "A estrutura correta seria: 'Se eu tivesse estudado, teria passado'.",
       "studyTip": "Evite misturar tempos verbais incompatíveis em períodos condicionais.",
-      "id": 2055,
+      "id": 2130,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -4153,7 +4153,7 @@
       "correct": "B",
       "explanation": "O futuro do subjuntivo do verbo 'ver' é 'vir': 'Se ele vir o problema...'.",
       "studyTip": "Fique atento à conjugação dos verbos irregulares no futuro do subjuntivo.",
-      "id": 2056,
+      "id": 2131,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -4184,7 +4184,7 @@
       "correct": "B",
       "explanation": "Não se usa vírgula antes da conjunção 'e' quando liga orações com o mesmo sujeito.",
       "studyTip": "A vírgula antes do 'e' só é usada em casos de sujeitos diferentes ou orações longas.",
-      "id": 2057,
+      "id": 2132,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -4215,7 +4215,7 @@
       "correct": "C",
       "explanation": "O pronome 'me' não deve iniciar a oração; o correto seria 'Disseram-me'.",
       "studyTip": "Evite iniciar frases com pronomes oblíquos átonos em contextos formais.",
-      "id": 2058,
+      "id": 2133,
       "category": "gramatica",
       "difficulty": "intermediario"
     },
@@ -4246,7 +4246,7 @@
       "correct": "C",
       "explanation": "'Bem-estar' mantém o hífen por envolver palavras que formam uma unidade sem perda de sentido.",
       "studyTip": "O uso do hífen depende da combinação de prefixos e radicais; consulte as regras do Acordo Ortográfico.",
-      "id": 2059,
+      "id": 2134,
       "category": "gramatica",
       "difficulty": "fundamental"
     }

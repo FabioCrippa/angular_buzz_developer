@@ -99,6 +99,8 @@ throw new Error('Method not implemented.');
 
   // ✅ PROPRIEDADES PRINCIPAIS
   mode: string = 'mixed';
+  private readonly FREE_QUESTIONS_LIMIT = 10; // ✅ LIMITE DE QUESTÕES PARA USUÁRIOS FREE
+  private readonly PREMIUM_QUESTIONS_LIMIT = 20; // ✅ LIMITE DE QUESTÕES PARA USUÁRIOS PREMIUM
   
   // Estados do componente
   isLoading: boolean = true;
@@ -124,6 +126,7 @@ throw new Error('Method not implemented.');
   // Configuração da rota
   area: string = '';
   subject: string = '';
+  specificQuestionId: string = ''; // ✅ Para modo single
   
   // Timer
   timeSpent: number = 0;
@@ -272,6 +275,7 @@ throw new Error('Method not implemented.');
       const queryMode = queryParams['mode'];
       const queryArea = queryParams['area']; // ✅ CAPTURAR ÁREA DOS QUERY PARAMS
       const querySubject = queryParams['subject']; // ✅ CAPTURAR SUBJECT DOS QUERY PARAMS
+      const queryQuestionId = queryParams['questionId']; // ✅ CAPTURAR QUESTION ID PARA MODO SINGLE
       const queryType = queryParams['type'];
       const questionLimit = queryParams['limit'];
       const premiumParam = queryParams['premium'];
@@ -285,8 +289,15 @@ throw new Error('Method not implemented.');
         this.subject = querySubject;
       }
       
+      // ✅ ARMAZENAR QUESTION ID SE FOR MODO SINGLE
+      if (queryQuestionId) {
+        this.specificQuestionId = queryQuestionId;
+      }
+      
       // ✅ DETERMINAR MODO CORRETO BASEADO NOS PARÂMETROS
-      if (queryMode === 'area' && this.area) {
+      if (queryMode === 'single' && queryQuestionId) {
+        this.mode = 'single';
+      } else if (queryMode === 'area' && this.area) {
         this.mode = 'area';
       } else if (queryMode === 'subject' && this.area && this.subject) {
         this.mode = 'subject';
@@ -402,6 +413,74 @@ throw new Error('Method not implemented.');
   }
 
   // ✅ ADICIONE/SUBSTITUA estes métodos também:
+
+  // ✅ CARREGAR QUESTÃO ÚNICA (MODO SINGLE)
+  private async loadSingleQuestion(): Promise<void> {
+    try {
+      this.setState(QuizState.LOADING);
+      this.loadingMessage = `Carregando questão da área ${this.area}...`;
+      
+      // Carregar index.json
+      const indexResponse = await fetch('assets/data/index.json');
+      if (!indexResponse.ok) {
+        throw new Error('Erro ao carregar index');
+      }
+      
+      const indexData = await indexResponse.json();
+      
+      if (!indexData.structure || !indexData.structure[this.area]) {
+        throw new Error(`Área ${this.area} não encontrada`);
+      }
+      
+      const subjects = indexData.structure[this.area];
+      console.log('🔍 Procurando questão ID:', this.specificQuestionId, 'na área:', this.area);
+      
+      // Procurar a questão em todos os assuntos da área
+      for (const subject of subjects) {
+        try {
+          const response = await fetch(`assets/data/areas/${this.area}/${subject}.json`);
+          if (response.ok) {
+            const fileData = await response.json();
+            if (fileData.questions) {
+              const foundQuestion = fileData.questions.find((q: any) => String(q.id) === String(this.specificQuestionId));
+              
+              if (foundQuestion) {
+                console.log('✅ Questão encontrada em:', subject);
+                
+                // Configurar o quiz com apenas essa questão
+                this.questions = [{
+                  ...foundQuestion,
+                  area: this.area,
+                  subject: subject,
+                  category: this.area
+                }];
+                
+                this.totalQuestions = 1;
+                this.currentQuestionIndex = 0;
+                
+                this.setState(QuizState.IN_PROGRESS);
+                this.isLoading = false;
+                this.startTimer();
+                
+                this.showSuccessMessage('Questão carregada! Boa revisão!');
+                return;
+              }
+            }
+          }
+        } catch (error) {
+          console.warn(`Erro ao carregar ${subject}:`, error);
+        }
+      }
+      
+      // Se não encontrou a questão
+      throw new Error('Questão não encontrada');
+      
+    } catch (error) {
+      console.error('❌ Erro ao carregar questão:', error);
+      this.showError('Erro ao carregar a questão');
+      this.setState(QuizState.ERROR);
+    }
+  }
 
   private loadAreaQuestionsWithIndex(): void {
     
@@ -704,6 +783,14 @@ throw new Error('Method not implemented.');
     
     // ✅ CARREGAR QUESTÕES BASEADO NO MODO COM VALIDAÇÃO ESPECÍFICA
     switch (this.mode) {
+      case 'single':
+        if (this.specificQuestionId && this.area) {
+          this.loadSingleQuestion();
+        } else {
+          this.showError('ID da questão ou área não especificados');
+        }
+        break;
+        
       case 'area':
         if (this.area) {
           this.loadAreaQuestionsWithIndex();
@@ -1004,25 +1091,12 @@ throw new Error('Method not implemented.');
       this.canStartQuiz = remaining > 0;
     }
     
-    // ✅ MENSAGEM DIFERENCIADA PARA PREMIUM VS FREE
-    let completionMessage = `🎉 Quiz concluído! ${this.score}% de acertos`;
-    
-    if (this.isFreeTrial) {
-      const remaining = this.remainingAttempts;
-      if (remaining > 0) {
-        completionMessage += ` | ${remaining} tentativas restantes hoje`;
-      } else {
-        completionMessage += ` | ⚠️ Tentativas esgotadas! Escolha outra área ou faça upgrade`;
-        // Atualizar flag para mostrar landing page
-        this.canStartQuiz = false;
-        this.showTrialWarning = true;
-      }
-    } else {
-      // ✅ PREMIUM
-      completionMessage += ` | 👑 PREMIUM: Quizzes ilimitados`;
+    // ✅ NÃO MOSTRAR SNACKBAR AO COMPLETAR - A TELA DE RESULTADOS JÁ MOSTRA TUDO
+    // Apenas atualizar flags se tentativas esgotadas
+    if (this.isFreeTrial && this.remainingAttempts === 0) {
+      this.canStartQuiz = false;
+      this.showTrialWarning = true;
     }
-    
-    this.showSuccessMessage(completionMessage);
     
     console.log('🏁 Quiz finalizado!', {
       score: this.score,
@@ -1552,7 +1626,7 @@ throw new Error('Method not implemented.');
       duration: 5000,
       panelClass: ['error-snackbar'],
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'top' // ✅ Mudado para topo para não ficar cortado
     });
   }
 
@@ -1653,7 +1727,7 @@ throw new Error('Method not implemented.');
       duration: 3000,
       panelClass: ['success-snackbar'],
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'top' // Mudado para topo para não ficar cortado
     });
   }
 
@@ -1966,19 +2040,12 @@ throw new Error('Method not implemented.');
 
   // ✅ UTIL: obter limite de questões (lê query param 'limit' ou retorna padrão)
   private getQuestionLimit(): number {
-    try {
-      // Tenta ler o parâmetro de consulta 'limit' se disponível
-      const qp: any = (this.route && this.route.snapshot && this.route.snapshot.queryParams) ? this.route.snapshot.queryParams : null;
-      const raw = qp ? qp['limit'] : null;
-      const parsed = raw ? parseInt(raw, 10) : NaN;
-      if (!isNaN(parsed) && parsed > 0) {
-        // Garantir limites razoáveis: mínimo 5, máximo 100
-        return Math.min(Math.max(parsed, 5), 100);
-      }
-    } catch (e) {
+    // ✅ RETORNAR LIMITE BASEADO NO PLANO DO USUÁRIO
+    if (this.isFreeTrial) {
+      return this.FREE_QUESTIONS_LIMIT; // 10 questões para FREE
+    } else {
+      return this.PREMIUM_QUESTIONS_LIMIT; // 20 questões para PREMIUM
     }
-    // Valor padrão caso não haja parâmetro válido
-    return 20;
   }
 
   // ✅ UTIL: embaralhar array (Fisher-Yates) — evita erro "Property 'shuffleArray' does not exist"

@@ -16,7 +16,7 @@
   },
   "questions": [
     {
-      "id": 301,
+      "id": 1189,
       "question": "Qual é a diferença entre 'interface' e 'type' em TypeScript?",
       "options": [
         {
@@ -40,7 +40,7 @@
       "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
     },
     {
-      "id": 302,
+      "id": 1190,
       "question": "O que é um 'union type' em TypeScript?",
       "options": [
         {
@@ -64,7 +64,7 @@
       "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
     },
     {
-      "id": 303,
+      "id": 1191,
       "question": "O que é um 'intersection type' em TypeScript?",
       "options": [
         {
@@ -88,7 +88,7 @@
       "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
     },
     {
-      "id": 304,
+      "id": 1192,
       "question": "O que é o operador 'as' em TypeScript?",
       "options": [
         {
@@ -112,7 +112,7 @@
       "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
     },
     {
-      "id": 305,
+      "id": 1193,
       "question": "O que é o 'type assertion' em TypeScript?",
       "options": [
         {
@@ -136,7 +136,7 @@
       "explanation": "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e experiência de desenvolvimento."
     },
     {
-      "id": 306,
+      "id": 1194,
       "question": "O que são Generics em TypeScript e quando usá-los?",
       "options": [
         {
@@ -160,7 +160,7 @@
       "category": "typescript"
     },
     {
-      "id": 307,
+      "id": 1195,
       "question": "Qual é a diferença entre 'any' e 'unknown' no TypeScript?",
       "options": [
         {
@@ -184,7 +184,7 @@
       "category": "typescript"
     },
     {
-      "id": 308,
+      "id": 1196,
       "question": "O que são mapped types em TypeScript?",
       "options": [
         {
@@ -208,7 +208,7 @@
       "category": "typescript"
     },
     {
-      "id": 309,
+      "id": 1197,
       "question": "O que são conditional types no TypeScript?",
       "options": [
         {
@@ -232,7 +232,7 @@
       "category": "typescript"
     },
     {
-      "id": 310,
+      "id": 1198,
       "question": "O que é template literal types no TypeScript?",
       "options": [
         {
@@ -256,7 +256,7 @@
       "category": "typescript"
     },
     {
-      "id": 311,
+      "id": 1199,
       "question": "Qual é o propósito do 'never' type no TypeScript?",
       "options": [
         {
@@ -280,7 +280,7 @@
       "category": "typescript"
     },
     {
-      "id": 312,
+      "id": 1200,
       "question": "O que são utility types no TypeScript?",
       "options": [
         {
@@ -304,7 +304,7 @@
       "category": "typescript"
     },
     {
-      "id": 313,
+      "id": 1201,
       "question": "Como funciona type narrowing no TypeScript?",
       "options": [
         {
@@ -328,7 +328,7 @@
       "category": "typescript"
     },
     {
-      "id": 314,
+      "id": 1202,
       "question": "O que são discriminated unions no TypeScript?",
       "options": [
         {
@@ -352,7 +352,7 @@
       "category": "typescript"
     },
     {
-      "id": 315,
+      "id": 1203,
       "question": "Qual é a diferença entre 'readonly' e 'const' no TypeScript?",
       "options": [
         {
@@ -376,7 +376,7 @@
       "category": "typescript"
     },
     {
-      "id": 316,
+      "id": 1204,
       "question": "O que é index signature no TypeScript?",
       "options": [
         {
@@ -400,7 +400,7 @@
       "category": "typescript"
     },
     {
-      "id": 317,
+      "id": 1205,
       "question": "Como usar keyof operator no TypeScript?",
       "options": [
         {
@@ -424,7 +424,7 @@
       "category": "typescript"
     },
     {
-      "id": 318,
+      "id": 1206,
       "question": "O que são function overloads no TypeScript?",
       "options": [
         {
@@ -448,7 +448,7 @@
       "category": "typescript"
     },
     {
-      "id": 319,
+      "id": 1207,
       "question": "O que é module augmentation no TypeScript?",
       "options": [
         {
@@ -472,7 +472,7 @@
       "category": "typescript"
     },
     {
-      "id": 320,
+      "id": 1208,
       "question": "Como funciona o sistema de modules no TypeScript?",
       "options": [
         {
@@ -496,7 +496,7 @@
       "category": "typescript"
     },
     {
-      "id": 321,
+      "id": 1209,
       "question": "O que são decorators no TypeScript?",
       "options": [
         {
@@ -520,7 +520,7 @@
       "category": "typescript"
     },
     {
-      "id": 322,
+      "id": 1210,
       "question": "Qual é o propósito do strict mode no TypeScript?",
       "options": [
         {
@@ -544,7 +544,7 @@
       "category": "typescript"
     },
     {
-      "id": 323,
+      "id": 1211,
       "question": "Como configurar path mapping no TypeScript?",
       "options": [
         {
@@ -568,7 +568,7 @@
       "category": "typescript"
     },
     {
-      "id": 324,
+      "id": 1212,
       "question": "O que é declaration merging no TypeScript?",
       "options": [
         {
@@ -592,7 +592,7 @@
       "category": "typescript"
     },
     {
-      "id": 325,
+      "id": 1213,
       "question": "Como otimizar performance de compilação TypeScript em projetos grandes?",
       "options": [
         {

@@ -16,7 +16,7 @@
   },
   "questions": [
     {
-      "id": 1,
+      "id": 1109,
       "question": "O que significa HTML?",
       "options": [
         {
@@ -40,7 +40,7 @@
       "category": "html"
     },
     {
-      "id": 2,
+      "id": 1110,
       "question": "Qual tag HTML é usada para criar um link?",
       "options": [
         {
@@ -64,7 +64,7 @@
       "category": "html"
     },
     {
-      "id": 3,
+      "id": 1111,
       "question": "Qual atributo é usado para abrir um link em uma nova aba?",
       "options": [
         {
@@ -88,7 +88,7 @@
       "category": "html"
     },
     {
-      "id": 4,
+      "id": 1112,
       "question": "Qual é a função da tag <meta> no HTML?",
       "options": [
         {
@@ -112,7 +112,7 @@
       "category": "html"
     },
     {
-      "id": 5,
+      "id": 1113,
       "question": "Qual é o propósito do atributo 'alt' em uma tag <img>?",
       "options": [
         {
@@ -136,7 +136,7 @@
       "category": "html"
     },
     {
-      "id": 6,
+      "id": 1114,
       "question": "Qual é a diferença entre <section> e <div> no HTML5?",
       "options": [
         {
@@ -160,7 +160,7 @@
       "category": "html"
     },
     {
-      "id": 7,
+      "id": 1115,
       "question": "Qual é o propósito do atributo 'defer' em uma tag <script>?",
       "options": [
         {
@@ -184,7 +184,7 @@
       "category": "html"
     },
     {
-      "id": 8,
+      "id": 1116,
       "question": "Qual é o propósito da tag <template> no HTML5?",
       "options": [
         {
@@ -208,7 +208,7 @@
       "category": "html"
     },
     {
-      "id": 9,
+      "id": 1117,
       "question": "Qual é o propósito do atributo 'contenteditable' no HTML?",
       "options": [
         {
@@ -232,7 +232,7 @@
       "category": "html"
     },
     {
-      "id": 10,
+      "id": 1118,
       "question": "Qual é o propósito do atributo 'aria-label' no HTML?",
       "options": [
         {
@@ -256,7 +256,7 @@
       "category": "html"
     },
     {
-      "id": 11,
+      "id": 1119,
       "question": "O que é o DOM (Document Object Model)?",
       "options": [
         {
@@ -280,7 +280,7 @@
       "explanation": "O DOM representa a estrutura hierárquica de um documento HTML/XML como uma árvore de objetos que pode ser manipulada via JavaScript."
     },
     {
-      "id": 12,
+      "id": 1120,
       "question": "Qual é o propósito do atributo `viewport` em uma tag `<meta>`?",
       "options": [
         {
@@ -304,7 +304,7 @@
       "explanation": "A meta tag viewport controla como a página é dimensionada e exibida em dispositivos móveis, essencial para design responsivo."
     },
     {
-      "id": 13,
+      "id": 1121,
       "question": "Qual é o propósito da tag <header> no HTML5?",
       "options": [
         {
@@ -328,7 +328,7 @@
       "explanation": "A tag <header> define o cabeçalho de uma página ou seção, tipicamente contendo elementos de navegação, logos ou títulos."
     },
     {
-      "id": 14,
+      "id": 1122,
       "question": "Qual é o propósito da tag <footer> no HTML5?",
       "options": [
         {
@@ -352,7 +352,7 @@
       "explanation": "A tag <footer> define o rodapé de uma página ou seção, geralmente contendo informações de copyright, links ou contatos."
     },
     {
-      "id": 15,
+      "id": 1123,
       "question": "Qual é o propósito do atributo 'lang' na tag <html>?",
       "options": [
         {
@@ -376,7 +376,7 @@
       "explanation": "O atributo 'lang' especifica o idioma principal do documento, importante para SEO e tecnologias assistivas."
     },
     {
-      "id": 16,
+      "id": 1124,
       "question": "Qual é o propósito do atributo 'charset' na tag <meta>?",
       "options": [
         {
@@ -400,7 +400,7 @@
       "explanation": "O atributo 'charset' especifica a codificação de caracteres do documento, UTF-8 é o padrão recomendado."
     },
     {
-      "id": 17,
+      "id": 1125,
       "question": "Qual é o propósito da tag <aside> no HTML5?",
       "options": [
         {
@@ -424,7 +424,7 @@
       "explanation": "A tag <aside> define conteúdo relacionado ao conteúdo principal, como barras laterais, publicidade ou links relacionados."
     },
     {
-      "id": 18,
+      "id": 1126,
       "question": "Qual é o propósito da tag <main> no HTML5?",
       "options": [
         {
@@ -448,7 +448,7 @@
       "category": "html"
     },
     {
-      "id": 19,
+      "id": 1127,
       "question": "O que é o atributo 'srcset' em uma tag <img>?",
       "options": [
         {
@@ -472,7 +472,7 @@
       "category": "html"
     },
     {
-      "id": 20,
+      "id": 1128,
       "question": "Qual é a função do atributo 'loading' em imagens HTML5?",
       "options": [
         {
@@ -496,7 +496,7 @@
       "category": "html"
     },
     {
-      "id": 21,
+      "id": 1129,
       "question": "O que é uma Progressive Web App (PWA)?",
       "options": [
         {
@@ -520,7 +520,7 @@
       "category": "html"
     },
     {
-      "id": 22,
+      "id": 1130,
       "question": "O que é o atributo 'role' em HTML e sua importância para acessibilidade?",
       "options": [
         {
@@ -544,7 +544,7 @@
       "category": "html"
     },
     {
-      "id": 23,
+      "id": 1131,
       "question": "Qual é a diferença entre as tags <b> e <strong> no HTML?",
       "options": [
         {
@@ -568,7 +568,7 @@
       "category": "html"
     },
     {
-      "id": 24,
+      "id": 1132,
       "question": "O que é o atributo 'data-*' no HTML5 e como usá-lo?",
       "options": [
         {
@@ -592,7 +592,7 @@
       "category": "html"
     },
     {
-      "id": 25,
+      "id": 1133,
       "question": "O que é o atributo 'aria-live' e como ele melhora a acessibilidade?",
       "options": [
         {

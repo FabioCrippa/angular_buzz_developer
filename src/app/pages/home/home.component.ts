@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit {
   faqs = [
     {
       question: 'Como funciona o plano gratuito do SOWLFY?',
-      answer: 'No plano gratuito você tem <strong>3 tentativas por dia</strong> em qualquer uma das 4 áreas. É perfeito para conhecer a plataforma e começar seus estudos!'
+      answer: 'No plano gratuito você tem <strong>1 tentativa por dia</strong> em qualquer uma das 4 áreas. É perfeito para conhecer a plataforma e começar seus estudos!'
     },
     {
       question: 'Posso cancelar o plano premium quando quiser?',
@@ -214,10 +214,10 @@ export class HomeComponent implements OnInit {
         });
       } else {
         // ✅ SEM TENTATIVAS - MOSTRAR OPÇÕES
-        const message = `🚀 Suas 3 tentativas gratuitas de hoje acabaram!\n\n` +
+        const message = `🚀 Sua 1 tentativa gratuita de hoje acabou!\n\n` +
                        `👑 Quer continuar praticando?\n\n` +
                        `• Upgrade para Premium = Acesso Ilimitado\n` +
-                       `• Ou volte amanhã para mais 3 tentativas gratuitas\n\n` +
+                       `• Ou volte amanhã para mais 1 tentativa gratuita\n\n` +
                        `Fazer upgrade agora?`;
         
         if (confirm(message)) {
@@ -410,6 +410,11 @@ export class HomeComponent implements OnInit {
         this.upgradeToPro();
       }
     }
+  }
+
+  // ✅ VERIFICAR SE USUÁRIO É PREMIUM
+  isPremiumUser(): boolean {
+    return localStorage.getItem('isPremium') === 'true';
   }
 
   // ✅ DEBUG - TESTAR BOTÃO

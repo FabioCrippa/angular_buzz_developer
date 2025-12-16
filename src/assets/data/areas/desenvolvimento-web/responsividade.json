@@ -16,7 +16,7 @@
   },
   "questions": [
     {
-      "id": 501,
+      "id": 1159,
       "question": "Qual é o propósito do atributo 'media' em uma tag <link> no CSS?",
       "options": [
         {
@@ -40,7 +40,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 502,
+      "id": 1160,
       "question": "O que é o conceito de 'responsividade' no design web?",
       "options": [
         {
@@ -64,7 +64,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 503,
+      "id": 1161,
       "question": "O que é responsividade em desenvolvimento web?",
       "options": [
         {
@@ -88,7 +88,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 504,
+      "id": 1162,
       "question": "Qual a função das media queries no CSS?",
       "options": [
         {
@@ -112,7 +112,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 505,
+      "id": 1163,
       "question": "O que significa o conceito de 'mobile-first'?",
       "options": [
         {
@@ -136,7 +136,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 506,
+      "id": 1164,
       "question": "Qual propriedade CSS pode ser usada para tornar imagens responsivas?",
       "options": [
         {
@@ -160,7 +160,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 507,
+      "id": 1165,
       "question": "O que é um layout fluido?",
       "options": [
         {
@@ -184,7 +184,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 508,
+      "id": 1166,
       "question": "Qual unidade de medida é mais recomendada para fontes em sites responsivos?",
       "options": [
         {
@@ -208,7 +208,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 509,
+      "id": 1167,
       "question": "O que é viewport no contexto de responsividade?",
       "options": [
         {
@@ -232,7 +232,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 510,
+      "id": 1168,
       "question": "Qual meta tag é essencial para tornar um site responsivo?",
       "options": [
         {
@@ -256,7 +256,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 511,
+      "id": 1169,
       "question": "O que é um breakpoint em design responsivo?",
       "options": [
         {
@@ -280,7 +280,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 512,
+      "id": 1170,
       "question": "Qual técnica pode ser usada para esconder elementos em telas menores?",
       "options": [
         {
@@ -304,7 +304,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 513,
+      "id": 1171,
       "question": "O que é um layout adaptativo?",
       "options": [
         {
@@ -328,7 +328,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 514,
+      "id": 1172,
       "question": "Qual a diferença entre design responsivo e design adaptativo?",
       "options": [
         {
@@ -352,7 +352,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 515,
+      "id": 1173,
       "question": "Como o Flexbox pode ajudar na responsividade?",
       "options": [
         {
@@ -376,7 +376,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 516,
+      "id": 1174,
       "question": "O que é a propriedade `object-fit` no CSS?",
       "options": [
         {
@@ -400,7 +400,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 517,
+      "id": 1175,
       "question": "Qual a importância do `min-width` e `max-width` na responsividade?",
       "options": [
         {
@@ -424,7 +424,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 518,
+      "id": 1176,
       "question": "Como o Grid Layout pode ser usado para criar layouts responsivos?",
       "options": [
         {
@@ -448,7 +448,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 519,
+      "id": 1177,
       "question": "O que é a técnica de 'lazy loading' e como ela impacta a responsividade?",
       "options": [
         {
@@ -472,7 +472,7 @@
       "explanation": "Design responsivo adapta layouts para diferentes tamanhos de tela usando media queries, flexbox e grid."
     },
     {
-      "id": 520,
+      "id": 1178,
       "question": "O que é Container Queries no CSS?",
       "options": [
         {
@@ -496,7 +496,7 @@
       "category": "responsividade"
     },
     {
-      "id": 521,
+      "id": 1179,
       "question": "O que é a técnica de 'Mobile First' em CSS?",
       "options": [
         {
@@ -520,7 +520,7 @@
       "category": "responsividade"
     },
     {
-      "id": 522,
+      "id": 1180,
       "question": "O que são Progressive Web Apps (PWA) em relação à responsividade?",
       "options": [
         {
@@ -544,7 +544,7 @@
       "category": "responsividade"
     },
     {
-      "id": 523,
+      "id": 1181,
       "question": "O que é o princípio 'Content First' no design responsivo?",
       "options": [
         {
@@ -568,7 +568,7 @@
       "category": "responsividade"
     },
     {
-      "id": 524,
+      "id": 1182,
       "question": "O que é Responsive Typography e como implementá-la?",
       "options": [
         {
@@ -592,7 +592,7 @@
       "category": "responsividade"
     },
     {
-      "id": 525,
+      "id": 1183,
       "question": "O que são Critical CSS e como melhoram a responsividade?",
       "options": [
         {
@@ -616,7 +616,7 @@
       "category": "responsividade"
     },
     {
-      "id": 526,
+      "id": 1184,
       "question": "Como implementar imagens responsivas com multiple formats (WebP, AVIF)?",
       "options": [
         {
@@ -640,7 +640,7 @@
       "category": "responsividade"
     },
     {
-      "id": 527,
+      "id": 1185,
       "question": "O que é Responsive Web Design (RWD) versus Adaptive Web Design (AWD)?",
       "options": [
         {
@@ -664,7 +664,7 @@
       "category": "responsividade"
     },
     {
-      "id": 528,
+      "id": 1186,
       "question": "Como otimizar performance em dispositivos móveis?",
       "options": [
         {
@@ -688,7 +688,7 @@
       "category": "responsividade"
     },
     {
-      "id": 529,
+      "id": 1187,
       "question": "O que são Progressive Enhancement e Graceful Degradation?",
       "options": [
         {
@@ -712,7 +712,7 @@
       "category": "responsividade"
     },
     {
-      "id": 530,
+      "id": 1188,
       "question": "Como testar efetivamente a responsividade de uma aplicação?",
       "options": [
         {

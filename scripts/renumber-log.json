@@ -1,0 +1,3959 @@
+{
+  "timestamp": "2025-12-16T17:30:59.375Z",
+  "changes": [
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 401,
+      "newId": 1000
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 402,
+      "newId": 1001
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 403,
+      "newId": 1002
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 404,
+      "newId": 1003
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 405,
+      "newId": 1004
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 406,
+      "newId": 1005
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 407,
+      "newId": 1006
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 408,
+      "newId": 1007
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 409,
+      "newId": 1008
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 410,
+      "newId": 1009
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 411,
+      "newId": 1010
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 412,
+      "newId": 1011
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 414,
+      "newId": 1012
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 415,
+      "newId": 1013
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 416,
+      "newId": 1014
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 417,
+      "newId": 1015
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 418,
+      "newId": 1016
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 419,
+      "newId": 1017
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 420,
+      "newId": 1018
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 421,
+      "newId": 1019
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 422,
+      "newId": 1020
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 423,
+      "newId": 1021
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 424,
+      "newId": 1022
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "angular",
+      "oldId": 425,
+      "newId": 1023
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 701,
+      "newId": 1024
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 702,
+      "newId": 1025
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 703,
+      "newId": 1026
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 704,
+      "newId": 1027
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 705,
+      "newId": 1028
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 706,
+      "newId": 1029
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 707,
+      "newId": 1030
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 708,
+      "newId": 1031
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 709,
+      "newId": 1032
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 710,
+      "newId": 1033
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 711,
+      "newId": 1034
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 712,
+      "newId": 1035
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 713,
+      "newId": 1036
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 714,
+      "newId": 1037
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 715,
+      "newId": 1038
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 716,
+      "newId": 1039
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 717,
+      "newId": 1040
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 718,
+      "newId": 1041
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 719,
+      "newId": 1042
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 720,
+      "newId": 1043
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 721,
+      "newId": 1044
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 722,
+      "newId": 1045
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 723,
+      "newId": 1046
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 724,
+      "newId": 1047
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "boas-praticas",
+      "oldId": 725,
+      "newId": 1048
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 101,
+      "newId": 1049
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 102,
+      "newId": 1050
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 103,
+      "newId": 1051
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 104,
+      "newId": 1052
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 105,
+      "newId": 1053
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 106,
+      "newId": 1054
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 107,
+      "newId": 1055
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 108,
+      "newId": 1056
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 109,
+      "newId": 1057
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 110,
+      "newId": 1058
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 111,
+      "newId": 1059
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 112,
+      "newId": 1060
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 113,
+      "newId": 1061
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 114,
+      "newId": 1062
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 115,
+      "newId": 1063
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 116,
+      "newId": 1064
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 117,
+      "newId": 1065
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 118,
+      "newId": 1066
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 119,
+      "newId": 1067
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 120,
+      "newId": 1068
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 121,
+      "newId": 1069
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 122,
+      "newId": 1070
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 123,
+      "newId": 1071
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 124,
+      "newId": 1072
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 125,
+      "newId": 1073
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 126,
+      "newId": 1074
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 127,
+      "newId": 1075
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 128,
+      "newId": 1076
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 129,
+      "newId": 1077
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 130,
+      "newId": 1078
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 131,
+      "newId": 1079
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 132,
+      "newId": 1080
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 133,
+      "newId": 1081
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 134,
+      "newId": 1082
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "css",
+      "oldId": 135,
+      "newId": 1083
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 601,
+      "newId": 1084
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 602,
+      "newId": 1085
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 603,
+      "newId": 1086
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 604,
+      "newId": 1087
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 605,
+      "newId": 1088
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 606,
+      "newId": 1089
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 607,
+      "newId": 1090
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 608,
+      "newId": 1091
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 609,
+      "newId": 1092
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 610,
+      "newId": 1093
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 611,
+      "newId": 1094
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 612,
+      "newId": 1095
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 613,
+      "newId": 1096
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 614,
+      "newId": 1097
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 615,
+      "newId": 1098
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 616,
+      "newId": 1099
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 617,
+      "newId": 1100
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 618,
+      "newId": 1101
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 619,
+      "newId": 1102
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 620,
+      "newId": 1103
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 621,
+      "newId": 1104
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 622,
+      "newId": 1105
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 623,
+      "newId": 1106
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 624,
+      "newId": 1107
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "front-end",
+      "oldId": 625,
+      "newId": 1108
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 1,
+      "newId": 1109
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 2,
+      "newId": 1110
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 3,
+      "newId": 1111
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 4,
+      "newId": 1112
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 5,
+      "newId": 1113
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 6,
+      "newId": 1114
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 7,
+      "newId": 1115
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 8,
+      "newId": 1116
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 9,
+      "newId": 1117
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 10,
+      "newId": 1118
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 11,
+      "newId": 1119
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 12,
+      "newId": 1120
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 13,
+      "newId": 1121
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 14,
+      "newId": 1122
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 15,
+      "newId": 1123
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 16,
+      "newId": 1124
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 17,
+      "newId": 1125
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 18,
+      "newId": 1126
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 19,
+      "newId": 1127
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 20,
+      "newId": 1128
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 21,
+      "newId": 1129
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 22,
+      "newId": 1130
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 23,
+      "newId": 1131
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 24,
+      "newId": 1132
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "html",
+      "oldId": 25,
+      "newId": 1133
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 201,
+      "newId": 1134
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 202,
+      "newId": 1135
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 203,
+      "newId": 1136
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 204,
+      "newId": 1137
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 205,
+      "newId": 1138
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 206,
+      "newId": 1139
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 207,
+      "newId": 1140
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 208,
+      "newId": 1141
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 209,
+      "newId": 1142
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 210,
+      "newId": 1143
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 211,
+      "newId": 1144
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 212,
+      "newId": 1145
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 213,
+      "newId": 1146
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 214,
+      "newId": 1147
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 215,
+      "newId": 1148
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 216,
+      "newId": 1149
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 217,
+      "newId": 1150
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 218,
+      "newId": 1151
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 219,
+      "newId": 1152
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 220,
+      "newId": 1153
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 221,
+      "newId": 1154
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 222,
+      "newId": 1155
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 223,
+      "newId": 1156
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 224,
+      "newId": 1157
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "javascript",
+      "oldId": 225,
+      "newId": 1158
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 501,
+      "newId": 1159
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 502,
+      "newId": 1160
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 503,
+      "newId": 1161
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 504,
+      "newId": 1162
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 505,
+      "newId": 1163
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 506,
+      "newId": 1164
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 507,
+      "newId": 1165
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 508,
+      "newId": 1166
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 509,
+      "newId": 1167
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 510,
+      "newId": 1168
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 511,
+      "newId": 1169
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 512,
+      "newId": 1170
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 513,
+      "newId": 1171
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 514,
+      "newId": 1172
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 515,
+      "newId": 1173
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 516,
+      "newId": 1174
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 517,
+      "newId": 1175
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 518,
+      "newId": 1176
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 519,
+      "newId": 1177
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 520,
+      "newId": 1178
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 521,
+      "newId": 1179
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 522,
+      "newId": 1180
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 523,
+      "newId": 1181
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 524,
+      "newId": 1182
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 525,
+      "newId": 1183
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 526,
+      "newId": 1184
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 527,
+      "newId": 1185
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 528,
+      "newId": 1186
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 529,
+      "newId": 1187
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "responsividade",
+      "oldId": 530,
+      "newId": 1188
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 301,
+      "newId": 1189
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 302,
+      "newId": 1190
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 303,
+      "newId": 1191
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 304,
+      "newId": 1192
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 305,
+      "newId": 1193
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 306,
+      "newId": 1194
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 307,
+      "newId": 1195
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 308,
+      "newId": 1196
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 309,
+      "newId": 1197
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 310,
+      "newId": 1198
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 311,
+      "newId": 1199
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 312,
+      "newId": 1200
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 313,
+      "newId": 1201
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 314,
+      "newId": 1202
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 315,
+      "newId": 1203
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 316,
+      "newId": 1204
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 317,
+      "newId": 1205
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 318,
+      "newId": 1206
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 319,
+      "newId": 1207
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 320,
+      "newId": 1208
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 321,
+      "newId": 1209
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 322,
+      "newId": 1210
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 323,
+      "newId": 1211
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 324,
+      "newId": 1212
+    },
+    {
+      "area": "desenvolvimento-web",
+      "subject": "typescript",
+      "oldId": 325,
+      "newId": 1213
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2002,
+      "newId": 2000
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2003,
+      "newId": 2001
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2004,
+      "newId": 2002
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2005,
+      "newId": 2003
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2006,
+      "newId": 2004
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2007,
+      "newId": 2005
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2008,
+      "newId": 2006
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2009,
+      "newId": 2007
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2010,
+      "newId": 2008
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2011,
+      "newId": 2009
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2012,
+      "newId": 2010
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2013,
+      "newId": 2011
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2014,
+      "newId": 2012
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2015,
+      "newId": 2013
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2016,
+      "newId": 2014
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2017,
+      "newId": 2015
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2018,
+      "newId": 2016
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2019,
+      "newId": 2017
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2020,
+      "newId": 2018
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2021,
+      "newId": 2019
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2022,
+      "newId": 2020
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2023,
+      "newId": 2021
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2024,
+      "newId": 2022
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2025,
+      "newId": 2023
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2026,
+      "newId": 2024
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2027,
+      "newId": 2025
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2028,
+      "newId": 2026
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2029,
+      "newId": 2027
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2030,
+      "newId": 2028
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2031,
+      "newId": 2029
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2032,
+      "newId": 2030
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2033,
+      "newId": 2031
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2034,
+      "newId": 2032
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2035,
+      "newId": 2033
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2036,
+      "newId": 2034
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2037,
+      "newId": 2035
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2038,
+      "newId": 2036
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2039,
+      "newId": 2037
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2040,
+      "newId": 2038
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2041,
+      "newId": 2039
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2042,
+      "newId": 2040
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2043,
+      "newId": 2041
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2044,
+      "newId": 2042
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2045,
+      "newId": 2043
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2046,
+      "newId": 2044
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2047,
+      "newId": 2045
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2048,
+      "newId": 2046
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2049,
+      "newId": 2047
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2050,
+      "newId": 2048
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2051,
+      "newId": 2049
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2052,
+      "newId": 2050
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2053,
+      "newId": 2051
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2054,
+      "newId": 2052
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2055,
+      "newId": 2053
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2056,
+      "newId": 2054
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2057,
+      "newId": 2055
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2058,
+      "newId": 2056
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2059,
+      "newId": 2057
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2060,
+      "newId": 2058
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2061,
+      "newId": 2059
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2062,
+      "newId": 2060
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3001,
+      "newId": 2061
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3002,
+      "newId": 2062
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3003,
+      "newId": 2063
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3004,
+      "newId": 2064
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3005,
+      "newId": 2065
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3006,
+      "newId": 2066
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3007,
+      "newId": 2067
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3008,
+      "newId": 2068
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3009,
+      "newId": 2069
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3010,
+      "newId": 2070
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3011,
+      "newId": 2071
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3012,
+      "newId": 2072
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3013,
+      "newId": 2073
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3014,
+      "newId": 2074
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3015,
+      "newId": 2075
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3016,
+      "newId": 2076
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3017,
+      "newId": 2077
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3018,
+      "newId": 2078
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3019,
+      "newId": 2079
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3020,
+      "newId": 2080
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3021,
+      "newId": 2081
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3022,
+      "newId": 2082
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3023,
+      "newId": 2083
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3024,
+      "newId": 2084
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 3025,
+      "newId": 2085
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2001,
+      "newId": 2086
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2002,
+      "newId": 2087
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2003,
+      "newId": 2088
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2004,
+      "newId": 2089
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2005,
+      "newId": 2090
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2006,
+      "newId": 2091
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2007,
+      "newId": 2092
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2008,
+      "newId": 2093
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2009,
+      "newId": 2094
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2010,
+      "newId": 2095
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2020,
+      "newId": 2096
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2021,
+      "newId": 2097
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2022,
+      "newId": 2098
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2023,
+      "newId": 2099
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2024,
+      "newId": 2100
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2025,
+      "newId": 2101
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2026,
+      "newId": 2102
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2027,
+      "newId": 2103
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2028,
+      "newId": 2104
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2029,
+      "newId": 2105
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2030,
+      "newId": 2106
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2031,
+      "newId": 2107
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2032,
+      "newId": 2108
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2033,
+      "newId": 2109
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2035,
+      "newId": 2110
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2036,
+      "newId": 2111
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2037,
+      "newId": 2112
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2038,
+      "newId": 2113
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2039,
+      "newId": 2114
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2040,
+      "newId": 2115
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2041,
+      "newId": 2116
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2042,
+      "newId": 2117
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2043,
+      "newId": 2118
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2044,
+      "newId": 2119
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2045,
+      "newId": 2120
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2046,
+      "newId": 2121
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2047,
+      "newId": 2122
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2048,
+      "newId": 2123
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2049,
+      "newId": 2124
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2050,
+      "newId": 2125
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2051,
+      "newId": 2126
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2052,
+      "newId": 2127
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2053,
+      "newId": 2128
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2054,
+      "newId": 2129
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2055,
+      "newId": 2130
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2056,
+      "newId": 2131
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2057,
+      "newId": 2132
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2058,
+      "newId": 2133
+    },
+    {
+      "area": "portugues",
+      "subject": "gramatica",
+      "oldId": 2059,
+      "newId": 2134
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5001,
+      "newId": 2135
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5002,
+      "newId": 2136
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5003,
+      "newId": 2137
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5004,
+      "newId": 2138
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5005,
+      "newId": 2139
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5006,
+      "newId": 2140
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5007,
+      "newId": 2141
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5008,
+      "newId": 2142
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5009,
+      "newId": 2143
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5010,
+      "newId": 2144
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5011,
+      "newId": 2145
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5012,
+      "newId": 2146
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5013,
+      "newId": 2147
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5014,
+      "newId": 2148
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5015,
+      "newId": 2149
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5016,
+      "newId": 2150
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5017,
+      "newId": 2151
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5018,
+      "newId": 2152
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5019,
+      "newId": 2153
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5020,
+      "newId": 2154
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5021,
+      "newId": 2155
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5022,
+      "newId": 2156
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5023,
+      "newId": 2157
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5024,
+      "newId": 2158
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5025,
+      "newId": 2159
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5026,
+      "newId": 2160
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5027,
+      "newId": 2161
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5028,
+      "newId": 2162
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5029,
+      "newId": 2163
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5030,
+      "newId": 2164
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5031,
+      "newId": 2165
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5032,
+      "newId": 2166
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5033,
+      "newId": 2167
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5034,
+      "newId": 2168
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5035,
+      "newId": 2169
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5036,
+      "newId": 2170
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5037,
+      "newId": 2171
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5038,
+      "newId": 2172
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5039,
+      "newId": 2173
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5040,
+      "newId": 2174
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5041,
+      "newId": 2175
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5042,
+      "newId": 2176
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5043,
+      "newId": 2177
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5044,
+      "newId": 2178
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5045,
+      "newId": 2179
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5046,
+      "newId": 2180
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5047,
+      "newId": 2181
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5048,
+      "newId": 2182
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5049,
+      "newId": 2183
+    },
+    {
+      "area": "portugues",
+      "subject": "interpretacao",
+      "oldId": 5050,
+      "newId": 2184
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2202,
+      "newId": 2185
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2203,
+      "newId": 2186
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2204,
+      "newId": 2187
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2205,
+      "newId": 2188
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2206,
+      "newId": 2189
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2207,
+      "newId": 2190
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2208,
+      "newId": 2191
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2209,
+      "newId": 2192
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2210,
+      "newId": 2193
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2211,
+      "newId": 2194
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2212,
+      "newId": 2195
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2213,
+      "newId": 2196
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2214,
+      "newId": 2197
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2215,
+      "newId": 2198
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2216,
+      "newId": 2199
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2217,
+      "newId": 2200
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2218,
+      "newId": 2201
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2219,
+      "newId": 2202
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2220,
+      "newId": 2203
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2221,
+      "newId": 2204
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2222,
+      "newId": 2205
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2223,
+      "newId": 2206
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2224,
+      "newId": 2207
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2225,
+      "newId": 2208
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2226,
+      "newId": 2209
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2227,
+      "newId": 2210
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2228,
+      "newId": 2211
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2229,
+      "newId": 2212
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2230,
+      "newId": 2213
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2231,
+      "newId": 2214
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2232,
+      "newId": 2215
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2233,
+      "newId": 2216
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2234,
+      "newId": 2217
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2235,
+      "newId": 2218
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2236,
+      "newId": 2219
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2237,
+      "newId": 2220
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2238,
+      "newId": 2221
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2239,
+      "newId": 2222
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2240,
+      "newId": 2223
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2241,
+      "newId": 2224
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2242,
+      "newId": 2225
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2243,
+      "newId": 2226
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2244,
+      "newId": 2227
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2245,
+      "newId": 2228
+    },
+    {
+      "area": "portugues",
+      "subject": "redacao",
+      "oldId": 2246,
+      "newId": 2229
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3001,
+      "newId": 2230
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3002,
+      "newId": 2231
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3003,
+      "newId": 2232
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3004,
+      "newId": 2233
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3005,
+      "newId": 2234
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3006,
+      "newId": 2235
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3007,
+      "newId": 2236
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3008,
+      "newId": 2237
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3009,
+      "newId": 2238
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3010,
+      "newId": 2239
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3011,
+      "newId": 2240
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3012,
+      "newId": 2241
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3013,
+      "newId": 2242
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3014,
+      "newId": 2243
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3015,
+      "newId": 2244
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3016,
+      "newId": 2245
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3017,
+      "newId": 2246
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3018,
+      "newId": 2247
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3019,
+      "newId": 2248
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3020,
+      "newId": 2249
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3021,
+      "newId": 2250
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3022,
+      "newId": 2251
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3023,
+      "newId": 2252
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3024,
+      "newId": 2253
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3025,
+      "newId": 2254
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3026,
+      "newId": 2255
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3027,
+      "newId": 2256
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3028,
+      "newId": 2257
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3029,
+      "newId": 2258
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3030,
+      "newId": 2259
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3031,
+      "newId": 2260
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3032,
+      "newId": 2261
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3033,
+      "newId": 2262
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3034,
+      "newId": 2263
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3035,
+      "newId": 2264
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3036,
+      "newId": 2265
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3037,
+      "newId": 2266
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3038,
+      "newId": 2267
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3039,
+      "newId": 2268
+    },
+    {
+      "area": "portugues",
+      "subject": "coerencia",
+      "oldId": 3040,
+      "newId": 2269
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4001,
+      "newId": 2270
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4002,
+      "newId": 2271
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4003,
+      "newId": 2272
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4004,
+      "newId": 2273
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4005,
+      "newId": 2274
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4006,
+      "newId": 2275
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4007,
+      "newId": 2276
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4008,
+      "newId": 2277
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4009,
+      "newId": 2278
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4010,
+      "newId": 2279
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4011,
+      "newId": 2280
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4012,
+      "newId": 2281
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4013,
+      "newId": 2282
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4014,
+      "newId": 2283
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4015,
+      "newId": 2284
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4016,
+      "newId": 2285
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4017,
+      "newId": 2286
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4018,
+      "newId": 2287
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4019,
+      "newId": 2288
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4020,
+      "newId": 2289
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4021,
+      "newId": 2290
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4022,
+      "newId": 2291
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4023,
+      "newId": 2292
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4024,
+      "newId": 2293
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4025,
+      "newId": 2294
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4026,
+      "newId": 2295
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4027,
+      "newId": 2296
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4028,
+      "newId": 2297
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4029,
+      "newId": 2298
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4030,
+      "newId": 2299
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4031,
+      "newId": 2300
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4032,
+      "newId": 2301
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4033,
+      "newId": 2302
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4034,
+      "newId": 2303
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4035,
+      "newId": 2304
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4036,
+      "newId": 2305
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4037,
+      "newId": 2306
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4038,
+      "newId": 2307
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4039,
+      "newId": 2308
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4040,
+      "newId": 2309
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4041,
+      "newId": 2310
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4042,
+      "newId": 2311
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4043,
+      "newId": 2312
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4044,
+      "newId": 2313
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4045,
+      "newId": 2314
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4046,
+      "newId": 2315
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4047,
+      "newId": 2316
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4048,
+      "newId": 2317
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4049,
+      "newId": 2318
+    },
+    {
+      "area": "portugues",
+      "subject": "coesao",
+      "oldId": 4050,
+      "newId": 2319
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6001,
+      "newId": 2320
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6002,
+      "newId": 2321
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6003,
+      "newId": 2322
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6004,
+      "newId": 2323
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6005,
+      "newId": 2324
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6006,
+      "newId": 2325
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6007,
+      "newId": 2326
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6008,
+      "newId": 2327
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6009,
+      "newId": 2328
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6010,
+      "newId": 2329
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6011,
+      "newId": 2330
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6012,
+      "newId": 2331
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6013,
+      "newId": 2332
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6014,
+      "newId": 2333
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6015,
+      "newId": 2334
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6016,
+      "newId": 2335
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6017,
+      "newId": 2336
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6018,
+      "newId": 2337
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6019,
+      "newId": 2338
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 6020,
+      "newId": 2339
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7011,
+      "newId": 2340
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7012,
+      "newId": 2341
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7013,
+      "newId": 2342
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7014,
+      "newId": 2343
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7015,
+      "newId": 2344
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7016,
+      "newId": 2345
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7017,
+      "newId": 2346
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7018,
+      "newId": 2347
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7019,
+      "newId": 2348
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 7020,
+      "newId": 2349
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8001,
+      "newId": 2350
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8002,
+      "newId": 2351
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8003,
+      "newId": 2352
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8004,
+      "newId": 2353
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8005,
+      "newId": 2354
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8006,
+      "newId": 2355
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8007,
+      "newId": 2356
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8008,
+      "newId": 2357
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8009,
+      "newId": 2358
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8010,
+      "newId": 2359
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8011,
+      "newId": 2360
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8012,
+      "newId": 2361
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8013,
+      "newId": 2362
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8014,
+      "newId": 2363
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8015,
+      "newId": 2364
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8016,
+      "newId": 2365
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8017,
+      "newId": 2366
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8018,
+      "newId": 2367
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8019,
+      "newId": 2368
+    },
+    {
+      "area": "portugues",
+      "subject": "ortografia",
+      "oldId": 8020,
+      "newId": 2369
+    },
+    {
+      "area": "matematica",
+      "subject": "algebra",
+      "oldId": 3002,
+      "newId": 3000
+    },
+    {
+      "area": "matematica",
+      "subject": "algebra",
+      "oldId": 3003,
+      "newId": 3001
+    },
+    {
+      "area": "matematica",
+      "subject": "algebra",
+      "oldId": 3004,
+      "newId": 3002
+    },
+    {
+      "area": "matematica",
+      "subject": "algebra",
+      "oldId": 3005,
+      "newId": 3003
+    },
+    {
+      "area": "matematica",
+      "subject": "algebra",
+      "oldId": 3006,
+      "newId": 3004
+    },
+    {
+      "area": "matematica",
+      "subject": "geometria",
+      "oldId": 3102,
+      "newId": 3005
+    },
+    {
+      "area": "matematica",
+      "subject": "geometria",
+      "oldId": 3103,
+      "newId": 3006
+    },
+    {
+      "area": "matematica",
+      "subject": "geometria",
+      "oldId": 3104,
+      "newId": 3007
+    },
+    {
+      "area": "matematica",
+      "subject": "geometria",
+      "oldId": 3105,
+      "newId": 3008
+    },
+    {
+      "area": "matematica",
+      "subject": "geometria",
+      "oldId": 3106,
+      "newId": 3009
+    },
+    {
+      "area": "matematica",
+      "subject": "raciocinio-logico",
+      "oldId": 3202,
+      "newId": 3010
+    },
+    {
+      "area": "matematica",
+      "subject": "raciocinio-logico",
+      "oldId": 3203,
+      "newId": 3011
+    },
+    {
+      "area": "matematica",
+      "subject": "raciocinio-logico",
+      "oldId": 3204,
+      "newId": 3012
+    },
+    {
+      "area": "matematica",
+      "subject": "raciocinio-logico",
+      "oldId": 3205,
+      "newId": 3013
+    },
+    {
+      "area": "matematica",
+      "subject": "raciocinio-logico",
+      "oldId": 3206,
+      "newId": 3014
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 4002,
+      "newId": 4000
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 4003,
+      "newId": 4001
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 4004,
+      "newId": 4002
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 4005,
+      "newId": 4003
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 4006,
+      "newId": 4004
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5001,
+      "newId": 4005
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5002,
+      "newId": 4006
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5003,
+      "newId": 4007
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5004,
+      "newId": 4008
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5005,
+      "newId": 4009
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5006,
+      "newId": 4010
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5007,
+      "newId": 4011
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5008,
+      "newId": 4012
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5009,
+      "newId": 4013
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5010,
+      "newId": 4014
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5011,
+      "newId": 4015
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5012,
+      "newId": 4016
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5013,
+      "newId": 4017
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5014,
+      "newId": 4018
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5015,
+      "newId": 4019
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5016,
+      "newId": 4020
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5017,
+      "newId": 4021
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5018,
+      "newId": 4022
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5019,
+      "newId": 4023
+    },
+    {
+      "area": "informatica",
+      "subject": "hardware",
+      "oldId": 5020,
+      "newId": 4024
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 4102,
+      "newId": 4025
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 4103,
+      "newId": 4026
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 4104,
+      "newId": 4027
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 4105,
+      "newId": 4028
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 4106,
+      "newId": 4029
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6001,
+      "newId": 4030
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6002,
+      "newId": 4031
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6003,
+      "newId": 4032
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6004,
+      "newId": 4033
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6005,
+      "newId": 4034
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6006,
+      "newId": 4035
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6007,
+      "newId": 4036
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6008,
+      "newId": 4037
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6009,
+      "newId": 4038
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6010,
+      "newId": 4039
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6011,
+      "newId": 4040
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6012,
+      "newId": 4041
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6013,
+      "newId": 4042
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6014,
+      "newId": 4043
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6015,
+      "newId": 4044
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6016,
+      "newId": 4045
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6017,
+      "newId": 4046
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6018,
+      "newId": 4047
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6019,
+      "newId": 4048
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6020,
+      "newId": 4049
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6021,
+      "newId": 4050
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6022,
+      "newId": 4051
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6023,
+      "newId": 4052
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6024,
+      "newId": 4053
+    },
+    {
+      "area": "informatica",
+      "subject": "redes",
+      "oldId": 6025,
+      "newId": 4054
+    }
+  ],
+  "summary": {
+    "desenvolvimento-web": {
+      "totalQuestions": 214,
+      "startId": 1000,
+      "endId": 1213,
+      "idsUsed": 214,
+      "idsAvailable": 1000
+    },
+    "portugues": {
+      "totalQuestions": 370,
+      "startId": 2000,
+      "endId": 2369,
+      "idsUsed": 370,
+      "idsAvailable": 1000
+    },
+    "matematica": {
+      "totalQuestions": 15,
+      "startId": 3000,
+      "endId": 3014,
+      "idsUsed": 15,
+      "idsAvailable": 1000
+    },
+    "informatica": {
+      "totalQuestions": 55,
+      "startId": 4000,
+      "endId": 4054,
+      "idsUsed": 55,
+      "idsAvailable": 1000
+    }
+  }
+}

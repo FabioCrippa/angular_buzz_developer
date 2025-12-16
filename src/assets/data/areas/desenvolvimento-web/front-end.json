@@ -16,7 +16,7 @@
   },
   "questions": [
     {
-      "id": 601,
+      "id": 1084,
       "question": "O que geralmente causa o erro 'Uncaught TypeError: Cannot read property' em JavaScript?",
       "options": [
         {
@@ -40,7 +40,7 @@
       "explanation": "Esse erro ocorre quando tentamos acessar propriedades de valores null ou undefined. Sempre valide se o objeto existe antes de acessar suas propriedades."
     },
     {
-      "id": 602,
+      "id": 1085,
       "question": "O que significa o erro '404 Not Found' ao acessar uma página web?",
       "options": [
         {
@@ -64,7 +64,7 @@
       "explanation": "HTTP 404 indica que o recurso solicitado não foi encontrado no servidor. Pode ser URL incorreta ou recurso removido/movido."
     },
     {
-      "id": 603,
+      "id": 1086,
       "question": "O que pode causar o erro 'CORS policy: No 'Access-Control-Allow-Origin''?",
       "options": [
         {
@@ -88,7 +88,7 @@
       "explanation": "CORS é uma política de segurança que impede requisições cross-origin sem permissões adequadas. Configure headers no servidor ou use proxy."
     },
     {
-      "id": 604,
+      "id": 1087,
       "question": "O que significa o erro 'ReferenceError: x is not defined'?",
       "options": [
         {
@@ -112,7 +112,7 @@
       "explanation": "ReferenceError indica que uma variável foi usada antes de ser declarada ou está fora do escopo atual."
     },
     {
-      "id": 605,
+      "id": 1088,
       "question": "O que pode causar o erro 'Unexpected token' em JavaScript?",
       "options": [
         {
@@ -136,7 +136,7 @@
       "explanation": "Unexpected token geralmente indica erro de sintaxe: parênteses/chaves não fechados, vírgulas extras ou caracteres inválidos."
     },
     {
-      "id": 606,
+      "id": 1089,
       "question": "O que pode causar o erro 'Maximum call stack size exceeded'?",
       "options": [
         {
@@ -160,7 +160,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 607,
+      "id": 1090,
       "question": "O que significa o erro 'SyntaxError: Unexpected end of input'?",
       "options": [
         {
@@ -184,7 +184,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 608,
+      "id": 1091,
       "question": "O que pode causar o erro 'Failed to fetch' ao fazer uma requisição fetch?",
       "options": [
         {
@@ -208,7 +208,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 609,
+      "id": 1092,
       "question": "O que significa o erro 'TypeError: x is not a function'?",
       "options": [
         {
@@ -232,7 +232,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 610,
+      "id": 1093,
       "question": "O que pode causar o erro 'Cannot set property of undefined'?",
       "options": [
         {
@@ -256,7 +256,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 611,
+      "id": 1094,
       "question": "O que é o Virtual DOM em frameworks como React?",
       "options": [
         {
@@ -280,7 +280,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 612,
+      "id": 1095,
       "question": "Qual propriedade CSS é usada para criar sombras em elementos?",
       "options": [
         {
@@ -304,7 +304,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 613,
+      "id": 1096,
       "question": "O que faz a propriedade CSS 'position: sticky'?",
       "options": [
         {
@@ -328,7 +328,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 614,
+      "id": 1097,
       "question": "O que é o conceito de 'componentização' em frameworks modernos?",
       "options": [
         {
@@ -352,7 +352,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 615,
+      "id": 1098,
       "question": "Qual evento JavaScript é disparado quando um formulário é enviado?",
       "options": [
         {
@@ -376,7 +376,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 616,
+      "id": 1099,
       "question": "O que é o conceito de 'mobile first' no desenvolvimento front-end?",
       "options": [
         {
@@ -400,7 +400,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 617,
+      "id": 1100,
       "question": "Qual propriedade CSS é usada para arredondar os cantos de um elemento?",
       "options": [
         {
@@ -424,7 +424,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 618,
+      "id": 1101,
       "question": "O que é o atributo 'tabindex' em HTML?",
       "options": [
         {
@@ -448,7 +448,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 619,
+      "id": 1102,
       "question": "Qual é a função do atributo 'autofocus' em um input HTML?",
       "options": [
         {
@@ -472,7 +472,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 620,
+      "id": 1103,
       "question": "O que é o atributo 'placeholder' em um input HTML?",
       "options": [
         {
@@ -496,7 +496,7 @@
       "explanation": "Desenvolvimento front-end moderno envolve HTML, CSS, JavaScript e frameworks para criar interfaces interativas."
     },
     {
-      "id": 621,
+      "id": 1104,
       "question": "O que é o Virtual DOM e como ele melhora a performance?",
       "options": [
         {
@@ -520,7 +520,7 @@
       "category": "front-end"
     },
     {
-      "id": 622,
+      "id": 1105,
       "question": "O que são Service Workers e qual sua principal função?",
       "options": [
         {
@@ -544,7 +544,7 @@
       "category": "front-end"
     },
     {
-      "id": 623,
+      "id": 1106,
       "question": "O que é Cross-Origin Resource Sharing (CORS)?",
       "options": [
         {
@@ -568,7 +568,7 @@
       "category": "front-end"
     },
     {
-      "id": 624,
+      "id": 1107,
       "question": "O que é Bundle Splitting e por que é importante?",
       "options": [
         {
@@ -592,7 +592,7 @@
       "category": "front-end"
     },
     {
-      "id": 625,
+      "id": 1108,
       "question": "O que é Tree Shaking no contexto de build tools?",
       "options": [
         {

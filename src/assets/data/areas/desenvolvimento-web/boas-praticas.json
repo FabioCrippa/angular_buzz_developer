@@ -16,7 +16,7 @@
   },
   "questions": [
     {
-      "id": 701,
+      "id": 1024,
       "question": "Qual é o principal benefício de aplicar o princípio DRY (Don't Repeat Yourself)?",
       "options": [
         {
@@ -40,7 +40,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 702,
+      "id": 1025,
       "question": "Por que é importante nomear variáveis de forma clara e descritiva?",
       "options": [
         {
@@ -64,7 +64,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 703,
+      "id": 1026,
       "question": "O que significa o princípio KISS (Keep It Simple, Stupid)?",
       "options": [
         {
@@ -88,7 +88,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 704,
+      "id": 1027,
       "question": "Qual é a vantagem de dividir o código em módulos ou componentes?",
       "options": [
         {
@@ -112,7 +112,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 705,
+      "id": 1028,
       "question": "Por que é importante escrever testes automatizados?",
       "options": [
         {
@@ -136,7 +136,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 706,
+      "id": 1029,
       "question": "O que é um 'code smell'?",
       "options": [
         {
@@ -160,7 +160,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 707,
+      "id": 1030,
       "question": "Qual é a importância de seguir um padrão de codificação (coding style)?",
       "options": [
         {
@@ -184,7 +184,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 708,
+      "id": 1031,
       "question": "O que é refatoração de código?",
       "options": [
         {
@@ -208,7 +208,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 709,
+      "id": 1032,
       "question": "Por que é importante documentar o código?",
       "options": [
         {
@@ -232,7 +232,7 @@
       "explanation": "Boas práticas de código incluem nomenclatura clara, funções pequenas, testes automatizados e documentação adequada."
     },
     {
-      "id": 710,
+      "id": 1033,
       "question": "O que é o princípio YAGNI (You Aren't Gonna Need It)?",
       "options": [
         {
@@ -256,7 +256,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 711,
+      "id": 1034,
       "question": "Qual é a importância do error handling adequado?",
       "options": [
         {
@@ -280,7 +280,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 712,
+      "id": 1035,
       "question": "O que são code smells e como identificá-los?",
       "options": [
         {
@@ -304,7 +304,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 713,
+      "id": 1036,
       "question": "Por que logging é uma boa prática essencial?",
       "options": [
         {
@@ -328,7 +328,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 714,
+      "id": 1037,
       "question": "O que é defensive programming?",
       "options": [
         {
@@ -352,7 +352,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 715,
+      "id": 1038,
       "question": "Qual é a importância da consistência no estilo de código?",
       "options": [
         {
@@ -376,7 +376,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 716,
+      "id": 1039,
       "question": "O que é pair programming e seus benefícios?",
       "options": [
         {
@@ -400,7 +400,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 717,
+      "id": 1040,
       "question": "Por que validação de input é crucial?",
       "options": [
         {
@@ -424,7 +424,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 718,
+      "id": 1041,
       "question": "O que é technical debt e como gerenciá-lo?",
       "options": [
         {
@@ -448,7 +448,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 719,
+      "id": 1042,
       "question": "Qual é a importância de code coverage em testes?",
       "options": [
         {
@@ -472,7 +472,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 720,
+      "id": 1043,
       "question": "O que é continuous learning na carreira de desenvolvimento?",
       "options": [
         {
@@ -496,7 +496,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 721,
+      "id": 1044,
       "question": "Por que performance optimization deve ser baseada em dados?",
       "options": [
         {
@@ -520,7 +520,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 722,
+      "id": 1045,
       "question": "O que é mob programming e quando usar?",
       "options": [
         {
@@ -544,7 +544,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 723,
+      "id": 1046,
       "question": "Qual é a importância da segurança by design?",
       "options": [
         {
@@ -568,7 +568,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 724,
+      "id": 1047,
       "question": "O que são design patterns e quando aplicá-los?",
       "options": [
         {
@@ -592,7 +592,7 @@
       "category": "boas-praticas"
     },
     {
-      "id": 725,
+      "id": 1048,
       "question": "Por que é importante ter environment separation?",
       "options": [
         {

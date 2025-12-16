@@ -418,4 +418,38 @@ export class DashboardComponent implements OnInit {
       verticalPosition: 'bottom'
     });
   }
+
+  // ✅ VERIFICAR SE USUÁRIO É PREMIUM
+  isPremium(): boolean {
+    return localStorage.getItem('isPremium') === 'true';
+  }
+
+  // ✅ OBTER TAMANHO DO QUIZ BASEADO NO PLANO
+  getQuizSize(): number {
+    return this.isPremium() ? 20 : 10;
+  }
+
+  // ✅ OBTER TENTATIVAS RESTANTES PARA UMA ÁREA
+  getRemainingAttempts(areaName: string): number {
+    try {
+      const userId = JSON.parse(localStorage.getItem('sowlfy_user') || '{}').uid;
+      const storageKey = `buzz_developer_free_trial_${userId}`;
+      const trialData = JSON.parse(localStorage.getItem(storageKey) || '{}');
+      
+      if (!trialData.attempts || !trialData.attempts[areaName]) {
+        return 1; // 1 tentativa disponível
+      }
+
+      const today = new Date().toISOString().split('T')[0];
+      const areaAttempts = trialData.attempts[areaName];
+      
+      if (areaAttempts.lastReset !== today) {
+        return 1; // Reset diário
+      }
+
+      return Math.max(0, 1 - areaAttempts.count); // Máximo de 1 tentativa
+    } catch (error) {
+      return 1;
+    }
+  }
 }

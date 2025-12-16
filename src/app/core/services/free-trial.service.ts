@@ -14,7 +14,7 @@ interface TrialData {
 export class FreeTrialService {
   
   private readonly STORAGE_KEY_PREFIX = 'buzz_developer_free_trial'; // ✅ AGORA É UM PREFIXO
-  private readonly MAX_ATTEMPTS_PER_DAY = 3; // ✅ 3 TENTATIVAS POR ÁREA POR DIA
+  private readonly MAX_ATTEMPTS_PER_DAY = 1; // ✅ 1 TENTATIVA POR ÁREA POR DIA (PLANO FREE)
   private readonly AVAILABLE_AREAS = ['desenvolvimento-web', 'portugues', 'matematica', 'informatica'];
 
   constructor(private authService: AuthService) {

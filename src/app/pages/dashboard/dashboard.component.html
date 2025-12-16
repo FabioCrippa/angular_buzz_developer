@@ -29,12 +29,6 @@
       <!-- ✅ STATS CORRIGIDAS -->
       <div class="stats-overview">
         <div class="stat-item">
-          <span class="stat-number" [attr.data-number]="getTotalQuestions()">
-            {{ getTotalQuestions() }}
-          </span>
-          <span class="stat-label">Questões</span>
-        </div>
-        <div class="stat-item">
           <span class="stat-number" [attr.data-number]="areas.length">
             {{ areas.length }}
           </span>
@@ -115,7 +109,6 @@
             </div>
             <div class="area-info">
               <h3>{{ area.displayName }}</h3>
-              <p class="question-count">{{ area.questionCount }} questões</p>
             </div>
           </div>
 

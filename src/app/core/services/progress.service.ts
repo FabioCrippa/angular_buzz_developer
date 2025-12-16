@@ -13,17 +13,37 @@ export interface UserAnswer {
   providedIn: 'root'
 })
 export class ProgressService {
-  private STORAGE_KEY = 'userProgressHistory';
+  private STORAGE_KEY_PREFIX = 'userProgressHistory';
+
+  // ✅ OBTER CHAVE ESPECÍFICA DO USUÁRIO
+  private getStorageKey(): string {
+    const user = localStorage.getItem('sowlfy_user');
+    if (user) {
+      try {
+        const userData = JSON.parse(user);
+        const userId = userData.uid || userData.id; // Tentar uid ou id
+        if (userId) {
+          return `${this.STORAGE_KEY_PREFIX}_${userId}`;
+        }
+      } catch (e) {
+        console.error('Erro ao parsear dados do usuário:', e);
+      }
+    }
+    console.warn('⚠️ Usando storage key sem userId - dados não serão isolados!');
+    return this.STORAGE_KEY_PREFIX; // Fallback para key antiga
+  }
 
   // Carrega o histórico de respostas do usuário
   getHistory(): UserAnswer[] {
-    const data = localStorage.getItem(this.STORAGE_KEY);
+    const storageKey = this.getStorageKey();
+    const data = localStorage.getItem(storageKey);
     return data ? JSON.parse(data) : [];
   }
 
   // Salva o histórico de respostas
   private saveHistory(history: UserAnswer[]) {
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(history));
+    const storageKey = this.getStorageKey();
+    localStorage.setItem(storageKey, JSON.stringify(history));
   }
 
   // Adiciona uma nova resposta ao histórico (mantém só a última resposta por questão)
@@ -37,7 +57,8 @@ export class ProgressService {
 
   // Limpa todo o progresso
   clearProgress() {
-    localStorage.removeItem(this.STORAGE_KEY);
+    const storageKey = this.getStorageKey();
+    localStorage.removeItem(storageKey);
   }
 
   // ✅ MÉTODO GETSSTATS CORRIGIDO

@@ -42,7 +42,7 @@
       "correct": "B",
       "explanation": "O processador (CPU) executa todas as instruções e cálculos, sendo o componente central de processamento.",
       "studyTip": "CPU = processamento, RAM = memória temporária, HD = armazenamento permanente.",
-      "id": 4002,
+      "id": 4000,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -73,7 +73,7 @@
       "correct": "B",
       "explanation": "RAM é volátil (perde dados sem energia) e rápida (acesso direto aos dados).",
       "studyTip": "Volátil = perde dados sem energia. Não volátil = mantém dados (HD, SSD, ROM).",
-      "id": 4003,
+      "id": 4001,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -104,7 +104,7 @@
       "correct": "C",
       "explanation": "SSD usa memória flash (sem partes móveis), sendo mais rápido, silencioso e confiável que HD.",
       "studyTip": "HD = mecânico, mais barato, mais capacidade. SSD = eletrônico, mais rápido, mais caro.",
-      "id": 4004,
+      "id": 4002,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -135,7 +135,7 @@
       "correct": "C",
       "explanation": "BIOS/UEFI é o firmware que inicializa o hardware e carrega o sistema operacional.",
       "studyTip": "BIOS = Basic Input/Output System. É o primeiro software executado ao ligar o PC.",
-      "id": 4005,
+      "id": 4003,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -166,7 +166,7 @@
       "correct": "C",
       "explanation": "USB-C é reversível, suporta alta velocidade, vídeo, áudio e carregamento em uma única porta.",
       "studyTip": "Evolução USB: 1.1 → 2.0 → 3.0 → 3.1 → USB-C (Type-C).",
-      "id": 4006,
+      "id": 4004,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -197,7 +197,7 @@
       "correct": "C",
       "explanation": "O processador é o cérebro do computador, responsável por executar instruções e cálculos.",
       "studyTip": "Conheça os principais componentes e suas funções: CPU, RAM, HD, placa-mãe.",
-      "id": 5001,
+      "id": 4005,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -228,7 +228,7 @@
       "correct": "B",
       "explanation": "A RAM armazena temporariamente dados e instruções usados durante a execução de programas.",
       "studyTip": "Memória RAM é volátil: perde os dados ao desligar o computador.",
-      "id": 5002,
+      "id": 4006,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -259,7 +259,7 @@
       "correct": "C",
       "explanation": "O HD armazena arquivos, programas e o sistema operacional de forma permanente.",
       "studyTip": "HD e SSD são tipos de armazenamento permanente, com o SSD sendo mais rápido.",
-      "id": 5003,
+      "id": 4007,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -290,7 +290,7 @@
       "correct": "A",
       "explanation": "A placa-mãe é a base que interliga processador, memória, HD e outros componentes.",
       "studyTip": "A placa-mãe define compatibilidade entre os componentes do sistema.",
-      "id": 5004,
+      "id": 4008,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -321,7 +321,7 @@
       "correct": "B",
       "explanation": "O teclado permite inserir dados e comandos no computador, sendo um dispositivo de entrada.",
       "studyTip": "Dispositivos de entrada enviam dados ao computador; os de saída exibem ou reproduzem.",
-      "id": 5005,
+      "id": 4009,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -352,7 +352,7 @@
       "correct": "B",
       "explanation": "O cooler é um dispositivo de ventilação que dissipa o calor gerado pelo processador.",
       "studyTip": "O superaquecimento pode causar travamentos e danos ao hardware. O cooler é essencial.",
-      "id": 5006,
+      "id": 4010,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -383,7 +383,7 @@
       "correct": "C",
       "explanation": "O monitor exibe as informações processadas pelo computador, sendo um dispositivo de saída.",
       "studyTip": "Dispositivos de saída mostram os resultados das operações realizadas pelo computador.",
-      "id": 5007,
+      "id": 4011,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -414,7 +414,7 @@
       "correct": "B",
       "explanation": "A fonte de alimentação converte a energia elétrica da tomada para alimentar os componentes internos.",
       "studyTip": "Fontes com potência inadequada podem causar instabilidade ou falhas no sistema.",
-      "id": 5008,
+      "id": 4012,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -445,7 +445,7 @@
       "correct": "C",
       "explanation": "O scanner converte documentos físicos em arquivos digitais.",
       "studyTip": "Scanners são dispositivos de entrada, pois enviam dados para o computador.",
-      "id": 5009,
+      "id": 4013,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -476,7 +476,7 @@
       "correct": "C",
       "explanation": "A placa de vídeo processa os dados gráficos e envia as imagens para o monitor.",
       "studyTip": "Placas de vídeo dedicadas são essenciais para jogos e aplicações gráficas pesadas.",
-      "id": 5010,
+      "id": 4014,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -507,7 +507,7 @@
       "correct": "C",
       "explanation": "A memória RAM armazena dados temporários usados durante a execução de programas.",
       "studyTip": "RAM é volátil: perde os dados ao desligar o computador.",
-      "id": 5011,
+      "id": 4015,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -538,7 +538,7 @@
       "correct": "B",
       "explanation": "O mouse é um dispositivo de entrada que permite movimentar o cursor e interagir com a interface gráfica.",
       "studyTip": "Dispositivos de entrada enviam comandos ou dados ao computador.",
-      "id": 5012,
+      "id": 4016,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -569,7 +569,7 @@
       "correct": "C",
       "explanation": "A placa de rede permite a comunicação entre o computador e outros dispositivos por meio de redes.",
       "studyTip": "Placas de rede podem ser cabeadas (Ethernet) ou sem fio (Wi-Fi).",
-      "id": 5013,
+      "id": 4017,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -600,7 +600,7 @@
       "correct": "C",
       "explanation": "SSDs são mais rápidos que HDs por não possuírem partes mecânicas.",
       "studyTip": "SSDs aceleram a inicialização do sistema e a abertura de programas.",
-      "id": 5014,
+      "id": 4018,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -631,7 +631,7 @@
       "correct": "B",
       "explanation": "A caixa de som é um dispositivo de saída que reproduz sons gerados pelo computador.",
       "studyTip": "Dispositivos de saída mostram ou reproduzem os resultados das operações do computador.",
-      "id": 5015,
+      "id": 4019,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -662,7 +662,7 @@
       "correct": "B",
       "explanation": "A BIOS ou UEFI contém instruções básicas para iniciar o sistema e carregar o sistema operacional.",
       "studyTip": "BIOS/UEFI é armazenada em memória ROM e executa o POST (Power-On Self Test).",
-      "id": 5016,
+      "id": 4020,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -693,7 +693,7 @@
       "correct": "B",
       "explanation": "O microfone capta sons e envia sinais de áudio para o computador, sendo um dispositivo de entrada.",
       "studyTip": "Dispositivos de entrada capturam dados externos e os enviam ao sistema.",
-      "id": 5017,
+      "id": 4021,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -724,7 +724,7 @@
       "correct": "C",
       "explanation": "O sistema operacional é instalado em dispositivos de armazenamento como HD ou SSD.",
       "studyTip": "HDs são mais lentos e baratos; SSDs são mais rápidos e duráveis.",
-      "id": 5018,
+      "id": 4022,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -755,7 +755,7 @@
       "correct": "B",
       "explanation": "A placa de vídeo é responsável por renderizar imagens e vídeos, especialmente em jogos e softwares gráficos.",
       "studyTip": "Placas dedicadas têm memória própria e melhor desempenho gráfico.",
-      "id": 5019,
+      "id": 4023,
       "category": "hardware",
       "difficulty": "fundamental"
     },
@@ -786,7 +786,7 @@
       "correct": "A",
       "explanation": "A webcam é um dispositivo de entrada que captura imagens e vídeos em tempo real.",
       "studyTip": "Webcams são comuns em videochamadas e transmissões ao vivo.",
-      "id": 5020,
+      "id": 4024,
       "category": "hardware",
       "difficulty": "fundamental"
     }

@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProgressService } from '../../core/services/progress.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, forkJoin } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { PremiumService } from '../../core/services/premium.service';
 
 interface AreaQuestion {
@@ -239,15 +239,83 @@ export class AreaComponent implements OnInit {
   }
 
   private loadRealAreaQuestions(): Observable<AreaQuestion[]> {
-    console.log('🔍 Tentando carregar questões reais para:', this.areaName);
+    console.log('🔍 Carregando questões REAIS para:', this.areaName);
     
-    // ✅ 1. Tentar carregar do assets/data
-    return this.loadQuestionsFromAssets().pipe(
+    // ✅ Carregar index.json e depois todas as questões da área (IGUAL AO QUIZ)
+    return this.http.get<any>('assets/data/index.json').pipe(
       catchError(error => {
-        console.warn('⚠️ Assets não encontrados, gerando questões simuladas:', error);
-        // ✅ 2. Se falhar, gerar questões baseadas na configuração
-        const generatedQuestions = this.generateQuestionsForArea();
-        return of(generatedQuestions);
+        console.error('❌ Falha ao carregar index.json:', error);
+        throw error;
+      }),
+      switchMap(indexData => {
+        console.log('📦 Index carregado, buscando estrutura para:', this.areaName);
+        
+        if (!indexData?.structure?.[this.areaName]) {
+          console.error('❌ Área não encontrada no index:', this.areaName);
+          throw new Error(`Área ${this.areaName} não encontrada`);
+        }
+        
+        const subjects = indexData.structure[this.areaName];
+        console.log('✅ Assuntos encontrados:', subjects);
+        
+        // ✅ Criar array de requisições para TODOS os assuntos (IGUAL AO QUIZ)
+        const requests = subjects.map((subject: string) => {
+          const path = `assets/data/areas/${this.areaName}/${subject}.json`;
+          console.log('📥 Carregando:', path);
+          
+          return this.http.get<any>(path).pipe(
+            catchError(error => {
+              console.warn(`⚠️ Erro ao carregar ${subject}:`, error);
+              return of(null);
+            }),
+            map(data => ({
+              subject,
+              questions: data?.questions || []
+            }))
+          );
+        });
+        
+        // ✅ Retornar forkJoin tipado corretamente
+        return forkJoin(requests) as Observable<any[]>;
+      }),
+      map((results: any[]) => {
+        console.log('📊 Processando', results.length, 'arquivos carregados');
+        
+        let allQuestions: AreaQuestion[] = [];
+        
+        results.forEach((result: any) => {
+          if (result && result.questions && result.questions.length > 0) {
+            console.log(`✅ ${result.subject}: ${result.questions.length} questões`);
+            
+            const processedQuestions = result.questions.map((q: any) => ({
+              id: String(q.id),
+              question: q.question || q.pergunta || 'Sem texto',
+              subject: this.formatSubjectName(result.subject),
+              difficulty: this.normalizeDifficulty(q.difficulty || q.dificuldade || 'Médio'),
+              options: q.options || q.alternativas || [],
+              correctAnswer: q.correctAnswer || q.correct || 0,
+              explanation: q.explanation || q.explicacao || 'Sem explicação',
+              tags: q.tags || [result.subject],
+              estimatedTime: q.estimatedTime || '2min',
+              popularity: q.popularity || 50,
+              isFavorite: this.isQuestionFavorite(String(q.id))
+            } as AreaQuestion));
+            
+            allQuestions = [...allQuestions, ...processedQuestions];
+          }
+        });
+        
+        console.log('📊 TOTAL questões carregadas:', allQuestions.length);
+        
+        if (allQuestions.length === 0) {
+          throw new Error('Nenhuma questão válida');
+        }
+        
+        return allQuestions;
+      }),
+      catchError(error => {
+        console.error('❌ Erro final, usando fallback:', error);
+        return of(this.generateQuestionsForArea());
       }),
       map(questions => {
         // ✅ GARANTIR que totalQuestions seja sempre atualizado
@@ -256,74 +324,6 @@ export class AreaComponent implements OnInit {
           console.log(`📊 Total de questões definido: ${questions.length}`);
         }
         return questions;
-      })
-    );
-  }
-
-  private loadQuestionsFromAssets(): Observable<AreaQuestion[]> {
-    // ✅ Tentar carregar index.json primeiro
-    return this.http.get<any>('assets/data/index.json').pipe(
-      catchError(error => {
-        console.warn('⚠️ index.json não encontrado:', error);
-        return of(null);
-      }),
-      map(indexData => {
-        if (!indexData || !indexData.structure || !indexData.structure[this.areaName]) {
-          throw new Error(`Estrutura não encontrada para ${this.areaName}`);
-        }
-        
-        const subjects = indexData.structure[this.areaName];
-        console.log('📂 Assuntos encontrados:', subjects);
-        
-        // ✅ Carregar questões de cada assunto
-        const requests = subjects.map((subject: string) => 
-          this.http.get<any>(`assets/data/${this.areaName}/${subject}.json`).pipe(
-            catchError(error => {
-              console.warn(`⚠️ Arquivo ${subject}.json não encontrado:`, error);
-              return of(null);
-            }),
-            map(result => ({ subject: subject, data: result }))
-          )
-        );
-        
-        return forkJoin(requests);
-      }),
-      map((results: any) => {
-        if (!Array.isArray(results)) {
-          throw new Error('Nenhum resultado válido encontrado');
-        }
-        
-        let allQuestions: AreaQuestion[] = [];
-        
-        results.forEach((result: any) => {
-          if (result && result.data && result.data.questions && Array.isArray(result.data.questions)) {
-            const processedQuestions = result.data.questions.map((q: any, index: number) => {
-              const questionId = String(q.id || `${this.areaName}-${result.subject}-${index + 1}`);
-              
-              return {
-                id: questionId,
-                question: q.question || q.pergunta || q.text || 'Questão sem texto',
-                subject: this.formatSubjectName(result.subject),
-                difficulty: this.normalizeDifficulty(q.difficulty || q.dificuldade || 'Médio'),
-                options: q.options || q.alternativas || q.choices || ['Opção A', 'Opção B', 'Opção C', 'Opção D'],
-                correctAnswer: q.correctAnswer || q.respostaCorreta || q.answer || 0,
-                explanation: q.explanation || q.explicacao || q.feedback || 'Sem explicação disponível.',
-                tags: q.tags || q.categorias || q.keywords || [this.formatSubjectName(result.subject)],
-                estimatedTime: q.estimatedTime || q.tempoEstimado || q.duration || '2min',
-                popularity: q.popularity || Math.floor(Math.random() * 100) + 1,
-                isFavorite: this.isQuestionFavorite(questionId)
-              } as AreaQuestion;
-            });
-            
-            allQuestions = [...allQuestions, ...processedQuestions];
-          }
-        });
-        
-        if (allQuestions.length === 0) {
-          throw new Error('Nenhuma questão válida encontrada nos arquivos');
-        }
-        
-        return allQuestions;
       })
     );
   }
@@ -380,6 +380,9 @@ export class AreaComponent implements OnInit {
   private updateUserProgress(): void {
     if (!this.areaData) return;
 
+    // ✅ Limpar cache quando o progresso muda
+    this.wrongQuestionsCache = null;
+
     // ✅ 1. Atualizar totalQuestions com o número real de questões carregadas
     this.areaData.totalQuestions = this.questions.length;
 
@@ -398,14 +401,6 @@ export class AreaComponent implements OnInit {
       accuracy: accuracy,
       timeSpent: timeSpent
     };
-
-    console.log('📊 Progresso atualizado:', {
-      totalQuestions: this.areaData.totalQuestions,
-      completed: totalCompleted,
-      percentage: this.getProgressPercentage(),
-      accuracy: accuracy,
-      timeSpent: timeSpent
-    });
   }
 
   private loadUserPremiumStatus(): void {
@@ -465,13 +460,45 @@ export class AreaComponent implements OnInit {
   // 🎯 SISTEMA INTELIGENTE REAL
   // ===============================================
   
+  // ✅ Cache para evitar recalcular a cada change detection
+  private wrongQuestionsCache: AreaQuestion[] | null = null;
+  private lastHistoryLength: number = 0;
+  
   getWrongQuestions(): AreaQuestion[] {
-    // ✅ Buscar questões que o usuário errou no histórico real
-    const wrongAnswers = this.progressService.getHistory()
-      .filter(h => h.area === this.areaName && !h.correct)
-      .map(h => String(h.questionId)); // ✅ Garante que seja string
+    // ✅ Usar cache se o histórico não mudou
+    const history = this.progressService.getHistory();
+    if (this.wrongQuestionsCache && history.length === this.lastHistoryLength) {
+      return this.wrongQuestionsCache;
+    }
     
-    return this.questions.filter(q => wrongAnswers.includes(String(q.id))); // ✅ Garante comparação string vs string
+    const wrongAnswers = history
+      .filter(h => h.area === this.areaName && !h.correct)
+      .map(h => String(h.questionId));
+    
+    const wrongQuestions = this.questions.filter(q => {
+      const questionId = String(q.id);
+      
+      // Match direto
+      if (wrongAnswers.includes(questionId)) {
+        return true;
+      }
+      
+      // Extrair número do ID (ex: 'desenvolvimento-web-generated-319' → '319')
+      const match = questionId.match(/-(\d+)$/);
+      const numericId = match ? match[1] : null;
+      
+      if (numericId && wrongAnswers.includes(numericId)) {
+        return true;
+      }
+      
+      return false;
+    });
+    
+    // ✅ Atualizar cache
+    this.wrongQuestionsCache = wrongQuestions;
+    this.lastHistoryLength = history.length;
+    
+    return wrongQuestions;
   }
 
   getUnansweredQuestions(): AreaQuestion[] {
@@ -717,164 +744,14 @@ export class AreaComponent implements OnInit {
   }
 
   navigateToUpgrade(): void {
-    this.showSuccessMessage('Abrindo opções de upgrade Premium...');
+    this.showSuccessMessage('Redirecionando para página de upgrade...');
     
     setTimeout(() => {
-      const premiumFeatures = `
-🏆 QUIZZFY PREMIUM - R$ 19,90/mês
-
-✅ QUIZZES ILIMITADOS por dia
-✅ QUIZ INTELIGENTE com IA personalizada
-✅ FILTROS AVANÇADOS por assunto e dificuldade  
-✅ ESTATÍSTICAS DETALHADAS de performance
-✅ HISTÓRICO COMPLETO de todas as questões
-✅ FAVORITOS ILIMITADOS e organizados
-✅ EXPORTAR RELATÓRIOS em PDF
-✅ SUPORTE PRIORITÁRIO via WhatsApp
-
-💡 Área atual: ${this.areaData?.displayName}
-📊 Seu progresso: ${this.areaData?.userProgress.completed} questões (${this.getProgressPercentage()}%)
-🎯 Questões para revisar: ${this.wrongQuestionsCount}
-
-Deseja fazer upgrade agora?`;
-
-      const userChoice = confirm(premiumFeatures);
-      
-      if (userChoice) {
-        this.showUpgradeContactOptions();
-      } else {
-        this.showSuccessMessage('Upgrade cancelado. Você pode ativar a qualquer momento! 😊');
-      }
+      this.router.navigate(['/upgrade']).catch(error => {
+        console.error('Erro ao navegar para upgrade:', error);
+        this.showErrorMessage('Erro ao carregar página de upgrade');
+      });
     }, 500);
-  }
-
-  private showUpgradeContactOptions(): void {
-    const contactOptions = `
-🔥 COMO ATIVAR SEU PREMIUM:
-
-1️⃣ WHATSAPP (Recomendado) 
-   📱 Atendimento instantâneo
-   💰 Desconto de lançamento: R$ 14,90/mês
-   ⚡ Ativação em 5 minutos
-
-2️⃣ EMAIL DETALHADO
-   📧 Instruções completas
-   💳 Várias formas de pagamento
-   📋 Suporte técnico incluído
-
-3️⃣ PAGAR ONLINE (Em breve)
-   💻 Stripe/PayPal seguro
-   🚀 Ativação automática
-   🔒 100% seguro e criptografado
-
-Digite sua escolha:`;
-
-    const choice = prompt(contactOptions + '\n\nDigite 1, 2 ou 3:');
-    
-    switch(choice) {
-      case '1':
-        this.openWhatsAppUpgrade();
-        break;
-      case '2':
-        this.openEmailUpgrade();
-        break;
-      case '3':
-        this.showOnlinePaymentSoon();
-        break;
-      default:
-        if (choice !== null) {
-          this.showErrorMessage('Opção inválida. Tente novamente ou entre em contato pelo WhatsApp!');
-        }
-    }
-  }
-
-  private openWhatsAppUpgrade(): void {
-    this.showSuccessMessage('Abrindo WhatsApp com seus dados... 📱');
-    
-    setTimeout(() => {
-      const userStats = {
-        area: this.areaData?.displayName || 'Não especificada',
-        questoes: this.areaData?.userProgress.completed || 0,
-        progresso: this.getProgressPercentage(),
-        revisao: this.wrongQuestionsCount,
-        acertos: this.areaData?.userProgress.accuracy || 0
-      };
-
-      const whatsappMessage = encodeURIComponent(`🏆 QUERO PREMIUM QUIZZFY!
-
-👤 MEU PERFIL:
-📚 Área de estudo: ${userStats.area}
-✅ Questões respondidas: ${userStats.questoes}
-📊 Progresso atual: ${userStats.progresso}%
-🎯 Taxa de acertos: ${userStats.acertos}%
-🔄 Questões para revisar: ${userStats.revisao}
-
-💰 Quero o desconto de lançamento: R$ 14,90/mês
-⚡ Ativação hoje ainda é possível?
-
-Obrigado! 😊`);
-
-      // TODO: Substitua pelo seu número real
-      const phoneNumber = '5511999999999';
-      
-      window.open(`https://wa.me/${phoneNumber}?text=${whatsappMessage}`, '_blank');
-    }, 500);
-  }
-
-  private openEmailUpgrade(): void {
-    this.showSuccessMessage('Preparando email personalizado... 📧');
-    
-    setTimeout(() => {
-      const subject = encodeURIComponent('🏆 Upgrade Quizzfy Premium - Dados do Usuário');
-      
-      const emailBody = encodeURIComponent(`Olá equipe Quizzfy!
-
-Gostaria de fazer upgrade para o Quizzfy Premium.
-
-DADOS DO MEU PERFIL:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📚 Área principal de estudo: ${this.areaData?.displayName || 'Não especificada'}
-✅ Total de questões respondidas: ${this.areaData?.userProgress.completed || 0}
-📊 Progresso na área atual: ${this.getProgressPercentage()}%
-🎯 Taxa de acertos: ${this.areaData?.userProgress.accuracy || 0}%
-🔄 Questões para revisar: ${this.wrongQuestionsCount}
-⏱️ Tempo total estudado: ${this.areaData?.userProgress.timeSpent || '0min'}
-
-Aguardo retorno!
-
-Atenciosamente,
-Usuário Quizzfy`);
-
-      // TODO: Substitua pelo seu email real
-      const email = 'contato@quizzfy.com';
-      
-      window.location.href = `mailto:${email}?subject=${subject}&body=${emailBody}`;
-    }, 500);
-  }
-
-  private showOnlinePaymentSoon(): void {
-    this.showSuccessMessage('Pagamento online em desenvolvimento! 🚧');
-    
-    setTimeout(() => {
-      const soonMessage = `
-🚧 PAGAMENTO ONLINE EM BREVE!
-
-Estamos finalizando nossa integração com:
-💳 Stripe (cartão de crédito/débito)
-💰 PayPal (conta PayPal ou cartão)
-🏦 PIX (transferência instantânea)
-
-⏰ Previsão: Próximas 2 semanas
-
-Por enquanto, use WhatsApp para ativação rápida!
-📱 Desconto especial: R$ 14,90/mês (normal R$ 19,90)
-
-Deseja entrar em contato pelo WhatsApp?`;
-
-      if (confirm(soonMessage)) {
-        this.openWhatsAppUpgrade();
-      }
-    }, 1000);
   }
 
   // ===============================================
@@ -1121,11 +998,16 @@ Clique em "Upgrade Premium" para desbloquear!`);
   // ✅ SUBSTITUA o método getProgressPercentage existente por esta versão corrigida:
 
   getProgressPercentage(): number {
-    if (!this.areaData || this.areaData.totalQuestions === 0) {
+    if (!this.areaData) {
       return 0;
     }
     
-    const percentage = Math.round((this.areaData.userProgress.completed / this.areaData.totalQuestions) * 100);
+    // ✅ Usar limite do quiz (10 FREE / 20 PREMIUM) ao invés do total de questões
+    const maxQuestions = this.isPremium ? 20 : 10;
+    const completed = this.areaData.userProgress.completed;
+    
+    // ✅ Calcular percentual baseado no limite do quiz
+    const percentage = Math.round((Math.min(completed, maxQuestions) / maxQuestions) * 100);
     
     // ✅ Verificar se o resultado é válido
     if (!isFinite(percentage) || isNaN(percentage)) {
@@ -1186,6 +1068,24 @@ Clique em "Upgrade Premium" para desbloquear!`);
       this.currentPage = page;
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  }
+
+  startSingleQuestionQuiz(questionId: string): void {
+    this.showSuccessMessage('Carregando questão...');
+    
+    setTimeout(() => {
+      this.router.navigate(['/quiz'], {
+        queryParams: {
+          mode: 'single',
+          area: this.areaName,
+          questionId: questionId,
+          premium: this.isPremium ? 'true' : 'false'
+        }
+      }).catch(error => {
+        console.error('Erro ao navegar para quiz:', error);
+        this.showErrorMessage('Erro ao carregar questão');
+      });
+    }, 500);
   }
 
   toggleFavorite(questionId: string): void {

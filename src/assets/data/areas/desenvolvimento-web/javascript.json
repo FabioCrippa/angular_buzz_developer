@@ -18,7 +18,7 @@
   },
   "questions": [
     {
-      "id": 201,
+      "id": 1134,
       "question": "Qual é o propósito do método 'filter()' em JavaScript?",
       "options": [
         {
@@ -42,7 +42,7 @@
       "explanation": "O método filter() cria um novo array contendo apenas os elementos que passam no teste implementado pela função fornecida."
     },
     {
-      "id": 202,
+      "id": 1135,
       "question": "Explique o conceito de 'hoisting' no JavaScript.",
       "options": [
         {
@@ -66,7 +66,7 @@
       "explanation": "Hoisting é o comportamento de mover declarações de variáveis e funções para o topo do escopo durante a compilação."
     },
     {
-      "id": 203,
+      "id": 1136,
       "question": "Qual é a diferença entre `let`, `var` e `const` no JavaScript?",
       "options": [
         {
@@ -90,7 +90,7 @@
       "explanation": "let e const têm escopo de bloco e Temporal Dead Zone. var tem escopo de função e hoisting com inicialização undefined."
     },
     {
-      "id": 204,
+      "id": 1137,
       "question": "Qual é a diferença entre `==` e `===` no JavaScript?",
       "options": [
         {
@@ -115,7 +115,7 @@
       "interviewTip": "Como explicar na entrevista: Sempre uso '===' (strict equality) porque é mais previsível. O '==' faz coerção de tipos que pode causar bugs sutis. Por exemplo, '0' == false retorna true, mas '0' === false retorna false. Em produção, prefiro ser explícito e evitar comportamentos inesperados."
     },
     {
-      "id": 205,
+      "id": 1138,
       "question": "Explique o conceito de 'promises' no JavaScript.",
       "options": [
         {
@@ -139,7 +139,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 206,
+      "id": 1139,
       "question": "O que é um 'polyfill' no desenvolvimento web?",
       "options": [
         {
@@ -163,7 +163,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 207,
+      "id": 1140,
       "question": "Qual é a diferença entre `let`, `var` e `const` na declaração de variáveis?",
       "options": [
         {
@@ -187,7 +187,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 208,
+      "id": 1141,
       "question": "O que é um closure em JavaScript?",
       "options": [
         {
@@ -211,7 +211,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 209,
+      "id": 1142,
       "question": "Qual é a diferença entre `==` e `===`?",
       "options": [
         {
@@ -235,7 +235,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 210,
+      "id": 1143,
       "question": "O que é o **Event Loop** em JavaScript?",
       "options": [
         {
@@ -259,7 +259,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 211,
+      "id": 1144,
       "question": "O que é o `this` em JavaScript?",
       "options": [
         {
@@ -283,7 +283,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 212,
+      "id": 1145,
       "question": "Como funciona a herança baseada em protótipos no JavaScript?",
       "options": [
         {
@@ -307,7 +307,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 213,
+      "id": 1146,
       "question": "Como podemos manipular objetos utilizando **destructuring assignment**?",
       "options": [
         {
@@ -331,7 +331,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 214,
+      "id": 1147,
       "question": "Explique o conceito de **hoisting** em JavaScript.",
       "options": [
         {
@@ -355,7 +355,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 215,
+      "id": 1148,
       "question": "O que são **Promises** em JavaScript?",
       "options": [
         {
@@ -379,7 +379,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 216,
+      "id": 1149,
       "question": "O que acontece quando usamos `setTimeout` com um valor de 0ms?",
       "options": [
         {
@@ -403,7 +403,7 @@
       "explanation": "JavaScript é a linguagem de programação que adiciona interatividade e comportamento dinâmico às páginas web."
     },
     {
-      "id": 217,
+      "id": 1150,
       "question": "Qual é o propósito do método 'reduce()' em JavaScript?",
       "options": [
         {
@@ -427,7 +427,7 @@
       "category": "javascript"
     },
     {
-      "id": 218,
+      "id": 1151,
       "question": "O que é event delegation em JavaScript?",
       "options": [
         {
@@ -451,7 +451,7 @@
       "category": "javascript"
     },
     {
-      "id": 219,
+      "id": 1152,
       "question": "O que é o método 'Object.assign()' em JavaScript?",
       "options": [
         {
@@ -475,7 +475,7 @@
       "category": "javascript"
     },
     {
-      "id": 220,
+      "id": 1153,
       "question": "O que é destructuring assignment em JavaScript?",
       "options": [
         {
@@ -499,7 +499,7 @@
       "category": "javascript"
     },
     {
-      "id": 221,
+      "id": 1154,
       "question": "O que é o método 'Array.from()' em JavaScript?",
       "options": [
         {
@@ -523,7 +523,7 @@
       "category": "javascript"
     },
     {
-      "id": 222,
+      "id": 1155,
       "question": "Qual é a diferença entre 'null' e 'undefined' em JavaScript?",
       "options": [
         {
@@ -547,7 +547,7 @@
       "category": "javascript"
     },
     {
-      "id": 223,
+      "id": 1156,
       "question": "O que é o spread operator (...) em JavaScript?",
       "options": [
         {
@@ -571,7 +571,7 @@
       "category": "javascript"
     },
     {
-      "id": 224,
+      "id": 1157,
       "question": "O que é o método 'Array.prototype.find()' em JavaScript?",
       "options": [
         {
@@ -595,7 +595,7 @@
       "category": "javascript"
     },
     {
-      "id": 225,
+      "id": 1158,
       "question": "O que é o conceito de 'modules' em JavaScript moderno?",
       "options": [
         {

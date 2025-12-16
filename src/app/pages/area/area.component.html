@@ -44,7 +44,7 @@
         <div *ngIf="!isPremium" class="free-indicator">
           <span class="free-icon">ℹ️</span>
           <span class="status-text">
-            <strong>Usuário Free</strong> - {{ remainingQuizzes }} quiz{{ remainingQuizzes !== 1 ? 's' : '' }} restante{{ remainingQuizzes !== 1 ? 's' : '' }} hoje
+            <strong>Usuário Free</strong> - 1 tentativa por dia por área
           </span>
           <button class="btn btn-upgrade" (click)="navigateToUpgrade()">
             <span class="btn-icon">⭐</span>
@@ -54,9 +54,9 @@
       </div>
       
       <!-- 🧪 BOTÃO DE TESTE (remover em produção) -->
-      <button class="test-toggle" (click)="togglePremiumForTesting()">
-        {{ isPremium ? '⭐' : '🌟' }}
-      </button>
+      <!-- <button class="test-toggle" (click)="togglePremiumForTesting()">
+        {{ isPremium ? '⭐' : '🌟' }} 
+      </button> -->
     </div>
 
     <!-- 📚 BREADCRUMB -->
@@ -80,7 +80,9 @@
             <div class="area-meta">
               <span class="meta-item">
                 <span class="meta-icon">❓</span>
-                {{ areaData.totalQuestions }} questões
+              <!-- ✅ MOSTRAR TAMANHO DO QUIZ -->
+              <span class="stat-value" *ngIf="isPremium">Quiz de 20 questões</span>
+              <span class="stat-value" *ngIf="!isPremium">Quiz de 10 questões</span>
               </span>
               <span class="meta-item">
                 <span class="meta-icon">📚</span>
@@ -115,7 +117,7 @@
       <span class="warning-icon">⏰</span>
       <div class="warning-content">
         <h3>Limite diário atingido!</h3>
-        <p>Você utilizou todos os seus 5 quizzes gratuitos de hoje. Volte amanhã ou faça upgrade para Premium!</p>
+        <p>Você utilizou todos os seus quizzes gratuitos de hoje. Escolha outra área ou faça upgrade para Premium!</p>
         <button class="btn btn-upgrade" (click)="navigateToUpgrade()">
           <span class="btn-icon">⭐</span>
           Quizzes Ilimitados - Premium
@@ -143,7 +145,8 @@
           <div class="progress-content">
             <span class="progress-number">{{ areaData.userProgress.completed }}</span>
             <span class="progress-label">Questões Resolvidas</span>
-            <span class="progress-sublabel">de {{ areaData.totalQuestions }}</span>
+            <span class="progress-sublabel" *ngIf="isPremium">de 20</span>
+            <span class="progress-sublabel" *ngIf="!isPremium">de 10</span>
           </div>
         </div>
 
@@ -185,8 +188,11 @@
               [style.background-color]="areaData.color"
             ></div>
           </div>
-          <span class="progress-text">
-            {{ areaData.userProgress.completed }}/{{ areaData.totalQuestions }} questões completadas
+          <span class="progress-text" *ngIf="isPremium">
+            {{ areaData.userProgress.completed }}/20 questões completadas
+          </span>
+          <span class="progress-text" *ngIf="!isPremium">
+            {{ areaData.userProgress.completed }}/10 questões completadas
           </span>
         </div>
       </div>
@@ -297,7 +303,7 @@
 
           <!-- Botões de Quiz -->
           <div class="quiz-options">
-            <!-- Quiz Normal -->
+            <!-- Iniciar Quiz -->
             <div class="quiz-option-wrapper">
               <button 
                 class="quiz-btn primary-quiz"
@@ -305,12 +311,12 @@
                 [disabled]="!canTakeQuiz"
                 [class.disabled]="!canTakeQuiz"
               >
-                <span class="quiz-icon">❓</span>
+                <span class="quiz-icon">▶️</span>
                 <div class="btn-content">
-                  <span class="btn-title">Quiz Normal</span>
+                  <span class="btn-title">Iniciar Quiz</span>
                   <span class="btn-subtitle">
-                    <span *ngIf="isPremium">10 questões aleatórias</span>
-                    <span *ngIf="!isPremium">{{ remainingQuizzes }} restante{{ remainingQuizzes !== 1 ? 's' : '' }}</span>
+                    <span *ngIf="isPremium">20 questões desta área</span>
+                    <span *ngIf="!isPremium">10 questões | 1 tentativa por dia</span>
                   </span>
                 </div>
               </button>
@@ -384,6 +390,79 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 📋 LISTA DE QUESTÕES PARA REVISAR -->
+    <section class="questions-list-section" *ngIf="hasWrongQuestions && paginatedQuestions.length > 0">
+      <div class="questions-table">
+        <div class="table-header">
+          <div class="col-number">#</div>
+          <div class="col-question">Questão</div>
+          <div class="col-subject">Assunto</div>
+          <div class="col-difficulty">Dificuldade</div>
+          <div class="col-meta">Info</div>
+          <div class="col-action">Ação</div>
+        </div>
+        
+        <div class="table-row" *ngFor="let question of paginatedQuestions; let i = index">
+          <div class="col-number">
+            <span class="row-number">{{ (currentPage - 1) * itemsPerPage + i + 1 }}</span>
+          </div>
+          
+          <div class="col-question">
+            <span class="question-title">{{ question.question }}</span>
+            <div class="question-tags-inline">
+              <span class="tag-inline" *ngFor="let tag of question.tags.slice(0, 3)">{{ tag }}</span>
+            </div>
+          </div>
+          
+          <div class="col-subject">
+            <span class="subject-label">{{ question.subject }}</span>
+          </div>
+          
+          <div class="col-difficulty">
+            <span class="difficulty-pill" [class]="'difficulty-' + question.difficulty.toLowerCase()">
+              {{ question.difficulty }}
+            </span>
+          </div>
+          
+          <div class="col-meta">
+            <div class="meta-info">
+              <span class="meta-small">⏱️ {{ question.estimatedTime }}</span>
+              <span class="meta-small">👥 {{ question.popularity }}%</span>
+            </div>
+          </div>
+          
+          <div class="col-action">
+            <button class="btn-review" (click)="startSingleQuestionQuiz(question.id)" title="Revisar questão">
+              ▶️ Revisar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paginação -->
+      <div class="pagination" *ngIf="totalPages > 1">
+        <button 
+          class="pagination-btn" 
+          [disabled]="currentPage === 1"
+          (click)="changePage(currentPage - 1)"
+        >
+          ← Anterior
+        </button>
+        
+        <span class="pagination-info">
+          Página {{ currentPage }} de {{ totalPages }} ({{ wrongQuestionsCount }} questões)
+        </span>
+        
+        <button 
+          class="pagination-btn" 
+          [disabled]="currentPage === totalPages"
+          (click)="changePage(currentPage + 1)"
+        >
+          Próxima →
+        </button>
       </div>
     </section>
 
