@@ -153,11 +153,10 @@ export class ProgressComponent implements OnInit {
             : 'Nunca',
           icon: this.getAreaIcon(area),
           difficulty: this.getAreaDifficulty(area),
-          description: areaData.description || '' // ✅ Adicione esta linha
+          description: areaData.description || ''
         };
-      })
-      // ✅ FILTRAR APENAS ÁREAS COM PROGRESSO
-      .filter(area => area.completed > 0); // Só mostra áreas onde respondeu pelo menos 1 questão
+      });
+      // ✅ REMOVIDO O FILTRO - Agora mostra todas as áreas, incluindo as não iniciadas
 
       // ✅ CORRIJA O CÁLCULO DA PRECISÃO MÉDIA
       // Use a precisão geral do serviço, não a média das áreas
@@ -201,23 +200,22 @@ export class ProgressComponent implements OnInit {
   
   this.showSuccessMessage(`Iniciando quiz de ${areaName}...`);
   
-  // ✅ TENTE DIFERENTES VARIAÇÕES DA ROTA:
-  
-  // Opção 1: Se a rota é /quiz (sem duplo z)
+  // ✅ NAVEGAÇÃO CORRETA COM MODO 'area' E PARÂMETROS
   this.router.navigate(['/quiz'], {
     queryParams: { 
-      area: areaName, 
-      limit: 10 
+      mode: 'area',
+      area: areaName,
+      limit: 10
     }
   }).then(success => {
     if (success) {
+      console.log(`✅ Navegou para quiz com área: ${areaName}`);
     } else {
-      // ✅ FALLBACK: Se não conseguir ir para quiz, vai para área
-      this.navigateToArea(areaName);
+      this.showErrorMessage('Erro ao iniciar quiz');
     }
   }).catch(error => {
-    // ✅ FALLBACK: Se der erro, vai para área
-    this.navigateToArea(areaName);
+    console.error('Erro ao navegar para quiz:', error);
+    this.showErrorMessage('Erro ao iniciar quiz');
   });
 }
 

@@ -54,9 +54,9 @@
       </div>
       
       <!-- 🧪 BOTÃO DE TESTE (remover em produção) -->
-      <!-- <button class="test-toggle" (click)="togglePremiumForTesting()">
-        {{ isPremium ? '⭐' : '🌟' }} 
-      </button> -->
+      <button class="test-toggle" (click)="togglePremiumForTesting()">
+        {{ isPremium ? '⭐ Premium' : '🌟 Free' }} 
+      </button>
     </div>
 
     <!-- 📚 BREADCRUMB -->
@@ -198,7 +198,103 @@
       </div>
     </section>
 
-    <!-- 🔍 FILTERS & SEARCH -->
+    <!-- � DETAILED STATISTICS SECTION (PREMIUM) -->
+    <section class="detailed-stats-section" *ngIf="showDetailedStats && detailedStats" id="detailed-stats-section">
+      <div class="stats-header">
+        <h2 class="section-title">
+          <span class="section-icon">📊</span>
+          Estatísticas Detalhadas - {{ detailedStats.areaName }}
+        </h2>
+        <button class="btn-close-stats" (click)="closeDetailedStats()">
+          <span>✕</span>
+        </button>
+      </div>
+
+      <div class="stats-content">
+        <!-- Resumo Principal -->
+        <div class="stats-summary-grid">
+          <div class="stat-box total">
+            <div class="stat-icon">❓</div>
+            <div class="stat-info">
+              <span class="stat-value">{{ detailedStats.totalQuestions }}</span>
+              <span class="stat-label">Total Respondidas</span>
+            </div>
+          </div>
+
+          <div class="stat-box correct">
+            <div class="stat-icon">✅</div>
+            <div class="stat-info">
+              <span class="stat-value">{{ detailedStats.correctAnswers }}</span>
+              <span class="stat-label">Acertos</span>
+            </div>
+          </div>
+
+          <div class="stat-box wrong">
+            <div class="stat-icon">❌</div>
+            <div class="stat-info">
+              <span class="stat-value">{{ detailedStats.wrongAnswers }}</span>
+              <span class="stat-label">Erros</span>
+            </div>
+          </div>
+
+          <div class="stat-box accuracy">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-info">
+              <span class="stat-value">{{ detailedStats.accuracy }}%</span>
+              <span class="stat-label">Precisão</span>
+            </div>
+          </div>
+
+          <div class="stat-box time">
+            <div class="stat-icon">⏱️</div>
+            <div class="stat-info">
+              <span class="stat-value">{{ detailedStats.avgTimePerQuestion }}s</span>
+              <span class="stat-label">Tempo Médio</span>
+            </div>
+          </div>
+
+          <div class="stat-box total-time">
+            <div class="stat-icon">⏰</div>
+            <div class="stat-info">
+              <span class="stat-value">{{ detailedStats.totalTimeFormatted }}</span>
+              <span class="stat-label">Tempo Total</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sessões Recentes -->
+        <div class="recent-sessions" *ngIf="detailedStats.recentSessions.length > 0">
+          <h3>📅 Últimas Sessões</h3>
+          <div class="sessions-list">
+            <div class="session-item" *ngFor="let session of detailedStats.recentSessions">
+              <div class="session-date">{{ session.date }}</div>
+              <div class="session-stats">
+                <span class="session-total">{{ session.total }} questões</span>
+                <span class="session-accuracy" [style.color]="session.accuracy >= 70 ? '#22c55e' : '#f59e0b'">
+                  {{ session.accuracy }}% acerto
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ação de Revisão -->
+        <div class="review-action" *ngIf="detailedStats.wrongQuestionsCount > 0">
+          <div class="review-info">
+            <span class="review-icon">🔄</span>
+            <div class="review-text">
+              <strong>{{ detailedStats.wrongQuestionsCount }} questões</strong> para revisar
+            </div>
+          </div>
+          <button class="btn btn-primary" (click)="startWrongQuestionsQuiz(); closeDetailedStats()">
+            <span class="btn-icon">🧠</span>
+            Iniciar Quiz Inteligente
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- �🔍 FILTERS & SEARCH -->
     <section class="filters-section">
       <div class="filters-header">
         <h2 class="section-title">
@@ -537,14 +633,14 @@
           </button>
         </div>
 
-        <div class="quick-action-card premium-feature">
+        <div class="quick-action-card premium-feature" (click)="viewStatistics()">
           <span class="action-icon">📊</span>
           <h3>Estatísticas Avançadas</h3>
           <p>Análise detalhada do seu desempenho</p>
           <button class="btn btn-outline">Ver Estatísticas</button>
         </div>
 
-        <div class="quick-action-card premium-feature">
+        <div class="quick-action-card premium-feature" (click)="exportProgress()">
           <span class="action-icon">📥</span>
           <h3>Exportar Progresso</h3>
           <p>Download do seu histórico de estudos</p>

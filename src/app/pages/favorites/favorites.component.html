@@ -112,7 +112,7 @@
             (click)="setSelectedArea(area)"
             [class.selected]="selectedArea === area"
           >
-            {{ area }} ({{ getAreaCount(area) }})
+            {{ getAreaDisplayName(area) }} ({{ getAreaCount(area) }})
           </mat-chip>
         </mat-chip-set>
       </div>
@@ -121,11 +121,11 @@
         <button 
           *ngFor="let area of getAreaKeys()" 
           mat-stroked-button 
-          (click)="startAreaQuiz(area)"
+          (click)="startAreaQuiz(getAreaDisplayName(area))"
           class="area-quiz-btn"
         >
           <mat-icon>play_arrow</mat-icon>
-          Quiz {{ area }}
+          Quiz {{ getAreaDisplayName(area) }}
         </button>
       </div>
     </section>
@@ -236,8 +236,10 @@
           [class.incorrect-attempt]="favorite.isCorrect === false"
         >
           
-          <!-- 📋 QUESTION HEADER -->
-          <div class="question-header">
+          <!-- 📋 QUESTION HEADER (Compacto) -->
+          <div style="display: flex; align-items: center; gap: 1rem; width: 100%;">
+            
+            <!-- Meta Info -->
             <div class="question-meta">
               <div class="area-info">
                 <span class="area-icon">{{ favorite.icon }}</span>
@@ -248,14 +250,49 @@
                 {{ favorite.difficulty }}
               </div>
             </div>
-            <div class="question-actions">
+
+            <!-- 📝 QUESTION CONTENT -->
+            <div class="question-content">
+              <h3 class="question-text">{{ favorite.question }}</h3>
+            </div>
+
+            <!-- 📊 QUESTION STATS -->
+            <div class="question-stats">
+              <div class="stat-item">
+                <mat-icon>repeat</mat-icon>
+                <span class="stat-value">{{ favorite.attempts }}</span>
+              </div>
+              
+              <div class="stat-item">
+                <mat-icon [style.color]="getAttemptStatusColor(favorite.isCorrect)">
+                  {{ getAttemptStatusIcon(favorite.isCorrect) }}
+                </mat-icon>
+                <span class="stat-value" [style.color]="getAttemptStatusColor(favorite.isCorrect)">
+                  {{ favorite.isCorrect === true ? 'Acertou' : favorite.isCorrect === false ? 'Errou' : 'Não tentou' }}
+                </span>
+              </div>
+            </div>
+
+            <!-- 🎯 CARD ACTIONS -->
+            <div class="card-actions">
               <button 
-                mat-icon-button 
-                matTooltip="Ver questão completa"
+                mat-stroked-button 
                 (click)="viewQuestion(favorite)"
+                class="view-btn"
               >
                 <mat-icon>visibility</mat-icon>
+                Ver
               </button>
+              
+              <button 
+                mat-raised-button 
+                color="primary" 
+                (click)="startAreaQuiz(favorite.areaDisplayName)"
+              >
+                <mat-icon>play_arrow</mat-icon>
+                Praticar
+              </button>
+
               <button 
                 mat-icon-button 
                 matTooltip="Remover dos favoritos"
@@ -265,74 +302,7 @@
                 <mat-icon>favorite</mat-icon>
               </button>
             </div>
-          </div>
 
-          <!-- 📝 QUESTION CONTENT -->
-          <div class="question-content">
-            <h3 class="question-text">{{ favorite.question }}</h3>
-            
-            <div class="question-details">
-              <span class="subject-tag">
-                <mat-icon>label</mat-icon>
-                {{ favorite.subject }}
-              </span>
-              
-              <span class="date-info">
-                <mat-icon>schedule</mat-icon>
-                Adicionado: {{ favorite.addedDate | date:'dd/MM/yyyy' }}
-              </span>
-            </div>
-          </div>
-
-          <!-- 📊 QUESTION STATS -->
-          <div class="question-stats">
-            <div class="stat-item">
-              <mat-icon>repeat</mat-icon>
-              <span class="stat-value">{{ favorite.attempts }}</span>
-              <span class="stat-label">Tentativas</span>
-            </div>
-            
-            <div class="stat-item">
-              <mat-icon [style.color]="getAttemptStatusColor(favorite.isCorrect)">
-                {{ getAttemptStatusIcon(favorite.isCorrect) }}
-              </mat-icon>
-              <span class="stat-value">
-                {{ favorite.isCorrect === true ? 'Acertou' : favorite.isCorrect === false ? 'Errou' : 'Não tentou' }}
-              </span>
-              <span class="stat-label">Último resultado</span>
-            </div>
-            
-            <div class="stat-item" *ngIf="favorite.lastAttempt">
-              <mat-icon>event</mat-icon>
-              <span class="stat-value">{{ favorite.lastAttempt | date:'dd/MM' }}</span>
-              <span class="stat-label">Última tentativa</span>
-            </div>
-          </div>
-
-          <!-- 🎯 CARD ACTIONS -->
-          <div class="card-actions">
-            <button 
-              mat-stroked-button 
-              (click)="viewQuestion(favorite)"
-              class="view-btn"
-            >
-              <mat-icon>visibility</mat-icon>
-              Ver Completa
-            </button>
-            
-            <button 
-              mat-raised-button 
-              color="primary" 
-              (click)="startAreaQuiz(favorite.areaDisplayName)"
-            >
-              <mat-icon>play_arrow</mat-icon>
-              Praticar Área
-            </button>
-          </div>
-
-          <!-- ✨ FAVORITE INDICATOR -->
-          <div class="favorite-indicator">
-            <mat-icon>favorite</mat-icon>
           </div>
 
         </div>

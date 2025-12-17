@@ -95,10 +95,14 @@ export class FavoritesComponent implements OnInit {
       // Carregar favoritos do localStorage
       const savedFavorites = localStorage.getItem('favoriteQuestions');
       
+      console.log('📂 Carregando favoritos do localStorage:', savedFavorites);
+      
       if (savedFavorites) {
         const favoriteIds = JSON.parse(savedFavorites);
+        console.log('✅ IDs de favoritos carregados:', favoriteIds);
         this.loadFavoriteQuestions(favoriteIds);
       } else {
+        console.log('⚠️ Nenhum favorito encontrado, gerando exemplos');
         // Gerar dados de exemplo se não houver favoritos
         this.generateSampleFavorites();
       }
@@ -106,10 +110,13 @@ export class FavoritesComponent implements OnInit {
       this.calculateFavoritesData();
       this.extractAvailableAreas();
       
+      console.log('📊 Favoritos processados:', this.favorites.length, 'questões');
+      
       this.isLoading = false;
       this.showSuccessMessage('Favoritos carregados com sucesso!');
       
     } catch (error) {
+      console.error('❌ Erro ao carregar favoritos:', error);
       this.hasError = true;
       this.errorMessage = 'Erro ao carregar questões favoritas';
       this.isLoading = false;
@@ -237,15 +244,30 @@ export class FavoritesComponent implements OnInit {
   }
 
   private generateQuestionById(id: string, index: number): FavoriteQuestion {
-    const areas = ['desenvolvimento-web', 'portugues', 'matematica', 'informatica'];
     const difficulties: ('Fácil' | 'Médio' | 'Difícil')[] = ['Fácil', 'Médio', 'Difícil'];
-    const selectedArea = areas[index % areas.length];
+    
+    // Extrair área do ID (formato: "desenvolvimento-web-123")
+    let selectedArea = 'desenvolvimento-web'; // Área padrão
+    
+    try {
+      const parts = id.split('-');
+      if (parts.length >= 2) {
+        // Remover último elemento (número) e verificar se é válido
+        const lastPart = parts[parts.length - 1];
+        if (!isNaN(Number(lastPart))) {
+          // Último elemento é um número, então pegar o resto como área
+          selectedArea = parts.slice(0, -1).join('-');
+        }
+      }
+    } catch (error) {
+      console.warn('Erro ao extrair área do ID:', id, error);
+    }
     
     return {
       id,
-      question: `Questão favorita ${index + 1} sobre ${selectedArea}`,
+      question: `Questão favorita ${index + 1} sobre ${this.getAreaDisplayName(selectedArea) || selectedArea}`,
       area: selectedArea,
-      areaDisplayName: this.getAreaDisplayName(selectedArea),
+      areaDisplayName: this.getAreaDisplayName(selectedArea) || selectedArea,
       difficulty: difficulties[Math.floor(Math.random() * difficulties.length)],
       subject: 'Assunto Exemplo',
       options: ['Opção A', 'Opção B', 'Opção C', 'Opção D'],
@@ -324,9 +346,13 @@ export class FavoritesComponent implements OnInit {
       filtered = filtered.filter(fav => fav.difficulty === difficultyMap[this.filterBy as 'easy' | 'medium' | 'hard']);
     }
 
-    // Filtrar por área
+    // Filtrar por área (comparar com area, não com areaDisplayName)
     if (this.selectedArea !== 'all') {
-      filtered = filtered.filter(fav => fav.areaDisplayName === this.selectedArea);
+      filtered = filtered.filter(fav => 
+        fav.area === this.selectedArea || 
+        fav.areaDisplayName === this.selectedArea ||
+        fav.areaDisplayName === this.getAreaDisplayName(this.selectedArea)
+      );
     }
 
     // Filtrar por busca
@@ -386,49 +412,89 @@ export class FavoritesComponent implements OnInit {
   }
 
   startFavoritesQuiz(): void {
-    if (this.favorites.length === 0) {
+    // Carregar IDs reais dos favoritos do localStorage
+    const savedFavorites = localStorage.getItem('favoriteQuestions');
+    
+    if (!savedFavorites) {
+      this.showErrorMessage('Você ainda não tem questões favoritas!');
+      return;
+    }
+
+    const favoriteIds: string[] = JSON.parse(savedFavorites);
+    
+    if (favoriteIds.length === 0) {
       this.showErrorMessage('Você precisa ter pelo menos uma questão favorita!');
       return;
     }
 
-    this.showSuccessMessage('Iniciando quiz com suas questões favoritas...');
+    this.showSuccessMessage(`Iniciando quiz com ${favoriteIds.length} questões favoritas...`);
     
     setTimeout(() => {
       this.router.navigate(['/quiz'], {
         queryParams: {
           mode: 'favorites',
-          count: Math.min(this.favorites.length, 10)
+          questionIds: favoriteIds.join(','),
+          count: favoriteIds.length
         }
       });
     }, 500);
   }
 
   startAreaQuiz(area: string): void {
-    const areaFavorites = this.favorites.filter(f => f.areaDisplayName === area);
+    // Carregar IDs reais dos favoritos do localStorage
+    const savedFavorites = localStorage.getItem('favoriteQuestions');
     
-    if (areaFavorites.length === 0) {
+    if (!savedFavorites) {
+      this.showErrorMessage('Você ainda não tem questões favoritas!');
+      return;
+    }
+
+    const allFavoriteIds: string[] = JSON.parse(savedFavorites);
+    
+    if (allFavoriteIds.length === 0) {
+      this.showErrorMessage('Você ainda não tem questões favoritas!');
+      return;
+    }
+    
+    // Filtrar IDs que pertencem à área (formato: "area-123" ou contém o nome da área)
+    const areaKey = area.toLowerCase().replace(/ /g, '-');
+    const areaFavoriteIds = allFavoriteIds.filter((id: string) => {
+      const idLower = id.toLowerCase();
+      return idLower.startsWith(areaKey + '-') || idLower.includes(areaKey);
+    });
+    
+    if (areaFavoriteIds.length === 0) {
       this.showErrorMessage(`Nenhuma questão favorita encontrada para ${area}!`);
       return;
     }
 
-    this.showSuccessMessage(`Iniciando quiz de ${area}...`);
+    this.showSuccessMessage(`Iniciando quiz de ${area} com ${areaFavoriteIds.length} questões...`);
     
     setTimeout(() => {
       this.router.navigate(['/quiz'], {
         queryParams: {
           mode: 'area-favorites',
-          area: area.toLowerCase().replace(' ', '-'),
-          count: Math.min(areaFavorites.length, 10)
+          area: areaKey,
+          questionIds: areaFavoriteIds.join(','),
+          count: areaFavoriteIds.length
         }
       });
     }, 500);
   }
 
   viewQuestion(question: FavoriteQuestion): void {
-    // Simular visualização detalhada da questão
     this.showSuccessMessage('Abrindo questão...');
     
-    // Em uma aplicação real, abriria modal ou navegaria para página da questão
+    // Navegar para o quiz no modo single question
+    setTimeout(() => {
+      this.router.navigate(['/quiz'], {
+        queryParams: {
+          mode: 'single',
+          area: question.area,
+          questionId: question.id
+        }
+      });
+    }, 500);
   }
 
   navigateToDashboard(): void {
@@ -471,7 +537,7 @@ export class FavoritesComponent implements OnInit {
     return icons[areaName] || '📖';
   }
 
-  private getAreaDisplayName(areaName: string): string {
+  getAreaDisplayName(areaName: string): string {
     const names: { [key: string]: string } = {
       'desenvolvimento-web': 'Desenvolvimento Web',
       'portugues': 'Português',
@@ -546,11 +612,45 @@ export class FavoritesComponent implements OnInit {
   // ===============================================
   
   getAreaKeys(): string[] {
-    return Object.keys(this.favoritesData.favoritesByArea);
+    // Ler IDs reais do localStorage e extrair áreas
+    const savedFavorites = localStorage.getItem('favoriteQuestions');
+    if (!savedFavorites) return [];
+    
+    try {
+      const favoriteIds: string[] = JSON.parse(savedFavorites);
+      const areas = new Set<string>();
+      
+      // Extrair área de cada ID (formato: "area-123")
+      favoriteIds.forEach(id => {
+        const parts = id.split('-');
+        if (parts.length >= 2) {
+          // Área pode ter hífens (ex: "desenvolvimento-web")
+          // Pegar tudo exceto o último elemento (que é o número)
+          const areaKey = parts.slice(0, -1).join('-');
+          areas.add(areaKey);
+        }
+      });
+      
+      return Array.from(areas);
+    } catch {
+      return [];
+    }
   }
 
   getAreaCount(area: string): number {
-    return this.favoritesData.favoritesByArea[area] || 0;
+    // Contar quantos IDs pertencem a esta área
+    const savedFavorites = localStorage.getItem('favoriteQuestions');
+    if (!savedFavorites) return 0;
+    
+    try {
+      const favoriteIds: string[] = JSON.parse(savedFavorites);
+      return favoriteIds.filter(id => {
+        const idLower = id.toLowerCase();
+        return idLower.startsWith(area + '-') || idLower.includes(area);
+      }).length;
+    } catch {
+      return 0;
+    }
   }
 
   getDifficultyCount(difficulty: string): number {
@@ -558,6 +658,6 @@ export class FavoritesComponent implements OnInit {
   }
 
   hasAnyAreas(): boolean {
-    return Object.keys(this.favoritesData.favoritesByArea).length > 0;
+    return this.getAreaKeys().length > 0;
   }
 }

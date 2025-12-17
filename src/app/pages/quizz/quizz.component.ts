@@ -127,6 +127,7 @@ throw new Error('Method not implemented.');
   area: string = '';
   subject: string = '';
   specificQuestionId: string = ''; // ✅ Para modo single
+  specificQuestionIds: string[] = []; // ✅ Para modo smart/custom com múltiplas questões específicas
   
   // Timer
   timeSpent: number = 0;
@@ -262,25 +263,19 @@ throw new Error('Method not implemented.');
     this.loadSoundPreference();
     this.loadFavorites();
     
-    // ✅ LER PARÂMETROS DA ROTA E QUERY PARAMS JUNTOS
-    const routeParamsSub = this.route.params.subscribe(params => {
-      this.area = params['area'] || '';
-      this.subject = params['subject'] || '';
-      
-    });
-
-    // ✅ CORRIGIR A LÓGICA DE QUERY PARAMS PARA DETECTAR ÁREA ESPECÍFICA
+    // ✅ PRIMEIRO LER QUERY PARAMS (PRIORIDADE ALTA)
     const queryParamsSub = this.route.queryParams.subscribe(queryParams => {
       
       const queryMode = queryParams['mode'];
-      const queryArea = queryParams['area']; // ✅ CAPTURAR ÁREA DOS QUERY PARAMS
-      const querySubject = queryParams['subject']; // ✅ CAPTURAR SUBJECT DOS QUERY PARAMS
-      const queryQuestionId = queryParams['questionId']; // ✅ CAPTURAR QUESTION ID PARA MODO SINGLE
+      const queryArea = queryParams['area'];
+      const querySubject = queryParams['subject'];
+      const queryQuestionId = queryParams['questionId'];
+      const queryQuestionIds = queryParams['questionIds']; // ✅ ADICIONAR SUPORTE PARA MÚLTIPLAS QUESTÕES
       const queryType = queryParams['type'];
       const questionLimit = queryParams['limit'];
       const premiumParam = queryParams['premium'];
       
-      // ✅ PRIORIZAR ÁREA E SUBJECT DOS QUERY PARAMS (VINDOS DA HOME)
+      // ✅ PRIORIZAR QUERY PARAMS
       if (queryArea) {
         this.area = queryArea;
       }
@@ -294,9 +289,19 @@ throw new Error('Method not implemented.');
         this.specificQuestionId = queryQuestionId;
       }
       
+      // ✅ ARMAZENAR MÚLTIPLOS IDs PARA MODO SMART/CUSTOM
+      if (queryQuestionIds) {
+        this.specificQuestionIds = queryQuestionIds.split(',').map((id: string) => id.trim());
+        console.log('📋 IDs específicos carregados:', this.specificQuestionIds);
+      }
+      
       // ✅ DETERMINAR MODO CORRETO BASEADO NOS PARÂMETROS
       if (queryMode === 'single' && queryQuestionId) {
         this.mode = 'single';
+      } else if (queryMode === 'favorites') {
+        this.mode = 'favorites';
+      } else if (queryMode === 'area-favorites' && this.area) {
+        this.mode = 'area-favorites';
       } else if (queryMode === 'area' && this.area) {
         this.mode = 'area';
       } else if (queryMode === 'subject' && this.area && this.subject) {
@@ -342,8 +347,19 @@ throw new Error('Method not implemented.');
       // Inicializar o quiz apenas após ter todos os parâmetros
       this.initializeQuiz();
     });
+    
+    // ✅ DEPOIS LER ROUTE PARAMS (PRIORIDADE BAIXA - SÓ SE NÃO TIVER QUERY PARAMS)
+    const routeParamsSub = this.route.params.subscribe(params => {
+      // Só sobrescrever se não foi definido por query params
+      if (!this.area && params['area']) {
+        this.area = params['area'];
+      }
+      if (!this.subject && params['subject']) {
+        this.subject = params['subject'];
+      }
+    });
 
-    this.subscriptions.push(routeParamsSub, queryParamsSub);
+    this.subscriptions.push(queryParamsSub, routeParamsSub);
   }
   checkTrialLimits() {
     
@@ -825,6 +841,18 @@ throw new Error('Method not implemented.');
           this.loadCustomQuestions();
         } else {
           this.showError('Quiz Personalizado é exclusivo para usuários Premium');
+        }
+        break;
+        
+      case 'favorites':
+        this.loadFavoritesQuiz();
+        break;
+        
+      case 'area-favorites':
+        if (this.area) {
+          this.loadAreaFavoritesQuiz();
+        } else {
+          this.showError('Área não especificada para quiz de favoritos');
         }
         break;
         
@@ -1734,17 +1762,354 @@ throw new Error('Method not implemented.');
   // ✅ TAMBÉM IMPLEMENTE OS MÉTODOS DE CARREGAMENTO QUE ESTAVAM VAZIOS:
 
   private loadSmartQuestions(): void {
+    console.log('🧠 Carregando Quiz Inteligente com IDs:', this.specificQuestionIds);
     
-    // ✅ TEMPORÁRIO: Usar questões de emergência até implementar carregamento real
-    this.showSuccessMessage('🧠 Quiz Inteligente: usando questões demonstrativas');
-    this.generateEmergencyQuestions();
+    // ✅ VERIFICAR SE TEM IDs ESPECÍFICOS
+    if (!this.specificQuestionIds || this.specificQuestionIds.length === 0) {
+      this.showError('Nenhuma questão específica fornecida para o Quiz Inteligente');
+      this.generateEmergencyQuestions();
+      return;
+    }
+    
+    // ✅ CARREGAR QUESTÕES DA ÁREA E FILTRAR PELOS IDs
+    this.loadAreaQuestionsAndFilter(this.specificQuestionIds, '🧠 Quiz Inteligente');
   }
 
   private loadCustomQuestions(): void {
+    console.log('🎯 Carregando Quiz Personalizado com IDs:', this.specificQuestionIds);
     
-    // ✅ TEMPORÁRIO: Usar questões de emergência até implementar carregamento real
-    this.showSuccessMessage('🎯 Quiz Personalizado: usando questões demonstrativas');
-    this.generateEmergencyQuestions();
+    // ✅ VERIFICAR SE TEM IDs ESPECÍFICOS
+    if (!this.specificQuestionIds || this.specificQuestionIds.length === 0) {
+      this.showError('Nenhuma questão específica fornecida para o Quiz Personalizado');
+      this.generateEmergencyQuestions();
+      return;
+    }
+    
+    // ✅ CARREGAR QUESTÕES DA ÁREA E FILTRAR PELOS IDs
+    this.loadAreaQuestionsAndFilter(this.specificQuestionIds, '🎯 Quiz Personalizado');
+  }
+  
+  // ✅ NOVO MÉTODO PARA CARREGAR E FILTRAR QUESTÕES POR IDs
+  private async loadAreaQuestionsAndFilter(questionIds: string[], quizType: string): Promise<void> {
+    try {
+      this.loadingMessage = `Carregando ${quizType}...`;
+      
+      // ✅ 1. Carregar index
+      const indexResponse = await fetch('assets/data/index.json');
+      if (!indexResponse.ok) {
+        throw new Error('Falha ao carregar index.json');
+      }
+      
+      const indexData = await indexResponse.json();
+      
+      if (!indexData.structure[this.area]) {
+        throw new Error(`Área '${this.area}' não encontrada`);
+      }
+      
+      // ✅ 2. Carregar todas as questões da área
+      const subjects = indexData.structure[this.area];
+      const allQuestions: Question[] = [];
+      
+      for (const subject of subjects) {
+        try {
+          const filename = `assets/data/areas/${this.area}/${subject}.json`;
+          const response = await fetch(filename);
+          
+          if (response.ok) {
+            const fileData = await response.json();
+            if (fileData.questions && fileData.questions.length > 0) {
+              const questionsWithMeta = fileData.questions.map((q: any) => ({
+                ...q,
+                area: this.area,
+                subject: subject,
+                category: this.area
+              }));
+              
+              allQuestions.push(...questionsWithMeta);
+            }
+          }
+        } catch (error) {
+          console.warn(`Erro ao carregar ${subject}:`, error);
+        }
+      }
+      
+      // ✅ 3. Filtrar apenas as questões com os IDs especificados
+      const filteredQuestions = allQuestions.filter(q => {
+        const questionId = String(q.id);
+        
+        // Verificar match direto
+        if (questionIds.includes(questionId)) {
+          return true;
+        }
+        
+        // Verificar match sem prefixo da área (ex: "1" ao invés de "desenvolvimento-web-1")
+        const numericId = questionId.replace(/^.*-(\d+)$/, '$1');
+        if (questionIds.includes(numericId)) {
+          return true;
+        }
+        
+        return false;
+      });
+      
+      console.log(`📊 Questões filtradas: ${filteredQuestions.length} de ${allQuestions.length} total`);
+      
+      if (filteredQuestions.length === 0) {
+        throw new Error('Nenhuma questão encontrada com os IDs especificados');
+      }
+      
+      // ✅ 4. Configurar quiz
+      this.questions = filteredQuestions as Question[];
+      this.totalQuestions = filteredQuestions.length;
+      this.currentQuestionIndex = 0;
+      
+      this.setState(QuizState.IN_PROGRESS);
+      this.isLoading = false;
+      this.startTimer();
+      
+      this.showSuccessMessage(`${quizType} iniciado com ${filteredQuestions.length} questões!`);
+      
+    } catch (error) {
+      console.error('❌ Erro ao carregar questões específicas:', error);
+      this.showError('Erro ao carregar questões. Usando questões demonstrativas.');
+      this.generateEmergencyQuestions();
+    }
+  }
+  
+  // ✅ MÉTODO PARA CARREGAR QUIZ DE FAVORITOS
+  private async loadFavoritesQuiz(): Promise<void> {
+    console.log('⭐ Carregando Quiz de Favoritos');
+    
+    try {
+      this.loadingMessage = 'Carregando questões favoritas...';
+      
+      // Primeiro tentar usar os IDs específicos passados como parâmetro
+      let favoriteIds: string[] = [];
+      
+      if (this.specificQuestionIds && this.specificQuestionIds.length > 0) {
+        favoriteIds = this.specificQuestionIds;
+        console.log('✅ Usando IDs dos parâmetros da URL:', favoriteIds.length, 'questões');
+      } else {
+        // Se não tiver parâmetros, carregar do localStorage
+        const savedFavorites = localStorage.getItem('favoriteQuestions');
+        
+        if (!savedFavorites) {
+          this.showError('Você ainda não tem questões favoritas!');
+          this.generateEmergencyQuestions();
+          return;
+        }
+        
+        favoriteIds = JSON.parse(savedFavorites);
+        console.log('✅ Usando IDs do localStorage:', favoriteIds.length, 'questões');
+      }
+      
+      if (favoriteIds.length === 0) {
+        this.showError('Você precisa ter pelo menos uma questão favorita!');
+        this.generateEmergencyQuestions();
+        return;
+      }
+      
+      console.log('🔍 IDs dos favoritos:', favoriteIds);
+      
+      // Carregar index para descobrir todas as áreas
+      const indexResponse = await fetch('assets/data/index.json');
+      if (!indexResponse.ok) {
+        throw new Error('Falha ao carregar index.json');
+      }
+      
+      const indexData = await indexResponse.json();
+      const allQuestions: Question[] = [];
+      
+      console.log('📂 Carregando questões de todas as áreas...');
+      
+      // Carregar questões de TODAS as áreas disponíveis
+      for (const areaKey of Object.keys(indexData.structure)) {
+        const subjects = indexData.structure[areaKey];
+        
+        for (const subject of subjects) {
+          try {
+            const filename = `assets/data/areas/${areaKey}/${subject}.json`;
+            const response = await fetch(filename);
+            
+            if (response.ok) {
+              const fileData = await response.json();
+              if (fileData.questions && fileData.questions.length > 0) {
+                const questionsWithMeta = fileData.questions.map((q: any) => ({
+                  ...q,
+                  area: areaKey,
+                  subject: subject,
+                  category: areaKey
+                }));
+                
+                allQuestions.push(...questionsWithMeta);
+              }
+            }
+          } catch (error) {
+            console.warn(`Erro ao carregar ${areaKey}/${subject}:`, error);
+          }
+        }
+      }
+      
+      // Filtrar apenas as questões favoritas
+      console.log('🔍 Total de questões carregadas:', allQuestions.length);
+      console.log('🔍 IDs de favoritos procurados:', favoriteIds);
+      
+      const filteredQuestions = allQuestions.filter(q => {
+        const questionId = String(q.id);
+        const isMatch = favoriteIds.includes(questionId);
+        if (isMatch) {
+          console.log('✅ Match encontrado:', questionId, '-', q.question?.substring(0, 50));
+        }
+        return isMatch;
+      });
+      
+      console.log(`📊 Questões favoritas encontradas: ${filteredQuestions.length} de ${favoriteIds.length} favoritos`);
+      console.log('📊 IDs encontrados:', filteredQuestions.map(q => q.id));
+      
+      if (filteredQuestions.length === 0) {
+        console.warn('⚠️ Nenhuma questão favorita encontrada! Mostrando alguns IDs de exemplo das questões carregadas:');
+        console.warn('Exemplos de IDs disponíveis:', allQuestions.slice(0, 5).map(q => q.id));
+        throw new Error('Nenhuma questão favorita encontrada nos dados');
+      }
+      
+      // Configurar quiz com questões favoritas
+      this.questions = filteredQuestions as Question[];
+      this.totalQuestions = filteredQuestions.length;
+      this.currentQuestionIndex = 0;
+      
+      this.setState(QuizState.IN_PROGRESS);
+      this.isLoading = false;
+      this.startTimer();
+      
+      this.showSuccessMessage(`⭐ Quiz de Favoritos iniciado com ${filteredQuestions.length} questões!`);
+      
+    } catch (error) {
+      console.error('❌ Erro ao carregar quiz de favoritos:', error);
+      this.showError('Erro ao carregar favoritos. Usando questões demonstrativas.');
+      this.generateEmergencyQuestions();
+    }
+  }
+  
+  // ✅ MÉTODO PARA CARREGAR QUIZ DE FAVORITOS POR ÁREA
+  private async loadAreaFavoritesQuiz(): Promise<void> {
+    console.log('⭐📂 Carregando Quiz de Favoritos da Área:', this.area);
+    
+    try {
+      this.loadingMessage = `Carregando questões favoritas de ${this.area}...`;
+      
+      // Primeiro tentar usar os IDs específicos passados como parâmetro
+      let areaFavoriteIds: string[] = [];
+      
+      if (this.specificQuestionIds && this.specificQuestionIds.length > 0) {
+        areaFavoriteIds = this.specificQuestionIds;
+        console.log('✅ Usando IDs dos parâmetros da URL:', areaFavoriteIds.length, 'questões');
+      } else {
+        // Se não tiver parâmetros, carregar do localStorage e filtrar
+        const savedFavorites = localStorage.getItem('favoriteQuestions');
+        
+        if (!savedFavorites) {
+          this.showError('Você ainda não tem questões favoritas!');
+          this.generateEmergencyQuestions();
+          return;
+        }
+        
+        const allFavoriteIds: string[] = JSON.parse(savedFavorites);
+        
+        if (allFavoriteIds.length === 0) {
+          this.showError('Você ainda não tem questões favoritas!');
+          this.generateEmergencyQuestions();
+          return;
+        }
+        
+        // Filtrar apenas os favoritos da área específica
+        const areaPrefix = this.area + '-';
+        areaFavoriteIds = allFavoriteIds.filter((id: string) => 
+          id.toLowerCase().startsWith(areaPrefix) || id.toLowerCase().includes(this.area)
+        );
+        
+        console.log('✅ Usando IDs do localStorage filtrados:', areaFavoriteIds.length, 'questões');
+      }
+      
+      if (areaFavoriteIds.length === 0) {
+        this.showError(`Você não tem favoritos na área ${this.area}!`);
+        this.generateEmergencyQuestions();
+        return;
+      }
+      
+      console.log('🔍 IDs dos favoritos da área:', areaFavoriteIds);
+      
+      // Carregar index
+      const indexResponse = await fetch('assets/data/index.json');
+      if (!indexResponse.ok) {
+        throw new Error('Falha ao carregar index.json');
+      }
+      
+      const indexData = await indexResponse.json();
+      const allQuestions: Question[] = [];
+      
+      // Carregar questões apenas desta área
+      if (indexData.structure[this.area]) {
+        const subjects = indexData.structure[this.area];
+        
+        for (const subject of subjects) {
+          try {
+            const filename = `assets/data/areas/${this.area}/${subject}.json`;
+            const response = await fetch(filename);
+            
+            if (response.ok) {
+              const fileData = await response.json();
+              if (fileData.questions && fileData.questions.length > 0) {
+                const questionsWithMeta = fileData.questions.map((q: any) => ({
+                  ...q,
+                  area: this.area,
+                  subject: subject,
+                  category: this.area
+                }));
+                
+                allQuestions.push(...questionsWithMeta);
+              }
+            }
+          } catch (error) {
+            console.warn(`Erro ao carregar ${this.area}/${subject}:`, error);
+          }
+        }
+      }
+      
+      // Filtrar apenas as questões favoritas
+      console.log('🔍 Total de questões da área carregadas:', allQuestions.length);
+      
+      const filteredQuestions = allQuestions.filter(q => {
+        const questionId = String(q.id);
+        const isMatch = areaFavoriteIds.includes(questionId);
+        if (isMatch) {
+          console.log('✅ Match encontrado:', questionId, '-', q.question?.substring(0, 50));
+        }
+        return isMatch;
+      });
+      
+      console.log(`📊 Questões favoritas da área encontradas: ${filteredQuestions.length} de ${areaFavoriteIds.length} favoritos`);
+      
+      if (filteredQuestions.length === 0) {
+        console.warn('⚠️ Nenhuma questão favorita encontrada na área!');
+        console.warn('Exemplos de IDs disponíveis:', allQuestions.slice(0, 5).map(q => q.id));
+        throw new Error('Nenhuma questão favorita encontrada na área');
+      }
+      
+      // Configurar quiz
+      this.questions = filteredQuestions as Question[];
+      this.totalQuestions = filteredQuestions.length;
+      this.currentQuestionIndex = 0;
+      
+      this.setState(QuizState.IN_PROGRESS);
+      this.isLoading = false;
+      this.startTimer();
+      
+      this.showSuccessMessage(`⭐ Quiz de Favoritos - ${this.area} iniciado com ${filteredQuestions.length} questões!`);
+      
+    } catch (error) {
+      console.error('❌ Erro ao carregar quiz de favoritos da área:', error);
+      this.showError('Erro ao carregar favoritos. Usando questões demonstrativas.');
+      this.generateEmergencyQuestions();
+    }
   }
 
   // ✅ MÉTODO DE CARREGAMENTO MISTO (IMPLEMENTAÇÃO COMPLETA)

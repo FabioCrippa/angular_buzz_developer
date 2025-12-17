@@ -80,6 +80,10 @@ export class AreaComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 10;
   
+  // ✅ Estatísticas Detalhadas
+  showDetailedStats = false;
+  detailedStats: any = null;
+  
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -906,6 +910,324 @@ Clique em "Upgrade Premium" para desbloquear!`);
     this.showSuccessMessage('Recarregando dados...');
     this.loadAreaData();
   }
+
+  // ===============================================
+  // 📊 PREMIUM: ESTATÍSTICAS E EXPORTAÇÃO
+  // ===============================================
+  
+  viewStatistics(): void {
+    if (!this.isPremium) {
+      this.showPremiumFeatureMessage('Estatísticas Avançadas');
+      return;
+    }
+    
+    if (!this.areaData) {
+      this.showErrorMessage('Dados da área não disponíveis');
+      return;
+    }
+    
+    // ✅ Obter histórico da área
+    const history = this.progressService.getHistory().filter(h => h.area === this.areaName);
+    
+    if (history.length === 0) {
+      this.showErrorMessage('Você ainda não respondeu nenhuma questão desta área. Faça um quiz primeiro!');
+      return;
+    }
+    
+    // ✅ Calcular estatísticas detalhadas
+    const totalQuestions = history.length;
+    const correctAnswers = history.filter(h => h.correct).length;
+    const wrongAnswers = totalQuestions - correctAnswers;
+    const accuracy = Math.round((correctAnswers / totalQuestions) * 100);
+    const totalTimeSeconds = history.reduce((sum, h) => sum + (Number(h.timeSpent) || 0), 0);
+    const avgTimePerQuestion = Math.round(totalTimeSeconds / totalQuestions);
+    
+    // ✅ Agrupar por data
+    const byDate: { [key: string]: { total: number, correct: number } } = {};
+    history.forEach(h => {
+      const date = new Date(h.date).toLocaleDateString('pt-BR');
+      if (!byDate[date]) {
+        byDate[date] = { total: 0, correct: 0 };
+      }
+      byDate[date].total++;
+      if (h.correct) byDate[date].correct++;
+    });
+    
+    // ✅ Últimas 5 sessões
+    const recentDates = Object.keys(byDate).sort((a, b) => {
+      const dateA = new Date(a.split('/').reverse().join('-'));
+      const dateB = new Date(b.split('/').reverse().join('-'));
+      return dateB.getTime() - dateA.getTime();
+    }).slice(0, 5);
+    
+    const recentSessions = recentDates.map(date => ({
+      date,
+      total: byDate[date].total,
+      correct: byDate[date].correct,
+      accuracy: Math.round((byDate[date].correct / byDate[date].total) * 100)
+    }));
+    
+    // ✅ Armazenar estatísticas para exibição
+    this.detailedStats = {
+      areaName: this.areaData.displayName,
+      totalQuestions,
+      correctAnswers,
+      wrongAnswers,
+      accuracy,
+      avgTimePerQuestion,
+      totalTimeFormatted: this.formatTimeFromSeconds(totalTimeSeconds),
+      wrongQuestionsCount: this.getWrongQuestions().length,
+      recentSessions
+    };
+    
+    // ✅ Mostrar seção de estatísticas
+    this.showDetailedStats = true;
+    
+    // ✅ Scroll suave para a seção
+    setTimeout(() => {
+      const statsSection = document.getElementById('detailed-stats-section');
+      if (statsSection) {
+        statsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+    
+    this.showSuccessMessage('📊 Estatísticas carregadas!');
+  }
+  
+  closeDetailedStats(): void {
+    this.showDetailedStats = false;
+    this.detailedStats = null;
+  }
+  
+  exportProgress(): void {
+    if (!this.isPremium) {
+      this.showPremiumFeatureMessage('Exportar Progresso');
+      return;
+    }
+    
+    if (!this.areaData) {
+      this.showErrorMessage('Dados da área não disponíveis');
+      return;
+    }
+    
+    try {
+      // ✅ Obter histórico completo da área
+      const history = this.progressService.getHistory().filter(h => h.area === this.areaName);
+      
+      if (history.length === 0) {
+        this.showErrorMessage('Você ainda não respondeu nenhuma questão desta área. Faça um quiz primeiro!');
+        return;
+      }
+      
+      // ✅ Calcular estatísticas
+      const totalQuestions = history.length;
+      const correctAnswers = history.filter(h => h.correct).length;
+      const accuracy = Math.round((correctAnswers / totalQuestions) * 100);
+      const totalTimeSeconds = history.reduce((sum, h) => sum + (Number(h.timeSpent) || 0), 0);
+      
+      // ✅ Criar conteúdo HTML para o PDF
+      const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Relatório de Progresso - ${this.areaData.displayName}</title>
+          <style>
+            body {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              margin: 40px;
+              color: #333;
+            }
+            .header {
+              text-align: center;
+              margin-bottom: 40px;
+              border-bottom: 3px solid #f59e0b;
+              padding-bottom: 20px;
+            }
+            .header h1 {
+              color: #f59e0b;
+              margin: 0;
+              font-size: 32px;
+            }
+            .header p {
+              color: #666;
+              margin: 10px 0 0 0;
+            }
+            .summary {
+              background: #fffbeb;
+              border: 2px solid #fbbf24;
+              border-radius: 8px;
+              padding: 20px;
+              margin: 20px 0;
+            }
+            .summary h2 {
+              color: #f59e0b;
+              margin-top: 0;
+            }
+            .stats-grid {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 15px;
+              margin-top: 15px;
+            }
+            .stat-item {
+              background: white;
+              padding: 15px;
+              border-radius: 6px;
+              border: 1px solid #e5e7eb;
+            }
+            .stat-label {
+              font-size: 12px;
+              color: #666;
+              text-transform: uppercase;
+              margin-bottom: 5px;
+            }
+            .stat-value {
+              font-size: 24px;
+              font-weight: bold;
+              color: #111;
+            }
+            .history-section {
+              margin-top: 30px;
+            }
+            .history-section h2 {
+              color: #111;
+              border-bottom: 2px solid #e5e7eb;
+              padding-bottom: 10px;
+            }
+            table {
+              width: 100%;
+              border-collapse: collapse;
+              margin-top: 15px;
+            }
+            th, td {
+              padding: 12px;
+              text-align: left;
+              border-bottom: 1px solid #e5e7eb;
+            }
+            th {
+              background: #f9fafb;
+              font-weight: 600;
+              color: #111;
+            }
+            .correct {
+              color: #22c55e;
+              font-weight: bold;
+            }
+            .wrong {
+              color: #ef4444;
+              font-weight: bold;
+            }
+            .footer {
+              margin-top: 40px;
+              text-align: center;
+              color: #999;
+              font-size: 12px;
+              padding-top: 20px;
+              border-top: 1px solid #e5e7eb;
+            }
+            @media print {
+              body { margin: 20px; }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <h1>📊 Relatório de Progresso</h1>
+            <p><strong>${this.areaData.displayName}</strong></p>
+            <p>Gerado em: ${new Date().toLocaleDateString('pt-BR', { 
+              day: '2-digit', 
+              month: 'long', 
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            })}</p>
+          </div>
+          
+          <div class="summary">
+            <h2>📈 Resumo Geral</h2>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-label">Total de Questões</div>
+                <div class="stat-value">${totalQuestions}</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Acertos</div>
+                <div class="stat-value" style="color: #22c55e;">${correctAnswers}</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Erros</div>
+                <div class="stat-value" style="color: #ef4444;">${totalQuestions - correctAnswers}</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Precisão</div>
+                <div class="stat-value" style="color: #3b82f6;">${accuracy}%</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="history-section">
+            <h2>📋 Histórico Detalhado</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Resultado</th>
+                  <th>Tempo</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${history.map(h => `
+                  <tr>
+                    <td>#${h.questionId}</td>
+                    <td class="${h.correct ? 'correct' : 'wrong'}">
+                      ${h.correct ? '✅ Acertou' : '❌ Errou'}
+                    </td>
+                    <td>${h.timeSpent}s</td>
+                    <td>${new Date(h.date).toLocaleDateString('pt-BR')}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="footer">
+            <p>Relatório gerado por <strong>Quizzfy</strong> | Plataforma de Quizzes Inteligentes</p>
+            <p>Usuário Premium 👑</p>
+          </div>
+        </body>
+        </html>
+      `;
+      
+      // ✅ Criar janela de impressão
+      const printWindow = window.open('', '_blank', 'width=800,height=600');
+      if (printWindow) {
+        printWindow.document.write(htmlContent);
+        printWindow.document.close();
+        
+        // ✅ Esperar carregar e imprimir
+        printWindow.onload = () => {
+          printWindow.focus();
+          setTimeout(() => {
+            printWindow.print();
+          }, 250);
+        };
+        
+        this.showSuccessMessage('📄 PDF sendo gerado! Use a opção "Salvar como PDF" na janela de impressão.');
+      } else {
+        throw new Error('Não foi possível abrir janela de impressão');
+      }
+      
+    } catch (error) {
+      console.error('❌ Erro ao exportar progresso:', error);
+      this.showErrorMessage('Erro ao exportar progresso. Tente novamente.');
+    }
+  }
+
+  // ===============================================
+  // 🔧 MÉTODOS AUXILIARES
+  // ===============================================
 
   getAvailableSubjects(): string[] {
     const wrongQuestions = this.getWrongQuestions();

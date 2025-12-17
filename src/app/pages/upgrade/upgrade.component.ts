@@ -57,7 +57,7 @@ export class UpgradeComponent implements OnInit {
       period: 'sempre',
       description: 'Perfeito para conhecer a plataforma',
       features: [
-        '3 tentativas por área/dia',
+        '1 tentativa por área/dia',
         '4 áreas de estudo',
         'Questões básicas',
         'Explicações simples'
