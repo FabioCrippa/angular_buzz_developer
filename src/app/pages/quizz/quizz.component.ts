@@ -436,6 +436,8 @@ throw new Error('Method not implemented.');
       this.setState(QuizState.LOADING);
       this.loadingMessage = `Carregando questão da área ${this.area}...`;
       
+      console.log('🔍 loadSingleQuestion - Área:', this.area, 'ID:', this.specificQuestionId);
+      
       // Carregar index.json
       const indexResponse = await fetch('assets/data/index.json');
       if (!indexResponse.ok) {
@@ -445,11 +447,17 @@ throw new Error('Method not implemented.');
       const indexData = await indexResponse.json();
       
       if (!indexData.structure || !indexData.structure[this.area]) {
+        console.error('❌ Área não encontrada no index:', this.area);
+        console.log('Áreas disponíveis:', Object.keys(indexData.structure || {}));
         throw new Error(`Área ${this.area} não encontrada`);
       }
       
       const subjects = indexData.structure[this.area];
+      console.log('📚 Assuntos da área:', subjects);
       console.log('🔍 Procurando questão ID:', this.specificQuestionId, 'na área:', this.area);
+      
+      let totalQuestionsChecked = 0;
+      let sampleIds: any[] = [];
       
       // Procurar a questão em todos os assuntos da área
       for (const subject of subjects) {
@@ -458,10 +466,25 @@ throw new Error('Method not implemented.');
           if (response.ok) {
             const fileData = await response.json();
             if (fileData.questions) {
-              const foundQuestion = fileData.questions.find((q: any) => String(q.id) === String(this.specificQuestionId));
+              totalQuestionsChecked += fileData.questions.length;
+              
+              // Guardar alguns IDs de exemplo
+              if (sampleIds.length < 5) {
+                sampleIds.push(...fileData.questions.slice(0, 3).map((q: any) => ({ id: q.id, subject })));
+              }
+              
+              const foundQuestion = fileData.questions.find((q: any) => {
+                const qId = String(q.id);
+                const searchId = String(this.specificQuestionId);
+                const numericQId = Number(q.id);
+                const numericSearchId = Number(this.specificQuestionId);
+                
+                // Tentar match por string e por número
+                return qId === searchId || numericQId === numericSearchId;
+              });
               
               if (foundQuestion) {
-                console.log('✅ Questão encontrada em:', subject);
+                console.log('✅ Questão encontrada em:', subject, foundQuestion);
                 
                 // Configurar o quiz com apenas essa questão
                 this.questions = [{
@@ -489,6 +512,9 @@ throw new Error('Method not implemented.');
       }
       
       // Se não encontrou a questão
+      console.error('❌ Questão não encontrada. ID procurado:', this.specificQuestionId);
+      console.log('📊 Total de questões verificadas:', totalQuestionsChecked);
+      console.log('🔢 Exemplos de IDs encontrados:', sampleIds);
       throw new Error('Questão não encontrada');
       
     } catch (error) {

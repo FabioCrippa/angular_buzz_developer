@@ -2,6 +2,7 @@
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DataService } from '../../core/services/data.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -75,7 +76,8 @@ export class FavoritesComponent implements OnInit {
   constructor(
     private router: Router,
     private titleService: Title,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dataService: DataService
   ) {}
 
   ngOnInit(): void {
@@ -87,7 +89,7 @@ export class FavoritesComponent implements OnInit {
   // 📊 CARREGAMENTO DE DADOS
   // ===============================================
   
-  loadFavoritesData(): void {
+  async loadFavoritesData(): Promise<void> {
     this.isLoading = true;
     this.hasError = false;
 
@@ -100,11 +102,10 @@ export class FavoritesComponent implements OnInit {
       if (savedFavorites) {
         const favoriteIds = JSON.parse(savedFavorites);
         console.log('✅ IDs de favoritos carregados:', favoriteIds);
-        this.loadFavoriteQuestions(favoriteIds);
+        await this.loadFavoriteQuestions(favoriteIds);
       } else {
-        console.log('⚠️ Nenhum favorito encontrado, gerando exemplos');
-        // Gerar dados de exemplo se não houver favoritos
-        this.generateSampleFavorites();
+        console.log('⚠️ Nenhum favorito encontrado');
+        this.favorites = [];
       }
       
       this.calculateFavoritesData();
@@ -124,10 +125,102 @@ export class FavoritesComponent implements OnInit {
     }
   }
 
-  private loadFavoriteQuestions(favoriteIds: string[]): void {
-    // Simular carregamento de questões por ID
-    // Em uma aplicação real, isso faria chamadas para API
-    this.favorites = favoriteIds.map((id, index) => this.generateQuestionById(id, index));
+  private async loadFavoriteQuestions(favoriteIds: any[]): Promise<void> {
+    console.log('📝 IDs para carregar:', favoriteIds);
+    
+    if (!favoriteIds || favoriteIds.length === 0) {
+      this.favorites = [];
+      return;
+    }
+
+    try {
+      // 1. Carregar o index para saber onde estão as questões
+      const index = await this.dataService.getIndex().toPromise();
+      console.log('📚 Index carregado. Estrutura:', Object.keys(index));
+      console.log('📚 Áreas disponíveis:', Object.keys(index.structure || {}));
+
+      if (!index.structure || !index.areas) {
+        console.error('❌ Index mal formatado:', index);
+        this.favorites = [];
+        return;
+      }
+
+      // 2. Para cada ID, buscar a questão nos arquivos
+      const loadedQuestions: FavoriteQuestion[] = [];
+      
+      for (const favoriteId of favoriteIds) {
+        const numericId = Number(favoriteId);
+        console.log('🔍 Buscando questão ID:', numericId);
+        
+        let found = false;
+        
+        // Buscar em todas as áreas
+        for (const areaKey of Object.keys(index.structure)) {
+          const area = index.areas[areaKey];
+          const subjects = index.structure[areaKey];
+          
+          console.log(`  📁 Verificando área: ${areaKey} (${subjects.length} matérias)`);
+          
+          // Buscar em todas as matérias da área
+          for (const subjectKey of subjects) {
+            try {
+              const data = await this.dataService.getQuestions(areaKey, subjectKey).toPromise();
+              const questions = data.questions || data; // Suportar ambos os formatos
+              
+              console.log(`    📄 Carregou ${questions.length} questões de ${areaKey}/${subjectKey}`);
+              
+              // Buscar a questão pelo ID
+              const question = questions.find((q: any) => {
+                const qId = Number(q.id);
+                return qId === numericId;
+              });
+              
+              if (question) {
+                console.log('✅ Questão encontrada:', question.id, 'em', areaKey, '/', subjectKey);
+                
+                // Converter para FavoriteQuestion
+                loadedQuestions.push({
+                  id: String(question.id),
+                  question: question.question,
+                  area: areaKey,
+                  areaDisplayName: area.displayName || areaKey,
+                  difficulty: question.difficulty || 'Médio',
+                  subject: subjectKey,
+                  options: question.options || [],
+                  correctAnswer: question.correctAnswer || 0,
+                  explanation: question.explanation || '',
+                  addedDate: new Date().toISOString(),
+                  attempts: 0,
+                  icon: this.getAreaIcon(areaKey)
+                });
+                
+                found = true;
+                break; // Encontrou, pular para próximo ID
+              }
+            } catch (error) {
+              // Arquivo não existe, continuar
+              console.warn(`    ⚠️ Erro ao carregar ${areaKey}/${subjectKey}:`, error);
+            }
+          }
+          
+          // Se já encontrou a questão, pular para próximo ID
+          if (found) {
+            break;
+          }
+        }
+        
+        if (!found) {
+          console.warn('⚠️ Questão não encontrada:', numericId);
+        }
+      }
+      
+      this.favorites = loadedQuestions;
+      console.log('🎉 Total de favoritos carregados:', this.favorites.length);
+      
+    } catch (error) {
+      console.error('❌ Erro ao carregar questões favoritas:', error);
+      this.favorites = [];
+    }
   }
 
   private generateSampleFavorites(): void {
@@ -292,9 +385,9 @@ export class FavoritesComponent implements OnInit {
       favoritesByDifficulty: this.calculateByDifficulty(),
       lastUpdated: new Date().toISOString(),
       recentActivity: {
-        added: Math.floor(Math.random() * 5) + 1,
-        removed: Math.floor(Math.random() * 3),
-        quizzesTaken: Math.floor(Math.random() * 10) + 1
+        added: 0,
+        removed: 0,
+        quizzesTaken: 0
       }
     };
   }
@@ -441,6 +534,8 @@ export class FavoritesComponent implements OnInit {
   }
 
   startAreaQuiz(area: string): void {
+    console.log('🎯 Iniciando quiz da área:', area);
+    
     // Carregar IDs reais dos favoritos do localStorage
     const savedFavorites = localStorage.getItem('favoriteQuestions');
     
@@ -450,6 +545,7 @@ export class FavoritesComponent implements OnInit {
     }
 
     const allFavoriteIds: string[] = JSON.parse(savedFavorites);
+    console.log('📂 Total de favoritos:', allFavoriteIds);
     
     if (allFavoriteIds.length === 0) {
       this.showErrorMessage('Você ainda não tem questões favoritas!');
@@ -458,19 +554,31 @@ export class FavoritesComponent implements OnInit {
     
     // Filtrar IDs que pertencem à área (formato: "area-123" ou contém o nome da área)
     const areaKey = area.toLowerCase().replace(/ /g, '-');
-    const areaFavoriteIds = allFavoriteIds.filter((id: string) => {
-      const idLower = id.toLowerCase();
-      return idLower.startsWith(areaKey + '-') || idLower.includes(areaKey);
+    console.log('🔍 Buscando IDs da área:', areaKey);
+    
+    const areaFavoriteIds = allFavoriteIds.filter((id: any) => {
+      const idStr = String(id).toLowerCase();
+      return idStr.startsWith(areaKey + '-') || idStr.includes(areaKey);
     });
+    
+    console.log('✅ IDs encontrados:', areaFavoriteIds);
     
     if (areaFavoriteIds.length === 0) {
       this.showErrorMessage(`Nenhuma questão favorita encontrada para ${area}!`);
+      console.warn('⚠️ Nenhum ID match para área:', areaKey);
       return;
     }
 
     this.showSuccessMessage(`Iniciando quiz de ${area} com ${areaFavoriteIds.length} questões...`);
     
     setTimeout(() => {
+      console.log('🔗 Navegando para /quiz com params:', {
+        mode: 'area-favorites',
+        area: areaKey,
+        questionIds: areaFavoriteIds.join(','),
+        count: areaFavoriteIds.length
+      });
+      
       this.router.navigate(['/quiz'], {
         queryParams: {
           mode: 'area-favorites',
@@ -483,10 +591,24 @@ export class FavoritesComponent implements OnInit {
   }
 
   viewQuestion(question: FavoriteQuestion): void {
+    console.log('👁️ Visualizando questão:', question);
+    
+    if (!question || !question.id || !question.area) {
+      this.showErrorMessage('Dados da questão inválidos!');
+      console.error('Questão inválida:', question);
+      return;
+    }
+    
     this.showSuccessMessage('Abrindo questão...');
     
     // Navegar para o quiz no modo single question
     setTimeout(() => {
+      console.log('🔗 Navegando para /quiz com params:', {
+        mode: 'single',
+        area: question.area,
+        questionId: question.id
+      });
+      
       this.router.navigate(['/quiz'], {
         queryParams: {
           mode: 'single',
@@ -617,12 +739,13 @@ export class FavoritesComponent implements OnInit {
     if (!savedFavorites) return [];
     
     try {
-      const favoriteIds: string[] = JSON.parse(savedFavorites);
+      const favoriteIds: any[] = JSON.parse(savedFavorites);
       const areas = new Set<string>();
       
       // Extrair área de cada ID (formato: "area-123")
       favoriteIds.forEach(id => {
-        const parts = id.split('-');
+        const idStr = String(id);
+        const parts = idStr.split('-');
         if (parts.length >= 2) {
           // Área pode ter hífens (ex: "desenvolvimento-web")
           // Pegar tudo exceto o último elemento (que é o número)
@@ -643,10 +766,10 @@ export class FavoritesComponent implements OnInit {
     if (!savedFavorites) return 0;
     
     try {
-      const favoriteIds: string[] = JSON.parse(savedFavorites);
+      const favoriteIds: any[] = JSON.parse(savedFavorites);
       return favoriteIds.filter(id => {
-        const idLower = id.toLowerCase();
-        return idLower.startsWith(area + '-') || idLower.includes(area);
+        const idStr = String(id).toLowerCase();
+        return idStr.startsWith(area + '-') || idStr.includes(area);
       }).length;
     } catch {
       return 0;
