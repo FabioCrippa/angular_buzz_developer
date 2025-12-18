@@ -786,7 +786,17 @@
   }
   
   .favorites-grid {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .favorites-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .favorites-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -805,12 +815,17 @@
   }
   
   .page-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
   }
   
   .header-actions {
     width: 100%;
     justify-content: center;
+    flex-wrap: wrap;
   }
   
   .stats-grid {
@@ -823,12 +838,13 @@
   }
   
   .filters-content {
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-direction: column;
   }
   
   .controls-group {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
   }
   
   .favorites-grid {
@@ -843,10 +859,28 @@
   .section-header {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
+  }
+  
+  .question-header {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
+  .favorites-container {
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .favorites-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
   .question-header {
     flex-direction: column;
     gap: 1rem;
@@ -854,6 +888,8 @@
   
   .question-actions {
     align-self: flex-end;
+    width: 100%;
+    justify-content: flex-end;
   }
   
   .question-stats {
@@ -866,15 +902,22 @@
     align-items: center;
     justify-content: space-between;
     text-align: left;
+    width: 100%;
   }
   
   .card-actions {
     flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .card-actions button {
+    width: 100%;
   }
   
   .upgrade-content {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
   
   .area-chips-container mat-chip-set {
@@ -884,6 +927,29 @@
   .quick-area-actions {
     flex-direction: column;
     align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .stat-card {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .favorites-header {
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+  
+  .favorite-card {
+    padding: 1.2rem;
   }
 }
 

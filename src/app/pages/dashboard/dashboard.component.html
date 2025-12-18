@@ -25,7 +25,7 @@
     <header class="dashboard-header">
       <h1 class="dashboard-title">{{ appInfo.name }}</h1>
       <p class="dashboard-subtitle">{{ appInfo.description }}</p>
-      
+
       <!-- ✅ STATS CORRIGIDAS -->
       <div class="stats-overview">
         <div class="stat-item">
@@ -109,35 +109,6 @@
             </div>
             <div class="area-info">
               <h3>{{ area.displayName }}</h3>
-            </div>
-          </div>
-
-          <!-- ✅ PROGRESS SECTION -->
-          <div class="progress-section" *ngIf="area.available">
-            <div class="progress-header">
-              <span class="progress-label">Progresso</span>
-              <span class="progress-value">{{ area.progress }}%</span>
-            </div>
-            <div class="progress-bar">
-              <div 
-                class="progress-fill" 
-                [style.width.%]="area.progress"
-              ></div>
-            </div>
-          </div>
-
-          <!-- ✅ AREA STATS -->
-          <div class="area-stats" *ngIf="area.stats">
-            <div class="stat-badge" 
-                 [class.difficulty-easy]="area.stats.difficulty === 'Baixo'"
-                 [class.difficulty-medium]="area.stats.difficulty === 'Médio'"
-                 [class.difficulty-hard]="area.stats.difficulty === 'Alto'">
-              <mat-icon>bar_chart</mat-icon>
-              {{ area.stats.difficulty }}
-            </div>
-            <div class="stat-badge time-badge">
-              <mat-icon>schedule</mat-icon>
-              {{ area.stats.avgTime }}
             </div>
           </div>
 

@@ -44,9 +44,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   logoError = false;
   isDarkTheme = false;
   
-  // ✅ NOTIFICAÇÕES E TENTATIVAS
-  notificationCount = 0;
-  remainingAttempts = 3;
+  // ✅ TENTATIVAS
+  remainingAttempts = 1;
   showDashboardForGuests = true; // Dashboard disponível para guests
   
   // Controle de subscriptions
@@ -65,7 +64,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     
     this.subscribeToAuthChanges();
     this.subscribeToRouteChanges();
-    this.initializeNotifications();
   }
 
   ngOnDestroy(): void {
@@ -85,9 +83,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isLoggedIn = !!user;
         this.isPremium = this.authService.isPremium();
         
-        // Atualizar notificações baseadas no usuário
-        this.updateNotifications(user);
-        
         // Forçar detecção de mudanças
         this.cdr.detectChanges();
       });
@@ -105,16 +100,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       });
   }
 
-  private initializeNotifications(): void {
-    // Placeholder para sistema de notificações futuro
-    this.notificationCount = Math.floor(Math.random() * 5);
-  }
 
-  private updateNotifications(user: User | null): void {
-    if (user && !user.isPremium) {
-      this.notificationCount += 1; // Adicionar notificação de upgrade
-    }
-  }
 
   // ===============================================
   // 🔐 AUTENTICAÇÃO - VERSÃO CORRIGIDA
@@ -363,9 +349,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       const storedPremium = localStorage.getItem('isPremium');
       this.isPremium = storedPremium === 'true' || !!this.currentUser?.isPremium;
       this.isFreeTrial = !this.isPremium;
-  
-      // Atualiza notificações ou outras informações dependentes do usuário
-      this.updateNotifications(this.currentUser);
     }
     
     // ===============================================
@@ -516,25 +499,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // ===============================================
   // 🔔 OUTROS MÉTODOS
   // ===============================================
-  
-  openNotifications(): void {
-    alert('🔔 Notificações\n\n📚 2 novas questões adicionadas\n🎯 Meta semanal: 80% concluída');
-    this.notificationCount = 0;
-  }
-  
-  toggleTheme(): void {
-    this.isDarkTheme = !this.isDarkTheme;
-    
-    if (this.isDarkTheme) {
-      document.body.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    }
-    
-    this.closeMenus();
-  }
   
   onLogoError(event: any): void {
     this.logoError = true;

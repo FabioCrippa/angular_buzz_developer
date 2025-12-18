@@ -768,6 +768,24 @@
 /* =============================================== */
 /* 📱 RESPONSIVE BREAKPOINTS */
 /* =============================================== */
+
+/* Tablet Grande (até 1024px) */
+@media (max-width: 1024px) {
+  .app-header {
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    gap: 16px;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Tablet (até 768px) */
 @media (max-width: 768px) {
   .app-header {
     padding: 8px 16px;
@@ -785,13 +803,36 @@
   .brand-text {
     display: none;
   }
+  
+  /* Melhorar espaçamento dos botões */
+  .header-actions {
+    gap: 8px;
+  }
 
+  .auth-button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
   .auth-button span {
     display: none;
   }
+  
+  .auth-button mat-icon {
+    margin: 0;
+  }
 
+  .upgrade-button {
+    padding: 8px 12px;
+    min-width: auto;
+  }
+  
   .upgrade-button span {
     display: none;
+  }
+  
+  .upgrade-button mat-icon {
+    margin: 0;
   }
 
   .trial-badge {
@@ -805,16 +846,24 @@
 
   .user-button {
     padding: 8px;
+    min-width: auto;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
   }
 }
 
+/* Mobile (até 480px) */
 @media (max-width: 480px) {
   .app-header {
     padding: 8px 12px;
+    min-height: 56px;
   }
 
   .brand-name {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .logo-container {
@@ -824,6 +873,46 @@
 
   .trial-info {
     display: none;
+  }
+  
+  .header-actions {
+    gap: 6px;
+  }
+  
+  .auth-button,
+  .upgrade-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .icon-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Mobile Pequeno (até 360px) */
+@media (max-width: 360px) {
+  .app-header {
+    padding: 6px 10px;
+  }
+  
+  .brand-name {
+    font-size: 16px;
+  }
+  
+  .logo-container {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .header-actions {
+    gap: 4px;
+  }
+  
+  .auth-button,
+  .upgrade-button {
+    padding: 6px 8px;
   }
 }
 

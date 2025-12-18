@@ -7,6 +7,8 @@ import { catchError, map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FreeTrialService } from '../../core/services/free-trial.service';
 import { ProgressService } from 'src/app/core/services/progress.service';
+import { FavoritesService } from '../../core/services/favorites.service';
+import { AuthService } from '../../core/services/auth.service';
 import { Title } from '@angular/platform-browser';
 
 // ✅ INTERFACES ESSENCIAIS
@@ -87,8 +89,17 @@ throw new Error('Method not implemented.');
 startNewPremiumQuiz() {
 throw new Error('Method not implemented.');
 }
-navigateToUpgrade() {
-throw new Error('Method not implemented.');
+navigateToUpgrade(): void {
+  this.isNavigating = true;
+  this.router.navigate(['/upgrade'], {
+    queryParams: {
+      source: 'quiz-completion',
+      area: this.area,
+      score: this.score
+    }
+  }).finally(() => {
+    this.isNavigating = false;
+  });
 }
 getCurrentAreaRemainingAttempts() {
 throw new Error('Method not implemented.');
@@ -201,8 +212,10 @@ throw new Error('Method not implemented.');
     private router: Router,
     private snackBar: MatSnackBar,
     private freeTrialService: FreeTrialService,
-    private progressService: ProgressService, // <-- Adicione esta linha
-    private titleService: Title // <-- Adicione esta linha
+    private progressService: ProgressService,
+    private favoritesService: FavoritesService,
+    private authService: AuthService,
+    private titleService: Title
   ) {}
 
   // ✅ GETTERS PARA ESTADO
@@ -408,14 +421,29 @@ throw new Error('Method not implemented.');
     this.title = title;
     this.titleService.setTitle(title);
   }
-  loadFavorites() {
+  async loadFavorites() {
     try {
-      const saved = localStorage.getItem('favoriteQuestions');
-      if (saved) {
-        const favorites = JSON.parse(saved);
-        this.favoriteQuestions = new Set(favorites);
+      const user = this.authService.currentUserValue;
+      if (user && user.id) {
+        // Carregar do Firestore
+        const favorites = await this.favoritesService.loadFavorites(user.id);
+        this.favoriteQuestions = favorites;
+        
+        // Verificar se há favoritos no localStorage para migrar
+        const savedLocal = localStorage.getItem('favoriteQuestions');
+        if (savedLocal) {
+          await this.favoritesService.migrateFromLocalStorage(user.id, this.area || 'matematica');
+        }
+      } else {
+        // Usuário não logado - usar localStorage temporariamente
+        const saved = localStorage.getItem('favoriteQuestions');
+        if (saved) {
+          const favorites = JSON.parse(saved);
+          this.favoriteQuestions = new Set(favorites);
+        }
       }
     } catch (error) {
+      console.error('❌ Erro ao carregar favoritos:', error);
       this.favoriteQuestions = new Set();
     }
   }
@@ -1535,30 +1563,48 @@ throw new Error('Method not implemented.');
   // ===============================================
 
   // ✅ ALTERNAR FAVORITO DA QUESTÃO ATUAL
-  toggleFavorite(): void {
+  async toggleFavorite(): Promise<void> {
     if (!this.currentQuestion) {
       this.showErrorMessage('Nenhuma questão para favoritar');
       return;
     }
     
     const questionId = this.currentQuestion.id;
+    const user = this.authService.currentUserValue;
     
-    if (this.favoriteQuestions.has(questionId)) {
-      // ✅ REMOVER DOS FAVORITOS
-      this.favoriteQuestions.delete(questionId);
-      this.showSuccessMessage('⭐ Removido dos favoritos');
-      this.playCorrectSound();
-    } else {
-      // ✅ ADICIONAR AOS FAVORITOS
-      this.favoriteQuestions.add(questionId);
-      this.showSuccessMessage('💖 Adicionado aos favoritos');
-      this.playCorrectSound();
+    if (!user || !user.id) {
+      this.showErrorMessage('⚠️ Faça login para salvar favoritos permanentemente');
+      return;
     }
     
-    // ✅ SALVAR NO LOCALSTORAGE
-    this.saveFavorites();
-    
-    console.log('⭐ Favoritos atualizados:', Array.from(this.favoriteQuestions));
+    try {
+      if (this.favoriteQuestions.has(questionId)) {
+        // Remover dos favoritos
+        const success = await this.favoritesService.removeFavorite(user.id, questionId);
+        if (success) {
+          this.favoriteQuestions.delete(questionId);
+          this.showSuccessMessage('⭐ Removido dos favoritos');
+          this.playCorrectSound();
+        }
+      } else {
+        // Adicionar aos favoritos
+        const success = await this.favoritesService.addFavorite(
+          user.id,
+          questionId,
+          this.area || this.currentQuestion.category,
+          this.subject,
+          this.currentQuestion.difficulty
+        );
+        if (success) {
+          this.favoriteQuestions.add(questionId);
+          this.showSuccessMessage('💖 Adicionado aos favoritos');
+          this.playCorrectSound();
+        }
+      }
+    } catch (error) {
+      console.error('❌ Erro ao alternar favorito:', error);
+      this.showErrorMessage('❌ Erro ao salvar favorito');
+    }
   }
 
   // ✅ VERIFICAR SE QUESTÃO ATUAL É FAVORITA
@@ -1568,15 +1614,6 @@ throw new Error('Method not implemented.');
     }
     
     return this.favoriteQuestions.has(this.currentQuestion.id);
-  }
-
-  // ✅ SALVAR FAVORITOS NO LOCALSTORAGE
-  private saveFavorites(): void {
-    try {
-      const favoritesArray = Array.from(this.favoriteQuestions);
-      localStorage.setItem('favoriteQuestions', JSON.stringify(favoritesArray));
-    } catch (error) {
-    }
   }
 
   // ✅ OBTER ÍCONE DO FAVORITO

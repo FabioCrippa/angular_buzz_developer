@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   
   // ✅ PROPRIEDADES DA CLASSE
   appInfo: IndexData['appInfo'] = {
-    name: 'Quizzfy',
+    name: 'Sowlfy',
     version: '1.0.0',
     description: 'Plataforma completa de preparação profissional'
   };
@@ -65,7 +65,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Dashboard - Quizzfy');
+    this.titleService.setTitle('Dashboard - Sowlfy');
     this.loadDashboardData();
   }
 
@@ -77,7 +77,7 @@ export class DashboardComponent implements OnInit {
     this.http.get<IndexData>('assets/data/index.json').subscribe({
       next: (indexData) => {
         this.appInfo = {
-          name: 'Quizzfy',
+          name: 'Sowlfy',
           version: indexData.appInfo?.version || '1.0.0',
           description: 'Plataforma completa de preparação profissional'
         };

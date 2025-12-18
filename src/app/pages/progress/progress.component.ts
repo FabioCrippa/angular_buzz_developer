@@ -69,7 +69,7 @@ export class ProgressComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle('Meu Progresso - Quizzfy');
+    this.titleService.setTitle('Meu Progresso - Sowlfy');
     this.isLoading = true;
     
     this.dataService.getIndex().subscribe({

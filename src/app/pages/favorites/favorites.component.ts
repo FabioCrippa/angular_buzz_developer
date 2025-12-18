@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataService } from '../../core/services/data.service';
+import { FavoritesService } from '../../core/services/favorites.service';
+import { AuthService } from '../../core/services/auth.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -77,11 +79,13 @@ export class FavoritesComponent implements OnInit {
     private router: Router,
     private titleService: Title,
     private snackBar: MatSnackBar,
-    private dataService: DataService
+    private dataService: DataService,
+    private favoritesService: FavoritesService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle('Meus Favoritos - Quizzfy');
+    this.titleService.setTitle('Meus Favoritos - Sowlfy');
     this.loadFavoritesData();
   }
 
@@ -94,18 +98,27 @@ export class FavoritesComponent implements OnInit {
     this.hasError = false;
 
     try {
-      // Carregar favoritos do localStorage
-      const savedFavorites = localStorage.getItem('favoriteQuestions');
+      const user = this.authService.currentUserValue;
       
-      console.log('📂 Carregando favoritos do localStorage:', savedFavorites);
-      
-      if (savedFavorites) {
-        const favoriteIds = JSON.parse(savedFavorites);
-        console.log('✅ IDs de favoritos carregados:', favoriteIds);
-        await this.loadFavoriteQuestions(favoriteIds);
+      if (!user || !user.id) {
+        // Usuário não logado - tentar localStorage
+        const savedFavorites = localStorage.getItem('favoriteQuestions');
+        
+        if (savedFavorites) {
+          const favoriteIds = JSON.parse(savedFavorites);
+          await this.loadFavoriteQuestions(favoriteIds);
+          this.showWarningMessage('⚠️ Faça login para sincronizar favoritos entre dispositivos');
+        } else {
+          this.favorites = [];
+        }
       } else {
-        console.log('⚠️ Nenhum favorito encontrado');
-        this.favorites = [];
+        // Usuário logado - buscar do Firestore
+        const firestoreFavorites = await this.favoritesService.getAllFavorites(user.id);
+        console.log('✅ Favoritos carregados do Firestore:', firestoreFavorites.length);
+        
+        // Extrair apenas os IDs para carregar questões completas
+        const favoriteIds = firestoreFavorites.map(fav => fav.questionId);
+        await this.loadFavoriteQuestions(favoriteIds);
       }
       
       this.calculateFavoritesData();
@@ -166,6 +179,7 @@ export class FavoritesComponent implements OnInit {
             try {
               const data = await this.dataService.getQuestions(areaKey, subjectKey).toPromise();
               const questions = data.questions || data; // Suportar ambos os formatos
+              const metadata = data.metadata || {};
               
               console.log(`    📄 Carregou ${questions.length} questões de ${areaKey}/${subjectKey}`);
               
@@ -178,13 +192,28 @@ export class FavoritesComponent implements OnInit {
               if (question) {
                 console.log('✅ Questão encontrada:', question.id, 'em', areaKey, '/', subjectKey);
                 
+                // Mapear dificuldade do metadata
+                const difficultyMap: { [key: string]: 'Fácil' | 'Médio' | 'Difícil' } = {
+                  'fundamental': 'Fácil',
+                  'intermediário': 'Médio',
+                  'intermediario': 'Médio',
+                  'avançado': 'Difícil',
+                  'avancado': 'Difícil',
+                  'easy': 'Fácil',
+                  'medium': 'Médio',
+                  'hard': 'Difícil'
+                };
+                
+                const rawDifficulty = question.difficulty || metadata.difficulty || 'fundamental';
+                const mappedDifficulty = difficultyMap[rawDifficulty.toLowerCase()] || 'Médio';
+                
                 // Converter para FavoriteQuestion
                 loadedQuestions.push({
                   id: String(question.id),
                   question: question.question,
                   area: areaKey,
                   areaDisplayName: area.displayName || areaKey,
-                  difficulty: question.difficulty || 'Médio',
+                  difficulty: mappedDifficulty,
                   subject: subjectKey,
                   options: question.options || [],
                   correctAnswer: question.correctAnswer || 0,
@@ -484,17 +513,28 @@ export class FavoritesComponent implements OnInit {
   // 🎯 AÇÕES
   // ===============================================
   
-  removeFavorite(questionId: string): void {
+  async removeFavorite(questionId: string): Promise<void> {
     const question = this.favorites.find(f => f.id === questionId);
     if (!question) return;
 
     // Confirmar remoção
     if (confirm(`Remover "${question.question.substring(0, 50)}..." dos favoritos?`)) {
-      this.favorites = this.favorites.filter(f => f.id !== questionId);
+      const user = this.authService.currentUserValue;
       
-      // Atualizar localStorage
-      const favoriteIds = this.favorites.map(f => f.id);
-      localStorage.setItem('favoriteQuestions', JSON.stringify(favoriteIds));
+      if (user && user.id) {
+        // Remover do Firestore
+        await this.favoritesService.removeFavorite(user.id, Number(questionId));
+      } else {
+        // Remover do localStorage se não estiver logado
+        const savedFavorites = localStorage.getItem('favoriteQuestions');
+        if (savedFavorites) {
+          const favoriteIds = JSON.parse(savedFavorites).filter((id: any) => String(id) !== questionId);
+          localStorage.setItem('favoriteQuestions', JSON.stringify(favoriteIds));
+        }
+      }
+      
+      // Atualizar lista local
+      this.favorites = this.favorites.filter(f => f.id !== questionId);
       
       // Recalcular dados
       this.calculateFavoritesData();
@@ -724,6 +764,15 @@ export class FavoritesComponent implements OnInit {
     this.snackBar.open(message, 'Fechar', {
       duration: 5000,
       panelClass: ['error-snackbar'],
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+  }
+
+  private showWarningMessage(message: string): void {
+    this.snackBar.open(message, 'Fechar', {
+      duration: 4000,
+      panelClass: ['warning-snackbar'],
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
     });

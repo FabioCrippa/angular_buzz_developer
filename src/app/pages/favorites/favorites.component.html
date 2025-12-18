@@ -66,36 +66,25 @@
           </div>
         </div>
 
-        <div class="stat-card activity-card">
-          <div class="stat-icon">
-            <mat-icon>add_circle</mat-icon>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number">{{ favoritesData.recentActivity.added }}</span>
-            <span class="stat-label">Adicionados</span>
-            <span class="stat-sublabel">nos últimos 7 dias</span>
-          </div>
-        </div>
-
         <div class="stat-card quiz-card">
           <div class="stat-icon">
-            <mat-icon>quiz</mat-icon>
+            <mat-icon>school</mat-icon>
           </div>
           <div class="stat-content">
-            <span class="stat-number">{{ favoritesData.recentActivity.quizzesTaken }}</span>
-            <span class="stat-label">Quizzes Feitos</span>
-            <span class="stat-sublabel">com favoritos</span>
+            <span class="stat-number">{{ getDifficultyCount('Fácil') }}</span>
+            <span class="stat-label">Nível Fácil</span>
+            <span class="stat-sublabel">questões</span>
           </div>
         </div>
 
         <div class="stat-card removed-card">
           <div class="stat-icon">
-            <mat-icon>remove_circle</mat-icon>
+            <mat-icon>trending_up</mat-icon>
           </div>
           <div class="stat-content">
-            <span class="stat-number">{{ favoritesData.recentActivity.removed }}</span>
-            <span class="stat-label">Removidos</span>
-            <span class="stat-sublabel">recentemente</span>
+            <span class="stat-number">{{ getDifficultyCount('Difícil') }}</span>
+            <span class="stat-label">Nível Difícil</span>
+            <span class="stat-sublabel">questões</span>
           </div>
         </div>
       </div>
@@ -259,17 +248,13 @@
             <!-- 📊 QUESTION STATS -->
             <div class="question-stats">
               <div class="stat-item">
-                <mat-icon>repeat</mat-icon>
-                <span class="stat-value">{{ favorite.attempts }}</span>
+                <mat-icon>schedule</mat-icon>
+                <span class="stat-value">{{ favorite.addedDate | date:'dd/MM/yyyy' }}</span>
               </div>
               
               <div class="stat-item">
-                <mat-icon [style.color]="getAttemptStatusColor(favorite.isCorrect)">
-                  {{ getAttemptStatusIcon(favorite.isCorrect) }}
-                </mat-icon>
-                <span class="stat-value" [style.color]="getAttemptStatusColor(favorite.isCorrect)">
-                  {{ favorite.isCorrect === true ? 'Acertou' : favorite.isCorrect === false ? 'Errou' : 'Não tentou' }}
-                </span>
+                <mat-icon>bookmark</mat-icon>
+                <span class="stat-value">{{ favorite.subject }}</span>
               </div>
             </div>
 

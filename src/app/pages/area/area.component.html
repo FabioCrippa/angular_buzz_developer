@@ -53,10 +53,10 @@
         </div>
       </div>
       
-      <!-- 🧪 BOTÃO DE TESTE (remover em produção) -->
+      <!-- 🧪 BOTÃO DE TESTE (remover em produção)
       <button class="test-toggle" (click)="togglePremiumForTesting()">
         {{ isPremium ? '⭐ Premium' : '🌟 Free' }} 
-      </button>
+      </button> -->
     </div>
 
     <!-- 📚 BREADCRUMB -->
@@ -178,22 +178,44 @@
         </div>
       </div>
 
-      <!-- Progress Bar Visual -->
+      <!-- Estatísticas Qualitativas -->
       <div class="overall-progress">
-        <div class="progress-bar-container">
-          <div class="progress-bar">
-            <div 
-              class="progress-fill" 
-              [style.width.%]="getProgressPercentage()"
-              [style.background-color]="areaData.color"
-            ></div>
+        <div class="quality-stats-grid">
+          <!-- Taxa de Acerto Principal -->
+          <div class="main-accuracy-card">
+            <div class="accuracy-icon">🎯</div>
+            <div class="accuracy-content">
+              <span class="accuracy-value">{{ areaData.userProgress.accuracy }}%</span>
+              <span class="accuracy-label">de acerto na área</span>
+            </div>
           </div>
-          <span class="progress-text" *ngIf="isPremium">
-            {{ areaData.userProgress.completed }}/20 questões completadas
-          </span>
-          <span class="progress-text" *ngIf="!isPremium">
-            {{ areaData.userProgress.completed }}/10 questões completadas
-          </span>
+
+          <!-- Matérias Info -->
+          <div class="subjects-info-grid">
+            <div class="info-item">
+              <mat-icon>school</mat-icon>
+              <div class="info-content">
+                <span class="info-value">{{ getDominatedSubjects() }}</span>
+                <span class="info-label">matérias dominadas</span>
+              </div>
+            </div>
+
+            <div class="info-item best">
+              <mat-icon>emoji_events</mat-icon>
+              <div class="info-content">
+                <span class="info-value">{{ getBestSubject() }}</span>
+                <span class="info-label">melhor matéria</span>
+              </div>
+            </div>
+
+            <div class="info-item review">
+              <mat-icon>priority_high</mat-icon>
+              <div class="info-content">
+                <span class="info-value">{{ getSubjectToReview() }}</span>
+                <span class="info-label">para revisar</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

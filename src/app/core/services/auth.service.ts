@@ -359,6 +359,11 @@ export class AuthService {
     return this.currentUser$;
   }
 
+  // ✅ GETTER SÍNCRONO PARA VALOR ATUAL DO USUÁRIO
+  get currentUserValue(): User | null {
+    return this.currentUserSubject.value;
+  }
+
   isAuthenticated(): boolean {
     // ✅ VERIFICA PRIMEIRO O LOCALSTORAGE PARA EVITAR PROBLEMAS DE TIMING
     const token = this.getAuthToken();

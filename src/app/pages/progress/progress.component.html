@@ -57,7 +57,7 @@
           <div class="stat-content">
             <span class="stat-number">{{ progressData.overallStats.totalCompleted }}</span>
             <span class="stat-label">Questões Respondidas</span>
-            <span class="stat-sublabel">de {{ progressData.totalQuestions }} disponíveis</span>
+            <span class="stat-sublabel">no total</span>
           </div>
         </div>
 
@@ -173,16 +173,18 @@
 
           <!-- 📊 PROGRESS BAR -->
           <div class="progress-bar-container">
-            <div class="progress-bar">
-              <div 
-                class="progress-fill" 
-                [style.width.%]="area.progress"
-                [style.background-color]="getProgressColor(area.progress)"
-              ></div>
+            <div class="progress-stats-inline">
+              <div class="stat-inline">
+                <mat-icon>check_circle</mat-icon>
+                <span class="stat-value">{{ area.completed }}</span>
+                <span class="stat-label">respondidas</span>
+              </div>
+              <div class="stat-inline">
+                <mat-icon>target</mat-icon>
+                <span class="stat-value" [style.color]="getAccuracyColor(area.accuracy)">{{ area.accuracy }}%</span>
+                <span class="stat-label">acerto</span>
+              </div>
             </div>
-            <span class="progress-text">
-              {{ area.completed }}/{{ area.questionCount }} questões
-            </span>
           </div>
 
           <!-- 📈 AREA STATS -->

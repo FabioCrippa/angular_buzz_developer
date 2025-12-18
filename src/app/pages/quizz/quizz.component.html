@@ -413,8 +413,8 @@
             
             <!-- ✅ MENSAGEM QUANDO TODAS ESGOTADAS -->
             <p class="trial-exhausted" *ngIf="remainingAttempts === 0">
-              <i class="fas fa-clock"></i>
-              Todas as tentativas foram utilizadas. Elas serão renovadas automaticamente à meia-noite.
+              <i class="fas fa-info-circle"></i>
+              No plano gratuito você tem direito a <strong>1 tentativa diária</strong> por área. Suas tentativas são renovadas automaticamente todos os dias. Para ter <strong>acesso ilimitado</strong>, faça upgrade para Premium!
             </p>
           </div>
 
@@ -436,40 +436,55 @@
         <!-- ✅ BOTÃO REFAZER - DIFERENTE PARA PREMIUM VS FREE -->
         <button class="btn btn-primary" 
                 (click)="restartQuiz()"
-                [disabled]="isRestarting || (isFreeTrial && remainingAttempts === 0)">
+                [disabled]="isRestarting || (isFreeTrial && remainingAttempts === 0)"
+                [attr.aria-label]="isFreeTrial && remainingAttempts === 0 ? 'Refazer quiz - Sem tentativas disponíveis' : 'Refazer este quiz'"
+                [title]="isFreeTrial && remainingAttempts === 0 ? 'Você precisa fazer upgrade para refazer' : 'Refazer este quiz'"
+                [class.disabled-hint]="isFreeTrial && remainingAttempts === 0">
           <i class="fas" 
              [class.fa-redo]="!isRestarting" 
              [class.fa-spinner]="isRestarting"
              [class.fa-spin]="isRestarting"></i>
-          {{ isRestarting ? 'Reiniciando...' : (isFreeTrial && remainingAttempts === 0 ? 'Refazer (Sem tentativas)' : 'Refazer Quiz') }}
+          <span class="btn-text">{{ isRestarting ? 'Reiniciando...' : (isFreeTrial && remainingAttempts === 0 ? 'Sem Tentativas' : 'Refazer Quiz') }}</span>
         </button>
         
         <button class="btn btn-secondary" 
                 (click)="goHome()"
-                [disabled]="isNavigating">
+                [disabled]="isNavigating"
+                aria-label="Voltar para a página inicial"
+                title="Voltar ao início">
           <i class="fas" 
              [class.fa-home]="!isNavigating"
              [class.fa-spinner]="isNavigating"
              [class.fa-spin]="isNavigating"></i>
-          {{ isNavigating ? 'Carregando...' : 'Voltar ao Início' }}
+          <span class="btn-text">{{ isNavigating ? 'Carregando...' : 'Início' }}</span>
         </button>
         
         <!-- ✅ BOTÃO UPGRADE - SÓ APARECE SE FOR GRATUITO E SEM TENTATIVAS -->
-        <button class="btn btn-success" 
+        <button class="btn btn-success btn-upgrade" 
                 *ngIf="isFreeTrial && remainingAttempts === 0"
                 (click)="navigateToUpgrade()"
-                [disabled]="isNavigating">
-          <i class="fas fa-crown"></i>
-          Upgrade para Premium
+                [disabled]="isNavigating"
+                aria-label="Fazer upgrade para premium"
+                title="Acesso ilimitado com Premium">
+          <i class="fas" 
+             [class.fa-crown]="!isNavigating"
+             [class.fa-spinner]="isNavigating"
+             [class.fa-spin]="isNavigating"></i>
+          <span class="btn-text">{{ isNavigating ? 'Carregando...' : 'Upgrade Premium' }}</span>
         </button>
 
         <!-- ✅ BOTÃO NOVO QUIZ - SÓ APARECE SE FOR PREMIUM -->
         <button class="btn btn-info" 
                 *ngIf="!isFreeTrial"
                 (click)="startNewPremiumQuiz()"
-                [disabled]="isNavigating">
-          <i class="fas fa-plus"></i>
-          Novo Quiz Premium
+                [disabled]="isNavigating"
+                aria-label="Iniciar um novo quiz premium"
+                title="Praticar com outro quiz">
+          <i class="fas" 
+             [class.fa-plus]="!isNavigating"
+             [class.fa-spinner]="isNavigating"
+             [class.fa-spin]="isNavigating"></i>
+          <span class="btn-text">{{ isNavigating ? 'Carregando...' : 'Novo Quiz' }}</span>
         </button>
       </div>
     </div>
