@@ -15,6 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginComponent } from '../login/login.component';
 import { PremiumUpgradeDialogComponent } from '../premium-upgrade-dialog/premium-upgrade-dialog.component';
 import { PaymentService } from '../../../core/services/payment.service';
+import { GamificationService } from '../../../core/services/gamification.service';
 
 @Component({
   selector: 'app-header',
@@ -48,6 +49,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
   remainingAttempts = 1;
   showDashboardForGuests = true; // Dashboard disponível para guests
   
+  // ✅ GAMIFICAÇÃO
+  userLevel = 0;
+  userXP = 0;
+  levelName = 'Iniciante';
+  xpToNextLevel = 100;
+  levelProgress = 0;
+  
   // Controle de subscriptions
   private destroy$ = new Subject<void>();
   
@@ -57,7 +65,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private dialog: MatDialog,
     private snackBar: MatSnackBar,
     private paymentService: PaymentService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private gamificationService: GamificationService
   ) {}
 
   ngOnInit(): void {
@@ -83,9 +92,82 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.isLoggedIn = !!user;
         this.isPremium = this.authService.isPremium();
         
+        // Carregar gamificação quando usuário logado
+        if (user?.id) {
+          this.loadUserGamification(user.id);
+          this.subscribeToGamificationUpdates();
+        }
+        
         // Forçar detecção de mudanças
         this.cdr.detectChanges();
       });
+  }
+  
+  // ✅ ATUALIZAÇÃO AUTOMÁTICA DE GAMIFICAÇÃO
+  private subscribeToGamificationUpdates(): void {
+    this.gamificationService.progress$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(progress => {
+        if (progress) {
+          const oldLevel = this.userLevel;
+          
+          this.userXP = progress.xp || 0;
+          this.userLevel = progress.level || 1;
+          
+          const levelInfo = this.gamificationService.getLevelInfo(this.userXP);
+          this.levelName = levelInfo.levelName;
+          this.xpToNextLevel = levelInfo.xpToNextLevel;
+          this.levelProgress = levelInfo.progressPercentage;
+          
+          // Mostrar notificação se subiu de level
+          if (oldLevel > 0 && progress.level > oldLevel) {
+            this.showLevelUpNotification(progress.level, levelInfo.levelName);
+          }
+          
+          this.cdr.detectChanges();
+        }
+      });
+  }
+  
+  // ✅ NOTIFICAÇÃO DE LEVEL UP
+  private showLevelUpNotification(newLevel: number, levelName: string): void {
+    this.snackBar.open(
+      `🎉 LEVEL UP! Você alcançou o Level ${newLevel} - ${levelName}!`,
+      'Ver Perfil',
+      {
+        duration: 6000,
+        panelClass: ['success-snackbar', 'level-up-snackbar'],
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      }
+    ).onAction().subscribe(() => {
+      this.router.navigate(['/profile']);
+    });
+  }
+  
+  // ===============================================
+  // 🎮 GAMIFICAÇÃO
+  // ===============================================
+  
+  private async loadUserGamification(userId: string): Promise<void> {
+    try {
+      console.log('🎮 Carregando gamificação para:', userId);
+      const progress = await this.gamificationService.loadUserProgress(userId);
+      if (progress) {
+        this.userXP = progress.xp || 0;
+        this.userLevel = progress.level || 1;
+        
+        const levelInfo = this.gamificationService.getLevelInfo(this.userXP);
+        this.levelName = levelInfo.levelName;
+        this.xpToNextLevel = levelInfo.xpToNextLevel;
+        this.levelProgress = levelInfo.progressPercentage;
+        
+        console.log('✅ Gamificação carregada:', { xp: this.userXP, level: this.userLevel, progress: this.levelProgress });
+        this.cdr.detectChanges();
+      }
+    } catch (error) {
+      console.error('❌ Erro ao carregar gamificação:', error);
+    }
   }
 
   // ✅ VERSÃO CORRIGIDA

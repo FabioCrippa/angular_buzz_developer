@@ -100,26 +100,30 @@ export class FavoritesComponent implements OnInit {
     try {
       const user = this.authService.currentUserValue;
       
-      if (!user || !user.id) {
-        // Usuário não logado - tentar localStorage
-        const savedFavorites = localStorage.getItem('favoriteQuestions');
-        
-        if (savedFavorites) {
-          const favoriteIds = JSON.parse(savedFavorites);
-          await this.loadFavoriteQuestions(favoriteIds);
-          this.showWarningMessage('⚠️ Faça login para sincronizar favoritos entre dispositivos');
-        } else {
-          this.favorites = [];
-        }
-      } else {
-        // Usuário logado - buscar do Firestore
-        const firestoreFavorites = await this.favoritesService.getAllFavorites(user.id);
-        console.log('✅ Favoritos carregados do Firestore:', firestoreFavorites.length);
-        
-        // Extrair apenas os IDs para carregar questões completas
-        const favoriteIds = firestoreFavorites.map(fav => fav.questionId);
-        await this.loadFavoriteQuestions(favoriteIds);
+      if (!user?.id) {
+        console.warn('⚠️ Usuário não logado');
+        this.favorites = [];
+        this.isLoading = false;
+        this.showWarningMessage('⚠️ Faça login para acessar seus favoritos');
+        return;
       }
+
+      console.log('👤 Carregando favoritos para usuário:', user.id);
+      
+      // Buscar favoritos do Firestore para este usuário específico
+      const firestoreFavorites = await this.favoritesService.getAllFavorites(user.id);
+      console.log('✅ Favoritos do Firestore:', firestoreFavorites.length);
+      
+      if (firestoreFavorites.length === 0) {
+        this.favorites = [];
+        this.calculateFavoritesData();
+        this.isLoading = false;
+        this.showInfoMessage('Você ainda não tem favoritos. Marque questões durante os quizzes!');
+        return;
+      }
+      
+      // Carregar questões completas com dados do Firestore
+      await this.loadFavoriteQuestionsFromFirestore(firestoreFavorites);
       
       this.calculateFavoritesData();
       this.extractAvailableAreas();
@@ -127,7 +131,10 @@ export class FavoritesComponent implements OnInit {
       console.log('📊 Favoritos processados:', this.favorites.length, 'questões');
       
       this.isLoading = false;
-      this.showSuccessMessage('Favoritos carregados com sucesso!');
+      
+      if (this.favorites.length > 0) {
+        this.showSuccessMessage(`${this.favorites.length} favorito(s) carregado(s)!`);
+      }
       
     } catch (error) {
       console.error('❌ Erro ao carregar favoritos:', error);
@@ -138,10 +145,10 @@ export class FavoritesComponent implements OnInit {
     }
   }
 
-  private async loadFavoriteQuestions(favoriteIds: any[]): Promise<void> {
-    console.log('📝 IDs para carregar:', favoriteIds);
+  private async loadFavoriteQuestionsFromFirestore(firestoreFavorites: any[]): Promise<void> {
+    console.log('📝 Carregando', firestoreFavorites.length, 'favoritos do Firestore');
     
-    if (!favoriteIds || favoriteIds.length === 0) {
+    if (!firestoreFavorites || firestoreFavorites.length === 0) {
       this.favorites = [];
       return;
     }
@@ -149,50 +156,45 @@ export class FavoritesComponent implements OnInit {
     try {
       // 1. Carregar o index para saber onde estão as questões
       const index = await this.dataService.getIndex().toPromise();
-      console.log('📚 Index carregado. Estrutura:', Object.keys(index));
-      console.log('📚 Áreas disponíveis:', Object.keys(index.structure || {}));
 
-      if (!index.structure || !index.areas) {
-        console.error('❌ Index mal formatado:', index);
+      if (!index?.structure || !index?.areas) {
+        console.error('❌ Index mal formatado');
         this.favorites = [];
         return;
       }
 
-      // 2. Para cada ID, buscar a questão nos arquivos
+      // 2. Para cada favorito, buscar a questão completa
       const loadedQuestions: FavoriteQuestion[] = [];
       
-      for (const favoriteId of favoriteIds) {
-        const numericId = Number(favoriteId);
-        console.log('🔍 Buscando questão ID:', numericId);
+      for (const favorite of firestoreFavorites) {
+        const questionId = Number(favorite.questionId);
+        console.log('🔍 Buscando questão ID:', questionId, '| Adicionada em:', favorite.addedAt);
         
         let found = false;
         
         // Buscar em todas as áreas
         for (const areaKey of Object.keys(index.structure)) {
+          if (found) break;
+          
           const area = index.areas[areaKey];
           const subjects = index.structure[areaKey];
           
-          console.log(`  📁 Verificando área: ${areaKey} (${subjects.length} matérias)`);
-          
           // Buscar em todas as matérias da área
           for (const subjectKey of subjects) {
+            if (found) break;
+            
             try {
               const data = await this.dataService.getQuestions(areaKey, subjectKey).toPromise();
-              const questions = data.questions || data; // Suportar ambos os formatos
+              const questions = data.questions || data;
               const metadata = data.metadata || {};
               
-              console.log(`    📄 Carregou ${questions.length} questões de ${areaKey}/${subjectKey}`);
-              
               // Buscar a questão pelo ID
-              const question = questions.find((q: any) => {
-                const qId = Number(q.id);
-                return qId === numericId;
-              });
+              const question = questions.find((q: any) => Number(q.id) === questionId);
               
               if (question) {
-                console.log('✅ Questão encontrada:', question.id, 'em', areaKey, '/', subjectKey);
+                console.log('✅ Questão', questionId, 'encontrada em', areaKey, '/', subjectKey);
                 
-                // Mapear dificuldade do metadata
+                // Mapear dificuldade
                 const difficultyMap: { [key: string]: 'Fácil' | 'Médio' | 'Difícil' } = {
                   'fundamental': 'Fácil',
                   'intermediário': 'Médio',
@@ -207,7 +209,7 @@ export class FavoritesComponent implements OnInit {
                 const rawDifficulty = question.difficulty || metadata.difficulty || 'fundamental';
                 const mappedDifficulty = difficultyMap[rawDifficulty.toLowerCase()] || 'Médio';
                 
-                // Converter para FavoriteQuestion
+                // Converter para FavoriteQuestion mantendo dados do Firestore
                 loadedQuestions.push({
                   id: String(question.id),
                   question: question.question,
@@ -218,28 +220,23 @@ export class FavoritesComponent implements OnInit {
                   options: question.options || [],
                   correctAnswer: question.correctAnswer || 0,
                   explanation: question.explanation || '',
-                  addedDate: new Date().toISOString(),
+                  addedDate: favorite.addedAt || new Date().toISOString(),
                   attempts: 0,
                   icon: this.getAreaIcon(areaKey)
                 });
                 
                 found = true;
-                break; // Encontrou, pular para próximo ID
+                break;
               }
             } catch (error) {
               // Arquivo não existe, continuar
-              console.warn(`    ⚠️ Erro ao carregar ${areaKey}/${subjectKey}:`, error);
+              console.warn(`    ⚠️ Erro ao carregar ${areaKey}/${subjectKey}`);
             }
-          }
-          
-          // Se já encontrou a questão, pular para próximo ID
-          if (found) {
-            break;
           }
         }
         
         if (!found) {
-          console.warn('⚠️ Questão não encontrada:', numericId);
+          console.warn('⚠️ Questão não encontrada:', questionId);
         }
       }
       
@@ -250,6 +247,12 @@ export class FavoritesComponent implements OnInit {
       console.error('❌ Erro ao carregar questões favoritas:', error);
       this.favorites = [];
     }
+  }
+
+  // Método antigo mantido para compatibilidade se necessário
+  private async loadFavoriteQuestions(favoriteIds: any[]): Promise<void> {
+    // Deprecated - usar loadFavoriteQuestionsFromFirestore
+    console.warn('⚠️ Método loadFavoriteQuestions está deprecated');
   }
 
   private generateSampleFavorites(): void {
@@ -773,6 +776,15 @@ export class FavoritesComponent implements OnInit {
     this.snackBar.open(message, 'Fechar', {
       duration: 4000,
       panelClass: ['warning-snackbar'],
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+  }
+  
+  private showInfoMessage(message: string): void {
+    this.snackBar.open(message, 'OK', {
+      duration: 4000,
+      panelClass: ['info-snackbar'],
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
     });

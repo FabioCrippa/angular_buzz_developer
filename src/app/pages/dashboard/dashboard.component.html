@@ -42,6 +42,103 @@
         </div>
       </div>
     </header>
+    
+    <!-- 🎮 GAMIFICAÇÃO - ESTATÍSTICAS DO USUÁRIO -->
+    <section class="gamification-section" *ngIf="userProgress && !isLoadingGamification">
+      <h2 class="section-title">
+        <mat-icon class="title-icon">emoji_events</mat-icon>
+        Seu Progresso
+      </h2>
+      
+      <div class="gamification-grid">
+        
+        <!-- Level Card -->
+        <div class="gamification-card level-card">
+          <div class="card-header">
+            <mat-icon class="card-icon">military_tech</mat-icon>
+            <span class="card-title">Nível</span>
+          </div>
+          <div class="card-body">
+            <div class="level-display">
+              <span class="level-number">{{ userLevel }}</span>
+              <span class="level-name">{{ levelName }}</span>
+            </div>
+            <div class="xp-bar">
+              <div class="xp-fill" [style.width.%]="levelProgress"></div>
+              <span class="xp-text">{{ userXP }} XP</span>
+            </div>
+            <div class="xp-info">
+              <span>{{ xpToNextLevel }} XP para próximo nível</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Streak Card -->
+        <div class="gamification-card streak-card">
+          <div class="card-header">
+            <mat-icon class="card-icon fire">local_fire_department</mat-icon>
+            <span class="card-title">Sequência</span>
+          </div>
+          <div class="card-body">
+            <div class="streak-display">
+              <span class="streak-number">{{ userProgress.streak }}</span>
+              <span class="streak-label">dias</span>
+            </div>
+            <p class="streak-message" *ngIf="userProgress.streak > 0">
+              🔥 Continue assim! Mantenha sua sequência de estudos.
+            </p>
+            <p class="streak-message" *ngIf="userProgress.streak === 0">
+              💪 Complete um quiz hoje para iniciar sua sequência!
+            </p>
+          </div>
+        </div>
+        
+        <!-- Stats Card -->
+        <div class="gamification-card stats-card">
+          <div class="card-header">
+            <mat-icon class="card-icon">assessment</mat-icon>
+            <span class="card-title">Estatísticas</span>
+          </div>
+          <div class="card-body">
+            <div class="stat-row">
+              <span class="stat-label">Quizzes Completos</span>
+              <span class="stat-value">{{ userProgress.totalQuizzes }}</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Taxa de Acerto</span>
+              <span class="stat-value">
+                {{ userProgress.totalQuestions > 0 ? ((userProgress.correctAnswers / userProgress.totalQuestions) * 100).toFixed(1) : 0 }}%
+              </span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Tempo de Estudo</span>
+              <span class="stat-value">{{ userProgress.studyTimeMinutes }} min</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Activity Card -->
+        <div class="gamification-card activity-card">
+          <div class="card-header">
+            <mat-icon class="card-icon">history</mat-icon>
+            <span class="card-title">Atividade Recente</span>
+          </div>
+          <div class="card-body">
+            <div class="recent-quiz" *ngFor="let quiz of recentQuizzes.slice(0, 3)">
+              <div class="quiz-info">
+                <span class="quiz-area">{{ quiz.area }}</span>
+                <span class="quiz-score" [class.high-score]="quiz.score >= 80">{{ quiz.score }}%</span>
+              </div>
+              <span class="quiz-date">{{ getRelativeTime(quiz.completedAt) }}</span>
+            </div>
+            <p class="no-activity" *ngIf="recentQuizzes.length === 0">
+              Nenhuma atividade recente. Complete um quiz para começar!
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
 
     <!-- ✅ QUICK ACTIONS PREMIUM -->
     <section class="quick-actions-section">

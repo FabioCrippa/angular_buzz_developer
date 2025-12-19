@@ -245,7 +245,11 @@ export class ProgressComponent implements OnInit {
   }
 
   get filteredAndSortedAreas(): AreaProgress[] {
-    let filtered = [...this.progressData.areasProgress]; // ✅ Clone para evitar mutação
+    if (!this.progressData?.areasProgress?.length) {
+      return [];
+    }
+    
+    let filtered = [...this.progressData.areasProgress];
 
     switch (this.filterBy) {
       case 'completed':
@@ -257,8 +261,9 @@ export class ProgressComponent implements OnInit {
       case 'notStarted':
         filtered = filtered.filter(area => area.progress === 0);
         break;
+      case 'all':
       default:
-        // 'all' - não filtra
+        // 'all' - não filtra, retorna todos
         break;
     }
 
@@ -269,7 +274,7 @@ export class ProgressComponent implements OnInit {
         case 'accuracy':
           return b.accuracy - a.accuracy;
         case 'name':
-          return a.displayName.localeCompare(b.displayName, 'pt-BR'); // ✅ Localização PT-BR
+          return a.displayName.localeCompare(b.displayName, 'pt-BR');
         default:
           return 0;
       }

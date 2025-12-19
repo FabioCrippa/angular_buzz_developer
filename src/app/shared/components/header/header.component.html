@@ -180,6 +180,20 @@
               <span class="premium-status" *ngIf="isPremium">✨ Pro</span>
               <span class="free-status" *ngIf="!isPremium">🆓 Gratuito</span>
             </div>
+            
+            <!-- 🎮 LEVEL E XP -->
+            <div class="user-gamification">
+              <div class="level-badge" [title]="levelName">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="currentColor"/>
+                </svg>
+                <span>Level {{ userLevel }}</span>
+              </div>
+              <div class="xp-bar">
+                <div class="xp-progress" [style.width.%]="levelProgress"></div>
+                <span class="xp-text">{{ userXP }} XP</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

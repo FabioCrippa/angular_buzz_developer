@@ -6,6 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, forkJoin } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
+import { GamificationService, UserProgress } from '../../core/services/gamification.service';
+import { QuizHistoryService } from '../../core/services/quiz-history.service';
 
 // ✅ INTERFACES ATUALIZADAS
 interface IndexData {
@@ -55,18 +57,64 @@ export class DashboardComponent implements OnInit {
   hasError: boolean = false;
   errorMessage: string = '';
   Math = Math;
+  
+  // 🎮 GAMIFICAÇÃO
+  userProgress: UserProgress | null = null;
+  userLevel: number = 1;
+  userXP: number = 0;
+  levelName: string = 'Iniciante';
+  xpToNextLevel: number = 100;
+  levelProgress: number = 0;
+  recentQuizzes: any[] = [];
+  isLoadingGamification: boolean = true;
 
   constructor(
     private http: HttpClient,
-    private router: Router, // ✅ ADICIONAR NO CONSTRUCTOR
+    private router: Router,
     private titleService: Title,
-    private snackBar: MatSnackBar, // ✅ NOVO: para notificações
-    private authService: AuthService
+    private snackBar: MatSnackBar,
+    private authService: AuthService,
+    private gamificationService: GamificationService,
+    private quizHistoryService: QuizHistoryService
   ) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('Dashboard - Sowlfy');
     this.loadDashboardData();
+    this.loadGamificationData();
+  }
+  
+  // 🎮 CARREGAR DADOS DE GAMIFICAÇÃO
+  private async loadGamificationData(): Promise<void> {
+    try {
+      const user = this.authService.currentUserValue;
+      if (!user?.id) {
+        console.warn('Usuário não logado');
+        this.isLoadingGamification = false;
+        return;
+      }
+      
+      // Carregar progresso
+      this.userProgress = await this.gamificationService.loadUserProgress(user.id);
+      
+      if (this.userProgress) {
+        this.userXP = this.userProgress.xp;
+        this.userLevel = this.userProgress.level;
+        
+        const levelInfo = this.gamificationService.getLevelInfo(this.userXP);
+        this.levelName = levelInfo.levelName;
+        this.xpToNextLevel = levelInfo.xpToNextLevel;
+        this.levelProgress = levelInfo.progressPercentage;
+      }
+      
+      // Carregar histórico recente de quizzes
+      this.recentQuizzes = await this.quizHistoryService.getRecentQuizzes(user.id, 5);
+      
+      this.isLoadingGamification = false;
+    } catch (error) {
+      console.error('Erro ao carregar gamificação:', error);
+      this.isLoadingGamification = false;
+    }
   }
 
   // ✅ CARREGAMENTO DE DADOS
@@ -389,6 +437,22 @@ export class DashboardComponent implements OnInit {
 
   trackBySubject(index: number, subject: string): string {
     return subject;
+  }
+  
+  // ✅ FORMATAR TEMPO RELATIVO
+  getRelativeTime(date: Date): string {
+    const now = new Date();
+    const diffMs = now.getTime() - date.getTime();
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+    
+    if (diffMins < 1) return 'agora';
+    if (diffMins < 60) return `${diffMins}min atrás`;
+    if (diffHours < 24) return `${diffHours}h atrás`;
+    if (diffDays === 1) return 'ontem';
+    if (diffDays < 7) return `${diffDays} dias atrás`;
+    return date.toLocaleDateString('pt-BR');
   }
 
   // ✅ FUNÇÕES DE NOTIFICAÇÃO

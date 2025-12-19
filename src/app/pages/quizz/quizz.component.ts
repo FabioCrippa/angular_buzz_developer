@@ -1,11 +1,14 @@
 ﻿// ✅ VERSÃO CORRIGIDA - quizz.component.ts
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, forkJoin, of, Subscription } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FreeTrialService } from '../../core/services/free-trial.service';
+import { DailyAttemptsService } from '../../core/services/daily-attempts.service';
+import { QuizHistoryService, QuizResult, QuestionAnswer } from '../../core/services/quiz-history.service';
+import { GamificationService } from '../../core/services/gamification.service';
 import { ProgressService } from 'src/app/core/services/progress.service';
 import { FavoritesService } from '../../core/services/favorites.service';
 import { AuthService } from '../../core/services/auth.service';
@@ -212,10 +215,14 @@ throw new Error('Method not implemented.');
     private router: Router,
     private snackBar: MatSnackBar,
     private freeTrialService: FreeTrialService,
+    private dailyAttemptsService: DailyAttemptsService,
+    private quizHistoryService: QuizHistoryService,
+    private gamificationService: GamificationService,
     private progressService: ProgressService,
     private favoritesService: FavoritesService,
     private authService: AuthService,
-    private titleService: Title
+    private titleService: Title,
+    private cdr: ChangeDetectorRef
   ) {}
 
   // ✅ GETTERS PARA ESTADO
@@ -275,6 +282,9 @@ throw new Error('Method not implemented.');
     // Carregar preferências
     this.loadSoundPreference();
     this.loadFavorites();
+    
+    // ✅ Migrar tentativas antigas do localStorage
+    this.migrateAttemptsIfNeeded();
     
     // ✅ PRIMEIRO LER QUERY PARAMS (PRIORIDADE ALTA)
     const queryParamsSub = this.route.queryParams.subscribe(queryParams => {
@@ -374,8 +384,8 @@ throw new Error('Method not implemented.');
 
     this.subscriptions.push(queryParamsSub, routeParamsSub);
   }
-  checkTrialLimits() {
-    
+  
+  async checkTrialLimits() {
     if (!this.isFreeTrial) {
       this.canStartQuiz = true;
       this.showTrialWarning = false;
@@ -383,27 +393,51 @@ throw new Error('Method not implemented.');
       return;
     }
     
+    const user = this.authService.currentUserValue;
     const areaKey = this.area || 'desenvolvimento-web';
-    this.remainingAttempts = this.freeTrialService.getRemainingAttempts(areaKey);
-    this.canStartQuiz = this.remainingAttempts > 0;
     
-    if (this.remainingAttempts === 0) {
-      this.showTrialWarning = true;
-      this.trialMessage = `Você esgotou suas tentativas diárias para ${this.getCategoryTitle(areaKey)}. Tente outras áreas ou faça upgrade para Premium!`;
-    } else if (this.remainingAttempts <= 2) {
-      this.showTrialWarning = true;
-      this.trialMessage = `Restam apenas ${this.remainingAttempts} tentativa(s) hoje para ${this.getCategoryTitle(areaKey)}. Aproveite!`;
-    } else {
-      this.showTrialWarning = false;
-      this.trialMessage = `Você tem ${this.remainingAttempts} tentativas restantes hoje para ${this.getCategoryTitle(areaKey)}.`;
+    if (!user || !user.id) {
+      // Sem usuário logado - usar sistema antigo temporariamente
+      this.remainingAttempts = this.freeTrialService.getRemainingAttempts(areaKey);
+      this.canStartQuiz = this.remainingAttempts > 0;
+      
+      if (this.remainingAttempts === 0) {
+        this.showTrialWarning = true;
+        this.trialMessage = `Você esgotou suas tentativas diárias. Faça login para sincronizar entre dispositivos!`;
+      }
+      return;
     }
     
-    console.log('🎯 Trial status:', {
-      areaKey,
-      remainingAttempts: this.remainingAttempts,
-      canStartQuiz: this.canStartQuiz,
-      showWarning: this.showTrialWarning
-    });
+    // Usuário logado - usar Firestore
+    try {
+      const status = await this.dailyAttemptsService.canAttemptQuiz(user.id, areaKey, !this.isFreeTrial);
+      
+      this.remainingAttempts = status.remaining;
+      this.canStartQuiz = status.canAttempt;
+      
+      if (!status.canAttempt) {
+        this.showTrialWarning = true;
+        this.trialMessage = status.message;
+      } else if (status.remaining <= 0 && !this.isFreeTrial) {
+        this.showTrialWarning = true;
+        this.trialMessage = `Última tentativa! Aproveite para ${this.getCategoryTitle(areaKey)}.`;
+      } else {
+        this.showTrialWarning = false;
+        this.trialMessage = status.message;
+      }
+      
+      console.log('🎯 Trial status (Firestore):', {
+        areaKey,
+        remainingAttempts: this.remainingAttempts,
+        canStartQuiz: this.canStartQuiz,
+        showWarning: this.showTrialWarning
+      });
+    } catch (error) {
+      console.error('❌ Erro ao verificar tentativas:', error);
+      // Fallback para sistema antigo
+      this.remainingAttempts = this.freeTrialService.getRemainingAttempts(areaKey);
+      this.canStartQuiz = this.remainingAttempts > 0;
+    }
   }
   updateTitle() {
     let title = 'Quiz Interativo';
@@ -447,6 +481,18 @@ throw new Error('Method not implemented.');
       this.favoriteQuestions = new Set();
     }
   }
+  
+  async migrateAttemptsIfNeeded() {
+    try {
+      const user = this.authService.currentUserValue;
+      if (user && user.id) {
+        await this.dailyAttemptsService.migrateFromLocalStorage(user.id);
+      }
+    } catch (error) {
+      console.error('❌ Erro ao migrar tentativas:', error);
+    }
+  }
+  
   loadSoundPreference() {
     try {
       const saved = localStorage.getItem('soundEnabled');
@@ -1137,7 +1183,7 @@ throw new Error('Method not implemented.');
   }
 
   // ✅ COMPLETAR QUIZ
-  completeQuiz(): void {
+  async completeQuiz(): Promise<void> {
     
     this.finalTime = Math.floor((new Date().getTime() - this.startTime.getTime()) / 1000);
     const finalMinutes = Math.floor(this.finalTime / 60);
@@ -1156,21 +1202,40 @@ throw new Error('Method not implemented.');
     this.score = Math.round((this.correctAnswers / this.totalQuestions) * 100);
     this.analytics.endTime = new Date();
     
-    // ✅ REGISTRAR TENTATIVA APENAS AO COMPLETAR O QUIZ (FREE TRIAL)
+    // ✅ REGISTRAR TENTATIVA NO FIRESTORE
     if (this.isFreeTrial) {
+      const user = this.authService.currentUserValue;
       const areaKey = this.area || 'desenvolvimento-web';
+      const quizId = `quiz_${Date.now()}_${areaKey}`;
       
-      // Registrar a tentativa agora que o quiz foi completado
-      const registered = this.freeTrialService.registerAttempt(areaKey);
-      
-      if (registered) {
-        console.log(`✅ Tentativa registrada para ${areaKey}`);
+      if (user && user.id) {
+        // Registrar no Firestore
+        const registered = await this.dailyAttemptsService.registerAttempt(
+          user.id,
+          areaKey,
+          quizId,
+          !this.isFreeTrial
+        );
+        
+        if (registered) {
+          console.log(`✅ Tentativa registrada no Firestore para ${areaKey}`);
+          
+          // Atualizar status de tentativas
+          const status = await this.dailyAttemptsService.canAttemptQuiz(user.id, areaKey, !this.isFreeTrial);
+          this.remainingAttempts = status.remaining;
+          this.canStartQuiz = status.canAttempt;
+        }
+      } else {
+        // Fallback para localStorage se não estiver logado
+        const registered = this.freeTrialService.registerAttempt(areaKey);
+        if (registered) {
+          console.log(`✅ Tentativa registrada localmente para ${areaKey}`);
+        }
+        
+        const remaining = this.freeTrialService.getRemainingAttempts(areaKey);
+        this.remainingAttempts = remaining;
+        this.canStartQuiz = remaining > 0;
       }
-      
-      // Atualizar tentativas restantes
-      const remaining = this.freeTrialService.getRemainingAttempts(areaKey);
-      this.remainingAttempts = remaining;
-      this.canStartQuiz = remaining > 0;
     }
     
     // ✅ NÃO MOSTRAR SNACKBAR AO COMPLETAR - A TELA DE RESULTADOS JÁ MOSTRA TUDO
@@ -1179,6 +1244,9 @@ throw new Error('Method not implemented.');
       this.canStartQuiz = false;
       this.showTrialWarning = true;
     }
+    
+    // ✅ SALVAR HISTÓRICO DO QUIZ NO FIRESTORE
+    await this.saveQuizToHistory();
     
     console.log('🏁 Quiz finalizado!', {
       score: this.score,
@@ -1190,6 +1258,92 @@ throw new Error('Method not implemented.');
       mode: this.mode,
       remainingAttempts: this.isFreeTrial ? this.remainingAttempts : 'Ilimitado'
     });
+  }
+
+  // ===============================================
+  // 💾 SALVAR HISTÓRICO DO QUIZ
+  // ===============================================
+  
+  private async saveQuizToHistory(): Promise<void> {
+    try {
+      const user = this.authService.currentUserValue;
+      
+      if (!user || !user.id) {
+        console.log('⚠️ Usuário não logado - histórico não salvo');
+        return;
+      }
+
+      // Preparar respostas
+      const questionAnswers: QuestionAnswer[] = [];
+      
+      this.questions.forEach((question, index) => {
+        const selectedAnswer = this.answers[question.id];
+        const isCorrect = selectedAnswer === question.correct;
+        
+        questionAnswers.push({
+          questionId: question.id,
+          isCorrect,
+          selectedAnswer: selectedAnswer || '',
+          correctAnswer: question.correct,
+          timeSpent: this.analytics.timePerQuestion[index] || 0
+        });
+      });
+
+      // Criar resultado do quiz
+      const quizResult: QuizResult = {
+        id: `quiz_${Date.now()}_${this.area}`,
+        userId: user.id,
+        area: this.area || 'misto',
+        subject: this.subject,
+        mode: this.mode as any,
+        totalQuestions: this.totalQuestions,
+        correctAnswers: this.correctAnswers,
+        score: this.score,
+        timeSpent: this.finalTime,
+        completedAt: new Date(),
+        isPremium: !this.isFreeTrial,
+        answers: questionAnswers
+      };
+
+      // Salvar no Firestore
+      const saved = await this.quizHistoryService.saveQuizResult(quizResult);
+      
+      if (saved) {
+        console.log('✅ Histórico do quiz salvo com sucesso!');
+      }
+      
+      // ✅ ADICIONAR XP E ATUALIZAR GAMIFICAÇÃO
+      await this.addXPForQuizCompletion(user.id);
+      
+    } catch (error) {
+      console.error('❌ Erro ao salvar histórico:', error);
+    }
+  }
+
+  // ===============================================
+  // 🎮 ADICIONAR XP POR QUIZ COMPLETADO
+  // ===============================================
+  
+  private async addXPForQuizCompletion(userId: string): Promise<void> {
+    try {
+      const result = await this.gamificationService.addXPForQuiz(
+        userId,
+        this.correctAnswers,
+        this.totalQuestions,
+        this.finalTime
+      );
+
+      // Mostrar feedback de XP ganho
+      if (result.leveledUp) {
+        this.showSuccessMessage(`🎉 PARABÉNS! Você subiu para o Level ${result.newLevel}! (+${result.xpGained} XP)`);
+        console.log('🎉 LEVEL UP!', result);
+      } else {
+        this.showSuccessMessage(`✨ +${result.xpGained} XP ganhos!`);
+        console.log('✨ XP ganho:', result);
+      }
+    } catch (error) {
+      console.error('❌ Erro ao adicionar XP:', error);
+    }
   }
 
   // ✅ REINICIAR QUIZ
@@ -1572,38 +1726,66 @@ throw new Error('Method not implemented.');
     const questionId = this.currentQuestion.id;
     const user = this.authService.currentUserValue;
     
+    console.log('🔄 Toggle favorite - Question ID:', questionId, 'User:', user?.id);
+    
     if (!user || !user.id) {
-      this.showErrorMessage('⚠️ Faça login para salvar favoritos permanentemente');
+      this.showErrorMessage('⚠️ Faça login para salvar favoritos');
       return;
     }
     
     try {
-      if (this.favoriteQuestions.has(questionId)) {
+      const isFavorited = this.favoriteQuestions.has(questionId);
+      console.log('📍 Estado atual:', isFavorited ? 'JÁ FAVORITADO' : 'NÃO FAVORITADO');
+      
+      if (isFavorited) {
         // Remover dos favoritos
+        console.log('🗑️ Removendo favorito...');
         const success = await this.favoritesService.removeFavorite(user.id, questionId);
+        console.log('✅ Resultado da remoção:', success);
+        
         if (success) {
           this.favoriteQuestions.delete(questionId);
           this.showSuccessMessage('⭐ Removido dos favoritos');
-          this.playCorrectSound();
+          console.log('✅ Favorito removido com sucesso');
+        } else {
+          this.showErrorMessage('❌ Erro ao remover favorito');
         }
       } else {
         // Adicionar aos favoritos
+        console.log('💖 Adicionando favorito...');
+        console.log('📦 Dados:', {
+          userId: user.id,
+          questionId,
+          area: this.area || this.currentQuestion.category,
+          subject: this.subject,
+          difficulty: this.currentQuestion.difficulty
+        });
+        
         const success = await this.favoritesService.addFavorite(
           user.id,
           questionId,
-          this.area || this.currentQuestion.category,
-          this.subject,
-          this.currentQuestion.difficulty
+          this.area || this.currentQuestion.category || 'geral',
+          this.subject || 'geral',
+          this.currentQuestion.difficulty || 'Médio'
         );
+        
+        console.log('✅ Resultado da adição:', success);
+        
         if (success) {
           this.favoriteQuestions.add(questionId);
           this.showSuccessMessage('💖 Adicionado aos favoritos');
-          this.playCorrectSound();
+          console.log('✅ Favorito adicionado com sucesso');
+        } else {
+          this.showErrorMessage('❌ Erro ao adicionar favorito');
         }
       }
+      
+      // Forçar atualização da UI
+      this.cdr.detectChanges();
+      
     } catch (error) {
       console.error('❌ Erro ao alternar favorito:', error);
-      this.showErrorMessage('❌ Erro ao salvar favorito');
+      this.showErrorMessage('❌ Erro ao salvar favorito: ' + error);
     }
   }
 

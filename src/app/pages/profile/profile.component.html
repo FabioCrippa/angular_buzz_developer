@@ -39,11 +39,16 @@
       <div class="user-stats">
         <div class="stat-item">
           <span class="stat-label">Nível</span>
-          <span class="stat-value">{{ getUserLevel() }}</span>
+          <span class="stat-value level-badge">{{ getUserLevel() }}</span>
+          <span class="stat-sublabel">{{ getLevelName() }}</span>
         </div>
         <div class="stat-item">
-          <span class="stat-label">XP</span>
-          <span class="stat-value">{{ getUserXP() }}</span>
+          <span class="stat-label">XP Total</span>
+          <span class="stat-value xp-value">{{ getUserXP() }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Próximo Nível</span>
+          <span class="stat-value next-level">{{ xpToNextLevel }} XP</span>
         </div>
         <div class="stat-item">
           <span class="stat-label">Status</span>
@@ -54,16 +59,17 @@
       </div>
 
       <!-- XP Progress -->
-      <div class="xp-progress">
+      <div class="xp-progress-section">
         <div class="progress-header">
-          <span>Progresso para o próximo nível</span>
-          <span>{{ getUserXP() }} / {{ getNextLevelXP() }} XP</span>
+          <span class="progress-title">Progresso para Level {{ getUserLevel() + 1 }}</span>
+          <span class="progress-numbers">{{ getUserXP() }} / {{ getNextLevelXP() }} XP</span>
         </div>
-        <mat-progress-bar 
-          mode="determinate" 
-          [value]="getXPProgress()"
-          color="accent"
-        ></mat-progress-bar>
+        <div class="progress-bar-custom">
+          <div class="progress-fill" [style.width.%]="getXPProgress()"></div>
+        </div>
+        <div class="progress-footer">
+          <span class="progress-percentage">{{ getXPProgress().toFixed(1) }}%</span>
+        </div>
       </div>
     </div>
 
