@@ -31,7 +31,16 @@ router.post('/create-subscription', async (req, res) => {
       },
       back_url: `${process.env.FRONTEND_URL}/upgrade`,
       payer_email: email,
-      external_reference: userId
+      external_reference: userId,
+      // Métodos de pagamento habilitados
+      payment_methods_allowed: {
+        payment_types: [
+          { id: 'credit_card' },      // Cartão de crédito
+          { id: 'account_money' },    // Saldo Mercado Pago
+          { id: 'bank_transfer' }     // PIX
+        ],
+        payment_methods: []  // Sem restrições de bandeiras
+      }
     };
 
     const response = await preApprovalClient.create({ body: preapproval });
