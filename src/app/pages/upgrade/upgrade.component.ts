@@ -74,12 +74,10 @@ export class UpgradeComponent implements OnInit {
       features: [
         '✨ Tentativas ilimitadas',
         '📊 Relatórios detalhados de performance',
-        '🎯 Simulados personalizados',
+        '🎯 Quizzes inteligentes personalizados',
         '📚 Conteúdo exclusivo premium',
         '📈 Análise completa de evolução',
         '🏆 Metas personalizadas',
-        '🔄 Sincronização em tempo real',
-        '💾 Backup automático do progresso'
       ],
       recommended: true,
       badge: 'RECOMENDADO',
