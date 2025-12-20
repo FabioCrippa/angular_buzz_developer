@@ -105,32 +105,41 @@ export class ProfileComponent implements OnInit {
 
     this.isLoading = true;
 
-    // TODO: Implementar chamada à API para salvar
-    setTimeout(() => {
-      // Simulação de salvamento
-      const updatedUser = {
-        ...this.currentUser,
-        ...this.formData
-      };
+    // Atualizar perfil no Firestore
+    this.authService.updateUserProfile(this.currentUser.id, {
+      name: this.formData.name,
+      email: this.formData.email,
+      // Adicionar outros campos conforme necessário
+    }).subscribe({
+      next: () => {
+        this.isLoading = false;
+        this.isEditing = false;
+        
+        this.snackBar.open('✅ Perfil atualizado com sucesso!', 'OK', { 
+          duration: 3000,
+          panelClass: ['success-snackbar']
+        });
 
-      // Atualizar localStorage temporariamente
-      localStorage.setItem('sowlfy_user', JSON.stringify(updatedUser));
-      
-      this.isLoading = false;
-      this.isEditing = false;
-      
-      this.snackBar.open('✅ Perfil atualizado com sucesso!', 'OK', { 
-        duration: 3000,
-        panelClass: ['success-snackbar']
-      });
-
-      // Forçar atualização do currentUser no AuthService
-      this.authService['currentUserSubject'].next(updatedUser);
-    }, 1000);
+        // Atualizar dados locais
+        this.currentUser = {
+          ...this.currentUser,
+          ...this.formData
+        };
+      },
+      error: (error) => {
+        console.error('Erro ao salvar perfil:', error);
+        this.isLoading = false;
+        
+        this.snackBar.open('❌ Erro ao salvar perfil. Tente novamente.', 'OK', { 
+          duration: 3000,
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
   }
 
   changeAvatar(): void {
-    // TODO: Implementar upload de imagem
+    // TODO: Implementar upload de imagem para Firebase Storage
     this.snackBar.open('🚧 Upload de imagem em desenvolvimento', 'OK', { duration: 3000 });
   }
 
@@ -157,5 +166,53 @@ export class ProfileComponent implements OnInit {
   
   getLevelName(): string {
     return this.levelName;
+  }
+
+  deleteAccount(): void {
+    const confirmDelete = confirm(
+      '⚠️ ATENÇÃO!\n\n' +
+      'Você tem certeza que deseja DELETAR sua conta?\n\n' +
+      'Esta ação irá:\n' +
+      '• Excluir todos os seus dados\n' +
+      '• Remover todo seu progresso\n' +
+      '• Cancelar sua assinatura (se houver)\n' +
+      '• NÃO PODERÁ SER DESFEITA!\n\n' +
+      'Digite "DELETAR" para confirmar'
+    );
+
+    if (!confirmDelete) {
+      return;
+    }
+
+    // Segunda confirmação
+    const finalConfirm = prompt('Digite "DELETAR" em MAIÚSCULAS para confirmar:');
+    
+    if (finalConfirm !== 'DELETAR') {
+      this.snackBar.open('❌ Deleção cancelada', 'OK', { duration: 3000 });
+      return;
+    }
+
+    this.isLoading = true;
+
+    // Deletar conta
+    this.authService.deleteAccount(this.currentUser.id).subscribe({
+      next: () => {
+        this.snackBar.open('✅ Conta deletada com sucesso. Até logo! 👋', 'OK', { 
+          duration: 5000,
+          panelClass: ['success-snackbar']
+        });
+        
+        // Usuário será redirecionado para login automaticamente pelo logout
+      },
+      error: (error) => {
+        console.error('Erro ao deletar conta:', error);
+        this.isLoading = false;
+        
+        this.snackBar.open('❌ Erro ao deletar conta. Tente novamente.', 'OK', { 
+          duration: 3000,
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
   }
 }

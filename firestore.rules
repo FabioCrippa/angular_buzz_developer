@@ -4,36 +4,91 @@ service cloud.firestore {
   match /databases/{database}/documents {
     
     // ===============================================
+    // � FUNÇÕES AUXILIARES
+    // ===============================================
+    
+    // Verifica se o usuário está autenticado
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Verifica se o usuário é o dono do recurso
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Valida campos obrigatórios do usuário
+    function hasValidUserFields() {
+      return request.resource.data.keys().hasAll(['email', 'name', 'isPremium'])
+        && request.resource.data.email is string
+        && request.resource.data.name is string
+        && request.resource.data.isPremium is bool;
+    }
+    
+    // ===============================================
     // 👤 COLEÇÃO DE USUÁRIOS
     // ===============================================
     match /users/{userId} {
-      // Permitir leitura e escrita apenas para o próprio usuário autenticado
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      // Leitura: apenas próprio usuário
+      allow read: if isOwner(userId);
       
-      // Permitir criação de novo usuário durante cadastro
-      allow create: if request.auth != null && request.auth.uid == userId;
-    }
-    
-    // ===============================================
-    // 📊 COLEÇÃO DE PROGRESSO
-    // ===============================================
-    match /progress/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-    
-    // ===============================================
-    // ⭐ COLEÇÃO DE FAVORITOS
-    // ===============================================
-    match /favorites/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      // Criação: permitir durante cadastro com validação
+      allow create: if isOwner(userId) && hasValidUserFields();
+      
+      // Atualização: apenas próprio usuário, mas não pode alterar isPremium diretamente
+      allow update: if isOwner(userId) 
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['isPremium', 'subscriptionId', 'premiumExpiresAt'])
+        || request.resource.data.isPremium == resource.data.isPremium);
+      
+      // Deleção: apenas próprio usuário
+      allow delete: if isOwner(userId);
+      
+      // ===============================================
+      // 📊 SUBCOLEÇÃO: PROGRESSO
+      // ===============================================
+      match /progress/{areaId} {
+        allow read: if isOwner(userId);
+        allow write: if isOwner(userId);
+      }
+      
+      // ===============================================
+      // 📚 SUBCOLEÇÃO: HISTÓRICO DE QUIZZES
+      // ===============================================
+      match /quizHistory/{quizId} {
+        allow read: if isOwner(userId);
+        allow create: if isOwner(userId)
+          && request.resource.data.keys().hasAll(['areaId', 'score', 'totalQuestions', 'completedAt'])
+          && request.resource.data.score >= 0
+          && request.resource.data.totalQuestions > 0;
+        allow update, delete: if isOwner(userId);
+      }
+      
+      // ===============================================
+      // ⭐ SUBCOLEÇÃO: FAVORITOS
+      // ===============================================
+      match /favorites/{questionId} {
+        allow read: if isOwner(userId);
+        allow write: if isOwner(userId);
+      }
     }
     
     // ===============================================
     // 💳 COLEÇÃO DE ASSINATURAS
     // ===============================================
     match /subscriptions/{subscriptionId} {
-      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
-      allow write: if false; // Apenas backend pode escrever
+      // Leitura: apenas dono da assinatura
+      allow read: if isAuthenticated() 
+        && resource.data.userId == request.auth.uid;
+      
+      // Escrita: APENAS backend (Firebase Admin SDK)
+      allow write: if false;
+    }
+    
+    // ===============================================
+    // 🚫 NEGAR ACESSO A OUTRAS COLEÇÕES
+    // ===============================================
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }

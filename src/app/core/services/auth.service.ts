@@ -11,8 +11,8 @@ import { map, catchError, tap, retry, timeout, switchMap } from 'rxjs/operators'
 import { environment } from '../../../environments/environment';
 
 // ✅ FIREBASE IMPORTS
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User as FirebaseUser, updateProfile } from '@angular/fire/auth';
-import { Firestore, doc, setDoc, getDoc, updateDoc, collection, Timestamp } from '@angular/fire/firestore';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, User as FirebaseUser, updateProfile, deleteUser } from '@angular/fire/auth';
+import { Firestore, doc, setDoc, getDoc, updateDoc, collection, Timestamp, getDocs, deleteDoc } from '@angular/fire/firestore';
 
 // ===============================================
 // 📝 INTERFACES
@@ -775,5 +775,101 @@ export class AuthService {
     const signature = btoa('local-signature');
     
     return `${header}.${payload}.${signature}`;
+  }
+
+  // ===============================================
+  // 👤 MÉTODOS DE PERFIL
+  // ===============================================
+
+  /**
+   * Atualiza perfil do usuário no Firestore
+   */
+  updateUserProfile(userId: string, profileData: Partial<User>): Observable<any> {
+    return from(this.updateProfileFirestore(userId, profileData)).pipe(
+      catchError(error => {
+        console.error('❌ Erro ao atualizar perfil:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  private async updateProfileFirestore(userId: string, profileData: Partial<User>): Promise<void> {
+    const userDocRef = doc(this.firestore, `users/${userId}`);
+    
+    const updateData: any = {
+      ...profileData,
+      lastUpdated: Timestamp.now()
+    };
+
+    // Remover campos que não devem ser atualizados diretamente
+    delete updateData.id;
+    delete updateData.isPremium;
+    delete updateData.subscription;
+    delete updateData.createdAt;
+
+    await updateDoc(userDocRef, updateData);
+    
+    // Atualizar currentUser no BehaviorSubject
+    if (this.currentUserValue && this.currentUserValue.id === userId) {
+      this.currentUserSubject.next({
+        ...this.currentUserValue,
+        ...profileData
+      });
+    }
+  }
+
+  /**
+   * Deleta conta do usuário completamente
+   */
+  deleteAccount(userId: string): Observable<any> {
+    return from(this.deleteAccountFirestore(userId)).pipe(
+      tap(() => {
+        // Fazer logout após deletar
+        this.logout();
+      }),
+      catchError(error => {
+        console.error('❌ Erro ao deletar conta:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  private async deleteAccountFirestore(userId: string): Promise<void> {
+    try {
+      // 1. Deletar todas as subcoleções (progress, quizHistory, favorites)
+      const userDocRef = doc(this.firestore, `users/${userId}`);
+      
+      // Deletar progresso
+      const progressCollection = collection(this.firestore, `users/${userId}/progress`);
+      const progressSnapshot = await getDocs(progressCollection);
+      const progressDeletes = progressSnapshot.docs.map(doc => deleteDoc(doc.ref));
+      await Promise.all(progressDeletes);
+
+      // Deletar histórico
+      const historyCollection = collection(this.firestore, `users/${userId}/quizHistory`);
+      const historySnapshot = await getDocs(historyCollection);
+      const historyDeletes = historySnapshot.docs.map(doc => deleteDoc(doc.ref));
+      await Promise.all(historyDeletes);
+
+      // Deletar favoritos
+      const favoritesCollection = collection(this.firestore, `users/${userId}/favorites`);
+      const favoritesSnapshot = await getDocs(favoritesCollection);
+      const favoritesDeletes = favoritesSnapshot.docs.map(doc => deleteDoc(doc.ref));
+      await Promise.all(favoritesDeletes);
+
+      // 2. Deletar documento do usuário
+      await deleteDoc(userDocRef);
+
+      // 3. Deletar do Firebase Authentication
+      const user = this.auth.currentUser;
+      if (user && user.uid === userId) {
+        await deleteUser(user);
+      }
+
+      console.log('✅ Conta deletada com sucesso');
+    } catch (error) {
+      console.error('❌ Erro ao deletar conta:', error);
+      throw error;
+    }
   }
 }
