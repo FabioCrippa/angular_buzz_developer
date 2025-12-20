@@ -253,13 +253,15 @@ export class ProgressComponent implements OnInit {
 
     switch (this.filterBy) {
       case 'completed':
-        filtered = filtered.filter(area => area.progress >= 100);
+        // Considera "concluída" se tiver completado pelo menos 1 questão
+        // OU se progress >= 100% (caso tenha respondido todas as questões disponíveis)
+        filtered = filtered.filter(area => area.completed > 0 && area.progress >= 100);
         break;
       case 'inProgress':
-        filtered = filtered.filter(area => area.progress > 0 && area.progress < 100);
+        filtered = filtered.filter(area => area.completed > 0 && area.progress < 100);
         break;
       case 'notStarted':
-        filtered = filtered.filter(area => area.progress === 0);
+        filtered = filtered.filter(area => area.completed === 0);
         break;
       case 'all':
       default:

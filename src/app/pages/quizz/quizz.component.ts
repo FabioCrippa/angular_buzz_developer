@@ -1245,6 +1245,14 @@ throw new Error('Method not implemented.');
       this.showTrialWarning = true;
     }
     
+    // ✅ ATUALIZAR STATUS DE TODAS AS ÁREAS PARA EXIBIÇÃO CORRETA
+    if (this.isFreeTrial) {
+      const currentUser = this.authService.currentUserValue;
+      if (currentUser && currentUser.id) {
+        await this.updateAllAreasStatus(currentUser.id);
+      }
+    }
+    
     // ✅ SALVAR HISTÓRICO DO QUIZ NO FIRESTORE
     await this.saveQuizToHistory();
     
@@ -1957,13 +1965,34 @@ throw new Error('Method not implemented.');
       return allAreas.map(area => ({ ...area, remaining: -1 }));
     }
 
+    const user = this.authService.currentUserValue;
+    
     // Para free trial, filtrar apenas áreas com tentativas disponíveis
-    return allAreas
-      .map(area => ({
+    const areasWithAttempts = allAreas.map(area => {
+      let remaining = 0;
+      
+      // Se for a área atual, usar o valor já calculado
+      if (area.key === this.area) {
+        remaining = this.remainingAttempts;
+      } else {
+        // Para outras áreas, consultar o serviço
+        if (user && user.id) {
+          // Usar método síncrono - buscar do cache/estado local
+          const cachedStatus = this.freeTrialService.getRemainingAttempts(area.key);
+          remaining = cachedStatus;
+        } else {
+          remaining = this.freeTrialService.getRemainingAttempts(area.key);
+        }
+      }
+      
+      return {
         ...area,
-        remaining: this.freeTrialService.getRemainingAttempts(area.key)
-      }))
-      .filter(area => area.remaining > 0);
+        remaining
+      };
+    });
+
+    // Filtrar apenas áreas com tentativas > 0
+    return areasWithAttempts.filter(area => area.remaining > 0);
   }
 
   // ✅ MÉTODO PARA NAVEGAR PARA ÁREA ESPECÍFICA
@@ -1974,6 +2003,19 @@ throw new Error('Method not implemented.');
         area: areaKey
       }
     });
+  }
+
+  // ✅ ATUALIZAR STATUS DE TODAS AS ÁREAS
+  private async updateAllAreasStatus(userId: string): Promise<void> {
+    const allAreas = ['desenvolvimento-web', 'portugues', 'matematica', 'informatica'];
+    
+    for (const areaKey of allAreas) {
+      const status = await this.dailyAttemptsService.canAttemptQuiz(userId, areaKey, false);
+      // Atualizar também no localStorage para manter sincronizado
+      if (status.remaining === 0) {
+        this.freeTrialService.registerAttempt(areaKey);
+      }
+    }
   }
 
   // ✅ MÉTODOS DE NAVEGAÇÃO

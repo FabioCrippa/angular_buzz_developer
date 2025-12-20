@@ -274,13 +274,16 @@
 }
 
 .level-number {
-  display: block;
+  display: inline-block;
   font-size: 3rem;
   font-weight: 700;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  min-width: 80px;
+  line-height: 1;
+  padding: 0.5rem;
 }
 
 .level-name {
@@ -333,10 +336,13 @@
 }
 
 .streak-number {
-  display: block;
+  display: inline-block;
   font-size: 3rem;
   font-weight: 700;
   color: #ff6b35;
+  min-width: 80px;
+  line-height: 1;
+  padding: 0.5rem;
 }
 
 .streak-label {

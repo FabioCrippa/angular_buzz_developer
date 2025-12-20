@@ -65,10 +65,8 @@
           <span class="progress-numbers">{{ getUserXP() }} / {{ getNextLevelXP() }} XP</span>
         </div>
         <div class="progress-bar-custom">
-          <div class="progress-fill" [style.width.%]="getXPProgress()"></div>
-        </div>
-        <div class="progress-footer">
           <span class="progress-percentage">{{ getXPProgress().toFixed(1) }}%</span>
+          <div class="progress-fill" [style.width.%]="getXPProgress()"></div>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { GamificationService, UserProgress } from '../../core/services/gamification.service';
 
 @Component({
@@ -37,7 +38,8 @@ export class ProfileComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private snackBar: MatSnackBar,
-    private gamificationService: GamificationService
+    private gamificationService: GamificationService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
