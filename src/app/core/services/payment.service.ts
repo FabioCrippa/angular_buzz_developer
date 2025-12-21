@@ -256,13 +256,19 @@ export class PaymentService {
     })
       .pipe(
         tap((response: any) => {
+          console.log('📦 Resposta completa do backend:', response);
           // Redirecionar para o checkout do Mercado Pago
-          if (response.initPoint) {
-            window.location.href = response.initPoint;
+          // Backend pode retornar init_point ou initPoint
+          const checkoutUrl = response.initPoint || response.init_point;
+          if (checkoutUrl) {
+            console.log('🚀 Redirecionando para:', checkoutUrl);
+            window.location.href = checkoutUrl;
+          } else {
+            console.error('❌ URL de checkout não encontrada na resposta');
           }
         }),
         catchError(error => {
-          console.error('Erro ao criar assinatura:', error);
+          console.error('❌ Erro ao criar assinatura:', error);
           return throwError(() => error);
         })
       );
