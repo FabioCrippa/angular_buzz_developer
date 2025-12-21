@@ -20,8 +20,14 @@ router.post('/create-subscription', async (req, res) => {
   try {
     const { email, userId } = req.body;
 
-    if (!email || !userId) {
-      return res.status(400).json({ error: 'Email e userId são obrigatórios' });
+    console.log('📩 Requisição recebida:', { email, userId });
+
+    if (!email) {
+      return res.status(400).json({ error: 'Email é obrigatório' });
+    }
+
+    if (!userId) {
+      return res.status(400).json({ error: 'userId é obrigatório' });
     }
 
     // Criar preferência de assinatura
@@ -38,7 +44,16 @@ router.post('/create-subscription', async (req, res) => {
       external_reference: userId
     };
 
+    console.log('📋 Criando assinatura no Mercado Pago...');
+    console.log('🔑 Access Token:', process.env.MP_ACCESS_TOKEN?.substring(0, 20) + '...');
+    
     const response = await preApprovalClient.create({ body: preapproval });
+
+    console.log('✅ Assinatura criada:', {
+      id: response.id,
+      status: response.status,
+      init_point: response.init_point
+    });
 
     res.json({
       subscriptionId: response.id,
@@ -46,7 +61,7 @@ router.post('/create-subscription', async (req, res) => {
       status: response.status
     });
   } catch (error) {
-    console.error('Subscription creation error:', error);
+    console.error('❌ Erro ao criar assinatura:', error);
     res.status(500).json({ 
       error: 'Erro ao criar assinatura',
       details: error.message 

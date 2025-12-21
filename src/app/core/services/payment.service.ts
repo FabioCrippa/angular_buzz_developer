@@ -249,13 +249,16 @@ export class PaymentService {
   }
 
   // ✅ CRIAR ASSINATURA MERCADO PAGO
-  createSubscription(email: string): Observable<any> {
-    return this.http.post(`${this.API_URL}/api/payments/create-subscription`, { email })
+  createSubscription(email: string, userId?: string): Observable<any> {
+    return this.http.post(`${this.API_URL}/api/payments/create-subscription`, { 
+      email,
+      userId: userId || this.authService.currentUserValue?.id || 'temp-user'
+    })
       .pipe(
         tap((response: any) => {
           // Redirecionar para o checkout do Mercado Pago
-          if (response.init_point) {
-            window.location.href = response.init_point;
+          if (response.initPoint) {
+            window.location.href = response.initPoint;
           }
         }),
         catchError(error => {

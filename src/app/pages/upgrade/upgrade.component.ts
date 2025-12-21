@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaymentService } from '../../core/services/payment.service';
 import { MercadopagoService } from '../../core/services/mercadopago.service';
+import { AuthService } from '../../core/services/auth.service';
 
 interface PricingPlan {
   id: string;
@@ -141,7 +142,8 @@ export class UpgradeComponent implements OnInit {
     private route: ActivatedRoute,
     private snackBar: MatSnackBar,
     private paymentService: PaymentService,
-    private mercadoPagoService: MercadopagoService
+    private mercadoPagoService: MercadopagoService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -193,18 +195,29 @@ export class UpgradeComponent implements OnInit {
   }
 
   private async redirectToMercadoPagoCheckout(plan: PricingPlan): Promise<void> {
-    // Pegar email do usuário
-    const userStr = localStorage.getItem('sowlfy_user');
-    const user = userStr ? JSON.parse(userStr) : null;
-    const email = user?.email || 'teste@sowlfy.com.br';
+    // ✅ Pegar usuário AUTENTICADO do AuthService (Firebase)
+    const currentUser = this.authService.currentUserValue;
+    
+    if (!currentUser) {
+      this.showMessage('❌ Você precisa estar logado para assinar. Redirecionando...', true);
+      setTimeout(() => this.router.navigate(['/login']), 2000);
+      this.isLoading = false;
+      return;
+    }
+    
+    const email = currentUser.email;
+    const userId = currentUser.id;
+    
+    console.log('👤 Usuário autenticado:', { email, userId });
     
     // Chamar API para criar assinatura
-    this.paymentService.createSubscription(email).subscribe({
+    this.paymentService.createSubscription(email, userId).subscribe({
       next: (response: any) => {
-        console.log('Assinatura criada:', response);
+        console.log('✅ Assinatura criada:', response);
         // O redirect acontece automaticamente para o Mercado Pago
       },
       error: (error) => {
+        console.error('❌ Erro ao criar assinatura:', error);
         this.showMessage('Erro ao acessar o checkout. Tente novamente.', true);
         this.isLoading = false;
       }
