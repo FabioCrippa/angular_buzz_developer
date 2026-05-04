@@ -56,12 +56,13 @@ export class UpgradeComponent implements OnInit {
       name: 'Gratuito',
       price: 0,
       period: 'sempre',
-      description: 'Perfeito para conhecer a plataforma',
+      description: 'Comece sua prática com o Pool Fixo',
       features: [
-        '1 tentativa por área/dia',
-        '4 áreas de estudo',
-        'Questões básicas',
-        'Explicações simples'
+        '7 tentativas por dia (Pool Fixo)',
+        '15 questões rotacionadas diariamente',
+        'Contador de Streak (gamificação)',
+        'Explicações completas',
+        'Acesso a 4 áreas de estudo'
       ],
       buttonText: 'Plano Atual',
       buttonColor: 'basic'
@@ -71,14 +72,13 @@ export class UpgradeComponent implements OnInit {
       name: 'Premium Mensal',
       price: 39.90,
       period: 'mês',
-      description: 'Acesso completo para acelerar seus estudos',
+      description: 'Acesso ilimitado para acelerar seus estudos',
       features: [
-        '✨ Tentativas ilimitadas',
-        '📊 Relatórios detalhados de performance',
-        '🎯 Quizzes inteligentes personalizados',
-        '📚 Conteúdo exclusivo premium',
-        '📈 Análise completa de evolução',
-        '🏆 Metas personalizadas',
+        '✨ Tentativas ilimitadas todos os dias',
+        '📚 Banco completo com 3.000+ questões',
+        '🔓 Sem restrição de Pool Fixo',
+        '💡 Explicações completas para cada questão',
+        '📈 Acesso em todas as áreas de estudo',
       ],
       recommended: true,
       badge: 'RECOMENDADO',
@@ -95,19 +95,19 @@ export class UpgradeComponent implements OnInit {
     },
     {
       question: 'Posso cancelar a qualquer momento?',
-      answer: 'Sim! Não há fidelidade. Você pode cancelar a qualquer momento no painel de controle. O acesso premium continua até o fim do período pago.'
+      answer: 'Sim! Não há fidelidade. Você pode cancelar a qualquer momento na sua conta. O acesso premium continua até o fim do período já pago.'
+    },
+    {
+      question: 'Qual é a diferença entre Free e Premium?',
+      answer: 'No Free você pratica 7 questões por dia do nosso Pool Fixo com contador de streak (gamificação). No Premium, você tem acesso ilimitado a todas as questões do banco completo, sem restrições diárias.'
+    },
+    {
+      question: 'Como funciona o Counter de Streak?',
+      answer: 'O Streak rastreia quantos dias consecutivos você pratica. Quanto mais dias seguidos, maior sua motivação! Após 7 dias de streak, você já terá praticado bastante e estará pronto para aproveitar o Premium.'
     },
     {
       question: 'Que formas de pagamento vocês aceitam?',
-      answer: 'Aceitamos cartão de crédito, débito, PIX. Todos os pagamentos são processados com segurança pelo Stripe/PagSeguro.'
-    },
-    {
-      question: 'Quantas tentativas ilimitadas realmente significa?',
-      answer: 'Significa que você pode fazer quantos quizzes quiser, quantas vezes quiser, em todas as áreas disponíveis, sem nenhuma limitação diária.'
-    },
-    {
-      question: 'Os relatórios realmente ajudam nos estudos?',
-      answer: 'Sim! Nossos relatórios mostram suas áreas de força e fraqueza, evolução ao longo do tempo, temas que precisa focar mais e sugestões personalizadas de estudo.'
+      answer: 'Aceitamos todas as formas de pagamento via Mercado Pago: cartão de crédito, cartão de débito, PIX e boleto. Todos os pagamentos são 100% seguros.'
     },
     
   ];

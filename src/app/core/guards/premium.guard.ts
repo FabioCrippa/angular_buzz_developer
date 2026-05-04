@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable, map, take } from 'rxjs';
+import { Observable, of, map, take } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -26,6 +26,11 @@ export class PremiumGuard implements CanActivate {
   }
 
   private checkPremiumAccess(url: string): Observable<boolean> {
+    // Admin sempre tem acesso premium
+    if (this.authService.isPremium() && this.authService.isAuthenticated()) {
+      return of(true);
+    }
+
     return this.authService.currentUser$.pipe(
       take(1),
       map(user => {

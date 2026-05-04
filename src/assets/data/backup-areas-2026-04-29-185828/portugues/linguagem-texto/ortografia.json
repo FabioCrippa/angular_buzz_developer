@@ -1,0 +1,1566 @@
+{
+    "metadata":  {
+                     "area":  "portugues",
+                     "subject":  "ortografia",
+                     "name":  "Ortografia Portuguesa",
+                     "description":  "Regras de escrita, uso de maiúsculas, hífen, acento gráfico e concordância ortográfica",
+                     "difficulty":  "fundamental",
+                     "lastUpdated":  "2025-10-20",
+                     "questionCount":  50,
+                     "tags":  [
+
+                              ]
+                 },
+    "questions":  [
+                      {
+                          "question":  "Qual das palavras está escrita corretamente segundo o Acordo Ortográfico?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Idéia",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Heróico",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Heroína",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Assembléia",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "Após o Acordo Ortográfico, palavras como \u0027heroína\u0027 mantêm o acento por não envolver ditongos abertos em paroxítonas.",
+                          "studyTip":  "Ditongos abertos \u0027ei\u0027 e \u0027oi\u0027 não são mais acentuados em paroxítonas.",
+                          "id":  "port7136",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta erro de ortografia?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Exceção",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Pretenção",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Concessão",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Processo",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "A forma correta é \u0027pretensão\u0027, com \u0027s\u0027.",
+                          "studyTip":  "Palavras derivadas de \u0027pretender\u0027 mantêm o \u0027s\u0027: pretensão, pretensioso.",
+                          "id":  "port7137",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo perdeu o acento com o Acordo Ortográfico?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Vôo",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Pôde",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Pé",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Você",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "Palavras como \u0027vôo\u0027 perderam o acento circunflexo: agora se escreve \u0027voo\u0027.",
+                          "studyTip":  "O Acordo eliminou o acento em palavras com \u0027oo\u0027 e \u0027eem\u0027.",
+                          "id":  "port7138",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta todas as palavras escritas corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Excessão, concenso, privilégio",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Exceção, consenso, privilégio",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Exceção, concenso, privilégio",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Excessão, consenso, privilégio",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Todas as palavras da alternativa B estão corretas ortograficamente.",
+                          "studyTip":  "Cuidado com palavras que têm som semelhante, mas grafia diferente.",
+                          "id":  "port7139",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras está escrita de forma incorreta?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Beneficente",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Excessivo",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Exije",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Exemplo",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "A forma correta é \u0027exige\u0027, com \u0027g\u0027.",
+                          "studyTip":  "Verbos derivados de \u0027exigir\u0027 mantêm o \u0027g\u0027: exige, exigente.",
+                          "id":  "port7140",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta erro de ortografia?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Cabeleireiro",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Cabelereiro",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Cabeleireira",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Cabeludo",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "A forma correta é \u0027cabeleireiro\u0027, com \u0027ei\u0027.",
+                          "studyTip":  "Palavras com \u0027cabelo\u0027 podem confundir: atenção à grafia correta.",
+                          "id":  "port7141",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Transeunte",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Transente",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Transeunti",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Transiunte",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027Transeunte\u0027 é a forma correta para designar quem passa por um lugar.",
+                          "studyTip":  "Palavras eruditas exigem atenção à grafia correta.",
+                          "id":  "port7142",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta erro de ortografia?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Excesso",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Processo",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Sucesso",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Secesso",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "D",
+                          "explanation":  "\u0027Secesso\u0027 é grafia incorreta; o correto é \u0027sucesso\u0027.",
+                          "studyTip":  "Palavras com \u0027ss\u0027 são comuns: atenção à grafia correta.",
+                          "id":  "port7143",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita de forma incorreta?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Acessível",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Exequível",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Inloco",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Possível",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "A forma correta é \u0027in loco\u0027, expressão latina escrita separadamente.",
+                          "studyTip":  "Expressões latinas mantêm a grafia original: \u0027in loco\u0027, \u0027per capita\u0027.",
+                          "id":  "port7144",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras está escrita corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Reinvindicar",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Reivindicar",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Reevindicar",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Reivindicação",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "A forma correta é \u0027reivindicar\u0027, com \u0027ei\u0027.",
+                          "studyTip":  "Evite acréscimos de letras que não existem na forma original da palavra.",
+                          "id":  "port7145",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Enchergar",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Enxergar",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Enxerguar",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Enchergar",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "A forma correta é \u0027enxergar\u0027, com \u0027x\u0027.",
+                          "studyTip":  "Palavras derivadas de \u0027enxergar\u0027 sempre usam \u0027x\u0027.",
+                          "id":  "port7146",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta erro de ortografia?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Exceção",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Concessão",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Pretenção",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Processo",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "A forma correta é \u0027pretensão\u0027, com \u0027s\u0027.",
+                          "studyTip":  "Palavras derivadas de \u0027pretender\u0027 mantêm o \u0027s\u0027: pretensão, pretensioso.",
+                          "id":  "port7147",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita de forma incorreta?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Excesso",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Processo",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Sucesso",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Secesso",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "D",
+                          "explanation":  "\u0027Secesso\u0027 é grafia incorreta; o correto é \u0027sucesso\u0027.",
+                          "studyTip":  "Palavras com \u0027ss\u0027 são comuns: atenção à grafia correta.",
+                          "id":  "port7148",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Asterístico",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Asterisco",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Astérisco",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Asterísco",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "A forma correta é \u0027asterisco\u0027, sem o \u0027í\u0027 e sem o \u0027t\u0027.",
+                          "studyTip":  "Evite adicionar letras inexistentes à palavra original.",
+                          "id":  "port7149",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta erro de ortografia?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Absorver",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Absoluto",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Abisurdo",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Abstinência",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "A forma correta é \u0027absurdo\u0027, com \u0027s\u0027.",
+                          "studyTip":  "Palavras com \u0027bs\u0027 são comuns: observe a sequência correta.",
+                          "id":  "port7150",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Menas",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Menas vezes",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Menos",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Menoz",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "\u0027Menos\u0027 é invariável, não existe \u0027menas\u0027.",
+                          "studyTip":  "Evite variações inexistentes em palavras invariáveis.",
+                          "id":  "port7151",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita de forma incorreta?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Exemplo",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Exije",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Exigente",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Exigir",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "A forma correta é \u0027exige\u0027, com \u0027g\u0027.",
+                          "studyTip":  "Verbos derivados de \u0027exigir\u0027 mantêm o \u0027g\u0027: exige, exigente.",
+                          "id":  "port7152",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Beneficiente",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Beneficente",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Beneficentei",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Beneficentece",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Beneficente\u0027 é a forma correta para designar algo que faz o bem.",
+                          "studyTip":  "Evite acréscimos de sílabas inexistentes.",
+                          "id":  "port7153",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta erro de ortografia?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Cidadania",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Civismo",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Cidadãos",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Cidadões",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "D",
+                          "explanation":  "O plural de \u0027cidadão\u0027 é \u0027cidadãos\u0027, não \u0027cidadões\u0027.",
+                          "studyTip":  "Alguns plurais são irregulares: memorize os mais comuns.",
+                          "id":  "port7154",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está escrita corretamente?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Resistro",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Registro",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Registo",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Rejistro",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Registro\u0027 é a forma correta, com \u0027g\u0027.",
+                          "studyTip":  "Palavras com \u0027g\u0027 podem ser confundidas com \u0027j\u0027: atenção à origem.",
+                          "id":  "port7155",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Antiético",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Anti-ético",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Antietico",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Anti ético",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Usa-se hífen quando o prefixo termina com a mesma letra que inicia o segundo elemento.",
+                          "studyTip":  "Anti + palavra iniciada com \u0027e\u0027 = anti-ético.",
+                          "id":  "port7156",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Autoescola",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Auto-escola",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Autoconhecimento",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Autodidata",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Não se usa hífen quando o prefixo termina em vogal diferente da inicial da segunda palavra.",
+                          "studyTip":  "Auto + vogal diferente = sem hífen.",
+                          "id":  "port7157",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Vice-presidente",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Vicepresidente",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Vice presidente",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Vicepresidênte",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "Usa-se hífen após o prefixo \u0027vice\u0027 por ser uma palavra composta com valor institucional.",
+                          "studyTip":  "Vice + função = com hífen.",
+                          "id":  "port7158",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Infraestrutura",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Infra-estrutura",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Infraestrutura",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Infraestrutura",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Com o Acordo Ortográfico, \u0027infraestrutura\u0027 passou a ser escrita sem hífen.",
+                          "studyTip":  "Prefixos como \u0027infra\u0027, \u0027extra\u0027, \u0027inter\u0027 não usam hífen com vogal diferente.",
+                          "id":  "port7159",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Pré-história",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Prehistória",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Pré história",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Pre-história",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "Usa-se hífen quando o prefixo termina com a mesma letra que inicia o segundo elemento.",
+                          "studyTip":  "Pré + palavra iniciada com \u0027h\u0027 = com hífen.",
+                          "id":  "port7160",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Coautor",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Co-autor",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Coedição",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Coorganizador",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Não se usa hífen quando o prefixo termina em vogal diferente da inicial da segunda palavra.",
+                          "studyTip":  "Co + vogal diferente = sem hífen.",
+                          "id":  "port7161",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Bem-estar",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Bem estar",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Bemestár",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Bemestá",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "Palavras compostas com \u0027bem\u0027 e \u0027mal\u0027 seguidas de substantivo devem usar hífen.",
+                          "studyTip":  "Bem + substantivo = com hífen.",
+                          "id":  "port7162",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Reescrever",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Re-escrever",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Reescrita",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Reescrevendo",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Não se usa hífen com o prefixo \u0027re\u0027 quando o segundo elemento começa com vogal diferente.",
+                          "studyTip":  "Re + vogal diferente = sem hífen.",
+                          "id":  "port7163",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Ex-aluno",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Exaluno",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ex aluno",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Exaluno",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "Usa-se hífen com o prefixo \u0027ex\u0027 em palavras que indicam condição anterior.",
+                          "studyTip":  "Ex + substantivo = com hífen.",
+                          "id":  "port7164",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente escrita com hífen?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Sem-terra",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Sem terra",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Semterra",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Sem-terra",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Expressões com \u0027sem\u0027 que formam substantivos compostos devem ser escritas com hífen.",
+                          "studyTip":  "Sem + substantivo = com hífen quando há unidade de sentido.",
+                          "id":  "port7165",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Ideia",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Idéia",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ideía",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Ídeia",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "Com o Acordo Ortográfico, não se usa mais acento em \u0027ei\u0027 e \u0027oi\u0027 de paroxítonas como \u0027ideia\u0027.",
+                          "studyTip":  "Ditongos abertos \u0027ei\u0027 e \u0027oi\u0027 não são mais acentuados em paroxítonas.",
+                          "id":  "port7166",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo perdeu o acento com o Acordo Ortográfico?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Vôo",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Pôde",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Pé",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Você",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027Vôo\u0027 passou a ser escrito como \u0027voo\u0027, sem acento circunflexo.",
+                          "studyTip":  "Palavras com \u0027oo\u0027 e \u0027eem\u0027 perderam o acento com o Acordo Ortográfico.",
+                          "id":  "port7167",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual alternativa apresenta erro de acentuação?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Pôde",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Pude",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Póde",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Pode",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "\u0027Póde\u0027 está incorreta; o correto é \u0027pôde\u0027 (pretérito) ou \u0027pode\u0027 (presente).",
+                          "studyTip":  "Use acento circunflexo para diferenciar \u0027pôde\u0027 (passado) de \u0027pode\u0027 (presente).",
+                          "id":  "port7168",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Hífen",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Hifen",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Hífen",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Hifén",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027Hífen\u0027 é acentuada por ser uma paroxítona terminada em \u0027n\u0027.",
+                          "studyTip":  "Paroxítonas terminadas em \u0027n\u0027, \u0027l\u0027, \u0027r\u0027 são acentuadas.",
+                          "id":  "port7169",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Herói",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Troféu",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ideía",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Fórum",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "C",
+                          "explanation":  "\u0027Ideía\u0027 está incorreta; o correto é \u0027ideia\u0027, sem acento.",
+                          "studyTip":  "Evite acentuar ditongos abertos em paroxítonas após o Acordo Ortográfico.",
+                          "id":  "port7170",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Saude",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Saúde",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Sáude",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Saúdi",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Saúde\u0027 é acentuada por ser uma hiato com vogal tônica \u0027u\u0027 seguida de \u0027de\u0027.",
+                          "studyTip":  "Hiatos com vogal tônica \u0027i\u0027 ou \u0027u\u0027 seguidas de outra vogal recebem acento.",
+                          "id":  "port7171",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Júri",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Juíz",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Fácil",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Público",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Juíz\u0027 está incorreta; o correto é \u0027juiz\u0027, sem acento.",
+                          "studyTip":  "Monossílabos tônicos terminados em \u0027z\u0027 não são acentuados.",
+                          "id":  "port7172",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "País",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Pais",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Paíz",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Páis",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027País\u0027 é acentuada por ser um hiato com vogal tônica \u0027i\u0027.",
+                          "studyTip":  "Hiatos com \u0027i\u0027 ou \u0027u\u0027 tônicos seguidos de vogal diferente recebem acento.",
+                          "id":  "port7173",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo perdeu o acento com o Acordo Ortográfico?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Feiúra",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Feiura",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Feiúra",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Feiúra",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "Com o Acordo Ortográfico, não se acentuam mais os hiatos com \u0027i\u0027 ou \u0027u\u0027 precedidos de ditongo.",
+                          "studyTip":  "Palavras como \u0027feiura\u0027 não levam mais acento gráfico.",
+                          "id":  "port7174",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Você",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Voce",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Vocé",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Vôce",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027Você\u0027 é acentuada por ser uma oxítona terminada em \u0027e\u0027.",
+                          "studyTip":  "Oxítonas terminadas em \u0027a\u0027, \u0027e\u0027, \u0027o\u0027, seguidas ou não de \u0027s\u0027, são acentuadas.",
+                          "id":  "port7175",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Fênomeno",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Fenômeno",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Fenomenô",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Fenomeno",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Fenômeno\u0027 é acentuada por ser uma paroxítona com vogal tônica \u0027ô\u0027.",
+                          "studyTip":  "Paroxítonas terminadas em \u0027o\u0027 são acentuadas quando a sílaba tônica está no meio da palavra.",
+                          "id":  "port7176",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Céu",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Anéis",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Papéis",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Ideías",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "D",
+                          "explanation":  "\u0027Ideias\u0027 não leva acento, conforme o Acordo Ortográfico.",
+                          "studyTip":  "Ditongos abertos \u0027ei\u0027 e \u0027oi\u0027 não são mais acentuados em paroxítonas.",
+                          "id":  "port7177",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Péssimo",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Pessímo",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Pessimo",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Péssímo",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027Péssimo\u0027 é acentuada por ser proparoxítona.",
+                          "studyTip":  "Todas as proparoxítonas são acentuadas.",
+                          "id":  "port7178",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Saída",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Saida",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Saída",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Saída",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Saida\u0027 está incorreta; o correto é \u0027saída\u0027, com acento no \u0027i\u0027 por ser hiato.",
+                          "studyTip":  "Hiatos com \u0027i\u0027 ou \u0027u\u0027 tônicos seguidos de vogal diferente são acentuados.",
+                          "id":  "port7179",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Órgão",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Orgão",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Órgâo",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Orgâo",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027Órgão\u0027 é acentuada por ser uma paroxítona terminada em ditongo nasal.",
+                          "studyTip":  "Paroxítonas terminadas em \u0027ão\u0027, \u0027ei\u0027, \u0027i\u0027, \u0027u\u0027 são acentuadas conforme a tonicidade.",
+                          "id":  "port7180",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Júri",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Juíz",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Fácil",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Público",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Juíz\u0027 está incorreta; o correto é \u0027juiz\u0027, sem acento.",
+                          "studyTip":  "Monossílabos tônicos terminados em \u0027z\u0027 não são acentuados.",
+                          "id":  "port7181",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Avô",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Avo",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Avó",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Avó e avô",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "D",
+                          "explanation":  "\u0027Avó\u0027 (feminino) e \u0027avô\u0027 (masculino) são acentuadas para diferenciar a pronúncia e o gênero.",
+                          "studyTip":  "Acentos diferenciais ajudam a distinguir palavras com grafia semelhante.",
+                          "id":  "port7182",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Pôde",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Póde",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Pode",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Pude",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "B",
+                          "explanation":  "\u0027Póde\u0027 está incorreta; o correto é \u0027pôde\u0027 (pretérito) ou \u0027pode\u0027 (presente).",
+                          "studyTip":  "Use acento circunflexo para diferenciar \u0027pôde\u0027 (passado) de \u0027pode\u0027 (presente).",
+                          "id":  "port7183",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está corretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Você",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Voce",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Vocé",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Vôce",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "A",
+                          "explanation":  "\u0027Você\u0027 é acentuada por ser uma oxítona terminada em \u0027e\u0027.",
+                          "studyTip":  "Oxítonas terminadas em \u0027a\u0027, \u0027e\u0027, \u0027o\u0027, seguidas ou não de \u0027s\u0027, são acentuadas.",
+                          "id":  "port7184",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      },
+                      {
+                          "question":  "Qual das palavras abaixo está incorretamente acentuada?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Pé",
+                                              "alias":  "A"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Café",
+                                              "alias":  "B"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Chapéu",
+                                              "alias":  "C"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Cafe",
+                                              "alias":  "D"
+                                          }
+                                      ],
+                          "correct":  "D",
+                          "explanation":  "\u0027Cafe\u0027 está incorreta; o correto é \u0027café\u0027, com acento agudo por ser oxítona terminada em \u0027e\u0027.",
+                          "studyTip":  "Monossílabos tônicos terminados em \u0027a\u0027, \u0027e\u0027, \u0027o\u0027 são acentuados.",
+                          "id":  "port7185",
+                          "category":  "ortografia",
+                          "difficulty":  "fundamental"
+                      }
+                  ]
+}

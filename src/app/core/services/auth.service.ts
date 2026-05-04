@@ -22,6 +22,7 @@ export interface User {
   id: string;
   name: string;
   email: string;
+  schoolId?: string; // 🎓 ID da escola do aluno
   isPremium: boolean;
   plan: 'free' | 'pro' | 'premium';
   avatar?: string;
@@ -126,7 +127,12 @@ export class AuthService {
           this.setCurrentUser(user, token);
         }
       } else {
-        this.clearAllUserData();
+        // ✅ NÃO limpar se admin ou estudante estiver logado (não usam Firebase Auth)
+        const isAdmin = !!localStorage.getItem('sowlfy_admin_token');
+        const isStudent = !!localStorage.getItem('student_token');
+        if (!isAdmin && !isStudent) {
+          this.clearAllUserData();
+        }
       }
     });
   }
@@ -365,7 +371,17 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    // ✅ VERIFICA PRIMEIRO O LOCALSTORAGE PARA EVITAR PROBLEMAS DE TIMING
+    // ✅ VERIFICAR TOKEN DE ADMIN
+    if (localStorage.getItem('sowlfy_admin_token') && localStorage.getItem('sowlfy_admin_data')) {
+      return true;
+    }
+
+    // ✅ VERIFICAR TOKEN DE ESTUDANTE
+    if (localStorage.getItem('student_token') && localStorage.getItem('student_data')) {
+      return true;
+    }
+
+    // ✅ VERIFICAR TOKEN DE USUÁRIO INDIVIDUAL (Firebase)
     const token = this.getAuthToken();
     const storedUser = localStorage.getItem(this.STORAGE_KEYS.USER);
     
@@ -389,6 +405,10 @@ export class AuthService {
   }
 
   isPremium(): boolean {
+    // Admin sempre tem acesso premium
+    if (localStorage.getItem('sowlfy_admin_token') && localStorage.getItem('sowlfy_admin_data')) {
+      return true;
+    }
     const user = this.currentUserSubject.value;
     return user?.isPremium || false;
   }
@@ -481,12 +501,8 @@ export class AuthService {
   }
 
   private clearAllUserData(): void {
-    console.log('🧹 Limpando todos os dados do usuário...');
-    console.log('📦 localStorage ANTES:', Object.keys(localStorage));
-    
     // Limpar dados principais do usuário
     Object.values(this.STORAGE_KEYS).forEach(key => {
-      console.log('🗑️ Removendo STORAGE_KEY:', key);
       localStorage.removeItem(key);
     });
     
@@ -494,8 +510,16 @@ export class AuthService {
     const keysToRemove: string[] = [];
     
     Object.keys(localStorage).forEach(key => {
-      // Ignorar apenas chaves do sistema Angular/Firebase
-      if (key.startsWith('firebase:') || key.startsWith('_grecaptcha')) {
+      // Ignorar chaves do sistema Angular/Firebase e admin/student
+      if (
+        key.startsWith('firebase:') ||
+        key.startsWith('_grecaptcha') ||
+        key === 'sowlfy_admin_token' ||
+        key === 'sowlfy_admin_data' ||
+        key === 'student_token' ||
+        key === 'student_data' ||
+        key === 'student_schoolId'
+      ) {
         return; // Manter essas chaves
       }
       
@@ -527,17 +551,12 @@ export class AuthService {
     });
     
     // Remover todas as chaves coletadas
-    console.log('🗑️ Chaves a remover:', keysToRemove);
     keysToRemove.forEach(key => {
-      console.log('  ➡️ Removendo:', key);
       localStorage.removeItem(key);
     });
     
     // Limpar também sessionStorage
     sessionStorage.clear();
-    
-    console.log('📦 localStorage DEPOIS:', Object.keys(localStorage));
-    console.log('✅ Limpeza completa finalizada');
   }
 
   private getAuthToken(): string | null {

@@ -1,5 +1,5 @@
 .help-container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 40px auto;
   padding: 32px;
   background: #fff;
@@ -9,15 +9,16 @@
 }
 
 .help-container h2 {
-  font-size: 24px;
-  color: #222;
-  margin-bottom: 24px;
-  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 12px;
 }
 
-.help-container p {
-  font-size: 16px;
-  color: #444;
+.help-container > p {
+  font-size: 15px;
+  color: #666;
   line-height: 1.6;
   margin-bottom: 24px;
 }
@@ -27,24 +28,32 @@
 }
 
 .faq-item {
-  margin-bottom: 20px;
-
+  margin-bottom: 16px;
+  padding: 16px;
+  background: #f8f9ff;
+  border-left: 4px solid #667eea;
+  border-radius: 4px;
 }
 
 .faq-item h4 {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 8px;
+  font-size: 16px;
+  color: #667eea;
+  margin: 0 0 12px 0;
+  font-weight: 600;
 }
 
 .faq-item p {
   font-size: 14px;
   color: #555;
   line-height: 1.6;
+  margin: 0;
 }
 
 .contact-section {
   text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
 }
 
 .contact-btn {

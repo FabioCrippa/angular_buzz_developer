@@ -1,0 +1,89 @@
+{
+  "appInfo": {
+    "name": "SOWLFY",
+    "version": "2.0.0",
+    "description": "Plataforma completa de preparação profissional com questões atualizadas",
+    "lastUpdated": "2025-10-21"
+  },
+  "stats": {
+    "totalQuestions": 768,
+    "totalAreas": 4,
+    "totalSubjects": 27,
+    "byArea": {
+      "desenvolvimento-web": 517,
+      "portugues": 181,
+      "matematica": 15,
+      "informatica": 55
+    },
+    "lastUpdated": "2025-10-21"
+  },
+  "areas": {
+    "desenvolvimento-web": {
+      "displayName": "Desenvolvimento Web",
+      "icon": "💻",
+      "difficulty": "Alto",
+      "description": "HTML, CSS, JavaScript, Angular, TypeScript, DevOps, Metodologias, Design e Segurança"
+    },
+    "portugues": {
+      "displayName": "Português",
+      "icon": "📚",
+      "difficulty": "Médio",
+      "description": "Gramática, Interpretação, Redação, Coerência e Coesão"
+    },
+    "matematica": {
+      "displayName": "Matemática",
+      "icon": "🔢",
+      "difficulty": "Alto",
+      "description": "Álgebra, Geometria e Raciocínio Lógico"
+    },
+    "informatica": {
+      "displayName": "Informática",
+      "icon": "💾",
+      "difficulty": "Médio",
+      "description": "Hardware, Redes e Sistemas Operacionais"
+    }
+  },
+  "structure": {
+    "desenvolvimento-web": [
+      "angular",
+      "boas-praticas",
+      "css",
+      "front-end",
+      "html",
+      "javascript",
+      "responsividade",
+      "typescript",
+      "ci-cd",
+      "code-review",
+      "devops",
+      "scrum",
+      "testes-unitarios",
+      "versionamento",
+      "figma",
+      "micro-front-end",
+      "criptografia",
+      "entrevista-tecnica"
+    ],
+    "portugues": [
+      "gramatica",
+      "interpretacao",
+      "redacao",
+      "coerencia",
+      "coesao",
+      "ortografia"
+    ],
+    "matematica": [
+      "algebra",
+      "geometria",
+      "raciocinio-logico",
+      "basica"
+    ],
+    "informatica": [
+      "hardware",
+      "redes",
+      "sistemas-operacionais",
+      "conceitos",
+      "software"
+    ]
+  }
+}

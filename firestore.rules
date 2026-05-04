@@ -24,6 +24,12 @@ service cloud.firestore {
         && request.resource.data.name is string
         && request.resource.data.isPremium is bool;
     }
+
+    // Verifica se a escola tem subscription ativa (acesso permitido para alunos)
+    function isSchoolSubscriptionActive(schoolId) {
+      return exists(/databases/$(database)/documents/schools/$(schoolId))
+        && get(/databases/$(database)/documents/schools/$(schoolId)).data.subscriptionStatus == 'active';
+    }
     
     // ===============================================
     // 👤 COLEÇÃO DE USUÁRIOS
@@ -85,7 +91,109 @@ service cloud.firestore {
     }
     
     // ===============================================
-    // 🚫 NEGAR ACESSO A OUTRAS COLEÇÕES
+    // � COLEÇÃO: TRIAL ANALYTICS (ANÔNIMO)
+    // ===============================================
+    match /trialAnalytics/{document=**} {
+      // Permitir leitura e escrita anônima (vem do backend com validação)
+      allow read, write: if true;
+    }
+    match /analytics_events/{document=**} {
+      // Permitir leitura e escrita anônima para analytics
+      allow read, write: if true;
+    }
+
+    match /analytics_sessions/{document=**} {
+      // Permitir leitura e escrita anônima para analytics
+      allow read, write: if true;
+    }
+
+    // ===============================================
+    // 🎓 COLEÇÃO: ESCOLAS
+    // ===============================================
+    match /schools/{schoolId} {
+      // Leitura: admin dono da escola OU admin global OU anônimo (modo teste)
+      allow read: if 
+        // Admin da escola específica
+        (isAuthenticated() && resource.data.adminUid == request.auth.uid)
+        // OU admin global do sistema
+        || (isAuthenticated() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)))
+        // OU anônimo (para painel admin de teste)
+        || !isAuthenticated();
+      
+      // Escrita: apenas backend
+      allow write: if false;
+    }
+
+    // ===============================================
+    // 👥 COLEÇÃO: ALUNOS DE ESCOLAS
+    // ===============================================
+    match /school_students/{schoolId}/students/{ra} {
+      // Leitura: aluno pode ler seus dados (se subscription ativa), admin pode ler todos, anônimo em teste
+      allow read: if 
+        // Aluno autenticado lê seu próprio perfil (APENAS se escola tem subscription ativa)
+        (isAuthenticated() && resource.data.uid == request.auth.uid && isSchoolSubscriptionActive(schoolId))
+        // Admin da escola lê todos os alunos
+        || (isAuthenticated() && exists(/databases/$(database)/documents/schools/$(schoolId)) 
+          && get(/databases/$(database)/documents/schools/$(schoolId)).data.adminUid == request.auth.uid)
+        // Admin global lê todos os alunos de qualquer escola
+        || (isAuthenticated() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)))
+        // Anônimo em modo teste
+        || !isAuthenticated();
+      
+      // Escrita: apenas backend
+      allow write: if false;
+    }
+
+    // ===============================================
+    // 📝 SUBCOLEÇÃO: TENTATIVAS DE QUIZ DO ALUNO
+    // ===============================================
+    match /school_students/{schoolId}/students/{ra}/attempts/{attemptId} {
+      // Leitura: aluno, admin ou anônimo em teste (verificar subscription para aluno)
+      allow read: if 
+        // Aluno autenticado (APENAS se escola tem subscription ativa)
+        (isAuthenticated() && resource.data.uid == request.auth.uid && isSchoolSubscriptionActive(schoolId))
+        // Admin da escola
+        || (isAuthenticated() && exists(/databases/$(database)/documents/schools/$(schoolId)) 
+          && get(/databases/$(database)/documents/schools/$(schoolId)).data.adminUid == request.auth.uid)
+        // Admin global
+        || (isAuthenticated() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)))
+        // Anônimo em modo teste
+        || !isAuthenticated();
+      
+      // Escrita: apenas backend
+      allow write: if false;
+    }
+
+    // ===============================================
+    // 📊 COLEÇÃO: TENTATIVAS DE QUIZ (GLOBAL)
+    // ===============================================
+    match /quiz_attempts/{attemptId} {
+      // Leitura: aluno, admin da escola ou anônimo em teste (verificar subscription para aluno)
+      allow read: if 
+        // Aluno acessa suas tentativas (APENAS se escola tem subscription ativa)
+        (isAuthenticated() && resource.data.uid == request.auth.uid && isSchoolSubscriptionActive(resource.data.schoolId))
+        // Admin acessa tentativas de seus alunos
+        || (isAuthenticated() && exists(/databases/$(database)/documents/schools/$(resource.data.schoolId)) 
+          && get(/databases/$(database)/documents/schools/$(resource.data.schoolId)).data.adminUid == request.auth.uid)
+        // Admin global
+        || (isAuthenticated() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)))
+        // Anônimo em modo teste
+        || !isAuthenticated();
+      
+      // Escrita: apenas backend
+      allow write: if false;
+    }
+
+    // ===============================================
+    // 🔐 COLEÇÃO: ADMINS
+    // ===============================================
+    match /admins/{adminUid} {
+      allow read: if isOwner(adminUid);
+      allow write: if false;
+    }
+    
+    // ===============================================
+    // �🚫 NEGAR ACESSO A OUTRAS COLEÇÕES
     // ===============================================
     match /{document=**} {
       allow read, write: if false;

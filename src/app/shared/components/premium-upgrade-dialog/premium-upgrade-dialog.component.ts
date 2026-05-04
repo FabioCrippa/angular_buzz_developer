@@ -90,12 +90,6 @@ throw new Error('Method not implemented.');
         this.userName = user?.name || '';
         this.isLoggedIn = !!user;
         this.isPremium = user?.isPremium || false;
-        
-        console.log('👤 Dados do usuário carregados:', {
-          userName: this.userName,
-          isLoggedIn: this.isLoggedIn,
-          isPremium: this.isPremium
-        });
       });
     
     this.loadAnalytics();

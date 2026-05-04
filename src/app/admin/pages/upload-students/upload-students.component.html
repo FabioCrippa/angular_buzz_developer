@@ -1,0 +1,113 @@
+<div class="upload-container">
+  <h2>📚 Cadastrar Alunos - Upload CSV</h2>
+
+  <div class="content">
+    <!-- Instruções -->
+    <div class="instructions">
+      <h3>📋 Como funciona:</h3>
+      <ol>
+        <li>Baixe o template CSV</li>
+        <li>Preencha com dados dos alunos (RA, Nome, Email, Classe)</li>
+        <li>Selecione a escola</li>
+        <li>Envie o arquivo</li>
+        <li>Pronto! Os alunos receberão a senha única: <strong>SENHA_ESCOLA</strong></li>
+      </ol>
+
+      <button class="btn btn-secondary" (click)="downloadTemplate()">
+        📥 Baixar Template CSV
+      </button>
+    </div>
+
+    <!-- Upload Form -->
+    <div class="upload-form">
+      <h3>📤 Enviar Arquivo</h3>
+
+      <!-- Seletor de Escola -->
+      <div class="form-group">
+        <label>Selecione a Escola:</label>
+        <select [(ngModel)]="selectedSchoolId">
+          <option *ngFor="let school of schools" [value]="school.id">
+            {{ school.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Input de Arquivo -->
+      <div class="form-group">
+        <label>Arquivo CSV:</label>
+        <div class="file-input">
+          <input
+            type="file"
+            accept=".csv"
+            (change)="onFileSelected($event)"
+            id="csvFile"
+          />
+          <label for="csvFile" class="file-label">
+            <span *ngIf="!csvFile" class="placeholder">
+              📁 Clique ou arraste um arquivo CSV
+            </span>
+            <span *ngIf="csvFile" class="file-name">
+              ✅ {{ csvFile.name }}
+            </span>
+          </label>
+        </div>
+        <small>Apenas arquivos CSV (.csv) são aceitos</small>
+      </div>
+
+      <!-- Mensagens -->
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Botão Submit -->
+      <button
+        class="btn btn-primary"
+        (click)="uploadCSV()"
+        [disabled]="!csvFile || !selectedSchoolId || isLoading"
+      >
+        {{ isLoading ? "🔄 Processando..." : "📤 Enviar CSV" }}
+      </button>
+    </div>
+
+    <!-- Exemplo de Formato -->
+    <div class="example">
+      <h3>📝 Exemplo de Formato CSV:</h3>
+      <pre><code>RA,Nome,Email,Classe
+001234,João Silva,joao.silva@school.com,8º A
+001235,Maria Santos,maria.santos@school.com,8º A
+001236,Pedro Costa,pedro.costa@school.com,8º B</code></pre>
+    </div>
+  </div>
+
+  <!-- Modal de Sucesso -->
+  <div
+    *ngIf="showSuccessModal"
+    class="modal-overlay"
+    (click)="closeModal()"
+  >
+    <div class="modal success-modal" (click)="$event.stopPropagation()">
+      <h3>🎉 Sucesso!</h3>
+      <p>{{ successMessage }}</p>
+
+      <div class="modal-info">
+        <h4>Alunos Cadastrados:</h4>
+        <div class="students-list">
+          <div *ngFor="let student of uploadedStudents" class="student-item">
+            <span class="ra">{{ student.ra }}</span>
+            <span class="name">{{ student.name }}</span>
+            <span class="class">{{ student.classe }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" (click)="downloadStudentList()">
+          📥 Baixar Lista
+        </button>
+        <button class="btn btn-primary" (click)="closeModal()">
+          ✅ Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

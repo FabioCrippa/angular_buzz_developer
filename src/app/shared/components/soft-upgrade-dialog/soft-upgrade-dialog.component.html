@@ -1,0 +1,138 @@
+<!-- ✅ SOFT UPGRADE DIALOG -->
+<div class="soft-upgrade-dialog">
+  <!-- HEADER -->
+  <div class="dialog-header">
+    <button class="close-btn" (click)="close()" title="Fechar">
+      ✕
+    </button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="dialog-content">
+    <!-- CELEBRATION ICON -->
+    <div class="celebration-icon">
+      {{ getTriggerIcon() }}
+    </div>
+
+    <!-- TRIGGER MESSAGE -->
+    <h2 class="trigger-message">
+      {{ getTriggerMessage() }}
+    </h2>
+
+    <!-- PROGRESS INFO -->
+    <div class="progress-info">
+      <div class="progress-item">
+        <span class="label">Questões resolvidas</span>
+        <span class="value">{{ questionsResolved }}</span>
+      </div>
+      <div class="progress-item">
+        <span class="label">Dias de prática</span>
+        <span class="value">{{ daysElapsed }}</span>
+      </div>
+      <div class="progress-item">
+        <span class="label">Trial restante</span>
+        <span class="value">{{ daysRemaining }} dias</span>
+      </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="trial-progress">
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="getProgressPercentage()"></div>
+      </div>
+      <p class="progress-text">
+        Você está {{ getProgressPercentage() | number: '1.0-0' }}% de forma no seu período de trial
+      </p>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="cta-section">
+      <h3>Quer Mais?</h3>
+      <p class="cta-description">
+        Desbloqueie todo o potencial da SOWLFY com uma conta premium.
+      </p>
+    </div>
+
+    <!-- FEATURES COMPARISON -->
+    <div class="features-comparison">
+      <h4>Comparação de Planos</h4>
+      
+      <div class="comparison-table">
+        <div class="table-header">
+          <div class="feature-name">Recurso</div>
+          <div class="plan-free">
+            <span class="plan-label">Free</span>
+            <span class="plan-price">Grátis</span>
+          </div>
+          <div class="plan-premium">
+            <span class="plan-label">Premium</span>
+            <span class="plan-price">R$ 29/mês</span>
+          </div>
+        </div>
+
+        <div class="table-row" *ngFor="let feature of features">
+          <div class="feature-name">{{ feature.name }}</div>
+          <div class="feature-free">{{ feature.free }}</div>
+          <div class="feature-premium">{{ feature.premium }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENEFITS HIGHLIGHT -->
+    <div class="benefits-section">
+      <h4>Por que fazer upgrade?</h4>
+      <ul class="benefits-list">
+        <li>
+          <span class="benefit-icon">📚</span>
+          <span class="benefit-text">Acesso a 3000+ questões de todas as áreas</span>
+        </li>
+        <li>
+          <span class="benefit-icon">📊</span>
+          <span class="benefit-text">Análise detalhada do seu progresso e pontos fracos</span>
+        </li>
+        <li>
+          <span class="benefit-icon">🎓</span>
+          <span class="benefit-text">Certificados de conclusão para cada disciplina</span>
+        </li>
+        <li>
+          <span class="benefit-icon">🚀</span>
+          <span class="benefit-text">Simulados completos e realistic interview prep</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- TESTIMONIAL CARD -->
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "Fiz upgrade e consegui meu primeiro emprego em Big Tech em 3 meses! A análise de progresso foi decisiva."
+      </p>
+      <div class="testimonial-author">
+        <div class="avatar">JP</div>
+        <div class="author-info">
+          <p class="author-name">João Pedro</p>
+          <p class="author-role">Desenvolvedor Frontend • Google</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER / ACTIONS -->
+  <div class="dialog-footer">
+    <button class="btn btn-secondary" (click)="snooze()">
+      Continuar Testando Grátis
+    </button>
+    
+    <button class="btn btn-primary" (click)="createAccount()">
+      <span class="icon">⭐</span>
+      Fazer Upgrade Agora
+    </button>
+  </div>
+
+  <!-- CLOSING MESSAGE -->
+  <div class="closing-message">
+    <p>
+      ✨ Seu período de trial generoso continua ativo. 
+      Este é apenas um convite, não um impedimento. Você pode continuar praticando grátis!
+    </p>
+  </div>
+</div>

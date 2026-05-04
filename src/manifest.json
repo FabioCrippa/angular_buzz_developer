@@ -1,0 +1,81 @@
+{
+  "name": "SOWLFY - Preparação Profissional",
+  "short_name": "SOWLFY",
+  "description": "Plataforma completa de preparação para concursos públicos e entrevistas técnicas com 3.000+ questões",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#667eea",
+  "background_color": "#ffffff",
+  "categories": ["education", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "assets/img/icon_sowlfy.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/icon_sowlfy.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/icon_sowlfy.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/img/icon_sowlfy.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/img/icon_sowlfy.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "assets/img/icon_sowlfy.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Começar Teste",
+      "short_name": "Teste",
+      "description": "Inicie um teste gratuito com 7 questões",
+      "url": "/anonymous-quiz",
+      "icons": [
+        {
+          "src": "assets/img/icon_sowlfy.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Plano Premium",
+      "short_name": "Premium",
+      "description": "Confira o plano premium com acesso ilimitado",
+      "url": "/upgrade",
+      "icons": [
+        {
+          "src": "assets/img/icon_sowlfy.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

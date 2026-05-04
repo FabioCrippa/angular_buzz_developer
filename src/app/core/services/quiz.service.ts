@@ -12,14 +12,52 @@ export class QuizService {
   private currentSessionSubject = new BehaviorSubject<any>(null);
   public currentSession$ = this.currentSessionSubject.asObservable();
 
-  private questionsCache: { [areaName: string]: any[] } = {};
+  private questionsCache: { [key: string]: any[] } = {};
 
   constructor(
     private http: HttpClient,
     private storage: StorageService
   ) {}
 
-  // ✅ LOAD QUESTIONS BY AREA
+  // ✅ CARREGAR INDEX COM TODOS OS CURSOS
+  getCursos(): Observable<any> {
+    return this.http.get<any>('assets/data/index.json');
+  }
+
+  // ✅ CARREGAR DISCIPLINAS DE UM CURSO
+  getDisciplinas(cursoId: string): Observable<any[]> {
+    return this.getCursos().pipe(
+      map((data: any) => {
+        const curso = data.cursos.find((c: any) => c.id === cursoId);
+        return curso?.disciplinas || [];
+      }),
+      catchError(() => of([]))
+    );
+  }
+
+  // ✅ LOAD QUESTIONS BY TOPIC (NOVA ESTRUTURA HIERÁRQUICA)
+  getQuestionsByTopic(curso: string, disciplina: string, topico: string): Observable<any[]> {
+    const cacheKey = `${curso}/${disciplina}/${topico}`;
+    
+    // Verifica cache primeiro
+    if (this.questionsCache[cacheKey]) {
+      return of(this.questionsCache[cacheKey]);
+    }
+
+    return this.http.get<any>(`assets/data/areas/${curso}/${disciplina}/${topico}.json`).pipe(
+      map(data => {
+        const questions = data.questions || [];
+        this.questionsCache[cacheKey] = questions;
+        return questions;
+      }),
+      catchError(error => {
+        console.warn(`Erro ao carregar tópico ${topico}:`, error);
+        return of([]);
+      })
+    );
+  }
+
+  // ✅ LOAD QUESTIONS BY AREA (RETROCOMPATIBILIDADE)
   getQuestionsByArea(areaName: string): Observable<any[]> {
     // Verifica cache primeiro
     if (this.questionsCache[areaName]) {

@@ -17,10 +17,22 @@ interface IndexData {
     description: string;
   };
   stats: {
-    totalQuestions: number;
+    totalQuestions?: number;
+    totalQuestoes?: number;
     byArea: { [key: string]: number };
   };
-  structure: { [key: string]: string[] };
+  structure?: { [key: string]: string[] };
+  cursos?: Array<{
+    id: string;
+    nome: string;
+    displayName?: string;
+    icon?: string;
+    totalQuestoes?: number;
+    disciplinas?: Array<{
+      id: string;
+      topicos?: Array<{ id: string; nome: string; arquivo?: string }>;
+    }>;
+  }>;
 }
 
 interface Area {
@@ -80,8 +92,42 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle('Dashboard - Sowlfy');
-    this.loadDashboardData();
+    this.checkSchoolAccessAndLoad();
     this.loadGamificationData();
+  }
+
+  /**
+   * Verificar acesso do aluno à escola e carregar dados
+   * Se subscription inativa, mostra mensagem de bloqueio
+   */
+  private checkSchoolAccessAndLoad(): void {
+    const user = this.authService.currentUserValue;
+    
+    if (!user?.schoolId) {
+      this.loadDashboardData();
+      return;
+    }
+
+    // Chamar Cloud Function para verificar se a escola tem subscription ativa
+    const checkUrl = 'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/checkSchoolAccess';
+    this.http.post<any>(checkUrl, { schoolId: user.schoolId }).subscribe({
+      next: (response: any) => {
+        if (response.hasAccess) {
+          // Acesso permitido, carregar dados normalmente
+          this.loadDashboardData();
+        } else {
+          // Acesso negado - subscription inativa
+          this.isLoading = false;
+          this.hasError = true;
+          this.errorMessage = `🔒 A escola perdeu acesso à plataforma. Status: ${response.subscriptionStatus}`;
+        }
+      },
+      error: (error: any) => {
+        // Erro ao verificar, carregar dados mesmo assim (vai ser bloqueado pelas Rules)
+        console.error('Erro ao verificar acesso:', error);
+        this.loadDashboardData();
+      }
+    });
   }
   
   // 🎮 CARREGAR DADOS DE GAMIFICAÇÃO
@@ -130,47 +176,58 @@ export class DashboardComponent implements OnInit {
           description: 'Plataforma completa de preparação profissional'
         };
         
-        this.totalQuestions = indexData.stats.totalQuestions;
-        
+        this.totalQuestions = indexData.stats.totalQuestoes || indexData.stats.totalQuestions || 0;
+
+        // Helper: extrai lista de subjects de cursos (novo formato) ou structure (formato antigo)
+        const getSubjects = (oldKey: string, newCursoId: string): string[] => {
+          if (indexData.structure?.[oldKey]) {
+            return indexData.structure[oldKey];
+          }
+          const curso = indexData.cursos?.find(c => c.id === newCursoId);
+          if (curso?.disciplinas) {
+            const subjects: string[] = [];
+            for (const disc of curso.disciplinas) {
+              for (const topico of (disc.topicos || [])) {
+                subjects.push(topico.nome || topico.id);
+              }
+            }
+            return subjects;
+          }
+          return [];
+        };
+
+        // Helper: soma contagem de questões de múltiplos keys
+        const getCount = (...keys: string[]): number =>
+          keys.reduce((sum, k) => sum + (indexData.stats.byArea[k] || 0), 0);
+
         const areasDashboard = [
           {
-            key: 'desenvolvimento-web',
-            displayName: 'Desenvolvimento Web',
+            key: 'analise-desenvolvimento-sistemas',
+            displayName: 'Análise e Desenvolvimento de Sistemas',
             icon: '💻',
-            questionCount:
-              (indexData.stats.byArea['desenvolvimento-web'] || 0) +
-              (indexData.stats.byArea['metodologias'] || 0) +
-              (indexData.stats.byArea['design'] || 0) +
-              (indexData.stats.byArea['seguranca'] || 0) +
-              (indexData.stats.byArea['entrevista'] || 0),
-            subjects: [
-              ...(indexData.structure['desenvolvimento-web'] || []),
-              ...(indexData.structure['metodologias'] || []),
-              ...(indexData.structure['design'] || []),
-              ...(indexData.structure['seguranca'] || []),
-              ...(indexData.structure['entrevista'] || [])
-            ]
+            questionCount: getCount('analise-desenvolvimento-sistemas', 'desenvolvimento-web', 'metodologias', 'design', 'seguranca', 'entrevista'),
+            subjects: getSubjects('desenvolvimento-web', 'analise-desenvolvimento-sistemas')
           },
           {
-            key: 'portugues',
-            displayName: 'Português',
-            icon: '📚',
-            questionCount: indexData.stats.byArea['portugues'] || 0,
-            subjects: indexData.structure['portugues'] || []
+            key: 'informatica-geral',
+            displayName: 'Informática Geral',
+            icon: '🖥️',
+            questionCount: getCount('informatica-geral', 'informatica'),
+            subjects: getSubjects('informatica', 'informatica-geral')
           },
           {
             key: 'matematica',
             displayName: 'Matemática',
             icon: '🧮',
-            questionCount: indexData.stats.byArea['matematica'] || 0,
-            subjects: indexData.structure['matematica'] || []
+            questionCount: getCount('matematica'),
+            subjects: getSubjects('matematica', 'matematica')
           },
           {
-            key: 'informatica',
-            displayName: 'Informática',
-            icon: '🖥️',
-            questionCount: indexData.stats.byArea['informatica'] || 0,
-            subjects: indexData.structure['informatica'] || []
+            key: 'portugues',
+            displayName: 'Português',
+            icon: '📚',
+            questionCount: getCount('portugues'),
+            subjects: getSubjects('portugues', 'portugues')
           }
         ];
         
@@ -355,9 +412,11 @@ export class DashboardComponent implements OnInit {
   // ✅ FUNÇÕES AUXILIARES - NOMES E DESCRIÇÕES
   getAreaDisplayName(areaName: string): string {
     const displayNames: { [key: string]: string } = {
-      'desenvolvimento-web': 'Desenvolvimento Web',
-      'portugues': 'Português',
+      'analise-desenvolvimento-sistemas': 'Análise e Desenvolvimento de Sistemas',
+      'informatica-geral': 'Informática Geral',
       'matematica': 'Matemática',
+      'portugues': 'Português',
+      'desenvolvimento-web': 'Desenvolvimento Web',
       'informatica': 'Informática',
       'direito': 'Direito',
       'administracao': 'Administração',
@@ -369,9 +428,11 @@ export class DashboardComponent implements OnInit {
 
   getAreaDescription(areaName: string): string {
     const descriptions: { [key: string]: string } = {
-      'desenvolvimento-web': 'Tecnologias modernas para desenvolvimento de aplicações web.',
-      'portugues': 'Gramática, interpretação de texto e redação.',
+      'analise-desenvolvimento-sistemas': 'Tecnologias modernas para desenvolvimento de aplicações web, sistemas e boas práticas.',
+      'informatica-geral': 'Sistemas operacionais, redes, banco de dados e hardware.',
       'matematica': 'Álgebra, geometria, estatística e raciocínio lógico.',
+      'portugues': 'Gramática, interpretação de texto e redação.',
+      'desenvolvimento-web': 'Tecnologias modernas para desenvolvimento de aplicações web.',
       'informatica': 'Sistemas operacionais, redes e banco de dados.',
       'direito': 'Direito constitucional, civil, penal e administrativo.',
       'administracao': 'Gestão, liderança e processos organizacionais.',
@@ -383,9 +444,11 @@ export class DashboardComponent implements OnInit {
 
   getAreaIcon(areaName: string): string {
     const icons: { [key: string]: string } = {
-      'desenvolvimento-web': '💻',
-      'portugues': '📚',
+      'analise-desenvolvimento-sistemas': '💻',
+      'informatica-geral': '🖥️',
       'matematica': '🔢',
+      'portugues': '📚',
+      'desenvolvimento-web': '💻',
       'informatica': '💾',
       'direito': '⚖️',
       'administracao': '📊',
@@ -397,9 +460,11 @@ export class DashboardComponent implements OnInit {
 
   getAreaStats(areaName: string): { difficulty: string; avgTime: string } {
     const stats: { [key: string]: { difficulty: string; avgTime: string } } = {
-      'desenvolvimento-web': { difficulty: 'Alto', avgTime: '3min' },
-      'portugues': { difficulty: 'Médio', avgTime: '2min' },
+      'analise-desenvolvimento-sistemas': { difficulty: 'Alto', avgTime: '3min' },
+      'informatica-geral': { difficulty: 'M\u00e9dio', avgTime: '2min' },
       'matematica': { difficulty: 'Alto', avgTime: '4min' },
+      'portugues': { difficulty: 'M\u00e9dio', avgTime: '2min' },
+      'desenvolvimento-web': { difficulty: 'Alto', avgTime: '3min' },
       'informatica': { difficulty: 'Médio', avgTime: '2min' },
       'direito': { difficulty: 'Alto', avgTime: '3min' },
       'administracao': { difficulty: 'Médio', avgTime: '2min' },
@@ -418,9 +483,11 @@ export class DashboardComponent implements OnInit {
     
     // ✅ PROGRESSO SIMULADO BASEADO NO NOME
     const progressMap: { [key: string]: number } = {
-      'desenvolvimento-web': 75,
-      'portugues': 60,
+      'analise-desenvolvimento-sistemas': 75,
+      'informatica-geral': 80,
       'matematica': 45,
+      'portugues': 60,
+      'desenvolvimento-web': 75,
       'informatica': 80,
       'direito': 30,
       'administracao': 65,
@@ -485,6 +552,10 @@ export class DashboardComponent implements OnInit {
 
   // ✅ VERIFICAR SE USUÁRIO É PREMIUM
   isPremium(): boolean {
+    // Admin e estudante sempre têm acesso premium
+    if (localStorage.getItem('sowlfy_admin_token') || localStorage.getItem('student_token')) {
+      return true;
+    }
     return localStorage.getItem('isPremium') === 'true';
   }
 

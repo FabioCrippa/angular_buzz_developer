@@ -1,89 +1,412 @@
 {
   "appInfo": {
     "name": "SOWLFY",
-    "version": "2.0.0",
-    "description": "Plataforma completa de preparação profissional com questões atualizadas",
-    "lastUpdated": "2025-10-21"
+    "version": "3.0.0",
+    "description": "Plataforma completa de preparação profissional com cursos estruturados por disciplinas",
+    "lastUpdated": "2026-04-29"
   },
-  "stats": {
-    "totalQuestions": 768,
-    "totalAreas": 4,
-    "totalSubjects": 27,
-    "byArea": {
-      "desenvolvimento-web": 517,
-      "portugues": 181,
-      "matematica": 15,
-      "informatica": 55
-    },
-    "lastUpdated": "2025-10-21"
-  },
-  "areas": {
-    "desenvolvimento-web": {
-      "displayName": "Desenvolvimento Web",
+  
+  "cursos": [
+    {
+      "id": "analise-desenvolvimento-sistemas",
+      "nome": "Análise e Desenvolvimento de Sistemas",
+      "displayName": "Análise e Desenvolvimento de Sistemas",
       "icon": "💻",
-      "difficulty": "Alto",
-      "description": "HTML, CSS, JavaScript, Angular, TypeScript, DevOps, Metodologias, Design e Segurança"
+      "cor": "#007bff",
+      "descricao": "Curso de Análise e Desenvolvimento de Sistemas com foco em Desenvolvimento Web, DevOps e Segurança",
+      "totalQuestoes": 600,
+      "disciplinas": [
+        {
+          "id": "fundamentos-programacao",
+          "nome": "Fundamentos de Programação",
+          "descricao": "Conceitos básicos de programação com JavaScript e TypeScript",
+          "icon": "📖",
+          "topicos": [
+            {
+              "id": "javascript",
+              "nome": "JavaScript",
+              "descricao": "Linguagem de programação JavaScript",
+              "arquivo": "javascript.json"
+            },
+            {
+              "id": "typescript",
+              "nome": "TypeScript",
+              "descricao": "TypeScript - JavaScript com tipagem estática",
+              "arquivo": "typescript.json"
+            },
+            {
+              "id": "boas-praticas",
+              "nome": "Boas Práticas",
+              "descricao": "Boas práticas de programação",
+              "arquivo": "boas-praticas.json"
+            }
+          ]
+        },
+        {
+          "id": "desenvolvimento-web-frontend",
+          "nome": "Desenvolvimento Web Frontend",
+          "descricao": "HTML, CSS, JavaScript, Angular, React e Responsividade",
+          "icon": "🎨",
+          "topicos": [
+            {
+              "id": "html",
+              "nome": "HTML",
+              "descricao": "HTML - Markup Language",
+              "arquivo": "html.json"
+            },
+            {
+              "id": "css",
+              "nome": "CSS",
+              "descricao": "CSS - Estilos e Layout",
+              "arquivo": "css.json"
+            },
+            {
+              "id": "responsividade",
+              "nome": "Responsividade",
+              "descricao": "Design Responsivo e Mobile First",
+              "arquivo": "responsividade.json"
+            },
+            {
+              "id": "angular",
+              "nome": "Angular",
+              "descricao": "Framework Angular para desenvolvimento web",
+              "arquivo": "angular.json"
+            },
+            {
+              "id": "react",
+              "nome": "React",
+              "descricao": "Biblioteca React do Facebook",
+              "arquivo": "react.json"
+            },
+            {
+              "id": "debugging-frontend",
+              "nome": "Debugging em Frontend",
+              "descricao": "Erros comuns, debugging e troubleshooting em JavaScript/Frontend",
+              "arquivo": "debugging-frontend.json"
+            }
+          ]
+        },
+        {
+          "id": "design-interface",
+          "nome": "Design e Interface",
+          "descricao": "UX/UI, Prototipagem com Figma e Micro Frontend",
+          "icon": "🎭",
+          "topicos": [
+            {
+              "id": "figma",
+              "nome": "Figma",
+              "descricao": "Design de UI/UX com Figma",
+              "arquivo": "figma.json"
+            },
+            {
+              "id": "micro-front-end",
+              "nome": "Micro Frontend",
+              "descricao": "Arquitetura Micro Frontend",
+              "arquivo": "micro-front-end.json"
+            }
+          ]
+        },
+        {
+          "id": "metodologias-devops",
+          "nome": "Metodologias e DevOps",
+          "descricao": "Scrum, CI/CD, DevOps, Versionamento e Testes",
+          "icon": "⚙️",
+          "topicos": [
+            {
+              "id": "scrum",
+              "nome": "Scrum",
+              "descricao": "Metodologia Scrum",
+              "arquivo": "scrum.json"
+            },
+            {
+              "id": "ci-cd",
+              "nome": "CI/CD",
+              "descricao": "Continuous Integration / Continuous Deployment",
+              "arquivo": "ci-cd.json"
+            },
+            {
+              "id": "devops",
+              "nome": "DevOps",
+              "descricao": "Conceitos e práticas de DevOps",
+              "arquivo": "devops.json"
+            },
+            {
+              "id": "versionamento",
+              "nome": "Versionamento",
+              "descricao": "Git e Controle de Versão",
+              "arquivo": "versionamento.json"
+            },
+            {
+              "id": "code-review",
+              "nome": "Code Review",
+              "descricao": "Processo e boas práticas de Code Review",
+              "arquivo": "code-review.json"
+            },
+            {
+              "id": "testes-unitarios",
+              "nome": "Testes Unitários",
+              "descricao": "Testes Unitários e Testes de Integração",
+              "arquivo": "testes-unitarios.json"
+            }
+          ]
+        },
+        {
+          "id": "seguranca-desenvolvimento",
+          "nome": "Segurança em Desenvolvimento",
+          "descricao": "Criptografia, Autenticação e OWASP",
+          "icon": "🔒",
+          "topicos": [
+            {
+              "id": "criptografia",
+              "nome": "Criptografia",
+              "descricao": "Conceitos de Criptografia",
+              "arquivo": "criptografia.json"
+            },
+            {
+              "id": "autenticacao",
+              "nome": "Autenticação",
+              "descricao": "Autenticação e Autorização",
+              "arquivo": "autenticacao.json"
+            }
+          ]
+        },
+        {
+          "id": "prep-entrevista",
+          "nome": "Preparação para Entrevista",
+          "descricao": "Entrevistas Técnicas e Comportamentais",
+          "icon": "💼",
+          "topicos": [
+            {
+              "id": "entrevista-tecnica",
+              "nome": "Entrevista Técnica",
+              "descricao": "Preparação para Entrevistas Técnicas",
+              "arquivo": "entrevista-tecnica.json"
+            }
+          ]
+        }
+      ]
     },
-    "portugues": {
-      "displayName": "Português",
-      "icon": "📚",
-      "difficulty": "Médio",
-      "description": "Gramática, Interpretação, Redação, Coerência e Coesão"
+    {
+      "id": "informatica-geral",
+      "nome": "Informática Geral",
+      "displayName": "Informática Geral",
+      "icon": "💾",
+      "cor": "#28a745",
+      "descricao": "Conceitos gerais de Informática, Hardware, Redes e Ferramentas Office",
+      "totalQuestoes": 75,
+      "disciplinas": [
+        {
+          "id": "conceitos-basicos",
+          "nome": "Conceitos Básicos",
+          "descricao": "Hardware, Redes, Sistemas Operacionais e Internet",
+          "icon": "🔧",
+          "topicos": [
+            {
+              "id": "hardware",
+              "nome": "Hardware",
+              "descricao": "Componentes de Hardware",
+              "arquivo": "hardware.json"
+            },
+            {
+              "id": "sistemas-operacionais",
+              "nome": "Sistemas Operacionais",
+              "descricao": "Windows, Linux, MacOS",
+              "arquivo": "sistemasOperacionais.json"
+            },
+            {
+              "id": "internet",
+              "nome": "Internet",
+              "descricao": "Conceitos de Internet e Networking",
+              "arquivo": "internet.json"
+            }
+          ]
+        },
+        {
+          "id": "ferramentas-office",
+          "nome": "Ferramentas Office",
+          "descricao": "Editor de Texto, Planilhas e Redes",
+          "icon": "📊",
+          "topicos": [
+            {
+              "id": "editor-texto",
+              "nome": "Editor de Texto",
+              "descricao": "Microsoft Word e similares",
+              "arquivo": "editorTexto.json"
+            },
+            {
+              "id": "planilhas",
+              "nome": "Planilhas",
+              "descricao": "Microsoft Excel e similares",
+              "arquivo": "planilhas.json"
+            },
+            {
+              "id": "redes",
+              "nome": "Redes",
+              "descricao": "Conceitos de Redes de Computadores",
+              "arquivo": "redes.json"
+            }
+          ]
+        }
+      ]
     },
-    "matematica": {
+    {
+      "id": "matematica",
+      "nome": "Matemática",
       "displayName": "Matemática",
       "icon": "🔢",
-      "difficulty": "Alto",
-      "description": "Álgebra, Geometria e Raciocínio Lógico"
+      "cor": "#ffc107",
+      "descricao": "Matemática Básica, Álgebra e Geometria",
+      "totalQuestoes": 80,
+      "disciplinas": [
+        {
+          "id": "numeros-operacoes",
+          "nome": "Números e Operações",
+          "descricao": "Porcentagem, Razão, Proporção e Regra de Três",
+          "icon": "➕",
+          "topicos": [
+            {
+              "id": "porcentagem",
+              "nome": "Porcentagem",
+              "descricao": "Cálculos de Porcentagem",
+              "arquivo": "porcentagem.json"
+            },
+            {
+              "id": "razao",
+              "nome": "Razão",
+              "descricao": "Conceitos de Razão",
+              "arquivo": "razao.json"
+            },
+            {
+              "id": "proporcao",
+              "nome": "Proporção",
+              "descricao": "Conceitos de Proporção",
+              "arquivo": "proporcao.json"
+            },
+            {
+              "id": "regra-tres",
+              "nome": "Regra de Três",
+              "descricao": "Regra de Três Simples e Composta",
+              "arquivo": "regraTres.json"
+            }
+          ]
+        },
+        {
+          "id": "algebra",
+          "nome": "Álgebra",
+          "descricao": "Álgebra e Equações",
+          "icon": "📐",
+          "topicos": [
+            {
+              "id": "algebra",
+              "nome": "Álgebra",
+              "descricao": "Conceitos de Álgebra",
+              "arquivo": "algebra.json"
+            },
+            {
+              "id": "equacoes",
+              "nome": "Equações",
+              "descricao": "Equações de Primeiro e Segundo Grau",
+              "arquivo": "equacoes.json"
+            }
+          ]
+        },
+        {
+          "id": "geometria",
+          "nome": "Geometria",
+          "descricao": "Geometria Plana e Espacial",
+          "icon": "▲",
+          "topicos": [
+            {
+              "id": "geometria",
+              "nome": "Geometria",
+              "descricao": "Conceitos de Geometria",
+              "arquivo": "geometria.json"
+            }
+          ]
+        }
+      ]
     },
-    "informatica": {
-      "displayName": "Informática",
-      "icon": "💾",
-      "difficulty": "Médio",
-      "description": "Hardware, Redes e Sistemas Operacionais"
+    {
+      "id": "portugues",
+      "nome": "Português",
+      "displayName": "Português",
+      "icon": "📚",
+      "cor": "#dc3545",
+      "descricao": "Gramática, Interpretação, Redação e Comunicação",
+      "totalQuestoes": 140,
+      "disciplinas": [
+        {
+          "id": "linguagem-texto",
+          "nome": "Linguagem e Texto",
+          "descricao": "Gramática, Ortografia e Semântica",
+          "icon": "✍️",
+          "topicos": [
+            {
+              "id": "gramatica",
+              "nome": "Gramática",
+              "descricao": "Regras Gramaticais",
+              "arquivo": "gramatica.json"
+            },
+            {
+              "id": "ortografia",
+              "nome": "Ortografia",
+              "descricao": "Correção Ortográfica",
+              "arquivo": "ortografia.json"
+            },
+            {
+              "id": "semantica",
+              "nome": "Semântica",
+              "descricao": "Significado e Semântica das Palavras",
+              "arquivo": "semantica.json"
+            }
+          ]
+        },
+        {
+          "id": "producao-compreensao",
+          "nome": "Produção e Compreensão",
+          "descricao": "Interpretação, Redação, Coerência e Coesão",
+          "icon": "📖",
+          "topicos": [
+            {
+              "id": "interpretacao",
+              "nome": "Interpretação",
+              "descricao": "Interpretação de Textos",
+              "arquivo": "interpretacao.json"
+            },
+            {
+              "id": "redacao",
+              "nome": "Redação",
+              "descricao": "Técnicas de Redação",
+              "arquivo": "redacao.json"
+            },
+            {
+              "id": "coerencia",
+              "nome": "Coerência",
+              "descricao": "Coerência em Textos",
+              "arquivo": "coerencia.json"
+            },
+            {
+              "id": "coesao",
+              "nome": "Coesão",
+              "descricao": "Coesão Textual",
+              "arquivo": "coesao.json"
+            }
+          ]
+        }
+      ]
     }
-  },
-  "structure": {
-    "desenvolvimento-web": [
-      "angular",
-      "boas-praticas",
-      "css",
-      "front-end",
-      "html",
-      "javascript",
-      "responsividade",
-      "typescript",
-      "ci-cd",
-      "code-review",
-      "devops",
-      "scrum",
-      "testes-unitarios",
-      "versionamento",
-      "figma",
-      "micro-front-end",
-      "criptografia",
-      "entrevista-tecnica"
-    ],
-    "portugues": [
-      "gramatica",
-      "interpretacao",
-      "redacao",
-      "coerencia",
-      "coesao",
-      "ortografia"
-    ],
-    "matematica": [
-      "algebra",
-      "geometria",
-      "raciocinio-logico",
-      "basica"
-    ],
-    "informatica": [
-      "hardware",
-      "redes",
-      "sistemas-operacionais",
-      "conceitos",
-      "software"
-    ]
+  ],
+  
+  "stats": {
+    "totalCursos": 4,
+    "totalDisciplinas": 12,
+    "totalTopicos": 51,
+    "totalQuestoes": 895,
+    "byArea": {
+      "analise-desenvolvimento-sistemas": 600,
+      "informatica-geral": 75,
+      "matematica": 80,
+      "portugues": 140
+    }
   }
 }

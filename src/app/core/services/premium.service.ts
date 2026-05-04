@@ -141,6 +141,21 @@ export class PremiumService {
   
   private getInitialStatus(): UserPremiumStatus {
     try {
+      // Admin e estudante sempre têm acesso premium
+      if (
+        typeof localStorage !== 'undefined' && (
+          localStorage.getItem('sowlfy_admin_token') ||
+          localStorage.getItem('student_token')
+        )
+      ) {
+        return {
+          isPremium: true,
+          features: this.getPremiumFeatures(),
+          dailyQuizCount: 0,
+          dailyQuizLimit: -1
+        };
+      }
+
       const saved = localStorage.getItem(this.STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);

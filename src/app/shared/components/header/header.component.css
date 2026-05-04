@@ -108,7 +108,7 @@
 
 .brand-name {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 500;
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.5px;
@@ -160,7 +160,7 @@
   border: none;
   border-radius: 8px;
   color: white;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -176,6 +176,21 @@
 .nav-button.active {
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ NAV BUTTON - CTA (QUIZ ANÔNIMO) */
+.nav-button-cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-button-cta:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
 .nav-button svg {
@@ -266,7 +281,7 @@
   border: none;
   border-radius: 20px;
   color: #333;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -327,7 +342,7 @@
 }
 
 .avatar-initials {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 14px;
   color: white;
 }
@@ -356,7 +371,7 @@
 }
 
 .user-name {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   max-width: 120px;
   overflow: hidden;
@@ -376,11 +391,11 @@
   background: rgba(255, 255, 255, 0.2);
   padding: 2px 6px;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .streak {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .dropdown-arrow {
@@ -446,7 +461,7 @@
 }
 
 .menu-avatar span {
-  font-weight: 700;
+  font-weight: 400;
   color: #666;
 }
 
@@ -458,6 +473,7 @@
   display: block;
   color: #333;
   font-size: 16px;
+  font-weight: 400;
   margin-bottom: 4px;
 }
 
@@ -588,7 +604,7 @@
 .premium-menu-item {
   background: linear-gradient(135deg, #ffd700, #ffb347);
   color: #333;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 8px;
   margin: 0 8px;
 }
@@ -635,7 +651,7 @@
   padding: 10px 16px;
   border: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -734,7 +750,7 @@
 }
 
 .mobile-avatar span {
-  font-weight: 700;
+  font-weight: 400;
   color: #666;
 }
 
@@ -746,6 +762,7 @@
   display: block;
   color: #333;
   font-size: 16px;
+  font-weight: 400;
   margin-bottom: 4px;
 }
 

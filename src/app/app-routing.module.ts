@@ -7,6 +7,8 @@ import { ProgressComponent } from './pages/progress/progress.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { UpgradeComponent } from './pages/upgrade/upgrade.component'; // ✅ ADICIONAR
 import { AreaComponent } from './pages/area/area.component'; // ✅ ADICIONAR
+import { AnonymousQuizComponent } from './pages/anonymous-quiz/anonymous-quiz.component'; // ✅ NOVO
+import { TrialAnalyticsDashboardComponent } from './shared/components/trial-analytics-dashboard/trial-analytics-dashboard.component'; // ✅ NOVO
 import { LoginComponent } from './shared/components/login/login.component'; // ✅ ADICIONAR ESTA LINHA CORRETA
 import { HelpComponent } from './pages/help/help.component';
 import { TermComponent } from './pages/term/term.component';
@@ -157,6 +159,28 @@ const routes: Routes = [
     }
   },
 
+  // ✅ QUIZ ANÔNIMO (PÚBLICO)
+  // ===============================================
+  {
+    path: 'anonymous-quiz',
+    component: AnonymousQuizComponent,
+    data: { 
+      title: 'Quiz Anônimo - SOWLFY',
+      description: 'Teste seus conhecimentos com 10 questões aleatórias'
+    }
+  },
+
+  // ✅ TRIAL ANALYTICS DASHBOARD
+  // ===============================================
+  {
+    path: 'admin/analytics',
+    component: TrialAnalyticsDashboardComponent,
+    data: { 
+      title: 'Trial Analytics Dashboard - SOWLFY',
+      description: 'Dashboard de estatísticas do teste gratuito'
+    }
+  },
+
   // ===============================================
   // 💳 ROTAS DE PAGAMENTO
   // ===============================================
@@ -195,7 +219,27 @@ const routes: Routes = [
     redirectTo: '', 
     pathMatch: 'full' 
   },
-  
+
+  // ===============================================
+  // 🎓 ROTAS DE ESCOLAS
+  // ===============================================
+  { 
+    path: 'school-dashboard',
+    loadChildren: () => import('./pages/school-dashboard/school-dashboard.module').then(m => m.SchoolDashboardModule),
+    data: { 
+      title: 'Dashboard Escolar - SOWLFY',
+      description: 'Dashboard do aluno da escola'
+    }
+  },
+
+  // ===============================================
+  // 👨‍💼 ROTAS ADMINISTRATIVAS (ADMIN)
+  // ===============================================
+  { 
+    path: '',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+
   { 
     path: '**', 
     redirectTo: '', 

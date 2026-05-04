@@ -1,7 +1,8 @@
-﻿import { Component, OnInit, Inject, Optional } from '@angular/core'; // ✅ ADICIONAR Optional
+﻿import { Component, OnInit, Inject, Optional } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService, User } from '../../../core/services/auth.service';
+import { AuthService } from '../../../core/services/auth.service';
+import { HttpClient } from '@angular/common/http';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -11,7 +12,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
   loginForm!: FormGroup;
   registerForm!: FormGroup;
   
@@ -19,54 +19,50 @@ export class LoginComponent implements OnInit {
   errorMessage: string = '';
   successMessage: string = '';
   
+  isAdminLogin = false;
+  isDialog: boolean = false;
+  selectedTabIndex: number = 0;
+  isSelectionMode: boolean = true;
   hideLoginPassword: boolean = true;
   hideRegisterPassword: boolean = true;
   hideConfirmPassword: boolean = true;
-  
-  selectedTabIndex: number = 0;
-  isDialog: boolean = false; // ✅ ADICIONAR PROPRIEDADE
-  isSelectionMode: boolean = false; // ✅ MODO DE SELEÇÃO
   dialogTitle: string = 'Login';
   dialogSubtitle: string = '';
-  
+  dialogData: any;
+
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
+    private http: HttpClient,
     private router: Router,
-    @Optional() public dialogRef: MatDialogRef<LoginComponent>, // ✅ OPCIONAL
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: any, // ✅ OPCIONAL
-    private snackBar: MatSnackBar // ✅ INJETAR MatSnackBar
+    @Optional() public dialogRef: MatDialogRef<LoginComponent>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+    private snackBar: MatSnackBar
   ) {
-    // ✅ DETECTAR SE É DIALOG
     this.isDialog = !!this.dialogRef;
-    
-    // ✅ CONFIGURAR BASEADO NO DATA
-    if (this.data) {
-      this.dialogTitle = this.data.title || 'Login';
-      this.dialogSubtitle = this.data.subtitle || '';
-      this.isSelectionMode = this.data.mode === 'selection';
-      
-      if (this.data.mode === 'register') {
-        this.selectedTabIndex = 1;
-      }
-    }
   }
 
   ngOnInit(): void {
     this.createForms();
     
-    // ✅ SÓ VERIFICAR LOGIN SE NÃO FOR DIALOG
-    if (!this.isDialog) {
-      this.checkIfAlreadyLoggedIn();
+    // Se já está autenticado, fechar
+    if (this.authService.isAuthenticated()) {
+      if (this.isDialog) {
+        this.dialogRef.close({ success: true });
+      } else {
+        this.router.navigateByUrl('/');
+      }
     }
   }
 
-  // ===============================================
-  // 🔧 INICIALIZAÇÃO
-  // ===============================================
-
-  private createForms(): void {
+  createForms(): void {
     this.loginForm = this.fb.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      rememberMe: [false]
+    });
+
+    this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(4)]],
       rememberMe: [false]
@@ -88,7 +84,7 @@ export class LoginComponent implements OnInit {
   }
 
   // ===============================================
-  // 🔐 AUTENTICAÇÃO CORRIGIDA
+  // 🔐 AUTENTICAÇÃO COM DETECÇÃO AUTOMÁTICA (ADMIN vs ESTUDANTE)
   // ===============================================
 
   onLogin(): void {
@@ -98,20 +94,48 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    const { email, password, rememberMe } = this.loginForm.value; // ✅ INCLUIR REMEMBER ME
+    const { email, password, rememberMe } = this.loginForm.value;
     
     this.isLoading = true;
     this.errorMessage = '';
     this.successMessage = '';
 
-    this.authService.login(email, password, rememberMe).subscribe({
+    // 🔍 DETECTAR TIPO DE USUÁRIO (3 tipos possíveis)
+    const hasAtSymbol = email?.includes('@');
+    const isAdminEmail = email?.toLowerCase() === 'admin@sowlfy.com.br';
+    
+    if (isAdminEmail) {
+      // 🔐 LOGIN ADMIN SOWLFY
+      this.loginAdmin(email, password);
+    } else if (hasAtSymbol) {
+      // 👤 LOGIN USUÁRIO INDIVIDUAL (Firebase Auth)
+      this.loginIndividualUser(email, password, rememberMe);
+    } else {
+      // 🎓 LOGIN ESTUDANTE (RA + Senha Compartilhada)
+      this.loginStudent(email, password, rememberMe);
+    }
+  }
+
+  /**
+   * 🔐 Login do Admin
+   */
+  private loginAdmin(email: string, password: string): void {
+    this.http.post<any>(
+      'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/adminLogin',
+      { email, password },
+      { headers: { 'Content-Type': 'application/json' } }
+    ).subscribe({
       next: (result) => {
         this.isLoading = false;
         
-        if (result.success) {
-          this.successMessage = '✅ Login realizado com sucesso!';
+        if (result?.success && result?.token) {
+          // Armazenar token e dados do admin
+          localStorage.setItem('sowlfy_admin_token', result.token);
+          localStorage.setItem('sowlfy_admin_data', JSON.stringify(result.adminData || { email }));
+          localStorage.setItem('testPremiumStatus', 'true');
+
+          this.successMessage = '✅ Login Admin realizado!';
           
-          // Mostrar mensagem de sucesso
           this.snackBar.open(this.successMessage, 'Fechar', {
             duration: 3000,
             horizontalPosition: 'end',
@@ -119,25 +143,145 @@ export class LoginComponent implements OnInit {
             panelClass: ['success-snackbar']
           });
           
-          // Redirecionar após delay
           if (this.isDialog) {
             setTimeout(() => {
-              this.dialogRef?.close({ success: true, user: result.user });
+              this.dialogRef?.close({ 
+                success: true, 
+                userType: 'admin',
+                user: result.adminData || { email, name: 'Admin' }
+              });
             }, 800);
           } else {
             setTimeout(() => {
-              const redirectUrl = this.getRedirectUrl();
-              this.router.navigate([redirectUrl]);
+              this.router.navigateByUrl('/admin/dashboard');
             }, 1000);
           }
-          
         } else {
-          this.errorMessage = result.message;
+          this.isLoading = false;
+          this.errorMessage = result?.error || 'Email ou senha incorretos';
         }
       },
       error: (error) => {
         this.isLoading = false;
-        this.errorMessage = error.message || 'Erro no servidor. Tente novamente.';
+        this.errorMessage = 'Erro ao fazer login: ' + (error.message || 'Tente novamente');
+        
+        this.snackBar.open(this.errorMessage, 'Fechar', {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
+  }
+
+  /**
+   * 👤 Login do Estudante (RA + Senha Compartilhada)
+   */
+  private loginStudent(ra: string, password: string, rememberMe: boolean): void {
+    this.http.post<any>(
+      'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/studentLogin',
+      { ra, password },
+      { headers: { 'Content-Type': 'application/json' } }
+    ).subscribe({
+      next: (result) => {
+        this.isLoading = false;
+        
+        if (result?.success && result?.user) {
+          // Armazenar dados do estudante
+          localStorage.setItem('student_token', result.token || '');
+          localStorage.setItem('student_data', JSON.stringify(result.user));
+          localStorage.setItem('student_schoolId', result.schoolId || '');
+          localStorage.setItem('testPremiumStatus', 'true');
+
+          this.successMessage = `✅ Bem-vindo, ${result.user.name}!`;
+          
+          this.snackBar.open(this.successMessage, 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top',
+            panelClass: ['success-snackbar']
+          });
+          
+          if (this.isDialog) {
+            setTimeout(() => {
+              this.dialogRef?.close({ 
+                success: true, 
+                userType: 'student',
+                user: result.user,
+                schoolId: result.schoolId
+              });
+            }, 800);
+          } else {
+            setTimeout(() => {
+              this.router.navigateByUrl('/quizz');
+            }, 1000);
+          }
+        } else {
+          this.isLoading = false;
+          this.errorMessage = result?.error || 'RA ou senha incorretos';
+        }
+      },
+      error: (error) => {
+        this.isLoading = false;
+        this.errorMessage = 'Erro ao fazer login: ' + (error.message || 'Tente novamente');
+        
+        this.snackBar.open(this.errorMessage, 'Fechar', {
+          duration: 5000,
+          horizontalPosition: 'end',
+          verticalPosition: 'top',
+          panelClass: ['error-snackbar']
+        });
+      }
+    });
+  }
+
+  /**
+   * 👤 Login do Usuário Individual (Firebase Auth)
+   * Email + Senha cadastrados como usuário regular
+   */
+  private loginIndividualUser(email: string, password: string, rememberMe: boolean): void {
+    this.authService.login(email, password, rememberMe).subscribe({
+      next: (result) => {
+        this.isLoading = false;
+        
+        if (result?.success && result?.user) {
+          this.successMessage = `✅ Bem-vindo, ${result.user.name}!`;
+          
+          this.snackBar.open(this.successMessage, 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top',
+            panelClass: ['success-snackbar']
+          });
+          
+          if (this.isDialog) {
+            setTimeout(() => {
+              this.dialogRef?.close({ 
+                success: true, 
+                userType: 'individual',
+                user: result.user
+              });
+            }, 800);
+          } else {
+            setTimeout(() => {
+              this.router.navigateByUrl('/dashboard');
+            }, 1000);
+          }
+        } else {
+          this.isLoading = false;
+          this.errorMessage = result?.message || 'Email ou senha incorretos';
+        }
+      },
+      error: (error) => {
+        this.isLoading = false;
+        
+        // Se falhar login individual, mostrar erro genérico
+        if (error?.code === 'auth/user-not-found' || error?.code === 'auth/wrong-password') {
+          this.errorMessage = 'Email ou senha incorretos';
+        } else {
+          this.errorMessage = error?.message || 'Erro ao fazer login. Tente novamente';
+        }
         
         this.snackBar.open(this.errorMessage, 'Fechar', {
           duration: 5000,
@@ -405,22 +549,14 @@ export class LoginComponent implements OnInit {
   
   // ✅ ESCOLHER LOGIN
   selectLogin(): void {
-    if (this.dialogRef) {
-      this.dialogRef.close({ action: 'login' });
-    } else {
-      this.selectedTabIndex = 0;
-      this.isSelectionMode = false;
-    }
+    this.selectedTabIndex = 0;
+    this.isSelectionMode = false;
   }
   
   // ✅ ESCOLHER CADASTRO
   selectRegister(): void {
-    if (this.dialogRef) {
-      this.dialogRef.close({ action: 'register' });
-    } else {
-      this.selectedTabIndex = 1;
-      this.isSelectionMode = false;
-    }
+    this.selectedTabIndex = 1;
+    this.isSelectionMode = false;
   }
   
   // ✅ FECHAR MODAL

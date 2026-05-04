@@ -148,6 +148,24 @@
         </div>
         <span class="progress-text">{{ progressPercentageRounded }}%</span>
       </div>
+
+      <!-- ✅ NOVO: TRIAL ATTEMPTS COUNTER -->
+      <div class="trial-counter" *ngIf="isFreeTrial && maxAttemptsToday > 0">
+        <div class="attempts-badge" 
+             [class.low-attempts]="remainingAttempts <= 2"
+             [class.last-attempt]="remainingAttempts === 1"
+             [title]="'Tentativas disponíveis: ' + remainingAttempts + '/' + maxAttemptsToday">
+          <svg class="attempts-icon" viewBox="0 0 24 24" width="16" height="16">
+            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+          </svg>
+          <span class="attempts-text">
+            <strong>{{ remainingAttempts }}/{{ maxAttemptsToday }}</strong> tentativas
+          </span>
+          <span class="days-info" *ngIf="trialDaysRemaining >= 0">
+            {{trialDaysRemaining}} dias restantes
+          </span>
+        </div>
+      </div>
     </div>
 
     <!-- ✅ QUIZ STATS - APENAS UMA VEZ -->
@@ -335,6 +353,16 @@
           <i class="fas fa-flag-checkered"></i>
           Finalizar Quiz
         </button>
+
+        <!-- ✅ ENCERRAR ANTECIPADO - a partir da questão 5 -->
+        <button
+          class="btn btn-encerrar"
+          *ngIf="canGoNext && currentQuestionIndex >= 4"
+          (click)="completeQuiz()"
+          title="Encerrar o quiz agora e ver suas estatísticas">
+          <i class="fas fa-stop-circle"></i>
+          Encerrar Quiz
+        </button>
       </div>
     </div>
 
@@ -450,13 +478,13 @@
         <button class="btn btn-secondary" 
                 (click)="goHome()"
                 [disabled]="isNavigating"
-                aria-label="Voltar para a página inicial"
-                title="Voltar ao início">
+                [attr.aria-label]="'Voltar para ' + getCategoryTitle(area)"
+                [title]="'Voltar à área ' + getCategoryTitle(area)">
           <i class="fas" 
-             [class.fa-home]="!isNavigating"
+             [class.fa-arrow-left]="!isNavigating"
              [class.fa-spinner]="isNavigating"
              [class.fa-spin]="isNavigating"></i>
-          <span class="btn-text">{{ isNavigating ? 'Carregando...' : 'Início' }}</span>
+          <span class="btn-text">{{ isNavigating ? 'Carregando...' : 'Voltar à Área' }}</span>
         </button>
         
         <!-- ✅ BOTÃO UPGRADE - SÓ APARECE SE FOR GRATUITO E SEM TENTATIVAS -->

@@ -1,0 +1,185 @@
+<!-- ✅ LOADING STATE -->
+<div class="quiz-container" *ngIf="currentState === 'loading'">
+  <div class="loading-screen">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <h2>{{ loadingMessage }}</h2>
+      <div class="progress-bar-loading">
+        <div class="progress-fill" [style.width.%]="loadingProgress"></div>
+      </div>
+      <p class="loading-subtext">Isso pode levar alguns segundos...</p>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ QUIZ STATE -->
+<div class="quiz-container" *ngIf="currentState === 'quiz' && currentQuestion">
+  <!-- HEADER -->
+  <div class="quiz-header">
+    <div class="header-left">
+      <button class="btn-back" (click)="backToHome()" title="Voltar para home">
+        ← Voltar
+      </button>
+      <span class="quiz-title">Quiz Grátis</span>
+    </div>
+    <div class="header-center">
+      <span class="streak-display" [title]="'Dias consecutivos de prática'">
+        {{ streakDisplay }}
+      </span>
+    </div>
+    <div class="header-right">
+      <span class="timer">⏱️ {{ elapsedTime }}s</span>
+      <span class="attempts-counter">
+        💰 {{ remainingAttempts }}/7
+      </span>
+    </div>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill" [style.width.%]="getProgressPercentage()"></div>
+    </div>
+  </div>
+
+  <!-- CATEGORY BADGE -->
+  <div class="category-badge" [style.backgroundColor]="getCategoryColor(currentQuestion.category)">
+    <span class="category-icon">{{ getCategoryIcon(currentQuestion.category) }}</span>
+    <span class="category-name">{{ getCategoryName(currentQuestion.category) }}</span>
+    <span class="difficulty" *ngIf="currentQuestion.difficulty">
+      {{ currentQuestion.difficulty }}
+    </span>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="question-section">
+    <div class="question-text">
+      {{ currentQuestion.question }}
+    </div>
+  </div>
+
+  <!-- OPTIONS -->
+  <div class="options-container">
+    <button
+      *ngFor="let option of currentQuestion.options; let i = index"
+      class="option-button"
+      [class.selected]="selectedAnswer === option.alias"
+      [class.correct]="selectedAnswer && option.alias === currentQuestion.correct && selectedAnswer === option.alias"
+      [class.incorrect]="selectedAnswer && option.alias === selectedAnswer && selectedAnswer !== currentQuestion.correct"
+      [class.unselected]="selectedAnswer && option.alias !== selectedAnswer"
+      [disabled]="showExplanation"
+      (click)="selectAnswer(option.alias)">
+      <span class="option-letter">{{ getOptionLetter(i) }}</span>
+      <span class="option-text">{{ option.name }}</span>
+      <span class="option-icon" *ngIf="selectedAnswer">
+        <span *ngIf="option.alias === currentQuestion.correct && selectedAnswer === option.alias">✓</span>
+        <span *ngIf="option.alias === selectedAnswer && selectedAnswer !== currentQuestion.correct">✗</span>
+      </span>
+    </button>
+  </div>
+
+  <!-- EXPLANATION -->
+  <div class="explanation-section" *ngIf="showExplanation && selectedAnswer">
+    <!-- FEEDBACK BADGE -->
+    <div class="feedback-badge" [class.correct]="answerFeedback?.isCorrect" [class.incorrect]="!answerFeedback?.isCorrect">
+      <span class="feedback-icon">{{ answerFeedback?.isCorrect ? '✓' : '✗' }}</span>
+      <span class="feedback-text">{{ answerFeedback?.message }}</span>
+    </div>
+
+    <div class="explanation-header">
+      <span class="icon">💡</span>
+      <h4>Explicação</h4>
+    </div>
+    <p class="explanation-text">{{ currentQuestion.explanation }}</p>
+
+    <!-- NEXT BUTTON - Aparece junto com a explicação -->
+    <button class="btn-next" (click)="nextQuestion()">
+      {{ currentQuestionIndex === questions.length - 1 ? 'Finalizar Quiz' : 'Próxima Questão' }}
+      <span class="arrow">→</span>
+    </button>
+  </div>
+</div>
+
+<!-- ✅ RESULTS STATE -->
+<div class="results-container" *ngIf="currentState === 'results'">
+  <div class="results-card">
+    <!-- SCORE CIRCLE -->
+    <div class="score-circle" [style.borderColor]="getScoreColor()">
+      <div class="score-value" [style.color]="getScoreColor()">
+        {{ score }}%
+      </div>
+      <div class="score-label">Seu Resultado</div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-icon">✓</div>
+        <div class="stat-info">
+          <div class="stat-value">{{ correctAnswers }}/{{ questions.length }}</div>
+          <div class="stat-label">Acertos</div>
+        </div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">⏱️</div>
+        <div class="stat-info">
+          <div class="stat-value">{{ getTimeFormatted() }}</div>
+          <div class="stat-label">Tempo</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="score-message">
+      {{ getScoreMessage() }}
+    </div>
+
+    <!-- BREAKDOWN BY CATEGORY -->
+    <div class="category-breakdown">
+      <h4>Resultado por Área</h4>
+      <div class="breakdown-items">
+        <div class="breakdown-item" *ngFor="let q of questions">
+          <span class="category-icon">{{ getCategoryIcon(q.category) }}</span>
+          <span class="question-status" [class.correct]="q.isCorrect" [class.incorrect]="!q.isCorrect">
+            {{ q.isCorrect ? '✓' : '✗' }}
+          </span>
+          <span class="category-short">{{ getCategoryName(q.category).split(' ')[0] }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="results-actions">
+      <button class="btn-share" (click)="shareResult()">
+        <span class="icon">📤</span>
+        Compartilhar Resultado
+      </button>
+
+      <button class="btn-signup" (click)="createAccount()">
+        <span class="icon">⭐</span>
+        Criar Conta para Salvar
+      </button>
+
+      <button class="btn-home" (click)="backToHome()">
+        <span class="icon">🏠</span>
+        Voltar para Home
+      </button>
+    </div>
+
+    <!-- SIGNUP CTA -->
+    <div class="signup-cta">
+      <div class="cta-icon">🎓</div>
+      <h3>Quer salvar seu progresso?</h3>
+      <p>Crie uma conta gratuita para:</p>
+      <ul>
+        <li>✓ Salvar todos seus resultados</li>
+        <li>✓ Ver histórico de progresso</li>
+        <li>✓ Accesso a {{ questions.length * 10 }}+ questões</li>
+        <li>✓ Desafios e certificados</li>
+      </ul>
+      <button class="btn-signup-large" (click)="createAccount()">
+        Criar Conta Gratuita
+      </button>
+    </div>
+  </div>
+</div>

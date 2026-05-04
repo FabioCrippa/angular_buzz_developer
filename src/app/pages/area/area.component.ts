@@ -197,7 +197,7 @@ export class AreaComponent implements OnInit {
       
       if (!this.areaData) {
         this.hasError = true;
-        this.errorMessage = `Área "${this.areaId}" não encontrada. Áreas disponíveis: matematica, portugues, informatica, desenvolvimento-web`;
+        this.errorMessage = `Área "${this.areaId}" não encontrada. Áreas disponíveis: analise-desenvolvimento-sistemas, informatica-geral, matematica, portugues`;
         this.isLoading = false;
         return;
       }
@@ -255,8 +255,44 @@ export class AreaComponent implements OnInit {
         console.log('📦 Index carregado, buscando estrutura para:', this.areaName);
         
         if (!indexData?.structure?.[this.areaName]) {
-          console.error('❌ Área não encontrada no index:', this.areaName);
-          throw new Error(`Área ${this.areaName} não encontrada`);
+          // Tentar novo formato com mapeamento de legado
+          const legacyMap: { [key: string]: string[] } = {
+            'desenvolvimento-web': ['analise-desenvolvimento-sistemas'],
+            'informatica': ['informatica-geral'],
+            'analise-desenvolvimento-sistemas': ['analise-desenvolvimento-sistemas'],
+            'informatica-geral': ['informatica-geral'],
+            'matematica': ['matematica'],
+            'portugues': ['portugues'],
+          };
+          const targetIds = legacyMap[this.areaName] || [this.areaName];
+          // Coletar todos os caminhos de arquivo do novo formato
+          const filePaths: Array<{ subject: string; path: string }> = [];
+          if (indexData?.cursos && Array.isArray(indexData.cursos)) {
+            for (const curso of indexData.cursos) {
+              if (targetIds.includes(curso.id)) {
+                for (const disc of (curso.disciplinas || [])) {
+                  for (const topico of (disc.topicos || [])) {
+                    const arquivo = topico.arquivo || `${topico.id}.json`;
+                    filePaths.push({
+                      subject: topico.id,
+                      path: `assets/data/areas/${curso.id}/${disc.id}/${arquivo}`
+                    });
+                  }
+                }
+              }
+            }
+          }
+          if (filePaths.length === 0) {
+            console.error('❌ Área não encontrada no index:', this.areaName);
+            throw new Error(`Área ${this.areaName} não encontrada`);
+          }
+          const requests2 = filePaths.map(fp =>
+            this.http.get<any>(fp.path).pipe(
+              catchError(() => of(null)),
+              map(data => ({ subject: fp.subject, questions: data?.questions || [] }))
+            )
+          );
+          return forkJoin(requests2) as Observable<any[]>;
         }
         
         const subjects = indexData.structure[this.areaName];
@@ -318,8 +354,8 @@ export class AreaComponent implements OnInit {
         return allQuestions;
       }),
       catchError(error => {
-        console.error('❌ Erro final, usando fallback:', error);
-        return of(this.generateQuestionsForArea());
+        console.error('❌ Erro ao carregar questões da área:', error);
+        throw error;
       }),
       map(questions => {
         // ✅ GARANTIR que totalQuestions seja sempre atualizado
@@ -405,14 +441,28 @@ export class AreaComponent implements OnInit {
       accuracy: accuracy,
       timeSpent: timeSpent
     };
+
+    // ✅ 4. Derivar lista de assuntos reais das questões carregadas
+    const uniqueSubjects = [...new Set(this.questions.map(q => q.subject))].sort();
+    if (uniqueSubjects.length > 0) {
+      this.areaData.subjects = uniqueSubjects;
+    }
   }
 
   private loadUserPremiumStatus(): void {
-    // ✅ Carregar status premium do localStorage (ou de um service real)
+    // Admin sempre tem acesso premium
+    if (localStorage.getItem('sowlfy_admin_token')) {
+      this.isPremium = true;
+      return;
+    }
+    // Estudante de escola ativa tem acesso premium
+    if (localStorage.getItem('student_token')) {
+      this.isPremium = true;
+      return;
+    }
+    // Usuário individual: verificar status premium salvo
     const savedStatus = localStorage.getItem('testPremiumStatus');
     this.isPremium = savedStatus === 'true';
-    
-    console.log('👑 Status Premium:', this.isPremium);
   }
 
   private async loadUserQuizLimits(): Promise<void> {
@@ -625,6 +675,22 @@ export class AreaComponent implements OnInit {
         }
       });
     }, 500);
+  }
+
+  startSubjectQuiz(subject: string): void {
+    if (!this.isPremium) {
+      this.navigateToUpgrade();
+      return;
+    }
+    this.router.navigate(['/quiz'], {
+      queryParams: {
+        area: this.areaName,
+        mode: 'subject',
+        subject: subject,
+        count: 'unlimited',
+        premium: 'true'
+      }
+    });
   }
 
   startWrongQuestionsQuiz(): void {
@@ -1317,26 +1383,15 @@ Clique em "Upgrade Premium" para desbloquear!`);
     this.showSuccessMessage(`${fakeHistory.length} questões erradas simuladas! Progresso atualizado.`);
   }
 
-  // ✅ SUBSTITUA o método getProgressPercentage existente por esta versão corrigida:
-
   getProgressPercentage(): number {
-    if (!this.areaData) {
+    if (!this.areaData || !this.areaData.totalQuestions) {
       return 0;
     }
-    
-    // ✅ Usar limite do quiz (10 FREE / 20 PREMIUM) ao invés do total de questões
-    const maxQuestions = this.isPremium ? 20 : 10;
+    const total = this.areaData.totalQuestions;
     const completed = this.areaData.userProgress.completed;
-    
-    // ✅ Calcular percentual baseado no limite do quiz
-    const percentage = Math.round((Math.min(completed, maxQuestions) / maxQuestions) * 100);
-    
-    // ✅ Verificar se o resultado é válido
-    if (!isFinite(percentage) || isNaN(percentage)) {
-      return 0;
-    }
-    
-    return Math.min(percentage, 100); // ✅ Máximo de 100%
+    const percentage = Math.round((completed / total) * 100);
+    if (!isFinite(percentage) || isNaN(percentage)) return 0;
+    return Math.min(percentage, 100);
   }
 
   // ===============================================
@@ -1344,65 +1399,72 @@ Clique em "Upgrade Premium" para desbloquear!`);
   // ===============================================
 
   getDominatedSubjects(): string {
-    if (!this.areaData) return '0';
-    
-    // Contar matérias únicas nas questões
+    if (!this.questions || this.questions.length === 0) return '0';
+    const history = this.progressService.getHistory().filter(h => h.area === this.areaName);
+    if (history.length === 0) return '0';
+
     const uniqueSubjects = new Set(this.questions.map(q => q.subject));
     const totalSubjects = uniqueSubjects.size;
-    
-    // Para simplificar, considerar que dominou se respondeu questões
-    // Em uma versão real, você poderia verificar acerto por matéria
-    const dominatedCount = Math.min(Math.floor(totalSubjects * 0.6), totalSubjects);
-    
-    return `${dominatedCount} de ${totalSubjects}`;
+    let dominated = 0;
+
+    uniqueSubjects.forEach(subject => {
+      const subjectIds = new Set(this.questions.filter(q => q.subject === subject).map(q => String(q.id)));
+      const subjectHistory = history.filter(h => subjectIds.has(String(h.questionId)));
+      if (subjectHistory.length >= 3) {
+        const accuracy = subjectHistory.filter(h => h.correct).length / subjectHistory.length;
+        if (accuracy >= 0.7) dominated++;
+      }
+    });
+
+    return `${dominated} de ${totalSubjects}`;
   }
 
   getBestSubject(): string {
     if (!this.questions || this.questions.length === 0) return 'Nenhuma';
-    
-    // Agrupar questões por matéria
-    const subjectMap = new Map<string, number>();
-    
-    this.questions.forEach(q => {
-      subjectMap.set(q.subject, (subjectMap.get(q.subject) || 0) + 1);
-    });
-    
-    // Encontrar matéria com mais questões respondidas
-    let maxCount = 0;
-    let bestSubject = 'Nenhuma';
-    
-    subjectMap.forEach((count, subject) => {
-      if (count > maxCount) {
-        maxCount = count;
-        bestSubject = subject;
+    const history = this.progressService.getHistory().filter(h => h.area === this.areaName);
+    if (history.length === 0) return 'Faça um quiz';
+
+    const uniqueSubjects = new Set(this.questions.map(q => q.subject));
+    let bestSubject = '';
+    let bestAccuracy = -1;
+
+    uniqueSubjects.forEach(subject => {
+      const subjectIds = new Set(this.questions.filter(q => q.subject === subject).map(q => String(q.id)));
+      const subjectHistory = history.filter(h => subjectIds.has(String(h.questionId)));
+      if (subjectHistory.length >= 1) {
+        const accuracy = subjectHistory.filter(h => h.correct).length / subjectHistory.length;
+        if (accuracy > bestAccuracy) {
+          bestAccuracy = accuracy;
+          bestSubject = subject;
+        }
       }
     });
-    
-    return this.formatSubjectName(bestSubject);
+
+    return bestSubject ? this.formatSubjectName(bestSubject) : 'Faça um quiz';
   }
 
   getSubjectToReview(): string {
     if (!this.questions || this.questions.length === 0) return 'Nenhuma';
-    
-    // Agrupar questões por matéria
-    const subjectMap = new Map<string, number>();
-    
-    this.questions.forEach(q => {
-      subjectMap.set(q.subject, (subjectMap.get(q.subject) || 0) + 1);
-    });
-    
-    // Encontrar matéria com menos questões respondidas (excluindo as com 0)
-    let minCount = Infinity;
-    let reviewSubject = 'Todas equilibradas';
-    
-    subjectMap.forEach((count, subject) => {
-      if (count < minCount && count > 0) {
-        minCount = count;
-        reviewSubject = subject;
+    const history = this.progressService.getHistory().filter(h => h.area === this.areaName);
+    if (history.length === 0) return 'Faça um quiz';
+
+    const uniqueSubjects = new Set(this.questions.map(q => q.subject));
+    let reviewSubject = '';
+    let lowestAccuracy = Infinity;
+
+    uniqueSubjects.forEach(subject => {
+      const subjectIds = new Set(this.questions.filter(q => q.subject === subject).map(q => String(q.id)));
+      const subjectHistory = history.filter(h => subjectIds.has(String(h.questionId)));
+      if (subjectHistory.length >= 1) {
+        const accuracy = subjectHistory.filter(h => h.correct).length / subjectHistory.length;
+        if (accuracy < lowestAccuracy) {
+          lowestAccuracy = accuracy;
+          reviewSubject = subject;
+        }
       }
     });
-    
-    return minCount === Infinity ? 'Todas equilibradas' : this.formatSubjectName(reviewSubject);
+
+    return reviewSubject ? this.formatSubjectName(reviewSubject) : 'Faça um quiz';
   }
 
   // REMOVIDO: Método duplicado formatSubjectName
@@ -1597,34 +1659,45 @@ Clique em "Upgrade Premium" para desbloquear!`);
       'matematica': {
         name: 'matematica',
         displayName: 'Matemática',
-        description: 'Álgebra, geometria, cálculo, estatística e matemática aplicada',
+        description: 'Matemática Básica, Álgebra e Geometria',
         icon: '🔢',
-        color: '#f59e0b',
-        totalQuestions: 0, // Será calculado dinamicamente
-        subjects: ['Álgebra', 'Geometria', 'Cálculo', 'Estatística', 'Trigonometria', 'Funções'],
-        difficulty: { easy: 30, medium: 45, hard: 25 },
-        userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' } // Será calculado
+        color: '#ffc107',
+        totalQuestions: 80,
+        subjects: ['Porcentagem', 'Razão', 'Proporção', 'Regra de Três', 'Álgebra', 'Equações', 'Geometria'],
+        difficulty: { easy: 30, medium: 35, hard: 15 },
+        userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
       },
       'portugues': {
         name: 'portugues',
         displayName: 'Português',
-        description: 'Gramática, interpretação de texto, literatura e redação',
+        description: 'Gramática, Interpretação, Redação e Comunicação',
         icon: '📚',
-        color: '#22c55e',
-        totalQuestions: 0,
-        subjects: ['Gramática', 'Interpretação', 'Literatura', 'Redação', 'Ortografia', 'Sintaxe'],
-        difficulty: { easy: 40, medium: 60, hard: 20 },
+        color: '#dc3545',
+        totalQuestions: 140,
+        subjects: ['Gramática', 'Ortografia', 'Semântica', 'Interpretação', 'Redação', 'Coerência', 'Coesão'],
+        difficulty: { easy: 50, medium: 60, hard: 30 },
         userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
       },
       'informatica': {
         name: 'informatica',
         displayName: 'Informática',
-        description: 'Sistemas operacionais, redes, segurança da informação',
+        description: 'Conceitos gerais de Informática, Hardware, Redes e Ferramentas Office',
         icon: '💾',
-        color: '#8b5cf6',
-        totalQuestions: 0,
-        subjects: ['Sistemas Operacionais', 'Redes', 'Segurança', 'Hardware', 'Software', 'Algoritmos'],
-        difficulty: { easy: 25, medium: 35, hard: 20 },
+        color: '#28a745',
+        totalQuestions: 75,
+        subjects: ['Hardware', 'Sistemas Operacionais', 'Internet', 'Editor de Texto', 'Planilhas', 'Redes'],
+        difficulty: { easy: 25, medium: 35, hard: 15 },
+        userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
+      },
+      'informatica-geral': {
+        name: 'informatica-geral',
+        displayName: 'Informática Geral',
+        description: 'Conceitos gerais de Informática, Hardware, Redes e Ferramentas Office',
+        icon: '💾',
+        color: '#28a745',
+        totalQuestions: 75,
+        subjects: ['Hardware', 'Sistemas Operacionais', 'Internet', 'Editor de Texto', 'Planilhas', 'Redes'],
+        difficulty: { easy: 25, medium: 35, hard: 15 },
         userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
       },
       'desenvolvimento-web': {
@@ -1632,10 +1705,21 @@ Clique em "Upgrade Premium" para desbloquear!`);
         displayName: 'Desenvolvimento Web',
         description: 'HTML, CSS, JavaScript, React, Angular, Node.js',
         icon: '💻',
-        color: '#3b82f6',
+        color: '#007bff',
         totalQuestions: 0,
-        subjects: ['HTML/CSS', 'JavaScript', 'React', 'Angular', 'Node.js', 'APIs'],
+        subjects: ['HTML', 'CSS', 'JavaScript', 'Angular', 'React', 'DevOps'],
         difficulty: { easy: 45, medium: 75, hard: 30 },
+        userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
+      },
+      'analise-desenvolvimento-sistemas': {
+        name: 'analise-desenvolvimento-sistemas',
+        displayName: 'Análise e Desenvolvimento de Sistemas',
+        description: 'Desenvolvimento Web, DevOps e Segurança da Informação',
+        icon: '💻',
+        color: '#007bff',
+        totalQuestions: 600,
+        subjects: ['Fundamentos de Programação', 'Desenvolvimento Web Frontend', 'Design e Interface', 'Metodologias e DevOps', 'Segurança em Desenvolvimento', 'Preparação para Entrevista'],
+        difficulty: { easy: 200, medium: 280, hard: 120 },
         userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
       }
     };

@@ -1,0 +1,120 @@
+<!-- ✅ HARD PAYWALL DIALOG - BLOQUEANTE -->
+<div class="hard-paywall-dialog">
+  <!-- HEADER COM ICON DE BLOQUEIO -->
+  <div class="dialog-header">
+    <div class="lock-icon">🔒</div>
+    <h2>Tentativas Esgotadas</h2>
+    <p class="subtitle">Você atingiu o limite de {{ maxAttemptsToday }} tentativas/dia</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="dialog-content">
+    
+    <!-- USAGE INDICATOR -->
+    <div class="usage-indicator">
+      <div class="usage-bar">
+        <div class="usage-fill" [style.width.%]="getUsagePercentage()"></div>
+      </div>
+      <p class="usage-text">{{ getAttemptsMessage() }}</p>
+    </div>
+
+    <!-- TIME UNTIL RESET -->
+    <div class="reset-section">
+      <div class="reset-card">
+        <p class="reset-label">⏰ Próximo Reset</p>
+        <p class="reset-time">{{ timeUntilReset }}</p>
+        <p class="reset-info">Suas tentativas serão resetadas à meia-noite</p>
+      </div>
+    </div>
+
+    <!-- TRIAL STATUS -->
+    <div class="trial-status">
+      <p class="status-label">Status do Trial</p>
+      <div class="status-box">
+        <span class="status-badge expired">Período Generoso Encerrado</span>
+        <p class="status-message">
+          Você completou {{ daysElapsed }} dias de trial com sucesso! 🎉
+        </p>
+        <p class="status-info">
+          Agora está em modo Premium Requerido: 3 tentativas/dia
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA SECTION -->
+    <div class="upgrade-cta">
+      <h3>Desbloquear Ilimitado</h3>
+      <p class="cta-text">
+        Domine mais rápido com acesso ilimitado a 3000+ questões
+      </p>
+
+      <!-- PREMIUM BENEFITS GRID -->
+      <div class="premium-benefits">
+        <div class="benefit-item" *ngFor="let feature of premiumFeatures">
+          <span class="benefit-icon">{{ feature.icon }}</span>
+          <span class="benefit-text">{{ feature.text }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING HIGHLIGHT -->
+    <div class="pricing-highlight">
+      <div class="price-tag">
+        <p class="price-label">Apenas</p>
+        <p class="price-value">R$ 29<span class="price-period">/mês</span></p>
+        <p class="price-desc">Acesso ilimitado para sempre</p>
+      </div>
+    </div>
+
+    <!-- SUCCESS STORIES -->
+    <div class="success-stories">
+      <p class="stories-label">Histórias de Sucesso</p>
+      <div class="story-item">
+        <p class="story-text">
+          "Premium foi game-changer. Passei na entrevista de Sênior em 2 meses com os simulados."
+        </p>
+        <p class="story-author">— Maria Silva, Desenvolvedor Sênior • Meta</p>
+      </div>
+      <div class="story-item">
+        <p class="story-text">
+          "Os certificados fizeram toda a diferença no meu LinkedIn. Contrataram em 1 semana."
+        </p>
+        <p class="story-author">— Carlos Santos, Full Stack • Amazon</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER / ACTIONS -->
+  <div class="dialog-footer">
+    
+    <!-- UPGRADE BUTTON (STRONG CTA) -->
+    <button class="btn btn-primary" (click)="upgradeNow()">
+      <span class="btn-icon">⭐</span>
+      <span class="btn-text">Fazer Upgrade Agora</span>
+      <span class="btn-arrow">→</span>
+    </button>
+
+    <!-- OR DIVIDER -->
+    <div class="divider">OU</div>
+
+    <!-- WAIT BUTTON (WEAK CTA) -->
+    <button class="btn btn-secondary" (click)="comeBackTomorrow()">
+      <span class="btn-icon">🌙</span>
+      <span class="btn-text">Voltar Amanhã às {{ (nextResetTime | date: 'HH:mm') || 'meia-noite' }}</span>
+    </button>
+
+  </div>
+
+  <!-- BOTTOM REASSURANCE -->
+  <div class="reassurance">
+    <p class="reassurance-text">
+      ✓ Cancelamento gratuito a qualquer momento
+      <br>
+      ✓ Primeira semana com 50% de desconto
+      <br>
+      ✓ Suporte 24/7 disponível
+    </p>
+  </div>
+
+</div>

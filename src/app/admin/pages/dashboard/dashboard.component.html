@@ -1,0 +1,691 @@
+<div class="admin-dashboard">
+  <div *ngIf="isLoading" class="loading">
+    <p>Carregando...</p>
+  </div>
+
+  <div *ngIf="!isLoading" class="dashboard-content">
+    <!-- Header com Botão Nova Escola -->
+    <div class="admin-header">
+      <h2>🎓 Gestão de Escolas</h2>
+      <div class="header-actions">
+        <button class="btn btn-primary" (click)="openCreateSchoolModal()">
+          ➕ Nova Escola
+        </button>
+        <button class="btn btn-secondary" (click)="openChangePasswordModal()" title="Alterar senha do admin">
+          🔐 Alterar Senha
+        </button>
+      </div>
+    </div>
+
+    <!-- Filtros e Busca -->
+    <div class="filters-section">
+      <div class="filter-row">
+        <!-- Busca -->
+        <div class="search-box">
+          <input
+            type="text"
+            [(ngModel)]="searchQuery"
+            (input)="onSearchChange()"
+            placeholder="🔍 Buscar por escola ou cidade..."
+            class="search-input"
+          />
+        </div>
+
+        <!-- Filtro de Status -->
+        <div class="filter-group">
+          <label>Status:</label>
+          <select
+            [(ngModel)]="filterStatus"
+            (change)="onFilterStatusChange()"
+            class="filter-select"
+          >
+            <option value="all">Todos</option>
+            <option value="active">🟢 Ativa</option>
+            <option value="expired">⏰ Expirada</option>
+            <option value="cancelled">🔴 Cancelada</option>
+          </select>
+        </div>
+
+        <!-- Filtro de Tipo -->
+        <div class="filter-group">
+          <label>Tipo:</label>
+          <select
+            [(ngModel)]="filterType"
+            (change)="onFilterTypeChange()"
+            class="filter-select"
+          >
+            <option value="all">Todos</option>
+            <option value="sold">💰 Vendido</option>
+            <option value="donated">🎁 Doado</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela de Escolas com Assinaturas -->
+    <div class="schools-table-section">
+      <h3>📋 Escolas ({{ filteredSchools.length }})</h3>
+      <div class="table-container">
+        <table class="schools-table">
+          <thead>
+            <tr>
+              <th>Escola</th>
+              <th>Cidade</th>
+              <th>Alunos</th>
+              <th>Tipo</th>
+              <th>Status</th>
+              <th>Expira em</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let school of filteredSchools"
+              class="school-row"
+              [class.active]="selectedSchool?.id === school.id"
+              (click)="selectSchool(school)"
+            >
+              <td class="school-name">{{ school.name }}</td>
+              <td>{{ school.city }}</td>
+              <td class="text-center">{{ school.totalStudents }}</td>
+              <td class="text-center">
+                <span class="badge" [class.badge-sold]="school.subscriptionType === 'sold'" [class.badge-donated]="school.subscriptionType === 'donated'">
+                  {{ school.subscriptionType === 'sold' ? '💰 Vendido' : '🎁 Doado' }}
+                </span>
+              </td>
+              <td class="text-center">
+                <span class="status-badge" [style.background-color]="getSubscriptionStatusColor(school.subscriptionStatus)">
+                  {{ getSubscriptionStatusLabel(school.subscriptionStatus) }}
+                </span>
+              </td>
+              <td class="text-center">
+                <!-- Cancelada: mostra data de cancelamento -->
+                <span *ngIf="school.subscriptionStatus === 'cancelled' && school.cancelledAt && formatCancelledDate(school.cancelledAt)" class="cancelled-date">
+                  ❌ Cancelada em
+                  <br/>
+                  {{ formatCancelledDate(school.cancelledAt) }}
+                </span>
+                <!-- Ativa/Expirada: mostra data de expiração -->
+                <span *ngIf="school.subscriptionStatus !== 'cancelled' && school.expiresAt && formatExpiryDate(school.expiresAt)" [class.warning]="getDaysUntilExpiry(school.expiresAt) < 7">
+                  {{ formatExpiryDate(school.expiresAt) }}
+                  <br/>
+                  <small>({{ getDaysUntilExpiry(school.expiresAt) }} dias)</small>
+                </span>
+                <!-- Sem data de expiração -->
+                <span *ngIf="school.subscriptionStatus !== 'cancelled' && !school.expiresAt">Ilimitado</span>
+              </td>
+              <td class="actions">
+                <button
+                  class="btn-action btn-sm"
+                  (click)="renewSubscription(school); $event.stopPropagation()"
+                  title="Renovar assinatura"
+                >
+                  🔄 Renovar
+                </button>
+                <button
+                  class="btn-action btn-sm"
+                  [class.btn-danger]="school.subscriptionStatus === 'active'"
+                  (click)="toggleSchoolStatus(school); $event.stopPropagation()"
+                  [title]="school.subscriptionStatus === 'active' ? 'Cancelar assinatura' : 'Ativar assinatura'"
+                >
+                  {{ school.subscriptionStatus === 'active' ? '🚫 Cancelar' : '✅ Ativar' }}
+                </button>
+                <button
+                  class="btn-action btn-sm btn-danger"
+                  (click)="deleteSchool(school); $event.stopPropagation()"
+                  title="Deletar escola"
+                >
+                  🗑️ Deletar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="filteredSchools.length === 0" class="no-data">
+          <p>📭 Nenhuma escola encontrada</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard da Escola Selecionada (Sub-painel) -->
+    <div *ngIf="selectedSchool" class="school-dashboard">
+      <div class="header">
+        <h2>📊 Alunos - {{ selectedSchool.name }}</h2>
+        <div class="header-buttons">
+          <button class="btn btn-secondary" (click)="openUploadModal()">
+            📤 Upload CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- Resumo Rápido -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>{{ selectedSchool.totalStudents }}</h3>
+          <p>Total de Alunos</p>
+        </div>
+        <div class="stat-card">
+          <h3>{{ selectedSchool.activeStudents }}</h3>
+          <p>Alunos Ativos</p>
+        </div>
+        <div class="stat-card">
+          <h3>{{ averageScore }}</h3>
+          <p>Score Médio</p>
+        </div>
+        <div class="stat-card">
+          <h3>{{ participationRate }}</h3>
+          <p>Taxa Participação</p>
+        </div>
+      </div>
+
+      <!-- Tabela de Alunos -->
+      <div class="students-section">
+        <h3>👥 Alunos</h3>
+        <div class="table-container">
+          <table class="students-table">
+            <thead>
+              <tr>
+                <th>RA</th>
+                <th>Nome</th>
+                <th>Classe</th>
+                <th>Tentativas</th>
+                <th>Score Médio</th>
+                <th>Última Tentativa</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of students" class="student-row">
+                <td class="ra">{{ student.ra }}</td>
+                <td class="name">{{ student.name }}</td>
+                <td>{{ student.class }}</td>
+                <td>{{ student.totalAttempts }}</td>
+                <td>
+                  <span class="score" *ngIf="student.totalAttempts > 0">
+                    {{ student.averageScore }}
+                  </span>
+                  <span *ngIf="student.totalAttempts === 0" class="no-data">-</span>
+                </td>
+                <td>
+                  {{
+                    student.lastAttempt
+                      ? formatDateTime(student.lastAttempt.timestamp)
+                      : "-"
+                  }}
+                </td>
+                <td>
+                  <span class="status" [class.active]="student.status === 'active'">
+                    {{ student.status === "active" ? "✅ Ativo" : "❌ Bloqueado" }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensagens -->
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- Modal: Ver Senha -->
+    <div *ngIf="showPasswordModal" class="modal-overlay" (click)="closePasswordModal()">
+      <div class="modal" (click)="$event.stopPropagation()">
+        <h3>🔑 Senha Única da Escola</h3>
+        <p class="description">
+          Compartilhe essa senha com todos os alunos. Eles usarão junto com o RA para fazer login.
+        </p>
+
+        <div class="password-box">
+          <input
+            type="text"
+            [value]="selectedSchool?.sharedPassword"
+            readonly
+            class="password-input"
+          />
+          <button class="btn btn-secondary" (click)="copyPassword()">
+            📋 Copiar
+          </button>
+        </div>
+
+        <p class="info">
+          <strong>Como usar:</strong><br />
+          RA: 001234<br />
+          Senha: {{ selectedSchool?.sharedPassword }}
+        </p>
+
+        <button class="btn btn-primary" (click)="closePasswordModal()">
+          Fechar
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal: Upload CSV/Excel de Alunos -->
+    <div *ngIf="showUploadModal" class="modal-overlay" (click)="closeUploadModal()">
+      <div class="modal modal-large" (click)="$event.stopPropagation()">
+        <h3>📤 Upload de Alunos (CSV/Excel)</h3>
+        
+        <!-- Modo CSV -->
+        <div *ngIf="!isExcelMode && parsedStudents.length === 0" class="form-group">
+          <p class="description">
+            Importe alunos de uma planilha. O CSV deve ter as colunas:<br/>
+            <strong>Nome, RA, Email</strong>
+          </p>
+
+          <div class="form-field">
+            <label>Selecione arquivo CSV ou Excel (XLSX) *</label>
+            <input
+              type="file"
+              accept=".csv,.xlsx,.xls"
+              (change)="onFileSelected($event)"
+              class="form-input"
+              [disabled]="isUploadingCsv"
+            />
+          </div>
+
+          <div class="form-field" *ngIf="!isExcelMode">
+            <label>Turma/Classe * (ex: 6A, 1º ano, etc)</label>
+            <input
+              type="text"
+              [(ngModel)]="uploadClassName"
+              placeholder="Ex: 6A"
+              class="form-input"
+              [disabled]="isUploadingCsv"
+            />
+          </div>
+
+          <p class="info">
+            <strong>ℹ️ Arquivo Excel:</strong> Use uma aba por turma. O nome da aba será a turma.<br/>
+            <strong>📋 Arquivo CSV:</strong> Digite a turma abaixo. Colunas: Nome, RA, Email
+          </p>
+
+          <p class="info">
+            <strong>Exemplo de formato CSV:</strong><br/>
+            João Silva,001,joao@escola.com<br/>
+            Maria Santos,002,maria@escola.com
+          </p>
+
+          <div class="form-actions">
+            <button 
+              class="btn btn-secondary" 
+              (click)="closeUploadModal()"
+              [disabled]="isUploadingCsv"
+            >
+              Cancelar
+            </button>
+            <button 
+              class="btn btn-primary" 
+              (click)="uploadStudents()"
+              [disabled]="isUploadingCsv || parsedStudents.length === 0 || !uploadClassName.trim()"
+            >
+              {{ isUploadingCsv ? '⏳ Enviando...' : '✅ Importar Alunos' }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Preview CSV após parsear -->
+        <div *ngIf="!isExcelMode && parsedStudents.length > 0" class="preview-section">
+          <h4>📋 Alunos a Importar: {{ parsedStudents.length }}</h4>
+          <p class="info">Turma: <strong>{{ uploadClassName }}</strong></p>
+          <div class="table-container">
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th>RA</th>
+                  <th>Nome</th>
+                  <th>Turma</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of parsedStudents | slice:0:5">
+                  <td>{{ student.ra }}</td>
+                  <td>{{ student.name }}</td>
+                  <td>{{ uploadClassName }}</td>
+                  <td>{{ student.email || '-' }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p *ngIf="parsedStudents.length > 5" class="info-text">
+              ... e mais {{ parsedStudents.length - 5 }} alunos
+            </p>
+          </div>
+
+          <div class="form-actions">
+            <button 
+              class="btn btn-secondary" 
+              (click)="closeUploadModal()"
+              [disabled]="isUploadingCsv"
+            >
+              Cancelar
+            </button>
+            <button 
+              class="btn btn-primary" 
+              (click)="uploadStudents()"
+              [disabled]="isUploadingCsv"
+            >
+              {{ isUploadingCsv ? '⏳ Enviando...' : '✅ Importar ' + parsedStudents.length + ' Alunos' }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Modo Excel - Seleção de Sheets -->
+        <div *ngIf="isExcelMode && excelSheets.length === 0" class="form-group">
+          <p class="description">
+            Carregando arquivo Excel...
+          </p>
+        </div>
+
+        <div *ngIf="isExcelMode && excelSheets.length > 0" class="preview-section">
+          <h4>📊 Turmas Encontradas: {{ excelSheets.length }}</h4>
+          <p class="info">Selecione as turmas que deseja importar:</p>
+
+          <div class="sheets-list">
+            <div *ngFor="let sheet of excelSheets; let i = index" class="sheet-item">
+              <input 
+                type="checkbox" 
+                [id]="'sheet_' + i"
+                [checked]="selectedSheetsToUpload.has(i)"
+                (change)="toggleSheetSelection(i)"
+                [disabled]="isUploadingCsv"
+              />
+              <label [for]="'sheet_' + i" class="sheet-label">
+                <strong>{{ sheet.sheetName }}</strong> 
+                <span class="sheet-count">({{ sheet.students.length }} alunos)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="select-all-buttons">
+            <button 
+              class="btn btn-tertiary" 
+              (click)="selectAllSheets()"
+              [disabled]="isUploadingCsv"
+            >
+              ✓ Selecionar Todas
+            </button>
+            <button 
+              class="btn btn-tertiary" 
+              (click)="deselectAllSheets()"
+              [disabled]="isUploadingCsv"
+            >
+              ✗ Desselecionar Todas
+            </button>
+          </div>
+
+          <!-- Preview da primeira sheet selecionada -->
+          <div *ngIf="selectedSheetsToUpload.size > 0" class="table-container">
+            <h5>📋 Amostra dos alunos:</h5>
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th>RA</th>
+                  <th>Nome</th>
+                  <th>Turma</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of excelSheets[getFirstSelectedSheetIndex()].students | slice:0:5">
+                  <td>{{ student.ra }}</td>
+                  <td>{{ student.name }}</td>
+                  <td>{{ excelSheets[getFirstSelectedSheetIndex()].sheetName }}</td>
+                  <td>{{ student.email || '-' }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="info-text">
+              Total a importar: <strong>{{ getTotalStudentsInSelectedSheets() }}</strong> alunos de 
+              <strong>{{ selectedSheetsToUpload.size }}</strong> turmas
+            </p>
+          </div>
+
+          <div class="form-actions">
+            <button 
+              class="btn btn-secondary" 
+              (click)="closeUploadModal()"
+              [disabled]="isUploadingCsv"
+            >
+              Cancelar
+            </button>
+            <button 
+              class="btn btn-primary" 
+              (click)="uploadStudents()"
+              [disabled]="isUploadingCsv || selectedSheetsToUpload.size === 0"
+            >
+              {{ isUploadingCsv ? '⏳ Enviando...' : '✅ Importar ' + selectedSheetsToUpload.size + ' Turmas' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Criar Nova Escola -->
+    <div *ngIf="showCreateSchoolModal" class="modal-overlay" (click)="closeCreateSchoolModal()">
+      <div class="modal modal-large" (click)="$event.stopPropagation()">
+        <h3 *ngIf="!createdSchoolData">➕ Criar Nova Escola</h3>
+        <h3 *ngIf="createdSchoolData">✅ Escola Criada com Sucesso!</h3>
+
+        <!-- Formulário de Criação -->
+        <div *ngIf="!createdSchoolData" class="form-group">
+          <div class="form-field">
+            <label>Nome da Escola *</label>
+            <input
+              type="text"
+              [(ngModel)]="newSchoolForm.name"
+              placeholder="Ex: Colégio São Paulo"
+              class="form-input"
+              [disabled]="isCreatingSchool"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Cidade *</label>
+            <input
+              type="text"
+              [(ngModel)]="newSchoolForm.city"
+              placeholder="Ex: São Paulo"
+              class="form-input"
+              [disabled]="isCreatingSchool"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Estado *</label>
+            <input
+              type="text"
+              [(ngModel)]="newSchoolForm.state"
+              placeholder="Ex: SP"
+              class="form-input"
+              [disabled]="isCreatingSchool"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Nome do Diretor</label>
+            <input
+              type="text"
+              [(ngModel)]="newSchoolForm.directorName"
+              placeholder="Ex: João da Silva"
+              class="form-input"
+              [disabled]="isCreatingSchool"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Email</label>
+            <input
+              type="email"
+              [(ngModel)]="newSchoolForm.email"
+              placeholder="Ex: admin@escola.com"
+              class="form-input"
+              [disabled]="isCreatingSchool"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Telefone</label>
+            <input
+              type="tel"
+              [(ngModel)]="newSchoolForm.phone"
+              placeholder="Ex: 11999999999"
+              class="form-input"
+              [disabled]="isCreatingSchool"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>💰 Tipo de Assinatura *</label>
+            <select
+              [(ngModel)]="newSchoolForm.subscriptionType"
+              class="form-input"
+              [disabled]="isCreatingSchool"
+            >
+              <option value="donated">🎁 Doação (Gratuita)</option>
+              <option value="sold">💳 Venda (Paga)</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button 
+              class="btn btn-secondary" 
+              (click)="closeCreateSchoolModal()"
+              [disabled]="isCreatingSchool"
+            >
+              Cancelar
+            </button>
+            <button 
+              class="btn btn-primary" 
+              (click)="createNewSchool()"
+              [disabled]="isCreatingSchool"
+            >
+              {{ isCreatingSchool ? '⏳ Criando...' : '✅ Criar Escola' }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Resultado da Criação -->
+        <div *ngIf="createdSchoolData" class="success-result">
+          <div class="success-icon">🎉</div>
+          <h4>{{ newSchoolForm.name }}</h4>
+          <p>{{ newSchoolForm.city }}</p>
+
+          <div class="result-field">
+            <label>ID da Escola</label>
+            <div class="result-box">
+              <code>{{ createdSchoolData.schoolId }}</code>
+              <button 
+                class="btn-copy" 
+                (click)="copyNewSchoolPassword()"
+                title="Copiar ID"
+              >
+                📋
+              </button>
+            </div>
+          </div>
+
+          <div class="result-field">
+            <label>💰 Tipo de Assinatura</label>
+            <div class="result-box">
+              <code>
+                {{ createdSchoolData.subscriptionType === 'sold' ? '💳 Venda (Paga)' : '🎁 Doação (Gratuita)' }}
+              </code>
+            </div>
+          </div>
+
+          <div class="result-field">
+            <label>Senha Compartilhada 🔑</label>
+            <div class="result-box highlight">
+              <input 
+                type="text" 
+                [value]="createdSchoolData.sharedPassword" 
+                readonly
+                class="result-input"
+              />
+              <button 
+                class="btn-copy" 
+                (click)="copyNewSchoolPassword()"
+                title="Copiar Senha"
+              >
+                📋
+              </button>
+            </div>
+            <p class="info-text">
+              💡 Compartilhe essa senha com os alunos para que façam login junto com o RA
+            </p>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn btn-primary" (click)="closeCreateSchoolModal()">
+              ✅ Concluído
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Alterar Senha do Admin -->
+    <div *ngIf="showChangePasswordModal" class="modal-overlay" (click)="closeChangePasswordModal()">
+      <div class="modal modal-medium" (click)="$event.stopPropagation()">
+        <h3>🔐 Alterar Senha do Admin</h3>
+
+        <div class="form-group">
+          <div class="form-field">
+            <label>Senha Atual *</label>
+            <input
+              type="password"
+              [(ngModel)]="changePasswordForm.currentPassword"
+              placeholder="Digite sua senha atual"
+              class="form-input"
+              [disabled]="isChangingPassword"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Nova Senha *</label>
+            <input
+              type="password"
+              [(ngModel)]="changePasswordForm.newPassword"
+              placeholder="Digite a nova senha (mín. 6 caracteres)"
+              class="form-input"
+              [disabled]="isChangingPassword"
+            />
+          </div>
+
+          <div class="form-field">
+            <label>Confirmar Nova Senha *</label>
+            <input
+              type="password"
+              [(ngModel)]="changePasswordForm.confirmPassword"
+              placeholder="Confirme a nova senha"
+              class="form-input"
+              [disabled]="isChangingPassword"
+            />
+          </div>
+
+          <div class="form-actions">
+            <button 
+              class="btn btn-secondary" 
+              (click)="closeChangePasswordModal()"
+              [disabled]="isChangingPassword"
+            >
+              Cancelar
+            </button>
+            <button 
+              class="btn btn-primary" 
+              (click)="changeAdminPassword()"
+              [disabled]="isChangingPassword"
+            >
+              {{ isChangingPassword ? '⏳ Alterando...' : '✅ Alterar Senha' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, forkJoin, of, Subscription } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { FreeTrialService } from '../../core/services/free-trial.service';
 import { DailyAttemptsService } from '../../core/services/daily-attempts.service';
 import { QuizHistoryService, QuizResult, QuestionAnswer } from '../../core/services/quiz-history.service';
@@ -13,6 +14,8 @@ import { ProgressService } from 'src/app/core/services/progress.service';
 import { FavoritesService } from '../../core/services/favorites.service';
 import { AuthService } from '../../core/services/auth.service';
 import { Title } from '@angular/platform-browser';
+import { SoftUpgradeDialogComponent } from '../../shared/components/soft-upgrade-dialog/soft-upgrade-dialog.component';
+import { HardPaywallDialogComponent } from '../../shared/components/hard-paywall-dialog/hard-paywall-dialog.component';
 
 // ✅ INTERFACES ESSENCIAIS
 interface QuestionOption {
@@ -86,12 +89,21 @@ interface QuizAnalytics {
   styleUrls: ['./quizz.component.css']
 })
 export class QuizzComponent implements OnInit, OnDestroy {
-handleKeyboardShortcut($event: KeyboardEvent) {
-throw new Error('Method not implemented.');
-}
-startNewPremiumQuiz() {
-throw new Error('Method not implemented.');
-}
+
+  handleKeyboardShortcut(event: KeyboardEvent): void {
+    if (!this.currentQuestion || this.showExplanation || this.isPaused()) return;
+    const keyMap: { [key: string]: string } = { '1': 'a', '2': 'b', '3': 'c', '4': 'd', 'a': 'a', 'b': 'b', 'c': 'c', 'd': 'd' };
+    const alias = keyMap[event.key.toLowerCase()];
+    if (alias) {
+      this.selectAnswer(alias);
+    } else if (event.key === 'Enter' && this.selectedAnswer && !this.showExplanation) {
+      this.submitAnswer();
+    }
+  }
+
+  startNewPremiumQuiz(): void {
+    this.router.navigate(['/area', this.area || 'analise-desenvolvimento-sistemas']);
+  }
 navigateToUpgrade(): void {
   this.isNavigating = true;
   this.router.navigate(['/upgrade'], {
@@ -104,17 +116,98 @@ navigateToUpgrade(): void {
     this.isNavigating = false;
   });
 }
-getCurrentAreaRemainingAttempts() {
-throw new Error('Method not implemented.');
+
+// ✅ MOSTRAR SOFT UPGRADE DIALOG (Phase 2)
+showSoftUpgradeDialog(): void {
+  const questionsResolved = this.freeTrialService.getTotalQuestionsResolved();
+  const daysElapsed = this.freeTrialService.getTrialDaysElapsed();
+  const daysRemaining = this.freeTrialService.getTrialDaysRemaining();
+  
+  // Determinar o tipo de trigger
+  const triggerType = questionsResolved >= 50 ? 'questions' : 'days';
+  
+  const dialogRef = this.dialog.open(SoftUpgradeDialogComponent, {
+    width: '90%',
+    maxWidth: '500px',
+    disableClose: false,
+    data: {
+      questionsResolved,
+      daysElapsed,
+      daysRemaining,
+      triggerType
+    }
+  });
+  
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('🎯 Soft Upgrade Dialog Result:', result);
+    if (result === 'upgrade') {
+      // Usuário clicou em "Fazer Upgrade Agora"
+      setTimeout(() => {
+        this.router.navigate(['/'], { queryParams: { signup: true, referral: 'soft_offer' } });
+      }, 300);
+    } else if (result === 'snooze') {
+      // Usuário clicou em "Continuar Testando Grátis"
+      console.log('⏭️ Usuário continuou testando');
+    } else {
+      // Usuário fechou o diálogo
+      console.log('❌ Dialog fechado');
+    }
+  });
 }
-handleOptionKeydown($event: KeyboardEvent,arg1: string,_t87: number) {
-throw new Error('Method not implemented.');
+
+// ✅ MOSTRAR HARD PAYWALL DIALOG (Phase 3 Task 6)
+showHardPaywallDialog(): void {
+  const daysElapsed = this.freeTrialService.getTrialDaysElapsed();
+  const nextResetTime = this.getNextMidnightISO();
+  
+  const dialogRef = this.dialog.open(HardPaywallDialogComponent, {
+    width: '90%',
+    maxWidth: '520px',
+    disableClose: true, // ✅ Bloqueia fechar sem escolher
+    data: {
+      daysElapsed,
+      nextResetTime,
+      maxAttemptsToday: this.maxAttemptsToday,
+      usedAttempts: this.maxAttemptsToday - this.remainingAttempts
+    }
+  });
+  
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('🔒 Hard Paywall Dialog Result:', result);
+    if (result === 'upgrade') {
+      // Usuário clicou em "Fazer Upgrade Agora"
+      console.log('⭐ Redirecionando para upgrade...');
+    } else if (result === 'dismiss') {
+      // Usuário clicou em "Voltar Amanhã"
+      console.log('🌙 Usuário voltará amanhã');
+    }
+  });
 }
+
+// ✅ OBTER ISO STRING DA PRÓXIMA MEIA-NOITE
+private getNextMidnightISO(): string {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
+  return tomorrow.toISOString();
+}
+
+  getCurrentAreaRemainingAttempts(): number {
+    return this.remainingAttempts;
+  }
+
+  handleOptionKeydown(event: KeyboardEvent, alias: string, index: number): void {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (!this.showExplanation) this.selectAnswer(alias);
+    }
+  }
 
   // ✅ PROPRIEDADES PRINCIPAIS
   mode: string = 'mixed';
-  private readonly FREE_QUESTIONS_LIMIT = 10; // ✅ LIMITE DE QUESTÕES PARA USUÁRIOS FREE
-  private readonly PREMIUM_QUESTIONS_LIMIT = 20; // ✅ LIMITE DE QUESTÕES PARA USUÁRIOS PREMIUM
+  private readonly FREE_QUESTIONS_LIMIT = 10;
+  private readonly PREMIUM_QUESTIONS_LIMIT = 20;
+  private countParam: string | null = null; // read from queryParams['count']
   
   // Estados do componente
   isLoading: boolean = true;
@@ -178,8 +271,10 @@ throw new Error('Method not implemented.');
   isFreeTrial: boolean = true;
   canStartQuiz: boolean = true;
   remainingAttempts: number = 3;
+  maxAttemptsToday: number = 7; // ✅ NOVO: Máximo de tentativas para hoje
   trialMessage: string = '';
   showTrialWarning: boolean = false;
+  trialDaysRemaining: number = 14; // ✅ NOVO: Dias até hard paywall
 
   // ===============================================
   // 📄 PROPRIEDADES DE TÍTULO E INTERFACE
@@ -214,6 +309,7 @@ throw new Error('Method not implemented.');
     private route: ActivatedRoute,
     private router: Router,
     private snackBar: MatSnackBar,
+    private dialog: MatDialog,
     private freeTrialService: FreeTrialService,
     private dailyAttemptsService: DailyAttemptsService,
     private quizHistoryService: QuizHistoryService,
@@ -297,6 +393,7 @@ throw new Error('Method not implemented.');
       const queryType = queryParams['type'];
       const questionLimit = queryParams['limit'];
       const premiumParam = queryParams['premium'];
+      this.countParam = queryParams['count'] || null;
       
       // ✅ PRIORIZAR QUERY PARAMS
       if (queryArea) {
@@ -343,8 +440,9 @@ throw new Error('Method not implemented.');
       } else if (queryType === 'free-trial' || queryMode === 'mixed') {
         this.isFreeTrial = true;
       } else {
+        const isAdminOrStudent = !!localStorage.getItem('sowlfy_admin_token') || !!localStorage.getItem('student_token');
         const savedPremiumStatus = localStorage.getItem('testPremiumStatus');
-        this.isFreeTrial = savedPremiumStatus !== 'true';
+        this.isFreeTrial = !isAdminOrStudent && savedPremiumStatus !== 'true';
       }
       
       console.log(`🎯 CONFIGURAÇÃO FINAL:`, {
@@ -390,11 +488,16 @@ throw new Error('Method not implemented.');
       this.canStartQuiz = true;
       this.showTrialWarning = false;
       this.remainingAttempts = -1; // Ilimitado
+      this.maxAttemptsToday = -1; // Ilimitado
       return;
     }
     
     const user = this.authService.currentUserValue;
-    const areaKey = this.area || 'desenvolvimento-web';
+    const areaKey = this.area || 'analise-desenvolvimento';
+    
+    // ✅ NOVO: Obter informações da fase do trial
+    this.maxAttemptsToday = this.freeTrialService.getMaxAttemptsForDay();
+    this.trialDaysRemaining = this.freeTrialService.getTrialDaysRemaining();
     
     if (!user || !user.id) {
       // Sem usuário logado - usar sistema antigo temporariamente
@@ -403,7 +506,11 @@ throw new Error('Method not implemented.');
       
       if (this.remainingAttempts === 0) {
         this.showTrialWarning = true;
-        this.trialMessage = `Você esgotou suas tentativas diárias. Faça login para sincronizar entre dispositivos!`;
+        if (this.freeTrialService.isInPaywallPhase()) {
+          this.trialMessage = `Você esgotou suas tentativas diárias. Faça upgrade para acesso ilimitado!`;
+        } else {
+          this.trialMessage = `Você esgotou suas tentativas diárias. Volte amanhã ou faça upgrade!`;
+        }
       }
       return;
     }
@@ -519,73 +626,63 @@ throw new Error('Method not implemented.');
       }
       
       const indexData = await indexResponse.json();
-      
-      if (!indexData.structure || !indexData.structure[this.area]) {
+
+      const paths = this.getFilePathsForArea(indexData, this.area);
+      if (paths.length === 0) {
         console.error('❌ Área não encontrada no index:', this.area);
-        console.log('Áreas disponíveis:', Object.keys(indexData.structure || {}));
         throw new Error(`Área ${this.area} não encontrada`);
       }
-      
-      const subjects = indexData.structure[this.area];
-      console.log('📚 Assuntos da área:', subjects);
-      console.log('🔍 Procurando questão ID:', this.specificQuestionId, 'na área:', this.area);
-      
+
+      console.log('🔍 Procurando questão ID:', this.specificQuestionId, 'na área:', this.area, `(${paths.length} arquivos)`);
+
       let totalQuestionsChecked = 0;
       let sampleIds: any[] = [];
-      
+
       // Procurar a questão em todos os assuntos da área
-      for (const subject of subjects) {
+      for (const p of paths) {
         try {
-          const response = await fetch(`assets/data/areas/${this.area}/${subject}.json`);
+          const response = await fetch(p.filePath);
           if (response.ok) {
             const fileData = await response.json();
             if (fileData.questions) {
               totalQuestionsChecked += fileData.questions.length;
-              
-              // Guardar alguns IDs de exemplo
+
               if (sampleIds.length < 5) {
-                sampleIds.push(...fileData.questions.slice(0, 3).map((q: any) => ({ id: q.id, subject })));
+                sampleIds.push(...fileData.questions.slice(0, 3).map((q: any) => ({ id: q.id, subject: p.subject })));
               }
-              
+
               const foundQuestion = fileData.questions.find((q: any) => {
                 const qId = String(q.id);
                 const searchId = String(this.specificQuestionId);
-                const numericQId = Number(q.id);
-                const numericSearchId = Number(this.specificQuestionId);
-                
-                // Tentar match por string e por número
-                return qId === searchId || numericQId === numericSearchId;
+                return qId === searchId || Number(q.id) === Number(this.specificQuestionId);
               });
-              
+
               if (foundQuestion) {
-                console.log('✅ Questão encontrada em:', subject, foundQuestion);
-                
-                // Configurar o quiz com apenas essa questão
+                console.log('✅ Questão encontrada em:', p.subject, foundQuestion);
+
                 this.questions = [{
                   ...foundQuestion,
                   area: this.area,
-                  subject: subject,
+                  subject: p.subject,
                   category: this.area
                 }];
-                
+
                 this.totalQuestions = 1;
                 this.currentQuestionIndex = 0;
-                
+
                 this.setState(QuizState.IN_PROGRESS);
                 this.isLoading = false;
                 this.startTimer();
-                
+
                 this.showSuccessMessage('Questão carregada! Boa revisão!');
                 return;
               }
             }
           }
         } catch (error) {
-          console.warn(`Erro ao carregar ${subject}:`, error);
+          console.warn(`Erro ao carregar ${p.filePath}:`, error);
         }
       }
-      
-      // Se não encontrou a questão
       console.error('❌ Questão não encontrada. ID procurado:', this.specificQuestionId);
       console.log('📊 Total de questões verificadas:', totalQuestionsChecked);
       console.log('🔢 Exemplos de IDs encontrados:', sampleIds);
@@ -606,7 +703,7 @@ throw new Error('Method not implemented.');
     }
     
     // ✅ VALIDAR SE A ÁREA É VÁLIDA
-    const validAreas = ['desenvolvimento-web', 'portugues', 'matematica', 'informatica'];
+    const validAreas = ['analise-desenvolvimento-sistemas', 'portugues', 'matematica', 'informatica-geral', 'desenvolvimento-web', 'informatica'];
     if (!validAreas.includes(this.area)) {
       this.showError(`Área inválida: ${this.area}. Áreas válidas: ${validAreas.join(', ')}`);
       return;
@@ -617,10 +714,10 @@ throw new Error('Method not implemented.');
     // ✅ TENTAR CARREGAR QUESTÕES REAIS DA ÁREA ESPECÍFICA
     this.tryLoadRealQuestions().then(success => {
       if (!success) {
-        this.generateEmergencyQuestionsForArea(this.area);
+        this.showError(`Não foi possível carregar questões de ${this.getCategoryTitle(this.area)}. Verifique a conexão e tente novamente.`);
       }
     }).catch(error => {
-      this.generateEmergencyQuestionsForArea(this.area);
+      this.showError(`Erro ao carregar questões: ${error?.message || 'Tente novamente.'}`);
     });
   }
   generateEmergencyQuestions() {
@@ -828,10 +925,9 @@ throw new Error('Method not implemented.');
       return;
     }
     
-    // ✅ USAR O MESMO SISTEMA DE EMERGÊNCIA
     this.tryLoadRealQuestions().then(success => {
       if (!success) {
-        this.generateEmergencyQuestions();
+        this.showError(`Não foi possível carregar questões de ${this.subject || this.area}. Tente novamente.`);
       }
     });
   }
@@ -893,7 +989,13 @@ throw new Error('Method not implemented.');
     // ✅ NÃO REGISTRAR TENTATIVA AQUI - SERÁ REGISTRADA APENAS AO COMPLETAR O QUIZ
     // Apenas verificar se ainda tem tentativas disponíveis
     if (this.isFreeTrial && !this.canStartQuiz) {
-      this.showError('Limite de tentativas diárias excedido!');
+      // ✅ VERIFICAR SE ESTÁ EM HARD PAYWALL (Dia 15+)
+      if (this.freeTrialService.isInPaywallPhase()) {
+        console.log('🔒 Hard Paywall Trigger - Mostrar modal bloqueante');
+        setTimeout(() => this.showHardPaywallDialog(), 300);
+      } else {
+        this.showError('Limite de tentativas diárias excedido!');
+      }
       return;
     }
     
@@ -1075,7 +1177,6 @@ throw new Error('Method not implemented.');
     if (this.showExplanation) return;
     
     this.selectedAnswer = alias;
-    this.showSuccessMessage(`Alternativa ${alias.toUpperCase()} selecionada`);
   }
 
   // ✅ SUBMETER RESPOSTA
@@ -1165,8 +1266,7 @@ throw new Error('Method not implemented.');
       if (this.currentQuestionIndex >= this.totalQuestions) {
         this.completeQuiz();
       } else {
-        this.showSuccessMessage(`Questão ${this.currentQuestionIndex + 1}/${this.totalQuestions}`);
-      }
+        }
     } else {
       this.completeQuiz();
     }
@@ -1178,7 +1278,6 @@ throw new Error('Method not implemented.');
       this.currentQuestionIndex--;
       this.selectedAnswer = '';
       this.showExplanation = false;
-      this.showSuccessMessage(`Questão ${this.currentQuestionIndex + 1}/${this.totalQuestions}`);
     }
   }
 
@@ -1201,11 +1300,20 @@ throw new Error('Method not implemented.');
     this.setState(QuizState.COMPLETED);
     this.score = Math.round((this.correctAnswers / this.totalQuestions) * 100);
     this.analytics.endTime = new Date();
+
+    // ✅ VERIFICAR SE É ALUNO DE ESCOLA E REGISTRAR TENTATIVA
+    const schoolData = this.getSchoolStudentData();
+    if (schoolData) {
+      await this.registerSchoolQuizAttempt(schoolData);
+    }
+    
+    // ✅ TRACKEAR QUESTÕES RESOLVIDAS PARA SOFT OFFER (Phase 2)
+    this.freeTrialService.addQuestionsResolved(this.totalQuestions);
     
     // ✅ REGISTRAR TENTATIVA NO FIRESTORE
     if (this.isFreeTrial) {
       const user = this.authService.currentUserValue;
-      const areaKey = this.area || 'desenvolvimento-web';
+      const areaKey = this.area || 'analise-desenvolvimento';
       const quizId = `quiz_${Date.now()}_${areaKey}`;
       
       if (user && user.id) {
@@ -1255,6 +1363,11 @@ throw new Error('Method not implemented.');
     
     // ✅ SALVAR HISTÓRICO DO QUIZ NO FIRESTORE
     await this.saveQuizToHistory();
+    
+    // ✅ VERIFICAR E DISPARAR SOFT UPGRADE OFFER (Phase 2)
+    if (this.isFreeTrial && this.freeTrialService.shouldShowSoftUpgradeOffer()) {
+      setTimeout(() => this.showSoftUpgradeDialog(), 500);
+    }
     
     console.log('🏁 Quiz finalizado!', {
       score: this.score,
@@ -1458,8 +1571,9 @@ throw new Error('Method not implemented.');
       // Simular delay para UX
       await new Promise(resolve => setTimeout(resolve, 500));
       
-      // Navegar
-      this.router.navigate(['/']);
+      // Navegar de volta para a área do quiz
+      const destination = this.area ? `/area/${this.area}` : '/';
+      this.router.navigate([destination]);
       
     } catch (error) {
       this.showErrorMessage('Erro ao navegar. Tente novamente.');
@@ -1608,8 +1722,6 @@ throw new Error('Method not implemented.');
       };
       
       localStorage.setItem('savedQuizState', JSON.stringify(quizState));
-      
-      this.showSuccessMessage('💾 Progresso salvo automaticamente');
     } catch (error) {
     }
   }
@@ -2088,35 +2200,28 @@ throw new Error('Method not implemented.');
       }
       
       const indexData = await indexResponse.json();
-      
-      if (!indexData.structure[this.area]) {
-        throw new Error(`Área '${this.area}' não encontrada`);
-      }
-      
+
+      // Suporte a novo formato (cursos) e antigo (structure)
+      const areaPaths = this.getFilePathsForArea(indexData, this.area);
+      if (areaPaths.length === 0) throw new Error(`Área '${this.area}' não encontrada`);
+
       // ✅ 2. Carregar todas as questões da área
-      const subjects = indexData.structure[this.area];
       const allQuestions: Question[] = [];
-      
-      for (const subject of subjects) {
+
+      for (const p of areaPaths) {
         try {
-          const filename = `assets/data/areas/${this.area}/${subject}.json`;
-          const response = await fetch(filename);
-          
+          const response = await fetch(p.filePath);
+
           if (response.ok) {
             const fileData = await response.json();
             if (fileData.questions && fileData.questions.length > 0) {
-              const questionsWithMeta = fileData.questions.map((q: any) => ({
-                ...q,
-                area: this.area,
-                subject: subject,
-                category: this.area
-              }));
-              
-              allQuestions.push(...questionsWithMeta);
+              allQuestions.push(...fileData.questions.map((q: any) => ({
+                ...q, area: this.area, subject: p.subject, category: this.area
+              })));
             }
           }
         } catch (error) {
-          console.warn(`Erro ao carregar ${subject}:`, error);
+          console.warn(`Erro ao carregar ${p.filePath}:`, error);
         }
       }
       
@@ -2205,34 +2310,23 @@ throw new Error('Method not implemented.');
       
       const indexData = await indexResponse.json();
       const allQuestions: Question[] = [];
-      
+
       console.log('📂 Carregando questões de todas as áreas...');
-      
-      // Carregar questões de TODAS as áreas disponíveis
-      for (const areaKey of Object.keys(indexData.structure)) {
-        const subjects = indexData.structure[areaKey];
-        
-        for (const subject of subjects) {
-          try {
-            const filename = `assets/data/areas/${areaKey}/${subject}.json`;
-            const response = await fetch(filename);
-            
-            if (response.ok) {
-              const fileData = await response.json();
-              if (fileData.questions && fileData.questions.length > 0) {
-                const questionsWithMeta = fileData.questions.map((q: any) => ({
-                  ...q,
-                  area: areaKey,
-                  subject: subject,
-                  category: areaKey
-                }));
-                
-                allQuestions.push(...questionsWithMeta);
-              }
+
+      // Carregar questões de TODAS as áreas disponíveis (suporte a novo e antigo formato)
+      for (const p of this.getFilePaths(indexData)) {
+        try {
+          const response = await fetch(p.filePath);
+          if (response.ok) {
+            const fileData = await response.json();
+            if (fileData.questions?.length > 0) {
+              allQuestions.push(...fileData.questions.map((q: any) => ({
+                ...q, area: p.area, subject: p.subject, category: p.area
+              })));
             }
-          } catch (error) {
-            console.warn(`Erro ao carregar ${areaKey}/${subject}:`, error);
           }
+        } catch (error) {
+          console.warn(`Erro ao carregar ${p.filePath}:`, error);
         }
       }
       
@@ -2334,30 +2428,20 @@ throw new Error('Method not implemented.');
       const allQuestions: Question[] = [];
       
       // Carregar questões apenas desta área
-      if (indexData.structure[this.area]) {
-        const subjects = indexData.structure[this.area];
-        
-        for (const subject of subjects) {
-          try {
-            const filename = `assets/data/areas/${this.area}/${subject}.json`;
-            const response = await fetch(filename);
-            
-            if (response.ok) {
-              const fileData = await response.json();
-              if (fileData.questions && fileData.questions.length > 0) {
-                const questionsWithMeta = fileData.questions.map((q: any) => ({
-                  ...q,
-                  area: this.area,
-                  subject: subject,
-                  category: this.area
-                }));
-                
-                allQuestions.push(...questionsWithMeta);
-              }
+      const areaPaths = this.getFilePathsForArea(indexData, this.area);
+      for (const p of areaPaths) {
+        try {
+          const response = await fetch(p.filePath);
+          if (response.ok) {
+            const fileData = await response.json();
+            if (fileData.questions?.length > 0) {
+              allQuestions.push(...fileData.questions.map((q: any) => ({
+                ...q, area: this.area, subject: p.subject, category: this.area
+              })));
             }
-          } catch (error) {
-            console.warn(`Erro ao carregar ${this.area}/${subject}:`, error);
           }
+        } catch (error) {
+          console.warn(`Erro ao carregar ${p.filePath}:`, error);
         }
       }
       
@@ -2420,75 +2504,38 @@ throw new Error('Method not implemented.');
   private async tryLoadRealQuestions(): Promise<boolean> {
     try {
       this.loadingMessage = 'Verificando questões disponíveis...';
-      
-      // ✅ VERIFICAR SE INDEX.JSON EXISTE
+
       const indexResponse = await fetch('assets/data/index.json');
-      
-      if (!indexResponse.ok) {
-        return false;
-      }
-      
+      if (!indexResponse.ok) return false;
+
       const indexData = await indexResponse.json();
-      console.log('✅ Index.json carregado:', {
-        totalQuestions: indexData.stats?.totalQuestions || 'N/A',
-        areas: Object.keys(indexData.structure || {}).length,
-        estrutura: indexData.structure
-      });
-      
-      if (!indexData.structure || Object.keys(indexData.structure).length === 0) {
-        return false;
-      }
-      
-      // ✅ TENTAR CARREGAR UM ARQUIVO DE TESTE DE CADA ÁREA (CAMINHO CORRIGIDO)
+      const paths = this.getFilePaths(indexData);
+
+      if (paths.length === 0) return false;
+
+      // Testar se pelo menos um arquivo tem questões reais
       let foundQuestions = false;
-      
-      for (const [areaKey, subjects] of Object.entries(indexData.structure)) {
-        const subjectList = subjects as string[];
-        if (subjectList && subjectList.length > 0) {
-          const firstSubject = subjectList[0];
-          // ✅ CAMINHO CORRETO COM /areas/
-          const testFile = `assets/data/areas/${areaKey}/${firstSubject}.json`;
-          
-          
-          try {
-            const testResponse = await fetch(testFile);
-            if (testResponse.ok) {
-              const testData = await testResponse.json();
-              if (testData.questions && Array.isArray(testData.questions) && testData.questions.length > 0) {
-                foundQuestions = true;
-                break; // Encontrou pelo menos um arquivo válido
-              } else {
-              }
-            } else {
-            }
-          } catch (fileError) {
+      for (const p of paths.slice(0, 5)) {
+        try {
+          const r = await fetch(p.filePath);
+          if (r.ok) {
+            const d = await r.json();
+            if (d.questions?.length > 0) { foundQuestions = true; break; }
           }
-        }
+        } catch { /* continua */ }
       }
-      
-      if (!foundQuestions) {
-        return false;
-      }
-      
-      // ✅ SE CHEGOU ATÉ AQUI, TEM QUESTÕES REAIS
-      
-      // ✅ CARREGAR QUESTÕES BASEADO NO MODO
+
+      if (!foundQuestions) return false;
+
       switch (this.mode) {
-        case 'area':
-          await this.loadAreaQuestionsFromReal(indexData);
-          break;
-        case 'subject':
-          await this.loadSubjectQuestionsFromReal(indexData);
-          break;
+        case 'area':   await this.loadAreaQuestionsFromReal(indexData); break;
+        case 'subject': await this.loadSubjectQuestionsFromReal(indexData); break;
         case 'mixed':
-        default:
-          await this.loadMixedQuestionsFromReal(indexData);
-          break;
+        default:       await this.loadMixedQuestionsFromReal(indexData); break;
       }
-      
+
       return true;
-      
-    } catch (error) {
+    } catch {
       return false;
     }
   }
@@ -2496,61 +2543,42 @@ throw new Error('Method not implemented.');
   // ✅ CORRIGIR O loadMixedQuestionsFromReal COM CAMINHO CORRETO:
   private async loadMixedQuestionsFromReal(indexData: any): Promise<void> {
     try {
-      
       const allQuestions: Question[] = [];
       const limit = this.getQuestionLimit();
-      
-      // ✅ CARREGAR ALGUMAS QUESTÕES DE CADA ÁREA (CAMINHO CORRIGIDO)
-      for (const [areaKey, subjects] of Object.entries(indexData.structure)) {
-        
-        const areaSubjects = subjects as string[];
-        const firstSubject = areaSubjects[0];
-        
-        if (firstSubject) {
-          try {
-            // ✅ CAMINHO CORRETO COM /areas/
-            const filename = `assets/data/areas/${areaKey}/${firstSubject}.json`;
-            const response = await fetch(filename);
-            
-            if (response.ok) {
-              const fileData = await response.json();
-              if (fileData.questions && fileData.questions.length > 0) {
-                // ✅ PEGAR ALGUMAS QUESTÕES DA ÁREA
-                const areaQuestions = fileData.questions
-                  .slice(0, Math.ceil(limit / 4))
-                  .map((q: any) => ({
-                    ...q,
-                    area: areaKey,
-                    subject: firstSubject,
-                    category: areaKey
-                  }));
-              
-                allQuestions.push(...areaQuestions);
-              }
+      const paths = this.getFilePaths(indexData);
+
+      // Carregar algumas questões de cada arquivo (distribui entre áreas)
+      const perFile = Math.max(1, Math.ceil(limit / Math.max(paths.length, 1)));
+
+      for (const p of paths) {
+        try {
+          const response = await fetch(p.filePath);
+          if (response.ok) {
+            const fileData = await response.json();
+            if (fileData.questions?.length > 0) {
+              const qs = fileData.questions.slice(0, perFile).map((q: any) => ({
+                ...q, area: p.area, subject: p.subject, category: p.area
+              }));
+              allQuestions.push(...qs);
             }
-          } catch (error) {
           }
-        }
+        } catch { /* continua */ }
       }
-    
-      if (allQuestions.length === 0) {
-        throw new Error('Nenhuma questão real carregada');
-      }
-    
-      // ✅ EMBARALHAR E CONFIGURAR
+
+      if (allQuestions.length === 0) throw new Error('Nenhuma questão real carregada');
+
       const shuffled = this.shuffleArray(allQuestions);
       const finalQuestions = shuffled.slice(0, limit);
-    
+
       this.questions = finalQuestions;
       this.totalQuestions = finalQuestions.length;
       this.currentQuestionIndex = 0;
-    
+
       this.setState(QuizState.IN_PROGRESS);
       this.isLoading = false;
       this.startTimer();
-    
+
       this.showSuccessMessage(`🎯 Quiz iniciado com ${finalQuestions.length} questões reais!`);
-    
     } catch (error) {
       throw error;
     }
@@ -2559,40 +2587,25 @@ throw new Error('Method not implemented.');
   // ✅ TAMBÉM CORRIGIR OS OUTROS MÉTODOS DE CARREGAMENTO:
   private async loadAreaQuestionsFromReal(indexData: any): Promise<void> {
     try {
-      
-      if (!indexData.structure[this.area]) {
-        throw new Error(`Área '${this.area}' não encontrada no index`);
-      }
-      
-      const subjects = indexData.structure[this.area];
+      const paths = this.getFilePathsForArea(indexData, this.area);
+      if (paths.length === 0) throw new Error(`Área '${this.area}' não encontrada no index`);
+
       const areaQuestions: Question[] = [];
-      
-      for (const subject of subjects) {
+      for (const p of paths) {
         try {
-          // ✅ CAMINHO CORRETO COM /areas/
-          const filename = `assets/data/areas/${this.area}/${subject}.json`;
-          const response = await fetch(filename);
-          
+          const response = await fetch(p.filePath);
           if (response.ok) {
             const fileData = await response.json();
-            if (fileData.questions && fileData.questions.length > 0) {
-              const questionsWithMeta = fileData.questions.map((q: any) => ({
-                ...q,
-                area: this.area,
-                subject: subject,
-                category: this.area
-              }));
-              
-              areaQuestions.push(...questionsWithMeta);
+            if (fileData.questions?.length > 0) {
+              areaQuestions.push(...fileData.questions.map((q: any) => ({
+                ...q, area: this.area, subject: p.subject, category: this.area
+              })));
             }
           }
-        } catch (error) {
-        }
+        } catch { /* continua */ }
       }
-      
-      if (areaQuestions.length === 0) {
-        throw new Error(`Nenhuma questão real encontrada para área ${this.area}`);
-      }
+
+      if (areaQuestions.length === 0) throw new Error(`Nenhuma questão real encontrada para área ${this.area}`);
       
       // ✅ EMBARALHAR E CONFIGURAR
       const shuffled = this.shuffleArray<Question>(areaQuestions);
@@ -2616,47 +2629,44 @@ throw new Error('Method not implemented.');
 
   private async loadSubjectQuestionsFromReal(indexData: any): Promise<void> {
     try {
-      
-      if (!indexData.structure[this.area] || !indexData.structure[this.area].includes(this.subject)) {
+      // Encontrar o arquivo do subject no novo ou antigo formato
+      const areaPaths = this.getFilePathsForArea(indexData, this.area);
+      // Normaliza id "boas-praticas" → "Boas Praticas" para comparar com nome formatado do chip
+      const normalizeId = (s: string) =>
+        s.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      const subjectPath = areaPaths.find(p =>
+        p.subject === this.subject ||
+        p.subject.toLowerCase() === this.subject?.toLowerCase() ||
+        normalizeId(p.subject) === this.subject
+      );
+
+      if (!subjectPath) {
         throw new Error(`Subject '${this.subject}' não encontrado na área '${this.area}'`);
       }
-      
-      // ✅ CAMINHO CORRETO COM /areas/
-      const filename = `assets/data/areas/${this.area}/${this.subject}.json`;
-      const response = await fetch(filename);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-      }
-      
+
+      const response = await fetch(subjectPath.filePath);
+      if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+
       const fileData = await response.json();
-      
-      if (!fileData.questions || !Array.isArray(fileData.questions)) {
-        throw new Error('Formato de arquivo inválido');
-      }
-      
+      if (!fileData.questions || !Array.isArray(fileData.questions)) throw new Error('Formato de arquivo inválido');
+
       const questionsWithMeta = fileData.questions.map((q: any) => ({
-        ...q,
-        area: this.area,
-        subject: this.subject,
-        category: this.area
+        ...q, area: this.area, subject: this.subject, category: this.area
       }));
-      
-      // ✅ EMBARALHAR E CONFIGURAR
+
       const shuffled = this.shuffleArray(questionsWithMeta);
       const limit = this.getQuestionLimit();
       const selectedQuestions: Question[] = shuffled.slice(0, limit) as Question[];
-      
+
       this.questions = selectedQuestions;
       this.totalQuestions = selectedQuestions.length;
       this.currentQuestionIndex = 0;
-      
+
       this.setState(QuizState.IN_PROGRESS);
       this.isLoading = false;
       this.startTimer();
-      
+
       this.showSuccessMessage(`🎯 Quiz ${this.subject} iniciado com ${selectedQuestions.length} questões!`);
-      
     } catch (error) {
       throw error;
     }
@@ -2692,12 +2702,69 @@ throw new Error('Method not implemented.');
 
   // ✅ UTIL: obter limite de questões (lê query param 'limit' ou retorna padrão)
   private getQuestionLimit(): number {
-    // ✅ RETORNAR LIMITE BASEADO NO PLANO DO USUÁRIO
-    if (this.isFreeTrial) {
-      return this.FREE_QUESTIONS_LIMIT; // 10 questões para FREE
-    } else {
-      return this.PREMIUM_QUESTIONS_LIMIT; // 20 questões para PREMIUM
+    if (this.isFreeTrial) return this.FREE_QUESTIONS_LIMIT;
+    // Premium: count=unlimited ou não informado → usa padrão 20
+    if (this.countParam === 'unlimited' || !this.countParam) return this.PREMIUM_QUESTIONS_LIMIT;
+    const parsed = parseInt(this.countParam, 10);
+    return isNaN(parsed) ? this.PREMIUM_QUESTIONS_LIMIT : Math.min(parsed, 100);
+  }
+
+  /**
+   * Extrai todos os caminhos de arquivo de questões do index.json.
+   * Suporta tanto o formato antigo (structure) quanto o novo (cursos).
+   */
+  private getFilePaths(indexData: any): Array<{ filePath: string; area: string; subject: string }> {
+    const paths: Array<{ filePath: string; area: string; subject: string }> = [];
+
+    // Formato antigo: structure[areaKey] = ['subject1', 'subject2', ...]
+    if (indexData.structure && Object.keys(indexData.structure).length > 0) {
+      for (const [areaKey, subjects] of Object.entries(indexData.structure as Record<string, string[]>)) {
+        for (const subject of subjects) {
+          paths.push({ filePath: `assets/data/areas/${areaKey}/${subject}.json`, area: areaKey, subject });
+        }
+      }
+      return paths;
     }
+
+    // Formato novo: cursos[].disciplinas[].topicos[].arquivo
+    if (indexData.cursos && Array.isArray(indexData.cursos)) {
+      for (const curso of indexData.cursos) {
+        const cursoId: string = curso.id;
+        for (const disc of (curso.disciplinas || [])) {
+          const discId: string = disc.id;
+          for (const topico of (disc.topicos || [])) {
+            const arquivo: string = topico.arquivo || `${topico.id}.json`;
+            paths.push({
+              filePath: `assets/data/areas/${cursoId}/${discId}/${arquivo}`,
+              area: cursoId,
+              subject: topico.id
+            });
+          }
+        }
+      }
+    }
+
+    return paths;
+  }
+
+  /**
+   * Retorna os caminhos de arquivo para uma área específica.
+   * Mapeia IDs legados (ex: 'desenvolvimento-web') para o novo formato.
+   */
+  private getFilePathsForArea(indexData: any, areaKey: string): Array<{ filePath: string; area: string; subject: string }> {
+    const all = this.getFilePaths(indexData);
+    if (all.length === 0) return [];
+
+    // Mapa de alias legados para os novos cursoIds
+    const legacyMap: Record<string, string[]> = {
+      'desenvolvimento-web': ['analise-desenvolvimento-sistemas'],
+      'informatica': ['informatica-geral'],
+      'matematica': ['matematica'],
+      'portugues': ['portugues'],
+    };
+
+    const targetIds = legacyMap[areaKey] || [areaKey];
+    return all.filter(p => targetIds.includes(p.area));
   }
 
   // ✅ UTIL: embaralhar array (Fisher-Yates) — evita erro "Property 'shuffleArray' does not exist"
@@ -2710,5 +2777,74 @@ throw new Error('Method not implemented.');
       a[j] = tmp;
     }
     return a;
+  }
+
+  // ✅ MÉTODOS PARA INTEGRAÇÃO COM ESCOLAS
+  // ===============================================
+
+  /**
+   * Obtém dados do aluno de escola do localStorage
+   */
+  private getSchoolStudentData(): any {
+    try {
+      const schoolDataStr = localStorage.getItem('school_student_data');
+      if (schoolDataStr) {
+        return JSON.parse(schoolDataStr);
+      }
+      return null;
+    } catch (error) {
+      console.error('❌ Erro ao obter dados da escola:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Registra tentativa de quiz para aluno de escola
+   */
+  private async registerSchoolQuizAttempt(schoolData: any): Promise<void> {
+    try {
+      const { schoolId, studentRa, studentName } = schoolData;
+
+      if (!schoolId || !studentRa || !studentName) {
+        console.error('❌ Dados da escola incompletos para registrar tentativa');
+        return;
+      }
+
+      // URL da Cloud Function
+      const functionUrl = 'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/recordQuizAttempt';
+
+      // Preparar payload
+      const payload = {
+        schoolId,
+        ra: studentRa,
+        studentName,
+        score: this.score,
+        totalQuestions: this.totalQuestions,
+        duration: this.finalTime,
+        questionsAnswered: this.correctAnswers
+      };
+
+      console.log('📤 Enviando tentativa de quiz para escola:', payload);
+
+      // Chamar Cloud Function
+      const response = await this.http.post<any>(functionUrl, payload).toPromise();
+
+      console.log('✅ Tentativa registrada com sucesso! Attempt ID:', response?.attemptId);
+
+      // Limpar quiz_context após registro bem-sucedido
+      localStorage.removeItem('quiz_context');
+
+      // Redirecionar para school-dashboard após 2 segundos
+      setTimeout(() => {
+        this.router.navigate(['/school-dashboard']);
+      }, 2000);
+
+    } catch (error) {
+      console.error('❌ Erro ao registrar tentativa de quiz para escola:', error);
+      // Mesmo com erro, redirecionar após 3 segundos para evitar ficar travado
+      setTimeout(() => {
+        this.router.navigate(['/school-dashboard']);
+      }, 3000);
+    }
   }
 }

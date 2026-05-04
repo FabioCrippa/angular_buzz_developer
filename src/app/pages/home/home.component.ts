@@ -5,8 +5,6 @@
 // filepath: c:\Users\cripp\projetos-andamento\angular_buzz_developer\src\app\pages\home\home.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FreeTrialService } from '../../core/services/free-trial.service';
-import { ProgressService } from '../../core/services/progress.service';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
@@ -26,17 +24,19 @@ export class HomeComponent implements OnInit {
   // ✅ ÁREAS DE ESTUDO
   areas = [
     {
-      name: 'desenvolvimento-web',
-      displayName: 'Desenvolvimento Web',
-      icon: '💻',
-      description: 'React, Angular, JavaScript, TypeScript e tecnologias modernas para entrevistas técnicas',
-      questionCount: 850,
-      subjects: ['Angular', 'React', 'JavaScript', 'TypeScript', 'HTML/CSS', 'Node.js'],
+      name: 'analise-desenvolvimento',
+      displayName: 'Análise e Desenvolvimento',
+      icon: '🏗️',
+      description: 'Web, backend, DevOps, segurança, metodologias ágeis e preparação para Big Techs',
+      questionCount: 479,
+      subjects: ['Angular', 'React', 'JavaScript', 'TypeScript', 'HTML/CSS', 'DevOps', 'Segurança'],
       features: [
-        'Questões técnicas de Big Techs',
-        'Algoritmos e estruturas de dados',
-        'Boas práticas e code review',
-        'Frameworks modernos'
+        'Análise e design de sistemas',
+        'Frontend (Angular, React, JavaScript)',
+        'Backend e APIs (TypeScript)',
+        'DevOps, CI/CD e versionamento',
+        'Segurança e autenticação',
+        'Entrevistas técnicas avançadas'
       ],
       badge: 'MAIS POPULAR',
       badgeClass: 'popular',
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       displayName: 'Português',
       icon: '📚',
       description: 'Gramática, interpretação de texto e redação com foco em concursos públicos',
-      questionCount: 650,
+      questionCount: 456,
       subjects: ['Gramática', 'Interpretação', 'Redação', 'Ortografia', 'Semântica'],
       features: [
         'Questões de principais bancas',
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
       displayName: 'Matemática',
       icon: '🔢',
       description: 'Raciocínio lógico, matemática básica e álgebra para qualquer prova',
-      questionCount: 480,
+      questionCount: 230,
       subjects: ['Álgebra', 'Geometria', 'Raciocínio Lógico', 'Matemática Básica'],
       features: [
         'Raciocínio lógico para concursos',
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
       displayName: 'Informática',
       icon: '💾',
       description: 'Windows, Office, redes e conceitos fundamentais de TI atualizados',
-      questionCount: 520,
+      questionCount: 136,
       subjects: ['Windows', 'Office', 'Redes', 'Hardware', 'Internet'],
       features: [
         'Windows 10/11 atualizado',
@@ -99,7 +99,7 @@ export class HomeComponent implements OnInit {
   faqs = [
     {
       question: 'Como funciona o plano gratuito do SOWLFY?',
-      answer: 'No plano gratuito você tem <strong>1 tentativa por dia</strong> em qualquer uma das 4 áreas. É perfeito para conhecer a plataforma e começar seus estudos!'
+      answer: 'No plano gratuito você tem <strong>7 tentativas por dia</strong> em qualquer uma das 4 áreas. É perfeito para conhecer a plataforma e começar seus estudos!'
     },
     {
       question: 'Posso cancelar o plano premium quando quiser?',
@@ -110,12 +110,12 @@ export class HomeComponent implements OnInit {
       answer: 'Sim! Nossa equipe atualiza as questões <strong>mensalmente</strong>, especialmente nas áreas de tecnologia e com base nos editais mais recentes de concursos.'
     },
     {
-      question: 'O SOWLFY funciona no celular?',
-      answer: 'Perfeitamente! Nossa plataforma é <strong>100% responsiva</strong> e funciona em qualquer dispositivo - celular, tablet ou computador.'
+      question: 'Quando meu limite de tentativas recarrega?',
+      answer: 'Suas 7 tentativas grátis diárias <strong>recarregam todos os dias à meia-noite</strong>. Premium tem tentativas ilimitadas 24/7!'
     },
     {
-      question: 'Como são criadas as questões?',
-      answer: 'Nossas questões são criadas por <strong>especialistas</strong> em cada área e baseadas em provas reais de concursos e entrevistas técnicas de grandes empresas.'
+      question: 'O SOWLFY funciona no celular?',
+      answer: 'Perfeitamente! Nossa plataforma é <strong>100% responsiva</strong> e funciona em qualquer dispositivo - celular, tablet ou computador.'
     }
   ];
   
@@ -127,111 +127,37 @@ export class HomeComponent implements OnInit {
   
   constructor(
     private router: Router,
-    private freeTrialService: FreeTrialService,
-    private progressService: ProgressService,
     private authService: AuthService
   ) {}
   
   ngOnInit(): void {
-    this.loadDynamicStats();
+    // Stats já estão inicializados com valores padrão
   }
-  
+
   // ✅ CARREGAR ESTATÍSTICAS DINÂMICAS
   private loadDynamicStats(): void {
-    try {
-      // ✅ BUSCAR DADOS REAIS DO PROGRESS SERVICE
-      // o ProgressService pode não expor getOverallProgress; usar any + optional chaining
-      const userProgress = ((this.progressService as any).getOverallProgress?.() as { totalAnswered: number; correctAnswers: number; }) ?? { totalAnswered: 0, correctAnswers: 0 };
-      
-      if (userProgress.totalAnswered > 0) {
-        this.heroStats.successRate = Math.round(
-          (userProgress.correctAnswers / userProgress.totalAnswered) * 100
-        );
-      }
-    } catch (error) {
-    }
+    // Stats utilizan valores padrão da classe
+    // Futuro: integrar com backend para dados dinâmicos
   }
   
   // ===============================================
-  // 🆓 COMEÇAR PREPARAÇÃO COM AUTH
+  // 🆓 COMEÇAR TESTE GRÁTIS - DIRETO ANÔNIMO
   // ===============================================
 
   startFreeTrial(): void {
-    if (this.authService.isAuthenticated()) {
-      // ✅ USUÁRIO LOGADO - VERIFICAR TENTATIVAS E INICIAR QUIZ
-      this.executeFreeTrial();
-    } else {
-      // ❌ NÃO LOGADO - REDIRECIONAR PARA LOGIN
-      this.saveQuizIntention();
-      this.router.navigate(['/login'], {
-        queryParams: { 
-          returnUrl: '/quiz',
-          message: 'Faça login para começar sua preparação grátis'
-        }
-      });
-    }
+    // ✅ TODOS OS BOTÕES DE TESTE GRÁTIS VÃO PARA QUIZ ANÔNIMO
+    this.router.navigate(['/anonymous-quiz']);
   }
 
-  // ✅ SALVAR INTENÇÃO ESPECÍFICA PARA QUIZ
-  private saveQuizIntention(): void {
-    const intention = {
-      action: 'start_free_trial',
-      route: '/quiz',
-      params: {
-        mode: 'area',
-        area: 'desenvolvimento-web',
-        count: 5
-      },
-      timestamp: Date.now(),
-      message: 'Iniciar preparação grátis - Quiz Desenvolvimento Web'
-    };
-    
-    localStorage.setItem('userIntention', JSON.stringify(intention));
+  // ✅ ALIAS PARA COMPATIBILIDADE
+  startAnonymousQuiz(): void {
+    this.router.navigate(['/anonymous-quiz']);
   }
   
-  // ✅ INICIAR TESTE GRÁTIS
-  private executeFreeTrial(): void {
-    try {
-      // ✅ VERIFICAR SE JÁ É PREMIUM
-      const isPremium = localStorage.getItem('isPremium') === 'true';
-      
-      if (isPremium) {
-        this.router.navigate(['/dashboard']);
-        return;
-      }
-      
-      // ✅ VERIFICAR TENTATIVAS RESTANTES
-      const remaining = this.freeTrialService.getRemainingAttempts('desenvolvimento-web');
-      
-      if (remaining > 0) {
-        // ✅ TEM TENTATIVAS - INICIAR QUIZ DIRETAMENTE
-        this.router.navigate(['/quiz'], {
-          queryParams: {
-            mode: 'area',
-            area: 'desenvolvimento-web',
-            count: 5
-          }
-        });
-      } else {
-        // ✅ SEM TENTATIVAS - MOSTRAR OPÇÕES
-        const message = `🚀 Sua 1 tentativa gratuita de hoje acabou!\n\n` +
-                       `👑 Quer continuar praticando?\n\n` +
-                       `• Upgrade para Premium = Acesso Ilimitado\n` +
-                       `• Ou volte amanhã para mais 1 tentativa gratuita\n\n` +
-                       `Fazer upgrade agora?`;
-        
-        if (confirm(message)) {
-          this.upgradeToPro();
-        } else {
-          this.router.navigate(['/dashboard']);
-        }
-      }
-      
-    } catch (error) {
-      // ❌ ERRO - REDIRECIONAR PARA LOGIN
-      console.error('Erro ao executar free trial:', error);
-      this.router.navigate(['/login']);
-    }
+  // ✅ IR PARA ÁREA ESPECÍFICA - TAMBÉM VIA ANÔNIMO
+  goToArea(areaName: string): void {
+    // ✅ REDIRECIONAR PARA QUIZ ANÔNIMO (FUTURO: ADICIONAR FILTRO DE ÁREA)
+    this.router.navigate(['/anonymous-quiz']);
   }
   
   // ===============================================
@@ -239,57 +165,6 @@ export class HomeComponent implements OnInit {
   // ===============================================
   
   goToDashboard(): void {
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      localStorage.setItem('sowlfy_redirect_after_login', '/dashboard');
-      this.router.navigate(['/login'], {
-        queryParams: { 
-          returnUrl: '/dashboard',
-          message: 'Faça login para acessar seu dashboard'
-        }
-      });
-    }
-  }
-  
-  // ✅ IR PARA ÁREA ESPECÍFICA
-  goToArea(areaName: string): void {
-    // ✅ MAPEAR NOMES PARA ROTA CORRETA
-    const areaMap: { [key: string]: string } = {
-      'desenvolvimento': 'desenvolvimento-web',
-      'desenvolvimento-web': 'desenvolvimento-web',
-      'portugues': 'portugues',
-      'matematica': 'matematica',
-      'informatica': 'informatica'
-    };
-    
-    const mappedArea = areaMap[areaName] || areaName;
-    
-    if (this.authService.isAuthenticated()) {
-      // ✅ LOGADO - IR PARA QUIZ
-      this.router.navigate(['/quiz'], {
-        queryParams: {
-          mode: 'area',
-          area: mappedArea,
-          count: 5
-        }
-      });
-    } else {
-      // ❌ NÃO LOGADO - IR PARA LOGIN
-      const targetUrl = `/quiz?mode=area&area=${mappedArea}&count=5`;
-      localStorage.setItem('sowlfy_redirect_after_login', targetUrl);
-      this.router.navigate(['/login'], {
-        queryParams: { 
-          returnUrl: targetUrl,
-          message: `Faça login para acessar ${areaMap[mappedArea] || mappedArea}`
-        }
-      });
-    }
-  }
-  
-  // ✅ UPGRADE PARA PRO - REDIRECIONAR PARA PÁGINA DE UPGRADE
-  upgradeToPro(): void {
-    
     // ✅ REDIRECIONAR PARA PÁGINA DE UPGRADE COM MERCADO PAGO
     this.router.navigate(['/upgrade'], {
       queryParams: {
@@ -299,14 +174,9 @@ export class HomeComponent implements OnInit {
     });
   }
   
-  // ✅ MÉTODO LEGADO (MANTER PARA COMPATIBILIDADE)
-  upgradeToPro_OLD(): void {
-    // ✅ SIMULAR UPGRADE (modo de teste - desativado)
-    const isPremium = localStorage.getItem('isPremium') === 'true';
-    
-    if (!isPremium) {
-      alert('👑 Você já é Premium! Aproveite todos os recursos ilimitados.');
-    }
+  // ✅ UPGRADE PARA PRO
+  upgradeToPro(): void {
+    this.router.navigate(['/upgrade']);
   }
   
   // ✅ CONTROLE DE FAQ
@@ -364,16 +234,18 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // ✅ ABRIR FAQ (ROLAR PARA SEÇÃO)
-  openFaq(): void {
-    const faqSection = document.querySelector('.faq-section');
-    if (faqSection) {
-      faqSection.scrollIntoView({ 
+  // ✅ ROLAR PARA SEÇÃO DE ÁREAS
+  scrollToAreas(): void {
+    const areasSection = document.querySelector('.areas-section');
+    if (areasSection) {
+      areasSection.scrollIntoView({ 
         behavior: 'smooth', 
         block: 'start' 
       });
     }
   }
+
+  // ✅ ROLAR PARA FAQ
 
   // ✅ POLÍTICA DE REEMBOLSO
   openRefund(): void {
@@ -382,34 +254,8 @@ export class HomeComponent implements OnInit {
 
   // ✅ COMEÇAR ÁREA ESPECÍFICA (MÉTODO HELPER)
   startSpecificArea(areaName: string): void {
-    
-    // ✅ VERIFICAR TENTATIVAS
-    const remaining = this.freeTrialService.getRemainingAttempts(areaName);
-    
-    if (remaining > 0) {
-      // ✅ INICIAR QUIZ DA ÁREA
-      this.router.navigate(['/quiz'], {
-        queryParams: {
-          mode: 'area',
-          area: areaName,
-          count: 5
-        }
-      });
-    } else {
-      // ✅ SEM TENTATIVAS
-      const message = `⏱️ Tentativas da área "${areaName}" esgotadas hoje!\n\n` +
-                     `Escolha:\n` +
-                     `👑 Upgrade Premium (acesso ilimitado)\n` +
-                     `🔄 Tentar outra área\n` +
-                     `⏰ Voltar amanhã`;
-      
-      alert(message);
-      
-      // ✅ SUGERIR UPGRADE
-      if (confirm('Fazer upgrade para Premium agora?')) {
-        this.upgradeToPro();
-      }
-    }
+    // ✅ REDIRECIONAR PARA QUIZ ANÔNIMO
+    this.router.navigate(['/anonymous-quiz']);
   }
 
   // ✅ VERIFICAR SE USUÁRIO É PREMIUM
@@ -421,6 +267,5 @@ export class HomeComponent implements OnInit {
   testButton(): void {
     alert('✅ Botão está funcionando corretamente!\n\nMetódo executado com sucesso.');
   }
-
 
 }

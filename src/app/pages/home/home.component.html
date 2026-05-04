@@ -19,7 +19,7 @@
         </h1>
         
         <div class="hero-description">
-          <p><strong>Desenvolvimento Web:</strong> React, Angular, JavaScript para entrevistas técnicas</p>
+          <p><strong>Análise e Desenvolvimento:</strong> Web, backend, DevOps, segurança e Big Techs</p>
           <p><strong>Português:</strong> Gramática e interpretação com foco em concursos</p>
           <p><strong>Matemática:</strong> Raciocínio lógico e matemática para qualquer prova</p>
           <p><strong>Informática:</strong> Windows, Office e conceitos de TI atualizados</p>
@@ -45,13 +45,13 @@
           <button class="btn btn-primary" (click)="startFreeTrial()">
             🚀 Começar Preparação Grátis
           </button>
-          <button class="btn btn-secondary" (click)="goToDashboard()">
+          <button class="btn btn-secondary" (click)="scrollToAreas()">
             📊 Ver Todas as Áreas
           </button>
         </div>
         
         <p class="guarantee-text">
-          ✨ 1 tentativa grátis por dia • Sem cartão • Cancele quando quiser
+          ✨ 7 tentativas grátis por dia • Sem cartão • Cancele quando quiser
         </p>
       </div>
     </div>
@@ -121,6 +121,37 @@
     </div>
   </section>
 
+  <!-- ✅ QUIZ ANÔNIMO CTA -->
+  <section class="anonymous-quiz-section">
+    <div class="container">
+      <div class="quiz-cta-card">
+        <div class="quiz-cta-content">
+          <div class="quiz-cta-icon">🎯</div>
+          <h2 class="quiz-cta-title">Quer Testar seus Conhecimentos?</h2>
+          <p class="quiz-cta-description">
+            Faça um quiz rápido de 10 questões aleatórias sem criar conta. Descubra seu nível em segundos!
+          </p>
+          <div class="quiz-cta-benefits">
+            <span class="benefit">✓ Sem login necessário</span>
+            <span class="benefit">✓ 10 questões aleatórias</span>
+            <span class="benefit">✓ Resultado imediato</span>
+            <span class="benefit">✓ Compartilhável</span>
+          </div>
+          <button class="btn btn-quiz-primary" (click)="startAnonymousQuiz()">
+            🚀 Começar Quiz
+          </button>
+        </div>
+        <div class="quiz-cta-visual">
+          <div class="quiz-cta-placeholder">
+            <div class="quiz-icon">🧠</div>
+            <div class="quiz-icon">📊</div>
+            <div class="quiz-icon">⭐</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ✅ PRICING ATUALIZADO -->
   <section class="pricing-section">
     <div class="container">
@@ -140,7 +171,7 @@
           </div>
           
           <ul class="plan-features">
-            <li class="included">✅ <strong>1 tentativa por dia</strong></li>
+            <li class="included">✅ <strong>7 tentativas por dia</strong></li>
             <li class="included">✅ <strong>Acesso às 4 áreas</strong></li>
             <li class="included">✅ <strong>Feedback básico</strong></li>
             <li class="excluded">❌ Simulados cronometrados</li>
@@ -227,7 +258,7 @@
         <div class="testimonial-card">
           <p class="testimonial-text">
             "Consegui minha vaga de React Developer na Nubank usando o SOWLFY! 
-            A área de desenvolvimento web é incrível e muito completa."
+            A área de Análise e Desenvolvimento é incrível e muito completa."
           </p>
           
           <div class="testimonial-author">
@@ -344,52 +375,10 @@
             SOWLFY é a plataforma líder em preparação para concursos públicos e vagas tech. 
             Mais de 2.500+ questões atualizadas e 4 áreas de conhecimento.
           </p>
-          
-          <!-- ✅ REDES SOCIAIS ADICIONADAS -->
-          <div class="social-media">
-            <h4 class="social-title">Siga-nos:</h4>
-            <div class="social-links">
-              <a href="https://web.facebook.com/profile.php?id=61583787683603" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 class="social-link facebook"
-                 title="Facebook SOWLFY">
-                 <img 
-                  width="48" 
-                  height="48" 
-                  src="https://img.icons8.com/color/48/facebook.png" 
-                  alt="facebook"/>
-                <span class="social-text">Facebook</span>
-              </a>
-              
-              <a href="https://www.instagram.com/sowlfyquizzes/" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 class="social-link instagram"
-                 title="Instagram SOWLFY">
-                 <img 
-                  width="48" 
-                  height="48" 
-                  src="https://img.icons8.com/color/48/instagram-new--v1.png" 
-                  alt="instagram"/>
-                <span class="social-text">Instagram</span>
-              </a>
-            </div>
-          </div>
         </div>
       </div>
       
       <!-- LINKS -->
-      <div class="footer-section">
-        <h4 class="footer-title">Áreas de Estudo</h4>
-        <ul class="footer-links">
-          <li><a (click)="goToArea('desenvolvimento-web')">💻 Desenvolvimento Web</a></li>
-          <li><a (click)="goToArea('portugues')">📚 Língua Portuguesa</a></li>
-          <li><a (click)="goToArea('matematica')">🔢 Matemática & R.L.</a></li>
-          <li><a (click)="goToArea('informatica')">💾 Informática</a></li>
-        </ul>
-      </div>
-      
       <div class="footer-section">
         <h4 class="footer-title">Plataforma</h4>
         <ul class="footer-links">
@@ -400,12 +389,36 @@
         </ul>
       </div>
       
-      <!-- ✅ NOVA SEÇÃO: CONTATO E SUPORTE -->
+      <!-- ✅ CONTATO, SUPORTE E REDES SOCIAIS CONSOLIDADOS -->
       <div class="footer-section">
         <h4 class="footer-title">Contato & Suporte</h4>
         <ul class="footer-links">
           <li><a href="mailto:sowlfy.contact@gmail.com">sowlfy.contact@gmail.com</a></li>
         </ul>
+        
+        <!-- ✅ REDES SOCIAIS AQUI -->
+        <div class="social-media" style="margin-top: 1rem;">
+          <h5 style="font-size: 0.9rem; margin-bottom: 0.5rem; color: #666;">Siga-nos:</h5>
+          <div class="social-links">
+            <a href="https://web.facebook.com/profile.php?id=61583787683603" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="social-link facebook"
+               title="Facebook SOWLFY"
+               style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+               <img width="32" height="32" src="https://img.icons8.com/color/32/facebook.png" alt="facebook"/>
+            </a>
+            
+            <a href="https://www.instagram.com/sowlfyquizzes/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="social-link instagram"
+               title="Instagram SOWLFY"
+               style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+               <img width="32" height="32" src="https://img.icons8.com/color/32/instagram-new--v1.png" alt="instagram"/>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -427,15 +440,6 @@
         <div class="stat-item">
           <span class="stat-number">15k+</span>
           <span class="stat-label">Usuários</span>
-        </div>
-      </div>
-      
-      <!-- ✅ SOCIAL LINKS MOBILE -->
-      <div class="footer-social-mobile">
-        <span class="social-label">Siga o SOWLFY:</span>
-        <div class="social-links-compact">
-          <a href="https://www.facebook.com/sowlfy" target="_blank" class="social-compact facebook">📘</a>
-          <a href="https://www.instagram.com/sowlfy" target="_blank" class="social-compact instagram">📷</a>
         </div>
       </div>
       

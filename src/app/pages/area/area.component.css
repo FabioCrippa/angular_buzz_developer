@@ -1227,6 +1227,128 @@ label {
 }
 
 /* =============================================== */
+/* SUBJECT QUIZ SECTION */
+/* =============================================== */
+
+.subject-quiz-section,
+.review-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.section-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 16px 0;
+}
+
+.premium-only-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.subject-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subject-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1.5px solid #bfdbfe;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.subject-chip:hover:not(.chip-locked) {
+  background: #1d4ed8;
+  color: white;
+  border-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
+}
+
+.subject-chip.chip-locked {
+  background: #f3f4f6;
+  color: #9ca3af;
+  border-color: #e5e7eb;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.subject-chip.chip-locked:hover {
+  background: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
+
+.chip-lock {
+  font-size: 11px;
+}
+
+.upgrade-hint {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.upgrade-hint a {
+  color: #1d4ed8;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Review section — btn */
+.btn-review-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btn-review-start:hover {
+  background: #5a6fd6;
+}
+
+/* =============================================== */
 /* RESPONSIVE */
 /* =============================================== */
 

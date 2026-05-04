@@ -92,7 +92,7 @@ app.post('/api/payments/create-subscription', async (req, res) => {
         transaction_amount: 39.90,
         currency_id: 'BRL'
       },
-      back_url: 'https://sowlfy.com.br/payment/success',
+      back_url: process.env.BACK_URL || 'http://localhost:4200/payment/success',
       payer_email: req.body.email || 'test@test.com',
       status: 'pending'
     };

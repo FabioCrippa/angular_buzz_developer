@@ -193,7 +193,7 @@ section {
 /* TÍTULOS E TEXTOS */
 .section-title {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 1rem;
   color: var(--text-dark); /* ✅ MUDOU: mais suave que --dark */
@@ -226,7 +226,7 @@ section {
   justify-content: center;
   padding: 0.875rem 1.5rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: var(--radius);
   border: 2px solid transparent;
   cursor: pointer;
@@ -334,7 +334,7 @@ section {
 
 .hero-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -382,7 +382,7 @@ section {
 .proof-number {
   display: block;
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #fbbf24;
   margin-bottom: 0.3rem;
 }
@@ -447,7 +447,7 @@ section {
 
 .banner-text h3 {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   color: #fbbf24;
 }
@@ -560,8 +560,8 @@ section {
 
 /* ✅ TÍTULO CONTROLADO */
 .card-title {
-  font-size: 1.05rem; /* ✅ LEVEMENTE REDUZIDO: de 1.1rem para 1.05rem */
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: var(--text-dark);
   margin-bottom: 0.3rem; /* ✅ REDUZIDO: de 0.4rem para 0.3rem */
   line-height: 1.25; /* ✅ OTIMIZADO: de 1.3 para 1.25 */
@@ -1000,7 +1000,7 @@ section {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--text-dark); /* ✅ MUDOU: mais suave */
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .plan-price {
@@ -1009,7 +1009,7 @@ section {
 
 .price-amount {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary);
 }
 
@@ -1286,7 +1286,7 @@ section {
 
 .cta-title {
   font-size: 2.2rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1rem;
   color: var(--white); /* ✅ OK: continua branco no fundo escuro */
 }
@@ -1355,7 +1355,7 @@ section {
 
 .brand-name {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--primary);
   line-height: 1.2;
@@ -1365,7 +1365,7 @@ section {
   font-size: 1rem;
   color: #fbbf24;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
 }
 
@@ -1378,7 +1378,7 @@ section {
 /* ✅ FOOTER TITLES E LINKS */
 .footer-title {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1rem;
   color: var(--white);
 }
@@ -1436,7 +1436,7 @@ section {
 .stat-number {
   display: block;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--primary);
   line-height: 1.2;
 }
@@ -1482,7 +1482,7 @@ section {
 
 .copyright strong {
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* ✅ SECURITY BADGES - TOTALMENTE RESPONSIVO */
@@ -1908,7 +1908,7 @@ section {
 
 .social-title {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #ffffff;
   margin-bottom: 0.75rem;
   text-transform: uppercase;
@@ -1932,19 +1932,19 @@ section {
   font-weight: 500;
   transition: all 0.3s ease;
   border: 1px solid transparent;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .social-icon {
-    font-size: 1.2rem;
-  }
-  
-  .social-text {
-    font-weight: 500;
-  }
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+}
+
+.social-text {
+  font-weight: 500;
 }
 
 /* ✅ CORES ESPECÍFICAS DAS REDES */
@@ -2017,6 +2017,165 @@ section {
   
   &.facebook { background: #1877f2; }
   &.instagram { background: #1877f2; }
+}
+
+/* ✅ ANONYMOUS QUIZ SECTION */
+.anonymous-quiz-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+}
+
+.quiz-cta-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+.quiz-cta-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-cta-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.quiz-cta-description {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.quiz-cta-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.btn-quiz-primary {
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  color: white !important;
+  padding: 1rem 2rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  border: none !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+}
+
+.btn-quiz-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.quiz-cta-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-cta-placeholder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.quiz-icon {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 12px;
+  animation: bounce 2s infinite;
+}
+
+.quiz-icon:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.quiz-icon:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ✅ MOBILE RESPONSIVO - QUIZ */
+@media (max-width: 768px) {
+  .quiz-cta-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .quiz-cta-title {
+    font-size: 1.5rem;
+  }
+
+  .quiz-cta-description {
+    font-size: 0.95rem;
+  }
+
+  .quiz-cta-placeholder {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .quiz-icon {
+    font-size: 2rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-cta-card {
+    padding: 1.5rem;
+  }
+
+  .quiz-cta-title {
+    font-size: 1.25rem;
+  }
+
+  .btn-quiz-primary {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ✅ DESKTOP: ESCONDER REDES COMPACTAS */

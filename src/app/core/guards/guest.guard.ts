@@ -18,6 +18,21 @@ export class GuestGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     
+    // ✅ VERIFICAR ADMIN OU ESTUDANTE NO LOCALSTORAGE PRIMEIRO
+    const adminToken = localStorage.getItem('sowlfy_admin_token');
+    if (adminToken) {
+      console.log('🚫 GuestGuard: Admin autenticado, redirecionando para admin/dashboard');
+      this.router.navigate(['/admin/dashboard']);
+      return false;
+    }
+
+    const studentToken = localStorage.getItem('student_token');
+    if (studentToken) {
+      console.log('🚫 GuestGuard: Estudante autenticado, redirecionando para quizz');
+      this.router.navigate(['/quizz']);
+      return false;
+    }
+    
     return this.authService.currentUser$.pipe(
       take(1),
       map(user => {

@@ -1,0 +1,619 @@
+{
+    "metadata":  {
+                     "area":  "desenvolvimento-web",
+                     "subject":  "html",
+                     "name":  "HTML5 \u0026 Semântica",
+                     "description":  "Questões sobre HTML5, semântica, acessibilidade e estruturação de páginas web modernas.",
+                     "difficulty":  "fundamental",
+                     "lastUpdated":  "2025-10-21",
+                     "questionCount":  25,
+                     "tags":  [
+                                  "html5",
+                                  "semantica",
+                                  "acessibilidade",
+                                  "estruturacao"
+                              ]
+                 },
+    "questions":  [
+                      {
+                          "id":  "ana1085",
+                          "question":  "O que significa HTML?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "HyperText Markup Language",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "HyperText Machine Language",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "HyperTool Markup Language",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "HTML significa HyperText Markup Language, a linguagem de marcação usada para estruturar páginas web.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1086",
+                          "question":  "Qual tag HTML é usada para criar um link?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "\u003ca\u003e",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "\u003clink\u003e",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "\u003chref\u003e",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "A tag \u003ca\u003e é usada para criar links em HTML.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1087",
+                          "question":  "Qual atributo é usado para abrir um link em uma nova aba?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "target=\u0027_blank\u0027",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "rel=\u0027new-tab\u0027",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "open=\u0027new\u0027",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo target=\u0027_blank\u0027 faz com que o link seja aberto em uma nova aba.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1088",
+                          "question":  "Qual é a função da tag \u003cmeta\u003e no HTML?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir metadados sobre o documento",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar links para outros documentos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "A tag \u003cmeta\u003e define metadados como charset, autor e descrição do documento.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1089",
+                          "question":  "Qual é o propósito do atributo \u0027alt\u0027 em uma tag \u003cimg\u003e?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir o texto alternativo para a imagem",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Alterar o tamanho da imagem",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Definir a URL da imagem",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo \u0027alt\u0027 fornece uma descrição alternativa para a imagem, importante para acessibilidade.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1090",
+                          "question":  "Qual é a diferença entre \u003csection\u003e e \u003cdiv\u003e no HTML5?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "\u003csection\u003e é semântica, enquanto \u003cdiv\u003e não é",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "\u003cdiv\u003e é semântica, enquanto \u003csection\u003e não é",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ambas são semânticas",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "\u003csection\u003e é uma tag semântica usada para dividir o conteúdo em seções temáticas, enquanto \u003cdiv\u003e é apenas um contêiner genérico.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1091",
+                          "question":  "Qual é o propósito do atributo \u0027defer\u0027 em uma tag \u003cscript\u003e?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Carregar o script após o HTML ser completamente analisado",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Carregar o script antes do HTML ser analisado",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Carregar o script de forma síncrona",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo \u0027defer\u0027 faz com que o script seja executado somente após o HTML ter sido totalmente carregado.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1092",
+                          "question":  "Qual é o propósito da tag \u003ctemplate\u003e no HTML5?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir conteúdo que não será renderizado até ser usado via JavaScript",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar links para outros documentos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "A tag \u003ctemplate\u003e permite definir blocos de HTML que só serão renderizados quando manipulados via JavaScript.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1093",
+                          "question":  "Qual é o propósito do atributo \u0027contenteditable\u0027 no HTML?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permitir que o conteúdo de um elemento seja editado pelo usuário",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar links para outros documentos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo \u0027contenteditable\u0027 permite que o usuário edite o conteúdo do elemento diretamente na página.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1094",
+                          "question":  "Qual é o propósito do atributo \u0027aria-label\u0027 no HTML?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Melhorar a acessibilidade ao fornecer uma descrição para leitores de tela",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar links para outros documentos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo \u0027aria-label\u0027 fornece uma descrição acessível para leitores de tela, melhorando a acessibilidade.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1095",
+                          "question":  "O que é o DOM (Document Object Model)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "É a representação em árvore de um documento HTML ou XML",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "É o modelo de design de um site",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "É o método de estilização de elementos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "html",
+                          "explanation":  "O DOM representa a estrutura hierárquica de um documento HTML/XML como uma árvore de objetos que pode ser manipulada via JavaScript."
+                      },
+                      {
+                          "id":  "ana1096",
+                          "question":  "Qual é o propósito do atributo `viewport` em uma tag `\u003cmeta\u003e`?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Controlar como o conteúdo é exibido em dispositivos móveis",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Definir o idioma do documento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "html",
+                          "explanation":  "A meta tag viewport controla como a página é dimensionada e exibida em dispositivos móveis, essencial para design responsivo."
+                      },
+                      {
+                          "id":  "ana1097",
+                          "question":  "Qual é o propósito da tag \u003cheader\u003e no HTML5?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir o cabeçalho de uma página ou seção",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar um rodapé à página",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar um link para outro documento",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "html",
+                          "explanation":  "A tag \u003cheader\u003e define o cabeçalho de uma página ou seção, tipicamente contendo elementos de navegação, logos ou títulos."
+                      },
+                      {
+                          "id":  "ana1098",
+                          "question":  "Qual é o propósito da tag \u003cfooter\u003e no HTML5?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir o rodapé de uma página ou seção",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar um cabeçalho à página",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar um link para outro documento",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "html",
+                          "explanation":  "A tag \u003cfooter\u003e define o rodapé de uma página ou seção, geralmente contendo informações de copyright, links ou contatos."
+                      },
+                      {
+                          "id":  "ana1099",
+                          "question":  "Qual é o propósito do atributo \u0027lang\u0027 na tag \u003chtml\u003e?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir o idioma do documento",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar links para outros documentos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "html",
+                          "explanation":  "O atributo \u0027lang\u0027 especifica o idioma principal do documento, importante para SEO e tecnologias assistivas."
+                      },
+                      {
+                          "id":  "ana1100",
+                          "question":  "Qual é o propósito do atributo \u0027charset\u0027 na tag \u003cmeta\u003e?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir a codificação de caracteres do documento",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar links para outros documentos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "html",
+                          "explanation":  "O atributo \u0027charset\u0027 especifica a codificação de caracteres do documento, UTF-8 é o padrão recomendado."
+                      },
+                      {
+                          "id":  "ana1101",
+                          "question":  "Qual é o propósito da tag \u003caside\u003e no HTML5?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir conteúdo relacionado, como barras laterais",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adicionar um cabeçalho à página",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Criar links para outros documentos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "html",
+                          "explanation":  "A tag \u003caside\u003e define conteúdo relacionado ao conteúdo principal, como barras laterais, publicidade ou links relacionados."
+                      },
+                      {
+                          "id":  "ana1102",
+                          "question":  "Qual é o propósito da tag \u003cmain\u003e no HTML5?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir o conteúdo principal da página",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Criar um menu de navegação",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Adicionar estilos ao documento",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "A tag \u003cmain\u003e define o conteúdo principal da página, excluindo header, footer e navegação.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1103",
+                          "question":  "O que é o atributo \u0027srcset\u0027 em uma tag \u003cimg\u003e?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Define múltiplas versões de uma imagem para diferentes resoluções",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Define a cor da imagem",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Define a largura da imagem",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo srcset permite especificar diferentes versões da imagem para diferentes densidades de pixels.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1104",
+                          "question":  "Qual é a função do atributo \u0027loading\u0027 em imagens HTML5?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Controlar quando a imagem deve ser carregada",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Definir a velocidade de carregamento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Determinar o formato da imagem",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo loading com valor \u0027lazy\u0027 permite carregamento tardio de imagens para melhorar performance.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1105",
+                          "question":  "O que é uma Progressive Web App (PWA)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma aplicação web que oferece experiência similar a aplicativos nativos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um tipo de banco de dados",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma linguagem de programação",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "PWAs combinam tecnologias web modernas para oferecer funcionalidades como trabalho offline e instalação.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1106",
+                          "question":  "O que é o atributo \u0027role\u0027 em HTML e sua importância para acessibilidade?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Define o papel semântico de um elemento para tecnologias assistivas",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Define a posição do elemento na página",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Define o estilo visual do elemento",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo role comunica a função de um elemento para leitores de tela e outras tecnologias assistivas.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1107",
+                          "question":  "Qual é a diferença entre as tags \u003cb\u003e e \u003cstrong\u003e no HTML?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "\u003cstrong\u003e tem significado semântico de importância, \u003cb\u003e é apenas visual",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Ambas têm exatamente a mesma função",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "\u003cb\u003e é mais importante semanticamente que \u003cstrong\u003e",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "\u003cstrong\u003e indica importância semântica, enquanto \u003cb\u003e é apenas formatação visual sem significado.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1108",
+                          "question":  "O que é o atributo \u0027data-*\u0027 no HTML5 e como usá-lo?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permite armazenar dados customizados privados na página ou aplicação",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Define o tipo de dados do elemento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Especifica a fonte dos dados do elemento",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Atributos data-* permitem armazenar informações customizadas que podem ser acessadas via JavaScript.",
+                          "category":  "html"
+                      },
+                      {
+                          "id":  "ana1109",
+                          "question":  "O que é o atributo \u0027aria-live\u0027 e como ele melhora a acessibilidade?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Indica que uma região da página pode ser atualizada dinamicamente e deve ser anunciada por leitores de tela",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Define a cor do texto para leitores de tela",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Especifica o idioma do conteúdo",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O atributo aria-live informa leitores de tela sobre mudanças dinâmicas em áreas específicas da página.",
+                          "category":  "html"
+                      }
+                  ]
+}

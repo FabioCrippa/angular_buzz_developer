@@ -32,6 +32,11 @@ import { PaymentFailureComponent } from './pages/payment/payment-failure.compone
 import { PaymentPendingComponent } from './pages/payment/payment-pending.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { AnonymousQuizComponent } from './pages/anonymous-quiz/anonymous-quiz.component';
+import { SoftUpgradeDialogComponent } from './shared/components/soft-upgrade-dialog/soft-upgrade-dialog.component';
+import { HardPaywallDialogComponent } from './shared/components/hard-paywall-dialog/hard-paywall-dialog.component';
+import { AttemptsLimitDialogComponent } from './shared/components/attempts-limit-dialog/attempts-limit-dialog.component';
+import { TrialAnalyticsDashboardComponent } from './shared/components/trial-analytics-dashboard/trial-analytics-dashboard.component';
 
 // ✅ GUARDS E SERVICES
 import { PremiumGuard } from './core/guards/premium.guard';
@@ -93,7 +98,12 @@ import { environment } from '../environments/environment';
     PaymentFailureComponent,
     PaymentPendingComponent,
     ProfileComponent,
-    SettingsComponent
+    SettingsComponent,
+    AnonymousQuizComponent,
+    SoftUpgradeDialogComponent,
+    HardPaywallDialogComponent,
+    AttemptsLimitDialogComponent,
+    TrialAnalyticsDashboardComponent
   ],
   imports: [
     // ✅ CORE MODULES

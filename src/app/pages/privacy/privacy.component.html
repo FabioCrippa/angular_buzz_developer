@@ -1,11 +1,89 @@
 <div class="legal-container">
   <button class="close-btn" (click)="closePrivacy()" aria-label="Fechar termos de privacidade">&times;</button>
   <h2>Política de Privacidade</h2>
-  <p>Seus dados são tratados com segurança e respeito.</p>
-  <ul>
-    <li><strong>Coleta de dados:</strong> Coletamos apenas informações essenciais para autenticação e uso do site.</li>
-    <li><strong>Uso de dados:</strong> Utilizamos os dados para personalizar sua experiência e melhorar nossos serviços.</li>
-    <li><strong>Compartilhamento:</strong> Não compartilhamos seus dados com terceiros.</li>
-    <li><strong>Direitos:</strong> Você pode solicitar a exclusão dos seus dados a qualquer momento.</li>
-  </ul>
+  <p>Na SOWLFY, sua privacidade é nossa prioridade. Aqui explicamos como tratamos seus dados.</p>
+
+  <div class="legal-section">
+    <h3>1. Informações que Coletamos</h3>
+    <p>Coletamos apenas informações essenciais:</p>
+    <ul>
+      <li>Email e senha (para autenticação)</li>
+      <li>Histórico de questões respondidas</li>
+      <li>Contador de Streak (dias de prática consecutivos)</li>
+      <li>Dados de Device ID (UUID armazenado localmente para rastrear sessão anônima)</li>
+      <li>Eventos de uso (quiz iniciado, respostas, streak alcançado)</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h3>2. Como Usamos Seus Dados</h3>
+    <ul>
+      <li><strong>Autenticação:</strong> Acessar sua conta com segurança</li>
+      <li><strong>Personalização:</strong> Mostrar seu progresso, streak e histórico</li>
+      <li><strong>Melhorias:</strong> Analisar eventos para tornar a plataforma melhor</li>
+      <li><strong>Comunicações:</strong> Informar sobre novo conteúdo ou mudanças importantes</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h3>3. Armazenamento Local</h3>
+    <p>Alguns dados são armazenados localmente no seu navegador (localStorage):</p>
+    <ul>
+      <li>Device ID único para sessões anônimas</li>
+      <li>Dados do Pool Fixo (15 questões do seu banco fixo)</li>
+      <li>Contador de Streak</li>
+      <li>Tentativas restantes do dia</li>
+    </ul>
+    <p>Esses dados <strong>não são enviados para terceiros</strong> e permanecem apenas no seu dispositivo.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>4. Compartilhamento de Dados</h3>
+    <p><strong>Não compartilhamos seus dados com terceiros</strong>, exceto:</p>
+    <ul>
+      <li><strong>Mercado Pago:</strong> Para processar pagamentos de forma segura</li>
+      <li><strong>Firebase:</strong> Para armazenar analíticos de eventos (sem dados pessoais identificáveis)</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h3>5. Segurança</h3>
+    <ul>
+      <li>Conexão SSL criptografada em todos os acessos (🔒 HTTPS)</li>
+      <li>Senhas são criptografadas no Firebase</li>
+      <li>Dados de pagamento processados por Mercado Pago (não armazenamos cartão)</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h3>6. Seus Direitos (LGPD)</h3>
+    <p>Conforme a Lei Geral de Proteção de Dados (LGPD), você tem direito a:</p>
+    <ul>
+      <li><strong>Acessar:</strong> Ver quais dados temos sobre você</li>
+      <li><strong>Corrigir:</strong> Alterar dados incorretos</li>
+      <li><strong>Deletar:</strong> Solicitar exclusão da sua conta e dados</li>
+      <li><strong>Portabilidade:</strong> Receber uma cópia de seus dados</li>
+    </ul>
+    <p>Para exercer esses direitos, entre em contato: <strong>sowlfy.contact@gmail.com</strong></p>
+  </div>
+
+  <div class="legal-section">
+    <h3>7. Cookies</h3>
+    <p>SOWLFY usa cookies e armazenamento local (localStorage) apenas para:</p>
+    <ul>
+      <li>Manter você autenticado</li>
+      <li>Recordar suas preferências</li>
+      <li>Rastrear progresso (Streak, Pool Fixo)</li>
+    </ul>
+  </div>
+
+  <div class="legal-section">
+    <h3>8. Modificações</h3>
+    <p>Podemos atualizar esta política. Mudanças importantes serão comunicadas por e-mail.</p>
+  </div>
+
+  <div class="legal-section">
+    <h3>9. Contato</h3>
+    <p>Dúvidas sobre privacidade? Entre em contato: <strong>sowlfy.contact@gmail.com</strong></p>
+  </div>
 </div>

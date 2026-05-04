@@ -70,9 +70,97 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    
+    this.checkInitialAuthState();
     this.subscribeToAuthChanges();
     this.subscribeToRouteChanges();
+    this.subscribeToStorageChanges();
+  }
+
+  /**
+   * ✅ Verificar estado inicial de autenticação (Firebase + Admin)
+   */
+  private checkInitialAuthState(): void {
+    // Verificar se admin está logado
+    const adminToken = localStorage.getItem('sowlfy_admin_token');
+    const adminData = localStorage.getItem('sowlfy_admin_data');
+    
+    if (adminToken && adminData) {
+      try {
+        const admin = JSON.parse(adminData);
+        this.currentUser = {
+          id: 'admin',
+          name: admin.email || 'Admin',
+          email: admin.email,
+          isPremium: true,
+          plan: 'premium',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: {
+            level: 0,
+            xp: 0,
+            streak: 0,
+            totalQuestions: 0,
+            correctAnswers: 0,
+            timeStudied: 0,
+            quizzesCompleted: 0,
+            averageScore: 0
+          },
+          preferences: {
+            soundEnabled: true,
+            darkTheme: false,
+            emailNotifications: true,
+            language: 'pt-BR'
+          }
+        };
+        this.isLoggedIn = true;
+        this.isPremium = true;
+        this.cdr.detectChanges();
+        return;
+      } catch (error) {
+        console.error('Erro ao parseizar admin data:', error);
+      }
+    }
+
+    // Verificar se estudante está logado
+    const studentToken = localStorage.getItem('student_token');
+    const studentData = localStorage.getItem('student_data');
+    
+    if (studentToken && studentData) {
+      try {
+        const student = JSON.parse(studentData);
+        this.currentUser = {
+          id: 'student',
+          name: student.name || 'Estudante',
+          email: student.email,
+          schoolId: localStorage.getItem('student_schoolId') || undefined,
+          isPremium: false,
+          plan: 'free',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: {
+            level: 0,
+            xp: 0,
+            streak: 0,
+            totalQuestions: 0,
+            correctAnswers: 0,
+            timeStudied: 0,
+            quizzesCompleted: 0,
+            averageScore: 0
+          },
+          preferences: {
+            soundEnabled: true,
+            darkTheme: false,
+            emailNotifications: true,
+            language: 'pt-BR'
+          }
+        };
+        this.isLoggedIn = true;
+        this.cdr.detectChanges();
+        return;
+      } catch (error) {
+        console.error('Erro ao parseizar student data:', error);
+      }
+    }
   }
 
   ngOnDestroy(): void {
@@ -88,14 +176,101 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.currentUser$
       .pipe(takeUntil(this.destroy$))
       .subscribe(user => {
-        this.currentUser = user;
-        this.isLoggedIn = !!user;
-        this.isPremium = this.authService.isPremium();
-        
-        // Carregar gamificação quando usuário logado
-        if (user?.id) {
-          this.loadUserGamification(user.id);
-          this.subscribeToGamificationUpdates();
+        // ✅ Se há usuário Firebase, usar esse (tem prioridade)
+        if (user) {
+          this.currentUser = user;
+          this.isLoggedIn = true;
+          this.isPremium = this.authService.isPremium();
+          
+          // Carregar gamificação quando usuário logado
+          if (user?.id) {
+            this.loadUserGamification(user.id);
+            this.subscribeToGamificationUpdates();
+          }
+        } else {
+          // ✅ Nenhum usuário Firebase - verificar admin/estudante em localStorage
+          // MAS NÃO SOBRESCREVER se já há um admin/estudante logado!
+          if (!this.currentUser || (this.currentUser.id !== 'admin' && this.currentUser.id !== 'student')) {
+            const adminToken = localStorage.getItem('sowlfy_admin_token');
+            const adminData = localStorage.getItem('sowlfy_admin_data');
+            const studentToken = localStorage.getItem('student_token');
+            const studentData = localStorage.getItem('student_data');
+            
+            if (adminToken && adminData) {
+              // Admin está logado
+              try {
+                const admin = JSON.parse(adminData);
+                this.currentUser = {
+                  id: 'admin',
+                  name: admin.email || 'Admin',
+                  email: admin.email,
+                  isPremium: true,
+                  plan: 'premium',
+                  createdAt: new Date(),
+                  lastLoginAt: new Date(),
+                  stats: {
+                    level: 0,
+                    xp: 0,
+                    streak: 0,
+                    totalQuestions: 0,
+                    correctAnswers: 0,
+                    timeStudied: 0,
+                    quizzesCompleted: 0,
+                    averageScore: 0
+                  },
+                  preferences: {
+                    soundEnabled: true,
+                    darkTheme: false,
+                    emailNotifications: true,
+                    language: 'pt-BR'
+                  }
+                };
+                this.isLoggedIn = true;
+                this.isPremium = true;
+              } catch (error) {
+                console.error('Erro ao parseizar admin data:', error);
+              }
+            } else if (studentToken && studentData) {
+              // Estudante está logado
+              try {
+                const student = JSON.parse(studentData);
+                this.currentUser = {
+                  id: 'student',
+                  name: student.name || 'Estudante',
+                  email: student.email,
+                  schoolId: localStorage.getItem('student_schoolId') || undefined,
+                  isPremium: false,
+                  plan: 'free',
+                  createdAt: new Date(),
+                  lastLoginAt: new Date(),
+                  stats: {
+                    level: 0,
+                    xp: 0,
+                    streak: 0,
+                    totalQuestions: 0,
+                    correctAnswers: 0,
+                    timeStudied: 0,
+                    quizzesCompleted: 0,
+                    averageScore: 0
+                  },
+                  preferences: {
+                    soundEnabled: true,
+                    darkTheme: false,
+                    emailNotifications: true,
+                    language: 'pt-BR'
+                  }
+                };
+                this.isLoggedIn = true;
+              } catch (error) {
+                console.error('Erro ao parseizar student data:', error);
+              }
+            } else {
+              // Nenhum usuário logado
+              this.currentUser = null;
+              this.isLoggedIn = false;
+              this.isPremium = false;
+            }
+          }
         }
         
         // Forçar detecção de mudanças
@@ -151,7 +326,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   
   private async loadUserGamification(userId: string): Promise<void> {
     try {
-      console.log('🎮 Carregando gamificação para:', userId);
       const progress = await this.gamificationService.loadUserProgress(userId);
       if (progress) {
         this.userXP = progress.xp || 0;
@@ -162,7 +336,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.xpToNextLevel = levelInfo.xpToNextLevel;
         this.levelProgress = levelInfo.progressPercentage;
         
-        console.log('✅ Gamificação carregada:', { xp: this.userXP, level: this.userLevel, progress: this.levelProgress });
         this.cdr.detectChanges();
       }
     } catch (error) {
@@ -182,6 +355,114 @@ export class HeaderComponent implements OnInit, OnDestroy {
       });
   }
 
+  /**
+   * ✅ Monitorar mudanças no localStorage para detectar login feito em outro componente
+   */
+  private subscribeToStorageChanges(): void {
+    // Verificar a cada 300ms se houve mudança no localStorage
+    setInterval(() => {
+      this.checkAndUpdateAuthState();
+    }, 300);
+
+    // Também ouvir evento de storage (funciona quando localStorage muda na mesma aba)
+    window.addEventListener('storage', () => {
+      this.checkAndUpdateAuthState();
+    });
+  }
+
+  /**
+   * ✅ Verificar e atualizar o estado de autenticação baseado no localStorage
+   */
+  private checkAndUpdateAuthState(): void {
+    const adminToken = localStorage.getItem('sowlfy_admin_token');
+    const adminData = localStorage.getItem('sowlfy_admin_data');
+    const studentToken = localStorage.getItem('student_token');
+    const studentData = localStorage.getItem('student_data');
+
+    // Se há admin token mas header não reconhece como admin logado
+    if (adminToken && adminData && (!this.currentUser || this.currentUser.id !== 'admin')) {
+      try {
+        const admin = JSON.parse(adminData);
+        this.currentUser = {
+          id: 'admin',
+          name: admin.name || admin.email || 'Admin',
+          email: admin.email,
+          isPremium: true,
+          plan: 'premium',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: {
+            level: 0,
+            xp: 0,
+            streak: 0,
+            totalQuestions: 0,
+            correctAnswers: 0,
+            timeStudied: 0,
+            quizzesCompleted: 0,
+            averageScore: 0
+          },
+          preferences: {
+            soundEnabled: true,
+            darkTheme: false,
+            emailNotifications: true,
+            language: 'pt-BR'
+          }
+        };
+        this.isLoggedIn = true;
+        this.isPremium = true;
+        this.cdr.detectChanges();
+      } catch (error) {
+        console.error('❌ [Header] Erro ao parseizar admin data:', error);
+      }
+      return;
+    }
+
+    // Se há student token mas header não reconhece como estudante logado
+    if (studentToken && studentData && (!this.currentUser || this.currentUser.id !== 'student')) {
+      try {
+        const student = JSON.parse(studentData);
+        this.currentUser = {
+          id: 'student',
+          name: student.name || 'Estudante',
+          email: student.email,
+          schoolId: localStorage.getItem('student_schoolId') || undefined,
+          isPremium: false,
+          plan: 'free',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: {
+            level: 0,
+            xp: 0,
+            streak: 0,
+            totalQuestions: 0,
+            correctAnswers: 0,
+            timeStudied: 0,
+            quizzesCompleted: 0,
+            averageScore: 0
+          },
+          preferences: {
+            soundEnabled: true,
+            darkTheme: false,
+            emailNotifications: true,
+            language: 'pt-BR'
+          }
+        };
+        this.isLoggedIn = true;
+        this.cdr.detectChanges();
+      } catch (error) {
+        console.error('❌ [Header] Erro ao parseizar student data:', error);
+      }
+      return;
+    }
+
+    // Se não há tokens e header estava logado, fazer logout
+    if (!adminToken && !studentToken && !this.authService.isAuthenticated() && this.isLoggedIn) {
+      this.currentUser = null;
+      this.isLoggedIn = false;
+      this.isPremium = false;
+      this.cdr.detectChanges();
+    }
+  }
 
 
   // ===============================================
@@ -267,9 +548,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const confirmLogout = confirm('🚪 Tem certeza que deseja sair?');
     
     if (confirmLogout) {
-      // ✅ LIMPAR DADOS DO USUÁRIO
+      // ✅ LIMPAR DADOS DO USUÁRIO (Firebase)
       localStorage.removeItem('currentUser');
       localStorage.removeItem('isPremium');
+      
+      // ✅ LIMPAR DADOS DO ADMIN
+      localStorage.removeItem('sowlfy_admin_token');
+      localStorage.removeItem('sowlfy_admin_data');
+      
+      // ✅ LIMPAR DADOS DO ESTUDANTE
+      localStorage.removeItem('student_token');
+      localStorage.removeItem('student_data');
+      localStorage.removeItem('student_schoolId');
+      localStorage.removeItem('testPremiumStatus');
       
       this.isLoggedIn = false;
       this.isPremium = false;
@@ -285,11 +576,84 @@ export class HeaderComponent implements OnInit, OnDestroy {
   // ✅ PROCESSAR SUCESSO DE AUTENTICAÇÃO
   private handleAuthSuccess(result: any): void {
     if (result?.user) {
+      // ✅ ATUALIZAR ESTADO DO HEADER IMEDIATAMENTE
+      if (result.userType === 'admin') {
+        this.currentUser = {
+          id: 'admin',
+          name: result.user.email || 'Admin',
+          email: result.user.email,
+          isPremium: true,
+          plan: 'premium',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: {
+            level: 0,
+            xp: 0,
+            streak: 0,
+            totalQuestions: 0,
+            correctAnswers: 0,
+            timeStudied: 0,
+            quizzesCompleted: 0,
+            averageScore: 0
+          },
+          preferences: {
+            soundEnabled: true,
+            darkTheme: false,
+            emailNotifications: true,
+            language: 'pt-BR'
+          }
+        };
+        this.isLoggedIn = true;
+        this.isPremium = true;
+      } else if (result.userType === 'student') {
+        this.currentUser = {
+          id: 'student',
+          name: result.user.name || 'Estudante',
+          email: result.user.email,
+          schoolId: result.schoolId,
+          isPremium: false,
+          plan: 'free',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: {
+            level: 0,
+            xp: 0,
+            streak: 0,
+            totalQuestions: 0,
+            correctAnswers: 0,
+            timeStudied: 0,
+            quizzesCompleted: 0,
+            averageScore: 0
+          },
+          preferences: {
+            soundEnabled: true,
+            darkTheme: false,
+            emailNotifications: true,
+            language: 'pt-BR'
+          }
+        };
+        this.isLoggedIn = true;
+      } else {
+        // Usuário individual (Firebase)
+        this.currentUser = result.user;
+        this.isLoggedIn = true;
+        this.isPremium = this.authService.isPremium();
+      }
+      
+      // ✅ FORÇAR DETECÇÃO DE MUDANÇAS ANTES DO REDIRECIONAMENTO
+      this.cdr.detectChanges();
+      
       this.showWelcomeMessage(result.user);
       
-      // ✅ VERIFICAR REDIRECIONAMENTO
-      const redirectUrl = localStorage.getItem('sowlfy_redirect_after_login');
-      const targetUrl = redirectUrl || '/dashboard';
+      // ✅ DETERMINAR URL DE REDIRECIONAMENTO BASEADO NO TIPO DE USUÁRIO
+      let targetUrl = localStorage.getItem('sowlfy_redirect_after_login') || '/dashboard';
+      
+      // ✅ SE FOR ADMIN, REDIRECIONAR PARA ADMIN DASHBOARD
+      if (result.userType === 'admin') {
+        targetUrl = '/admin/dashboard';
+      } else if (result.userType === 'student') {
+        targetUrl = '/quizz';
+      }
       
       const userName = result.user.name || result.user.email?.split('@')[0] || 'Usuário';
       const isNewUser = result.isNewUser || false;
@@ -319,7 +683,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.router.navigate([targetUrl]);
         this.closeMenus();
         localStorage.removeItem('sowlfy_redirect_after_login');
-      }, 2000);
+      }, 3000);
     }
   }
 
@@ -441,6 +805,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['/']);
     this.closeMenus();
   }
+
+  // ✅ INICIAR QUIZ ANÔNIMO
+  startAnonymousQuiz(): void {
+    this.router.navigate(['/anonymous-quiz']);
+    this.closeMenus();
+  }
   
   navigateToDashboard(): void {
     
@@ -451,6 +821,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     } else {
       this.handleDashboardAccessForGuests();
     }
+  }
+
+  navigateToAdminPanel(): void {
+    this.router.navigate(['/admin/dashboard']);
+    this.closeMenus();
   }
 
   // ✅ NOVO MÉTODO PARA LIDAR COM ACESSO NÃO AUTENTICADO
@@ -501,6 +876,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.closeMenus();
   }
   
+  openChangePassword(): void {
+    this.router.navigate(['/admin/dashboard'], { queryParams: { action: 'changePassword' } });
+  }
+
   navigateToProfile(): void {
     this.router.navigate(['/profile']);
     this.closeMenus();

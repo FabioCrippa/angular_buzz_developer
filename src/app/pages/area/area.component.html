@@ -80,9 +80,7 @@
             <div class="area-meta">
               <span class="meta-item">
                 <span class="meta-icon">❓</span>
-              <!-- ✅ MOSTRAR TAMANHO DO QUIZ -->
-              <span class="stat-value" *ngIf="isPremium">Quiz de 20 questões</span>
-              <span class="stat-value" *ngIf="!isPremium">Quiz de 10 questões</span>
+                <span class="stat-value">{{ areaData.totalQuestions }} questões disponíveis</span>
               </span>
               <span class="meta-item">
                 <span class="meta-icon">📚</span>
@@ -316,198 +314,63 @@
       </div>
     </section>
 
-    <!-- �🔍 FILTERS & SEARCH -->
-    <section class="filters-section">
-      <div class="filters-header">
+    <!-- 📚 PRATICAR POR ASSUNTO -->
+    <section class="subject-quiz-section">
+      <div class="section-header-row">
+        <h2 class="section-title">
+          <span class="section-icon">📚</span>
+          Praticar por Assunto
+        </h2>
+        <span class="premium-only-tag" *ngIf="!isPremium">
+          👑 Premium
+        </span>
+      </div>
+      <p class="section-subtitle">Escolha um assunto e o sistema gera um quiz exclusivo com suas questões.</p>
+
+      <div class="subject-chips">
+        <button
+          *ngFor="let subject of areaData.subjects"
+          class="subject-chip"
+          [class.chip-locked]="!isPremium"
+          [title]="isPremium ? 'Quiz de ' + subject : 'Disponível no Premium'"
+          (click)="isPremium ? startSubjectQuiz(subject) : navigateToUpgrade()"
+        >
+          <span *ngIf="!isPremium" class="chip-lock">🔒</span>
+          {{ subject }}
+        </button>
+      </div>
+
+      <p class="upgrade-hint" *ngIf="!isPremium">
+        <a (click)="navigateToUpgrade()">Faça upgrade para Premium</a> e pratique assunto por assunto.
+      </p>
+    </section>
+
+    <!-- 🔄 REVISÃO DE ERROS -->
+    <section class="review-section">
+      <div class="section-header-row">
         <h2 class="section-title">
           <span class="section-icon">🔄</span>
           Questões para Revisar
           <span class="title-count" *ngIf="hasWrongQuestions">({{ wrongQuestionsCount }})</span>
         </h2>
-        <div class="results-count">
-          <span class="count-badge wrong-questions" *ngIf="hasWrongQuestions">
-            <span class="badge-icon">🔄</span>
-            {{ filteredQuestions.length }} questões para revisar
-          </span>
-          <span class="count-badge no-errors" *ngIf="!hasWrongQuestions">
-            <span class="badge-icon">✅</span>
-            Nenhuma questão para revisar
-          </span>
-        </div>
+        <button
+          class="btn btn-review-start"
+          *ngIf="hasWrongQuestions && isPremium"
+          (click)="startWrongQuestionsQuiz()"
+        >
+          Iniciar Revisão
+        </button>
       </div>
 
-      <div class="filters-content">
-        <!-- Search Bar -->
-        <div class="search-group">
-          <span class="search-icon">🔍</span>
-          <input 
-            type="text" 
-            placeholder="Buscar questões, assuntos, tags..." 
-            [(ngModel)]="searchQuery"
-            class="search-input"
-          >
-        </div>
-
-        <!-- Filter Controls com Premium Lock -->
-        <div class="filter-controls" [class.premium-locked]="!isPremium">
-          <div class="filter-group">
-            <label class="filter-label">Assunto:</label>
-            <select 
-              [(ngModel)]="selectedSubject" 
-              class="filter-select"
-              [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
-            >
-              <option value="all">Todos os Assuntos</option>
-              <option *ngFor="let subject of areaData.subjects" [value]="subject">
-                {{ subject }}
-              </option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label class="filter-label">Dificuldade:</label>
-            <select 
-              [(ngModel)]="selectedDifficulty" 
-              class="filter-select"
-              [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
-            >
-              <option value="all">Todas</option>
-              <option value="Fácil">Fácil ({{ areaData.difficulty.easy }})</option>
-              <option value="Médio">Médio ({{ areaData.difficulty.medium }})</option>
-              <option value="Difícil">Difícil ({{ areaData.difficulty.hard }})</option>
-            </select>
-          </div>
-
-          <div class="filter-group">
-            <label class="filter-label">Ordenar por:</label>
-            <select 
-              [(ngModel)]="sortBy" 
-              class="filter-select"
-              [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
-            >
-              <option value="popularity">Mais Populares</option>
-              <option value="difficulty">Por Dificuldade</option>
-              <option value="subject">Por Assunto</option>
-              <option value="recent">Mais Recentes</option>
-            </select>
-          </div>
-
-          <button 
-            class="btn btn-icon-only"
-            title="Limpar filtros"
-            (click)="clearFilters()"
-            [disabled]="!isPremium && !premiumService.canUseAdvancedFilters()"
-          >
-            <span class="btn-icon">🗑️</span>
-          </button>
-
-          <!-- Premium Lock Overlay -->
-          <div *ngIf="!isPremium" class="premium-lock-overlay" (click)="navigateToUpgrade()">
-            <span class="lock-icon">🔒</span>
-            <span class="lock-text">Filtros Premium</span>
-          </div>
-        </div>
-
-        <!-- Smart Quiz Section -->
-        <div class="smart-quiz-section">
-          <!-- Indicador do Modo Inteligente -->
-          <div class="smart-mode-indicator">
-            <div class="mode-badge" [class]="getUserMode()">
-              <span class="mode-icon">{{ getModeIcon() }}</span>
-              <span>{{ getModeText() }}</span>
-            </div>
-            <p class="mode-description">{{ getModeDescription() }}</p>
-          </div>
-
-          <!-- Botões de Quiz -->
-          <div class="quiz-options">
-            <!-- Iniciar Quiz -->
-            <div class="quiz-option-wrapper">
-              <button 
-                class="quiz-btn primary-quiz"
-                (click)="startAreaQuiz()"
-                [disabled]="!canTakeQuiz"
-                [class.disabled]="!canTakeQuiz"
-              >
-                <span class="quiz-icon">▶️</span>
-                <div class="btn-content">
-                  <span class="btn-title">Iniciar Quiz</span>
-                  <span class="btn-subtitle">
-                    <span *ngIf="isPremium">20 questões desta área</span>
-                    <span *ngIf="!isPremium">10 questões | 1 tentativa por dia</span>
-                  </span>
-                </div>
-              </button>
-              
-              <!-- Aviso de limite -->
-              <div *ngIf="!canTakeQuiz" class="quiz-limit-warning">
-                <span class="warning-small-icon">⏰</span>
-                <span>Limite diário atingido</span>
-              </div>
-            </div>
-
-            <!-- Quiz Inteligente - PREMIUM ONLY -->
-            <div class="quiz-option-wrapper">
-              <button 
-                class="quiz-btn smart-quiz"
-                [disabled]="!isPremium || getWrongQuestions().length === 0 || !canTakeQuiz"
-                (click)="startWrongQuestionsQuiz()"
-                [class.premium-locked]="!isPremium"
-                [style.background-color]="isPremium ? areaData.color : '#ccc'"
-              >
-                <span class="quiz-icon">{{ isPremium ? '🔄' : '🔒' }}</span>
-                <div class="btn-content">
-                  <span class="btn-title">Quiz Inteligente</span>
-                  <span class="btn-subtitle">
-                    <span *ngIf="isPremium">{{ getSmartQuizSubtitle() }}</span>
-                    <span *ngIf="!isPremium">Recurso Premium</span>
-                  </span>
-                </div>
-                
-                <!-- Premium Badge -->
-                <div *ngIf="!isPremium" class="premium-badge">
-                  <span>👑</span>
-                </div>
-              </button>
-              
-              <!-- Upgrade Message -->
-              <div *ngIf="!isPremium" class="upgrade-message">
-                <span>Upgrade para desbloquear</span>
-                <button class="btn btn-small btn-accent" (click)="navigateToUpgrade()">Premium</button>
-              </div>
-            </div>
-
-            <!-- Quiz Filtrado - PREMIUM ONLY -->
-            <div class="quiz-option-wrapper">
-              <button 
-                class="quiz-btn filter-quiz"
-                (click)="startCustomQuiz()"
-                [disabled]="!isPremium || filteredQuestions.length === 0 || !canTakeQuiz"
-                [class.premium-locked]="!isPremium"
-              >
-                <span class="quiz-icon">{{ isPremium ? '🎛️' : '🔒' }}</span>
-                <div class="btn-content">
-                  <span class="btn-title">Quiz Filtrado</span>
-                  <span class="btn-subtitle">
-                    <span *ngIf="isPremium">{{ filteredQuestions.length }} questões selecionadas</span>
-                    <span *ngIf="!isPremium">Recurso Premium</span>
-                  </span>
-                </div>
-                
-                <!-- Premium Badge -->
-                <div *ngIf="!isPremium" class="premium-badge">
-                  <span>👑</span>
-                </div>
-              </button>
-              
-              <!-- Upgrade Message -->
-              <div *ngIf="!isPremium" class="upgrade-message">
-                <span>Filtros avançados no Premium</span>
-                <button class="btn btn-small btn-accent" (click)="navigateToUpgrade()">Upgrade</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Busca simples -->
+      <div class="search-group" *ngIf="hasWrongQuestions">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          placeholder="Buscar nas questões erradas..."
+          [(ngModel)]="searchQuery"
+          class="search-input"
+        >
       </div>
     </section>
 

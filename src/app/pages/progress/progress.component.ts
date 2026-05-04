@@ -89,92 +89,94 @@ export class ProgressComponent implements OnInit {
     this.isLoading = true;
     this.hasError = false;
 
-    // ✅ ADICIONE ESTA LINHA PARA SALVAR O INDEX
     this.indexData = indexJson;
 
     try {
-      if (!indexJson || !indexJson.areas || !indexJson.stats) {
-        throw new Error('Estrutura do index.json inválida');
+      if (!indexJson) {
+        throw new Error('index.json não carregado');
       }
 
       const stats = this.progressService.getStats();
-      
-      // No método loadProgressData(), logo após capturar as áreas:
-      const areasObj = indexJson.areas;
-      const areaNames = Object.keys(areasObj);
 
-      const areaDisplayNames: { [key: string]: string } = {};
-      
-      areaNames.forEach(area => {
-        if (areasObj[area] && typeof areasObj[area] === 'object') {
-          areaDisplayNames[area] = areasObj[area].displayName || this.formatDisplayName(area);
-        } else {
-          areaDisplayNames[area] = this.formatDisplayName(area);
-        }
-      });
+      // ─── Extrair cursos do novo formato (cursos[]) ou legado (areas{}) ───
+      interface CourseEntry { id: string; nome: string; displayName?: string; descricao?: string; icon?: string; totalQuestoes?: number; }
+      let courses: CourseEntry[] = [];
+      if (Array.isArray(indexJson.cursos)) {
+        courses = indexJson.cursos.map((c: any) => ({
+          id: c.id,
+          nome: c.nome || c.displayName || c.id,
+          displayName: c.displayName || c.nome || c.id,
+          descricao: c.descricao || '',
+          icon: c.icon || '',
+          totalQuestoes: c.totalQuestoes || 0
+        }));
+      } else if (indexJson.areas && typeof indexJson.areas === 'object') {
+        // Formato legado
+        courses = Object.keys(indexJson.areas).map(id => ({
+          id,
+          nome: indexJson.areas[id]?.displayName || id,
+          displayName: indexJson.areas[id]?.displayName || id,
+          descricao: indexJson.areas[id]?.description || '',
+          icon: '',
+          totalQuestoes: 0
+        }));
+      }
 
-      const areaQuestionCounts: { [key: string]: number } = indexJson.stats.byArea || {};
+      if (courses.length === 0) {
+        throw new Error('Nenhum curso encontrado no index.json');
+      }
+
+      // Contagem de questões por curso (stats.byCurso ou stats.byArea ou totalQuestoes)
+      const byArea: { [key: string]: number } = indexJson.stats?.byArea || {};
 
       let lastActivity = '';
       let lastActivityDate = 0;
-      
       if (stats.lastActivity) {
         lastActivity = stats.lastActivity;
         lastActivityDate = new Date(stats.lastActivity).getTime();
       } else {
-        areaNames.forEach(area => {
-          const areaStats = this.progressService.getAreaStats(area);
+        courses.forEach(c => {
+          const areaStats = this.progressService.getAreaStats(c.id);
           if (areaStats.lastActivity) {
             const d = new Date(areaStats.lastActivity).getTime();
-            if (d > lastActivityDate) {
-              lastActivityDate = d;
-              lastActivity = areaStats.lastActivity;
-            }
+            if (d > lastActivityDate) { lastActivityDate = d; lastActivity = areaStats.lastActivity; }
           }
         });
       }
 
-      // No método loadProgressData(), substitua a criação do areasProgress:
-      const areasProgress: AreaProgress[] = areaNames.map(area => {
-        const areaStats = this.progressService.getAreaStats(area);
-        const questionCount = areaQuestionCounts[area] || 0;
-        const areaData = this.indexData.areas[area] || {};
-        
+      const areasProgress: AreaProgress[] = courses.map(c => {
+        const areaStats = this.progressService.getAreaStats(c.id);
+        const questionCount = byArea[c.id] || c.totalQuestoes || 0;
         return {
-          name: area,
-          displayName: areaDisplayNames[area],
-          progress: questionCount ? Math.round((areaStats.completed / questionCount) * 100) : 0,
+          name: c.id,
+          displayName: c.displayName || c.nome,
+          progress: questionCount ? Math.min(100, Math.round((areaStats.completed / questionCount) * 100)) : 0,
           questionCount,
           completed: areaStats.completed,
           accuracy: areaStats.accuracy,
           timeSpent: this.formatTime(areaStats.totalTime),
-          lastActivity: areaStats.lastActivity 
-            ? new Date(areaStats.lastActivity).toLocaleDateString('pt-BR') 
+          lastActivity: areaStats.lastActivity
+            ? new Date(areaStats.lastActivity).toLocaleDateString('pt-BR')
             : 'Nunca',
-          icon: this.getAreaIcon(area),
-          difficulty: this.getAreaDifficulty(area),
-          description: areaData.description || ''
+          icon: c.icon || this.getAreaIcon(c.id),
+          difficulty: this.getAreaDifficulty(c.id),
+          description: c.descricao || ''
         };
       });
-      // ✅ REMOVIDO O FILTRO - Agora mostra todas as áreas, incluindo as não iniciadas
 
-      // ✅ CORRIJA O CÁLCULO DA PRECISÃO MÉDIA
-      // Use a precisão geral do serviço, não a média das áreas
-      const averageAccuracy = stats.accuracy; // ✅ Use direto do serviço
+      const totalQuestions = courses.reduce((sum, c) => sum + (byArea[c.id] || c.totalQuestoes || 0), 0);
 
       this.progressData = {
-        totalQuestions: Object.values(areaQuestionCounts).reduce((sum: number, count: number) => sum + count, 0),
+        totalQuestions,
         areasProgress,
         lastAccess: lastActivity || new Date().toISOString(),
         overallStats: {
           totalCompleted: stats.totalCompleted,
-          averageAccuracy: averageAccuracy,
-          totalTimeSpent: this.formatTime(stats.totalTime), // ✅ Certifique-se que está usando stats.totalTime
+          averageAccuracy: stats.accuracy,
+          totalTimeSpent: this.formatTime(stats.totalTime),
           streak: stats.streak
         }
       };
-
-      // ✅ ADICIONE ESTE LOG FINAL TAMBÉM
 
       this.isLoading = false;
       this.showSuccessMessage('Progresso carregado com sucesso!');
