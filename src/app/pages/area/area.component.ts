@@ -197,7 +197,7 @@ export class AreaComponent implements OnInit {
       
       if (!this.areaData) {
         this.hasError = true;
-        this.errorMessage = `Área "${this.areaId}" não encontrada. Áreas disponíveis: analise-desenvolvimento-sistemas, informatica-geral, matematica, portugues`;
+        this.errorMessage = `Área "${this.areaId}" não encontrada. Áreas disponíveis: analise-desenvolvimento-sistemas, informatica-geral, matematica, portugues, simulados`;
         this.isLoading = false;
         return;
       }
@@ -1720,6 +1720,17 @@ Clique em "Upgrade Premium" para desbloquear!`);
         totalQuestions: 600,
         subjects: ['Fundamentos de Programação', 'Desenvolvimento Web Frontend', 'Design e Interface', 'Metodologias e DevOps', 'Segurança em Desenvolvimento', 'Preparação para Entrevista'],
         difficulty: { easy: 200, medium: 280, hard: 120 },
+        userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
+      },
+      'simulados': {
+        name: 'simulados',
+        displayName: 'Simulados',
+        description: 'Provas completas no estilo real: Prova Paulista, ENEM e mais',
+        icon: '📝',
+        color: '#e67e22',
+        totalQuestions: 30,
+        subjects: ['prova-paulista-9ano-2024', 'enem-2024'],
+        difficulty: { easy: 10, medium: 15, hard: 5 },
         userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
       }
     };
