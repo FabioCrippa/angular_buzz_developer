@@ -1790,7 +1790,7 @@ label {
 .review-text strong { color: #111; font-size: 18px; }
 
 /* -------------------------------------------------------
-   ?? SELEÇÃO DE SIMULADOS
+   ?? SELEï¿½ï¿½O DE SIMULADOS
    ------------------------------------------------------- */
 
 .simulados-selection {
@@ -1892,7 +1892,7 @@ label {
   gap: 0.3rem;
 }
 
-/* Footer com botão */
+/* Footer com botï¿½o */
 .simulado-card-footer {
   padding: 0.9rem 1.3rem;
   border-top: 1px solid rgba(0,0,0,0.06);
@@ -1916,6 +1916,28 @@ label {
 .btn-start-simulado:hover {
   opacity: 0.9;
   transform: scale(1.02);
+}
+
+.btn-review-simulado {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-review-simulado:hover {
+  background: #e67e22;
+  color: #fff;
 }
 
 @media (max-width: 480px) {

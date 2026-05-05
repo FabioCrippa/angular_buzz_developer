@@ -447,6 +447,9 @@ private getNextMidnightISO(): string {
       } else if (queryMode === 'simulado' && this.area && this.subject) {
         this.mode = 'simulado';
         this.isSimulado = true;
+      } else if (queryMode === 'simulado-review' && this.subject) {
+        this.mode = 'simulado-review';
+        this.isSimulado = true;
       } else if (queryMode === 'smart') {
         this.mode = 'smart';
       } else if (queryMode === 'custom') {
@@ -968,10 +971,23 @@ private getNextMidnightISO(): string {
       if (!success) {
         this.showError(`Não foi possível carregar o simulado "${this.subject}". Tente novamente.`);
       } else {
-        // No simulado carregamos TODAS as questões (sem limite)
         this.titleService.setTitle(`Simulado: ${this.getSimuladoTitle()} — Sowlfy`);
       }
     });
+  }
+
+  private loadSimuladoReview(): void {
+    const saved = this.progressService.getSimuladoReview(this.subject || '');
+    if (!saved) {
+      this.showError('Nenhuma revisão encontrada para este simulado. Realize o simulado primeiro.');
+      return;
+    }
+    this.isSimulado = true;
+    this.simuladoFinished = true;
+    this.simuladoResult = saved.result;
+    this.titleService.setTitle(`Revisão: ${this.getSimuladoTitle()} — Sowlfy`);
+    this.setState(QuizState.COMPLETED);
+    this.isLoading = false;
   }
 
   getSimuladoTitle(): string {
@@ -1072,6 +1088,9 @@ private getNextMidnightISO(): string {
       byArea,
       questions
     };
+
+    // Salvar resultado completo para revisão futura
+    this.progressService.saveSimuladoReview(this.subject || '', this.simuladoResult);
 
     this.setState(QuizState.COMPLETED);
     this.isLoading = false;
@@ -1181,6 +1200,10 @@ private getNextMidnightISO(): string {
         } else {
           this.showError('Área e assunto são obrigatórios para o simulado');
         }
+        break;
+
+      case 'simulado-review':
+        this.loadSimuladoReview();
         break;
         
       case 'smart':

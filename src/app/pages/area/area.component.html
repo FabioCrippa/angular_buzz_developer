@@ -143,6 +143,11 @@
             <button class="btn-start-simulado" (click)="navigateToSimulado(sim.id)">
               <i class="fas fa-play"></i> Iniciar Simulado
             </button>
+            <button *ngIf="simuladosReviewAvailable[sim.id]"
+                    class="btn-review-simulado"
+                    (click)="viewSimuladoReview(sim.id)">
+              <i class="fas fa-eye"></i> Ver Revisão
+            </button>
           </div>
         </div>
       </div>

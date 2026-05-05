@@ -394,19 +394,59 @@
           ]
         }
       ]
+    },
+    {
+      "id": "simulados",
+      "nome": "Simulados",
+      "displayName": "Simulados",
+      "icon": "📝",
+      "cor": "#e67e22",
+      "descricao": "Simulados oficiais com questões reais por série, exame e edição",
+      "totalQuestoes": 30,
+      "disciplinas": [
+        {
+          "id": "prova-paulista",
+          "nome": "Prova Paulista",
+          "descricao": "Avaliação Diagnóstica do Estado de São Paulo",
+          "icon": "📋",
+          "topicos": [
+            {
+              "id": "prova-paulista-9ano-2024",
+              "nome": "Prova Paulista — 9º Ano 2024",
+              "descricao": "Simulado completo da Prova Paulista para o 9º Ano — edição 2024",
+              "arquivo": "prova-paulista-9ano-2024.json"
+            }
+          ]
+        },
+        {
+          "id": "enem",
+          "nome": "ENEM",
+          "descricao": "Exame Nacional do Ensino Médio",
+          "icon": "🏫",
+          "topicos": [
+            {
+              "id": "enem-2024",
+              "nome": "ENEM 2024 — Linguagens e Humanas",
+              "descricao": "Questões de Linguagens, Códigos e Ciências Humanas — ENEM 2024",
+              "arquivo": "enem-2024.json"
+            }
+          ]
+        }
+      ]
     }
   ],
   
   "stats": {
-    "totalCursos": 4,
-    "totalDisciplinas": 12,
-    "totalTopicos": 51,
-    "totalQuestoes": 895,
+    "totalCursos": 5,
+    "totalDisciplinas": 14,
+    "totalTopicos": 53,
+    "totalQuestoes": 925,
     "byArea": {
       "analise-desenvolvimento-sistemas": 600,
       "informatica-geral": 75,
       "matematica": 80,
-      "portugues": 140
+      "portugues": 140,
+      "simulados": 30
     }
   }
 }

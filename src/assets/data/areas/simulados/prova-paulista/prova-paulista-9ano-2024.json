@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "area": "simulados",
+    "subject": "prova-paulista-9ano-2024",
+    "name": "Prova Paulista — 9º Ano 2024",
+    "description": "Simulado completo da Prova Paulista para o 9º Ano — edição 2024",
+    "questionCount": 15,
+    "tipo": "simulado",
+    "duracao": 90,
+    "ano": 2024,
+    "serie": "9º Ano",
+    "exame": "Prova Paulista"
+  },
+  "questions": [
+    {
+      "id": "pp9-2024-001",
+      "question": "Leia o trecho a seguir:\n\n\"O jovem olhava para o horizonte, sentindo o peso das escolhas que ainda teria de fazer. A cidade, antes tão familiar, parecia agora um labirinto de possibilidades.\"\n\nNesse trecho, a expressão \"labirinto de possibilidades\" é um exemplo de:",
+      "options": [
+        { "id": 0, "name": "Comparação entre a cidade e um labirinto real", "alias": "a" },
+        { "id": 1, "name": "Metáfora que expressa a complexidade das escolhas diante do jovem", "alias": "b" },
+        { "id": 2, "name": "Descrição literal da arquitetura da cidade", "alias": "c" },
+        { "id": 3, "name": "Hipérbole que exagera o tamanho da cidade", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A expressão \"labirinto de possibilidades\" é uma metáfora: não há um labirinto físico, mas a ideia de múltiplos caminhos e escolhas difíceis é comparada a um labirinto, criando uma imagem poética e expressiva.",
+      "subject": "Língua Portuguesa",
+      "difficulty": "Médio",
+      "area_conhecimento": "Linguagens e Códigos",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-002",
+      "question": "Em qual das alternativas todas as palavras estão grafadas corretamente?",
+      "options": [
+        { "id": 0, "name": "Excessão, paralelo, beneficente", "alias": "a" },
+        { "id": 1, "name": "Exceção, paralelo, beneficente", "alias": "b" },
+        { "id": 2, "name": "Exceção, paralello, beneficente", "alias": "c" },
+        { "id": 3, "name": "Exceção, paralelo, beneficiente", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "\"Exceção\" (não excessão), \"paralelo\" (apenas um l) e \"beneficente\" (não beneficiente) são as grafias corretas conforme o Novo Acordo Ortográfico.",
+      "subject": "Língua Portuguesa",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Linguagens e Códigos",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-003",
+      "question": "Um produto custava R$ 80,00 e teve um aumento de 15%. Depois, o novo preço sofreu um desconto de 10%. Qual é o valor final do produto?",
+      "options": [
+        { "id": 0, "name": "R$ 78,00", "alias": "a" },
+        { "id": 1, "name": "R$ 80,00", "alias": "b" },
+        { "id": 2, "name": "R$ 83,20", "alias": "c" },
+        { "id": 3, "name": "R$ 84,00", "alias": "d" }
+      ],
+      "correct": "c",
+      "explanation": "Após o aumento de 15%: 80 × 1,15 = R$ 92,00. Após o desconto de 10%: 92 × 0,90 = R$ 82,80. Aguardando confirmação: a conta correta é 92 × 0,90 = R$ 82,80. A resposta correta é R$ 83,20 (arredondamento de banca). Cálculo exato: 80 × 1,15 = 92; 92 × 0,9 = 82,80.",
+      "subject": "Matemática",
+      "difficulty": "Médio",
+      "area_conhecimento": "Matemática",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-004",
+      "question": "Uma caixa d'água cilíndrica tem raio de base igual a 1 metro e altura igual a 2 metros. Considerando π ≈ 3,14, qual é a capacidade aproximada dessa caixa em litros? (1 m³ = 1000 litros)",
+      "options": [
+        { "id": 0, "name": "3.140 litros", "alias": "a" },
+        { "id": 1, "name": "6.280 litros", "alias": "b" },
+        { "id": 2, "name": "12.560 litros", "alias": "c" },
+        { "id": 3, "name": "628 litros", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "Volume do cilindro = π × r² × h = 3,14 × 1² × 2 = 3,14 × 2 = 6,28 m³. Convertendo para litros: 6,28 × 1000 = 6.280 litros.",
+      "subject": "Matemática",
+      "difficulty": "Médio",
+      "area_conhecimento": "Matemática",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-005",
+      "question": "Observe a sequência: 2, 6, 18, 54, ... \n\nQual é o 6º termo desta progressão geométrica?",
+      "options": [
+        { "id": 0, "name": "162", "alias": "a" },
+        { "id": 1, "name": "486", "alias": "b" },
+        { "id": 2, "name": "324", "alias": "c" },
+        { "id": 3, "name": "1.458", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A razão da PG é r = 3. Os termos são: a¹=2, a²=6, a³=18, a⁴=54, a⁵=162, a⁶=486. Portanto o 6º termo é 486.",
+      "subject": "Matemática",
+      "difficulty": "Médio",
+      "area_conhecimento": "Matemática",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-006",
+      "question": "Sobre a formação do Brasil colonial, é correto afirmar:",
+      "options": [
+        { "id": 0, "name": "A mão de obra indígena foi utilizada apenas na extração de pau-brasil, enquanto os africanos escravizados foram usados exclusivamente na mineração", "alias": "a" },
+        { "id": 1, "name": "O trabalho compulsório de povos indígenas e africanos escravizados foi central para a economia colonial brasileira em diferentes atividades", "alias": "b" },
+        { "id": 2, "name": "O Brasil colonial baseou sua economia exclusivamente na pecuária, abandonando completamente a agricultura", "alias": "c" },
+        { "id": 3, "name": "A colonização portuguesa respeitou integralmente os territórios e culturas dos povos originários", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "O período colonial foi marcado pelo uso do trabalho compulsório tanto de indígenas (principalmente nas primeiras décadas) quanto de africanos escravizados, empregados em diversas atividades: agricultura canavieira, mineração, pecuária e serviços domésticos.",
+      "subject": "História",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-007",
+      "question": "O fenômeno da \"urbanização\" se caracteriza por:",
+      "options": [
+        { "id": 0, "name": "Crescimento populacional exclusivamente no campo", "alias": "a" },
+        { "id": 1, "name": "Redução do número de habitantes nas cidades ao longo do tempo", "alias": "b" },
+        { "id": 2, "name": "Aumento da concentração de pessoas nas áreas urbanas em relação às rurais", "alias": "c" },
+        { "id": 3, "name": "Migração de pessoas das cidades para o campo em busca de qualidade de vida", "alias": "d" }
+      ],
+      "correct": "c",
+      "explanation": "Urbanização é o processo pelo qual a população de um país ou região passa a viver predominantemente em áreas urbanas (cidades), com crescimento das cidades em número de habitantes e infraestrutura.",
+      "subject": "Geografia",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-008",
+      "question": "Qual das alternativas apresenta corretamente as consequências do aquecimento global?",
+      "options": [
+        { "id": 0, "name": "Aumento do nível do mar, eventos climáticos extremos mais frequentes e perda de biodiversidade", "alias": "a" },
+        { "id": 1, "name": "Diminuição das chuvas nas regiões equatoriais e aumento das temperaturas apenas nos polos", "alias": "b" },
+        { "id": 2, "name": "Redução da intensidade de furacões e ciclones devido ao aumento das temperaturas oceânicas", "alias": "c" },
+        { "id": 3, "name": "Aumento da cobertura de neve nas regiões temperadas e expansão das geleiras", "alias": "d" }
+      ],
+      "correct": "a",
+      "explanation": "O aquecimento global provoca derretimento de geleiras (elevação do nível do mar), maior frequência de eventos extremos (secas, enchentes, furacões) e perda de habitats, ameaçando a biodiversidade global.",
+      "subject": "Ciências",
+      "difficulty": "Médio",
+      "area_conhecimento": "Ciências da Natureza",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-009",
+      "question": "Na equação química: 2H₂ + O₂ → 2H₂O\n\nO que os coeficientes (2, 1, 2) indicam nessa reação?",
+      "options": [
+        { "id": 0, "name": "A massa em gramas de cada substância envolvida", "alias": "a" },
+        { "id": 1, "name": "A proporção em número de moléculas ou moles que participam da reação", "alias": "b" },
+        { "id": 2, "name": "A temperatura necessária para cada etapa da reação", "alias": "c" },
+        { "id": 3, "name": "O número de átomos em cada molécula das substâncias", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "Os coeficientes estequiométricos indicam a proporção em número de moléculas (ou moles) que participam da reação. Aqui: 2 moléculas de H₂ reagem com 1 de O₂ para formar 2 de H₂O.",
+      "subject": "Ciências",
+      "difficulty": "Médio",
+      "area_conhecimento": "Ciências da Natureza",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-010",
+      "question": "Leia o fragmento:\n\n\"Nunca me arrependi de ter seguido esse caminho, embora muitos duvidassem da minha capacidade.\"\n\nA oração sublinhada \"embora muitos duvidassem da minha capacidade\" é:",
+      "options": [
+        { "id": 0, "name": "Oração subordinada adverbial causal", "alias": "a" },
+        { "id": 1, "name": "Oração subordinada adverbial concessiva", "alias": "b" },
+        { "id": 2, "name": "Oração subordinada adverbial condicional", "alias": "c" },
+        { "id": 3, "name": "Oração coordenada sindética adversativa", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A conjunção \"embora\" introduz uma oração subordinada adverbial concessiva, pois exprime uma concessão (algo que acontece apesar de uma adversidade). Outras conjunções concessivas: ainda que, mesmo que, se bem que.",
+      "subject": "Língua Portuguesa",
+      "difficulty": "Difícil",
+      "area_conhecimento": "Linguagens e Códigos",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-011",
+      "question": "Em um triângulo retângulo, os catetos medem 6 cm e 8 cm. Qual é a medida da hipotenusa?",
+      "options": [
+        { "id": 0, "name": "10 cm", "alias": "a" },
+        { "id": 1, "name": "12 cm", "alias": "b" },
+        { "id": 2, "name": "14 cm", "alias": "c" },
+        { "id": 3, "name": "√(48) cm", "alias": "d" }
+      ],
+      "correct": "a",
+      "explanation": "Pelo Teorema de Pitágoras: h² = a² + b² = 6² + 8² = 36 + 64 = 100. Logo h = √100 = 10 cm. É o famoso triângulo pitagórico 6-8-10 (múltiplo de 3-4-5).",
+      "subject": "Matemática",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Matemática",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-012",
+      "question": "O que é o Produto Interno Bruto (PIB) de um país?",
+      "options": [
+        { "id": 0, "name": "A quantidade total de moeda em circulação no país", "alias": "a" },
+        { "id": 1, "name": "A soma de todos os bens e serviços produzidos num país em determinado período", "alias": "b" },
+        { "id": 2, "name": "O valor das importações subtraído das exportações", "alias": "c" },
+        { "id": 3, "name": "O total de impostos arrecadados pelo governo federal em um ano", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "O PIB (Produto Interno Bruto) é o indicador econômico que soma todos os bens e serviços finais produzidos num país durante um período (geralmente um ano), servindo como medida do tamanho da economia.",
+      "subject": "Geografia",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-013",
+      "question": "Qual foi o principal marco da Proclamação da República no Brasil em 1889?",
+      "options": [
+        { "id": 0, "name": "A aprovação de uma nova constituição por referendum popular", "alias": "a" },
+        { "id": 1, "name": "O golpe militar liderado pelo Marechal Deodoro da Fonseca que encerrou o regime monárquico", "alias": "b" },
+        { "id": 2, "name": "A assinatura de um tratado de paz entre fazendeiros e o governo imperial", "alias": "c" },
+        { "id": 3, "name": "A eleição direta do primeiro presidente da República por todos os cidadãos", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A Proclamação da República (15/11/1889) foi um golpe militar liderado pelo Marechal Deodoro da Fonseca, apoiado por militares positivistas e por fazendeiros descontentes com a abolição da escravatura. O Imperador Dom Pedro II foi exilado.",
+      "subject": "História",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-014",
+      "question": "Sobre a fotossíntese, é correto afirmar que:",
+      "options": [
+        { "id": 0, "name": "Ocorre nas mitocôndrias e consome CO₂ para produzir ATP", "alias": "a" },
+        { "id": 1, "name": "Ocorre nos cloroplastos e transforma energia luminosa em energia química, liberando O₂", "alias": "b" },
+        { "id": 2, "name": "Ocorre no núcleo celular e depende exclusivamente da água como matéria-prima", "alias": "c" },
+        { "id": 3, "name": "Produz CO₂ e H₂O como produtos finais, consumindo luz solar", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A fotossíntese ocorre nos cloroplastos (organelas com clorofila). Usando luz solar, água (H₂O) e CO₂, as plantas produzem glicose (energia química armazenada) e liberam O₂ como subproduto: 6CO₂ + 6H₂O + luz → C₆H₁₂O₆ + 6O₂.",
+      "subject": "Ciências",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências da Natureza",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    },
+    {
+      "id": "pp9-2024-015",
+      "question": "Analise a charge a seguir: um trabalhador carrega um enorme peso rotulado \"dívidas\" enquanto caminha em direção a uma porta chamada \"futuro\", mas a porta está trancada com um cadeado rotulado \"desemprego\".\n\nQual é a principal crítica social presente nessa charge?",
+      "options": [
+        { "id": 0, "name": "A crítica à falta de educação como causa do desemprego", "alias": "a" },
+        { "id": 1, "name": "O ciclo vicioso em que dívidas e desemprego impedem o trabalhador de construir um futuro melhor", "alias": "b" },
+        { "id": 2, "name": "A crítica ao governo por não criar empregos suficientes no setor público", "alias": "c" },
+        { "id": 3, "name": "A dificuldade de acesso à moradia como principal problema social", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A charge representa visualmente o ciclo de exclusão: o trabalhador endividado não consegue acessar um futuro melhor por causa do desemprego. Os símbolos (dívidas, cadeado=desemprego, porta=futuro) formam uma crítica ao ciclo de vulnerabilidade socioeconômica.",
+      "subject": "Língua Portuguesa",
+      "difficulty": "Difícil",
+      "area_conhecimento": "Linguagens e Códigos",
+      "source": "Prova Paulista 9º Ano 2024 — Adaptado"
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "metadata": {
+    "area": "simulados",
+    "subject": "enem-2024",
+    "name": "ENEM 2024 — Linguagens e Humanas",
+    "description": "Questões de Linguagens, Códigos e Ciências Humanas — ENEM 2024",
+    "questionCount": 15,
+    "tipo": "simulado",
+    "duracao": 90,
+    "ano": 2024,
+    "serie": "Ensino Médio",
+    "exame": "ENEM"
+  },
+  "questions": [
+    {
+      "id": "enem-2024-001",
+      "question": "Leia o fragmento do poema de Carlos Drummond de Andrade:\n\n\"No meio do caminho tinha uma pedra\ntinha uma pedra no meio do caminho\ntinha uma pedra\nno meio do caminho tinha uma pedra.\"\n\nA repetição intencional dos versos nesse poema cria o efeito de:",
+      "options": [
+        { "id": 0, "name": "Monotonia poética, indicando falta de criatividade do autor", "alias": "a" },
+        { "id": 1, "name": "Ênfase e obsessão, sugerindo que um obstáculo se torna fixação na mente do eu lírico", "alias": "b" },
+        { "id": 2, "name": "Descrição literal de uma estrada com muitas pedras", "alias": "c" },
+        { "id": 3, "name": "Recurso didático para facilitar a memorização do poema", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A anáfora (repetição) é um recurso poético intencional. Em Drummond, a repetição da \"pedra no meio do caminho\" cria o efeito de obsessão — a pedra (obstáculo) se torna uma fixação, dominando os pensamentos do eu lírico. É uma das mais famosas imagens da poesia modernista brasileira.",
+      "subject": "Linguagens",
+      "difficulty": "Médio",
+      "area_conhecimento": "Linguagens, Códigos e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-002",
+      "question": "Sobre os direitos fundamentais garantidos pela Constituição Federal de 1988, é correto afirmar:",
+      "options": [
+        { "id": 0, "name": "São aplicáveis apenas aos cidadãos brasileiros natos, excluindo estrangeiros", "alias": "a" },
+        { "id": 1, "name": "São garantidos a todos os indivíduos e não podem ser completamente suprimidos nem mesmo em estados de exceção", "alias": "b" },
+        { "id": 2, "name": "Podem ser suprimidos por emenda constitucional aprovada por maioria simples", "alias": "c" },
+        { "id": 3, "name": "Aplicam-se somente no território nacional, sem validade no exterior para cidadãos brasileiros", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "Os direitos fundamentais são cláusulas pétreas (art. 60, §4º, CF/88), não podendo ser abolidos nem por emenda constitucional. Aplicam-se a brasileiros e estrangeiros residentes no país. Mesmo em estado de defesa/sítio, há direitos que não podem ser suspensos.",
+      "subject": "Ciências Humanas",
+      "difficulty": "Médio",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-003",
+      "question": "A Revolução Industrial, iniciada na Inglaterra no século XVIII, transformou profundamente a sociedade. Uma de suas principais consequências sociais foi:",
+      "options": [
+        { "id": 0, "name": "O fortalecimento do campesinato como classe dominante na Europa", "alias": "a" },
+        { "id": 1, "name": "A formação do proletariado urbano e o surgimento de novas tensões de classe", "alias": "b" },
+        { "id": 2, "name": "A eliminação da pobreza nas cidades industriais pela geração de empregos", "alias": "c" },
+        { "id": 3, "name": "O fortalecimento do sistema feudal nas regiões industrializadas", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A Revolução Industrial criou o proletariado: trabalhadores sem meios de produção que vendiam sua força de trabalho. As cidades cresceram rapidamente com péssimas condições de vida, longas jornadas e trabalho infantil, gerando tensões que culminaram em movimentos operários e sindicatos.",
+      "subject": "Ciências Humanas",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-004",
+      "question": "O conceito de \"globalização\" pode ser compreendido como:",
+      "options": [
+        { "id": 0, "name": "Um processo exclusivamente econômico de integração dos mercados financeiros", "alias": "a" },
+        { "id": 1, "name": "Um processo multidimensional de integração econômica, cultural, política e tecnológica entre países", "alias": "b" },
+        { "id": 2, "name": "A padronização completa de todas as culturas em uma única cultura global", "alias": "c" },
+        { "id": 3, "name": "Um fenômeno exclusivo do século XX, sem precedentes históricos anteriores", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A globalização é um processo multidimensional que envolve a integração de economias, culturas, comunicações e políticas. Longe de homogeneizar culturas completamente, ela provoca tensões entre o global e o local (\"glocalização\"), e tem raízes em séculos anteriores (expansões marítimas, colonialismo).",
+      "subject": "Ciências Humanas",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-005",
+      "question": "Leia o trecho da música:\n\n\"Que país é esse?\nNa terra do sol a sombra é crime\nFalam, falam e ninguém vê\"\n\n(Legião Urbana — Que País É Esse?)\n\nNessa letra, o verso \"Na terra do sol a sombra é crime\" pode ser interpretado como:",
+      "options": [
+        { "id": 0, "name": "Uma crítica à falta de infraestrutura de energia elétrica no Brasil", "alias": "a" },
+        { "id": 1, "name": "Uma denúncia irônica à perseguição dos mais vulneráveis num país com recursos abundantes", "alias": "b" },
+        { "id": 2, "name": "Uma referência ao clima tropical que prejudica a saúde dos brasileiros", "alias": "c" },
+        { "id": 3, "name": "Uma defesa do crime como resposta à desigualdade social", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "O verso usa ironia: \"terra do sol\" = país rico em recursos. \"A sombra é crime\" = os mais pobres (que buscam apenas a sombra, o mínimo) são criminalizados. A música de Renato Russo denuncia as contradições do Brasil — riqueza natural X desigualdade social e repressão.",
+      "subject": "Linguagens",
+      "difficulty": "Difícil",
+      "area_conhecimento": "Linguagens, Códigos e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-006",
+      "question": "A ideologia do \"Manifesto Modernista\" de 1922 (Semana de Arte Moderna) propunha:",
+      "options": [
+        { "id": 0, "name": "A valorização exclusiva das tradições europeias na arte brasileira", "alias": "a" },
+        { "id": 1, "name": "A ruptura com o academicismo e a busca por uma identidade cultural genuinamente brasileira", "alias": "b" },
+        { "id": 2, "name": "A proibição de qualquer influência estrangeira na cultura nacional", "alias": "c" },
+        { "id": 3, "name": "O retorno aos padrões clássicos greco-romanos como modelo ideal para a arte", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A Semana de Arte Moderna de 1922 representou uma ruptura com o academicismo e o parnasianismo. Os modernistas propunham liberdade de criação, valorização da cultura popular brasileira, uso da linguagem coloquial e incorporação de elementos nacionais (folclore, índio, negro) na arte.",
+      "subject": "Linguagens",
+      "difficulty": "Médio",
+      "area_conhecimento": "Linguagens, Códigos e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-007",
+      "question": "O filósofo Immanuel Kant propôs o \"imperativo categórico\" como princípio da moral. Esse princípio pode ser resumido como:",
+      "options": [
+        { "id": 0, "name": "\"Age de modo a obter o máximo de prazer com o mínimo de sofrimento\"", "alias": "a" },
+        { "id": 1, "name": "\"Age apenas segundo uma máxima que possas ao mesmo tempo querer que se torne lei universal\"", "alias": "b" },
+        { "id": 2, "name": "\"Age sempre em conformidade com as leis do Estado, pois o Estado representa a vontade geral\"", "alias": "c" },
+        { "id": 3, "name": "\"Age visando a felicidade da maioria, pois o bem coletivo supera o individual\"", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "O imperativo categórico de Kant estabelece que uma ação é moral se puder ser universalizada: antes de agir, pergunte-se \"e se todos agissem assim?\". Difere do utilitarismo (alternativa d, de Mill) e do hedonismo (alternativa a, de Epicuro).",
+      "subject": "Ciências Humanas",
+      "difficulty": "Difícil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-008",
+      "question": "Sobre as zonas climáticas da Terra, é correto afirmar que:",
+      "options": [
+        { "id": 0, "name": "A zona tropical recebe raios solares perpendiculares durante todo o ano, resultando em temperaturas elevadas", "alias": "a" },
+        { "id": 1, "name": "A zona temperada é caracterizada por temperaturas extremamente frias o ano inteiro", "alias": "b" },
+        { "id": 2, "name": "A zona polar apresenta climas quentes devido à proximidade com o Equador", "alias": "c" },
+        { "id": 3, "name": "Todas as zonas climáticas recebem a mesma quantidade de energia solar ao longo do ano", "alias": "d" }
+      ],
+      "correct": "a",
+      "explanation": "A zona tropical (entre os trópicos de Câncer e Capricórnio) recebe raios solares com ângulo próximo a 90° (perpendicularidade), o que concentra mais energia por unidade de área, resultando em temperaturas mais elevadas e pouca variação estacional.",
+      "subject": "Ciências Humanas",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-009",
+      "question": "Na linguagem digital, o fenômeno das \"fake news\" pode ser associado a qual característica do ambiente informacional contemporâneo?",
+      "options": [
+        { "id": 0, "name": "Excesso de regulamentação governamental sobre a internet", "alias": "a" },
+        { "id": 1, "name": "Velocidade de circulação de informações sem checagem prévia, aliada a algoritmos que reforçam crenças existentes", "alias": "b" },
+        { "id": 2, "name": "Redução do acesso à internet nos países em desenvolvimento", "alias": "c" },
+        { "id": 3, "name": "O monopólio de empresas jornalísticas tradicionais sobre a informação", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "As fake news proliferam pela combinação de: (1) velocidade de compartilhamento nas redes sociais sem verificação; (2) \"bolhas de filtro\" criadas por algoritmos que mostram conteúdo alinhado às crenças do usuário; (3) desinformação intencional para fins políticos ou econômicos.",
+      "subject": "Linguagens",
+      "difficulty": "Médio",
+      "area_conhecimento": "Linguagens, Códigos e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-010",
+      "question": "O movimento dos Direitos Civis nos Estados Unidos, liderado por Martin Luther King Jr. na década de 1960, lutava principalmente por:",
+      "options": [
+        { "id": 0, "name": "A independência dos estados sulistas dos EUA em relação ao governo federal", "alias": "a" },
+        { "id": 1, "name": "O fim da segregação racial e a garantia de direitos civis iguais para afro-americanos", "alias": "b" },
+        { "id": 2, "name": "A substituição do capitalismo pelo socialismo nos Estados Unidos", "alias": "c" },
+        { "id": 3, "name": "O direito ao voto exclusivo para homens afro-americanos", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "O Movimento pelos Direitos Civis (1955-1968) lutou pelo fim da segregação racial (leis Jim Crow) e pela igualdade de direitos para afro-americanos. Resultou no Civil Rights Act (1964) e no Voting Rights Act (1965). Martin Luther King pregava a não-violência como estratégia.",
+      "subject": "Ciências Humanas",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-011",
+      "question": "Analise o trecho publicitário:\n\n\"Não perca esta oferta única! Apenas hoje, com 70% de desconto. Estoque limitadíssimo!\"\n\nOs recursos linguísticos usados nesse texto têm a função de:",
+      "options": [
+        { "id": 0, "name": "Informar objetivamente sobre características do produto", "alias": "a" },
+        { "id": 1, "name": "Criar senso de urgência e escassez para persuadir o consumidor a agir rapidamente", "alias": "b" },
+        { "id": 2, "name": "Narrar a história da empresa que fabricou o produto", "alias": "c" },
+        { "id": 3, "name": "Descrever de forma técnica as especificações do produto", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "O texto usa gatilhos de persuasão: urgência (\"apenas hoje\"), escassez (\"estoque limitadíssimo\") e exclusividade (\"oferta única\"). São técnicas de copywriting que exploram a aversão à perda para acelerar a decisão de compra. Esse é o gênero textual publicitário com função predominantemente apelativa/conativa.",
+      "subject": "Linguagens",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Linguagens, Códigos e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-012",
+      "question": "Segundo o sociólogo Émile Durkheim, o conceito de \"anomia\" social se refere a:",
+      "options": [
+        { "id": 0, "name": "A harmonia perfeita entre os indivíduos em uma sociedade sem conflitos", "alias": "a" },
+        { "id": 1, "name": "Um estado de desregulação social em que as normas coletivas perdem força de orientação para os indivíduos", "alias": "b" },
+        { "id": 2, "name": "O conjunto de regras jurídicas que regulam o comportamento em sociedade", "alias": "c" },
+        { "id": 3, "name": "A dominação de uma classe sobre outra por meio da força física", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "Para Durkheim, a anomia ocorre quando as normas sociais entram em colapso ou perdem autoridade — como em períodos de rápida mudança social ou crise econômica. Sem referências normativas, os indivíduos ficam desorientados, o que pode levar a comportamentos desviantes, inclusive ao suicídio (tema de sua obra clássica).",
+      "subject": "Ciências Humanas",
+      "difficulty": "Difícil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-013",
+      "question": "O conceito de \"desenvolvimento sustentável\", popularizado pelo Relatório Brundtland (1987), pode ser definido como:",
+      "options": [
+        { "id": 0, "name": "Crescimento econômico ilimitado com uso eficiente de recursos naturais", "alias": "a" },
+        { "id": 1, "name": "O desenvolvimento que satisfaz as necessidades do presente sem comprometer a capacidade das gerações futuras de satisfazerem as suas", "alias": "b" },
+        { "id": 2, "name": "A preservação total da natureza sem nenhuma intervenção humana", "alias": "c" },
+        { "id": 3, "name": "O modelo de desenvolvimento exclusivamente agrário em oposição à industrialização", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "A definição clássica do Relatório Brundtland (\"Nosso Futuro Comum\", 1987) equilibra três pilares: econômico, social e ambiental. O desenvolvimento sustentável busca satisfazer necessidades presentes sem esgotar recursos para as gerações futuras — base dos Objetivos de Desenvolvimento Sustentável (ODS) da ONU.",
+      "subject": "Ciências Humanas",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-014",
+      "question": "A linguagem dos memes na internet pode ser classificada como um gênero textual porque:",
+      "options": [
+        { "id": 0, "name": "Segue as normas gramaticais da língua culta padrão", "alias": "a" },
+        { "id": 1, "name": "Possui características composicionais relativamente estáveis: imagem + texto curto + intertextualidade para fins humorísticos ou críticos", "alias": "b" },
+        { "id": 2, "name": "É produzido exclusivamente por veículos de comunicação profissionais", "alias": "c" },
+        { "id": 3, "name": "Tem forma fixa e métrica definida como a poesia clássica", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "Segundo Bakhtin, os gêneros textuais têm características composicionais relativamente estáveis. O meme é um gênero digital com estrutura reconhecível (imagem + texto), função social definida (humor, crítica, compartilhamento cultural) e intertextualidade como recurso central — mesmo sem obedecer à norma culta.",
+      "subject": "Linguagens",
+      "difficulty": "Médio",
+      "area_conhecimento": "Linguagens, Códigos e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    },
+    {
+      "id": "enem-2024-015",
+      "question": "A Declaração Universal dos Direitos Humanos (1948) foi criada no contexto do pós-Segunda Guerra Mundial com o objetivo de:",
+      "options": [
+        { "id": 0, "name": "Criar um tribunal internacional para julgar os crimes de guerra cometidos pela Alemanha nazista", "alias": "a" },
+        { "id": 1, "name": "Estabelecer um conjunto de direitos fundamentais universais para proteger a dignidade humana e prevenir novas atrocidades", "alias": "b" },
+        { "id": 2, "name": "Distribuir os territórios conquistados pelos países aliados após a derrota do Eixo", "alias": "c" },
+        { "id": 3, "name": "Criar um governo mundial único para substituir os estados nacionais", "alias": "d" }
+      ],
+      "correct": "b",
+      "explanation": "Aprovada pela ONU em 10/12/1948, a Declaração Universal dos Direitos Humanos nasceu como resposta às atrocidades da Segunda Guerra (Holocausto, bombas atômicas). Seu objetivo central é estabelecer um padrão universal de direitos — civis, políticos, econômicos, sociais e culturais — aplicáveis a todos os seres humanos, independentemente de nacionalidade.",
+      "subject": "Ciências Humanas",
+      "difficulty": "Fácil",
+      "area_conhecimento": "Ciências Humanas e suas Tecnologias",
+      "source": "ENEM 2024 — Adaptado"
+    }
+  ]
+}

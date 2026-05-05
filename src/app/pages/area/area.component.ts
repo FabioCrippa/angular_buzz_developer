@@ -82,6 +82,7 @@ export class AreaComponent implements OnInit {
 
   // Cache de histórico calculado uma vez no init (evita recalcular a cada change detection)
   simuladosHistoryCache: { [id: string]: { attempts: number; bestScore: number } } = {};
+  simuladosReviewAvailable: { [id: string]: boolean } = {};
 
   private async loadSimuladosData(): Promise<void> {
     // 1. Carregar questionCount real de cada arquivo JSON
@@ -124,10 +125,26 @@ export class AreaComponent implements OnInit {
       }));
       this.simuladosHistoryCache[sim.id] = { attempts, bestScore };
     }
+
+    // 3. Verificar se há revisão salva para cada simulado
+    for (const sim of this.simuladosList) {
+      this.simuladosReviewAvailable[sim.id] = this.progressService.hasSimuladoReview(sim.id);
+    }
   }
 
   getSimuladoHistory(simuladoId: string): { attempts: number; bestScore: number } {
     return this.simuladosHistoryCache[simuladoId] ?? { attempts: 0, bestScore: 0 };
+  }
+
+  viewSimuladoReview(simuladoId: string): void {
+    this.router.navigate(['/quiz'], {
+      queryParams: {
+        area: 'simulados',
+        mode: 'simulado-review',
+        subject: simuladoId,
+        premium: 'true'
+      }
+    });
   }
 
   navigateToSimulado(simuladoId: string): void {

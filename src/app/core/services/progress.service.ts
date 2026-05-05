@@ -178,4 +178,33 @@ export class ProgressService {
       lastActivity
     };
   }
+
+  // ── Revisão de Simulado ──────────────────────────────
+  private getSimuladoReviewKey(simuladoId: string): string {
+    const base = this.getStorageKey();
+    return `${base}_simulado_review_${simuladoId}`;
+  }
+
+  saveSimuladoReview(simuladoId: string, result: any): void {
+    try {
+      const key = this.getSimuladoReviewKey(simuladoId);
+      localStorage.setItem(key, JSON.stringify({ simuladoId, savedAt: new Date().toISOString(), result }));
+    } catch (e) {
+      console.error('Erro ao salvar revisão do simulado:', e);
+    }
+  }
+
+  getSimuladoReview(simuladoId: string): { simuladoId: string; savedAt: string; result: any } | null {
+    try {
+      const key = this.getSimuladoReviewKey(simuladoId);
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  hasSimuladoReview(simuladoId: string): boolean {
+    return !!this.getSimuladoReview(simuladoId);
+  }
 }
