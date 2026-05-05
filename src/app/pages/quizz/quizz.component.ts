@@ -2681,10 +2681,11 @@ private getNextMidnightISO(): string {
       if (!foundQuestions) return false;
 
       switch (this.mode) {
-        case 'area':   await this.loadAreaQuestionsFromReal(indexData); break;
-        case 'subject': await this.loadSubjectQuestionsFromReal(indexData); break;
+        case 'area':     await this.loadAreaQuestionsFromReal(indexData); break;
+        case 'subject':  await this.loadSubjectQuestionsFromReal(indexData); break;
+        case 'simulado': await this.loadSubjectQuestionsFromReal(indexData); break;
         case 'mixed':
-        default:       await this.loadMixedQuestionsFromReal(indexData); break;
+        default:         await this.loadMixedQuestionsFromReal(indexData); break;
       }
 
       return true;
