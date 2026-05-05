@@ -228,6 +228,13 @@ export class DashboardComponent implements OnInit {
             icon: '📚',
             questionCount: getCount('portugues'),
             subjects: getSubjects('portugues', 'portugues')
+          },
+          {
+            key: 'simulados',
+            displayName: 'Simulados',
+            icon: '📝',
+            questionCount: getCount('simulados'),
+            subjects: getSubjects('simulados', 'simulados')
           }
         ];
         
@@ -432,6 +439,7 @@ export class DashboardComponent implements OnInit {
       'informatica-geral': 'Sistemas operacionais, redes, banco de dados e hardware.',
       'matematica': 'Álgebra, geometria, estatística e raciocínio lógico.',
       'portugues': 'Gramática, interpretação de texto e redação.',
+      'simulados': 'Provas completas no estilo real: Prova Paulista, ENEM e mais.',
       'desenvolvimento-web': 'Tecnologias modernas para desenvolvimento de aplicações web.',
       'informatica': 'Sistemas operacionais, redes e banco de dados.',
       'direito': 'Direito constitucional, civil, penal e administrativo.',
