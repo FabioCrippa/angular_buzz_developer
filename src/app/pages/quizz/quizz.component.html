@@ -122,8 +122,8 @@
     </div>
   </div>
 
-  <!-- ✅ QUIZ ACTIVE STATE -->
-  <div *ngIf="!isLoading && !hasError && !quizCompleted && currentQuestion && canStartQuiz" class="quiz-active">
+  <!-- ✅ QUIZ ACTIVE STATE (modo normal) -->
+  <div *ngIf="!isLoading && !hasError && !quizCompleted && currentQuestion && canStartQuiz && !isSimulado" class="quiz-active">
     
     <!-- ✅ HEADER -->
     <div class="quiz-header">
@@ -400,8 +400,184 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- 📝 SIMULADO — MODO EXAME (sem feedback em tempo real) -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div *ngIf="!isLoading && !hasError && !simuladoFinished && currentQuestion && canStartQuiz && isSimulado" class="simulado-active">
+
+    <!-- CABEÇALHO DO SIMULADO -->
+    <div class="simulado-header">
+      <div class="simulado-title-row">
+        <span class="simulado-badge">📝 Simulado</span>
+        <h1 class="simulado-name">{{ getSimuladoTitle() }}</h1>
+        <div class="simulado-timer">⏱ {{ getTimeSpentFormatted() }}</div>
+      </div>
+      <div class="simulado-progress-row">
+        <span class="simulado-count">{{ simuladoAnsweredCount }}/{{ questions.length }} respondidas</span>
+        <div class="simulado-progress-bar">
+          <div class="simulado-progress-fill" [style.width.%]="(simuladoAnsweredCount / questions.length) * 100"></div>
+        </div>
+        <button class="btn-finish-simulado"
+                (click)="finishSimulado()"
+                [disabled]="simuladoAnsweredCount < questions.length"
+                [title]="simuladoAnsweredCount < questions.length ? 'Responda todas as questões para finalizar' : 'Finalizar simulado'">
+          <i class="fas fa-flag-checkered"></i>
+          Finalizar
+        </button>
+      </div>
+    </div>
+
+    <!-- MAPA DE QUESTÕES (navegação livre) -->
+    <div class="simulado-map">
+      <button *ngFor="let q of questions; let i = index"
+              class="map-dot"
+              [class.map-dot-answered]="getSimuladoAnswerFor(q.id)"
+              [class.map-dot-marked]="isSimuladoMarked(q.id)"
+              [class.map-dot-current]="i === currentQuestionIndex"
+              (click)="goToSimuladoQuestion(i)"
+              [title]="'Questão ' + (i+1)">
+        {{ i + 1 }}
+      </button>
+    </div>
+
+    <!-- CORPO DA QUESTÃO -->
+    <div class="simulado-body">
+      <div class="simulado-question-header">
+        <span class="simulado-q-num">Questão {{ currentQuestionIndex + 1 }} de {{ questions.length }}</span>
+        <button class="btn-mark-review"
+                (click)="toggleSimuladoMark()"
+                [class.marked]="isSimuladoMarked()">
+          <i *ngIf="isSimuladoMarked()" class="fas fa-bookmark"></i>
+          <i *ngIf="!isSimuladoMarked()" class="far fa-bookmark"></i>
+          {{ isSimuladoMarked() ? 'Marcada para revisão' : 'Marcar para revisão' }}
+        </button>
+      </div>
+
+      <h2 class="simulado-question-text">{{ currentQuestion.question }}</h2>
+
+      <!-- OPÇÕES (sem feedback de correto/errado) -->
+      <div class="simulado-options">
+        <button *ngFor="let option of currentQuestion.options"
+                class="simulado-option"
+                [class.option-selected]="getSimuladoAnswerFor(currentQuestion.id) === option.alias"
+                (click)="selectSimuladoAnswer(option.alias)">
+          <span class="option-letter">{{ option.alias }}</span>
+          <span class="option-text">{{ option.name }}</span>
+        </button>
+      </div>
+
+      <!-- NAVEGAÇÃO -->
+      <div class="simulado-nav">
+        <button class="btn btn-secondary"
+                (click)="goToSimuladoQuestion(currentQuestionIndex - 1)"
+                [disabled]="currentQuestionIndex === 0">
+          <i class="fas fa-arrow-left"></i> Anterior
+        </button>
+        <button class="btn btn-primary"
+                (click)="goToSimuladoQuestion(currentQuestionIndex + 1)"
+                [disabled]="currentQuestionIndex === questions.length - 1">
+          Próxima <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- 📊 RESULTADO DO SIMULADO -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div *ngIf="!isLoading && !hasError && simuladoFinished && isSimulado && simuladoResult" class="simulado-result">
+
+    <!-- CABEÇALHO DO RESULTADO -->
+    <div class="result-header">
+      <div class="result-badge">📋 Resultado do Simulado</div>
+      <h2 class="result-exam-name">{{ getSimuladoTitle() }}</h2>
+      <div class="result-meta">
+        <span><i class="fas fa-clock"></i> {{ simuladoResult.timeFormatted }}</span>
+        <span><i class="fas fa-list"></i> {{ simuladoResult.total }} questões</span>
+      </div>
+    </div>
+
+    <!-- CÍRCULO DE PONTUAÇÃO -->
+    <div class="result-score-section">
+      <div class="result-score-circle" [class.score-great]="simuladoResult.score >= 70" [class.score-ok]="simuladoResult.score >= 50 && simuladoResult.score < 70" [class.score-low]="simuladoResult.score < 50">
+        <span class="score-pct">{{ simuladoResult.score }}%</span>
+        <span class="score-label">{{ simuladoResult.correct }}/{{ simuladoResult.total }}</span>
+      </div>
+      <div class="result-verdict">
+        <span *ngIf="simuladoResult.score >= 70" class="verdict-great">🏆 Excelente!</span>
+        <span *ngIf="simuladoResult.score >= 50 && simuladoResult.score < 70" class="verdict-ok">👍 Bom resultado</span>
+        <span *ngIf="simuladoResult.score < 50" class="verdict-low">📚 Continue praticando</span>
+      </div>
+    </div>
+
+    <!-- DESEMPENHO POR ÁREA -->
+    <div class="result-by-area" *ngIf="simuladoResult.byArea.length > 0">
+      <h3>Desempenho por Área</h3>
+      <div class="by-area-grid">
+        <div *ngFor="let a of simuladoResult.byArea" class="by-area-item">
+          <span class="by-area-name">{{ a.area }}</span>
+          <div class="by-area-bar-wrap">
+            <div class="by-area-bar" [style.width.%]="(a.correct / a.total) * 100"></div>
+          </div>
+          <span class="by-area-count">{{ a.correct }}/{{ a.total }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVISÃO COMPLETA DAS QUESTÕES -->
+    <div class="result-questions">
+      <h3>Revisão das Questões</h3>
+      <div *ngFor="let item of simuladoResult.questions; let i = index"
+           class="result-question-item"
+           [class.result-correct]="item.isCorrect"
+           [class.result-wrong]="!item.isCorrect">
+
+        <div class="rq-header">
+          <span class="rq-num">{{ i + 1 }}</span>
+          <span *ngIf="item.isCorrect" class="rq-status status-correct">
+            <i class="fas fa-check-circle"></i> Correto
+          </span>
+          <span *ngIf="!item.isCorrect && !!item.chosen" class="rq-status status-wrong">
+            <i class="fas fa-times-circle"></i> Incorreto
+          </span>
+          <span *ngIf="!item.chosen" class="rq-status status-blank">
+            <i class="fas fa-minus-circle"></i> Não respondida
+          </span>
+        </div>
+
+        <p class="rq-text">{{ item.q.question }}</p>
+
+        <div class="rq-answers">
+          <div *ngFor="let opt of item.q.options"
+               class="rq-option"
+               [class.rq-chosen]="opt.alias === item.chosen"
+               [class.rq-correct-opt]="opt.alias === item.q.correct">
+            <span class="opt-letter">{{ opt.alias }}</span>
+            <span class="opt-text">{{ opt.name }}</span>
+            <span *ngIf="opt.alias === item.q.correct" class="opt-tag correct-tag">✓ Correta</span>
+            <span *ngIf="opt.alias === item.chosen && !item.isCorrect" class="opt-tag wrong-tag">✗ Sua resposta</span>
+          </div>
+        </div>
+
+        <div class="rq-explanation" *ngIf="item.q.explanation">
+          <i class="fas fa-lightbulb"></i> {{ item.q.explanation }}
+        </div>
+      </div>
+    </div>
+
+    <!-- AÇÕES PÓS-SIMULADO -->
+    <div class="result-actions">
+      <button class="btn btn-primary" (click)="restartQuiz()">
+        <i class="fas fa-redo"></i> Refazer Simulado
+      </button>
+      <button class="btn btn-secondary" (click)="goHome()">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </button>
+    </div>
+  </div>
+
   <!-- ✅ QUIZ COMPLETED STATE - VERSÃO CORRIGIDA -->
-  <div *ngIf="!isLoading && !hasError && quizCompleted" class="quiz-completed">
+  <div *ngIf="!isLoading && !hasError && quizCompleted && !isSimulado" class="quiz-completed">
     <div class="results-container">
       <div class="results-header">
         <i class="fas fa-trophy"></i>

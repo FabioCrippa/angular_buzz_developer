@@ -1649,6 +1649,12 @@ private getNextMidnightISO(): string {
       this.timeSpent = 0;
       this.currentTimeFormatted = '00:00';
       this.quizCompleted = false;
+
+      // Reset simulado
+      this.simuladoAnswers = {};
+      this.simuladoMarked = new Set();
+      this.simuladoFinished = false;
+      this.simuladoResult = null;
       
       // Reset de tempo
       this.startTime = new Date();
