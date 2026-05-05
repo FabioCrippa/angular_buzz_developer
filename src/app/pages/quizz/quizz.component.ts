@@ -962,6 +962,7 @@ private getNextMidnightISO(): string {
 
   private loadSimuladoQuestions(): void {
     this.isSimulado = true;
+    this.mode = 'simulado'; // garante que tryLoadRealQuestions use o caminho correto mesmo ao reiniciar
     this.simuladoAnswers = {};
     this.simuladoMarked = new Set();
     this.simuladoFinished = false;
