@@ -55,6 +55,65 @@ export class AreaComponent implements OnInit {
   
   areaName: string = '';
   areaId: string = '';
+
+  // ── Simulados ──────────────────────────────────
+  simuladosList = [
+    {
+      id: 'prova-paulista-9ano-2024',
+      displayName: 'Prova Paulista',
+      subtitle: '9º Ano — Ensino Fundamental',
+      icon: '🏫',
+      color: 'linear-gradient(135deg, #e67e22, #f39c12)',
+      questionCount: 15,
+      duration: 90,
+      year: 2024
+    },
+    {
+      id: 'enem-2024',
+      displayName: 'ENEM 2024',
+      subtitle: 'Ensino Médio',
+      icon: '📋',
+      color: 'linear-gradient(135deg, #2980b9, #3498db)',
+      questionCount: 15,
+      duration: 90,
+      year: 2024
+    }
+  ];
+
+  getSimuladoHistory(simuladoId: string): { attempts: number; bestScore: number } {
+    const history = this.progressService.getHistory().filter(
+      h => h.subarea === simuladoId
+    );
+    if (history.length === 0) return { attempts: 0, bestScore: 0 };
+
+    // Agrupar por data (cada "tentativa" é um conjunto de questões no mesmo dia)
+    const byDate = history.reduce((acc: { [d: string]: typeof history }, h) => {
+      const d = new Date(h.date).toDateString();
+      if (!acc[d]) acc[d] = [];
+      acc[d].push(h);
+      return acc;
+    }, {});
+
+    const attempts = Object.keys(byDate).length;
+    const bestScore = Math.max(...Object.values(byDate).map(group => {
+      const correct = group.filter(h => h.correct).length;
+      return Math.round((correct / group.length) * 100);
+    }));
+
+    return { attempts, bestScore };
+  }
+
+  navigateToSimulado(simuladoId: string): void {
+    this.router.navigate(['/quiz'], {
+      queryParams: {
+        area: 'simulados',
+        mode: 'simulado',
+        subject: simuladoId,
+        count: 'unlimited',
+        premium: 'true'
+      }
+    });
+  }
   
   // States
   isLoading = true;

@@ -1788,3 +1788,138 @@ label {
 .review-icon { font-size: 32px; }
 .review-text { display: flex; flex-direction: column; color: #666; }
 .review-text strong { color: #111; font-size: 18px; }
+
+/* -------------------------------------------------------
+   ?? SELEÇÃO DE SIMULADOS
+   ------------------------------------------------------- */
+
+.simulados-selection {
+  padding: 1.5rem 1rem 2rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.simulados-intro {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.simulados-intro-text {
+  color: var(--text-secondary, #666);
+  font-size: 0.95rem;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.simulados-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card individual */
+.simulado-card {
+  background: var(--surface, #fff);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.simulado-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+
+/* Header colorido do card */
+.simulado-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 1.3rem;
+  color: #fff;
+}
+.simulado-card-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.simulado-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+  color: #fff;
+}
+.simulado-card-subtitle {
+  font-size: 0.78rem;
+  opacity: 0.88;
+}
+
+/* Body do card */
+.simulado-card-body {
+  padding: 1rem 1.3rem;
+  flex: 1;
+}
+.simulado-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.sim-meta-item {
+  font-size: 0.82rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.sim-meta-item i { color: #999; }
+
+.simulado-card-history {
+  font-size: 0.82rem;
+  margin-top: 0.25rem;
+}
+.hist-none {
+  color: #aaa;
+  font-style: italic;
+}
+.hist-done {
+  color: #27ae60;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Footer com botão */
+.simulado-card-footer {
+  padding: 0.9rem 1.3rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.btn-start-simulado {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: linear-gradient(135deg, #e67e22, #f39c12);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-start-simulado:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+@media (max-width: 480px) {
+  .simulados-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

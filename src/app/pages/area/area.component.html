@@ -95,23 +95,61 @@
             Favoritos
           </button>
           
-          <!-- Quiz Button com validação Premium -->
+          <!-- Quiz Button — oculto em simulados (os cards têm seus próprios botões) -->
           <button 
+            *ngIf="areaName !== 'simulados'"
             class="btn btn-primary-white"
             (click)="startAreaQuiz()"
             [disabled]="!canTakeQuiz"
             [class.disabled]="!canTakeQuiz"
           >
             <span class="btn-icon">▶️</span>
-            {{ areaName === 'simulados' ? 'Iniciar Simulado' : 'Quiz da Área' }}
+            Quiz da Área
             <span *ngIf="!isPremium && remainingQuizzes > 0" class="quiz-count">({{ remainingQuizzes }})</span>
           </button>
         </div>
       </div>
     </header>
 
-    <!-- 🚫 LIMITE DIÁRIO ATINGIDO -->
-    <div *ngIf="!isPremium && !canTakeQuiz" class="limit-warning">
+    <!-- � SELEÇÃO DE SIMULADOS -->
+    <section *ngIf="areaName === 'simulados'" class="simulados-selection">
+      <div class="simulados-intro">
+        <p class="simulados-intro-text">Escolha a prova que deseja realizar. As questões aparecem em ordem original, sem feedback durante o exame.</p>
+      </div>
+      <div class="simulados-cards-grid">
+        <div *ngFor="let sim of simuladosList" class="simulado-card">
+          <div class="simulado-card-header" [style.background]="sim.color">
+            <span class="simulado-card-icon">{{ sim.icon }}</span>
+            <div class="simulado-card-title-block">
+              <h3 class="simulado-card-title">{{ sim.displayName }}</h3>
+              <span class="simulado-card-subtitle">{{ sim.subtitle }}</span>
+            </div>
+          </div>
+          <div class="simulado-card-body">
+            <div class="simulado-card-meta">
+              <span class="sim-meta-item"><i class="fas fa-list-ol"></i> {{ sim.questionCount }} questões</span>
+              <span class="sim-meta-item"><i class="fas fa-clock"></i> {{ sim.duration }} min</span>
+              <span class="sim-meta-item"><i class="fas fa-calendar"></i> {{ sim.year }}</span>
+            </div>
+            <div class="simulado-card-history" *ngIf="getSimuladoHistory(sim.id) as hist">
+              <span *ngIf="hist.attempts === 0" class="hist-none">Não realizado</span>
+              <span *ngIf="hist.attempts > 0" class="hist-done">
+                <i class="fas fa-check-circle"></i>
+                Melhor: {{ hist.bestScore }}% • {{ hist.attempts }}x realizado
+              </span>
+            </div>
+          </div>
+          <div class="simulado-card-footer">
+            <button class="btn-start-simulado" (click)="navigateToSimulado(sim.id)">
+              <i class="fas fa-play"></i> Iniciar Simulado
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- �🚫 LIMITE DIÁRIO ATINGIDO -->
+    <div *ngIf="!isPremium && !canTakeQuiz && areaName !== 'simulados'" class="limit-warning">
       <span class="warning-icon">⏰</span>
       <div class="warning-content">
         <h3>Limite diário atingido!</h3>
@@ -124,7 +162,7 @@
     </div>
 
     <!-- 📊 USER PROGRESS -->
-    <section class="progress-section">
+    <section *ngIf="areaName !== 'simulados'" class="progress-section">
       <div class="section-header">
         <h2 class="section-title">
           <span class="section-icon">📈</span>
@@ -218,7 +256,7 @@
     </section>
 
     <!-- � DETAILED STATISTICS SECTION (PREMIUM) -->
-    <section class="detailed-stats-section" *ngIf="showDetailedStats && detailedStats" id="detailed-stats-section">
+    <section class="detailed-stats-section" *ngIf="showDetailedStats && detailedStats && areaName !== 'simulados'" id="detailed-stats-section">
       <div class="stats-header">
         <h2 class="section-title">
           <span class="section-icon">📊</span>
@@ -314,7 +352,7 @@
     </section>
 
     <!-- 📚 PRATICAR POR ASSUNTO -->
-    <section class="subject-quiz-section">
+    <section *ngIf="areaName !== 'simulados'" class="subject-quiz-section">
       <div class="section-header-row">
         <h2 class="section-title">
           <span class="section-icon">📚</span>
@@ -345,7 +383,7 @@
     </section>
 
     <!-- 🔄 REVISÃO DE ERROS -->
-    <section class="review-section">
+    <section *ngIf="areaName !== 'simulados'" class="review-section">
       <div class="section-header-row">
         <h2 class="section-title">
           <span class="section-icon">🔄</span>
@@ -374,7 +412,7 @@
     </section>
 
     <!-- 📋 LISTA DE QUESTÕES PARA REVISAR -->
-    <section class="questions-list-section" *ngIf="hasWrongQuestions && paginatedQuestions.length > 0">
+    <section class="questions-list-section" *ngIf="hasWrongQuestions && paginatedQuestions.length > 0 && areaName !== 'simulados'">
       <div class="questions-table">
         <div class="table-header">
           <div class="col-number">#</div>
@@ -447,7 +485,7 @@
     </section>
 
     <!-- ✅ INFO SECTION -->
-    <div class="info-section" *ngIf="!hasWrongQuestions">
+    <div class="info-section" *ngIf="!hasWrongQuestions && areaName !== 'simulados'">
       <div class="info-card">
         <span class="info-icon">💡</span>
         <div class="info-content">
@@ -491,7 +529,7 @@
     </div>
 
     <!-- 🎯 QUICK ACTIONS (apenas para Premium) -->
-    <section class="quick-actions-section" *ngIf="isPremium">
+    <section class="quick-actions-section" *ngIf="isPremium && areaName !== 'simulados'">
       <h2 class="section-title">
         <span class="section-icon">👑</span>
         Ações Premium
