@@ -657,6 +657,23 @@ export class AreaComponent implements OnInit {
       return;
     }
 
+    // Simulados: redirecionar para o primeiro subject disponível com mode=simulado
+    if (this.areaName === 'simulados') {
+      const firstSubject = this.areaData.subjects?.[0];
+      if (firstSubject) {
+        this.router.navigate(['/quiz'], {
+          queryParams: {
+            area: this.areaName,
+            mode: 'simulado',
+            subject: firstSubject,
+            count: 'unlimited',
+            premium: 'true'
+          }
+        });
+      }
+      return;
+    }
+
     // ✅ Decrementar contador apenas se NÃO for premium
     if (!this.isPremium) {
       this.decrementQuizCount();

@@ -103,7 +103,7 @@
             [class.disabled]="!canTakeQuiz"
           >
             <span class="btn-icon">▶️</span>
-            Quiz da Área
+            {{ areaName === 'simulados' ? 'Iniciar Simulado' : 'Quiz da Área' }}
             <span *ngIf="!isPremium && remainingQuizzes > 0" class="quiz-count">({{ remainingQuizzes }})</span>
           </button>
         </div>

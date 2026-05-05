@@ -303,6 +303,24 @@ private getNextMidnightISO(): string {
   // ===============================================
   private keyboardListenerActive: boolean = true;
 
+  // ===============================================
+  // 📝 PROPRIEDADES MODO SIMULADO
+  // ===============================================
+  isSimulado: boolean = false;
+  // Respostas registradas sem feedback: chave = question.id, valor = alias escolhido
+  simuladoAnswers: { [key: string]: string } = {};
+  // Navegação livre: perguntas "marcadas para revisar"
+  simuladoMarked: Set<string> = new Set<string>();
+  simuladoFinished: boolean = false;
+  simuladoResult: {
+    total: number;
+    correct: number;
+    score: number;
+    timeFormatted: string;
+    byArea: { area: string; total: number; correct: number }[];
+    questions: { q: Question; chosen: string; isCorrect: boolean }[];
+  } | null = null;
+
   // ✅ CONSTRUCTOR
   constructor(
     private http: HttpClient,
@@ -426,6 +444,9 @@ private getNextMidnightISO(): string {
         this.mode = 'area';
       } else if (queryMode === 'subject' && this.area && this.subject) {
         this.mode = 'subject';
+      } else if (queryMode === 'simulado' && this.area && this.subject) {
+        this.mode = 'simulado';
+        this.isSimulado = true;
       } else if (queryMode === 'smart') {
         this.mode = 'smart';
       } else if (queryMode === 'custom') {
@@ -703,7 +724,7 @@ private getNextMidnightISO(): string {
     }
     
     // ✅ VALIDAR SE A ÁREA É VÁLIDA
-    const validAreas = ['analise-desenvolvimento-sistemas', 'portugues', 'matematica', 'informatica-geral', 'desenvolvimento-web', 'informatica'];
+    const validAreas = ['analise-desenvolvimento-sistemas', 'portugues', 'matematica', 'informatica-geral', 'desenvolvimento-web', 'informatica', 'simulados'];
     if (!validAreas.includes(this.area)) {
       this.showError(`Área inválida: ${this.area}. Áreas válidas: ${validAreas.join(', ')}`);
       return;
@@ -932,6 +953,130 @@ private getNextMidnightISO(): string {
     });
   }
 
+  // ═══════════════════════════════════════════════
+  // 📝 MODO SIMULADO
+  // ═══════════════════════════════════════════════
+
+  private loadSimuladoQuestions(): void {
+    this.isSimulado = true;
+    this.simuladoAnswers = {};
+    this.simuladoMarked = new Set();
+    this.simuladoFinished = false;
+    this.simuladoResult = null;
+
+    this.tryLoadRealQuestions().then(success => {
+      if (!success) {
+        this.showError(`Não foi possível carregar o simulado "${this.subject}". Tente novamente.`);
+      } else {
+        // No simulado carregamos TODAS as questões (sem limite)
+        this.titleService.setTitle(`Simulado: ${this.getSimuladoTitle()} — Sowlfy`);
+      }
+    });
+  }
+
+  getSimuladoTitle(): string {
+    if (!this.subject) return 'Simulado';
+    return this.subject
+      .split('-')
+      .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
+  }
+
+  // Seleciona (ou deseleciona) resposta sem mostrar feedback
+  selectSimuladoAnswer(alias: string): void {
+    if (this.simuladoFinished) return;
+    const q = this.currentQuestion;
+    if (!q) return;
+    const key = String(q.id);
+    if (this.simuladoAnswers[key] === alias) {
+      // Desmarcar se clicar na mesma opção
+      delete this.simuladoAnswers[key];
+    } else {
+      this.simuladoAnswers[key] = alias;
+    }
+  }
+
+  getSimuladoAnswerFor(questionId: string | number): string {
+    return this.simuladoAnswers[String(questionId)] || '';
+  }
+
+  // Marca/desmarca questão para revisão
+  toggleSimuladoMark(): void {
+    const q = this.currentQuestion;
+    if (!q) return;
+    const key = String(q.id);
+    if (this.simuladoMarked.has(key)) {
+      this.simuladoMarked.delete(key);
+    } else {
+      this.simuladoMarked.add(key);
+    }
+  }
+
+  isSimuladoMarked(questionId?: string | number): boolean {
+    const id = questionId ?? this.currentQuestion?.id;
+    return id !== undefined && this.simuladoMarked.has(String(id));
+  }
+
+  // Ir para questão específica (navegação livre)
+  goToSimuladoQuestion(index: number): void {
+    if (index >= 0 && index < this.questions.length) {
+      this.currentQuestionIndex = index;
+    }
+  }
+
+  // Conta quantas questões foram respondidas
+  get simuladoAnsweredCount(): number {
+    return Object.keys(this.simuladoAnswers).length;
+  }
+
+  // Finalizar simulado e calcular resultado
+  finishSimulado(): void {
+    this.simuladoFinished = true;
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    this.finalTimeFormatted = this.currentTimeFormatted;
+
+    const byAreaMap: { [area: string]: { total: number; correct: number } } = {};
+    let correct = 0;
+
+    const questions = this.questions.map(q => {
+      const chosen = this.simuladoAnswers[String(q.id)] || '';
+      const isCorrect = chosen !== '' && chosen === q.correct;
+      if (isCorrect) correct++;
+
+      // Agrupar por area_conhecimento (se existir) ou fallback para subject
+      const areaKey = (q as any).area_conhecimento || (q as any).subject || 'Geral';
+      if (!byAreaMap[areaKey]) byAreaMap[areaKey] = { total: 0, correct: 0 };
+      byAreaMap[areaKey].total++;
+      if (isCorrect) byAreaMap[areaKey].correct++;
+
+      // Salvar no progressService igual ao quiz normal
+      this.progressService.addAnswer({
+        area: this.area,
+        questionId: q.id as any,
+        correct: isCorrect,
+        timeSpent: 0,
+        date: new Date().toISOString(),
+        subarea: this.subject
+      });
+
+      return { q, chosen, isCorrect };
+    });
+
+    const byArea = Object.entries(byAreaMap).map(([area, v]) => ({ area, ...v }));
+
+    this.simuladoResult = {
+      total: this.questions.length,
+      correct,
+      score: this.questions.length > 0 ? Math.round((correct / this.questions.length) * 100) : 0,
+      timeFormatted: this.finalTimeFormatted,
+      byArea,
+      questions
+    };
+
+    this.setState(QuizState.COMPLETED);
+    this.isLoading = false;
+  }
+
   // ✅ CORRIGIR O MÉTODO initializeQuiz PARA EVITAR ERRO LINHA 1236
   private initializeQuiz(): void {
     
@@ -1027,6 +1172,14 @@ private getNextMidnightISO(): string {
           } else {
             this.loadMixedQuestionsWithIndex();
           }
+        }
+        break;
+
+      case 'simulado':
+        if (this.area && this.subject) {
+          this.loadSimuladoQuestions();
+        } else {
+          this.showError('Área e assunto são obrigatórios para o simulado');
         }
         break;
         
@@ -2654,7 +2807,7 @@ private getNextMidnightISO(): string {
         ...q, area: this.area, subject: this.subject, category: this.area
       }));
 
-      const shuffled = this.shuffleArray(questionsWithMeta);
+      const shuffled = this.isSimulado ? questionsWithMeta : this.shuffleArray(questionsWithMeta);
       const limit = this.getQuestionLimit();
       const selectedQuestions: Question[] = shuffled.slice(0, limit) as Question[];
 
@@ -2702,6 +2855,8 @@ private getNextMidnightISO(): string {
 
   // ✅ UTIL: obter limite de questões (lê query param 'limit' ou retorna padrão)
   private getQuestionLimit(): number {
+    // Simulado: sem limite — carrega todas as questões do arquivo
+    if (this.isSimulado) return 9999;
     if (this.isFreeTrial) return this.FREE_QUESTIONS_LIMIT;
     // Premium: count=unlimited ou não informado → usa padrão 20
     if (this.countParam === 'unlimited' || !this.countParam) return this.PREMIUM_QUESTIONS_LIMIT;
