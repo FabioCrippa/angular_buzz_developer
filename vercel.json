@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "dist/angular-buzz-developer/browser",
+  "outputDirectory": "dist/angular-buzz-developer",
   "buildCommand": "ng build --configuration production",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": null,
