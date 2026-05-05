@@ -205,6 +205,27 @@ export class AreaComponent implements OnInit {
       // ✅ 2. Definir título da página
       this.titleService.setTitle(`${this.areaData.displayName} - Quizzfy`);
 
+      // ✅ 2b. Atualizar totalQuestions com valor real do index.json
+      this.http.get<any>('assets/data/index.json').subscribe({
+        next: (indexData) => {
+          if (!this.areaData) return;
+          const byArea = indexData?.stats?.byArea;
+          if (byArea) {
+            // Soma possíveis aliases (ex: ADS engloba múltiplas chaves)
+            const areaKeys: { [key: string]: string[] } = {
+              'analise-desenvolvimento-sistemas': ['analise-desenvolvimento-sistemas', 'desenvolvimento-web', 'metodologias', 'design', 'seguranca', 'entrevista'],
+              'informatica-geral': ['informatica-geral', 'informatica'],
+              'matematica': ['matematica'],
+              'portugues': ['portugues'],
+              'simulados': ['simulados']
+            };
+            const keys = areaKeys[this.areaId] || [this.areaId];
+            const total = keys.reduce((sum, k) => sum + (byArea[k] || 0), 0);
+            if (total > 0) this.areaData.totalQuestions = total;
+          }
+        }
+      });
+
       // ✅ 3. Carregar questões reais da área
       this.loadRealAreaQuestions().subscribe({
         next: (questions) => {

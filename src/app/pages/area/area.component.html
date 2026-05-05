@@ -90,7 +90,7 @@
           </div>
         </div>
         <div class="header-actions">
-          <button class="btn btn-outline-white" (click)="navigateToFavorites()">
+          <button class="btn btn-outline-white" *ngIf="areaName !== 'simulados'" (click)="navigateToFavorites()">
             <span class="btn-icon">❤️</span>
             Favoritos
           </button>
@@ -143,8 +143,7 @@
           <div class="progress-content">
             <span class="progress-number">{{ areaData.userProgress.completed }}</span>
             <span class="progress-label">Questões Resolvidas</span>
-            <span class="progress-sublabel" *ngIf="isPremium">de 20</span>
-            <span class="progress-sublabel" *ngIf="!isPremium">de 10</span>
+            <span class="progress-sublabel">de {{ areaData.totalQuestions }}</span>
           </div>
         </div>
 
