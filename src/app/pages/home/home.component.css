@@ -1951,28 +1951,25 @@ section {
 .social-link.facebook {
   background: linear-gradient(135deg, #1877f2, #42a5f5);
   color: white;
-  
-  &:hover {
-    background: linear-gradient(135deg, #166fe5, #3b96e8);
-  }
+}
+.social-link.facebook:hover {
+  background: linear-gradient(135deg, #166fe5, #3b96e8);
 }
 
 .social-link.instagram {
   background: linear-gradient(135deg, #1877f2, #42a5f5);
   color: white;
-  
-  &:hover {
-    background: linear-gradient(135deg, #166fe5, #3b96e8);
-  }
+}
+.social-link.instagram:hover {
+  background: linear-gradient(135deg, #166fe5, #3b96e8);
 }
 
 .social-link.whatsapp {
   background: linear-gradient(135deg, #25d366, #128c7e);
   color: white;
-  
-  &:hover {
-    background: linear-gradient(135deg, #22c55e, #0f766e);
-  }
+}
+.social-link.whatsapp:hover {
+  background: linear-gradient(135deg, #22c55e, #0f766e);
 }
 
 /* ✅ REDES SOCIAIS MOBILE (FOOTER BOTTOM) */
@@ -1981,8 +1978,9 @@ section {
   align-items: center;
   gap: 1rem;
   margin: 1rem 0;
-  
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+  .footer-social-mobile {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -2010,14 +2008,12 @@ section {
   text-decoration: none;
   font-size: 1.2rem;
   transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.1);
-  }
-  
-  &.facebook { background: #1877f2; }
-  &.instagram { background: #1877f2; }
 }
+.social-compact:hover {
+  transform: scale(1.1);
+}
+.social-compact.facebook { background: #1877f2; }
+.social-compact.instagram { background: #1877f2; }
 
 /* ✅ ANONYMOUS QUIZ SECTION */
 .anonymous-quiz-section {
