@@ -1699,10 +1699,15 @@ private getNextMidnightISO(): string {
       await new Promise(resolve => setTimeout(resolve, 800));
       
       // Reiniciar
-      this.setState(QuizState.IN_PROGRESS);
-      this.startTimer();
+      if (this.isSimulado) {
+        // Recarregar questões do arquivo e entrar no modo simulado
+        this.loadSimuladoQuestions();
+      } else {
+        this.setState(QuizState.IN_PROGRESS);
+        this.startTimer();
+      }
       
-      this.showSuccessMessage('🔄 Quiz reiniciado com sucesso!');
+      this.showSuccessMessage('🔄 ' + (this.isSimulado ? 'Simulado' : 'Quiz') + ' reiniciado com sucesso!');
       
     } catch (error) {
       this.showErrorMessage('Erro ao reiniciar o quiz. Tente novamente.');
