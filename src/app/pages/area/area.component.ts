@@ -57,14 +57,14 @@ export class AreaComponent implements OnInit {
   areaId: string = '';
 
   // ── Simulados ──────────────────────────────────
-  simuladosList = [
+  simuladosList: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number }[] = [
     {
       id: 'prova-paulista-9ano-2024',
       displayName: 'Prova Paulista',
       subtitle: '9º Ano — Ensino Fundamental',
       icon: '🏫',
       color: 'linear-gradient(135deg, #e67e22, #f39c12)',
-      questionCount: 15,
+      questionCount: 0,
       duration: 90,
       year: 2024
     },
@@ -74,33 +74,60 @@ export class AreaComponent implements OnInit {
       subtitle: 'Ensino Médio',
       icon: '📋',
       color: 'linear-gradient(135deg, #2980b9, #3498db)',
-      questionCount: 15,
+      questionCount: 0,
       duration: 90,
       year: 2024
     }
   ];
 
+  // Cache de histórico calculado uma vez no init (evita recalcular a cada change detection)
+  simuladosHistoryCache: { [id: string]: { attempts: number; bestScore: number } } = {};
+
+  private async loadSimuladosData(): Promise<void> {
+    // 1. Carregar questionCount real de cada arquivo JSON
+    const filePaths: { [id: string]: string } = {
+      'prova-paulista-9ano-2024': 'assets/data/areas/simulados/prova-paulista/prova-paulista-9ano-2024.json',
+      'enem-2024': 'assets/data/areas/simulados/enem/enem-2024.json'
+    };
+
+    for (const sim of this.simuladosList) {
+      try {
+        const res = await fetch(filePaths[sim.id]);
+        if (res.ok) {
+          const data = await res.json();
+          sim.questionCount = data.questions?.length ?? sim.questionCount;
+          if (data.metadata?.duracao) sim.duration = data.metadata.duracao;
+          if (data.metadata?.ano) sim.year = data.metadata.ano;
+        }
+      } catch { /* mantém valor padrão */ }
+    }
+
+    // 2. Pré-calcular histórico do usuário (filtrado por area='simulados')
+    const allHistory = this.progressService.getHistory().filter(h => h.area === 'simulados');
+
+    for (const sim of this.simuladosList) {
+      const simHistory = allHistory.filter(h => h.subarea === sim.id);
+      if (simHistory.length === 0) {
+        this.simuladosHistoryCache[sim.id] = { attempts: 0, bestScore: 0 };
+        continue;
+      }
+      const byDate = simHistory.reduce((acc: { [d: string]: typeof simHistory }, h) => {
+        const d = new Date(h.date).toDateString();
+        if (!acc[d]) acc[d] = [];
+        acc[d].push(h);
+        return acc;
+      }, {});
+      const attempts = Object.keys(byDate).length;
+      const bestScore = Math.max(...Object.values(byDate).map(group => {
+        const correct = group.filter(h => h.correct).length;
+        return group.length > 0 ? Math.round((correct / group.length) * 100) : 0;
+      }));
+      this.simuladosHistoryCache[sim.id] = { attempts, bestScore };
+    }
+  }
+
   getSimuladoHistory(simuladoId: string): { attempts: number; bestScore: number } {
-    const history = this.progressService.getHistory().filter(
-      h => h.subarea === simuladoId
-    );
-    if (history.length === 0) return { attempts: 0, bestScore: 0 };
-
-    // Agrupar por data (cada "tentativa" é um conjunto de questões no mesmo dia)
-    const byDate = history.reduce((acc: { [d: string]: typeof history }, h) => {
-      const d = new Date(h.date).toDateString();
-      if (!acc[d]) acc[d] = [];
-      acc[d].push(h);
-      return acc;
-    }, {});
-
-    const attempts = Object.keys(byDate).length;
-    const bestScore = Math.max(...Object.values(byDate).map(group => {
-      const correct = group.filter(h => h.correct).length;
-      return Math.round((correct / group.length) * 100);
-    }));
-
-    return { attempts, bestScore };
+    return this.simuladosHistoryCache[simuladoId] ?? { attempts: 0, bestScore: 0 };
   }
 
   navigateToSimulado(simuladoId: string): void {
@@ -176,6 +203,9 @@ export class AreaComponent implements OnInit {
   this.loadAreaData();
   this.loadUserPremiumStatus();
   this.loadUserQuizLimits();
+  if (this.areaName === 'simulados') {
+    this.loadSimuladosData();
+  }
 
   // Monitorar status premium (se o service existir)
   if (this.premiumService && this.premiumService.premiumStatus$) {
