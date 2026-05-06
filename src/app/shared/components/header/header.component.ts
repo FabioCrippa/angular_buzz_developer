@@ -683,7 +683,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.router.navigate([targetUrl]);
         this.closeMenus();
         localStorage.removeItem('sowlfy_redirect_after_login');
-      }, 3000);
+      }, 300);
     }
   }
 

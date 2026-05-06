@@ -7,7 +7,8 @@ import { Observable, forkJoin } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { AuthService } from '../../core/services/auth.service';
 import { GamificationService, UserProgress } from '../../core/services/gamification.service';
-import { QuizHistoryService } from '../../core/services/quiz-history.service';
+import { QuizHistoryService, QuizStats } from '../../core/services/quiz-history.service';
+import { FavoritesService } from '../../core/services/favorites.service';
 
 // ✅ INTERFACES ATUALIZADAS
 interface IndexData {
@@ -79,6 +80,7 @@ export class DashboardComponent implements OnInit {
   levelProgress: number = 0;
   recentQuizzes: any[] = [];
   isLoadingGamification: boolean = true;
+  quizStats: QuizStats | null = null;
 
   constructor(
     private http: HttpClient,
@@ -87,7 +89,8 @@ export class DashboardComponent implements OnInit {
     private snackBar: MatSnackBar,
     private authService: AuthService,
     private gamificationService: GamificationService,
-    private quizHistoryService: QuizHistoryService
+    private quizHistoryService: QuizHistoryService,
+    private favoritesService: FavoritesService
   ) { }
 
   ngOnInit(): void {
@@ -155,6 +158,9 @@ export class DashboardComponent implements OnInit {
       
       // Carregar histórico recente de quizzes
       this.recentQuizzes = await this.quizHistoryService.getRecentQuizzes(user.id, 5);
+
+      // Carregar estatísticas reais por área
+      this.quizStats = await this.quizHistoryService.calculateStats(user.id);
       
       this.isLoadingGamification = false;
     } catch (error) {
@@ -296,16 +302,14 @@ export class DashboardComponent implements OnInit {
 
   // ✅ AÇÕES RÁPIDAS - FUNCIONALIDADES
   startRandomQuiz(): void {
-    const availableAreas = this.areas.filter(area => area.available);
+    // Excluir simulados — têm fluxo próprio (caderno de prova completo)
+    const availableAreas = this.areas.filter(area => area.available && area.name !== 'simulados');
     
     if (availableAreas.length === 0) {
       this.showWarningMessage('Nenhuma área disponível para quiz');
       return;
     }
 
-    // ✅ SELECIONA ÁREA ALEATÓRIA
-    const randomArea = availableAreas[Math.floor(Math.random() * availableAreas.length)];
-    
     // ✅ SALVA CONFIGURAÇÃO DO QUIZ
     const quizConfig = {
       mode: 'random',
@@ -350,21 +354,27 @@ export class DashboardComponent implements OnInit {
   }
 
   viewFavorites(): void {
-    // ✅ VERIFICA SE HÁ FAVORITOS
-    const favorites = JSON.parse(localStorage.getItem('favoriteQuestions') || '[]');
-    
-    if (favorites.length === 0) {
-      this.showWarningMessage('Você ainda não possui questões favoritas');
+    const user = this.authService.currentUserValue;
+    if (!user?.id) {
+      this.showWarningMessage('Você precisa estar logado para ver seus favoritos');
       return;
     }
-    
-    this.showSuccessMessage(`Carregando ${favorites.length} questões favoritas...`);
-    
-    setTimeout(() => {
-      this.router.navigate(['/favorites']).catch(error => {
-        this.showErrorMessage('Erro ao carregar favoritos');
-      });
-    }, 500);
+
+    this.favoritesService.getFavoritesStats(user.id).then(stats => {
+      if (stats.total === 0) {
+        this.showWarningMessage('Você ainda não possui questões favoritas');
+        return;
+      }
+      this.showSuccessMessage(`Carregando ${stats.total} questões favoritas...`);
+      setTimeout(() => {
+        this.router.navigate(['/favorites']).catch(() => {
+          this.showErrorMessage('Erro ao carregar favoritos');
+        });
+      }, 500);
+    }).catch(() => {
+      // Fallback: navegar mesmo assim
+      this.router.navigate(['/favorites']);
+    });
   }
 
   // ✅ RECARGA DE DADOS
@@ -391,7 +401,7 @@ export class DashboardComponent implements OnInit {
       queryParams: {
         source: 'dashboard',
         timestamp: Date.now(),
-        currentPlan: 'free' // Usuário atual está no plano gratuito
+        currentPlan: this.authService.getUserPlan()
       }
     });
   }
@@ -456,6 +466,7 @@ export class DashboardComponent implements OnInit {
       'informatica-geral': '🖥️',
       'matematica': '🔢',
       'portugues': '📚',
+      'simulados': '📝',
       'desenvolvimento-web': '💻',
       'informatica': '💾',
       'direito': '⚖️',
@@ -483,26 +494,24 @@ export class DashboardComponent implements OnInit {
   }
 
   getAreaProgress(areaName: string): number {
-    // ✅ RECUPERA PROGRESSO DO LOCALSTORAGE
-    const savedProgress = localStorage.getItem(`progress_${areaName}`);
-    if (savedProgress) {
-      return parseInt(savedProgress, 10);
+    // Usa média de acerto real do Firestore (via QuizHistoryService)
+    const areaStats = this.quizStats?.byArea?.[areaName];
+    if (areaStats && areaStats.quizzesTaken > 0) {
+      return Math.round(areaStats.averageScore);
     }
-    
-    // ✅ PROGRESSO SIMULADO BASEADO NO NOME
-    const progressMap: { [key: string]: number } = {
-      'analise-desenvolvimento-sistemas': 75,
-      'informatica-geral': 80,
-      'matematica': 45,
-      'portugues': 60,
-      'desenvolvimento-web': 75,
-      'informatica': 80,
-      'direito': 30,
-      'administracao': 65,
-      'contabilidade': 40,
-      'economia': 55
-    };
-    return progressMap[areaName] || Math.floor(Math.random() * 100);
+    return 0;
+  }
+
+  getAreaQuizCount(areaName: string): number {
+    return this.quizStats?.byArea?.[areaName]?.quizzesTaken || 0;
+  }
+
+  getAreaAvgScore(areaName: string): number {
+    const areaStats = this.quizStats?.byArea?.[areaName];
+    if (areaStats && areaStats.quizzesTaken > 0) {
+      return Math.round(areaStats.averageScore);
+    }
+    return 0;
   }
 
   // ✅ TRACKBY FUNCTIONS PARA PERFORMANCE
@@ -560,11 +569,7 @@ export class DashboardComponent implements OnInit {
 
   // ✅ VERIFICAR SE USUÁRIO É PREMIUM
   isPremium(): boolean {
-    // Admin e estudante sempre têm acesso premium
-    if (localStorage.getItem('sowlfy_admin_token') || localStorage.getItem('student_token')) {
-      return true;
-    }
-    return localStorage.getItem('isPremium') === 'true';
+    return this.authService.isPremium();
   }
 
   // ✅ OBTER TAMANHO DO QUIZ BASEADO NO PLANO

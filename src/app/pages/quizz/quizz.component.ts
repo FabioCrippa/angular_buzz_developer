@@ -312,6 +312,17 @@ private getNextMidnightISO(): string {
   // Navegação livre: perguntas "marcadas para revisar"
   simuladoMarked: Set<string> = new Set<string>();
   simuladoFinished: boolean = false;
+
+  // 🔒 ANTI-CHEAT (simulado)
+  violationCount: number = 0;
+  readonly MAX_VIOLATIONS = 3;
+  showViolationModal: boolean = false;
+  violationReason: string = '';
+  simuladoEnded: boolean = false;
+  private _fullscreenChangeHandler!: () => void;
+  private _visibilityChangeHandler!: () => void;
+  private _blurHandler!: () => void;
+  private _keydownHandler!: (e: KeyboardEvent) => void;
   simuladoResult: {
     total: number;
     correct: number;
@@ -973,6 +984,11 @@ private getNextMidnightISO(): string {
         this.showError(`Não foi possível carregar o simulado "${this.subject}". Tente novamente.`);
       } else {
         this.titleService.setTitle(`Simulado: ${this.getSimuladoTitle()} — Sowlfy`);
+        // 🔒 Entrar em tela cheia ao carregar o simulado
+        this.violationCount = 0;
+        this.simuladoEnded = false;
+        this.showViolationModal = false;
+        setTimeout(() => this.enterSimuladoFullscreen(), 300);
       }
     });
   }
@@ -1047,8 +1063,122 @@ private getNextMidnightISO(): string {
   }
 
   // Finalizar simulado e calcular resultado
+  // ===============================================
+  // 🔒 ANTI-CHEAT — TELA CHEIA + DETECÇÃO DE VIOLAÇÕES
+  // ===============================================
+
+  enterSimuladoFullscreen(): void {
+    document.body.classList.add('simulado-fullscreen');
+    const el = document.documentElement;
+    if (el.requestFullscreen) {
+      el.requestFullscreen().catch(() => {});
+    } else if ((el as any).webkitRequestFullscreen) {
+      (el as any).webkitRequestFullscreen();
+    }
+    this.registerAntiCheatListeners();
+  }
+
+  private registerAntiCheatListeners(): void {
+    // Fullscreen exit
+    this._fullscreenChangeHandler = () => {
+      if (!document.fullscreenElement && !this.simuladoFinished && !this.simuladoEnded) {
+        this.registerViolation('Você saiu da tela cheia');
+      }
+    };
+    document.addEventListener('fullscreenchange', this._fullscreenChangeHandler);
+
+    // Tab switch / minimize
+    this._visibilityChangeHandler = () => {
+      if (document.hidden && !this.simuladoFinished && !this.simuladoEnded) {
+        this.registerViolation('Você saiu desta aba');
+      }
+    };
+    document.addEventListener('visibilitychange', this._visibilityChangeHandler);
+
+    // Window blur (alt+tab, browser minimize)
+    this._blurHandler = () => {
+      if (!this.simuladoFinished && !this.simuladoEnded && !document.hidden) {
+        this.registerViolation('A janela perdeu o foco');
+      }
+    };
+    window.addEventListener('blur', this._blurHandler);
+
+    // Block DevTools shortcuts and new-tab shortcuts
+    this._keydownHandler = (e: KeyboardEvent) => {
+      if (!this.isSimulado || this.simuladoFinished || this.simuladoEnded) return;
+      const blocked = (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) ||
+        (e.ctrlKey && e.key === 'U') ||
+        (e.ctrlKey && e.key === 't') ||
+        (e.ctrlKey && e.key === 'T') ||
+        (e.ctrlKey && e.key === 'n') ||
+        (e.ctrlKey && e.key === 'N')
+      );
+      if (blocked) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+    document.addEventListener('keydown', this._keydownHandler, true);
+  }
+
+  private registerViolation(reason: string): void {
+    this.violationCount++;
+    this.violationReason = reason;
+    this.showViolationModal = true;
+
+    if (this.violationCount >= this.MAX_VIOLATIONS) {
+      this.simuladoEnded = true;
+      this.removeAntiCheatListeners();
+      this.exitFullscreen();
+    }
+  }
+
+  returnToFullscreen(): void {
+    this.showViolationModal = false;
+    document.body.classList.add('simulado-fullscreen');
+    const el = document.documentElement;
+    if (el.requestFullscreen) {
+      el.requestFullscreen().catch(() => {});
+    } else if ((el as any).webkitRequestFullscreen) {
+      (el as any).webkitRequestFullscreen();
+    }
+  }
+
+  forceFinishSimulado(): void {
+    this.showViolationModal = false;
+    this.removeAntiCheatListeners();
+    this.exitFullscreen();
+    this.finishSimulado();
+  }
+
+  private exitFullscreen(): void {
+    document.body.classList.remove('simulado-fullscreen');
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
+  }
+
+  private removeAntiCheatListeners(): void {
+    if (this._fullscreenChangeHandler) {
+      document.removeEventListener('fullscreenchange', this._fullscreenChangeHandler);
+    }
+    if (this._visibilityChangeHandler) {
+      document.removeEventListener('visibilitychange', this._visibilityChangeHandler);
+    }
+    if (this._blurHandler) {
+      window.removeEventListener('blur', this._blurHandler);
+    }
+    if (this._keydownHandler) {
+      document.removeEventListener('keydown', this._keydownHandler, true);
+    }
+  }
+
   finishSimulado(): void {
     this.simuladoFinished = true;
+    this.removeAntiCheatListeners();
+    this.exitFullscreen();
     if (this.timer) { clearInterval(this.timer); this.timer = null; }
     this.finalTimeFormatted = this.currentTimeFormatted;
 
@@ -1245,6 +1375,10 @@ private getNextMidnightISO(): string {
   // ✅ ngOnDestroy
   ngOnDestroy(): void {
     
+    // Remover listeners anti-cheat
+    this.removeAntiCheatListeners();
+    this.exitFullscreen();
+
     // Desativar listeners de teclado
     this.keyboardListenerActive = false;
     
@@ -2697,7 +2831,11 @@ private getNextMidnightISO(): string {
       if (!indexResponse.ok) return false;
 
       const indexData = await indexResponse.json();
-      const paths = this.getFilePaths(indexData);
+      // Excluir simulados do quiz aleatório/misto
+      const allPaths = this.getFilePaths(indexData);
+      const paths = (this.mode === 'mixed')
+        ? allPaths.filter(p => p.area !== 'simulados')
+        : allPaths;
 
       if (paths.length === 0) return false;
 
@@ -2734,7 +2872,8 @@ private getNextMidnightISO(): string {
     try {
       const allQuestions: Question[] = [];
       const limit = this.getQuestionLimit();
-      const paths = this.getFilePaths(indexData);
+      // Excluir simulados do quiz aleatório — são cadernos de prova, não questões avulsas
+      const paths = this.getFilePaths(indexData).filter(p => p.area !== 'simulados');
 
       // Carregar algumas questões de cada arquivo (distribui entre áreas)
       const perFile = Math.max(1, Math.ceil(limit / Math.max(paths.length, 1)));

@@ -402,7 +402,7 @@
       "icon": "📝",
       "cor": "#e67e22",
       "descricao": "Simulados oficiais com questões reais por série, exame e edição",
-      "totalQuestoes": 30,
+      "totalQuestoes": 55,
       "disciplinas": [
         {
           "id": "prova-paulista",
@@ -430,8 +430,20 @@
               "descricao": "Questões de Linguagens, Códigos e Ciências Humanas — ENEM 2024",
               "arquivo": "enem-2024.json"
             }
-          ]
-        }
+          ]        },
+        {
+          "id": "lingua-portuguesa",
+          "nome": "Língua Portuguesa",
+          "descricao": "Caderno de exercícios por série e bimestre",
+          "icon": "📖",
+          "topicos": [
+            {
+              "id": "lp-caderno-9ano-1bimestre",
+              "nome": "LP — Caderno 9º Ano 1º Bimestre",
+              "descricao": "Questões de Língua Portuguesa do caderno de exercícios do 9º Ano, 1º Bimestre",
+              "arquivo": "lp-caderno-9ano-1bimestre.json"
+            }
+          ]        }
       ]
     }
   ],
@@ -446,7 +458,7 @@
       "informatica-geral": 75,
       "matematica": 80,
       "portugues": 140,
-      "simulados": 30
+      "simulados": 55
     }
   }
 }

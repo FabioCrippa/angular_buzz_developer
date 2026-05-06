@@ -29,15 +29,11 @@
       <!-- ✅ STATS CORRIGIDAS -->
       <div class="stats-overview">
         <div class="stat-item">
-          <span class="stat-number" [attr.data-number]="areas.length">
-            {{ areas.length }}
-          </span>
+          <span class="stat-number">{{ areas.length }}</span>
           <span class="stat-label">Áreas</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number" [attr.data-number]="getAvailableAreasCount()">
-            {{ getAvailableAreasCount() }}
-          </span>
+          <span class="stat-number">{{ getAvailableAreasCount() }}</span>
           <span class="stat-label">Disponíveis</span>
         </div>
       </div>
@@ -169,17 +165,32 @@
           <p class="action-description">Suas questões marcadas como favoritas</p>
         </div>
         
-        <!-- ✅ UPGRADE CARD PREMIUM -->
-        <div class="quick-action-card upgrade-card" (click)="navigateToUpgrade()">
+        <!-- Upgrade Card - apenas para usuários free -->
+        <div class="quick-action-card upgrade-card" *ngIf="!isPremium()" (click)="navigateToUpgrade()">
           <div class="action-icon">
             <mat-icon class="crown-icon">emoji_events</mat-icon>
           </div>
-          <h3 class="action-title">Upgrade Premium</h3>
-          <p class="action-description">Acesso ilimitado a todas as funcionalidades</p>
+          <h3 class="card-white-title">Upgrade Premium</h3>
+          <p class="card-white-desc">Acesso ilimitado a todas as funcionalidades</p>
           <div class="upgrade-badge">
             <div class="premium-chip">
               <mat-icon>stars</mat-icon>
               7 dias grátis
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Premium - apenas para usuários premium -->
+        <div class="quick-action-card premium-status-card" *ngIf="isPremium()">
+          <div class="action-icon">
+            <mat-icon class="crown-icon">verified</mat-icon>
+          </div>
+          <h3 class="card-white-title">Plano Premium</h3>
+          <p class="card-white-desc">Você tem acesso ilimitado a todas as funcionalidades</p>
+          <div class="upgrade-badge">
+            <div class="premium-chip">
+              <mat-icon>check_circle</mat-icon>
+              Ativo
             </div>
           </div>
         </div>
@@ -199,7 +210,7 @@
           (click)="navigateToArea(area.name)"
         >
           
-          <!-- ✅ AREA HEADER -->
+          <!-- AREA HEADER -->
           <div class="area-header">
             <div class="area-icon">
               {{ getAreaIcon(area.name) }}
@@ -209,14 +220,34 @@
             </div>
           </div>
 
-          <!-- ✅ DESCRIPTION -->
+          <!-- DESCRIPTION -->
           <p class="area-description">{{ area.description }}</p>
-          
-          <!-- ✅ SUBJECTS PREVIEW -->
-          <p class="subjects-preview" *ngIf="area.subjects && area.subjects.length > 0">
-            {{ area.subjects.slice(0, 3).join(', ') }}
-            <span *ngIf="area.subjects.length > 3">...</span>
-          </p>
+
+          <!-- STATS REAIS (só exibe se o usuário já fez quizzes nessa área) -->
+          <div class="area-stats" *ngIf="getAreaQuizCount(area.name) > 0">
+            <span class="stat-badge difficulty-easy">
+              ✅ {{ getAreaQuizCount(area.name) }} quiz{{ getAreaQuizCount(area.name) > 1 ? 'zes' : '' }}
+            </span>
+            <span class="stat-badge time-badge">
+              🎯 {{ getAreaAvgScore(area.name) }}% acerto
+            </span>
+          </div>
+
+          <!-- CALL TO ACTION quando nunca usou a área -->
+          <div class="area-stats" *ngIf="getAreaQuizCount(area.name) === 0 && area.available">
+            <span class="stat-badge difficulty-easy">▶ Começar agora</span>
+          </div>
+
+          <!-- PROGRESS (só exibe se houver progresso real > 0) -->
+          <div class="progress-section" *ngIf="area.progress && area.progress > 0">
+            <div class="progress-header">
+              <span class="progress-label">Média de acerto</span>
+              <span class="progress-value">{{ area.progress }}%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" [style.width.%]="area.progress"></div>
+            </div>
+          </div>
 
         </div>
       </div>

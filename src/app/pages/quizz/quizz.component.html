@@ -3,6 +3,35 @@
 -->
 <div class="quiz-container">
 
+  <!-- 🔒 VIOLATION MODAL (simulado anti-cheat) -->
+  <div *ngIf="showViolationModal" class="violation-overlay">
+    <div class="violation-modal" [class.violation-final]="simuladoEnded">
+      <div class="violation-icon">{{ simuladoEnded ? '🚫' : '⚠️' }}</div>
+      <h2 class="violation-title">
+        {{ simuladoEnded ? 'Simulado Encerrado' : 'Aviso de Violação' }}
+      </h2>
+      <p class="violation-reason">{{ violationReason }}</p>
+      <p class="violation-count" *ngIf="!simuladoEnded">
+        Violação <strong>{{ violationCount }}</strong> de {{ MAX_VIOLATIONS }}.
+        O simulado será encerrado automaticamente na {{ MAX_VIOLATIONS }}ª violação.
+      </p>
+      <p class="violation-count" *ngIf="simuladoEnded">
+        Você atingiu o limite de {{ MAX_VIOLATIONS }} violações. O simulado foi encerrado com as respostas registradas até agora.
+      </p>
+      <div class="violation-actions">
+        <button *ngIf="!simuladoEnded" class="btn-return-fullscreen" (click)="returnToFullscreen()">
+          ⛶ Voltar à Tela Cheia
+        </button>
+        <button *ngIf="!simuladoEnded" class="btn-end-simulado" (click)="forceFinishSimulado()">
+          Entregar Simulado
+        </button>
+        <button *ngIf="simuladoEnded" class="btn-return-fullscreen" (click)="forceFinishSimulado()">
+          Ver Resultado
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ✅ LOADING STATE -->
   <div *ngIf="isLoading" class="loading-container">
     <div class="loading-spinner">

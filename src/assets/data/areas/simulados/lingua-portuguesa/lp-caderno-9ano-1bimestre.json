@@ -1,0 +1,579 @@
+{
+  "metadata": {
+    "simulado": "Lingua Portuguesa - Caderno de Exercicios",
+    "tipo": "simulado",
+    "disciplina": "Lingua Portuguesa",
+    "serie": "9 Ano",
+    "bimestre": "1 Bimestre",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "lp9-1bi-001",
+      "question": "No trecho a seguir de 'Um belo diploma', de Scholastique Mukasonga, o que revela a liberdade estilistica tipica do genero texto de memorias? \"Passei metade da minha vida correndo atras de um diploma. Nao era, porem, uma tese de doutorado [...]: nao, era apenas um modesto diploma de assistente social.\"",
+      "options": [
+        {"alias": "A", "name": "O tom pessoal e subjetivo, com relato em primeira pessoa que expressa sentimentos e reflexoes individuais sobre o passado."},
+        {"alias": "B", "name": "O uso de linguagem objetiva e informativa, com foco em dados e fatos comprováveis, proprios de uma noticia jornalistica."},
+        {"alias": "C", "name": "A presenca de personagens, conflito e climax, elementos tipicos de narrativas ficcionais como contos ou romances."},
+        {"alias": "D", "name": "O emprego de linguagem formal e argumentativa para defender um ponto de vista, caracteristica comum a textos de opiniao."}
+      ],
+      "correct": "A",
+      "explanation": "O texto de memorias caracteriza-se pelo tom pessoal e subjetivo, com narracao em primeira pessoa que exprime sentimentos e reflexoes do autor sobre sua propria vida passada. O trecho usa 'passei' e 'era', marcando vivencias individuais.",
+      "subject": "Genero textual: texto de memorias",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 1"
+    },
+    {
+      "id": "lp9-1bi-002",
+      "question": "No trecho de 'Cidades brasileiras: o passado e o presente', de Rosicler Martins Rodrigues: \"Nasci na Italia e vim pequena para o Brasil. Meu pai era lavrador [...]. A cidade foi mudando cada vez mais depressa e a vida da gente tambem.\" Os verbos empregados revelam um traco tipico do genero memorias literarias. Esse traco e:",
+      "options": [
+        {"alias": "A", "name": "A descricao objetiva dos fatos historicos, sem marcas pessoais da narradora."},
+        {"alias": "B", "name": "A narracao de acontecimentos ficticios em linguagem literaria."},
+        {"alias": "C", "name": "O uso de tempos verbais no presente para dar vivacidade ao relato."},
+        {"alias": "D", "name": "A rememoracao de experiencias pessoais, marcadas pelo uso do preterito e pelo tom subjetivo."}
+      ],
+      "correct": "D",
+      "explanation": "As memorias literarias caracterizam-se pela rememoracao de vivencias pessoais, narradas no preterito ('nasci', 'vim', 'era', 'foi mudando'), com tom subjetivo e emocional da narradora.",
+      "subject": "Genero textual: memorias literarias",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 2"
+    },
+    {
+      "id": "lp9-1bi-003",
+      "question": "No trecho \"A cidade foi mudando cada vez mais depressa e a vida da gente tambem. As novidades foram chegando [...]\", os verbos destacados expressam:",
+      "options": [
+        {"alias": "A", "name": "Acoes futuras com intencao de alerta."},
+        {"alias": "B", "name": "Ordens diretas sobre a modernizacao da cidade."},
+        {"alias": "C", "name": "Acoes continuas no passado que marcam mudancas progressivas."},
+        {"alias": "D", "name": "Sentimentos negativos da narradora sobre a cidade."}
+      ],
+      "correct": "C",
+      "explanation": "A perifrase verbal 'foi mudando' / 'foram chegando' (preterito perfeito + gerundio) indica acoes que se desenvolveram de forma gradual e continua no passado, marcando transformacoes progressivas ao longo do tempo.",
+      "subject": "Topico gramatical: verbos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 2"
+    },
+    {
+      "id": "lp9-1bi-006",
+      "question": "Sobre o texto autobiografico de Clarice Lispector ('Ha tres coisas para as quais eu nasci [...] Tenho que me apressar, o tempo urge [...]'), qual das afirmacoes abaixo e FALSA?",
+      "options": [
+        {"alias": "A", "name": "O texto mistura tempos verbais para expressar tanto o passado vivido quanto sentimentos e urgencias do presente."},
+        {"alias": "B", "name": "A forma verbal 'nasci' esta no preterito perfeito e revela um fato marcante da trajetoria da autora."},
+        {"alias": "C", "name": "O verbo 'nasci' esta no preterito imperfeito e indica uma acao repetida da narradora ao longo da vida."},
+        {"alias": "D", "name": "O uso do tempo presente em 'dou' e 'tenho' reforca a vivencia atual e o tom confessional da autobiografia."}
+      ],
+      "correct": "C",
+      "explanation": "'nasci' esta no preterito perfeito — nao no imperfeito. O preterito perfeito indica acao concluida e pontual (o nascimento e um fato unico, nao repetido). As demais afirmacoes sao verdadeiras.",
+      "subject": "Genero textual: autobiografia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 6"
+    },
+    {
+      "id": "lp9-1bi-007",
+      "question": "Sobre o trecho de 'Eu sou Malala': 'Nasci menina num lugar onde rifles sao disparados em comemoracao a um filho, ao passo que as filhas sao escondidas atras de cortinas [...]'. Qual das afirmacoes abaixo e FALSA?",
+      "options": [
+        {"alias": "A", "name": "A forma verbal 'nasci' esta no preterito imperfeito e indica uma acao habitual da narradora."},
+        {"alias": "B", "name": "O tempo verbal em 'nasci' e o preterito perfeito e revela um acontecimento pontual da vida da autora."},
+        {"alias": "C", "name": "O uso de verbos no preterito perfeito e comum na autobiografia, pois relata fatos ja vividos."},
+        {"alias": "D", "name": "A forma verbal 'sao' esta no presente do indicativo e marca uma acao recorrente ou generalizada."}
+      ],
+      "correct": "A",
+      "explanation": "'nasci' esta no preterito perfeito (acao concluida, pontual) — nao no imperfeito (que indicaria habito ou continuidade). As demais afirmacoes sao verdadeiras.",
+      "subject": "Genero textual: autobiografia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 6"
+    },
+    {
+      "id": "lp9-1bi-008",
+      "question": "(IFSP 2023 - Adaptada) No trecho de Dom Casmurro: 'Ha algum tempo estou para lhe dizer isto', o uso dos verbos 'ha' e 'estou' provoca o seguinte efeito de sentido:",
+      "options": [
+        {"alias": "A", "name": "Indica acoes finalizadas no passado, reforcando a conclusao dos fatos."},
+        {"alias": "B", "name": "Reflete uma expectativa ou intencao presente que se prolonga desde o passado."},
+        {"alias": "C", "name": "Reforca o carater permanente e inalteravel da fala da personagem."},
+        {"alias": "D", "name": "Aponta para um habito repetido da personagem ao longo do tempo."}
+      ],
+      "correct": "B",
+      "explanation": "'Ha algum tempo' indica duracao desde o passado, e 'estou para dizer' expressa uma intencao presente ainda nao realizada. Juntos, criam a ideia de algo que persiste do passado ate o momento da fala — uma expectativa prolongada.",
+      "subject": "Topico gramatical: verbos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 8 (IFSP 2023 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-010",
+      "question": "(ENEM 2019 - Adaptada) O texto relata que alunos usaram o Twitter para nao comprarem na cantina por um dia, protestando contra o preco abusivo do pao de queijo. O episodio foi parar na TV e em muitas paginas da internet. Nesse sentido, o texto:",
+      "options": [
+        {"alias": "A", "name": "Aborda a discriminacao que as redes sociais sofrem de outros meios de comunicacao."},
+        {"alias": "B", "name": "Mostra que as reivindicacoes feitas nas redes sociais nao tem impacto fora da internet."},
+        {"alias": "C", "name": "Expoe a possibilidade de as redes sociais favorecerem comportamentos e manifestacoes violentas dos adolescentes."},
+        {"alias": "D", "name": "Trata as redes sociais como modo de agregar e empoderar grupos de pessoas, que se unem em prol de causas proprias ou de mudancas sociais."},
+        {"alias": "E", "name": "Evidencia que as redes sociais sao usadas inadequadamente pelos adolescentes, que nao utilizam a ferramenta como forma de mudanca social."}
+      ],
+      "correct": "D",
+      "explanation": "O texto mostra adolescentes que se organizaram pacificamente via Twitter para protestar, e o episodio repercutiu na TV e na internet. Isso demonstra o potencial das redes sociais de unir pessoas em torno de causas coletivas — sem violencia e com impacto real.",
+      "subject": "Genero textual: noticia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 10 (ENEM 2019 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-011",
+      "question": "(ETEC 2023 - Adaptada) Sobre o uso dos verbos no presente no texto da Ponte Pensil, qual das afirmacoes abaixo e FALSA?",
+      "options": [
+        {"alias": "A", "name": "O uso do presente em 'e considerada um marco' transmite ideia de permanencia e atualidade."},
+        {"alias": "B", "name": "O presente em 'e responsavel pela ligacao da ilha ao continente' aproxima o leitor do fato, sugerindo que essa funcao ainda existe."},
+        {"alias": "C", "name": "O trecho 'foi inaugurada em 21 de maio de 1914' e um exemplo de presente historico."},
+        {"alias": "D", "name": "Verbos no presente em descricoes geograficas e turisticas, como 'e considerada', reforcam a validade e relevancia atual da informacao."}
+      ],
+      "correct": "C",
+      "explanation": "'foi inaugurada' esta no preterito perfeito — nao no presente historico. O presente historico usa o verbo no presente para narrar fatos passados com vivacidade, o que nao ocorre nesse trecho. As demais afirmacoes sao verdadeiras.",
+      "subject": "Topico gramatical: verbos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 10 (ETEC 2023 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-014",
+      "question": "(FUVEST 2012) No poema 'Receita de mulher', de Vinicius de Moraes, com trechos como 'E preciso que haja qualquer coisa de flor', 'E preciso que tudo isso seja belo' e 'Tenha-se a impressao de ver uma garca'. O modo verbal predominante e a razao desse uso sao:",
+      "options": [
+        {"alias": "A", "name": "Indicativo; expressar verdades universais."},
+        {"alias": "B", "name": "Imperativo; traduzir ordens ou exortacoes."},
+        {"alias": "C", "name": "Subjuntivo; indicar vontade ou desejo."},
+        {"alias": "D", "name": "Indicativo; relacionar acoes habituais."}
+      ],
+      "correct": "C",
+      "explanation": "Os verbos 'haja', 'seja' e 'tenha-se' estao no presente do subjuntivo, ativados pelas locuções 'e preciso que'. O subjuntivo exprime desejo, necessidade e expectativa do eu lirico em relacao ao ideal de beleza feminina.",
+      "subject": "Topico gramatical: modos verbais",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 24 (FUVEST 2012)"
+    },
+    {
+      "id": "lp9-1bi-015",
+      "question": "Na fala da personagem Virginia em Memorias postumas de Bras Cubas, de Machado de Assis: 'e preciso que, de uma vez por todas, facamos as pazes.' O verbo destacado 'facamos' esta no:",
+      "options": [
+        {"alias": "A", "name": "Presente do indicativo."},
+        {"alias": "B", "name": "Presente do subjuntivo."},
+        {"alias": "C", "name": "Futuro do indicativo."},
+        {"alias": "D", "name": "Futuro do subjuntivo."}
+      ],
+      "correct": "B",
+      "explanation": "Apos a locucao 'e preciso que', usa-se o presente do subjuntivo. 'Facamos' e a 1a pessoa do plural do presente do subjuntivo de 'fazer', expressando necessidade ou desejo — modo tipico de oracoes substantivas completivas.",
+      "subject": "Topico gramatical: modos verbais",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 24"
+    },
+    {
+      "id": "lp9-1bi-016",
+      "question": "(FCC 2016 - Adaptada) No trecho: 'Para os europeus do inicio do seculo XV, o Bojador marcava a fronteira entre o conhecido e o desconhecido.' A forma verbal 'marcava' e verbo transitivo direto. Uma forma verbal com essa mesma transitividade esta em:",
+      "options": [
+        {"alias": "A", "name": "'O insondavel, no entanto, revelava-se uma tentacao irresistivel'."},
+        {"alias": "B", "name": "'Ao sul ficavam as terras misticas da Africa e do Mar da Escuridao'."},
+        {"alias": "C", "name": "'Ao norte do cabo estavam a civilizacao e as cidades esclarecidas'."},
+        {"alias": "D", "name": "'Ali, viu pegadas humanas, de camelos [...]'."}
+      ],
+      "correct": "D",
+      "explanation": "'marcava a fronteira': 'a fronteira' e o objeto direto (VTD). Da mesma forma, 'viu pegadas humanas' — 'pegadas humanas' e o objeto direto do verbo 'ver'. As demais opcoes apresentam verbos de ligacao (A: revelava-se) ou intransitivos/locativos (B, C: ficavam/estavam).",
+      "subject": "Topico gramatical: transitividade verbal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 28 (FCC 2016 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-017",
+      "question": "No trecho 'O infante dom Henrique despachou o explorador Gil Eanes para uma decima quinta tentativa', qual e a classificacao do verbo 'despachou'?",
+      "options": [
+        {"alias": "A", "name": "Verbo Transitivo Direto (VTD)."},
+        {"alias": "B", "name": "Verbo Transitivo Indireto (VTI)."},
+        {"alias": "C", "name": "Verbo Intransitivo (VI)."},
+        {"alias": "D", "name": "Verbo Transitivo Direto e Indireto (VTDI)."}
+      ],
+      "correct": "A",
+      "explanation": "'despachou o explorador Gil Eanes' — 'o explorador Gil Eanes' e o objeto direto (sem preposicao). 'Para uma decima quinta tentativa' e adjunto adverbial de finalidade, nao objeto indireto. Portanto, o verbo e transitivo direto (VTD).",
+      "subject": "Topico gramatical: transitividade verbal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 28"
+    },
+    {
+      "id": "lp9-1bi-018",
+      "question": "Sobre o genero biografia, assinale a alternativa correta:",
+      "options": [
+        {"alias": "A", "name": "E um texto de ficcao que narra experiencias inventadas."},
+        {"alias": "B", "name": "Relata a vida de personagens reais com base em fatos relevantes."},
+        {"alias": "C", "name": "E escrito apenas por pessoas famosas ou celebridades."},
+        {"alias": "D", "name": "Sempre segue uma ordem totalmente aleatoria dos acontecimentos."}
+      ],
+      "correct": "B",
+      "explanation": "A biografia e um genero textual que narra a vida de pessoas reais, baseando-se em fatos documentados e relevantes da trajetoria do biografado. Nao e ficcao, nao precisa ser escrita pelo proprio e geralmente segue uma ordem cronologica ou tematica.",
+      "subject": "Genero textual: biografia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 3"
+    },
+    {
+      "id": "lp9-1bi-019",
+      "question": "Sobre a estrutura tipica de uma biografia, assinale a alternativa INCORRETA:",
+      "options": [
+        {"alias": "A", "name": "Inclui informacoes como nome, nascimento e infancia."},
+        {"alias": "B", "name": "Apresenta desafios e conquistas ao longo da vida."},
+        {"alias": "C", "name": "Omite o climax da trajetoria para nao revelar emocoes."},
+        {"alias": "D", "name": "Pode finalizar com reflexoes sobre o legado do biografado."}
+      ],
+      "correct": "C",
+      "explanation": "A alternativa C e incorreta: a biografia nao omite o climax da trajetoria — ao contrario, os momentos decisivos e marcantes sao centrais na narrativa biografica. As demais alternativas descrevem elementos reais e tipicos do genero.",
+      "subject": "Genero textual: biografia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 3"
+    },
+    {
+      "id": "lp9-1bi-021",
+      "question": "(ENEM 2016 - Adaptada) Na cancao 'Querido diario', de Chico Buarque, com trechos como 'Hoje topei com alguns conhecidos meus' e 'Hoje o inimigo veio me espreitar', uma caracteristica do genero diario que aparece na letra e:",
+      "options": [
+        {"alias": "A", "name": "O texto apresenta uma narrativa impessoal, com foco em fatos historicos objetivos."},
+        {"alias": "B", "name": "O eu lirico compartilha sentimentos e situacoes do cotidiano, em tom intimo e reflexivo."},
+        {"alias": "C", "name": "O texto e escrito em terceira pessoa, o que afasta o leitor da experiencia vivida."},
+        {"alias": "D", "name": "A linguagem e neutra e informativa, com ausencia de marcas emocionais."}
+      ],
+      "correct": "B",
+      "explanation": "O genero diario caracteriza-se pelo registro intimo e subjetivo de experiencias cotidianas. Na cancao, o eu lirico narra situacoes do dia ('Hoje topei', 'Hoje o inimigo veio') com tom pessoal, reflexivo e emocional, tipico do genero.",
+      "subject": "Genero textual: diario",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 7 (ENEM 2016 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-022",
+      "question": "(ETEC 2023) Com base no texto sobre a Ponte Pensil, localizada entre os morros do Japui e dos Barbosas, em Sao Vicente (SP), e correto afirmar que:",
+      "options": [
+        {"alias": "A", "name": "Os esgotos do Oceano Atlantico sao transportados para Santos e Sao Vicente por canos que passam pela Ponte Pensil."},
+        {"alias": "B", "name": "O medico Saturnino de Brito construiu a Ponte Pensil para eliminar o virus que causava a peste bubonica."},
+        {"alias": "C", "name": "A Ponte Pensil foi construida para sustentar os encanamentos responsaveis pelo carregamento do esgoto coletado em Sao Vicente e em Santos."},
+        {"alias": "D", "name": "A usina hidreletrica de Itaipu, em Sao Vicente, foi responsavel pela construcao da Ponte Pensil."},
+        {"alias": "E", "name": "Os municipios do Japui e dos Barbosas passaram a ter ligacao terrestre por meio da Ponte Pensil."}
+      ],
+      "correct": "C",
+      "explanation": "O texto informa que a Comissao de Saneamento sugeriu a construcao da ponte 'com o proposito de servir de suporte a instalacao de uma tubulacao a fim de conduzir o esgoto coletado nas cidades de Santos e de Sao Vicente para lancamento no Oceano Atlantico'.",
+      "subject": "Genero textual: noticia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 9 (ETEC 2023)"
+    },
+    {
+      "id": "lp9-1bi-024",
+      "question": "(PISA 2018 - Adaptada) De acordo com a IDFA (International Dairy Foods Association), com qual afirmacao os principais profissionais de saude e organizacoes concordam?",
+      "options": [
+        {"alias": "A", "name": "Consumir leite e produtos lacteos leva a obesidade."},
+        {"alias": "B", "name": "O leite e uma boa fonte de vitaminas e minerais essenciais."},
+        {"alias": "C", "name": "O leite contem mais vitaminas do que minerais."},
+        {"alias": "D", "name": "Beber leite e uma das principais causas de osteoporose."}
+      ],
+      "correct": "B",
+      "explanation": "A IDFA afirma que 'o leite contem um pacote completo de nutrientes com nove nutrientes essenciais' e e recomendado por medicos e organizacoes de saude, incluindo a National Osteoporosis Foundation e a American Medical Association. A alternativa B resume essa posicao corretamente.",
+      "subject": "Genero textual: reportagem",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 11 (PISA 2018 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-025",
+      "question": "(PISA 2018 - Adaptada) Sobre o objetivo do texto 'O valor nutricional do leite: inumeros beneficios!', qual das afirmacoes abaixo e FALSA?",
+      "options": [
+        {"alias": "A", "name": "O texto procura apoiar o uso dos produtos da Farm to Market Dairy."},
+        {"alias": "B", "name": "O objetivo do texto e alertar sobre riscos cardiacos relacionados a produtos lacteos."},
+        {"alias": "C", "name": "O texto cita especialistas e organizacoes para dar credibilidade as afirmacoes."},
+        {"alias": "D", "name": "O texto destaca beneficios nutricionais do leite como calcio, proteina e vitaminas."}
+      ],
+      "correct": "B",
+      "explanation": "O texto tem objetivo claramente promocional: defende os beneficios do leite e dos produtos da Farm to Market Dairy, citando especialistas. Nao ha qualquer alerta sobre riscos cardiacos — ao contrario, o texto afirma que o leite 'melhora a saude cardiovascular'.",
+      "subject": "Genero textual: reportagem",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 11 (PISA 2018 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-028",
+      "question": "(PISA 2018 - Adaptada) Um reporter esportivo escreve um artigo sobre Felix e o debate em torno da medalha. Qual das fontes de informacao NAO seria relevante para o artigo?",
+      "options": [
+        {"alias": "A", "name": "Comentarios postados por diferentes participantes do debate nas redes sociais."},
+        {"alias": "B", "name": "Blogs de outros atletas olimpicos sobre suas experiencias pessoais nos Jogos."},
+        {"alias": "C", "name": "Uma entrevista que o reporter conduziu com Felix sobre sua experiencia olimpica."},
+        {"alias": "D", "name": "Declaracoes oficiais do Comite Olimpico Internacional sobre a Equipe de Refugiados."}
+      ],
+      "correct": "B",
+      "explanation": "Blogs de outros atletas sobre suas experiencias pessoais nao se relacionam diretamente ao caso de Felix nem ao debate sobre a medalha. As demais fontes sao diretamente relevantes: o debate nas redes sociais, a entrevista com o proprio Felix e declaracoes oficiais do COI.",
+      "subject": "Genero textual: entrevista",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 13 (PISA 2018 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-029",
+      "question": "(PISA 2018 - Adaptada) Algumas pessoas de Latonia afirmam que a medalha de Felix deveria ter sido concedida ao seu pais anfitriao. Qual das declaracoes melhor apoiaria essa afirmacao?",
+      "options": [
+        {"alias": "A", "name": "Latonia nunca ganhou uma medalha no atletismo, entao deveria receber a de Felix mesmo ele nao sendo cidadao."},
+        {"alias": "B", "name": "Latonia concedeu a Felix o status de refugiado quando ele escapou de Gondalandia."},
+        {"alias": "C", "name": "Latonia apoiou Felix, fornecendo instalacoes de treinamento, financiamento e oportunidades para competir nas Olimpiadas."},
+        {"alias": "D", "name": "O exemplo de Latonia poderia encorajar outros paises a acolher refugiados, aumentando as chances de conquistar medalhas."}
+      ],
+      "correct": "C",
+      "explanation": "O argumento mais solido e o apoio concreto fornecido por Latonia: treinamento, financiamento e oportunidades. Essa contribuicao direta e objetiva justificaria o reconhecimento do pais na conquista da medalha, diferentemente de argumentos baseados em expectativas (D) ou em burocracias (B).",
+      "subject": "Genero textual: entrevista",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 13 (PISA 2018 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-030",
+      "question": "Na entrevista com Maria da Penha, o uso do ponto final ao final da frase 'Sim, mas sabemos que essa realidade vem mudando.' contribui para o seguinte efeito de sentido:",
+      "options": [
+        {"alias": "A", "name": "Indica duvida sobre a informacao apresentada."},
+        {"alias": "B", "name": "Torna a fala confusa por interromper a sequencia logica."},
+        {"alias": "C", "name": "Marca a conclusao de uma ideia e reforca a confianca da afirmacao."},
+        {"alias": "D", "name": "Enfraquece o argumento, deixando a explicacao incompleta."}
+      ],
+      "correct": "C",
+      "explanation": "O ponto final encerra a frase de forma assertiva, transmitindo certeza e confianca. Maria da Penha conclui uma ideia de forma definitiva, reafirmando sua seguranca sobre a mudanca da realidade — sem deixar margem para duvida.",
+      "subject": "Topico gramatical: pontuacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 14"
+    },
+    {
+      "id": "lp9-1bi-031",
+      "question": "No trecho: 'Hoje, as mulheres ja conhecem mais sobre a violencia domestica [...]. Por isso e tao importante o papel da imprensa [...]', qual o papel do ponto final entre essas frases?",
+      "options": [
+        {"alias": "A", "name": "Mostrar oposicao entre os enunciados."},
+        {"alias": "B", "name": "Criar pausa para enfatizar que uma ideia leva a outra."},
+        {"alias": "C", "name": "Enfraquecer a fala por interromper o raciocinio."},
+        {"alias": "D", "name": "Separar duas ideias complementares de forma clara e objetiva."}
+      ],
+      "correct": "D",
+      "explanation": "O ponto final separa duas oracoes que se complementam: a primeira apresenta a informacao (mulheres conhecem mais); a segunda tira a conclusao (importancia da imprensa). A separacao torna o raciocinio mais claro e objetivo, sem prejudicar a logica do argumento.",
+      "subject": "Topico gramatical: pontuacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 14"
+    },
+    {
+      "id": "lp9-1bi-032",
+      "question": "No cartaz instrucional sobre higiene e prevencao de doencas (Secretaria de Saude do Parana), qual elemento tem a funcao de criar impacto inicial e informar sobre o tema abordado?",
+      "options": [
+        {"alias": "A", "name": "Frase de destaque no topo."},
+        {"alias": "B", "name": "Ilustracoes de sintomas."},
+        {"alias": "C", "name": "Instrucoes de prevencao."},
+        {"alias": "D", "name": "Logotipo da Secretaria da Saude."}
+      ],
+      "correct": "A",
+      "explanation": "A frase de destaque no topo ('LAVE BEM AS MAOS') e o primeiro elemento que o leitor encontra. Sua funcao e criar impacto inicial e informar imediatamente sobre o tema, funcionando como gancho de atencao do genero instrucional.",
+      "subject": "Genero textual: cartaz instrucional",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 15"
+    },
+    {
+      "id": "lp9-1bi-033",
+      "question": "Sobre o genero cartaz instrucional, qual das afirmacoes abaixo e FALSA?",
+      "options": [
+        {"alias": "A", "name": "O cartaz instrucional busca orientar acoes concretas, mas pode utilizar linguagem subjetiva e expressiva para gerar impacto emocional."},
+        {"alias": "B", "name": "Os textos instrucionais podem conter imagens, dados e esquemas, desde que colaborem para a compreensao das orientacoes."},
+        {"alias": "C", "name": "O uso do imperativo, como em 'Lave bem as maos', caracteriza o genero narrativo e aproxima o leitor da acao."},
+        {"alias": "D", "name": "O cartaz instrucional pertence ao campo da vida publica e circula em contextos escolares, comunitarios ou de saude."}
+      ],
+      "correct": "C",
+      "explanation": "O uso do imperativo ('Lave', 'Evite', 'Cubra') e caracteristico do genero instrucional, nao narrativo. O imperativo indica ordens e instrucoes diretas ao leitor, o que e tipico de textos que orientam comportamentos.",
+      "subject": "Genero textual: cartaz instrucional",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 15"
+    },
+    {
+      "id": "lp9-1bi-034",
+      "question": "(CEDERJ 2022 - Adaptada) Sobre o enunciado 'Pessoas transformam o mundo', e correto afirmar que:",
+      "options": [
+        {"alias": "A", "name": "O sujeito e indeterminado."},
+        {"alias": "B", "name": "'Pessoas' e o sujeito da oracao."},
+        {"alias": "C", "name": "'O mundo' e o predicado."},
+        {"alias": "D", "name": "O predicado e 'pessoas'."}
+      ],
+      "correct": "B",
+      "explanation": "Em 'Pessoas transformam o mundo': 'pessoas' e o sujeito simples; 'transformam o mundo' e o predicado verbal; 'o mundo' e o objeto direto. O sujeito e determinado e expresso — portanto A e errada. D e errada porque 'pessoas' e sujeito, nao predicado.",
+      "subject": "Topico gramatical: sujeito e predicado",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 16 (CEDERJ 2022 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-035",
+      "question": "(UNICENTRO 2018) Assinale a unica alternativa em que o sujeito e inexistente:",
+      "options": [
+        {"alias": "A", "name": "Roubaram todas as coisas daquele pobre rapaz."},
+        {"alias": "B", "name": "'Do riso fez-se o pranto', escreveu o poeta."},
+        {"alias": "C", "name": "Dolores e Nelson casaram-se durante o verao."},
+        {"alias": "D", "name": "Fiz tudo que me foi pedido."},
+        {"alias": "E", "name": "Havia muitas pessoas em Barcelona durante a festa."}
+      ],
+      "correct": "E",
+      "explanation": "O verbo 'haver' com sentido de existir e impessoal e nao admite sujeito. As demais: A — sujeito indeterminado; B — sujeito 'o pranto'; C — sujeito composto 'Dolores e Nelson'; D — sujeito oculto 'eu'.",
+      "subject": "Topico gramatical: sujeito e predicado",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 16 (UNICENTRO 2018)"
+    },
+    {
+      "id": "lp9-1bi-036",
+      "question": "(UNIFOR 2023) A campanha do Ministerio da Saude sobre raiva possui por objetivo:",
+      "options": [
+        {"alias": "A", "name": "Alertar o publico em geral sobre os perigos da raiva para a sociedade."},
+        {"alias": "B", "name": "Focar o alerta em animais de rua que nao tenham sido castrados previamente."},
+        {"alias": "C", "name": "Orientar aqueles que possuem animais em casa, em convivencia com a familia."},
+        {"alias": "D", "name": "Proteger os animais das intervencoes de humanos que os infectam com doencas."},
+        {"alias": "E", "name": "Deixar claro que, com remedios administrados caseiramente, e possivel a prevencao."}
+      ],
+      "correct": "A",
+      "explanation": "A campanha de saude publica do Ministerio tem como objetivo principal alertar a sociedade como um todo sobre os riscos da raiva, promovendo conscientizacao ampla sem restricao a grupos especificos.",
+      "subject": "Genero textual: campanha publicitaria",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 17 (UNIFOR 2023)"
+    },
+    {
+      "id": "lp9-1bi-037",
+      "question": "Que caracteristica do genero 'campanha de saude' esta presente na peca analisada do Ministerio da Saude?",
+      "options": [
+        {"alias": "A", "name": "Linguagem tecnica e segmentada."},
+        {"alias": "B", "name": "Divulgacao voltada apenas a veterinarios."},
+        {"alias": "C", "name": "Texto opinativo e informativo."},
+        {"alias": "D", "name": "Linguagem clara e direta voltada ao publico-alvo."}
+      ],
+      "correct": "D",
+      "explanation": "Campanhas de saude publica caracterizam-se por linguagem clara, acessivel e direta, voltada ao publico amplo. O objetivo e que a mensagem seja compreendida por todos, independentemente de nivel de escolaridade.",
+      "subject": "Genero textual: campanha publicitaria",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 17"
+    },
+    {
+      "id": "lp9-1bi-038",
+      "question": "Sobre a manchete 'Ate 50% dos alimentos vai estragar com a crise', qual das afirmacoes abaixo e FALSA?",
+      "options": [
+        {"alias": "A", "name": "A forma verbal 'vai' esta incorreta, pois deveria obrigatoriamente concordar com 'alimentos', que esta no plural."},
+        {"alias": "B", "name": "Segundo a norma-padrao, o verbo pode concordar tanto com '50%' quanto com 'alimentos', tornando a forma 'vai' aceitavel."},
+        {"alias": "C", "name": "A palavra 'alimentos' exige concordancia nominal com adjetivos e determinantes no plural, se houver."},
+        {"alias": "D", "name": "A expressao 'Ate 50%' indica uma imprecisao numerica que pode justificar o uso do verbo no singular por parte do redator."}
+      ],
+      "correct": "A",
+      "explanation": "A afirmacao A e falsa: 'vai' nao esta necessariamente incorreta. Quando o sujeito e uma expressao percentual ('50% dos alimentos'), a norma-padrao permite concordancia com o numeral (singular) ou com o substantivo (plural). Ambas as formas sao aceitas.",
+      "subject": "Topico gramatical: concordancia verbal e nominal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 18"
+    },
+    {
+      "id": "lp9-1bi-039",
+      "question": "(UNIFOR 2014 - Adaptada) Qual das alternativas abaixo esta correta, seguindo as regras de concordancia da lingua portuguesa?",
+      "options": [
+        {"alias": "A", "name": "Ficaram bastantes contentes com a proposta de emprego."},
+        {"alias": "B", "name": "Vossa Excelencia e corrupto?"},
+        {"alias": "C", "name": "Houveram varios problemas na escola."},
+        {"alias": "D", "name": "Eles estao alertas no quartel."}
+      ],
+      "correct": "D",
+      "explanation": "D esta correta: 'alertas' concorda com o sujeito plural 'eles'. Erros: A — 'bastante' e adverbio e invariavel ('bastante contentes'); B — predicativo concorda com o sexo real da pessoa ('corrupta'); C — 'haver' no sentido de existir e impessoal ('houve varios problemas').",
+      "subject": "Topico gramatical: concordancia verbal e nominal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 18 (UNIFOR 2014 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-040",
+      "question": "Com base no Texto 1 sobre direitos e deveres na escola, qual e a relacao entre esses dois conceitos descrita no texto?",
+      "options": [
+        {"alias": "A", "name": "Os direitos sao mais importantes do que os deveres."},
+        {"alias": "B", "name": "Os direitos e deveres sao independentes entre si."},
+        {"alias": "C", "name": "Os direitos e deveres sao complementares e ambos sao essenciais para um ambiente escolar harmonioso."},
+        {"alias": "D", "name": "Os deveres dos estudantes sao mais importantes do que os direitos."}
+      ],
+      "correct": "C",
+      "explanation": "O texto apresenta direitos e deveres como elementos complementares e igualmente fundamentais para garantir um ambiente harmonioso e produtivo na escola, sem hierarquizar um sobre o outro.",
+      "subject": "Genero textual: texto normativo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 19"
+    },
+    {
+      "id": "lp9-1bi-041",
+      "question": "Com base no Texto 2 sobre direito a igualdade e dever de respeito na escola, qual e a relacao entre esses conceitos descrita no texto?",
+      "options": [
+        {"alias": "A", "name": "O direito a igualdade possibilita que os alunos sejam respeitados somente pelos professores."},
+        {"alias": "B", "name": "O dever de respeito e uma consequencia do direito a igualdade."},
+        {"alias": "C", "name": "O direito a igualdade e o dever de respeito sao conceitos opostos."},
+        {"alias": "D", "name": "O dever de respeito impede a igualdade entre os alunos."}
+      ],
+      "correct": "B",
+      "explanation": "O texto usa a expressao 'em contrapartida' para marcar que o direito a igualdade fundamenta o dever de respeito. O dever e apresentado como consequencia logica e responsabilidade complementar ao direito.",
+      "subject": "Genero textual: texto normativo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 19"
+    },
+    {
+      "id": "lp9-1bi-042",
+      "question": "Na ficha catalografica, qual das alternativas associa CORRETAMENTE um elemento a sua funcao?",
+      "options": [
+        {"alias": "A", "name": "ISBN — Nome completo da obra, podendo incluir subtitulo."},
+        {"alias": "B", "name": "Local de publicacao — Numero internacional padrao identificador unico para o livro."},
+        {"alias": "C", "name": "Numero de paginas — Cidade onde a obra foi publicada."},
+        {"alias": "D", "name": "Titulo — Nome completo da obra, podendo incluir subtitulo."}
+      ],
+      "correct": "D",
+      "explanation": "O Titulo corresponde ao nome completo da obra, podendo incluir subtitulo. As demais estao incorretas: ISBN e o codigo numerico internacional, nao o nome da obra; Local de publicacao e a cidade; Numero de paginas e a quantidade total de paginas.",
+      "subject": "Genero textual: ficha catalografica",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 21"
+    },
+    {
+      "id": "lp9-1bi-043",
+      "question": "(UFC 2020 - Adaptada) Assinale a alternativa cuja palavra esta escrita conforme as normas ortograficas vigentes:",
+      "options": [
+        {"alias": "A", "name": "Auto-afirmacao."},
+        {"alias": "B", "name": "Anti-academico."},
+        {"alias": "C", "name": "Sobreaviso."},
+        {"alias": "D", "name": "Pro-analise."}
+      ],
+      "correct": "C",
+      "explanation": "'Sobreaviso' esta correto sem hifen. Pelo Acordo Ortografico, prefixos como 'auto-' e 'anti-' antes de vogal diferente nao usam hifen: 'autoafirmacao', 'antiacademico'. 'Pro-' tonico usa hifen antes de vogal ('pro-analise' pode ser aceita), mas 'sobreaviso' e a alternativa inequivocamente correta.",
+      "subject": "Topico gramatical: ortografia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 22 (UFC 2020 - Adaptada)"
+    },
+    {
+      "id": "lp9-1bi-044",
+      "question": "Sobre a acentuacao das palavras do infografico de biodiversidade brasileira, qual das afirmacoes abaixo e FALSA?",
+      "options": [
+        {"alias": "A", "name": "Repteis e acentuada por ser paroxitona terminada em ditongo."},
+        {"alias": "B", "name": "Mamifero, como lampada e medico, e acentuada por ser paroxitona terminada em -o."},
+        {"alias": "C", "name": "Anfibios e acentuada por ser paroxitona terminada em ditongo."},
+        {"alias": "D", "name": "Tamandua e acentuada por ser oxitona terminada em -a."}
+      ],
+      "correct": "B",
+      "explanation": "'Mamifero', 'lampada' e 'medico' sao PROPAROXITONAS (acento na antepenultima silaba), nao paroxitonas. Todas as proparoxitonas sao acentuadas em portugues, independentemente da terminacao. Afirmar que sao paroxitonas e incorreto.",
+      "subject": "Topico gramatical: acentuacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 26"
+    }
+  ]
+}

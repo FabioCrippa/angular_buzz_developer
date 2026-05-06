@@ -146,103 +146,75 @@ export class FavoritesComponent implements OnInit {
   }
 
   private async loadFavoriteQuestionsFromFirestore(firestoreFavorites: any[]): Promise<void> {
-    console.log('📝 Carregando', firestoreFavorites.length, 'favoritos do Firestore');
-    
-    if (!firestoreFavorites || firestoreFavorites.length === 0) {
-      this.favorites = [];
-      return;
-    }
+    if (!firestoreFavorites?.length) { this.favorites = []; return; }
 
     try {
-      // 1. Carregar o index para saber onde estão as questões
       const index = await this.dataService.getIndex().toPromise();
+      const cursos: any[] = index?.cursos || [];
 
-      if (!index?.structure || !index?.areas) {
-        console.error('❌ Index mal formatado');
-        this.favorites = [];
-        return;
-      }
-
-      // 2. Para cada favorito, buscar a questão completa
-      const loadedQuestions: FavoriteQuestion[] = [];
-      
-      for (const favorite of firestoreFavorites) {
-        const questionId = Number(favorite.questionId);
-        console.log('🔍 Buscando questão ID:', questionId, '| Adicionada em:', favorite.addedAt);
-        
-        let found = false;
-        
-        // Buscar em todas as áreas
-        for (const areaKey of Object.keys(index.structure)) {
-          if (found) break;
-          
-          const area = index.areas[areaKey];
-          const subjects = index.structure[areaKey];
-          
-          // Buscar em todas as matérias da área
-          for (const subjectKey of subjects) {
-            if (found) break;
-            
-            try {
-              const data = await this.dataService.getQuestions(areaKey, subjectKey).toPromise();
-              const questions = data.questions || data;
-              const metadata = data.metadata || {};
-              
-              // Buscar a questão pelo ID
-              const question = questions.find((q: any) => Number(q.id) === questionId);
-              
-              if (question) {
-                console.log('✅ Questão', questionId, 'encontrada em', areaKey, '/', subjectKey);
-                
-                // Mapear dificuldade
-                const difficultyMap: { [key: string]: 'Fácil' | 'Médio' | 'Difícil' } = {
-                  'fundamental': 'Fácil',
-                  'intermediário': 'Médio',
-                  'intermediario': 'Médio',
-                  'avançado': 'Difícil',
-                  'avancado': 'Difícil',
-                  'easy': 'Fácil',
-                  'medium': 'Médio',
-                  'hard': 'Difícil'
-                };
-                
-                const rawDifficulty = question.difficulty || metadata.difficulty || 'fundamental';
-                const mappedDifficulty = difficultyMap[rawDifficulty.toLowerCase()] || 'Médio';
-                
-                // Converter para FavoriteQuestion mantendo dados do Firestore
-                loadedQuestions.push({
-                  id: String(question.id),
-                  question: question.question,
-                  area: areaKey,
-                  areaDisplayName: area.displayName || areaKey,
-                  difficulty: mappedDifficulty,
-                  subject: subjectKey,
-                  options: question.options || [],
-                  correctAnswer: question.correctAnswer || 0,
-                  explanation: question.explanation || '',
-                  addedDate: favorite.addedAt || new Date().toISOString(),
-                  attempts: 0,
-                  icon: this.getAreaIcon(areaKey)
-                });
-                
-                found = true;
-                break;
-              }
-            } catch (error) {
-              // Arquivo não existe, continuar
-              console.warn(`    ⚠️ Erro ao carregar ${areaKey}/${subjectKey}`);
-            }
+      // Monta lista plana de todos os caminhos area/subject do cursos[]
+      const allPaths: { area: string; subject: string }[] = [];
+      for (const curso of cursos) {
+        for (const disc of (curso.disciplinas || [])) {
+          for (const topico of (disc.topicos || [])) {
+            const subjectFile = topico.arquivo?.replace('.json', '');
+            if (subjectFile) allPaths.push({ area: curso.id, subject: subjectFile });
           }
         }
-        
-        if (!found) {
-          console.warn('⚠️ Questão não encontrada:', questionId);
+      }
+
+      const diffMap: { [k: string]: 'Fácil' | 'Médio' | 'Difícil' } = {
+        'fundamental': 'Fácil', 'easy': 'Fácil',
+        'intermediário': 'Médio', 'intermediario': 'Médio', 'medium': 'Médio',
+        'avançado': 'Difícil', 'avancado': 'Difícil', 'hard': 'Difícil'
+      };
+
+      const loadedQuestions: FavoriteQuestion[] = [];
+
+      for (const favorite of firestoreFavorites) {
+        const questionId = Number(favorite.questionId);
+        let found = false;
+
+        // Prioriza busca direta via area+subject armazenados
+        const directPath = (favorite.area && favorite.subject)
+          ? [{ area: favorite.area, subject: favorite.subject }]
+          : [];
+        const otherPaths = allPaths.filter(p =>
+          !(p.area === favorite.area && p.subject === favorite.subject)
+        );
+        const searchPaths = [...directPath, ...otherPaths];
+
+        for (const path of searchPaths) {
+          if (found) break;
+          try {
+            const data = await this.dataService.getQuestions(path.area, path.subject).toPromise();
+            const questions: any[] = data?.questions || (Array.isArray(data) ? data : []);
+            const question = questions.find((q: any) => Number(q.id) === questionId);
+
+            if (question) {
+              const rawDiff = (question.difficulty || favorite.difficulty || 'fundamental').toLowerCase();
+              const curso = cursos.find((c: any) => c.id === path.area);
+              loadedQuestions.push({
+                id: String(question.id),
+                question: question.question,
+                area: path.area,
+                areaDisplayName: curso?.displayName || curso?.nome || path.area,
+                difficulty: diffMap[rawDiff] || 'Médio',
+                subject: path.subject,
+                options: question.options || [],
+                correctAnswer: question.correctAnswer || 0,
+                explanation: question.explanation || '',
+                addedDate: favorite.addedAt?.toISOString?.() || favorite.addedAt || new Date().toISOString(),
+                attempts: 0,
+                icon: this.getAreaIcon(path.area)
+              });
+              found = true;
+            }
+          } catch {}
         }
       }
-      
+
       this.favorites = loadedQuestions;
-      console.log('🎉 Total de favoritos carregados:', this.favorites.length);
-      
     } catch (error) {
       console.error('❌ Erro ao carregar questões favoritas:', error);
       this.favorites = [];
@@ -548,87 +520,47 @@ export class FavoritesComponent implements OnInit {
   }
 
   startFavoritesQuiz(): void {
-    // Carregar IDs reais dos favoritos do localStorage
-    const savedFavorites = localStorage.getItem('favoriteQuestions');
-    
-    if (!savedFavorites) {
+    if (this.favorites.length === 0) {
       this.showErrorMessage('Você ainda não tem questões favoritas!');
       return;
     }
-
-    const favoriteIds: string[] = JSON.parse(savedFavorites);
-    
-    if (favoriteIds.length === 0) {
-      this.showErrorMessage('Você precisa ter pelo menos uma questão favorita!');
-      return;
-    }
-
-    this.showSuccessMessage(`Iniciando quiz com ${favoriteIds.length} questões favoritas...`);
-    
+    const ids = this.favorites.map(f => f.id).join(',');
+    this.showSuccessMessage(`Iniciando quiz com ${this.favorites.length} questões favorítas...`);
     setTimeout(() => {
       this.router.navigate(['/quiz'], {
-        queryParams: {
-          mode: 'favorites',
-          questionIds: favoriteIds.join(','),
-          count: favoriteIds.length
-        }
+        queryParams: { mode: 'favorites', questionIds: ids, count: this.favorites.length }
+      });
+    }, 500);
+  }
+
+  startFilteredQuiz(): void {
+    const filtered = this.filteredAndSortedFavorites;
+    if (filtered.length === 0) {
+      this.showErrorMessage('Nenhuma questão filtrada para iniciar quiz!');
+      return;
+    }
+    const ids = filtered.map(f => f.id).join(',');
+    this.showSuccessMessage(`Iniciando quiz com ${filtered.length} questões filtradas...`);
+    setTimeout(() => {
+      this.router.navigate(['/quiz'], {
+        queryParams: { mode: 'favorites', questionIds: ids, count: filtered.length }
       });
     }, 500);
   }
 
   startAreaQuiz(area: string): void {
-    console.log('🎯 Iniciando quiz da área:', area);
-    
-    // Carregar IDs reais dos favoritos do localStorage
-    const savedFavorites = localStorage.getItem('favoriteQuestions');
-    
-    if (!savedFavorites) {
-      this.showErrorMessage('Você ainda não tem questões favoritas!');
+    const areaFavorites = this.favorites.filter(f =>
+      f.area === area || f.areaDisplayName === area
+    );
+    if (areaFavorites.length === 0) {
+      this.showErrorMessage(`Nenhum favoríto encontrado para ${area}!`);
       return;
     }
-
-    const allFavoriteIds: string[] = JSON.parse(savedFavorites);
-    console.log('📂 Total de favoritos:', allFavoriteIds);
-    
-    if (allFavoriteIds.length === 0) {
-      this.showErrorMessage('Você ainda não tem questões favoritas!');
-      return;
-    }
-    
-    // Filtrar IDs que pertencem à área (formato: "area-123" ou contém o nome da área)
-    const areaKey = area.toLowerCase().replace(/ /g, '-');
-    console.log('🔍 Buscando IDs da área:', areaKey);
-    
-    const areaFavoriteIds = allFavoriteIds.filter((id: any) => {
-      const idStr = String(id).toLowerCase();
-      return idStr.startsWith(areaKey + '-') || idStr.includes(areaKey);
-    });
-    
-    console.log('✅ IDs encontrados:', areaFavoriteIds);
-    
-    if (areaFavoriteIds.length === 0) {
-      this.showErrorMessage(`Nenhuma questão favorita encontrada para ${area}!`);
-      console.warn('⚠️ Nenhum ID match para área:', areaKey);
-      return;
-    }
-
-    this.showSuccessMessage(`Iniciando quiz de ${area} com ${areaFavoriteIds.length} questões...`);
-    
+    const ids = areaFavorites.map(f => f.id).join(',');
+    this.showSuccessMessage(`Iniciando quiz de ${area} com ${areaFavorites.length} questões...`);
     setTimeout(() => {
-      console.log('🔗 Navegando para /quiz com params:', {
-        mode: 'area-favorites',
-        area: areaKey,
-        questionIds: areaFavoriteIds.join(','),
-        count: areaFavoriteIds.length
-      });
-      
       this.router.navigate(['/quiz'], {
-        queryParams: {
-          mode: 'area-favorites',
-          area: areaKey,
-          questionIds: areaFavoriteIds.join(','),
-          count: areaFavoriteIds.length
-        }
+        queryParams: { mode: 'favorites', questionIds: ids, count: areaFavorites.length }
       });
     }, 500);
   }
@@ -666,6 +598,10 @@ export class FavoritesComponent implements OnInit {
     this.router.navigate(['/dashboard']);
   }
 
+  isPremium(): boolean {
+    return this.authService.isPremium();
+  }
+
   navigateToUpgrade(): void {
     this.router.navigate(['/upgrade'], {
       queryParams: {
@@ -690,14 +626,13 @@ export class FavoritesComponent implements OnInit {
 
   private getAreaIcon(areaName: string): string {
     const icons: { [key: string]: string } = {
-      'desenvolvimento-web': '💻',
-      'portugues': '📚',
+      'analise-desenvolvimento-sistemas': '💻',
+      'informatica-geral': '💾',
       'matematica': '🔢',
-      'informatica': '💾',
-      'direito': '⚖️',
-      'administracao': '📊',
-      'contabilidade': '💰',
-      'economia': '📈'
+      'portugues': '📚',
+      'simulados': '📝',
+      'desenvolvimento-web': '💻',
+      'informatica': '💾'
     };
     return icons[areaName] || '📖';
   }
@@ -795,46 +730,11 @@ export class FavoritesComponent implements OnInit {
   // ===============================================
   
   getAreaKeys(): string[] {
-    // Ler IDs reais do localStorage e extrair áreas
-    const savedFavorites = localStorage.getItem('favoriteQuestions');
-    if (!savedFavorites) return [];
-    
-    try {
-      const favoriteIds: any[] = JSON.parse(savedFavorites);
-      const areas = new Set<string>();
-      
-      // Extrair área de cada ID (formato: "area-123")
-      favoriteIds.forEach(id => {
-        const idStr = String(id);
-        const parts = idStr.split('-');
-        if (parts.length >= 2) {
-          // Área pode ter hífens (ex: "desenvolvimento-web")
-          // Pegar tudo exceto o último elemento (que é o número)
-          const areaKey = parts.slice(0, -1).join('-');
-          areas.add(areaKey);
-        }
-      });
-      
-      return Array.from(areas);
-    } catch {
-      return [];
-    }
+    return Object.keys(this.favoritesData.favoritesByArea);
   }
 
   getAreaCount(area: string): number {
-    // Contar quantos IDs pertencem a esta área
-    const savedFavorites = localStorage.getItem('favoriteQuestions');
-    if (!savedFavorites) return 0;
-    
-    try {
-      const favoriteIds: any[] = JSON.parse(savedFavorites);
-      return favoriteIds.filter(id => {
-        const idStr = String(id).toLowerCase();
-        return idStr.startsWith(area + '-') || idStr.includes(area);
-      }).length;
-    } catch {
-      return 0;
-    }
+    return this.favoritesData.favoritesByArea[area] || 0;
   }
 
   getDifficultyCount(difficulty: string): number {

@@ -176,20 +176,20 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .stat-card {
   background: white;
-  padding: 2rem;
+  padding: 1.25rem 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   transition: all 0.3s ease;
   border: 1px solid #e2e8f0;
 }
@@ -200,14 +200,15 @@
 }
 
 .stat-icon {
-  width: 70px;
-  height: 70px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
+  flex-shrink: 0;
 }
 
 .total-card .stat-icon {
@@ -232,7 +233,7 @@
 
 .stat-number {
   display: block;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #2d3748;
   line-height: 1;
@@ -312,8 +313,8 @@
 
 .areas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -321,7 +322,7 @@
 .area-progress-card {
   background: white;
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
@@ -357,8 +358,8 @@
 .area-header {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
-  gap: 1rem;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
 }
 
 .area-icon {
@@ -510,8 +511,12 @@
 .area-stats {
   display: flex;
   justify-content: space-between;
-  margin: 1.5rem 0;
-  gap: 1rem;
+  margin: 1rem 0;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
 }
 
 .stat-item {

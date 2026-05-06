@@ -144,17 +144,13 @@ export class LoginComponent implements OnInit {
           });
           
           if (this.isDialog) {
-            setTimeout(() => {
-              this.dialogRef?.close({ 
-                success: true, 
-                userType: 'admin',
-                user: result.adminData || { email, name: 'Admin' }
-              });
-            }, 800);
+            this.dialogRef?.close({ 
+              success: true, 
+              userType: 'admin',
+              user: result.adminData || { email, name: 'Admin' }
+            });
           } else {
-            setTimeout(() => {
-              this.router.navigateByUrl('/admin/dashboard');
-            }, 1000);
+            this.router.navigateByUrl('/admin/dashboard');
           }
         } else {
           this.isLoading = false;
@@ -204,18 +200,14 @@ export class LoginComponent implements OnInit {
           });
           
           if (this.isDialog) {
-            setTimeout(() => {
-              this.dialogRef?.close({ 
-                success: true, 
-                userType: 'student',
-                user: result.user,
-                schoolId: result.schoolId
-              });
-            }, 800);
+            this.dialogRef?.close({ 
+              success: true, 
+              userType: 'student',
+              user: result.user,
+              schoolId: result.schoolId
+            });
           } else {
-            setTimeout(() => {
-              this.router.navigateByUrl('/quizz');
-            }, 1000);
+            this.router.navigateByUrl('/quizz');
           }
         } else {
           this.isLoading = false;
@@ -256,17 +248,13 @@ export class LoginComponent implements OnInit {
           });
           
           if (this.isDialog) {
-            setTimeout(() => {
-              this.dialogRef?.close({ 
-                success: true, 
-                userType: 'individual',
-                user: result.user
-              });
-            }, 800);
+            this.dialogRef?.close({ 
+              success: true, 
+              userType: 'individual',
+              user: result.user
+            });
           } else {
-            setTimeout(() => {
-              this.router.navigateByUrl('/dashboard');
-            }, 1000);
+            this.router.navigateByUrl('/dashboard');
           }
         } else {
           this.isLoading = false;

@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, forkJoin } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { PremiumService } from '../../core/services/premium.service';
+import { AuthService } from '../../core/services/auth.service';
+import { QuizHistoryService } from '../../core/services/quiz-history.service';
 
 interface AreaQuestion {
   id: string;
@@ -77,6 +79,16 @@ export class AreaComponent implements OnInit {
       questionCount: 0,
       duration: 90,
       year: 2024
+    },
+    {
+      id: 'lp-caderno-9ano-1bimestre',
+      displayName: 'Língua Portuguesa',
+      subtitle: '9º Ano — 1º Bimestre',
+      icon: '📖',
+      color: 'linear-gradient(135deg, #27ae60, #2ecc71)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025
     }
   ];
 
@@ -88,7 +100,8 @@ export class AreaComponent implements OnInit {
     // 1. Carregar questionCount real de cada arquivo JSON
     const filePaths: { [id: string]: string } = {
       'prova-paulista-9ano-2024': 'assets/data/areas/simulados/prova-paulista/prova-paulista-9ano-2024.json',
-      'enem-2024': 'assets/data/areas/simulados/enem/enem-2024.json'
+      'enem-2024': 'assets/data/areas/simulados/enem/enem-2024.json',
+      'lp-caderno-9ano-1bimestre': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-1bimestre.json'
     };
 
     for (const sim of this.simuladosList) {
@@ -194,7 +207,9 @@ export class AreaComponent implements OnInit {
     private snackBar: MatSnackBar,
     private progressService: ProgressService,
     private http: HttpClient,
-    public premiumService: PremiumService
+    public premiumService: PremiumService,
+    private authService: AuthService,
+    private quizHistoryService: QuizHistoryService
   ) {}
 
   // ===============================================
@@ -340,6 +355,7 @@ export class AreaComponent implements OnInit {
           
           // ✅ 4. Calcular progresso real do usuário
           this.updateUserProgress();
+          this.loadFirestoreProgress();
           
           this.isLoading = false;
           
@@ -544,6 +560,33 @@ export class AreaComponent implements OnInit {
     return questions;
   }
 
+  private async loadFirestoreProgress(): Promise<void> {
+    if (!this.areaData) return;
+    const userId = this.getCurrentUserId();
+    if (!userId) return;
+    try {
+      const stats = await this.quizHistoryService.calculateStats(userId);
+      const fsArea = stats?.byArea?.[this.areaName];
+      if (!fsArea || fsArea.quizzesTaken === 0) return;
+      const areaMinutes = stats.totalQuizzes > 0
+        ? Math.round(stats.totalTimeSpent * (fsArea.quizzesTaken / stats.totalQuizzes))
+        : 0;
+      this.areaData.userProgress = {
+        completed: fsArea.totalQuestions,
+        accuracy: Math.round(fsArea.averageScore),
+        timeSpent: this.formatTotalTime(areaMinutes)
+      };
+    } catch {}
+  }
+
+  private formatTotalTime(minutes: number): string {
+    if (!minutes || minutes <= 0) return '0min';
+    if (minutes < 60) return `${minutes}min`;
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    return m > 0 ? `${h}h ${m}min` : `${h}h`;
+  }
+
   private updateUserProgress(): void {
     if (!this.areaData) return;
 
@@ -590,6 +633,43 @@ export class AreaComponent implements OnInit {
     // Usuário individual: verificar status premium salvo
     const savedStatus = localStorage.getItem('testPremiumStatus');
     this.isPremium = savedStatus === 'true';
+  }
+
+  private getCurrentUserId(): string | null {
+    // 1. Firebase Auth user (currentUserSubject populado)
+    const fbUser = this.authService.currentUserValue;
+    if (fbUser?.id) return fbUser.id;
+
+    // 2. Usuário regular salvo no localStorage
+    try {
+      const stored = localStorage.getItem('sowlfy_user');
+      if (stored) {
+        const u = JSON.parse(stored);
+        if (u?.id) return u.id;
+      }
+    } catch {}
+
+    // 3. Admin
+    try {
+      const adminData = localStorage.getItem('sowlfy_admin_data');
+      if (adminData) {
+        const a = JSON.parse(adminData);
+        if (a?.id) return a.id;
+        if (a?.uid) return a.uid;
+      }
+    } catch {}
+
+    // 4. Estudante
+    try {
+      const studentData = localStorage.getItem('student_data');
+      if (studentData) {
+        const s = JSON.parse(studentData);
+        if (s?.id) return s.id;
+        if (s?.uid) return s.uid;
+      }
+    } catch {}
+
+    return null;
   }
 
   private async loadUserQuizLimits(): Promise<void> {
@@ -1125,59 +1205,53 @@ Clique em "Upgrade Premium" para desbloquear!`);
   // 📊 PREMIUM: ESTATÍSTICAS E EXPORTAÇÃO
   // ===============================================
   
-  viewStatistics(): void {
+  async viewStatistics(): Promise<void> {
     if (!this.isPremium) {
       this.showPremiumFeatureMessage('Estatísticas Avançadas');
       return;
     }
-    
+
     if (!this.areaData) {
       this.showErrorMessage('Dados da área não disponíveis');
       return;
     }
-    
-    // ✅ Obter histórico da área
-    const history = this.progressService.getHistory().filter(h => h.area === this.areaName);
-    
+
+    const userId = this.getCurrentUserId();
+    if (!userId) {
+      this.showErrorMessage('Faça login para ver as estatísticas');
+      return;
+    }
+
+    const history = await this.quizHistoryService.getHistoryByArea(userId, this.areaName, 20);
+
     if (history.length === 0) {
       this.showErrorMessage('Você ainda não respondeu nenhuma questão desta área. Faça um quiz primeiro!');
       return;
     }
-    
-    // ✅ Calcular estatísticas detalhadas
-    const totalQuestions = history.length;
-    const correctAnswers = history.filter(h => h.correct).length;
+
+    const totalQuestions = history.reduce((s, q) => s + q.totalQuestions, 0);
+    const correctAnswers = history.reduce((s, q) => s + q.correctAnswers, 0);
     const wrongAnswers = totalQuestions - correctAnswers;
     const accuracy = Math.round((correctAnswers / totalQuestions) * 100);
-    const totalTimeSeconds = history.reduce((sum, h) => sum + (Number(h.timeSpent) || 0), 0);
-    const avgTimePerQuestion = Math.round(totalTimeSeconds / totalQuestions);
-    
-    // ✅ Agrupar por data
-    const byDate: { [key: string]: { total: number, correct: number } } = {};
-    history.forEach(h => {
-      const date = new Date(h.date).toLocaleDateString('pt-BR');
-      if (!byDate[date]) {
-        byDate[date] = { total: 0, correct: 0 };
-      }
-      byDate[date].total++;
-      if (h.correct) byDate[date].correct++;
+    const totalTimeSeconds = history.reduce((s, q) => s + q.timeSpent, 0);
+    const avgTimePerQuestion = totalQuestions > 0 ? Math.round(totalTimeSeconds / totalQuestions) : 0;
+
+    // Agrupar por data para sessões recentes
+    const byDate: { [key: string]: { total: number; correct: number } } = {};
+    history.forEach(q => {
+      const date = new Date(q.completedAt).toLocaleDateString('pt-BR');
+      if (!byDate[date]) byDate[date] = { total: 0, correct: 0 };
+      byDate[date].total += q.totalQuestions;
+      byDate[date].correct += q.correctAnswers;
     });
-    
-    // ✅ Últimas 5 sessões
-    const recentDates = Object.keys(byDate).sort((a, b) => {
-      const dateA = new Date(a.split('/').reverse().join('-'));
-      const dateB = new Date(b.split('/').reverse().join('-'));
-      return dateB.getTime() - dateA.getTime();
-    }).slice(0, 5);
-    
-    const recentSessions = recentDates.map(date => ({
+
+    const recentSessions = Object.keys(byDate).slice(0, 5).map(date => ({
       date,
       total: byDate[date].total,
       correct: byDate[date].correct,
       accuracy: Math.round((byDate[date].correct / byDate[date].total) * 100)
     }));
-    
-    // ✅ Armazenar estatísticas para exibição
+
     this.detailedStats = {
       areaName: this.areaData.displayName,
       totalQuestions,
@@ -1189,18 +1263,14 @@ Clique em "Upgrade Premium" para desbloquear!`);
       wrongQuestionsCount: this.getWrongQuestions().length,
       recentSessions
     };
-    
-    // ✅ Mostrar seção de estatísticas
+
     this.showDetailedStats = true;
-    
-    // ✅ Scroll suave para a seção
+
     setTimeout(() => {
       const statsSection = document.getElementById('detailed-stats-section');
-      if (statsSection) {
-        statsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (statsSection) statsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
-    
+
     this.showSuccessMessage('📊 Estatísticas carregadas!');
   }
   
@@ -1209,33 +1279,39 @@ Clique em "Upgrade Premium" para desbloquear!`);
     this.detailedStats = null;
   }
   
-  exportProgress(): void {
+  async exportProgress(): Promise<void> {
     if (!this.isPremium) {
       this.showPremiumFeatureMessage('Exportar Progresso');
       return;
     }
-    
+
     if (!this.areaData) {
       this.showErrorMessage('Dados da área não disponíveis');
       return;
     }
-    
+
+    const userId = this.getCurrentUserId();
+    if (!userId) {
+      this.showErrorMessage('Faça login para exportar');
+      return;
+    }
+
     try {
-      // ✅ Obter histórico completo da área
-      const history = this.progressService.getHistory().filter(h => h.area === this.areaName);
-      
+      // Buscar histórico real do Firestore
+      const history = await this.quizHistoryService.getHistoryByArea(userId, this.areaName, 50);
+
       if (history.length === 0) {
         this.showErrorMessage('Você ainda não respondeu nenhuma questão desta área. Faça um quiz primeiro!');
         return;
       }
-      
-      // ✅ Calcular estatísticas
-      const totalQuestions = history.length;
-      const correctAnswers = history.filter(h => h.correct).length;
+
+      // Calcular estatísticas
+      const totalQuestions = history.reduce((s, q) => s + q.totalQuestions, 0);
+      const correctAnswers = history.reduce((s, q) => s + q.correctAnswers, 0);
       const accuracy = Math.round((correctAnswers / totalQuestions) * 100);
-      const totalTimeSeconds = history.reduce((sum, h) => sum + (Number(h.timeSpent) || 0), 0);
-      
-      // ✅ Criar conteúdo HTML para o PDF
+      const totalTimeSeconds = history.reduce((s, q) => s + q.timeSpent, 0);
+
+      // Criar conteúdo HTML para o PDF
       const htmlContent = `
         <!DOCTYPE html>
         <html>
@@ -1377,25 +1453,27 @@ Clique em "Upgrade Premium" para desbloquear!`);
           </div>
           
           <div class="history-section">
-            <h2>📋 Histórico Detalhado</h2>
+            <h2>📋 Histórico de Quizzes</h2>
             <table>
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Resultado</th>
+                  <th>Quiz</th>
+                  <th>Acertos</th>
+                  <th>Pontuação</th>
                   <th>Tempo</th>
                   <th>Data</th>
                 </tr>
               </thead>
               <tbody>
-                ${history.map(h => `
+                ${history.map((q, i) => `
                   <tr>
-                    <td>#${h.questionId}</td>
-                    <td class="${h.correct ? 'correct' : 'wrong'}">
-                      ${h.correct ? '✅ Acertou' : '❌ Errou'}
+                    <td>#${i + 1} (${q.totalQuestions} questões)</td>
+                    <td class="${q.score >= 70 ? 'correct' : 'wrong'}">
+                      ${q.correctAnswers}/${q.totalQuestions}
                     </td>
-                    <td>${h.timeSpent}s</td>
-                    <td>${new Date(h.date).toLocaleDateString('pt-BR')}</td>
+                    <td class="${q.score >= 70 ? 'correct' : 'wrong'}">${q.score}%</td>
+                    <td>${Math.round(q.timeSpent / 60)}min</td>
+                    <td>${new Date(q.completedAt).toLocaleDateString('pt-BR')}</td>
                   </tr>
                 `).join('')}
               </tbody>
@@ -1873,7 +1951,7 @@ Clique em "Upgrade Premium" para desbloquear!`);
         icon: '📝',
         color: '#e67e22',
         totalQuestions: 30,
-        subjects: ['prova-paulista-9ano-2024', 'enem-2024'],
+        subjects: ['prova-paulista-9ano-2024', 'enem-2024', 'lp-caderno-9ano-1bimestre'],
         difficulty: { easy: 10, medium: 15, hard: 5 },
         userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
       }

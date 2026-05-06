@@ -33,10 +33,6 @@
           </p>
         </div>
         <div class="header-actions">
-          <button mat-stroked-button (click)="navigateToDashboard()">
-            <mat-icon>dashboard</mat-icon>
-            Dashboard
-          </button>
           <button 
             mat-raised-button 
             color="primary" 
@@ -44,7 +40,7 @@
             [disabled]="favorites.length === 0"
           >
             <mat-icon>play_arrow</mat-icon>
-            Quiz Favoritos
+            Quiz Favoritos ({{ favorites.length }})
           </button>
         </div>
       </div>
@@ -101,7 +97,7 @@
             (click)="setSelectedArea(area)"
             [class.selected]="selectedArea === area"
           >
-            {{ getAreaDisplayName(area) }} ({{ getAreaCount(area) }})
+            {{ area }} ({{ getAreaCount(area) }})
           </mat-chip>
         </mat-chip-set>
       </div>
@@ -110,11 +106,11 @@
         <button 
           *ngFor="let area of getAreaKeys()" 
           mat-stroked-button 
-          (click)="startAreaQuiz(getAreaDisplayName(area))"
+          (click)="startAreaQuiz(area)"
           class="area-quiz-btn"
         >
           <mat-icon>play_arrow</mat-icon>
-          Quiz {{ getAreaDisplayName(area) }}
+          Quiz {{ area }}
         </button>
       </div>
     </section>
@@ -205,11 +201,11 @@
         </h2>
         
         <div class="list-actions" *ngIf="filteredAndSortedFavorites.length > 0">
-          <button mat-stroked-button (click)="startFavoritesQuiz()">
+          <button mat-stroked-button (click)="startFilteredQuiz()">
             <mat-icon>play_arrow</mat-icon>
-            Quiz com Filtradas
+            Quiz com Filtradas ({{ filteredAndSortedFavorites.length }})
           </button>
-          <button mat-raised-button color="primary" (click)="navigateToUpgrade()">
+          <button mat-raised-button color="primary" *ngIf="!isPremium()" (click)="navigateToUpgrade()">
             <mat-icon>star</mat-icon>
             Upgrade Premium
           </button>
@@ -318,7 +314,7 @@
     </section>
 
     <!-- 🎯 PREMIUM UPGRADE SECTION -->
-    <section class="upgrade-section" *ngIf="favorites.length > 0">
+    <section class="upgrade-section" *ngIf="favorites.length > 0 && !isPremium()">
       <div class="upgrade-card">
         <div class="upgrade-content">
           <div class="upgrade-icon">

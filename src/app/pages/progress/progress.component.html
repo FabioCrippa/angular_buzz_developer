@@ -32,11 +32,7 @@
             Último acesso: {{ formatLastAccess(progressData.lastAccess) }}
           </p>
         </div>
-        <div class="header-actions">
-          <button mat-stroked-button (click)="navigateToDashboard()">
-            <mat-icon>dashboard</mat-icon>
-            Dashboard
-          </button>
+        <div class="header-actions" *ngIf="!isPremium()">
           <button mat-raised-button color="primary" (click)="navigateToUpgrade()">
             <mat-icon>star</mat-icon>
             Upgrade Premium
@@ -163,7 +159,7 @@
               <h3 class="area-name">{{ area.displayName }}</h3>
               <p class="area-difficulty">
                 <mat-icon>bar_chart</mat-icon>
-                Dificuldade: {{ area.difficulty }}
+                {{ area.name === 'simulados' ? 'Tipo: ' : 'Dificuldade: ' }}{{ area.difficulty }}
               </p>
             </div>
             <div class="area-badge" [class]="'progress-' + getProgressLevel(area.progress)">
@@ -171,38 +167,23 @@
             </div>
           </div>
 
-          <!-- 📊 PROGRESS BAR -->
-          <div class="progress-bar-container">
-            <div class="progress-stats-inline">
-              <div class="stat-inline">
-                <mat-icon>check_circle</mat-icon>
-                <span class="stat-value">{{ area.completed }}</span>
-                <span class="stat-label">respondidas</span>
-              </div>
-              <div class="stat-inline">
-                <mat-icon>target</mat-icon>
-                <span class="stat-value" [style.color]="getAccuracyColor(area.accuracy)">{{ area.accuracy }}%</span>
-                <span class="stat-label">acerto</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 📈 AREA STATS -->
+          <!-- � AREA STATS -->
           <div class="area-stats">
             <div class="stat-item">
-              <mat-icon>target</mat-icon>
-              <span class="stat-value" [style.color]="getAccuracyColor(area.accuracy)">
-                {{ area.accuracy }}%
-              </span>
-              <span class="stat-label">Precisão</span>
+              <mat-icon>check_circle</mat-icon>
+              <span class="stat-value">{{ area.completed }}</span>
+              <span class="stat-label">Resp.</span>
             </div>
-            
+            <div class="stat-item">
+              <mat-icon>trending_up</mat-icon>
+              <span class="stat-value" [style.color]="getAccuracyColor(area.accuracy)">{{ area.accuracy }}%</span>
+              <span class="stat-label">Acerto</span>
+            </div>
             <div class="stat-item">
               <mat-icon>schedule</mat-icon>
               <span class="stat-value">{{ area.timeSpent }}</span>
-              <span class="stat-label">Tempo</span>
+              <span class="stat-label">Quizzes</span>
             </div>
-            
             <div class="stat-item">
               <mat-icon>event</mat-icon>
               <span class="stat-value">{{ area.lastActivity }}</span>
@@ -212,17 +193,17 @@
 
           <!-- 🎯 AREA ACTIONS -->
           <div class="area-actions">
-            <!-- Botão principal: Quiz direto -->
             <button 
               class="btn btn-primary" 
               (click)="startQuizForArea(area.name); $event.stopPropagation()"
             >
               <span class="btn-icon">▶️</span>
-              <span class="btn-text">{{ area.progress === 0 ? 'Começar Quiz' : 'Continuar Quiz' }}</span>
+              <span class="btn-text">
+                {{ area.name === 'simulados' ? 'Fazer Simulado' : (area.progress === 0 ? 'Começar Quiz' : 'Continuar Quiz') }}
+              </span>
               <span class="btn-shine"></span>
             </button>
             
-            <!-- Botão secundário: Explorar área -->
             <button 
               class="btn btn-secondary"
               (click)="navigateToArea(area.name); $event.stopPropagation()"
@@ -261,13 +242,19 @@
         <div class="recommendation-card study-card">
           <mat-icon class="rec-icon">school</mat-icon>
           <h3>Continue Estudando</h3>
-          <p>Você tem {{ getInProgressAreasCount() }} área(s) em progresso. Continue praticando!</p>
+          <p *ngIf="getInProgressAreasCount() > 0">
+            Você tem <strong>{{ getInProgressAreasCount() }} área(s)</strong> com quizzes feitos. Continue evoluindo!
+          </p>
+          <p *ngIf="getInProgressAreasCount() === 0">
+            Escolha uma área e comece seu primeiro quiz agora!
+          </p>
           <button mat-stroked-button (click)="startQuizForArea(getNextAreaToStudy())">
-            Próxima Área
+            {{ getInProgressAreasCount() > 0 ? 'Próxima Área' : 'Começar Quiz' }}
           </button>
         </div>
 
-        <div class="recommendation-card upgrade-card">
+        <!-- Card upgrade: só para usuários free -->
+        <div class="recommendation-card upgrade-card" *ngIf="!isPremium()">
           <mat-icon class="rec-icon">star</mat-icon>
           <h3>Upgrade Premium</h3>
           <p>Acesse relatórios detalhados e simulados personalizados</p>
@@ -276,54 +263,29 @@
           </button>
         </div>
 
-        <div class="recommendation-card streak-card">
-          <mat-icon class="rec-icon">local_fire_department</mat-icon>
-          <h3>Manter Sequência</h3>
-          <p>Você está há {{ progressData.overallStats.streak }} dia(s) estudando!</p>
-          <button mat-stroked-button (click)="navigateToDashboard()">
-            Estudar Hoje
+        <!-- Card simulados: só para usuários premium -->
+        <div class="recommendation-card upgrade-card" *ngIf="isPremium()">
+          <mat-icon class="rec-icon">assignment</mat-icon>
+          <h3>Fazer Simulado</h3>
+          <p>Teste seus conhecimentos com provas completas no estilo real</p>
+          <button mat-raised-button color="primary" (click)="startQuizForArea('simulados')">
+            <mat-icon>play_arrow</mat-icon>
+            Iniciar Simulado
           </button>
         </div>
-      </div>
-    </section>
 
-    <!-- 🆕 NEW AREAS SECTION - VERSÃO CORRIGIDA -->
-    <section class="new-areas-section" *ngIf="getAvailableAreasToStart().length > 0">
-      <h2 class="section-title">Começar Nova Área</h2>
-      
-      <div class="new-areas-grid">
-        <div 
-          *ngFor="let area of getAvailableAreasToStart()" 
-          class="new-area-card"
-        >
-          <!-- ✅ CONTEÚDO PRINCIPAL -->
-          <div class="new-area-content">
-            <div class="new-area-icon">{{ area.icon }}</div>
-            <h3>{{ area.displayName }}</h3>
-            <p class="area-description">{{ area.description }}</p>
-            <div class="area-meta">
-              <span class="question-count">
-                <mat-icon>quiz</mat-icon>
-                {{ area.questionCount }} questões
-              </span>
-              <span class="difficulty" [class]="'difficulty-' + area.difficulty.toLowerCase()">
-                <mat-icon>bar_chart</mat-icon>
-                {{ area.difficulty }}
-              </span>
-            </div>
-          </div>
-          
-          <!-- ✅ AÇÕES SEMPRE NO FINAL -->
-          <div class="new-area-actions">
-            <button 
-              mat-raised-button 
-              color="primary"
-              (click)="startQuizForArea(area.name)"
-            >
-              <mat-icon>play_arrow</mat-icon>
-              Começar
-            </button>
-          </div>
+        <div class="recommendation-card streak-card">
+          <mat-icon class="rec-icon">local_fire_department</mat-icon>
+          <h3>Sua Sequência</h3>
+          <p *ngIf="progressData.overallStats.streak > 0">
+            🔥 Você está há <strong>{{ progressData.overallStats.streak }} dia(s)</strong> estudando consecutivamente!
+          </p>
+          <p *ngIf="progressData.overallStats.streak === 0">
+            Estude hoje para iniciar sua sequência de dias!
+          </p>
+          <button mat-stroked-button (click)="startQuizForArea(getNextAreaToStudy())">
+            {{ progressData.overallStats.streak === 0 ? 'Estudar Agora' : 'Continuar Hoje' }}
+          </button>
         </div>
       </div>
     </section>

@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProgressService } from 'src/app/core/services/progress.service';
 import { DataService } from 'src/app/core/services/data.service';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { QuizHistoryService, QuizStats, QuizResult } from 'src/app/core/services/quiz-history.service';
 
 interface AreaProgress {
   name: string;
@@ -56,6 +58,7 @@ export class ProgressComponent implements OnInit {
   isLoading: boolean = true;
   hasError: boolean = false;
   errorMessage: string = '';
+  private firestoreStats: QuizStats | null = null;
   
   sortBy: 'progress' | 'accuracy' | 'name' = 'progress';
   filterBy: 'all' | 'completed' | 'inProgress' | 'notStarted' = 'all';
@@ -65,16 +68,29 @@ export class ProgressComponent implements OnInit {
     private titleService: Title,
     private snackBar: MatSnackBar,
     private progressService: ProgressService,
-    private dataService: DataService
+    private dataService: DataService,
+    private authService: AuthService,
+    private quizHistoryService: QuizHistoryService
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Meu Progresso - Sowlfy');
     this.isLoading = true;
+
+    const user = this.authService.currentUserValue;
+
+    // Carregar stats reais do Firestore em paralelo com o index.json
+    const statsPromise = user?.id
+      ? this.quizHistoryService.calculateStats(user.id)
+      : Promise.resolve(null);
+
+    statsPromise.then(stats => {
+      this.firestoreStats = stats;
+    });
     
     this.dataService.getIndex().subscribe({
       next: (indexJson: any) => {
-        this.loadProgressData(indexJson);
+        statsPromise.then(() => this.loadProgressData(indexJson));
       },
       error: (error) => {
         this.hasError = true;
@@ -145,19 +161,23 @@ export class ProgressComponent implements OnInit {
       }
 
       const areasProgress: AreaProgress[] = courses.map(c => {
-        const areaStats = this.progressService.getAreaStats(c.id);
+        const fsArea = this.firestoreStats?.byArea?.[c.id];
         const questionCount = byArea[c.id] || c.totalQuestoes || 0;
+        const completed   = fsArea?.totalQuestions ?? 0;
+        const accuracy    = fsArea ? Math.round(fsArea.averageScore) : 0;
+        const quizzesDone = fsArea?.quizzesTaken ?? 0;
+        const lastAct     = fsArea?.lastAttempt
+          ? new Date(fsArea.lastAttempt).toLocaleDateString('pt-BR')
+          : 'Nunca';
         return {
           name: c.id,
           displayName: c.displayName || c.nome,
-          progress: questionCount ? Math.min(100, Math.round((areaStats.completed / questionCount) * 100)) : 0,
+          progress: questionCount ? Math.min(100, Math.round((completed / questionCount) * 100)) : 0,
           questionCount,
-          completed: areaStats.completed,
-          accuracy: areaStats.accuracy,
-          timeSpent: this.formatTime(areaStats.totalTime),
-          lastActivity: areaStats.lastActivity
-            ? new Date(areaStats.lastActivity).toLocaleDateString('pt-BR')
-            : 'Nunca',
+          completed,
+          accuracy,
+          timeSpent: quizzesDone > 0 ? `${quizzesDone} quiz${quizzesDone > 1 ? 'zes' : ''}` : '—',
+          lastActivity: lastAct,
           icon: c.icon || this.getAreaIcon(c.id),
           difficulty: this.getAreaDifficulty(c.id),
           description: c.descricao || ''
@@ -169,12 +189,12 @@ export class ProgressComponent implements OnInit {
       this.progressData = {
         totalQuestions,
         areasProgress,
-        lastAccess: lastActivity || new Date().toISOString(),
+        lastAccess: this.firestoreStats?.recentActivity?.[0]?.completedAt?.toISOString?.() || new Date().toISOString(),
         overallStats: {
-          totalCompleted: stats.totalCompleted,
-          averageAccuracy: stats.accuracy,
-          totalTimeSpent: this.formatTime(stats.totalTime),
-          streak: stats.streak
+          totalCompleted: this.firestoreStats?.totalQuestions ?? 0,
+          averageAccuracy: this.firestoreStats?.averageScore ?? 0,
+          totalTimeSpent: this.formatTotalTime(this.firestoreStats?.totalTimeSpent ?? 0),
+          streak: this.calculateStreak(this.firestoreStats?.recentActivity ?? [])
         }
       };
 
@@ -223,6 +243,40 @@ export class ProgressComponent implements OnInit {
 
   navigateToDashboard(): void {
     this.router.navigate(['/dashboard']);
+  }
+
+  isPremium(): boolean {
+    return this.authService.isPremium();
+  }
+
+  private formatTotalTime(minutes: number): string {
+    if (!minutes || minutes <= 0) return '0min';
+    if (minutes < 60) return `${minutes}min`;
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    return m > 0 ? `${h}h ${m}min` : `${h}h`;
+  }
+
+  private calculateStreak(activity: QuizResult[]): number {
+    if (!activity.length) return 0;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const dates = new Set(
+      activity.map(q => {
+        const d = new Date(q.completedAt);
+        d.setHours(0, 0, 0, 0);
+        return d.getTime();
+      })
+    );
+    let checkDate = today.getTime();
+    // Permite começar a contar de hoje ou ontem (caso não estudou hoje ainda)
+    if (!dates.has(checkDate)) checkDate -= 86400000;
+    let streak = 0;
+    while (dates.has(checkDate)) {
+      streak++;
+      checkDate -= 86400000;
+    }
+    return streak;
   }
 
   navigateToUpgrade(): void {
@@ -298,43 +352,27 @@ export class ProgressComponent implements OnInit {
   }
 
   private getAreaIcon(areaName: string): string {
-    // ✅ Agora pega do index.json se disponível, senão usa fallback
-    const areaData = this.indexData?.areas?.[areaName];
-    if (areaData?.icon) {
-      return areaData.icon;
-    }
-    
-    // ✅ Fallbacks atualizados
+    // Lê icon do cursos[] do index.json
+    const curso = this.indexData?.cursos?.find((c: any) => c.id === areaName);
+    if (curso?.icon) return curso.icon;
+
     const icons: { [key: string]: string } = {
-      'desenvolvimento-web': '💻',
-      'metodologias': '⚙️',
-      'design': '🎨',
-      'seguranca': '🔒',
-      'entrevista': '💼',
-      'portugues': '📚',
+      'analise-desenvolvimento-sistemas': '💻',
+      'informatica-geral': '💾',
       'matematica': '🔢',
-      'informatica': '💾'
+      'portugues': '📚',
+      'simulados': '📝'
     };
     return icons[areaName] || '📖';
   }
 
   private getAreaDifficulty(areaName: string): string {
-    // ✅ Agora pega do index.json se disponível, senão usa fallback
-    const areaData = this.indexData?.areas?.[areaName];
-    if (areaData?.difficulty) {
-      return areaData.difficulty;
-    }
-    
-    // ✅ Fallbacks atualizados
     const difficulties: { [key: string]: string } = {
-      'desenvolvimento-web': 'Alto',
-      'metodologias': 'Médio',
-      'design': 'Médio',
-      'seguranca': 'Alto',
-      'entrevista': 'Alto',
-      'portugues': 'Médio',
+      'analise-desenvolvimento-sistemas': 'Alto',
+      'informatica-geral': 'Médio',
       'matematica': 'Alto',
-      'informatica': 'Médio'
+      'portugues': 'Médio',
+      'simulados': 'Provas Reais'
     };
     return difficulties[areaName] || 'Médio';
   }
@@ -395,7 +433,7 @@ export class ProgressComponent implements OnInit {
 
   getInProgressAreasCount(): number {
     return this.progressData.areasProgress.filter(
-      area => area.progress > 0 && area.progress < 100
+      area => area.completed > 0 && area.name !== 'simulados'
     ).length;
   }
 
@@ -472,31 +510,10 @@ export class ProgressComponent implements OnInit {
 
   // ✅ MÉTODO PARA ÁREAS DISPONÍVEIS PARA COMEÇAR
   getAvailableAreasToStart(): AreaProgress[] {
-    if (!this.indexData?.areas) return [];
-    
-    const startedAreas = this.progressData.areasProgress.map(a => a.name);
-    const allAreas = Object.keys(this.indexData.areas);
-    
-    return allAreas
-      .filter(areaName => !startedAreas.includes(areaName))
-      .map(areaName => {
-        const areaData = this.indexData.areas[areaName];
-        const questionCount = this.indexData.stats?.byArea?.[areaName] || 0;
-        
-        return {
-          name: areaName,
-          displayName: areaData.displayName || this.formatDisplayName(areaName),
-          description: areaData.description || 'Área de estudo disponível',
-          icon: areaData.icon || this.getAreaIcon(areaName),
-          difficulty: areaData.difficulty || 'Médio',
-          questionCount,
-          progress: 0,
-          completed: 0,
-          accuracy: 0,
-          timeSpent: '0s',
-          lastActivity: 'Nunca'
-        };
-      });
+    if (!this.indexData?.cursos?.length) return [];
+
+    // Retorna áreas onde o usuário ainda não fez nenhum quiz (completed === 0)
+    return this.progressData.areasProgress.filter(a => a.completed === 0);
   }
 
   // ✅ MÉTODO PARA FORMATAR DATA DE ÚLTIMO ACESSO

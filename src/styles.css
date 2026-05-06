@@ -22,6 +22,13 @@ html {
 }
 
 /* =============================================== */
+/* 🔒 FULLSCREEN — ocultar header durante simulado */
+/* =============================================== */
+body.simulado-fullscreen app-header {
+    display: none !important;
+}
+
+/* =============================================== */
 /* 🎮 GAMIFICAÇÃO - NOTIFICAÇÕES */
 /* =============================================== */
 .level-up-snackbar {

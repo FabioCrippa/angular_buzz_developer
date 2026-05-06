@@ -77,16 +77,6 @@
           <div class="area-info">
             <h1 class="area-title">{{ areaData.displayName }}</h1>
             <p class="area-description">{{ areaData.description }}</p>
-            <div class="area-meta">
-              <span class="meta-item">
-                <span class="meta-icon">❓</span>
-                <span class="stat-value">{{ areaData.totalQuestions }} questões disponíveis</span>
-              </span>
-              <span class="meta-item">
-                <span class="meta-icon">📚</span>
-                {{ areaData.subjects.length }} assuntos
-              </span>
-            </div>
           </div>
         </div>
         <div class="header-actions">
@@ -207,29 +197,11 @@
             <span class="progress-sublabel">total investido</span>
           </div>
         </div>
-
-        <div class="progress-card level-card">
-          <div class="progress-icon">🏆</div>
-          <div class="progress-content">
-            <span class="progress-number">{{ getProgressPercentage() }}%</span>
-            <span class="progress-label">Completude</span>
-            <span class="progress-sublabel">da área</span>
-          </div>
-        </div>
       </div>
 
       <!-- Estatísticas Qualitativas -->
       <div class="overall-progress">
         <div class="quality-stats-grid">
-          <!-- Taxa de Acerto Principal -->
-          <div class="main-accuracy-card">
-            <div class="accuracy-icon">🎯</div>
-            <div class="accuracy-content">
-              <span class="accuracy-value">{{ areaData.userProgress.accuracy }}%</span>
-              <span class="accuracy-label">de acerto na área</span>
-            </div>
-          </div>
-
           <!-- Matérias Info -->
           <div class="subjects-info-grid">
             <div class="info-item">
@@ -548,8 +520,9 @@
           <button class="btn btn-outline">Iniciar</button>
         </div>
 
-        <div class="quick-action-card" (click)="startWrongQuestionsQuiz()" 
-             [class.disabled]="getWrongQuestions().length === 0">
+        <div class="quick-action-card"
+             [class.disabled]="getWrongQuestions().length === 0"
+             (click)="getWrongQuestions().length > 0 && startWrongQuestionsQuiz()">
           <span class="action-icon" [style.color]="getWrongQuestions().length > 0 ? areaData.color : '#ccc'">
             🔄
           </span>
