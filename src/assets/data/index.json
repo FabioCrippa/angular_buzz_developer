@@ -448,6 +448,18 @@
               "nome": "LP — Caderno 9º Ano Volume 1 · Parte 2",
               "descricao": "Questões de Língua Portuguesa do caderno de exercícios do 9º Ano, Volume 1 Parte 2",
               "arquivo": "lp-caderno-9ano-vol1-p2.json"
+            },
+            {
+              "id": "lp-caderno-9ano-vol2-p1",
+              "nome": "LP — Caderno 9º Ano Volume 2 · Parte 1",
+              "descricao": "Língua Portuguesa — Aulas 1, 2, 4, 12, 15",
+              "arquivo": "lp-caderno-9ano-vol2-p1.json"
+            },
+            {
+              "id": "lp-caderno-9ano-vol2-p2",
+              "nome": "LP — Caderno 9º Ano Volume 2 · Parte 2",
+              "descricao": "Língua Portuguesa — Aulas 17–27",
+              "arquivo": "lp-caderno-9ano-vol2-p2.json"
             }
           ]
         },
@@ -474,6 +486,24 @@
               "nome": "MAT — Caderno 9º Ano Volume 1 · Parte 3",
               "descricao": "Questões de Matemática do caderno de exercícios do 9º Ano, Volume 1 Parte 3",
               "arquivo": "mat-caderno-9ano-vol1-p3.json"
+            },
+            {
+              "id": "mat-caderno-9ano-vol2-p1",
+              "nome": "MAT — Caderno 9º Ano Volume 2 · Parte 1",
+              "descricao": "Semelhança de triângulos e Teorema de Pitágoras",
+              "arquivo": "mat-caderno-9ano-vol2-p1.json"
+            },
+            {
+              "id": "mat-caderno-9ano-vol2-p2",
+              "nome": "MAT — Caderno 9º Ano Volume 2 · Parte 2",
+              "descricao": "Números irracionais e dízimas periódicas",
+              "arquivo": "mat-caderno-9ano-vol2-p2.json"
+            },
+            {
+              "id": "mat-caderno-9ano-vol2-p3",
+              "nome": "MAT — Caderno 9º Ano Volume 2 · Parte 3",
+              "descricao": "Números reais, notação científica e expressões",
+              "arquivo": "mat-caderno-9ano-vol2-p3.json"
             }
           ]
         }

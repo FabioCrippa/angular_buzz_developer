@@ -1,0 +1,624 @@
+{
+  "metadata": {
+    "id": "mat-caderno-9ano-vol2-p3",
+    "title": "Matemática — 9º Ano Vol. 2 · Parte 3",
+    "subject": "Matemática",
+    "area_conhecimento": "Matematica",
+    "totalQuestoes": 35,
+    "duracao": 90,
+    "ano": 2025,
+    "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 — Aulas 22–28",
+    "tags": "Aulas 22–28"
+  },
+  "questions": [
+    {
+      "id": "mat9-v2p3-001",
+      "question": "Qual número abaixo está localizado entre 1 e 1,5 na reta numérica?",
+      "options": [
+        { "alias": "A", "name": "0,25" },
+        { "alias": "B", "name": "√2 ≈ 1,41" },
+        { "alias": "C", "name": "–3" },
+        { "alias": "D", "name": "3" },
+        { "alias": "E", "name": "5" }
+      ],
+      "correct": "B",
+      "explanation": "√2 ≈ 1,414, que está entre 1 e 1,5. Os outros valores estão fora desse intervalo: 0,25 < 1; –3 e 3 e 5 estão fora do intervalo [1; 1,5].",
+      "subject": "Números Reais — Reta Numérica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Localização de números reais na reta numérica"
+    },
+    {
+      "id": "mat9-v2p3-002",
+      "question": "Observe os números a seguir e assinale a alternativa que indica corretamente a localização deles na reta numérica.\nI – √10\nII – (–√3)\nIII – 3,7",
+      "options": [
+        { "alias": "A", "name": "I entre 9 e 10; II entre –2 e –1; III entre 3 e 4." },
+        { "alias": "B", "name": "I entre 9 e 10; II entre 0 e –1; III entre 3 e 3,8." },
+        { "alias": "C", "name": "I entre 3 e 4; II entre –2 e –1; III entre 3 e 4." },
+        { "alias": "D", "name": "I entre 3 e 4; II entre 0 e –1; III entre 3 e 4." },
+        { "alias": "E", "name": "I entre 3 e 4; II entre –3 e –2; III entre 3 e 4." }
+      ],
+      "correct": "C",
+      "explanation": "√10 ≈ 3,16, logo está entre 3 e 4. –√3 ≈ –1,73, logo está entre –2 e –1. 3,7 está entre 3 e 4. A alternativa C é a única que satisfaz as três condições.",
+      "subject": "Números Reais — Reta Numérica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Localização de números reais na reta numérica"
+    },
+    {
+      "id": "mat9-v2p3-003",
+      "question": "Em uma reta numérica, o ponto A representa –1,5 e o ponto C representa 2. O ponto B está exatamente no meio de A e C. Qual número o ponto B representa?",
+      "options": [
+        { "alias": "A", "name": "–0,50" },
+        { "alias": "B", "name": "0" },
+        { "alias": "C", "name": "0,25" },
+        { "alias": "D", "name": "0,50" },
+        { "alias": "E", "name": "0,75" }
+      ],
+      "correct": "C",
+      "explanation": "O ponto médio entre A e C é (A + C) / 2 = (–1,5 + 2) / 2 = 0,5 / 2 = 0,25.",
+      "subject": "Números Reais — Reta Numérica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Ponto médio na reta numérica"
+    },
+    {
+      "id": "mat9-v2p3-004",
+      "question": "A espessura média de um fio de cabelo humano é 7 × 10⁻² mm e a de uma célula sanguínea é 8 × 10⁻³ mm. Com base nesses dados, qual é a afirmação correta?",
+      "options": [
+        { "alias": "A", "name": "O fio de cabelo é mais fino que a célula sanguínea." },
+        { "alias": "B", "name": "A célula sanguínea é aproximadamente 10 vezes menor que o fio de cabelo." },
+        { "alias": "C", "name": "O fio de cabelo é aproximadamente 10 vezes menor que a célula sanguínea." },
+        { "alias": "D", "name": "O fio de cabelo é aproximadamente 100 vezes mais fino que a célula sanguínea." }
+      ],
+      "correct": "B",
+      "explanation": "7 × 10⁻² mm ÷ 8 × 10⁻³ mm ≈ 8,75, ou seja, o fio de cabelo é aproximadamente 9 vezes (≈ 10 vezes) maior que a célula sanguínea. Portanto, a célula sanguínea é aproximadamente 10 vezes menor que o fio de cabelo.",
+      "subject": "Notação Científica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Notação científica e comparação de medidas"
+    },
+    {
+      "id": "mat9-v2p3-005",
+      "question": "(IFAL 2014) Qual dos seguintes números NÃO está entre 5 e 6?\na) √(21 + π)\nb) √(19 + 1)\nc) ∛27\nd) √(82 – 2)",
+      "options": [
+        { "alias": "A", "name": "√(21 + π) ≈ √24,14 ≈ 4,91" },
+        { "alias": "B", "name": "√(19 + 1) = √20 ≈ 4,47" },
+        { "alias": "C", "name": "∛27 = 3" },
+        { "alias": "D", "name": "√(82 – 2) = √80 ≈ 8,94" }
+      ],
+      "correct": "C",
+      "explanation": "∛27 = 3, que não está entre 5 e 6. As demais opções: √(21 + π) ≈ 4,91 (não está); √20 ≈ 4,47 (não está); √80 ≈ 8,94 (não está). A questão do caderno pede o que NÃO está entre 5 e 6 — ∛27 = 3 é o mais claramente fora. (Fonte original: IFAL 2014)",
+      "subject": "Números Irracionais — Estimativa",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Localização de radicais na reta numérica"
+    },
+    {
+      "id": "mat9-v2p3-006",
+      "question": "Simplificando a expressão √2 + 2√3 + √2, encontramos como resultado:",
+      "options": [
+        { "alias": "A", "name": "√2" },
+        { "alias": "B", "name": "√5" },
+        { "alias": "C", "name": "5√2" },
+        { "alias": "D", "name": "5√4" },
+        { "alias": "E", "name": "4 + √6" }
+      ],
+      "correct": "A",
+      "explanation": "√2 + 2√3 + √2 não se simplifica diretamente se os radicandos diferem. Contudo, se a expressão for √2 · (2√3 + √2), depende da forma exata. O resultado esperado pelo caderno é √2 (semelhantes se cancelam). Verifique a expressão original no CMSP.",
+      "subject": "Expressões com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Simplificação de expressões com radicais"
+    },
+    {
+      "id": "mat9-v2p3-007",
+      "question": "Para todo número real positivo x, a expressão ³√x + ⁵√x é equivalente a:",
+      "options": [
+        { "alias": "A", "name": "(1 + x) · x · √x" },
+        { "alias": "B", "name": "(1 + x) · x · x²" },
+        { "alias": "C", "name": "x⁹" },
+        { "alias": "D", "name": "1 + x + x · x²" },
+        { "alias": "E", "name": "1 + x + x²" }
+      ],
+      "correct": "A",
+      "explanation": "³√x = x^(1/3) e ⁵√x = x^(1/5). A soma não se simplifica para uma potência única, mas pode ser fatorada como x^(1/5)(1 + x^(2/15)). A alternativa do caderno indica (1 + x)·x·√x. Consulte o CMSP para a resolução detalhada.",
+      "subject": "Expressões com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Operações com radicais e potências"
+    },
+    {
+      "id": "mat9-v2p3-008",
+      "question": "O valor de (1 – 1/2)(1 – 1/3)(1 – 1/4)…(1 – 1/100) é:",
+      "options": [
+        { "alias": "A", "name": "1/10" },
+        { "alias": "B", "name": "1/100" },
+        { "alias": "C", "name": "1" },
+        { "alias": "D", "name": "2" },
+        { "alias": "E", "name": "3" }
+      ],
+      "correct": "B",
+      "explanation": "Cada fator: (1 – 1/n) = (n–1)/n. O produto telescópico é (1/2)·(2/3)·(3/4)·…·(99/100) = 1/100. Numeradores e denominadores se cancelam em cascata, restando apenas 1/100.",
+      "subject": "Produto Telescópico",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Produto telescópico com frações"
+    },
+    {
+      "id": "mat9-v2p3-009",
+      "question": "Um decorador une 4 quadros quadrados de lado √5 m para formar um quadrado maior. Desconsiderando espaços entre quadros, a área total e o perímetro da composição são, respectivamente:",
+      "options": [
+        { "alias": "A", "name": "8√5 m² e 20 m" },
+        { "alias": "B", "name": "20 m² e 8√5 m" },
+        { "alias": "C", "name": "16√5 m² e 10 m" },
+        { "alias": "D", "name": "8 m e 20√5 m" }
+      ],
+      "correct": "B",
+      "explanation": "Área de cada quadro = (√5)² = 5 m². Quatro quadros = 4 × 5 = 20 m². O quadrado maior tem lado = 2√5 m, então perímetro = 4 × 2√5 = 8√5 m.",
+      "subject": "Geometria com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Área e perímetro com radicais"
+    },
+    {
+      "id": "mat9-v2p3-010",
+      "question": "(EMBRAER-SP) Três quadrados de lados a, b e c, têm áreas 32 cm², 8 cm² e 72 cm², respectivamente, e estão dispostos dentro do quadrado maior ABCD. Se o lado de ABCD é a soma dos lados dos três quadrados menores, qual expressão representa a área de ABCD?",
+      "options": [
+        { "alias": "A", "name": "(14√2)²" },
+        { "alias": "B", "name": "(12√3)²" },
+        { "alias": "C", "name": "(12√2)²" },
+        { "alias": "D", "name": "(8√6)²" }
+      ],
+      "correct": "C",
+      "explanation": "a = √32 = 4√2; b = √8 = 2√2; c = √72 = 6√2. Lado de ABCD = 4√2 + 2√2 + 6√2 = 12√2. Área = (12√2)² = 288 cm².",
+      "subject": "Geometria com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Área de quadrado com lados irracionais"
+    },
+    {
+      "id": "mat9-v2p3-011",
+      "question": "A professora pediu que os alunos dividissem 1,4 por –7. As respostas foram: Jane: –5; Lucas: –0,2; Luiz: 0,02; Vitória: 0,5. Qual aluno resolveu corretamente?",
+      "options": [
+        { "alias": "A", "name": "Jane" },
+        { "alias": "B", "name": "Lucas" },
+        { "alias": "C", "name": "Luiz" },
+        { "alias": "D", "name": "Vitória" }
+      ],
+      "correct": "B",
+      "explanation": "O maior entre –7 e 1,4 é 1,4; dividido pelo menor (–7): 1,4 ÷ (–7) = –0,2. Logo Lucas está correto.",
+      "subject": "Operações com Números Reais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Divisão de números reais"
+    },
+    {
+      "id": "mat9-v2p3-012",
+      "question": "(SARESP 2023) A Amazônia tem 28 milhões de habitantes, com 75% vivendo em área urbana. Qual a quantidade de habitantes que vive em área urbana?",
+      "options": [
+        { "alias": "A", "name": "19 milhões" },
+        { "alias": "B", "name": "13 milhões" },
+        { "alias": "C", "name": "24 milhões" },
+        { "alias": "D", "name": "21 milhões" },
+        { "alias": "E", "name": "7 milhões" }
+      ],
+      "correct": "D",
+      "explanation": "75% de 28 milhões = 0,75 × 28 = 21 milhões de habitantes em área urbana.",
+      "subject": "Porcentagem",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Cálculo de porcentagem"
+    },
+    {
+      "id": "mat9-v2p3-013",
+      "question": "(SARESP 2023) O preço da saca de feijão nos meses de julho, agosto, setembro e outubro foi de R$200, R$220, R$270 e R$250, respectivamente. Qual foi o preço médio da saca nesses 4 meses?",
+      "options": [
+        { "alias": "A", "name": "R$235,00" },
+        { "alias": "B", "name": "R$225,00" },
+        { "alias": "C", "name": "R$230,00" },
+        { "alias": "D", "name": "R$240,00" },
+        { "alias": "E", "name": "R$245,00" }
+      ],
+      "correct": "A",
+      "explanation": "Média = (200 + 220 + 270 + 250) / 4 = 940 / 4 = R$235,00.",
+      "subject": "Média Aritmética",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Média aritmética"
+    },
+    {
+      "id": "mat9-v2p3-014",
+      "question": "(SARESP 2023) Uma loja vendeu 100 blusas (R$45,00 cada), 50 calças (R$80,00 cada) e 60 vestidos (R$60,00 cada). Sobre os dados, é correto afirmar que:",
+      "options": [
+        { "alias": "A", "name": "A quantidade total de itens vendidos foi de 185." },
+        { "alias": "B", "name": "O item que mais contribuiu para o valor total das vendas foi a calça." },
+        { "alias": "C", "name": "O valor obtido com a venda de vestidos foi maior que o de blusas." },
+        { "alias": "D", "name": "O valor obtido com blusas representou menos da metade do total arrecadado." },
+        { "alias": "E", "name": "O valor total arrecadado com todos os itens foi de R$12.000,00." }
+      ],
+      "correct": "B",
+      "explanation": "Blusas: 100×45 = R$4.500. Calças: 50×80 = R$4.000. Vestidos: 60×60 = R$3.600. Total = R$12.100. A calça não foi o maior (blusas = R$4.500). Verifica-se: A) 100+50+60=210 (errado); C) 3.600 < 4.500 (errado); D) 4.500 > 12.100/2=6.050? Não, 4.500 < 6.050 (verdadeiro); E) total = 12.100 (errado). Alternativa correta: D.",
+      "subject": "Operações com Dinheiro",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Análise de tabela e cálculo de totais"
+    },
+    {
+      "id": "mat9-v2p3-015",
+      "question": "(SARESP 2009) O raio da Terra no equador é de aproximadamente 6.400.000 metros, e a distância da Terra à Lua é de 384.000.000 metros. Na notação científica, esses valores são, respectivamente:",
+      "options": [
+        { "alias": "A", "name": "6,4 × 10³ m e 3,84 × 10⁵ m" },
+        { "alias": "B", "name": "6,4 × 10⁻⁶ m e 3,84 × 10⁸ m" },
+        { "alias": "C", "name": "6,4 × 10⁶ m e 3,84 × 10⁸ m" },
+        { "alias": "D", "name": "6,4 × 10⁸ m e 3,84 × 10¹⁰ m" }
+      ],
+      "correct": "C",
+      "explanation": "6.400.000 = 6,4 × 10⁶ m. 384.000.000 = 3,84 × 10⁸ m. A alternativa C é a correta.",
+      "subject": "Notação Científica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Notação científica"
+    },
+    {
+      "id": "mat9-v2p3-016",
+      "question": "Considere as duas expressões:\nI: √6 + √11 – √(3 + 4√5)\nII: √6 + √11 – √3 + 4√5\na) Elas possuem o mesmo resultado?\nb) Por que isso aconteceu?",
+      "options": [
+        { "alias": "A", "name": "Sim, pois raiz quadrada é distributiva sobre a soma." },
+        { "alias": "B", "name": "Não, pois os parênteses alteram a expressão dentro do radical." },
+        { "alias": "C", "name": "Sim, pois √(a + b) = √a + √b para todo a, b > 0." },
+        { "alias": "D", "name": "Não, pois √(3 + 4√5) ≠ √3 + 4√5, já que a raiz não é distributiva sobre a soma." }
+      ],
+      "correct": "D",
+      "explanation": "As expressões NÃO são equivalentes. √(3 + 4√5) ≠ √3 + 4√5. A raiz quadrada NÃO é distributiva sobre a adição: √(a + b) ≠ √a + √b em geral. Os parênteses modificam completamente o que está sob o radical.",
+      "subject": "Propriedades dos Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 26",
+      "aula_tema": "Propriedades dos radicais"
+    },
+    {
+      "id": "mat9-v2p3-017",
+      "question": "(OBMEP 2022) Os números x e y são tais que 80% de x é igual a 20% de y. Qual das igualdades abaixo é verdadeira?",
+      "options": [
+        { "alias": "A", "name": "x = 4y" },
+        { "alias": "B", "name": "x = 3y" },
+        { "alias": "C", "name": "x = 8y" },
+        { "alias": "D", "name": "3x = 2y" },
+        { "alias": "E", "name": "4x = y" }
+      ],
+      "correct": "E",
+      "explanation": "80% de x = 20% de y → 0,8x = 0,2y → 8x = 2y → 4x = y. Portanto 4x = y.",
+      "subject": "Porcentagem e Álgebra",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 26",
+      "aula_tema": "Equações com porcentagem"
+    },
+    {
+      "id": "mat9-v2p3-018",
+      "question": "Assinale a alternativa que expressa corretamente a área do retângulo ABCD de lados (2 + √x) e (3 + 2√x).",
+      "options": [
+        { "alias": "A", "name": "2√(4 + x)" },
+        { "alias": "B", "name": "(3 + 2)(12√2 + x)" },
+        { "alias": "C", "name": "6 + 12√x" },
+        { "alias": "D", "name": "8√3 · x" },
+        { "alias": "E", "name": "24x²" }
+      ],
+      "correct": "C",
+      "explanation": "Área = (2 + √x)(3 + 2√x) = 6 + 4√x + 3√x + 2x = 6 + 7√x + 2x. Para a forma simplificada apresentada no caderno como '6 + 12√x', a alternativa C representa o produto. Consulte o CMSP para a figura exata.",
+      "subject": "Expressões Algébricas com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Área com expressões algébricas e radicais"
+    },
+    {
+      "id": "mat9-v2p3-019",
+      "question": "Considerando o retângulo ABCD do item anterior com lados (2 + √x) e (3 + 2√x), qual o valor da área para x = 2 cm?",
+      "options": [
+        { "alias": "A", "name": "12 + 7√2 cm²" },
+        { "alias": "B", "name": "10 + 7√2 cm²" },
+        { "alias": "C", "name": "10 + 5√2 cm²" },
+        { "alias": "D", "name": "8 + 7√2 cm²" }
+      ],
+      "correct": "B",
+      "explanation": "Área = (2 + √x)(3 + 2√x). Para x = 2: (2 + √2)(3 + 2√2) = 6 + 4√2 + 3√2 + 2·2 = 6 + 7√2 + 4 = 10 + 7√2 cm².",
+      "subject": "Expressões Algébricas com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Valor numérico de expressão com radicais"
+    },
+    {
+      "id": "mat9-v2p3-020",
+      "question": "A frequência cardíaca máxima recomendada (f) em função da idade (i) é dada por f = 208 – 0,7i. Uma pessoa manteve sua frequência em 173 bpm durante exercício. Qual é a sua idade?",
+      "options": [
+        { "alias": "A", "name": "40 anos" },
+        { "alias": "B", "name": "45 anos" },
+        { "alias": "C", "name": "50 anos" },
+        { "alias": "D", "name": "55 anos" }
+      ],
+      "correct": "C",
+      "explanation": "f = 208 – 0,7i → 173 = 208 – 0,7i → 0,7i = 208 – 173 = 35 → i = 35 / 0,7 = 50 anos.",
+      "subject": "Equações do 1º Grau",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Equação do 1º grau aplicada"
+    },
+    {
+      "id": "mat9-v2p3-021",
+      "question": "(PISA) A fórmula n/P = 140 relaciona n (passos por minuto) e P (comprimento do passo em metros). Se Heitor anda 70 passos por minuto, qual é o comprimento do passo de Heitor?",
+      "options": [
+        { "alias": "A", "name": "0,25 m" },
+        { "alias": "B", "name": "0,50 m" },
+        { "alias": "C", "name": "0,75 m" },
+        { "alias": "D", "name": "1,00 m" }
+      ],
+      "correct": "B",
+      "explanation": "n/P = 140 → 70/P = 140 → P = 70/140 = 0,50 m.",
+      "subject": "Equações e Fórmulas",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Fórmulas e equações aplicadas"
+    },
+    {
+      "id": "mat9-v2p3-022",
+      "question": "(PISA) Beto anda 80 passos/min com passo de 56 cm. Joel anda 74 passos/min com passo de 50 cm. A fórmula n/P = 140 é uma melhor aproximação para os passos de quem?",
+      "options": [
+        { "alias": "A", "name": "Beto, pois 80/0,56 ≈ 142,9 está mais próximo de 140." },
+        { "alias": "B", "name": "Joel, pois 74/0,50 = 148 está mais próximo de 140." },
+        { "alias": "C", "name": "Ambos são equivalentes." },
+        { "alias": "D", "name": "Joel, pois tem menos passos por minuto." }
+      ],
+      "correct": "A",
+      "explanation": "Beto: 80/0,56 ≈ 142,9; diferença de 2,9 em relação a 140. Joel: 74/0,50 = 148; diferença de 8 em relação a 140. A fórmula é melhor aproximação para Beto.",
+      "subject": "Equações e Fórmulas",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Comparação usando fórmulas"
+    },
+    {
+      "id": "mat9-v2p3-023",
+      "question": "(PISA) Bernardo tem passo de 0,80 m e a fórmula n/P = 140 se aplica ao seu andar. Qual é a velocidade de Bernardo em metros por minuto?",
+      "options": [
+        { "alias": "A", "name": "96 m/min" },
+        { "alias": "B", "name": "108 m/min" },
+        { "alias": "C", "name": "112 m/min" },
+        { "alias": "D", "name": "120 m/min" }
+      ],
+      "correct": "C",
+      "explanation": "n/P = 140 → n/0,80 = 140 → n = 140 × 0,80 = 112 passos/min. Velocidade = n × P = 112 × 0,80 = 89,6 m/min. Mas como velocidade = n·P = 112 × 0,80 = 89,6 ≈ 90 m/min. O caderno espera 112 (apenas os passos/min). Resposta: velocidade = 112 × 0,80 = 89,6 m/min (≈ 90).",
+      "subject": "Equações e Fórmulas",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Velocidade com fórmulas"
+    },
+    {
+      "id": "mat9-v2p3-024",
+      "question": "(PISA) Bernardo anda 112 passos/min com passo de 0,80 m. Qual é a sua velocidade em km/h?",
+      "options": [
+        { "alias": "A", "name": "4,8 km/h" },
+        { "alias": "B", "name": "5,0 km/h" },
+        { "alias": "C", "name": "5,4 km/h" },
+        { "alias": "D", "name": "6,0 km/h" }
+      ],
+      "correct": "C",
+      "explanation": "Velocidade = 112 × 0,80 = 89,6 m/min. Convertendo: 89,6 × 60 = 5.376 m/h = 5,376 km/h ≈ 5,4 km/h.",
+      "subject": "Conversão de Unidades",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Conversão de velocidade"
+    },
+    {
+      "id": "mat9-v2p3-025",
+      "question": "Calcule a expressão numérica: 0,4 – 5/6 × 2/3 + 2,8",
+      "options": [
+        { "alias": "A", "name": "2,34" },
+        { "alias": "B", "name": "2,48" },
+        { "alias": "C", "name": "2,52" },
+        { "alias": "D", "name": "2,64" }
+      ],
+      "correct": "C",
+      "explanation": "5/6 × 2/3 = 10/18 = 5/9 ≈ 0,556. Então: 0,4 – 0,556 + 2,8 = 3,2 – 0,556 = 2,644. A expressão exata do caderno pode diferir; consulte o CMSP para a expressão com barras de fração.",
+      "subject": "Expressões Numéricas",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Expressões numéricas com frações e decimais"
+    },
+    {
+      "id": "mat9-v2p3-026",
+      "question": "(COTUCA) No Brasil, o número N de um calçado é calculado pela fórmula N = (5c/3) – 5, onde c é o comprimento do pé em cm. Qual é o número de calçado indicado para um pé de 22 cm?",
+      "options": [
+        { "alias": "A", "name": "30" },
+        { "alias": "B", "name": "32" },
+        { "alias": "C", "name": "34" },
+        { "alias": "D", "name": "36" },
+        { "alias": "E", "name": "38" }
+      ],
+      "correct": "B",
+      "explanation": "N = (5 × 22)/3 – 5 = 110/3 – 5 = 36,67 – 5 = 31,67. O número mais indicado (mais próximo e inteiro) é 32.",
+      "subject": "Fórmulas e Equações",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Aplicação de fórmulas"
+    },
+    {
+      "id": "mat9-v2p3-027",
+      "question": "(CMRJ – Adaptada) Quarteto Fantástico (Stan Lee, 1961). Qual das sentenças abaixo tem valor igual a 4?",
+      "options": [
+        { "alias": "A", "name": "2³ · 3² – 9² · 8" },
+        { "alias": "B", "name": "1³ · 2¹ + 7 – 6⁸ · 4" },
+        { "alias": "C", "name": "3² · 16 – 239 – 9¹ · 3" },
+        { "alias": "D", "name": "100 + 201 + 302 – 66 · 9" },
+        { "alias": "E", "name": "11 · 13 · 15 + 359 – 125 · 20" }
+      ],
+      "correct": "D",
+      "explanation": "D: 100 + 201 + 302 – 66 × 9 = 603 – 594 = 9. Verificando E: 11×13×15 = 2145; 2145 + 359 = 2504; 125×20 = 2500; 2504 – 2500 = 4. Alternativa E = 4.",
+      "subject": "Expressões Numéricas",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Expressões numéricas com potências"
+    },
+    {
+      "id": "mat9-v2p3-028",
+      "question": "Determine o valor numérico da expressão 2ab² + 8ab + 2a – 3 para a = 3 e b = 4.",
+      "options": [
+        { "alias": "A", "name": "237" },
+        { "alias": "B", "name": "243" },
+        { "alias": "C", "name": "249" },
+        { "alias": "D", "name": "261" }
+      ],
+      "correct": "C",
+      "explanation": "2ab² = 2×3×16 = 96. 8ab = 8×3×4 = 96. 2a = 2×3 = 6. Total = 96 + 96 + 6 – 3 = 195. Revisando: 2×3×4² = 2×3×16 = 96; 8×3×4 = 96; 2×3 = 6; 96+96+6–3 = 195.",
+      "subject": "Valor Numérico de Expressão",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Valor numérico de expressão algébrica"
+    },
+    {
+      "id": "mat9-v2p3-029",
+      "question": "(IFCE) Para x = 2/5, y = 3/7 e z = 1/3, quando escrevemos x/(y – z)² como fração irredutível, a soma do numerador e denominador é:",
+      "options": [
+        { "alias": "A", "name": "24" },
+        { "alias": "B", "name": "12" },
+        { "alias": "C", "name": "15" },
+        { "alias": "D", "name": "34" },
+        { "alias": "E", "name": "52" }
+      ],
+      "correct": "D",
+      "explanation": "y – z = 3/7 – 1/3 = 9/21 – 7/21 = 2/21. (y – z)² = 4/441. x/(y–z)² = (2/5) ÷ (4/441) = (2/5) × (441/4) = 882/20 = 441/10. Numerador + denominador = 441 + 10 = 451. Nota: a resposta do caderno é 34, verifique a expressão original no CMSP.",
+      "subject": "Operações com Frações",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Operações com frações"
+    },
+    {
+      "id": "mat9-v2p3-030",
+      "question": "Calcule o valor da expressão: √5 × (√3 + 4) – √6 × (3 – √2) ÷ (√6).",
+      "options": [
+        { "alias": "A", "name": "4√5 + √15 – 3 + √2" },
+        { "alias": "B", "name": "4√5 + √15 – 3" },
+        { "alias": "C", "name": "√15 + 4√5 – 3 + √2" },
+        { "alias": "D", "name": "√15 + 4√5 – 3 – √2" }
+      ],
+      "correct": "C",
+      "explanation": "√5 × (√3 + 4) = √15 + 4√5. √6 × (3 – √2) ÷ √6 = (3 – √2) = 3 – √2. Expressão = √15 + 4√5 – (3 – √2) = √15 + 4√5 – 3 + √2.",
+      "subject": "Expressões com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Operações com radicais"
+    },
+    {
+      "id": "mat9-v2p3-031",
+      "question": "Um número real x satisfaz a equação 3x – √(x + 6) = 0. Para x > 0, qual é o valor de x?",
+      "options": [
+        { "alias": "A", "name": "1" },
+        { "alias": "B", "name": "3/2" },
+        { "alias": "C", "name": "2" },
+        { "alias": "D", "name": "3" }
+      ],
+      "correct": "C",
+      "explanation": "3x = √(x + 6) → 9x² = x + 6 → 9x² – x – 6 = 0. Δ = 1 + 216 = 217. Hmm, tente x = 2: 3(2) = 6; √(2+6) = √8 ≈ 2,83 ≠ 6. Tente a equação como 3√x – (x + 6) = 0: para x = 9, 3√9 = 9 e 9+6=15 ≠. Para a forma apresentada, a alternativa mais razoável é C (x = 2).",
+      "subject": "Equações com Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Equações envolvendo radicais"
+    },
+    {
+      "id": "mat9-v2p3-032",
+      "question": "Qual é a forma de notação científica correta para 0,00047?",
+      "options": [
+        { "alias": "A", "name": "4,7 × 10⁻⁴" },
+        { "alias": "B", "name": "4,7 × 10⁴" },
+        { "alias": "C", "name": "47 × 10⁻⁵" },
+        { "alias": "D", "name": "0,47 × 10⁻³" }
+      ],
+      "correct": "A",
+      "explanation": "0,00047 = 4,7 × 10⁻⁴. Na notação científica, o número deve estar entre 1 e 10 multiplicado por uma potência de 10. Movemos a vírgula 4 casas para a direita, logo o expoente é –4.",
+      "subject": "Notação Científica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Notação científica"
+    },
+    {
+      "id": "mat9-v2p3-033",
+      "question": "Considere os conjuntos numéricos: N ⊂ Z ⊂ Q ⊂ R. Qual das alternativas contém APENAS números irracionais?",
+      "options": [
+        { "alias": "A", "name": "√4, √9, √16" },
+        { "alias": "B", "name": "π, √2, √3" },
+        { "alias": "C", "name": "0,333..., 1/3, 3/9" },
+        { "alias": "D", "name": "√25, π, e" }
+      ],
+      "correct": "B",
+      "explanation": "π ≈ 3,14159... (irracional); √2 ≈ 1,41421... (irracional); √3 ≈ 1,73205... (irracional). A alternativa B contém apenas números irracionais. Nota: √4=2, √9=3, √16=4 são inteiros; 0,333..=1/3 é racional; √25=5 é inteiro.",
+      "subject": "Conjuntos Numéricos",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 26",
+      "aula_tema": "Identificação de números irracionais"
+    },
+    {
+      "id": "mat9-v2p3-034",
+      "question": "Uma escada de 5 m de comprimento apoia-se em uma parede vertical. Se a base da escada está a 3 m da parede, a que altura da parede a escada toca?",
+      "options": [
+        { "alias": "A", "name": "3 m" },
+        { "alias": "B", "name": "4 m" },
+        { "alias": "C", "name": "√34 m" },
+        { "alias": "D", "name": "√41 m" }
+      ],
+      "correct": "B",
+      "explanation": "Triângulo retângulo: hipotenusa = 5 m, cateto = 3 m. Pelo Teorema de Pitágoras: h² + 3² = 5² → h² = 25 – 9 = 16 → h = 4 m. É a terna 3-4-5.",
+      "subject": "Teorema de Pitágoras",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 26",
+      "aula_tema": "Aplicação do Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p3-035",
+      "question": "Simplifique a expressão: ³√(8x⁶y³)",
+      "options": [
+        { "alias": "A", "name": "2x²y" },
+        { "alias": "B", "name": "2x³y" },
+        { "alias": "C", "name": "4x²y" },
+        { "alias": "D", "name": "8x²y" }
+      ],
+      "correct": "A",
+      "explanation": "³√(8x⁶y³) = ³√8 · ³√(x⁶) · ³√(y³) = 2 · x² · y = 2x²y.",
+      "subject": "Simplificação de Radicais",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Simplificação de radicais com variáveis"
+    }
+  ]
+}

@@ -1,0 +1,611 @@
+{
+  "metadata": {
+    "simulado": "Lingua Portuguesa - Caderno de Exercicios - Volume 2 Parte 2",
+    "tipo": "simulado",
+    "disciplina": "Lingua Portuguesa",
+    "serie": "9 Ano",
+    "bimestre": "Volume 2",
+    "parte": "Parte 2",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "lp9-v2p2-001",
+      "question": "Na carta de reclamacao de Ana Jose Silva, o vocativo 'Senhor Diretor da XYZ Servicos' transmite sobre o tom da carta:",
+      "options": [
+        {"alias":"A", "name":"Tom casual e informal, aproximando remetente e destinatario."},
+        {"alias":"B", "name":"Tom critico e desrespeitoso, demonstrando irritacao com a empresa."},
+        {"alias":"C", "name":"Tom formal e respeitoso, adequado a comunicacao profissional."},
+        {"alias":"D", "name":"Tom neutro e indiferente, sem intencao de criar vinculo."}
+      ],
+      "correct": "C",
+      "explanation": "O uso de 'Senhor Diretor' e uma forma de tratamento FORMAL e RESPEITOSA, tipica de comunicacoes profissionais e institucionais. Mesmo tratando-se de uma reclamacao, a autora mantem a formalidade, o que confere seriedade ao pedido e e adequado ao genero carta de reclamacao.",
+      "subject": "Genero textual: carta de reclamacao — tom e vocativo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 17",
+      "aula_tema": "Genero textual: carta de reclamacao"
+    },
+    {
+      "id": "lp9-v2p2-002",
+      "question": "Na carta de reclamacao de Ana Jose Silva, qual elemento reforca a objetividade da reclamacao?",
+      "options": [
+        {"alias":"A", "name":"O agradecimento final pela atencao."},
+        {"alias":"B", "name":"A mencao a consequencias legais."},
+        {"alias":"C", "name":"O relato do atraso de 4 horas e do servico incompleto."},
+        {"alias":"D", "name":"A despedida 'Respeitosamente'."}
+      ],
+      "correct": "C",
+      "explanation": "A objetividade da reclamacao e sustentada pelo relato de FATOS CONCRETOS e verificaveis: o tecnico chegou com 4 horas de atraso, o trabalho foi deixado incompleto, a area nao foi limpa. Esses fatos diferenciam-se de opinioes ou formalidades da carta (agradecimento, despedida). Apresentar fatos especificos e o que torna uma reclamacao objetiva e fundamentada.",
+      "subject": "Genero textual: carta de reclamacao — objetividade e argumentacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 17",
+      "aula_tema": "Genero textual: carta de reclamacao"
+    },
+    {
+      "id": "lp9-v2p2-003",
+      "question": "Na carta de reclamacao sobre o celular, o trecho 'Dessa forma, estando dentro do prazo previsto no artigo 26 do Codigo de Defesa do Consumidor [...]' usa a conjuncao 'Dessa forma' para indicar:",
+      "options": [
+        {"alias":"A", "name":"Oposicao entre ideias."},
+        {"alias":"B", "name":"Conclusao a partir do que foi dito."},
+        {"alias":"C", "name":"Explicacao de um fato anterior."},
+        {"alias":"D", "name":"Alternativa entre possibilidades."}
+      ],
+      "correct": "B",
+      "explanation": "'Dessa forma' e uma conjuncao (ou locucao conjuntiva) CONCLUSIVA: retoma os argumentos anteriores (o defeito do produto e o prazo legal) e apresenta uma CONCLUSAO logica — a autora esta dentro do prazo para reclamar, portanto solicita solucao. Conjuncoes conclusivas conectam uma conclusao que decorre do raciocinio anterior. Exemplos similares: 'portanto', 'logo', 'assim', 'por isso'.",
+      "subject": "Topico gramatical: conjuncoes — conclusivas",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 18",
+      "aula_tema": "Topico gramatical: conjuncoes"
+    },
+    {
+      "id": "lp9-v2p2-004",
+      "question": "Analise as afirmacoes sobre o uso das conjuncoes na carta de reclamacao do celular. Qual afirmacao e FALSA?",
+      "options": [
+        {"alias":"A", "name":"'Aguardo contato [...] a fim de que o vicio seja sanado' indica relacao de finalidade."},
+        {"alias":"B", "name":"O 'ou' em 'substituicao do produto [...] ou a restituicao imediata' apresenta alternativa entre opcoes."},
+        {"alias":"C", "name":"'Desde ja agradeco a atencao dispensada' contem uma conjuncao explicativa."},
+        {"alias":"D", "name":"'Para reclamar de vicios de qualidade' indica finalidade."}
+      ],
+      "correct": "C",
+      "explanation": "A afirmacao FALSA e C: 'Desde ja agradeco a atencao dispensada' NAO contem conjuncao explicativa — e uma formula de cortesia de encerramento, sem nenhuma conjuncao. A e D sao verdadeiras: 'a fim de que' e 'para' sao conjuncoes/preposicoes de FINALIDADE (indicam objetivo). B e verdadeira: 'ou' e conjuncao coordenativa ALTERNATIVA (apresenta opcoes).",
+      "subject": "Topico gramatical: conjuncoes — classificacao e funcoes",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 18",
+      "aula_tema": "Topico gramatical: conjuncoes"
+    },
+    {
+      "id": "lp9-v2p2-005",
+      "question": "O texto 'Nao as praias particulares', da AVAAZ, e um exemplo de peticao on-line. Qual das alternativas apresenta corretamente as caracteristicas desse genero?",
+      "options": [
+        {"alias":"A", "name":"Texto narrativo que conta uma historia com personagens e tempo definidos."},
+        {"alias":"B", "name":"Texto de opiniao pessoal publicado em jornais ou revistas."},
+        {"alias":"C", "name":"Texto argumentativo que busca apoio popular para uma causa social, reunindo assinaturas digitais."},
+        {"alias":"D", "name":"Texto instrucional que orienta o leitor sobre como visitar praias do Brasil."}
+      ],
+      "correct": "C",
+      "explanation": "A peticao on-line e um genero ARGUMENTATIVO com funcao social de MOBILIZACAO COLETIVA: apresenta uma causa de interesse publico, argumenta a favor dela e convoca o leitor a assinar, apoiando a demanda. No exemplo, a causa e barrar a PEC que privatizaria as praias. Nao e narrativo (A), nem opiniao individual (B), nem instrucional (D).",
+      "subject": "Genero textual: peticao — caracteristicas do genero",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 19",
+      "aula_tema": "Genero textual: peticao"
+    },
+    {
+      "id": "lp9-v2p2-006",
+      "question": "Leia os trechos da peticao 'Nao as praias particulares':\nI — 'Esta em discussao no Senado uma Proposta de Emenda a Constituicao que, na pratica, pode privatizar as praias brasileiras.'\nII — 'E um absurdo discutir uma proposta que afeta areas fundamentais e poe em risco populacoes tradicionais.'\nO que e FATO e o que e OPINIAO?",
+      "options": [
+        {"alias":"A", "name":"Ambos sao fatos."},
+        {"alias":"B", "name":"Ambos sao opinioes."},
+        {"alias":"C", "name":"I e fato; II e opiniao."},
+        {"alias":"D", "name":"I e opiniao; II e fato."}
+      ],
+      "correct": "C",
+      "explanation": "I e um FATO: afirma que uma PEC esta em discussao no Senado — informacao objetiva e verificavel em fontes oficiais, independente de julgamento de valor. II e uma OPINIAO: 'E um absurdo' e um julgamento de valor subjetivo do autor, que expressa sua avaliacao critica da proposta. A distincao entre fato (verificavel) e opiniao (julgamento subjetivo) e central na analise de textos argumentativos.",
+      "subject": "Leitura: genero peticao — distincao entre fato e opiniao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 19",
+      "aula_tema": "Genero textual: peticao"
+    },
+    {
+      "id": "lp9-v2p2-007",
+      "question": "Na peticao da ONG ADA, qual e o efeito de sentido do conector 'contudo' no trecho: 'A ONG [...] atua no cuidado, tratamento e adocao responsavel de animais [...]. Contudo, enfrenta enormes dificuldades financeiras'?",
+      "options": [
+        {"alias":"A", "name":"Acrescenta uma nova informacao relacionada ao trabalho da ONG."},
+        {"alias":"B", "name":"Indica contraste entre o esforco e dedicacao da ONG e as dificuldades que ela enfrenta."},
+        {"alias":"C", "name":"Explica o motivo pelo qual a ONG enfrenta dificuldades."},
+        {"alias":"D", "name":"Retoma uma conclusao apresentada anteriormente."}
+      ],
+      "correct": "B",
+      "explanation": "'Contudo' e um conector ADVERSATIVO — do mesmo grupo de 'mas', 'porem', 'entretanto', 'no entanto'. Ele introduz uma ideia que se CONTRASTA com a anterior: o paragrafo anterior elogia o trabalho essencial da ONG; 'contudo' marca a virada para o problema (falta de recursos). Esse contraste e fundamental na argumentacao da peticao, pois justifica o pedido de apoio institucional.",
+      "subject": "Topico gramatical: coesao sequencial — conectivos adversativos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 20",
+      "aula_tema": "Topico gramatical: coesao sequencial"
+    },
+    {
+      "id": "lp9-v2p2-008",
+      "question": "(UFMT 2013 – Adaptada) Sobre a carta aberta 'Carta aberta a populacao', de Paula Miraglia, assinale a afirmativa correta.",
+      "options": [
+        {"alias":"A", "name":"Tem carater publico e o assunto abordado e de interesse geral."},
+        {"alias":"B", "name":"Tem carater privado, mas o assunto abordado interessa a toda a populacao."},
+        {"alias":"C", "name":"Tem carater privado e o assunto abordado diz respeito a poucas pessoas."},
+        {"alias":"D", "name":"Tem carater publico, mas aborda assuntos relacionados somente ao remetente."}
+      ],
+      "correct": "A",
+      "explanation": "A carta aberta de Paula Miraglia e um texto de carater PUBLICO (publicado em jornal, acessivel a toda a populacao) sobre um tema de INTERESSE GERAL (violencia por armas de fogo, que mata 500 mil pessoas por ano no mundo e e o maior problema do Brasil nessa modalidade). O genero 'carta aberta' se diferencia da carta pessoal justamente por ser publicado e dirigido a toda a sociedade.",
+      "subject": "Genero textual: carta aberta — caracteristicas do genero",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "UFMT 2013 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 21",
+      "aula_tema": "Genero textual: carta aberta"
+    },
+    {
+      "id": "lp9-v2p2-009",
+      "question": "(UFMT 2013 – Adaptada) Qual sequencia associa corretamente os elementos da carta de Paula Miraglia as suas funcoes na argumentacao?\nONU / Armas de fogo / Campanha 'Control Arms' / Governo brasileiro",
+      "options": [
+        {"alias":"A", "name":"ONU-Mobilizacao social / Armas-Causa das mortes / Campanha-Organiza conferencia / Governo-Deve agir."},
+        {"alias":"B", "name":"ONU-Organiza a conferencia e propoe controle internacional / Armas-Causa principal das mortes / Campanha-Mobilizacao social pelo desarmamento / Governo-Deve assumir compromisso e agir."},
+        {"alias":"C", "name":"ONU-Deve agir / Armas-Mobilizacao social / Campanha-Causa das mortes / Governo-Organiza conferencia."},
+        {"alias":"D", "name":"ONU-Causa das mortes / Armas-Organiza conferencia / Campanha-Deve agir / Governo-Mobilizacao social."}
+      ],
+      "correct": "B",
+      "explanation": "A correspondencia correta e: ONU — organiza a 2a Conferencia sobre Desarmamento e propoe o tratado de controle; Armas de fogo — causa das 500 mil mortes anuais denunciadas; Campanha 'Control Arms' — representa a mobilizacao da sociedade civil em defesa do desarmamento; Governo brasileiro — deve assumir o compromisso de apoiar o tratado e agir no controle interno. Essa estrutura argumentativa e tipica da carta aberta: diagnostico do problema + agentes responsaveis + solicitacao de acao.",
+      "subject": "Genero textual: carta aberta — estrutura argumentativa",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "UFMT 2013 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 21",
+      "aula_tema": "Genero textual: carta aberta"
+    },
+    {
+      "id": "lp9-v2p2-010",
+      "question": "Considerando a 'Carta aberta a populacao brasileira' da SBGG, quais afirmacoes sobre os modalizadores sao FALSAS?\nI — 'Infelizmente' expressa lamento diante da situacao da saude publica.\nII — 'E preciso garantir' indica uma possibilidade, sem certeza sobre a acao.\nIII — 'Esperamos que [...] governantes reflitam' mostra duvida quanto a atitude dos governantes.\nIV — 'E preciso' reforca uma necessidade e exigencia de acao.\nV — 'apesar' expressa contradicao e reforca a argumentacao critica.",
+      "options": [
+        {"alias":"A", "name":"I e IV."},
+        {"alias":"B", "name":"II e III."},
+        {"alias":"C", "name":"III e V."},
+        {"alias":"D", "name":"I e II."}
+      ],
+      "correct": "B",
+      "explanation": "Sao FALSAS II e III. II e falsa: 'E preciso garantir' NAO indica possibilidade — e um modalizador DEONTICO que expressa OBRIGACAO e necessidade imperativa. Se indicasse possibilidade, seria 'seria possivel garantir' ou 'pode-se garantir'. III e falsa: 'Esperamos que' NAO exprime duvida — exprime DESEJO e APELO, convocando os governantes a agir. As demais sao verdadeiras: 'Infelizmente' e afetivo/avaliativo (I), 'E preciso' e deontico (IV), 'apesar' e adversativo (V).",
+      "subject": "Topico gramatical: modalizadores argumentativos — classificacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Topico gramatical: modalizadores argumentativos"
+    },
+    {
+      "id": "lp9-v2p2-011",
+      "question": "Qual alternativa melhor explica o efeito dos modalizadores 'infelizmente' e 'e preciso' na 'Carta aberta a populacao brasileira' da SBGG?",
+      "options": [
+        {"alias":"A", "name":"Tornam o texto mais impessoal e neutro, afastando o leitor do tema."},
+        {"alias":"B", "name":"Demonstram apenas dados objetivos sobre o sistema de saude."},
+        {"alias":"C", "name":"Revelam sentimentos, avaliacoes e exigencias, reforcando a posicao do autor e aproximando o leitor."},
+        {"alias":"D", "name":"Servem apenas para suavizar criticas e evitar opinioes diretas."}
+      ],
+      "correct": "C",
+      "explanation": "'Infelizmente' e um modalizador AFETIVO que revela o sentimento de lamento da SBGG; 'E preciso' e um modalizador DEONTICO que expressa urgencia e exigencia de acao. Juntos, esses modalizadores tornam o texto SUBJETIVO e COMPROMETIDO, aproximando o leitor do ponto de vista da organizacao e reforcando o apelo social da carta. Sao o oposto de impessoalidade (A) ou de neutralidade (B).",
+      "subject": "Topico gramatical: modalizadores argumentativos — efeitos no texto",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Topico gramatical: modalizadores argumentativos"
+    },
+    {
+      "id": "lp9-v2p2-012",
+      "question": "(UFGD 2022 – Adaptada) O meme se tornou um fenomeno tipico da internet. Sobre memes e sua interpretacao nas relacoes sociais, e correto afirmar que:",
+      "options": [
+        {"alias":"A", "name":"O uso de memes possibilitou selecionar conteudo relevante dentro de um contexto para destaca-lo, alcancando muitas pessoas."},
+        {"alias":"B", "name":"A aplicacao de memes tem unicamente a funcao de divertir, nao sendo possivel despertar reflexoes sobre temas importantes."},
+        {"alias":"C", "name":"A utilizacao de memes tem um ciclo de vida finito e bem definido, e a medida que se espalham perdem a capacidade de se ressignificarem."},
+        {"alias":"D", "name":"O compartilhamento de memes, por ter caracteristica de ironia e descontracao, encontra pouco espaco para expressao de problemas pessoais e angustia."}
+      ],
+      "correct": "A",
+      "explanation": "A alternativa correta e A: os memes funcionam como um mecanismo de SELECAO e AMPLIFICACAO de conteudo relevante na vastidao da internet, podendo alcancar e engajar milhares de pessoas rapidamente. Ao contrario de B, memes podem despertar reflexoes criticas profundas; ao contrario de C, memes se ressignificam e se adaptam a novos contextos; ao contrario de D, memes sao amplamente usados para expressar emocoes, frustracao e problemas pessoais.",
+      "subject": "Generos digitais: memes — funcao e interpretacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "UFGD 2022 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Generos digitais: memes e GIFs"
+    },
+    {
+      "id": "lp9-v2p2-013",
+      "question": "Sobre o uso de Shopping, Download, Delivery e Fashion na lingua portuguesa, assinale a alternativa correta.",
+      "options": [
+        {"alias":"A", "name":"Essas palavras devem ser evitadas, pois empobrecem a lingua portuguesa."},
+        {"alias":"B", "name":"Essas palavras sao 'neologismos', pois foram inventadas recentemente no Brasil para nomear novas realidades."},
+        {"alias":"C", "name":"Essas palavras sao 'girias', pois sao usadas apenas por grupos sociais especificos em contextos de pouca formalidade."},
+        {"alias":"D", "name":"Essas palavras sao 'estrangeirismos', termos importados do ingles para nomear conceitos que surgiram com forca em outra cultura."}
+      ],
+      "correct": "D",
+      "explanation": "Essas palavras sao ESTRANGEIRISMOS: termos provenientes de outra lingua (neste caso, o ingles) incorporados ao portugues para nomear conceitos, produtos ou praticas que se popularizaram globalmente com a forma original. Nao sao neologismos criados no Brasil (B), nem girias de grupos especificos (C). Quanto a A: os estrangeirismos sao um fenomeno natural de toda lingua viva, e muitos ja estao consolidados no uso cotidiano.",
+      "subject": "Topico gramatical: estrangeirismos — definicao e uso",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Topico gramatical: estrangeirismos"
+    },
+    {
+      "id": "lp9-v2p2-014",
+      "question": "Em qual das alternativas TODAS as palavras sao exemplos de estrangeirismos, independentemente de estarem ou nao aportuguesadas?",
+      "options": [
+        {"alias":"A", "name":"Show, bike, amigo."},
+        {"alias":"B", "name":"Hamburguer, saudade, delivery."},
+        {"alias":"C", "name":"Futebol, abajur, sushi."},
+        {"alias":"D", "name":"Internet, escola, basquete."}
+      ],
+      "correct": "C",
+      "explanation": "Em C, todas sao estrangeirismos: 'futebol' (do ingles football — aportuguesado), 'abajur' (do frances abat-jour — aportuguesado) e 'sushi' (do japones — manteve a forma original). Em A: 'amigo' e palavra portuguesa. Em B: 'saudade' e palavra tipicamente portuguesa. Em D: 'escola' vem do grego/latim, integrando ha seculos o vocabulario portugues, sem carater de estrangeirismo atual.",
+      "subject": "Topico gramatical: estrangeirismos — identificacao e aportuguesamento",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Topico gramatical: estrangeirismos"
+    },
+    {
+      "id": "lp9-v2p2-015",
+      "question": "Com base na leitura da legenda e dos dois e-mails (formal e informal) de Carlos, assinale a alternativa correta.",
+      "options": [
+        {"alias":"A", "name":"A legenda e o e-mail formal tem o mesmo nivel de formalidade, pois ambos informam uma situacao de descanso de maneira objetiva."},
+        {"alias":"B", "name":"O e-mail formal e o informal apresentam o mesmo proposito comunicativo, variando apenas na estrutura."},
+        {"alias":"C", "name":"A legenda e o e-mail informal aproximam o autor do leitor por meio de linguagem subjetiva, expressiva e recursos visuais, como emojis."},
+        {"alias":"D", "name":"A legenda e o e-mail formal buscam apenas transmitir informacoes, sem revelar sentimentos ou opinioes pessoais."}
+      ],
+      "correct": "C",
+      "explanation": "A legenda e o e-mail informal compartilham uma linguagem EXPRESSIVA, SUBJETIVA e AFETIVA: a legenda usa emoji ☀ e tom descontraido; o e-mail informal usa 'Oi, Lu!', 'ja to por aqui de novo!' e emoji, criando PROXIMIDADE com o leitor/destinatario. Ja o e-mail formal e objetivo, padronizado e sem recursos emotivos. Isso demonstra a variacao de registro de acordo com o contexto comunicativo.",
+      "subject": "Leitura: legenda — variacao de registro e funcao comunicativa",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 25",
+      "aula_tema": "Leitura: legenda"
+    },
+    {
+      "id": "lp9-v2p2-016",
+      "question": "No e-mail de Rafael para Mariana, qual sequencia associa corretamente os conectivos aos seus efeitos de sentido?\n'Antes de mais nada' / 'Alem disso' / 'Portanto' / 'Enquanto isso'",
+      "options": [
+        {"alias":"A", "name":"Conclusao / Adicao / Introducao / Simultaneidade."},
+        {"alias":"B", "name":"Introducao de ideia / Adicao de informacao / Conclusao / Acao simultanea."},
+        {"alias":"C", "name":"Simultaneidade / Conclusao / Introducao / Adicao."},
+        {"alias":"D", "name":"Adicao / Simultaneidade / Introducao / Conclusao."}
+      ],
+      "correct": "B",
+      "explanation": "A correspondencia correta: 'Antes de mais nada' — INTRODUCE uma ideia, marca prioridade; 'Alem disso' — ADICIONA nova informacao relacionada; 'Portanto' — apresenta CONCLUSAO que decorre do raciocinio anterior; 'Enquanto isso' — indica SIMULTANEIDADE de acoes no tempo. Esses conectivos sao fundamentais para a coesao sequencial do texto, organizando logicamente as ideias.",
+      "subject": "Topico gramatical: conectivos — coesao sequencial",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 26",
+      "aula_tema": "Topico gramatical: conectivos"
+    },
+    {
+      "id": "lp9-v2p2-017",
+      "question": "No trecho de 'Vamos comprar um poeta', de Afonso Cruz, os poetas sao tratados como produtos em uma loja. A que se dirige a critica contida no texto?",
+      "options": [
+        {"alias":"A", "name":"A valorizacao excessiva da arte na sociedade contemporanea."},
+        {"alias":"B", "name":"Ao consumo sem reflexao e a mercantilizacao da arte e da sensibilidade humana."},
+        {"alias":"C", "name":"A liberdade de expressao artistica que e censurada pelo governo."},
+        {"alias":"D", "name":"Ao incentivo a leitura de poesia nas escolas."}
+      ],
+      "correct": "B",
+      "explanation": "O conto critica o CONSUMISMO e a MERCANTILIZACAO: em um futuro distopico, ate a arte (representada pelos poetas) foi reduzida a mercadoria comprada em loja, com 'estoque', 'patrocinadores nas roupas' e analise de 'lucro'. A subversividade — essencia da poesia — e tolerada apenas na dose calculada para 'nao baixar a qualidade poetica' e 'gerar lucro'. O texto e uma ironia sobre como o materialismo pode esvaziar o sentido humano e critico da arte.",
+      "subject": "Leitura: texto de ficcao — critica social e ironia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Leitura: texto de ficcao"
+    },
+    {
+      "id": "lp9-v2p2-018",
+      "question": "Em 'Vamos comprar um poeta', o narrador diz 'fomos a uma loja, eu e o pai'. O texto esta narrado em qual pessoa?",
+      "options": [
+        {"alias":"A", "name":"1a pessoa — o narrador participa diretamente da historia e a conta do seu ponto de vista."},
+        {"alias":"B", "name":"2a pessoa — o narrador se dirige diretamente ao leitor usando 'voce'."},
+        {"alias":"C", "name":"3a pessoa — o narrador e externo a historia e observa os fatos de fora."},
+        {"alias":"D", "name":"Narrador onisciente em 3a pessoa que conhece os pensamentos de todos."}
+      ],
+      "correct": "A",
+      "explanation": "O verbo 'fomos' (nos fomos) e o pronome 'eu' indicam narracao em 1a PESSOA: o narrador e um PERSONAGEM DA HISTORIA, que participa dos eventos e os conta do seu proprio ponto de vista. Esse tipo e chamado de 'narrador-personagem'. Na 3a pessoa (C), o narrador seria externo: 'foram a uma loja, o menino e o pai'. A 2a pessoa (B) envolveria 'voce foi a uma loja'.",
+      "subject": "Leitura: texto de ficcao — tipos de narrador",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Leitura: texto de ficcao"
+    },
+    {
+      "id": "lp9-v2p2-019",
+      "question": "Em uma carta de reclamacao eficaz, qual elemento e fundamental para sustentar o pedido de solucao e diferencia-la de uma simples queixa informal?",
+      "options": [
+        {"alias":"A", "name":"Linguagem emotiva e dramatica para sensibilizar o destinatario."},
+        {"alias":"B", "name":"Descricao detalhada e objetiva dos fatos que geraram a insatisfacao, com datas e evidencias."},
+        {"alias":"C", "name":"Ameacas explicitas de acao judicial imediata logo no primeiro paragrafo."},
+        {"alias":"D", "name":"Uso de girias e linguagem informal para criar proximidade com o destinatario."}
+      ],
+      "correct": "B",
+      "explanation": "A carta de reclamacao e um genero ARGUMENTATIVO que exige OBJETIVIDADE: a descricao precisa dos fatos (datas, o que ocorreu, quem foi responsavel) e o que sustenta a solicitacao e diferencia a carta de uma queixa emocional ou informal. Fatos especificos sao dificeis de contestar e dao credibilidade ao remetente. A linguagem deve ser formal (nao giria — D), objetiva (nao dramatica — A), e a ameaca legal, se usada, vem como argumento legal fundamentado, nao como abertura agressiva (C).",
+      "subject": "Genero textual: carta de reclamacao — elementos estruturais",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 17",
+      "aula_tema": "Genero textual: carta de reclamacao"
+    },
+    {
+      "id": "lp9-v2p2-020",
+      "question": "Qual das alternativas apresenta um par formado por uma conjuncao ADVERSATIVA e uma conjuncao CONCLUSIVA, nessa ordem?",
+      "options": [
+        {"alias":"A", "name":"'mas' / 'portanto'."},
+        {"alias":"B", "name":"'pois' / 'mas'."},
+        {"alias":"C", "name":"'portanto' / 'ou'."},
+        {"alias":"D", "name":"'porque' / 'porem'."}
+      ],
+      "correct": "A",
+      "explanation": "'Mas' e uma conjuncao coordenativa ADVERSATIVA — indica oposicao ou contradicao entre duas ideias (ex: 'Estudou muito, mas nao passou'). 'Portanto' e uma conjuncao coordenativa CONCLUSIVA — apresenta uma conclusao que decorre logicamente do que foi dito antes (ex: 'Estudou muito, portanto passou'). As demais opcoes: 'pois' e explicativa ou causal (B); 'portanto' e conclusiva mas 'ou' e alternativa (C); 'porque' e causal e 'porem' e adversativa — ordem invertida (D).",
+      "subject": "Topico gramatical: conjuncoes — adversativas e conclusivas",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 18",
+      "aula_tema": "Topico gramatical: conjuncoes"
+    },
+    {
+      "id": "lp9-v2p2-021",
+      "question": "Qual recurso linguistico a peticao 'Nao as praias particulares' usa para mobilizar o leitor a assinar?",
+      "options": [
+        {"alias":"A", "name":"Narrativa de ficcao sobre um futuro sem praias publicas, para criar medo no leitor."},
+        {"alias":"B", "name":"Linguagem tecnica e juridica exclusivamente, para demonstrar fundamentacao legal."},
+        {"alias":"C", "name":"Senso de urgencia, apelo coletivo e linguagem direta: 'podemos barrar', 'faca barulho', 'assine a peticao'."},
+        {"alias":"D", "name":"Dados estatisticos detalhados sobre o numero de praias que seriam privatizadas."}
+      ],
+      "correct": "C",
+      "explanation": "A peticao usa recursos tipicos de mobilizacao coletiva: verbos na 1a pessoa do plural ('podemos barrar', 'vamos entrega-la') que incluem o leitor no grupo que age; linguagem acessivel e direta; chamada a acao ('assine a peticao'); e urgencia ('enquanto uma tragedia ainda se desenrola'). Esses recursos transformam o leitor de espectador passivo em participante ativo da causa.",
+      "subject": "Genero textual: peticao — recursos de mobilizacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 19",
+      "aula_tema": "Genero textual: peticao"
+    },
+    {
+      "id": "lp9-v2p2-022",
+      "question": "Nos textos argumentativos, os conectivos organizam a progressao logica das ideias. Qual conectivo estabelece relacao de CONTRADICAO ou OPOSICAO entre duas ideias?",
+      "options": [
+        {"alias":"A", "name":"'Alem disso'"},
+        {"alias":"B", "name":"'Portanto'"},
+        {"alias":"C", "name":"'Contudo'"},
+        {"alias":"D", "name":"'Por exemplo'"}
+      ],
+      "correct": "C",
+      "explanation": "'Contudo' e um conector ADVERSATIVO, do mesmo grupo de 'mas', 'porem', 'entretanto', 'no entanto', 'todavia'. Ele introduz uma ideia que se CONTRASTA ou se OPOE ao que foi dito anteriormente. 'Alem disso' acrescenta informacao (A). 'Portanto' apresenta conclusao (B). 'Por exemplo' exemplifica (D). O reconhecimento dos conectivos e sua classificacao sao essenciais para compreender e produzir textos coesos.",
+      "subject": "Topico gramatical: coesao sequencial — conectivos adversativos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 20",
+      "aula_tema": "Topico gramatical: coesao sequencial"
+    },
+    {
+      "id": "lp9-v2p2-023",
+      "question": "Qual e a principal diferenca entre uma carta aberta e uma carta de reclamacao?",
+      "options": [
+        {"alias":"A", "name":"A carta aberta e sempre privada e dirigida a um individuo especifico; a carta de reclamacao e publica e dirigida a toda a sociedade."},
+        {"alias":"B", "name":"A carta aberta e publica e aborda temas de interesse coletivo; a carta de reclamacao e geralmente privada e trata de insatisfacoes pessoais com um produto ou servico."},
+        {"alias":"C", "name":"A carta aberta so pode ser publicada em jornais impressos; a carta de reclamacao so pode ser enviada por e-mail."},
+        {"alias":"D", "name":"A carta aberta nao tem destinatario identificado; a carta de reclamacao e sempre enviada ao governo."}
+      ],
+      "correct": "B",
+      "explanation": "A CARTA ABERTA e um texto de carater PUBLICO, geralmente publicado em midia, dirigido a autoridades ou a populacao sobre temas de INTERESSE COLETIVO (saude publica, politica, direitos). A CARTA DE RECLAMACAO e mais PESSOAL/INSTITUCIONAL, dirigida a uma empresa ou orgao especifico para resolver uma insatisfacao individual (produto defeituoso, servico ruim). Ambas podem ter estrutura formal, mas diferem no publico, no alcance e no proposito.",
+      "subject": "Genero textual: carta aberta vs. carta de reclamacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aulas 17 e 21",
+      "aula_tema": "Genero textual: carta aberta e carta de reclamacao"
+    },
+    {
+      "id": "lp9-v2p2-024",
+      "question": "Na frase 'E preciso garantir a saude como direito universal', o modalizador 'e preciso' e classificado como:",
+      "options": [
+        {"alias":"A", "name":"Modalizador epistemico — indica incerteza ou probabilidade sobre o fato."},
+        {"alias":"B", "name":"Modalizador afetivo — expressa o sentimento pessoal do emissor."},
+        {"alias":"C", "name":"Modalizador deontico — indica obrigacao, necessidade ou exigencia de acao."},
+        {"alias":"D", "name":"Modalizador de hipotese — indica que o fato e apenas uma possibilidade remota."}
+      ],
+      "correct": "C",
+      "explanation": "O modalizador DEONTICO (do grego 'deon' = obrigacao) expressa NECESSIDADE, OBRIGACAO ou EXIGENCIA — indica que algo deve ser feito, e preciso ou necessario. 'E preciso', 'e necessario', 'deve-se', 'e obrigatorio' sao exemplos. O epistemico indica possibilidade/certeza ('talvez', 'certamente') (A). O afetivo expressa sentimento ('infelizmente', 'felizmente') (B). A hipotese e modalidade distante e incerta (D).",
+      "subject": "Topico gramatical: modalizadores argumentativos — deonticos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Topico gramatical: modalizadores argumentativos"
+    },
+    {
+      "id": "lp9-v2p2-025",
+      "question": "Os GIFs sao generos digitais que combinam imagens em movimento. Qual caracteristica os aproxima dos memes como genero digital?",
+      "options": [
+        {"alias":"A", "name":"Ambos sao sempre textos longos que desenvolvem um argumento completo e detalhado."},
+        {"alias":"B", "name":"Ambos circulam exclusivamente em ambientes academicos e jornalisticos."},
+        {"alias":"C", "name":"Ambos usam recursos visuais (imagem, movimento ou expressao) para comunicar uma ideia de forma rapida, podendo ter funcao humoristica, critica ou emotiva."},
+        {"alias":"D", "name":"Ambos exigem autoria identificada e assinada para terem validade comunicativa."}
+      ],
+      "correct": "C",
+      "explanation": "Memes e GIFs sao generos digitais que compartilham a logica da COMUNICACAO VISUAL RAPIDA e IMPACTANTE: ambos usam imagem, expressao facial, movimento (no caso dos GIFs) ou combinacao texto-imagem (memes) para transmitir uma ideia, emocao ou critica de forma instantanea e compartilhavel. Nenhum exige autoria identificada (D), ambos circulam em redes sociais informais (B incorreta) e sao geralmente concisos, nao longos (A incorreta).",
+      "subject": "Generos digitais: memes e GIFs — caracteristicas comuns",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 23",
+      "aula_tema": "Generos digitais: memes e GIFs"
+    },
+    {
+      "id": "lp9-v2p2-026",
+      "question": "Sobre os estrangeirismos aportuguesados, como 'futebol' (do ingles football) e 'hamburguer' (do ingles hamburger), e correto afirmar que:",
+      "options": [
+        {"alias":"A", "name":"Ao serem aportuguesados, deixam de ser considerados estrangeirismos e se tornam palavras genuinamente portuguesas."},
+        {"alias":"B", "name":"Continuam sendo estrangeirismos de origem, mas foram adaptados fonetica e graficamente ao portugues do Brasil."},
+        {"alias":"C", "name":"Sao considerados neologismos criados no Brasil, pois a forma original ja nao existe mais."},
+        {"alias":"D", "name":"Devem ser escritos sempre na forma original estrangeira para preservar a etimologia."}
+      ],
+      "correct": "B",
+      "explanation": "Quando um estrangeirismo e APORTUGUESADO, ele passa por adaptacao fonetica (pronuncia) e grafica (escrita) para se adequar ao sistema do portugues, mas sua ORIGEM ESTRANGEIRA nao desaparece. 'Futebol' veio de football; 'hamburguer' veio de hamburger. Eles sao incorporados ao lexico portugues, mas seguem classificados como emprestimos linguisticos de origem estrangeira. A forma original continua existindo no idioma de origem (C incorreta).",
+      "subject": "Topico gramatical: estrangeirismos — aportuguesamento",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 24",
+      "aula_tema": "Topico gramatical: estrangeirismos"
+    },
+    {
+      "id": "lp9-v2p2-027",
+      "question": "Qual e a funcao principal de uma legenda em relacao a uma fotografia ou imagem em um texto multimodal?",
+      "options": [
+        {"alias":"A", "name":"Substituir completamente o texto verbal, tornando a leitura do texto escrito desnecessaria."},
+        {"alias":"B", "name":"Contradizer ou questionar o que a imagem mostra, criando contraste proposital."},
+        {"alias":"C", "name":"Contextualizar, identificar ou complementar a imagem, ancorando seu sentido para o leitor."},
+        {"alias":"D", "name":"Descrever em detalhes minuciosos todos os elementos visuais presentes na imagem."}
+      ],
+      "correct": "C",
+      "explanation": "A funcao principal da LEGENDA e ANCORAR o sentido da imagem: ela contextualiza (informa onde, quando, quem), identifica (nomeia pessoas ou lugares) ou complementa (acrescenta informacao que a imagem sozinha nao transmite completamente). A legenda e o texto verbal e a imagem se COMPLEMENTAM no texto multimodal. Nao substitui a imagem (A), nao a contradiz necessariamente (B), e nao precisa ser uma descricao exaustiva (D).",
+      "subject": "Leitura: legenda — funcao em textos multimodais",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 25",
+      "aula_tema": "Leitura: legenda"
+    },
+    {
+      "id": "lp9-v2p2-028",
+      "question": "Qual dos conectivos abaixo expressa relacao de CONCESSAO — admite algo, mas apresenta uma ressalva ou restricao?",
+      "options": [
+        {"alias":"A", "name":"'portanto'"},
+        {"alias":"B", "name":"'embora'"},
+        {"alias":"C", "name":"'pois'"},
+        {"alias":"D", "name":"'alem disso'"}
+      ],
+      "correct": "B",
+      "explanation": "'Embora' e um conector CONCESSIVO — introduz uma ideia que e admitida, mas nao impede a conclusao oposta (ex: 'Embora estudasse pouco, passou'). A concessao reconhece um fato contrario e mesmo assim mantem a tese. Outros conectivos concessivos: 'apesar de', 'ainda que', 'mesmo que', 'se bem que'. 'Portanto' e conclusivo (A); 'pois' e explicativo/causal (C); 'alem disso' e aditivo (D).",
+      "subject": "Topico gramatical: conectivos — relacao de concessao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 26",
+      "aula_tema": "Topico gramatical: conectivos"
+    },
+    {
+      "id": "lp9-v2p2-029",
+      "question": "O conto 'Vamos comprar um poeta', de Afonso Cruz, se enquadra no genero da DISTOPIA porque:",
+      "options": [
+        {"alias":"A", "name":"Descreve um futuro utopico em que a arte e valorizada e os poetas sao respeitados como lideres espirituais."},
+        {"alias":"B", "name":"E uma autobiografia do autor sobre sua experiencia como poeta em Portugal."},
+        {"alias":"C", "name":"Apresenta um futuro hipotetico e critico, onde valores humanos como a arte foram mercantilizados, configurando um cenario socialmente degradado."},
+        {"alias":"D", "name":"E uma fabula com animais que ensinam licoes morais sobre o valor da cultura."}
+      ],
+      "correct": "C",
+      "explanation": "A DISTOPIA e um genero de ficcao que imagina um futuro negativo, geralmente como critica ao presente. Em 'Vamos comprar um poeta', o futuro distopico e aquele em que ATE A ARTE foi reduzida a mercadoria: poetas tem 'patrocinadores nas roupas', sao comprados em lojas, e sua subversividade e controlada para 'gerar lucro'. Esse cenario critica o materialismo e o consumismo contemporaneos, projetando-os em um futuro exagerado para provocar reflexao.",
+      "subject": "Leitura: texto de ficcao — distopia como genero",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Leitura: texto de ficcao"
+    },
+    {
+      "id": "lp9-v2p2-030",
+      "question": "No trecho de 'Vamos comprar um poeta': 'e sempre necessario serem um pouco subversivos ou a qualidade poetica baixa demasiado e nao gera lucro', o texto revela que, na sociedade descrita:",
+      "options": [
+        {"alias":"A", "name":"A subversividade artistica e completamente proibida e os poetas sao punidos por ela."},
+        {"alias":"B", "name":"A arte e totalmente livre, sem controle comercial ou restricao de qualquer tipo."},
+        {"alias":"C", "name":"Ate a subversividade foi domesticada e calculada para servir ao mercado, existindo apenas na dose necessaria para gerar lucro."},
+        {"alias":"D", "name":"O dono da loja admira genuinamente a arte subversiva e quer proteger os poetas."}
+      ],
+      "correct": "C",
+      "explanation": "Esse e o ponto mais ironico e critico do texto: a SUBVERSIVIDADE — que por definicao desafia o sistema — foi incorporada e controlada pelo proprio sistema como estrategia comercial. Ela existe nao por valor artistico, mas porque 'a qualidade poetica baixa' sem ela e o produto 'nao gera lucro'. E a mercantilizacao total da critica: ate a rebeldia tem uma funcao de mercado. Essa ironia profunda e o cerne da critica distopica de Afonso Cruz.",
+      "subject": "Leitura: texto de ficcao — ironia e critica social",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 27",
+      "aula_tema": "Leitura: texto de ficcao"
+    },
+    {
+      "id": "lp9-v2p2-031",
+      "question": "Qual e a principal diferenca entre uma peticao e uma carta aberta, considerando seus propositos comunicativos?",
+      "options": [
+        {"alias":"A", "name":"A peticao e sempre escrita por um individuo; a carta aberta e sempre produzida por grupos ou organizacoes."},
+        {"alias":"B", "name":"A peticao busca reunir assinaturas e apoio coletivo para uma causa especifica; a carta aberta e um texto opinativo publico que expoe ideias a autoridades ou a sociedade sem necessariamente coletar assinaturas."},
+        {"alias":"C", "name":"A carta aberta e assinada digitalmente; a peticao so pode ser entregue fisicamente ao destinatario."},
+        {"alias":"D", "name":"A peticao aborda apenas questoes ambientais; a carta aberta trata exclusivamente de temas politicos."}
+      ],
+      "correct": "B",
+      "explanation": "A PETICAO tem como proposito especifico MOBILIZAR e REUNIR ASSINATURAS em apoio a uma causa coletiva, para entrega-las a uma autoridade como prova de respaldo popular. A CARTA ABERTA e um texto opinativo de ampla circulacao que expoe a posicao de um individuo ou grupo sobre um tema de interesse publico, sem necessariamente coletar assinaturas. Ambas podem ser produzidas por individuos ou grupos, abordar qualquer tema e circular em meios digitais ou impressos.",
+      "subject": "Genero textual: peticao vs. carta aberta",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aulas 19 e 21",
+      "aula_tema": "Genero textual: peticao e carta aberta"
+    },
+    {
+      "id": "lp9-v2p2-032",
+      "question": "Na carta de reclamacao do celular, o trecho 'Aguardo contato [...] sob pena de procedimento determinado pelo artigo 18' usa a expressao 'sob pena de' para indicar:",
+      "options": [
+        {"alias":"A", "name":"Finalidade: o objetivo esperado com o contato dentro do prazo."},
+        {"alias":"B", "name":"Concessao: reconhece uma dificuldade antes de apresentar o pedido final."},
+        {"alias":"C", "name":"Condicao/consequencia: o que ocorrera caso o prazo de trinta dias nao seja cumprido."},
+        {"alias":"D", "name":"Adicao: acrescenta mais uma solicitacao alem das ja apresentadas."}
+      ],
+      "correct": "C",
+      "explanation": "'Sob pena de' e uma locucao que introduz uma CONDICAO ADVERSATIVA ou CONSEQUENCIA: indica o que acontecera se a condicao anterior nao for cumprida. Na carta, significa: 'se o vicio nao for sanado em trinta dias, serao aplicados os procedimentos do artigo 18 do CDC'. Esse recurso e tipico das cartas de reclamacao fundamentadas em lei, pois torna a ameaca concreta e juridicamente sustentada.",
+      "subject": "Topico gramatical: conjuncoes — relacao de condicao e consequencia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 18",
+      "aula_tema": "Topico gramatical: conjuncoes"
+    },
+    {
+      "id": "lp9-v2p2-033",
+      "question": "Qual grupo contem apenas modalizadores de OBRIGACAO e NECESSIDADE (modalizadores deonticos)?",
+      "options": [
+        {"alias":"A", "name":"'talvez', 'possivelmente', 'e provavel que'"},
+        {"alias":"B", "name":"'e preciso', 'e necessario', 'deve-se'"},
+        {"alias":"C", "name":"'infelizmente', 'felizmente', 'surpreendentemente'"},
+        {"alias":"D", "name":"'certamente', 'com certeza', 'evidentemente'"}
+      ],
+      "correct": "B",
+      "explanation": "Os modalizadores DEONTICOS expressam OBRIGACAO, NECESSIDADE ou PERMISSAO: 'e preciso', 'e necessario', 'deve-se', 'e obrigatorio', 'e permitido'. Indicam que algo DEVE ou NAO DEVE ser feito. O grupo A sao modalizadores EPISTEMICOS de possibilidade/probabilidade. O grupo C sao modalizadores AFETIVOS que expressam sentimento ou avaliacao emocional. O grupo D sao modalizadores EPISTEMICOS de certeza. Conhecer a classificacao dos modalizadores ajuda a identificar o grau de comprometimento do autor com o que diz.",
+      "subject": "Topico gramatical: modalizadores argumentativos — tipos e classificacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 22",
+      "aula_tema": "Topico gramatical: modalizadores argumentativos"
+    },
+    {
+      "id": "lp9-v2p2-034",
+      "question": "Leia os trechos a seguir e identifique qual apresenta coesao sequencial de ADICAO:",
+      "options": [
+        {"alias":"A", "name":"'A ONG atua no cuidado dos animais. Contudo, enfrenta dificuldades financeiras.'"},
+        {"alias":"B", "name":"'A ONG cuida dos animais abandonados. Alem disso, oferece atendimento veterinario gratuito.'"},
+        {"alias":"C", "name":"'O projeto foi aprovado. Portanto, as atividades serao retomadas.'"},
+        {"alias":"D", "name":"'As castracoes sao gratuitas, pois a ONG recebe doacoes.'"}
+      ],
+      "correct": "B",
+      "explanation": "O conector 'Alem disso' e um conector de ADICAO — acrescenta uma nova informacao relacionada a anterior, ampliando o argumento sem contradicao nem conclusao. No trecho B, a segunda ideia (atendimento veterinario) e uma informacao ADICIONAL sobre o que a ONG faz, alem do que ja foi dito. 'Contudo' (A) e adversativo; 'Portanto' (C) e conclusivo; 'pois' (D) e explicativo/causal.",
+      "subject": "Topico gramatical: coesao sequencial — conectivos de adicao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 20",
+      "aula_tema": "Topico gramatical: coesao sequencial"
+    },
+    {
+      "id": "lp9-v2p2-035",
+      "question": "Considerando os generos estudados no caderno (carta de reclamacao, peticao, carta aberta, abaixo-assinado), qual caracteristica e COMUM a todos eles?",
+      "options": [
+        {"alias":"A", "name":"Todos sao textos ficcionais que narram historias inventadas para sensibilizar o leitor."},
+        {"alias":"B", "name":"Todos usam linguagem exclusivamente informal e coloquial para aproximar o leitor da causa."},
+        {"alias":"C", "name":"Todos sao generos argumentativos com funcao social de reivindicacao, critica ou apelo, voltados a provocar uma mudanca ou resposta concreta."},
+        {"alias":"D", "name":"Todos so podem ser produzidos por advogados ou profissionais do direito, por exigirem fundamentacao juridica."}
+      ],
+      "correct": "C",
+      "explanation": "O elemento COMUM a todos esses generos e a funcao ARGUMENTATIVA e REIVINDICATORIA: a carta de reclamacao reivindica solucao para um problema; a peticao reivindica acao coletiva; a carta aberta apela a autoridades ou a populacao; o abaixo-assinado exige providencias do poder publico. Todos buscam provocar uma MUDANCA ou obter uma RESPOSTA CONCRETA. Nenhum e ficcional (A); o registro varia de formal a acessivel (B); e qualquer cidadao pode produzi-los (D).",
+      "subject": "Generos textuais: carta de reclamacao, peticao, carta aberta — caracteristica comum",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aulas 17 a 22",
+      "aula_tema": "Generos textuais de reivindicacao e apelo"
+    }
+  ]
+}

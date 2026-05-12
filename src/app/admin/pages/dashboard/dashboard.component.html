@@ -199,6 +199,10 @@
           </div>
         </div>
 
+        <div *ngIf="isLoadingStudents" class="students-loading">
+          <span class="loading-spinner"></span> Carregando alunos...
+        </div>
+
         <div *ngFor="let group of groupedStudents" class="class-group">
           <!-- Cabeçalho da Turma -->
           <div class="class-header" (click)="toggleClass(group.className)">
@@ -223,6 +227,7 @@
                   <th>Turma</th>
                   <th>Tentativas</th>
                   <th>Score Médio</th>
+                  <th>Melhor Score</th>
                   <th>Última Tentativa</th>
                   <th>Status</th>
                 </tr>
@@ -234,7 +239,11 @@
                   <td class="student-class-badge"><span class="class-badge">{{ student.class }}</span></td>
                   <td>{{ student.totalAttempts }}</td>
                   <td>
-                    <span class="score" *ngIf="student.totalAttempts > 0">{{ student.averageScore }}</span>
+                    <span class="score" *ngIf="student.totalAttempts > 0">{{ student.averageScore }}%</span>
+                    <span *ngIf="student.totalAttempts === 0" class="no-data">-</span>
+                  </td>
+                  <td>
+                    <span class="score best" *ngIf="student.totalAttempts > 0">{{ student.bestScore }}%</span>
                     <span *ngIf="student.totalAttempts === 0" class="no-data">-</span>
                   </td>
                   <td>{{ student.lastAttempt ? formatDateTime(student.lastAttempt.timestamp) : '-' }}</td>
@@ -249,7 +258,7 @@
           </div>
         </div>
 
-        <div *ngIf="students.length === 0" class="no-data">
+        <div *ngIf="students.length === 0 && !isLoadingStudents" class="no-data">
           <p>📭 Nenhum aluno cadastrado</p>
         </div>
       </div>

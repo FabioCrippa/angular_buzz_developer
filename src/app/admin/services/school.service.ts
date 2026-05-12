@@ -285,6 +285,46 @@ export class SchoolService {
   }
 
   /**
+   * Obter estatísticas de TODOS os alunos da escola em UMA query (batch)
+   * Muito mais eficiente que N queries individuais
+   */
+  async getAllStudentStats(schoolId: string): Promise<Map<string, any>> {
+    try {
+      const attemptsRef = collection(this.firestore, 'quiz_attempts');
+      const q = query(attemptsRef, where('schoolId', '==', schoolId));
+      const snapshot = await getDocs(q);
+
+      const byRa = new Map<string, any[]>();
+      for (const d of snapshot.docs) {
+        const data = d.data() as any;
+        const ra = data['ra'];
+        if (!byRa.has(ra)) byRa.set(ra, []);
+        byRa.get(ra)!.push(data);
+      }
+
+      const result = new Map<string, any>();
+      byRa.forEach((attempts, ra) => {
+        // Ordenar por timestamp para garantir que lastAttempt seja o mais recente
+        const sorted = attempts.slice().sort((a, b) => {
+          const tA = a['timestamp']?.toDate ? a['timestamp'].toDate().getTime() : new Date(a['timestamp'] || 0).getTime();
+          const tB = b['timestamp']?.toDate ? b['timestamp'].toDate().getTime() : new Date(b['timestamp'] || 0).getTime();
+          return tA - tB;
+        });
+        const totalScore = sorted.reduce((sum, a) => sum + (a['score'] || 0), 0);
+        const averageScore = (totalScore / sorted.length).toFixed(1);
+        const bestScore = Math.max(...sorted.map(a => a['score'] || 0));
+        const totalDuration = sorted.reduce((sum, a) => sum + (a['duration'] || 0), 0);
+        const lastAttempt = sorted[sorted.length - 1];
+        result.set(ra, { totalAttempts: sorted.length, averageScore, lastAttempt, bestScore, totalDuration });
+      });
+      return result;
+    } catch (error) {
+      console.error('Erro ao obter estatísticas batch:', error);
+      return new Map();
+    }
+  }
+
+  /**
    * Obter estatísticas de um aluno
    */
   async getStudentStats(schoolId: string, ra: string): Promise<any> {

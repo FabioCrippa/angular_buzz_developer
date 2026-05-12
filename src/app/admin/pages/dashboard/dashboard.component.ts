@@ -31,6 +31,7 @@ interface StudentStats {
   email: string;
   totalAttempts: number;
   averageScore: number;
+  bestScore: number;
   lastAttempt: any;
   status: string;
 }
@@ -60,7 +61,9 @@ export class AdminDashboardComponent implements OnInit {
   filteredSchools: School[] = [];
   selectedSchool: School | null = null;
   students: StudentStats[] = [];
+  groupedStudents: { className: string; students: StudentStats[] }[] = [];
   isLoading = true;
+  isLoadingStudents = false;
   errorMessage = '';
   successMessage = '';
   showPasswordModal = false;
@@ -336,6 +339,7 @@ export class AdminDashboardComponent implements OnInit {
         if (this.selectedSchool?.id === school.id) {
           this.selectedSchool = null;
           this.students = [];
+          this.groupedStudents = [];
         }
         
         this.applyFilters();
@@ -409,49 +413,36 @@ export class AdminDashboardComponent implements OnInit {
   async loadStudents() {
     if (!this.selectedSchool) return;
 
+    this.isLoadingStudents = true;
     try {
-      // Buscar lista de alunos da escola
-      const schoolStudents = await this.schoolService.getSchoolStudents(this.selectedSchool.id);
-      
-      // Para cada aluno, buscar suas estatísticas
-      this.students = [];
-      
-      for (const student of schoolStudents) {
-        try {
-          const stats = await this.schoolService.getStudentStats(this.selectedSchool.id, student.id);
-          
-          this.students.push({
-            ra: student.id,
-            name: student.name || '-',
-            class: student.class || '-',
-            email: student.email || '-',
-            totalAttempts: stats.totalAttempts || 0,
-            averageScore: Number(stats.averageScore) || 0,
-            lastAttempt: stats.lastAttempt || null,
-            status: student.status || 'active'
-          });
-        } catch (error) {
-          console.error(`Erro ao buscar stats do aluno ${student.id}:`, error);
-          // Adicionar aluno sem stats
-          this.students.push({
-            ra: student.id,
-            name: student.name || '-',
-            class: student.class || '-',
-            email: student.email || '-',
-            totalAttempts: 0,
-            averageScore: 0,
-            lastAttempt: null,
-            status: student.status || 'active'
-          });
-        }
-      }
+      // 1 query para alunos + 1 query batch para TODAS as stats (em paralelo)
+      const [schoolStudents, statsMap] = await Promise.all([
+        this.schoolService.getSchoolStudents(this.selectedSchool.id),
+        this.schoolService.getAllStudentStats(this.selectedSchool.id)
+      ]);
+
+      this.students = schoolStudents.map(student => {
+        const stats = statsMap.get(student.id);
+        return {
+          ra: student.id,
+          name: student.name || '-',
+          class: student.class || '-',
+          email: student.email || '-',
+          totalAttempts: stats?.totalAttempts || 0,
+          averageScore: Number(stats?.averageScore) || 0,
+          bestScore: stats?.bestScore || 0,
+          lastAttempt: stats?.lastAttempt || null,
+          status: student.status || 'active'
+        };
+      });
 
       this.calculateStats();
-      // Auto-expandir todas as turmas
       this.expandedClasses = new Set(this.students.map(s => s.class || '-'));
     } catch (error: any) {
       this.errorMessage = 'Erro ao carregar alunos';
       console.error(error);
+    } finally {
+      this.isLoadingStudents = false;
     }
   }
 
@@ -467,16 +458,15 @@ export class AdminDashboardComponent implements OnInit {
 
     const activeStudents = this.students.filter(s => s.totalAttempts > 0).length;
     this.participationRate = ((activeStudents / this.students.length) * 100).toFixed(0) + '%';
-  }
 
-  get groupedStudents(): { className: string; students: StudentStats[] }[] {
+    // Recalcula os grupos estáveis para o *ngFor (evita pulsação de hover)
     const map = new Map<string, StudentStats[]>();
     for (const s of this.students) {
       const key = s.class || '-';
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(s);
     }
-    return Array.from(map.entries())
+    this.groupedStudents = Array.from(map.entries())
       .sort(([a], [b]) => a.localeCompare(b, 'pt-BR'))
       .map(([className, students]) => ({
         className,

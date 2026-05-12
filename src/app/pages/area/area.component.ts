@@ -141,6 +141,66 @@ export class AreaComponent implements OnInit {
       year: 2025,
       tags: 'Aulas 1–3, 5–9, 11–28',
       group: 'Língua Portuguesa'
+    },
+    {
+      id: 'lp-caderno-9ano-vol2-p1',
+      displayName: 'Língua Portuguesa',
+      subtitle: '9º Ano — Vol. 2 · Parte 1',
+      icon: '📖',
+      color: 'linear-gradient(135deg, #0b6623, #27ae60)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 1, 2, 4, 12, 15',
+      group: 'Língua Portuguesa'
+    },
+    {
+      id: 'lp-caderno-9ano-vol2-p2',
+      displayName: 'Língua Portuguesa',
+      subtitle: '9º Ano — Vol. 2 · Parte 2',
+      icon: '📖',
+      color: 'linear-gradient(135deg, #1a5276, #2980b9)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 17–27',
+      group: 'Língua Portuguesa'
+    },
+    {
+      id: 'mat-caderno-9ano-vol2-p1',
+      displayName: 'Matemática',
+      subtitle: '9º Ano — Vol. 2 · Parte 1',
+      icon: '📐',
+      color: 'linear-gradient(135deg, #6c3483, #a569bd)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 2–8',
+      group: 'Matemática'
+    },
+    {
+      id: 'mat-caderno-9ano-vol2-p2',
+      displayName: 'Matemática',
+      subtitle: '9º Ano — Vol. 2 · Parte 2',
+      icon: '📐',
+      color: 'linear-gradient(135deg, #1a3a6c, #2471a3)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 12–18',
+      group: 'Matemática'
+    },
+    {
+      id: 'mat-caderno-9ano-vol2-p3',
+      displayName: 'Matemática',
+      subtitle: '9º Ano — Vol. 2 · Parte 3',
+      icon: '📐',
+      color: 'linear-gradient(135deg, #0e4d3a, #1a7a5e)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 22–28',
+      group: 'Matemática'
     }
   ];
 
@@ -161,7 +221,12 @@ export class AreaComponent implements OnInit {
       'mat-caderno-9ano-1bimestre': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-1bimestre.json',
       'mat-caderno-9ano-vol1-p2': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol1-p2.json',
       'mat-caderno-9ano-vol1-p3': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol1-p3.json',
-      'lp-caderno-9ano-vol1-p2': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-vol1-p2.json'
+      'lp-caderno-9ano-vol1-p2': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-vol1-p2.json',
+      'lp-caderno-9ano-vol2-p1': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-vol2-p1.json',
+      'lp-caderno-9ano-vol2-p2': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-vol2-p2.json',
+      'mat-caderno-9ano-vol2-p1': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol2-p1.json',
+      'mat-caderno-9ano-vol2-p2': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol2-p2.json',
+      'mat-caderno-9ano-vol2-p3': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol2-p3.json'
     };
 
     for (const sim of this.simuladosList) {

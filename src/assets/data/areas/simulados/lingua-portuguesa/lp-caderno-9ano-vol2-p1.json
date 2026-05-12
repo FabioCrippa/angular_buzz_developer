@@ -1,0 +1,615 @@
+{
+  "metadata": {
+    "simulado": "Lingua Portuguesa - Caderno de Exercicios - Volume 2 Parte 1",
+    "tipo": "simulado",
+    "disciplina": "Lingua Portuguesa",
+    "serie": "9 Ano",
+    "bimestre": "Volume 2",
+    "parte": "Parte 1",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "lp9-v2p1-001",
+      "question": "(VESTIBULINHO FIEB 2024) Leia o trecho da cronica \"Sons que confortam\", de Martha Medeiros:\n\"Nunca na vida ouvira um som mais lindo, mais calmante, do que os pneus daquele carro amassando as folhas de outono empilhadas junto ao meio-fio.\"\nConsiderando o proposito da cronica de Martha Medeiros, assinale a afirmacao verdadeira.",
+      "options": [
+        {"alias":"A", "name":"O texto tem como principal objetivo contar como os sons fazem parte do nosso cotidiano, principalmente aqueles que nos incomodam."},
+        {"alias":"B", "name":"O interesse principal da cronica e o de mostrar como a escuta de determinados sons pode trazer grande alegria e alivio aos pais em diferentes fases da vida de seus filhos."},
+        {"alias":"C", "name":"A finalidade maior do texto e protestar contra nossa exposicao involuntaria a diversos sons barulhentos ao longo de nossa vida na grande cidade."},
+        {"alias":"D", "name":"A cronica tem a preocupacao de refletir sobre como variados tipos de sons acompanham inumeros momentos da nossa vida, trazendo-nos conforto."},
+        {"alias":"E", "name":"O objetivo da cronica e fazer uma analise das caracteristicas cientificas dos sons que fazem parte do nosso cotidiano."}
+      ],
+      "correct": "D",
+      "explanation": "O titulo \"Sons que confortam\" ja anuncia o tema central: sons ligados a momentos de alivio, alegria e seguranca. A cronica reflete sobre como diferentes sons — desde o choro do bebe na sala de parto ate o silencio absoluto — acompanham e confortam em inumeros momentos da vida. As demais alternativas distorcem o proposito: a cronica nao foca em sons incomodativos (A), nao se limita aos pais (B), nao protesta (C) nem analisa cientificamente (E).",
+      "subject": "Genero textual: cronica — proposito comunicativo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Vestibulinho FIEB 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 1",
+      "aula_tema": "Genero textual: cronica"
+    },
+    {
+      "id": "lp9-v2p1-002",
+      "question": "Em relacao as particularidades do genero textual cronica, NAO podemos afirmar que:",
+      "options": [
+        {"alias":"A", "name":"Por tratar de temas ligados a complexidade da vida, estende o texto por varias paginas e capitulos."},
+        {"alias":"B", "name":"A linguagem utilizada e acessivel e direta, sem rebuscamentos ou termos tecnicos."},
+        {"alias":"C", "name":"Cronicas sao textos curtos e concisos, projetadas para serem lidas rapidamente."},
+        {"alias":"D", "name":"A visao e as opinioes pessoais do autor sao frequentemente destacadas nas cronicas."},
+        {"alias":"E", "name":"A cronica geralmente aborda temas do dia a dia, situacoes comuns que fazem parte da vida das pessoas."}
+      ],
+      "correct": "A",
+      "explanation": "A alternativa A e FALSA: a cronica e justamente um genero conciso e breve, que nao se estende por varias paginas e capitulos — essa e uma caracteristica de romances ou obras literarias longas. As demais sao verdadeiras: linguagem acessivel (B), texto curto (C), presenca da voz e opiniao do autor (D), temas cotidianos (E).",
+      "subject": "Genero textual: cronica — caracteristicas do genero",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Vestibulinho FIEB 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 1",
+      "aula_tema": "Genero textual: cronica"
+    },
+    {
+      "id": "lp9-v2p1-003",
+      "question": "(INCAB 2012 – Adaptada) Leia o texto:\n\"Ninguem e tao grande que nao possa aprender, nem tao pequeno que nao possa ensinar.\" (Esopo)\nAssinale a alternativa em que se analisou corretamente, quanto a flexao, a forma verbal POSSA.",
+      "options": [
+        {"alias":"A", "name":"Esta no modo verbal indicativo."},
+        {"alias":"B", "name":"Quanto ao numero, esta no plural."},
+        {"alias":"C", "name":"Esta no modo imperativo afirmativo."},
+        {"alias":"D", "name":"Apresenta-se no modo subjuntivo."},
+        {"alias":"E", "name":"Refere-se a segunda pessoa do singular."}
+      ],
+      "correct": "D",
+      "explanation": "O verbo \"possa\" e a forma do presente do SUBJUNTIVO do verbo poder. O modo subjuntivo expressa hipotese, possibilidade ou condicao — exatamente o caso da frase: \"que nao possa aprender\" indica uma hipotese, nao uma certeza. O indicativo expressaria certeza (A); nao esta no plural (B); o imperativo afirmativo seria uma ordem direta como \"podes!\" (C); e o sujeito da frase e de 3a pessoa (E).",
+      "subject": "Topico gramatical: verbos — modo subjuntivo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "INCAB 2012 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Topico gramatical: verbos — modos verbais"
+    },
+    {
+      "id": "lp9-v2p1-004",
+      "question": "(FENIG 2005 – Adaptada) Leia o trecho:\n\"Se quisermos eliminar a extrema pobreza, podemos fazer isso ate 2025.\" (Jeffrey Sachs)\nO emprego do tempo do verbo QUERER no trecho se justifica porque o:",
+      "options": [
+        {"alias":"A", "name":"Presente do indicativo enuncia um fato atual."},
+        {"alias":"B", "name":"Presente do subjuntivo expressa um desejo."},
+        {"alias":"C", "name":"Imperativo afirmativo enfatiza uma ordem."},
+        {"alias":"D", "name":"Futuro do subjuntivo propoe eventualidade."}
+      ],
+      "correct": "D",
+      "explanation": "O verbo \"quisermos\" esta no FUTURO DO SUBJUNTIVO (\"Se quisermos\"). Esse tempo verbal e usado em oracoes condicionais para expressar uma acao que pode ou nao ocorrer no futuro — ou seja, uma eventualidade, algo incerto e dependente de uma condicao. Diferente do indicativo (certeza) e do imperativo (ordem direta).",
+      "subject": "Topico gramatical: verbos — futuro do subjuntivo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "FENIG 2005 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Topico gramatical: verbos — modos e tempos verbais"
+    },
+    {
+      "id": "lp9-v2p1-005",
+      "question": "Leia o trecho do conto \"Galeria postuma\", de Machado de Assis:\n\"Joaquim Fidelis protestou sorrindo; mas obedeceu e dancou.\"\nQual e o efeito de sentido criado pelo uso dos verbos no preterito perfeito do indicativo?",
+      "options": [
+        {"alias":"A", "name":"Indicar a possibilidade de as acoes ainda estarem ocorrendo no momento da narracao."},
+        {"alias":"B", "name":"Destacar a finalizacao completa das acoes, indicando que elas ja ocorreram e estao concluidas."},
+        {"alias":"C", "name":"Expressar incerteza ou duvida sobre as acoes realizadas pela personagem, deixando em aberto o que ela pode ter feito."},
+        {"alias":"D", "name":"Sugerir que as acoes da personagem foram sem importancia, mas tiveram uma continuidade por determinado tempo."}
+      ],
+      "correct": "B",
+      "explanation": "O preterito perfeito do indicativo (\"protestou\", \"obedeceu\", \"dancou\") indica acoes CONCLUIDAS e PONTUAIS no passado. No conto, esse uso marca com clareza e precisao cada gesto de Joaquim Fidelis, preparando o leitor para o desfecho narrativo. Nao ha incerteza (C) nem continuidade (D) — o perfeito encerra as acoes definitivamente.",
+      "subject": "Topico gramatical: verbos — preterito perfeito do indicativo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Topico gramatical: verbos — preterito perfeito e imperfeito"
+    },
+    {
+      "id": "lp9-v2p1-006",
+      "question": "Sobre os tempos verbais no conto \"Galeria postuma\", de Machado de Assis, assinale a alternativa que apresenta uma analise INCORRETA:",
+      "options": [
+        {"alias":"A", "name":"\"Era robusto, tinha saude de ferro\" — O preterito imperfeito reforca a descricao continua do estado de Joaquim Fidelis."},
+        {"alias":"B", "name":"\"Chegou a dancar, a pedido de uma senhora sexagenaria\" — O preterito perfeito indica uma acao concluida e pontual."},
+        {"alias":"C", "name":"\"No carro e possivel que cochilasse\" — O uso do preterito mais-que-perfeito transmite anterioridade absoluta da acao."},
+        {"alias":"D", "name":"\"Guardou o folheto, despiu-se, meteu-se na cama, dormiu e morreu\" — O preterito perfeito encadeia acoes sucessivas e definitivas."}
+      ],
+      "correct": "C",
+      "explanation": "A analise INCORRETA e C: o verbo \"cochilasse\" NAO esta no preterito mais-que-perfeito — esta no PRETERITO IMPERFEITO DO SUBJUNTIVO. O contexto \"e possivel que\" exige o modo subjuntivo, que expressa duvida e hipotese, nao anterioridade absoluta. As demais analises estao corretas: o imperfeito descreve estado continuo (A), o perfeito marca acao pontual (B) e encadeia acoes definitivas (D).",
+      "subject": "Topico gramatical: verbos — analise comparativa de tempos e modos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Topico gramatical: verbos — preterito perfeito e imperfeito"
+    },
+    {
+      "id": "lp9-v2p1-007",
+      "question": "Com base na frase da tirinha de Armandinho \"Ha varias religioes, ne?\", assinale a alternativa que apresenta uma afirmacao FALSA sobre o verbo \"ha\" nesse contexto.",
+      "options": [
+        {"alias":"A", "name":"O verbo \"ha\" expressa ideia de existencia, sendo pessoal."},
+        {"alias":"B", "name":"O verbo \"ha\" poderia ser substituido por \"existem\", sem alteracao de sentido."},
+        {"alias":"C", "name":"O verbo \"ha\" indica tempo decorrido, como em \"ha muitos anos\"."},
+        {"alias":"D", "name":"O verbo \"ha\" mostra que se fala de algo presente no mundo, nao do passado."}
+      ],
+      "correct": "A",
+      "explanation": "A afirmacao FALSA e A: o verbo \"haver\" no sentido de EXISTENCIA e IMPESSOAL — nao tem sujeito e sempre fica na 3a pessoa do singular (\"ha varias religioes\", nao \"hao varias religioes\"). Por ser impessoal, nao se flexiona conforme o numero. As demais sao verdadeiras: pode ser substituido por \"existem\" (B), tambem indica tempo decorrido como em \"ha dois anos\" (C), e refere-se a algo presente/existente (D).",
+      "subject": "Topico gramatical: verbo haver — impessoal (existencia)",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 12",
+      "aula_tema": "Topico gramatical: verbos — verbo haver"
+    },
+    {
+      "id": "lp9-v2p1-008",
+      "question": "Analise as frases a seguir sobre o tema da tirinha de Armandinho (religioes e diversidade):\nI. \"Ha muitas religioes espalhadas pelo mundo.\"\nII. \"O preconceito havia sido combatido em algumas sociedades.\"\nIII. \"Ha discussoes importantes sobre a liberdade religiosa.\"\nIV. \"O dialogo havia mostrado respeito entre as culturas.\"\nEm quais frases o verbo HAVER atua como AUXILIAR?",
+      "options": [
+        {"alias":"A", "name":"Apenas nas frases I e III."},
+        {"alias":"B", "name":"Apenas nas frases II e IV."},
+        {"alias":"C", "name":"Nas frases I, II e III."},
+        {"alias":"D", "name":"Em todas as frases."}
+      ],
+      "correct": "B",
+      "explanation": "O verbo \"haver\" e AUXILIAR quando forma os tempos compostos, junto de um participo: \"havia sido combatido\" (II) e \"havia mostrado\" (IV) sao tempos compostos — o \"havia\" auxilia os verbos \"ser\" e \"mostrar\". Nas frases I e III, \"ha\" esta no sentido de EXISTENCIA (equivale a \"existem\"), sendo verbo principal impessoal.",
+      "subject": "Topico gramatical: verbo haver — auxiliar vs. existencia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 12",
+      "aula_tema": "Topico gramatical: verbos — verbo haver"
+    },
+    {
+      "id": "lp9-v2p1-009",
+      "question": "Analise o anuncio publicitario com o enunciado: \"No dia da saudade presenteie com Cacau Show\".\nO efeito de persuasao desse enunciado e criado principalmente pelo uso de:",
+      "options": [
+        {"alias":"A", "name":"Repeticao de palavras."},
+        {"alias":"B", "name":"Verbo no imperativo."},
+        {"alias":"C", "name":"Comparacao exagerada."},
+        {"alias":"D", "name":"Expressao de contraste."}
+      ],
+      "correct": "B",
+      "explanation": "O verbo \"presenteie\" esta no modo IMPERATIVO, que e usado para dar ordens, sugestoes ou pedidos diretos. Nos anuncios publicitarios, o imperativo e um recurso de persuasao poderoso: dirige-se diretamente ao consumidor, criando um comando que estimula a acao imediata de compra. Nao ha repeticao relevante (A), comparacao exagerada (C) nem contraste (D).",
+      "subject": "Topico gramatical: verbos — modo imperativo em textos publicitarios",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 15",
+      "aula_tema": "Topico gramatical: verbos — modo imperativo"
+    },
+    {
+      "id": "lp9-v2p1-010",
+      "question": "Em anuncios publicitarios, frases como \"Experimente ja!\", \"Prove agora!\" e \"Nao perca!\" tem o mesmo efeito persuasivo que o verbo \"presenteie\" no anuncio da Cacau Show, pois:",
+      "options": [
+        {"alias":"A", "name":"Usam comparacao entre ideias."},
+        {"alias":"B", "name":"Criam efeito humoristico."},
+        {"alias":"C", "name":"Ordenam ou sugerem acoes imediatas."},
+        {"alias":"D", "name":"Reforcam descricoes detalhadas do produto."}
+      ],
+      "correct": "C",
+      "explanation": "Todas as frases citadas usam o IMPERATIVO, que ordena ou sugere uma acao de forma direta e imediata. Esse recurso e amplamente utilizado na publicidade para conduzir o consumidor a agir rapidamente — experimentar, comprar, nao deixar passar. O efeito e o estimulo ao consumo imediato. Nao ha comparacao (A), humor (B) nem descricao do produto (D).",
+      "subject": "Topico gramatical: verbos — modo imperativo em textos publicitarios",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 15",
+      "aula_tema": "Topico gramatical: verbos — modo imperativo"
+    },
+    {
+      "id": "lp9-v2p1-011",
+      "question": "Leia o trecho de 1984, de George Orwell:\n\"Nos, o Partido, controlamos todos os registros e controlamos todas as memorias.\"\nQual das afirmacoes sobre o uso do presente do indicativo nesse trecho e FALSA?",
+      "options": [
+        {"alias":"A", "name":"O presente do indicativo reforca a ideia de acao continua e atual."},
+        {"alias":"B", "name":"O uso do presente cria efeito de certeza e permanencia do poder."},
+        {"alias":"C", "name":"Se estivesse no preterito perfeito, o efeito seria de acao ja encerrada."},
+        {"alias":"D", "name":"O presente, aqui, sugere duvida do falante sobre o controle."}
+      ],
+      "correct": "D",
+      "explanation": "A afirmacao FALSA e D: o presente do indicativo NAO sugere duvida — muito pelo contrario, expressa certeza, realidade e permanencia. A duvida seria marcada pelo modo subjuntivo. No contexto da obra, o Partido usa o indicativo justamente para transmitir poder absoluto e incontestavel. As demais sao verdadeiras: o presente marca acao continua (A), cria efeito de certeza (B) e o preterito perfeito indicaria acao encerrada (C).",
+      "subject": "Topico gramatical: verbos — modo indicativo, efeitos de sentido",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Topico gramatical: verbos — modos e tempos verbais em contexto literario"
+    },
+    {
+      "id": "lp9-v2p1-012",
+      "question": "No trecho de 1984, de George Orwell: \"Nos, o Partido, controlamos todos os registros…\", qual modo verbal predomina e qual efeito ele produz?",
+      "options": [
+        {"alias":"A", "name":"Indicativo — afirmacao segura que comunica autoridade e controle."},
+        {"alias":"B", "name":"Subjuntivo — possibilidade incerta que enfraquece a declaracao."},
+        {"alias":"C", "name":"Imperativo — ordem direta que pede adesao do interlocutor."},
+        {"alias":"D", "name":"Condicional — hipotese distante, sem compromisso com a verdade."}
+      ],
+      "correct": "A",
+      "explanation": "O modo INDICATIVO apresenta a acao como real, certa e objetiva. No contexto totalitario de 1984, o Partido usa o indicativo para afirmar controle absoluto sobre a realidade — nao ha hipotese (subjuntivo), ordem (imperativo) nem condicao (condicional). O indicativo e o modo da certeza e da afirmacao direta, reforçando a autoridade inquestionavel do Partido.",
+      "subject": "Topico gramatical: verbos — modo indicativo em contexto literario",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 28",
+      "aula_tema": "Topico gramatical: verbos — modos e tempos verbais em contexto literario"
+    },
+    {
+      "id": "lp9-v2p1-013",
+      "question": "No inicio do conto \"Galeria postuma\", de Machado de Assis, qual ferramenta narrativa e utilizada para introduzir a morte de Joaquim Fidelis?",
+      "options": [
+        {"alias":"A", "name":"A descricao detalhada do local e das condicoes climaticas."},
+        {"alias":"B", "name":"A introducao de um conflito entre o protagonista e outra personagem."},
+        {"alias":"C", "name":"A revelacao gradual dos pensamentos intimos da personagem principal."},
+        {"alias":"D", "name":"O uso de dialogo para demonstrar a vitalidade da personagem antes de sua morte."}
+      ],
+      "correct": "D",
+      "explanation": "O narrador inicia o conto revelando a morte de Joaquim Fidelis logo no primeiro paragrafo, mas o dialogo no baile — em que a senhora sexagenaria o convida a dancar — demonstra a vitalidade da personagem momentos antes. Esse contraste (homem ativo e alegre x morte inesperada) e a ferramenta narrativa central do inicio. Nao ha descricao climatica (A), conflito direto (B) nem revelacao de pensamentos intimos (C).",
+      "subject": "Genero textual: conto — ferramentas narrativas",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Genero textual: conto"
+    },
+    {
+      "id": "lp9-v2p1-014",
+      "question": "Considerando o trecho de \"Galeria postuma\", de Machado de Assis, qual alternativa descreve corretamente as caracteristicas realistas presentes no texto?",
+      "options": [
+        {"alias":"A", "name":"A narrativa idealiza a figura de Joaquim Fidelis, tratando-o como um heroi que morre de forma tragica e comovente."},
+        {"alias":"B", "name":"O conto foca as caracteristicas fisicas de Joaquim Fidelis, sugerindo que a morte era inevitavel e consequencia direta de seu esforco no baile."},
+        {"alias":"C", "name":"A cronica tem como principal objetivo passar uma licao de moral clara, usando a morte subita como punicao pela futilidade da vida social."},
+        {"alias":"D", "name":"O texto apresenta a morte de forma anti-heroica, objetiva e banal (\"dormiu e morreu\"), com descricao de acoes cotidianas e revelando a dualidade psicologica da personagem, que se mostrava alegre em publico mas considerava o baile \"chinfrim\" em particular."}
+      ],
+      "correct": "D",
+      "explanation": "O Realismo de Machado de Assis se manifesta em tres elementos centrais nesse conto: 1) A morte e narrada de forma anti-heroica e banal — \"dormiu e morreu\" — sem drama, filosofia ou sofrimento; 2) As acoes da personagem sao cotidianas e ordinarias (baile, escrever o diario, dormir); 3) Ha dualidade psicologica: Joaquim age de forma social e alegre em publico, mas registra em seu diario o julgamento critico sobre o proprio baile. Essa complexidade humana e a banalidade da morte sao marcas tipicas do Realismo.",
+      "subject": "Genero textual: conto — Realismo de Machado de Assis",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Genero textual: conto"
+    },
+    {
+      "id": "lp9-v2p1-015",
+      "question": "(EEAR 2024) Leia as oracoes a seguir:\nI \"O poema e uma pedra no abismo.\" (Mario Quintana)\nII \"Que negro segredo guardava o porao da alma?\" (Autran Dourado)\nIII \"E trabalhavam nos seus versos como um carpinteiro nas tabuas!\" (Alberto Caeiro)\nIV \"A pupila se dilata e transborda como tinta preta derramando no olho inteiro.\" (Lygia Fagundes Telles)\nHa metafora em:",
+      "options": [
+        {"alias":"A", "name":"III e IV."},
+        {"alias":"B", "name":"II e IV."},
+        {"alias":"C", "name":"I e III."},
+        {"alias":"D", "name":"I e II."}
+      ],
+      "correct": "D",
+      "explanation": "A METAFORA e uma comparacao implicita — sem uso de conectivos comparativos como \"como\" ou \"parece\". I: \"O poema e uma pedra no abismo\" — identifica diretamente poema e pedra, sem conectivo: metafora. II: \"o porao da alma\" — compara a profundidade da alma a um porao, sem conectivo: metafora. III e IV usam a palavra \"como\", o que as caracteriza como COMPARACAO (simile), nao metafora. Portanto, ha metafora apenas em I e II.",
+      "subject": "Leitura: figuras de linguagem — metafora vs. comparacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "EEAR 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 5",
+      "aula_tema": "Genero textual: poema — figuras de linguagem"
+    },
+    {
+      "id": "lp9-v2p1-016",
+      "question": "(UFMA 2018) No poema \"Abraco\", de Roseana Murray, ha o uso de uma figura de linguagem que intensifica a uniao entre os sujeitos liricos. Expressoes como \"costurar nossas esperancas\" e \"encostar nossas almas\" exemplificam essa figura. Qual e ela?",
+      "options": [
+        {"alias":"A", "name":"Comparacao."},
+        {"alias":"B", "name":"Metafora."},
+        {"alias":"C", "name":"Hiperbole."},
+        {"alias":"D", "name":"Ironia."}
+      ],
+      "correct": "B",
+      "explanation": "As expressoes \"costurar nossas esperancas\" e \"encostar nossas almas\" atribuem sentidos figurados a conceitos abstratos (esperancas, almas) usando verbos concretos (costurar, encostar), sem conectivos comparativos como \"como\" ou \"parece\". Isso caracteriza a METAFORA — comparacao implicita. Se houvesse o conectivo comparativo, seria comparacao/simile (A). Hiperbole (C) seria exagero; ironia (D) diria o oposto do que pensa.",
+      "subject": "Leitura: figuras de linguagem — metafora em poema",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "UFMA 2018 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 5",
+      "aula_tema": "Genero textual: poema — figuras de linguagem"
+    },
+    {
+      "id": "lp9-v2p1-017",
+      "question": "(IBFC 2023 – Adaptada) Considerando a linguagem do poema \"O autorretrato\", de Mario Quintana, em que o eu lirico se pinta como \"nuvem\", \"arvore\" e \"coisas de que nem ha mais lembranca\", e correto afirmar que o autor se utiliza da:",
+      "options": [
+        {"alias":"A", "name":"Conotacao para se pintar de varias maneiras, como nuvem, arvore, coisas e lembrancas."},
+        {"alias":"B", "name":"Denotacao para se pintar ate mesmo com sonhos que um dia existirao."},
+        {"alias":"C", "name":"Denotacao para mostrar que o retrato foi pintado por uma crianca."},
+        {"alias":"D", "name":"Simplicidade para mostrar que e semelhante a qualquer pessoa."},
+        {"alias":"E", "name":"Conotacao para se lembrar de que um dia foi crianca."}
+      ],
+      "correct": "A",
+      "explanation": "O poeta usa a CONOTACAO ao se representar como nuvem, arvore ou lembrancas — imagens simbolicas e figuradas que expressam o eu lirico de forma nao literal. Nuvem e arvore nao sao interpretados no sentido literal (denotativo), mas como representacoes poeticas da identidade e da efemeridade. A denotacao (B e C) seria o sentido literal e objetivo, o que contradiz o carater poetico e simbolico do poema.",
+      "subject": "Leitura: sentido denotativo e conotativo em poema",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "IBFC 2023 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Leitura: sentido real e figurado de palavras"
+    },
+    {
+      "id": "lp9-v2p1-018",
+      "question": "(IBFC 2023 – Adaptada) Assinale a alternativa que preenche correta e respectivamente as lacunas:\n\"O sentido ______ e aquele dado pelo dicionario. Na ______ o sentido e referencial, proprio, usual ou literal. Ja o sentido ______ e o sentido que a palavra ganha no texto por forca geralmente de comparacoes, associacoes de ideias.\"",
+      "options": [
+        {"alias":"A", "name":"Denotativo / conotacao / denotativo."},
+        {"alias":"B", "name":"Conotativo / denotacao / conotativo."},
+        {"alias":"C", "name":"Conotativo / conotacao / conotativo."},
+        {"alias":"D", "name":"Denotativo / denotacao / conotativo."}
+      ],
+      "correct": "D",
+      "explanation": "A sequencia correta e: sentido DENOTATIVO (dado pelo dicionario, sentido literal) / DENOTACAO (uso referencial, objetivo) / CONOTATIVO (sentido figurado adquirido no texto por comparacoes e associacoes). A denotacao e o uso literal e objetivo da palavra; a conotacao amplia o significado, atribuindo valor simbolico. A opcao A repete \"denotativo\" no final, o que e incorreto. A opcao B usa \"conotativo\" no inicio, contradizendo a definicao de sentido dicionarizado.",
+      "subject": "Leitura: conceitos de denotacao e conotacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "IBFC 2023 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Leitura: sentido real e figurado de palavras"
+    },
+    {
+      "id": "lp9-v2p1-019",
+      "question": "(FUNCERN 2024 – Adaptada) Considerando as caracteristicas estilisticas e composicionais do texto \"Um Brasil de cidades\", de Washington Fajardo — arquiteto e urbanista que assina o texto —, o genero predominante e:",
+      "options": [
+        {"alias":"A", "name":"Reportagem."},
+        {"alias":"B", "name":"Artigo de opiniao."},
+        {"alias":"C", "name":"Editorial."},
+        {"alias":"D", "name":"Noticia."}
+      ],
+      "correct": "B",
+      "explanation": "O texto e um ARTIGO DE OPINIAO: e assinado por um autor identificado (Washington Fajardo), apresenta sua visao pessoal com criticas e sugestoes sobre politica urbana, usa linguagem argumentativa com comparacoes e metaforas (\"Sisifo urbano\"), e defende uma tese. O EDITORIAL tambem e opinativo, mas representa a posicao institucional do veiculo, sem autoria individual assinada. A reportagem e a noticia sao generos informativos, sem defesa de posicao.",
+      "subject": "Leitura: genero editorial e artigo de opiniao — identificacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "FUNCERN 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 7",
+      "aula_tema": "Leitura: editorial e artigo de opiniao"
+    },
+    {
+      "id": "lp9-v2p1-020",
+      "question": "Com base no texto \"Um Brasil de cidades\", de Washington Fajardo, e considerando as diferencas entre artigo de opiniao e editorial, assinale a alternativa que apresenta apenas as afirmacoes VERDADEIRAS:\nI — O texto apresenta analise pessoal do autor, com criticas e sugestoes, caracteristica de artigo de opiniao.\nII — Por ser assinado por Washington Fajardo, o texto reflete a posicao oficial do jornal.\nIII — O tom do texto e subjetivo e argumentativo, com comparacoes e metaforas, o que reforca seu carater opinativo.\nIV — O genero do texto e editorial, pois defende uma postura oficial sobre a gestao das cidades brasileiras.",
+      "options": [
+        {"alias":"A", "name":"Apenas I e III."},
+        {"alias":"B", "name":"Apenas I e II."},
+        {"alias":"C", "name":"I, II e III."},
+        {"alias":"D", "name":"II, III e IV."}
+      ],
+      "correct": "A",
+      "explanation": "Sao verdadeiras apenas I e III. I e verdadeira: o texto traz analise pessoal assinada por Washington Fajardo, com criticas e sugestoes — marcas do artigo de opiniao. III e verdadeira: o tom subjetivo, argumentativo e o uso de metaforas (\"Sisifo urbano\", \"enxaqueca para prefeitos\") reforcam o carater opinativo. II e FALSA: o fato de ser assinado indica autoria individual, nao posicao oficial do jornal — isso seria o editorial. IV e FALSA: o genero e artigo de opiniao, nao editorial.",
+      "subject": "Leitura: diferencas entre artigo de opiniao e editorial",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 7",
+      "aula_tema": "Leitura: editorial e artigo de opiniao"
+    },
+    {
+      "id": "lp9-v2p1-021",
+      "question": "Analise as proposicoes sobre o uso dos artigos no texto \"O verdadeiro progresso em Tambau\", de Marcela R. Pimenta:\nI — \"a construcao trara beneficios economicos para a regiao\" — o artigo definido \"a\" especifica a obra mencionada e da clareza ao argumento.\nII — \"sabemos que cumprir regulamentacoes nao e o mesmo que garantir a protecao efetiva do meio ambiente\" — o artigo definido \"a\" generaliza a ideia, tornando-a vaga.\nIII — \"a destruicao de um ecossistema por um ganho economico temporario e, na verdade, um retrocesso\" — o artigo indefinido \"um\" introduz a ideia de forma nao especifica, reforcando o carater de exemplo.\nIV — \"e necessario que a voz da comunidade e dos ambientalistas seja ouvida\" — o artigo definido \"a\" confere unicidade, marcando que se trata de uma voz coletiva especifica.\nAssinale a alternativa que indica a proposicao FALSA:",
+      "options": [
+        {"alias":"A", "name":"Proposicao I."},
+        {"alias":"B", "name":"Proposicao II."},
+        {"alias":"C", "name":"Proposicao III."},
+        {"alias":"D", "name":"Proposicao IV."}
+      ],
+      "correct": "B",
+      "explanation": "A proposicao FALSA e II: o artigo definido \"a\" em \"a protecao efetiva do meio ambiente\" NAO generaliza nem torna a ideia vaga — pelo contrario, o artigo definido ESPECIFICA e PRECISA o conceito, diferenciando-o de protecao generica. Quem generaliza e torna vago e o artigo INDEFINIDO. As proposicoes I (artigo definido especifica a obra), III (artigo indefinido introduz sem especificar, como exemplo) e IV (artigo definido confere unicidade) estao corretas.",
+      "subject": "Topico gramatical: artigos — definidos e indefinidos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 8",
+      "aula_tema": "Topico gramatical: artigos"
+    },
+    {
+      "id": "lp9-v2p1-022",
+      "question": "Avalie as seguintes afirmacoes sobre o uso dos artigos na lingua portuguesa:\nI — O uso de artigos definidos confere especificidade e reforca a importancia de uma informacao.\nII — Artigos indefinidos sao usados para apresentar uma ideia de forma generalizada e menos especifica.\nIII — Artigos definidos sugerem que o leitor ja esta familiarizado com o assunto mencionado.\nIV — Artigos indefinidos indicam que o objeto ou conceito mencionado e unico e amplamente conhecido.\nEsta correto o que se afirma em:",
+      "options": [
+        {"alias":"A", "name":"I, II e III."},
+        {"alias":"B", "name":"I, II e IV."},
+        {"alias":"C", "name":"II, III e IV."},
+        {"alias":"D", "name":"I, III e IV."}
+      ],
+      "correct": "A",
+      "explanation": "Estao corretas I, II e III. I: correto — artigo definido (o, a, os, as) especifica e distingue o referente, reforçando sua importancia no texto. II: correto — artigo indefinido (um, uma, uns, umas) apresenta algo nao identificado ou nao unico, de forma mais generica. III: correto — o artigo definido pressupoe que o leitor ja conhece ou pode identificar o referente pelo contexto. IV: INCORRETA — os artigos INDEFINIDOS indicam algo VAGO e nao especifico, nao algo unico e amplamente conhecido. Seria o artigo DEFINIDO que marcaria unicidade e familiaridade.",
+      "subject": "Topico gramatical: artigos — definidos e indefinidos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 8",
+      "aula_tema": "Topico gramatical: artigos"
+    },
+    {
+      "id": "lp9-v2p1-023",
+      "question": "(IF 2024 – Adaptada) Leia o texto sobre fake news. O(s) assunto(s) principal(is) abordado(s) no texto é(são):",
+      "options": [
+        {"alias":"A", "name":"A influencia das fake news nas eleicoes dos Estados Unidos."},
+        {"alias":"B", "name":"Os prejuizos sociais provocados pelas fake news."},
+        {"alias":"C", "name":"O surgimento das fake news no Brasil e no mundo."},
+        {"alias":"D", "name":"As dificuldades para controle do espalhamento de fake news."}
+      ],
+      "correct": "B",
+      "explanation": "O texto aborda de forma ampla e central os PREJUIZOS SOCIAIS provocados pelas fake news: desde interferencias em eleicoes, passando pela queda na vacinacao (retorno do sarampo), ate o panico em cidades causado por boatos. O texto vai alem de exemplos especificos como eleicoes (A) ou controle (D), e o surgimento historico (C) e apenas contexto introdutorio, nao o foco principal.",
+      "subject": "Leitura: argumentacao — identificacao do tema principal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "IF 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 9",
+      "aula_tema": "Leitura: argumentacao"
+    },
+    {
+      "id": "lp9-v2p1-024",
+      "question": "(IF 2024 – Adaptada) Sobre as ideias presentes no texto de fake news, avalie as afirmativas:\nI — As redes sociais ajudam a mitigar a divulgacao das fake news.\nII — Algumas noticias falsas lancam mao do sensacionalismo em busca de maior visibilidade.\nIII — As fake news, embora ja existentes, ganharam maior destaque a partir do ano de 2016.\nEstao corretas apenas:",
+      "options": [
+        {"alias":"A", "name":"I e II."},
+        {"alias":"B", "name":"I e III."},
+        {"alias":"C", "name":"II e III."},
+        {"alias":"D", "name":"I, II e III."}
+      ],
+      "correct": "C",
+      "explanation": "Estao corretas II e III. II e verdadeira: o texto afirma que 'a maioria das noticias divulgadas explorava conteudos sensacionalistas' para atrair acessos. III e verdadeira: o texto afirma que o termo ganhou frequencia durante a eleicao de 2016 nos EUA. I e FALSA: as redes sociais sao justamente o meio que AMPLIAM a divulgacao das fake news — o texto diz que os robos disparam informacoes nas redes e 'pessoas reais ficam vulneraveis e acabam compartilhando'.",
+      "subject": "Leitura: argumentacao — analise de afirmativas sobre o texto",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "IF 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 9",
+      "aula_tema": "Leitura: argumentacao"
+    },
+    {
+      "id": "lp9-v2p1-025",
+      "question": "Sobre a relacao entre texto e imagem na fotorreportagem 'O lixo e a arte contemporanea', assinale a alternativa correta.",
+      "options": [
+        {"alias":"A", "name":"As imagens representam a beleza estetica da natureza, contrastando com a descricao textual sobre a poluicao urbana."},
+        {"alias":"B", "name":"As imagens reforcam a critica feita no texto sobre o impacto dos residuos urbanos na sociedade, mostrando como eles sao reutilizados em obras de arte."},
+        {"alias":"C", "name":"As imagens ilustram um ambiente futurista, em oposicao ao texto, que fala sobre o passado da gestao de residuos."},
+        {"alias":"D", "name":"O texto e as imagens nao apresentam relacao, sendo apenas uma juncao aleatoria de informacoes e fotografias."}
+      ],
+      "correct": "B",
+      "explanation": "Na fotorreportagem, texto e imagem se COMPLEMENTAM e reforcam a mesma mensagem: os residuos urbanos, em vez de apenas poluirem, podem ser transformados em obras de arte que provocam reflexao ambiental. As esculturas (esqueleto de materiais reciclados, figura carregando globo de lixo) ilustram visualmente exatamente o que o texto descreve. Nao ha contraste (A), futurismo (C) nem desconexao (D).",
+      "subject": "Leitura: relacao texto-imagem em fotorreportagem",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 10",
+      "aula_tema": "Topico gramatical: acentuacao / Leitura multimodal"
+    },
+    {
+      "id": "lp9-v2p1-026",
+      "question": "Considerando a tematica abordada na fotorreportagem 'O lixo e a arte contemporanea', qual das afirmacoes melhor reflete a mensagem transmitida?",
+      "options": [
+        {"alias":"A", "name":"A arte nao tem poder de mudar a percepcao das pessoas sobre questoes ambientais, mesmo quando tenta."},
+        {"alias":"B", "name":"As esculturas representadas nas imagens sao feitas de materiais que nao tem qualquer impacto ambiental."},
+        {"alias":"C", "name":"A producao artistica deve ser completamente separada das questoes sociais e ambientais, pois nao faz diferenca para a sociedade."},
+        {"alias":"D", "name":"A reciclagem e o reaproveitamento de materiais descartados sao essenciais para a construcao de um futuro mais sustentavel, como evidenciado nas imagens e no texto."}
+      ],
+      "correct": "D",
+      "explanation": "A mensagem central da fotorreportagem e que os residuos podem e devem ser reaproveitados — tanto como critica (arte que provoca reflexao) quanto como pratica sustentavel. As esculturas feitas de lixo reciclado simbolizam a possibilidade de transformar o descarte em conscientizacao e em contribuicao para um futuro mais sustentavel. As demais alternativas contradizem diretamente a mensagem do texto.",
+      "subject": "Leitura: mensagem central em texto multimodal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 10",
+      "aula_tema": "Topico gramatical: acentuacao / Leitura multimodal"
+    },
+    {
+      "id": "lp9-v2p1-027",
+      "question": "(IFS 2024 – Adaptada) Na tirinha de 'Niquel Nausea', o humor e construido por meio da interacao entre a linguagem verbal e a nao verbal. A respeito da construcao do efeito comico, assinale a alternativa correta.",
+      "options": [
+        {"alias":"A", "name":"O humor surge da percepcao do cachorro sobre a complexidade da lingua portuguesa, o que o leva a pedir manteiga de forma educada."},
+        {"alias":"B", "name":"O humor e produzido pela expressao de frustracao da personagem com a dificuldade do cachorro em entender o pedido para passar a manteiga."},
+        {"alias":"C", "name":"O humor e resultado da interpretacao literal do cachorro ao fazer o que pediu a personagem, provocando uma situacao inesperada, gerada pelo conflito linguistico."},
+        {"alias":"D", "name":"O humor esta na habilidade do cachorro em aprender portugues, mas com dificuldade em lidar com expressoes idiomaticas."}
+      ],
+      "correct": "C",
+      "explanation": "O efeito comico na tirinha surge da INTERPRETACAO LITERAL: o cachorro interpreta o pedido ao pe da letra, gerando uma situacao inesperada e absurda. Esse conflito linguistico — entre o sentido pretendido (pegar e entregar a manteiga) e o sentido literal executado — e o mecanismo central do humor. Nao ha frustracao destacada (B) nem aprendizado idiomatico em destaque (D).",
+      "subject": "Genero textual: tirinha — construcao do humor",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "IFS 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 11",
+      "aula_tema": "Genero textual: tirinha"
+    },
+    {
+      "id": "lp9-v2p1-028",
+      "question": "Uma das principais caracteristicas do genero tirinha, presente no exemplo de 'Niquel Nausea', e:",
+      "options": [
+        {"alias":"A", "name":"O uso de descricoes longas e detalhadas para apresentar as personagens."},
+        {"alias":"B", "name":"A combinacao de linguagem verbal e nao verbal em narrativa curta."},
+        {"alias":"C", "name":"A ausencia de critica social, privilegiando apenas o humor simples."},
+        {"alias":"D", "name":"A necessidade de muitos quadros para desenvolver a narrativa."}
+      ],
+      "correct": "B",
+      "explanation": "A tirinha e definida pela CONCISAO (poucos quadros) e pelo uso INTEGRADO de linguagem verbal (texto/falas) e nao verbal (imagens, expressoes, acoes). Essa combinacao e o que permite construir humor, critica ou conflito de forma rapida e eficiente. Descricoes longas (A) e muitos quadros (D) sao opostos a essa concisao; e tirinhas frequentemente trazem critica social (C — incorreta).",
+      "subject": "Genero textual: tirinha — caracteristicas do genero",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "IFS 2024 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 11",
+      "aula_tema": "Genero textual: tirinha"
+    },
+    {
+      "id": "lp9-v2p1-029",
+      "question": "(VESTIBULINHO FIEB 2023 – Adaptada) Analise as afirmativas sobre os dois textos da Coca-Cola:\nI — O texto I e um anuncio publicitario e o texto II e uma noticia.\nII — Com as duas acoes de marketing, a Coca-Cola pretende oferecer experiencias que estimulem os sentidos dos consumidores e dos visitantes.\nIII — A estrategia de campanha nao e eficaz, porque nem todos tomam refrigerantes.\nIV — O slogan 'Tente nao ouvir isso', potencializado pela imagem da garrafa sendo aberta, pretende produzir o resgate na memoria do som do gas escapando.\nEsta correto o que se afirma em:",
+      "options": [
+        {"alias":"A", "name":"I e II."},
+        {"alias":"B", "name":"I, II e III."},
+        {"alias":"C", "name":"II, III e IV."},
+        {"alias":"D", "name":"I, II e IV."}
+      ],
+      "correct": "D",
+      "explanation": "I e VERDADEIRA: o Texto I e um anuncio publicitario (slogan + imagem persuasiva) e o Texto II e uma noticia jornalistica (informativo, em terceira pessoa, sem apelo direto ao consumidor). II e VERDADEIRA: tanto o anuncio (estimulo auditivo da memoria) quanto a Casa Coca-Cola (experiencia sensorial com imagens, essencias e sons) buscam estimular os sentidos. IV e VERDADEIRA: o slogan usa psicologia reversa ('Tente NAO ouvir') para acionar a memoria sensorial do som do gas da garrafa. III e FALSA: a eficacia de uma campanha nao se avalia pela universalidade do publico.",
+      "subject": "Genero textual: anuncio publicitario — analise e identificacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "FIEB 2023 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 13",
+      "aula_tema": "Genero textual: anuncio publicitario"
+    },
+    {
+      "id": "lp9-v2p1-030",
+      "question": "(FIEB 2023 – Adaptada) Qual afirmacao melhor explica a estrategia do anuncio 'Tente nao ouvir isso', da Coca-Cola?",
+      "options": [
+        {"alias":"A", "name":"'O slogan agia como um truque da psicologia reversa.'"},
+        {"alias":"B", "name":"'Queriamos mostrar que a impressao pode ser qualquer coisa.'"},
+        {"alias":"C", "name":"'Realmente queriamos nos divertir com o criativo e criar algo realmente novo.'"},
+        {"alias":"D", "name":"'Pretendemos ativar a memoria sensorial de nossos consumidores, desafiando-os a ouvir uma imagem pela primeira vez.'"}
+      ],
+      "correct": "D",
+      "explanation": "A alternativa D e a mais completa e diretamente relacionada ao anuncio: o objetivo e ATIVAR A MEMORIA SENSORIAL — ao ver a imagem da garrafa abrindo, o consumidor 'ouve' mentalmente o som do gas. O desafio 'Tente nao ouvir isso' reforca essa ativacao. As demais citam psicologia reversa (A — parcialmente correta, mas superficial), impressao (B — vaga) ou criatividade generica (C — nao explica a estrategia especifica do sensorial).",
+      "subject": "Genero textual: anuncio publicitario — estrategia de persuasao e memoria sensorial",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "FIEB 2023 / Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 13",
+      "aula_tema": "Genero textual: anuncio publicitario"
+    },
+    {
+      "id": "lp9-v2p1-031",
+      "question": "A imagem mostra que o uso de metaforas visuais em anuncios ajuda a transmitir mensagens de forma rapida e impactante. Qual alternativa exemplifica melhor essa funcao?",
+      "options": [
+        {"alias":"A", "name":"Mostrar apenas dados numericos sobre o produto."},
+        {"alias":"B", "name":"Usar imagens criativas que associam o produto a sentimentos positivos."},
+        {"alias":"C", "name":"Repetir varias vezes o preco promocional."},
+        {"alias":"D", "name":"Descrever longamente as vantagens em texto corrido."}
+      ],
+      "correct": "B",
+      "explanation": "A metafora visual funciona por ASSOCIACAO: ao ligar o produto a imagens que evocam sentimentos positivos (alegria, liberdade, qualidade de vida), o anuncio comunica uma mensagem complexa de forma instantanea, sem precisar de explicacoes textuais. Dados numericos (A), repeticao de preco (C) e texto longo (D) sao recursos racionais e diretos, que nao exploram o poder da metafora visual.",
+      "subject": "Genero textual: anuncio publicitario — metafora visual",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 14",
+      "aula_tema": "Genero textual: anuncio publicitario — metafora visual"
+    },
+    {
+      "id": "lp9-v2p1-032",
+      "question": "Associe cada funcao da metafora visual em anuncios a sua respectiva descricao. Qual sequencia corresponde corretamente as descricoes abaixo?\n1) Emocao e aproximacao do publico.\n2) Transmite ideias complexas em pouco tempo.\n3) Mostra criatividade e originalidade.\n4) Associa sentimentos positivos ao produto.\n5) Imagens metaforicas marcam mais que descricoes.",
+      "options": [
+        {"alias":"A", "name":"1-Mais persuasao / 2-Mensagem rapida / 3-Identidade da marca / 4-Conexao emocional / 5-Facil de lembrar."},
+        {"alias":"B", "name":"1-Conexao emocional / 2-Mensagem rapida / 3-Identidade da marca / 4-Mais persuasao / 5-Facil de lembrar."},
+        {"alias":"C", "name":"1-Mais persuasao / 2-Facil de lembrar / 3-Identidade da marca / 4-Conexao emocional / 5-Mensagem rapida."},
+        {"alias":"D", "name":"1-Conexao emocional / 2-Identidade da marca / 3-Mensagem rapida / 4-Mais persuasao / 5-Facil de lembrar."}
+      ],
+      "correct": "A",
+      "explanation": "A correspondencia correta e: 1-Emocao e aproximacao do publico → Mais persuasao (emocao aumenta a persuasao); 2-Transmite ideias complexas em pouco tempo → Mensagem rapida; 3-Mostra criatividade e originalidade → Identidade da marca (criatividade diferencia e define a marca); 4-Associa sentimentos positivos → Conexao emocional; 5-Imagens metaforicas marcam mais → Facil de lembrar. Essa sequencia reflete como cada funcao se relaciona com o papel da metafora visual na publicidade.",
+      "subject": "Genero textual: anuncio publicitario — funcoes da metafora visual",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 14",
+      "aula_tema": "Genero textual: anuncio publicitario — metafora visual"
+    },
+    {
+      "id": "lp9-v2p1-033",
+      "question": "Sob um vies critico, qual das alternativas representa melhor a funcao social de um anuncio publicitario?",
+      "options": [
+        {"alias":"A", "name":"Fornecer uma analise detalhada e imparcial de produtos, ideias e servicos, sem considerar os interesses comerciais."},
+        {"alias":"B", "name":"Induzir o consumidor a desejar produtos ou servicos que se alinhem com padroes sociais ou culturais considerados ideais."},
+        {"alias":"C", "name":"Informar sobre a disponibilidade e as especificacoes tecnicas dos produtos e servicos, considerando sua influencia."},
+        {"alias":"D", "name":"Oferecer uma oportunidade para questionamentos e discussoes publicas sobre produtos e servicos ofertados."}
+      ],
+      "correct": "B",
+      "explanation": "Sob um vies CRITICO, a publicidade nao e neutra: ela ESTIMULA DESEJOS e COMPORTAMENTOS alinhados a padroes culturais ou sociais, moldando escolhas e valores dos consumidores. Ao associar produtos a estilos de vida idealizados, a publicidade atua socialmente como instrumento de influencia cultural. A alternativa A descreve jornalismo isento (nao publicidade); C descreve comunicacao tecnica/informativa; D descreve debate academico — nenhuma delas reflete a funcao social critica da publicidade.",
+      "subject": "Genero textual: anuncio publicitario — funcao social critica",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 16",
+      "aula_tema": "Genero textual: anuncio publicitario — funcao social"
+    },
+    {
+      "id": "lp9-v2p1-034",
+      "question": "Observe as palavras retiradas da fotorreportagem 'O lixo e a arte contemporanea': DIALOGO, SIMBOLOS, REFLEXAO, CAPTURAM, SUSTENTAVEL.\nAssinale a alternativa que apresenta corretamente a REGRA de acentuacao de cada palavra:\nI — 'dialogo': proparoxitona — todas as proparoxitonas sao acentuadas.\nII — 'simbolos': proparoxitona — todas as proparoxitonas sao acentuadas.\nIII — 'reflexao': oxitona terminada em -ao — oxitonas terminadas em -a, -e, -o, -em, -ens, -ao sao acentuadas.\nIV — 'capturam': paroxitona terminada em -am — nao e acentuada, pois a terminacao -am nao exige acento nas paroxitonas.\nV — 'sustentavel': paroxitona terminada em -vel — paroxitonas terminadas em -l, -r, -n, -x, -i, -us, -um, -ons sao acentuadas.",
+      "options": [
+        {"alias":"A", "name":"Apenas I e III estao corretas."},
+        {"alias":"B", "name":"Apenas II, III e V estao corretas."},
+        {"alias":"C", "name":"Todas estao corretas."},
+        {"alias":"D", "name":"I, II, III e V estao corretas; apenas IV esta incorreta."}
+      ],
+      "correct": "C",
+      "explanation": "Todas as afirmacoes estao corretas. I e II: 'dialogo' e 'simbolos' sao PROPAROXITONAS (antepenultima silaba tonica) — TODAS as proparoxitonas sao acentuadas na lingua portuguesa. III: 'reflexao' e OXITONA terminada em -ao, classe que recebe acento obrigatorio. IV: 'capturam' e PAROXITONA terminada em -am — essa terminacao NAO exige acento (ao contrario de 'tambem' que e oxitona). V: 'sustentavel' e PAROXITONA terminada em -vel (= -l), que exige acento grafico.",
+      "subject": "Topico gramatical: acentuacao — regras de oxitonas, paroxitonas e proparoxitonas",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 10",
+      "aula_tema": "Topico gramatical: acentuacao"
+    },
+    {
+      "id": "lp9-v2p1-035",
+      "question": "Leia o trecho do texto sobre fake news:\n'Um dado grave que foi constatado pelos pesquisadores do MIT e que a chance de uma noticia falsa ser repassada e consideravelmente maior que a de uma verdadeira. Foram analisadas 126 mil noticias, e percebeu-se que a probabilidade de republicar uma informacao falsa e 70% maior do que a de republicar uma noticia verdadeira.'\nQual e a funcao argumentativa desse dado estatistico no texto?",
+      "options": [
+        {"alias":"A", "name":"Ilustrar com humor a situacao das fake news nas redes sociais."},
+        {"alias":"B", "name":"Introduzir uma opiniao pessoal do autor sobre a credibilidade das redes."},
+        {"alias":"C", "name":"Conferir credibilidade e sustentacao cientifica a tese de que fake news se espalham mais do que noticias verdadeiras."},
+        {"alias":"D", "name":"Contradizer a ideia central do texto, mostrando que as pessoas preferem a verdade."}
+      ],
+      "correct": "C",
+      "explanation": "O dado do MIT ('70% maior probabilidade de republicar informacao falsa', baseado em analise de 126 mil noticias) e um ARGUMENTO DE AUTORIDADE e dado estatistico. Sua funcao e CONFERIR CREDIBILIDADE CIENTIFICA a tese central do texto: as fake news se espalham mais facilmente que noticias verdadeiras. Esse tipo de argumento — baseado em pesquisa e fonte reconhecida — e um dos mais eficazes na argumentacao, pois nao depende de opiniao pessoal (B), nao tem humor (A) e nao contradiz o texto (D).",
+      "subject": "Leitura: argumentacao — funcao dos dados e argumentos de autoridade",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano Vol. 2 - Aula 9",
+      "aula_tema": "Leitura: argumentacao"
+    }
+  ]
+}

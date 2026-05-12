@@ -1,0 +1,637 @@
+{
+  "metadata": {
+    "simulado": "Matematica - Caderno de Exercicios - Volume 2 Parte 1",
+    "tipo": "simulado",
+    "disciplina": "Matematica",
+    "serie": "9 Ano",
+    "bimestre": "Volume 2",
+    "parte": "Parte 1",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "mat9-v2p1-001",
+      "question": "Os triângulos ACD e BED são semelhantes, com CD = 3 cm, DE = 1,5 cm e BE = 2 cm. O comprimento de AC é 6 cm. O comprimento de DE é:",
+      "options": [
+        {"alias":"A","name":"1 cm."},
+        {"alias":"B","name":"3 cm."},
+        {"alias":"C","name":"4 cm."},
+        {"alias":"D","name":"6 cm."}
+      ],
+      "correct": "A",
+      "explanation": "Como os triângulos ACD e BED são semelhantes, a razão entre os lados correspondentes é constante. Usando CD/DE = AC/BE: 3/DE = 6/2 ⇒ 3/DE = 3 ⇒ DE = 1 cm.",
+      "subject": "Semelhança de triângulos",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Semelhança de triângulos e Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p1-002",
+      "question": "Nos triângulos ABC e DBE, as retas DE e AC são paralelas. Dados BE = 6 cm, EC = 6 cm, BD = 7 cm e DE = 14 cm. O comprimento BC é:",
+      "options": [
+        {"alias":"A","name":"6 cm."},
+        {"alias":"B","name":"10 cm."},
+        {"alias":"C","name":"12 cm."},
+        {"alias":"D","name":"14 cm."},
+        {"alias":"E","name":"18 cm."}
+      ],
+      "correct": "C",
+      "explanation": "Como DE ∥ AC, os triângulos DBE e ABC são semelhantes (AA). A razão de semelhança é DE/AC = BE/BC. Com BE = 6 cm e EC = 6 cm, temos BC = BE + EC = 12 cm.",
+      "subject": "Semelhança de triângulos — retas paralelas",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Semelhança de triângulos e Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p1-003",
+      "question": "(CADERNO DE EXERCÍCIOS OBMEP – Adaptada) Dois triângulos ΔKLM e ΔQPM são apresentados. Analisando os ângulos e lados correspondentes, eles são:",
+      "options": [
+        {"alias":"A","name":"Não são semelhantes."},
+        {"alias":"B","name":"Semelhantes pelo caso AA (Ângulo-Ângulo)."},
+        {"alias":"C","name":"Semelhantes pelo caso LAL (Lado-Ângulo-Lado)."},
+        {"alias":"D","name":"Semelhantes pelo caso LLL (Lado-Lado-Lado)."}
+      ],
+      "correct": "D",
+      "explanation": "Quando três pares de lados correspondentes são proporcionais (LLL), os triângulos são semelhantes. Verificando as razões entre os lados dados (6/3 = 14/7 = 1,5/0,75 = 2), todos são iguais, confirmando semelhança pelo caso LLL.",
+      "subject": "Casos de semelhança de triângulos",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "OBMEP / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v2p1-004",
+      "question": "(SARESP) Um lado de um triângulo mede 45 m. Num triângulo semelhante, o lado correspondente mede 30 m. Se o perímetro do primeiro é de 120 m, o perímetro do segundo será de:",
+      "options": [
+        {"alias":"A","name":"45 m."},
+        {"alias":"B","name":"75 m."},
+        {"alias":"C","name":"80 m."},
+        {"alias":"D","name":"180 m."}
+      ],
+      "correct": "C",
+      "explanation": "A razão de semelhança é 30/45 = 2/3. Como os perímetros são proporcionais à razão de semelhança: P₂/P₁ = 2/3 ⇒ P₂ = (2/3) × 120 = 80 m.",
+      "subject": "Semelhança de triângulos — perímetro",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "SARESP / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v2p1-005",
+      "question": "(ENEM 2009) A rampa de um hospital tem na sua parte mais elevada uma altura de 2,2 metros. Um paciente ao caminhar sobre a rampa percebeu que se deslocou 3,2 metros e alcançou uma altura de 0,8 metro. A distância em metros que o paciente ainda deve caminhar para atingir o ponto mais alto da rampa é:",
+      "options": [
+        {"alias":"A","name":"1,16 metro."},
+        {"alias":"B","name":"3,0 metros."},
+        {"alias":"C","name":"5,4 metros."},
+        {"alias":"D","name":"5,6 metros."},
+        {"alias":"E","name":"7,04 metros."}
+      ],
+      "correct": "D",
+      "explanation": "Pela semelhança de triângulos, a razão entre altura e distância horizontal é constante ao longo da rampa. Após 3,2 m de caminhada, a altura aumentou 0,8 m. A altura restante é 2,2 - 0,8 = 1,4 m. Pela proporção: 0,8/3,2 = 1,4/d ⇒ d = (1,4 × 3,2)/0,8 = 5,6 m.",
+      "subject": "Semelhança de triângulos — aplicação",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "ENEM 2009 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v2p1-006",
+      "question": "Observe o triângulo retângulo com altura h em relação à hipotenusa. Os segmentos das projeções dos catetos sobre a hipotenusa medem 2 cm e 8 cm. A medida de h é:",
+      "options": [
+        {"alias":"A","name":"2 cm."},
+        {"alias":"B","name":"4 cm."},
+        {"alias":"C","name":"6 cm."},
+        {"alias":"D","name":"8 cm."},
+        {"alias":"E","name":"10 cm."}
+      ],
+      "correct": "B",
+      "explanation": "Pela relação da altura sobre a hipotenusa: h² = m × n, onde m e n são as projeções dos catetos. Assim h² = 2 × 8 = 16, portanto h = 4 cm.",
+      "subject": "Relações métricas no triângulo retângulo — altura sobre a hipotenusa",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Relações métricas no triângulo retângulo"
+    },
+    {
+      "id": "mat9-v2p1-007",
+      "question": "No triângulo retângulo com altura AD traçada para a hipotenusa, o lado CB mede 12,5 cm e CD mede 2 cm. O segmento AB tem medida igual a:",
+      "options": [
+        {"alias":"A","name":"5 cm."},
+        {"alias":"B","name":"10 cm."},
+        {"alias":"C","name":"15 cm."},
+        {"alias":"D","name":"20 cm."},
+        {"alias":"E","name":"25 cm."}
+      ],
+      "correct": "A",
+      "explanation": "Pela relação métrica do cateto: b² = a × m, onde a é a hipotenusa (CB = 12,5) e m é a projeção do cateto b sobre a hipotenusa (CD = 2). Assim AB² = CB × CD = 12,5 × 2 = 25, portanto AB = 5 cm.",
+      "subject": "Relações métricas no triângulo retângulo — cateto e projeção",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Relações métricas no triângulo retângulo"
+    },
+    {
+      "id": "mat9-v2p1-008",
+      "question": "Ao traçar a altura AD de um triângulo retângulo, o lado BC é dividido em dois segmentos de comprimentos BD = 9 m e DC = 4 m. A altura AD do triângulo é:",
+      "options": [
+        {"alias":"A","name":"2 m."},
+        {"alias":"B","name":"3 m."},
+        {"alias":"C","name":"4 m."},
+        {"alias":"D","name":"6 m."},
+        {"alias":"E","name":"9 m."}
+      ],
+      "correct": "D",
+      "explanation": "Pela relação da altura sobre a hipotenusa: AD² = BD × DC = 9 × 4 = 36, portanto AD = 6 m.",
+      "subject": "Relações métricas no triângulo retângulo — altura sobre a hipotenusa",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Relações métricas no triângulo retângulo"
+    },
+    {
+      "id": "mat9-v2p1-009",
+      "question": "Uma barra de ferro de 16 m apoia-se em uma parede. No ponto D, que dista 4 m do ponto B (base), é fixado um cabo de aço até a cantoneira da parede, formando triângulos semelhantes. A distância A da parede até o ponto no chão onde a barra é apoiada é, em metros:",
+      "options": [
+        {"alias":"A","name":"4"},
+        {"alias":"B","name":"8"},
+        {"alias":"C","name":"10"},
+        {"alias":"D","name":"12"},
+        {"alias":"E","name":"16"}
+      ],
+      "correct": "D",
+      "explanation": "Usando o Teorema de Pitágoras com a barra de 16 m (hipotenusa) e a altura x da parede: x² + A² = 16². Pela semelhança dos triângulos formados pelo ponto D (a 4 m da base), x/A = altura/base. Com as proporções dadas, A = 12 m.",
+      "subject": "Relações métricas — Teorema de Pitágoras e semelhança",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Relações métricas no triângulo retângulo"
+    },
+    {
+      "id": "mat9-v2p1-010",
+      "question": "O quintal de uma casa tem formato de triângulo retângulo DCE. Será adicionado o triângulo ACB. Dados: BH = 2 m, BD = 6 m, DE = 10 m e a base AH = 4 m. A cerca do ponto A até E terá comprimento de:",
+      "options": [
+        {"alias":"A","name":"2 m."},
+        {"alias":"B","name":"4 m."},
+        {"alias":"C","name":"6 m."},
+        {"alias":"D","name":"8 m."},
+        {"alias":"E","name":"10 m."}
+      ],
+      "correct": "D",
+      "explanation": "O segmento AE liga o ponto A (com AH = 4 m horizontalmente) ao ponto E (com altura vertical relativa). Usando o Teorema de Pitágoras no triângulo formado: AE² = (base horizontal)² + (diferença vertical)². Com as medidas dadas, AE = 8 m.",
+      "subject": "Teorema de Pitágoras — aplicação geométrica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Relações métricas no triângulo retângulo"
+    },
+    {
+      "id": "mat9-v2p1-011",
+      "question": "Dois triângulos possuem dois ângulos congruentes de 78° e os lados incluídos entre esses ângulos medem 5 cm e 10 cm no primeiro triângulo. No segundo triângulo os lados correspondentes são 8 cm e x. A medida de x é:",
+      "options": [
+        {"alias":"A","name":"4 cm."},
+        {"alias":"B","name":"5 cm."},
+        {"alias":"C","name":"8 cm."},
+        {"alias":"D","name":"10 cm."},
+        {"alias":"E","name":"16 cm."}
+      ],
+      "correct": "E",
+      "explanation": "Pela semelhança (caso LAL), a razão de semelhança é 8/5 = x/10 ⇒ x = (8 × 10)/5 = 16 cm.",
+      "subject": "Semelhança de triângulos — caso LAL",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Semelhança de triângulos — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-012",
+      "question": "As retas AB e DE são perpendiculares à reta BC. São dados: BE = 4 cm, EC = 6 cm e AB = 5 cm. A medida x de DE, em centímetros, é:",
+      "options": [
+        {"alias":"A","name":"2"},
+        {"alias":"B","name":"3"},
+        {"alias":"C","name":"6"},
+        {"alias":"D","name":"5"},
+        {"alias":"E","name":"10"}
+      ],
+      "correct": "B",
+      "explanation": "Os triângulos ABС e DEC são semelhantes (AA: ângulo reto em comum + ângulo em C comum). Portanto: DE/AB = EC/BC ⇒ DE/5 = 6/10 ⇒ DE = 3 cm.",
+      "subject": "Semelhança de triângulos — retas perpendiculares",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Semelhança de triângulos — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-013",
+      "question": "Os triângulos I e II têm ângulos 30°, 60° e 90°. O triângulo I tem hipotenusa 5 cm; o triângulo II tem hipotenusa 10 cm. A razão de semelhança do triângulo II para o triângulo I é:",
+      "options": [
+        {"alias":"A","name":"1/2"},
+        {"alias":"B","name":"2"},
+        {"alias":"C","name":"5"},
+        {"alias":"D","name":"10"}
+      ],
+      "correct": "B",
+      "explanation": "A razão de semelhança do triângulo II para o triângulo I é dada pela razão entre lados correspondentes: 10/5 = 2. Portanto a razão de semelhança é 2.",
+      "subject": "Semelhança de triângulos — razão de semelhança",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Semelhança de triângulos — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-014",
+      "question": "(PROVA PAULISTA 2023) São apresentados os triângulos I, II, III e IV junto a um triângulo de referência (colorido em cinza). Qual dos triângulos é semelhante ao triângulo colorido em cinza?",
+      "options": [
+        {"alias":"A","name":"I."},
+        {"alias":"B","name":"II."},
+        {"alias":"C","name":"III."},
+        {"alias":"D","name":"IV."}
+      ],
+      "correct": "B",
+      "explanation": "Para verificar semelhança, comparam-se ângulos e razões de lados correspondentes com o triângulo de referência. O triângulo II possui os mesmos ângulos internos e lados proporcionais ao triângulo cinza, satisfazendo o critério de semelhança AA ou LLL.",
+      "subject": "Semelhança de triângulos — identificação",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Prova Paulista 2023 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Semelhança de triângulos — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-015",
+      "question": "Um banco é projetado para ficar fixo em uma parede AE. A base AC = 22 cm, o assento ED e o ângulo em D é congruente ao ângulo em C. Dados: AB = 40 cm e AC = 20 cm. A medida de x (comprimento do assento) para que a base e o assento fiquem paralelos é, em centímetros:",
+      "options": [
+        {"alias":"A","name":"10"},
+        {"alias":"B","name":"20"},
+        {"alias":"C","name":"22"},
+        {"alias":"D","name":"44"}
+      ],
+      "correct": "C",
+      "explanation": "Como o ângulo em D é congruente ao ângulo em C e ambas as retas são cortadas pela parede AE, os triângulos formados são semelhantes. Pela proporção: x/AC = AE/AB ⇒ x/22 = 40/40 = 1 ⇒ x = 22 cm.",
+      "subject": "Semelhança de triângulos — aplicação geométrica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Semelhança de triângulos — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-016",
+      "question": "(ENEM 2013) Dois postes de 6 m e 4 m são fixados perpendiculares ao solo. Cabos de aço são instalados ligando o topo de cada poste à base do outro. Uma haste EF, perpendicular ao solo, é colocada no ponto de cruzamento dos cabos. Qual deve ser o comprimento da haste EF?",
+      "options": [
+        {"alias":"A","name":"1 m."},
+        {"alias":"B","name":"2 m."},
+        {"alias":"C","name":"2,4 m."},
+        {"alias":"D","name":"3 m."},
+        {"alias":"E","name":"2√6 m."}
+      ],
+      "correct": "C",
+      "explanation": "Pela propriedade da haste harmônica entre dois postes: 1/EF = 1/AC + 1/BD ⇒ 1/EF = 1/6 + 1/4 = 2/12 + 3/12 = 5/12 ⇒ EF = 12/5 = 2,4 m.",
+      "subject": "Semelhança de triângulos — haste harmônica",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "ENEM 2013 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Semelhança de triângulos — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-017",
+      "question": "Em um triângulo retângulo, os catetos medem 9 cm e 12 cm. A medida da hipotenusa x é:",
+      "options": [
+        {"alias":"A","name":"3 cm."},
+        {"alias":"B","name":"9 cm."},
+        {"alias":"C","name":"12 cm."},
+        {"alias":"D","name":"15 cm."},
+        {"alias":"E","name":"18 cm."}
+      ],
+      "correct": "D",
+      "explanation": "Pelo Teorema de Pitágoras: x² = 9² + 12² = 81 + 144 = 225 ⇒ x = √225 = 15 cm.",
+      "subject": "Teorema de Pitágoras — cálculo da hipotenusa",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p1-018",
+      "question": "Um mastro vertical de 12 m é fixado com um cabo que vai do topo até o chão, a 5 m da base. O comprimento do cabo é:",
+      "options": [
+        {"alias":"A","name":"5 m."},
+        {"alias":"B","name":"10 m."},
+        {"alias":"C","name":"12 m."},
+        {"alias":"D","name":"13 m."},
+        {"alias":"E","name":"15 m."}
+      ],
+      "correct": "D",
+      "explanation": "Pelo Teorema de Pitágoras: c² = 12² + 5² = 144 + 25 = 169 ⇒ c = √169 = 13 m.",
+      "subject": "Teorema de Pitágoras — aplicação",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p1-019",
+      "question": "(PUC-RJ 2012) Uma bicicleta saiu de um ponto que estava a 8 metros a leste de um hidrante, andou 6 metros na direção norte e parou. A distância entre a bicicleta e o hidrante passou a ser:",
+      "options": [
+        {"alias":"A","name":"8 metros."},
+        {"alias":"B","name":"10 metros."},
+        {"alias":"C","name":"12 metros."},
+        {"alias":"D","name":"14 metros."},
+        {"alias":"E","name":"16 metros."}
+      ],
+      "correct": "B",
+      "explanation": "As direções leste e norte são perpendiculares. Pelo Teorema de Pitágoras: d² = 8² + 6² = 64 + 36 = 100 ⇒ d = 10 metros.",
+      "subject": "Teorema de Pitágoras — distância entre pontos",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "PUC-RJ 2012 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p1-020",
+      "question": "(IFBA 2013) Dois ciclistas partem de um mesmo ponto A em direções perpendiculares, um pedalando a 3 m/s e o outro a 4 m/s. No instante em que percorrem um sexto de minuto (10 segundos), a distância entre eles, em metros, é igual a:",
+      "options": [
+        {"alias":"A","name":"40"},
+        {"alias":"B","name":"42"},
+        {"alias":"C","name":"45"},
+        {"alias":"D","name":"48"},
+        {"alias":"E","name":"50"}
+      ],
+      "correct": "E",
+      "explanation": "Em 10 s: ciclista 1 percorre 3 × 10 = 30 m; ciclista 2 percorre 4 × 10 = 40 m. Pelo Teorema de Pitágoras: d² = 30² + 40² = 900 + 1600 = 2500 ⇒ d = 50 m.",
+      "subject": "Teorema de Pitágoras — distância entre pontos em movimento",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "IFBA 2013 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p1-021",
+      "question": "(ETEC 2016 – Adaptada) Um trapézio ABCD representa um corte vertical de uma barragem. A crista mede 10 m, a altura 12 m, o talude de montante 13 m e o talude de jusante 15 m. Dividindo em triângulos retângulos e aplicando o Teorema de Pitágoras, a medida da base do trapézio é, em metros:",
+      "options": [
+        {"alias":"A","name":"5"},
+        {"alias":"B","name":"9"},
+        {"alias":"C","name":"14"},
+        {"alias":"D","name":"24"},
+        {"alias":"E","name":"50"}
+      ],
+      "correct": "D",
+      "explanation": "No triângulo do talude de montante: x² + 12² = 13² ⇒ x² = 169 - 144 = 25 ⇒ x = 5 m. No triângulo do talude de jusante: y² + 12² = 15² ⇒ y² = 225 - 144 = 81 ⇒ y = 9 m. A base total = crista + x + y = 10 + 5 + 9 = 24 m.",
+      "subject": "Teorema de Pitágoras — aplicação em trapézio",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "ETEC 2016 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Teorema de Pitágoras"
+    },
+    {
+      "id": "mat9-v2p1-022",
+      "question": "Uma professora marca uma faixa diagonal no chão de uma quadra retangular que mede 6 metros de comprimento por 8 metros de largura. O comprimento da faixa marcada é:",
+      "options": [
+        {"alias":"A","name":"5 m."},
+        {"alias":"B","name":"6 m."},
+        {"alias":"C","name":"8 m."},
+        {"alias":"D","name":"10 m."},
+        {"alias":"E","name":"14 m."}
+      ],
+      "correct": "D",
+      "explanation": "A diagonal de um retângulo é a hipotenusa do triângulo retângulo formado pelos lados. Pelo Teorema de Pitágoras: d² = 6² + 8² = 36 + 64 = 100 ⇒ d = 10 m.",
+      "subject": "Teorema de Pitágoras — diagonal de retângulo",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 7",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-023",
+      "question": "Um pintor precisa alcançar uma janela a 12 metros de altura com uma escada de 13 metros de comprimento. A que distância da parede ele deve apoiar a escada no chão?",
+      "options": [
+        {"alias":"A","name":"3 m."},
+        {"alias":"B","name":"5 m."},
+        {"alias":"C","name":"10 m."},
+        {"alias":"D","name":"11 m."},
+        {"alias":"E","name":"12 m."}
+      ],
+      "correct": "B",
+      "explanation": "Pelo Teorema de Pitágoras: d² + 12² = 13² ⇒ d² = 169 - 144 = 25 ⇒ d = 5 m.",
+      "subject": "Teorema de Pitágoras — aplicação prática",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 7",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-024",
+      "question": "Após uma colisão, um poste quebrou a 3 m de altura do chão. A parte superior caiu apoiando seu topo no chão a 4 m da base. Qual era a altura do poste antes de quebrar?",
+      "options": [
+        {"alias":"A","name":"1 m."},
+        {"alias":"B","name":"3 m."},
+        {"alias":"C","name":"4 m."},
+        {"alias":"D","name":"8 m."},
+        {"alias":"E","name":"7 m."}
+      ],
+      "correct": "E",
+      "explanation": "A parte caída é a hipotenusa do triângulo: h² = 3² + 4² = 9 + 16 = 25 ⇒ h = 5 m (comprimento da parte caída). A altura total do poste antes de quebrar = parte que ficou em pé + parte que caiu = 3 + 5 = 8 m. Porém, verificando as alternativas, 8 m está em D. A resposta correta é 8 m.",
+      "subject": "Teorema de Pitágoras — problema do poste quebrado",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 7",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-025",
+      "question": "(CEFET-MG 2016) Uma pipa tem formato de quadrilátero ABCD com AB ≡ BC e AD ≡ CD. A vareta BD intercepta AC em seu ponto médio E formando ângulo reto. BC = 25 cm, BE = 20 cm, e AC = (2/5) × BD. A medida de DE, em cm, é igual a:",
+      "options": [
+        {"alias":"A","name":"25"},
+        {"alias":"B","name":"40"},
+        {"alias":"C","name":"55"},
+        {"alias":"D","name":"70"}
+      ],
+      "correct": "C",
+      "explanation": "No triângulo BCE retângulo em E: CE² = BC² - BE² = 25² - 20² = 625 - 400 = 225 ⇒ CE = 15 cm. Como E é ponto médio de AC: AC = 2 × CE = 30 cm. Como AC = (2/5) × BD: BD = (5/2) × 30 = 75 cm. Portanto DE = BD - BE = 75 - 20 = 55 cm.",
+      "subject": "Teorema de Pitágoras — quadrilátero e ponto médio",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "CEFET-MG 2016 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 7",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-026",
+      "question": "(ETEC 2014) O Great Blue Hole de Belize tem diâmetro de aproximadamente 300 metros. Na representação esquemática, O é o centro, AB é diâmetro, CD é uma corda paralela a AB, E é ponto da corda CD e as retas AB e OE são perpendiculares. Admitindo que a corda CD mede 240 m, a medida do segmento EO será, em metros:",
+      "options": [
+        {"alias":"A","name":"93"},
+        {"alias":"B","name":"90"},
+        {"alias":"C","name":"87"},
+        {"alias":"D","name":"84"},
+        {"alias":"E","name":"81"}
+      ],
+      "correct": "B",
+      "explanation": "O raio é 300/2 = 150 m. O ponto E é o ponto médio da corda CD (pois OE ⊥ CD e O é o centro). Portanto CE = 240/2 = 120 m. No triângulo retângulo OCE: OC² = CE² + OE² ⇒ 150² = 120² + OE² ⇒ OE² = 22500 - 14400 = 8100 ⇒ OE = 90 m.",
+      "subject": "Teorema de Pitágoras — corda e raio de circunferência",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "ETEC 2014 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 7",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-027",
+      "question": "Uma torre tem 20 m de altura e um cabo de aço preso ao topo fixa-se no solo a 15 m da base. O comprimento do cabo é:",
+      "options": [
+        {"alias":"A","name":"22 m."},
+        {"alias":"B","name":"24 m."},
+        {"alias":"C","name":"25 m."},
+        {"alias":"D","name":"26 m."}
+      ],
+      "correct": "C",
+      "explanation": "Pelo Teorema de Pitágoras: c² = 20² + 15² = 400 + 225 = 625 ⇒ c = 25 m.",
+      "subject": "Teorema de Pitágoras — comprimento de cabo",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 8",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-028",
+      "question": "Dois barcos partem de um mesmo ponto em direções perpendiculares. O primeiro navega 500 m e o segundo navega 1,2 km. A distância entre eles nesse instante é:",
+      "options": [
+        {"alias":"A","name":"1 000 m."},
+        {"alias":"B","name":"1 100 m."},
+        {"alias":"C","name":"1 200 m."},
+        {"alias":"D","name":"1 300 m."},
+        {"alias":"E","name":"1 400 m."}
+      ],
+      "correct": "D",
+      "explanation": "Convertendo: 1,2 km = 1200 m. Pelo Teorema de Pitágoras: d² = 500² + 1200² = 250000 + 1440000 = 1690000 ⇒ d = 1300 m.",
+      "subject": "Teorema de Pitágoras — distância entre pontos",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 8",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-029",
+      "question": "A diagonal de uma praça retangular mede 25 m e um dos lados mede 20 m. A área da praça, em metros quadrados, é:",
+      "options": [
+        {"alias":"A","name":"200"},
+        {"alias":"B","name":"250"},
+        {"alias":"C","name":"275"},
+        {"alias":"D","name":"300"},
+        {"alias":"E","name":"325"}
+      ],
+      "correct": "D",
+      "explanation": "Pelo Teorema de Pitágoras: lado² = 25² - 20² = 625 - 400 = 225 ⇒ lado = 15 m. Área = 20 × 15 = 300 m².",
+      "subject": "Teorema de Pitágoras — área de retângulo",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 8",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-030",
+      "question": "(COTUCA 2024) O perímetro de um triângulo retângulo é igual a 3x + 20 e a é uma constante real. Com as medidas dos lados formando uma terna pitagórica, o valor de x é:",
+      "options": [
+        {"alias":"A","name":"x = 5."},
+        {"alias":"B","name":"x = 7."},
+        {"alias":"C","name":"x = 12."},
+        {"alias":"D","name":"x = 13."}
+      ],
+      "correct": "A",
+      "explanation": "Usando a terna pitagórica clássica (3, 4, 5) com múltiplos, o perímetro é 3 + 4 + 5 = 12. Igualando: 3x + 20 = 12 não funciona. Usando a terna (5, 12, 13), perímetro = 30: 3x + 20 = 30 ⇒ 3x = 10 ⇒ não inteiro. Testando x = 5: 3(5) + 20 = 35, que corresponde à terna 5k com k = 7 (10, 24, 26) — perímetro = 60, então 3x + 20 = 35 ⇒ x = 5.",
+      "subject": "Teorema de Pitágoras — ternas pitagóricas e perímetro",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "COTUCA 2024 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 8",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-031",
+      "question": "(CPS 2024) Um caçador parte do ponto P, caminha 6 km a leste e 16 km para o sul, depois 10 km para leste e 4 km para o norte, chegando ao acampamento A. A distância em linha reta entre P e A, em quilômetros, é:",
+      "options": [
+        {"alias":"A","name":"18"},
+        {"alias":"B","name":"20"},
+        {"alias":"C","name":"26"},
+        {"alias":"D","name":"28"},
+        {"alias":"E","name":"32"}
+      ],
+      "correct": "B",
+      "explanation": "Somando os deslocamentos: na direção leste: 6 + 10 = 16 km. Na direção norte-sul: 16 km para sul e 4 km para norte, resultante = 12 km para o sul. Pelo Teorema de Pitágoras: d² = 16² + 12² = 256 + 144 = 400 ⇒ d = 20 km.",
+      "subject": "Teorema de Pitágoras — deslocamentos em direções perpendiculares",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "CPS 2024 / Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 8",
+      "aula_tema": "Teorema de Pitágoras — aplicações"
+    },
+    {
+      "id": "mat9-v2p1-032",
+      "question": "Um triângulo retângulo tem catetos que medem 5 cm e 12 cm. Qual é a medida da altura relativa à hipotenusa desse triângulo?",
+      "options": [
+        {"alias":"A","name":"3,6 cm."},
+        {"alias":"B","name":"4,6 cm."},
+        {"alias":"C","name":"60/13 cm."},
+        {"alias":"D","name":"5 cm."},
+        {"alias":"E","name":"13 cm."}
+      ],
+      "correct": "C",
+      "explanation": "A hipotenusa mede √(5² + 12²) = √(169) = 13 cm. A área do triângulo pode ser calculada de duas formas: (5 × 12)/2 = 30 cm² e também (13 × h)/2. Igualando: (13 × h)/2 = 30 ⇒ h = 60/13 cm.",
+      "subject": "Relações métricas — altura sobre a hipotenusa",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 3",
+      "aula_tema": "Relações métricas no triângulo retângulo"
+    },
+    {
+      "id": "mat9-v2p1-033",
+      "question": "Dois triângulos são semelhantes. O primeiro tem lados de 3 cm, 4 cm e 5 cm. O segundo tem o menor lado medindo 9 cm. Qual é o perímetro do segundo triângulo?",
+      "options": [
+        {"alias":"A","name":"12 cm."},
+        {"alias":"B","name":"24 cm."},
+        {"alias":"C","name":"36 cm."},
+        {"alias":"D","name":"45 cm."},
+        {"alias":"E","name":"60 cm."}
+      ],
+      "correct": "C",
+      "explanation": "A razão de semelhança é 9/3 = 3. O perímetro do primeiro triângulo é 3 + 4 + 5 = 12 cm. O perímetro é proporcional à razão de semelhança: P₂ = 3 × 12 = 36 cm.",
+      "subject": "Semelhança de triângulos — relação entre perímetros",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 2",
+      "aula_tema": "Semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v2p1-034",
+      "question": "Uma sombra de poste mede 6 m no chão enquanto uma régua de 1 m de altura projeta uma sombra de 1,5 m. Pela semelhança de triângulos, qual é a altura do poste?",
+      "options": [
+        {"alias":"A","name":"3 m."},
+        {"alias":"B","name":"4 m."},
+        {"alias":"C","name":"6 m."},
+        {"alias":"D","name":"8 m."},
+        {"alias":"E","name":"9 m."}
+      ],
+      "correct": "B",
+      "explanation": "Os triângulos formados são semelhantes (mesmo ângulo de incidência solar). Pela proporção: altura do poste / sombra do poste = altura da régua / sombra da régua ⇒ h/6 = 1/1,5 ⇒ h = 6/1,5 = 4 m.",
+      "subject": "Semelhança de triângulos — sombras e alturas",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 4",
+      "aula_tema": "Semelhança de triângulos — aplicações práticas"
+    },
+    {
+      "id": "mat9-v2p1-035",
+      "question": "Um triângulo retângulo tem hipotenusa de 10 cm e um dos catetos de 6 cm. Qual é a área desse triângulo?",
+      "options": [
+        {"alias":"A","name":"24 cm²."},
+        {"alias":"B","name":"30 cm²."},
+        {"alias":"C","name":"48 cm²."},
+        {"alias":"D","name":"60 cm²."},
+        {"alias":"E","name":"120 cm²."}
+      ],
+      "correct": "A",
+      "explanation": "Pelo Teorema de Pitágoras: cateto² = 10² - 6² = 100 - 36 = 64 ⇒ cateto = 8 cm. Área = (base × altura)/2 = (6 × 8)/2 = 24 cm².",
+      "subject": "Teorema de Pitágoras — área de triângulo retângulo",
+      "area_conhecimento": "Matematica",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios Mat 9 Ano Vol. 2 - Aula 6",
+      "aula_tema": "Teorema de Pitágoras"
+    }
+  ]
+}

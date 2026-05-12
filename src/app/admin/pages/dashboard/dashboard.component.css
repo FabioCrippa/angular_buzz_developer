@@ -57,7 +57,11 @@
   margin: 0 0 10px 0;
   font-size: 18px;
   color: #222;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+.school-card.active h3 {
+  color: white;
 }
 
 .school-card p {
@@ -66,6 +70,10 @@
   opacity: 0.85;
   color: #555;
   font-weight: 400;
+}
+
+.school-card.active p {
+  color: rgba(255,255,255,0.9);
 }
 
 .student-count {
@@ -93,9 +101,9 @@
 
 .header h2 {
   margin: 0;
-  font-size: 28px;
-  color: #666;
-  font-weight: 400;
+  font-size: 22px;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .header-buttons {
@@ -134,9 +142,9 @@
 /* Students Section */
 .students-section h3 {
   margin: 0 0 20px 0;
-  font-size: 20px;
-  color: #666;
-  font-weight: 400;
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .table-container {
@@ -157,18 +165,20 @@
 }
 
 .students-table th {
-  padding: 15px;
+  padding: 12px 15px;
   text-align: left;
-  font-size: 16px;
-  color: #666;
-  font-weight: 500;
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
   border-bottom: 2px solid #c0c0c0;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
 }
 
 .students-table td {
-  padding: 15px;
+  padding: 11px 15px;
   border-bottom: 1px solid #d0d0d0;
-  font-size: 16px;
+  font-size: 13px;
   color: #222;
 }
 
@@ -192,6 +202,13 @@
   padding: 4px 8px;
   border-radius: 6px;
   font-weight: 500;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.score.best {
+  background: #e3f2fd;
+  color: #1565c0;
 }
 
 .no-data {
@@ -267,6 +284,10 @@
   font-size: 15px;
   color: #333;
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .class-count {
@@ -314,6 +335,25 @@
   padding: 11px 15px;
 }
 
+/* Alinhamento colunas numéricas: Tentativas(4), Score Médio(5), Melhor Score(6), Status(8) */
+.students-table th:nth-child(4),
+.students-table td:nth-child(4),
+.students-table th:nth-child(5),
+.students-table td:nth-child(5),
+.students-table th:nth-child(6),
+.students-table td:nth-child(6),
+.students-table th:nth-child(8),
+.students-table td:nth-child(8) {
+  text-align: center;
+}
+
+/* Coluna data: sem quebra de linha */
+.students-table td:nth-child(7) {
+  white-space: nowrap;
+  font-size: 12px;
+  color: #555;
+}
+
 .class-badge {
   background: #eef0ff;
   color: #4a3080;
@@ -325,10 +365,11 @@
 }
 
 .status {
-  padding: 4px 8px;
+  padding: 3px 8px;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .status.active {
@@ -468,6 +509,32 @@
   color: #aaa;
   font-size: 13px;
   padding: 10px 0;
+}
+
+/* Loading students spinner */
+.students-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.loading-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #c5cef8;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* Alerts */
@@ -1226,6 +1293,12 @@
     padding: 15px;
   }
 
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
   .school-cards {
     grid-template-columns: 1fr;
   }
@@ -1236,8 +1309,31 @@
     align-items: flex-start;
   }
 
+  .header-buttons {
+    flex-wrap: wrap;
+  }
+
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .students-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .class-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .class-stats {
+    display: none;
+  }
+
+  .btn-delete-class {
+    margin-left: 0;
   }
 
   .students-table {
@@ -1246,6 +1342,10 @@
 
   .students-table th,
   .students-table td {
-    padding: 10px;
+    padding: 8px 10px;
+  }
+
+  .stat-card h3 {
+    font-size: 24px;
   }
 }
