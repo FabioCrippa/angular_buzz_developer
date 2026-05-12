@@ -406,6 +406,10 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  navigateToJobQuiz(): void {
+    this.router.navigate(['/preparar-vaga']);
+  }
+
   // ===============================================
   // 📊 MÉTODOS PARA TEMPLATE
   // ===============================================

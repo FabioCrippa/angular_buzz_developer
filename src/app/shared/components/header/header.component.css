@@ -195,6 +195,20 @@
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
+/* 🎯 Preparar Vaga — destaque sutil */
+.nav-button-job {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-weight: 500;
+}
+
+.nav-button-job:hover {
+  background: rgba(255, 200, 50, 0.2);
+  border-color: rgba(255, 200, 50, 0.5);
+  color: #ffe082;
+  transform: translateY(-2px);
+}
+
 .nav-button svg {
   flex-shrink: 0;
 }

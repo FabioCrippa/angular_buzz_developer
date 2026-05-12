@@ -178,6 +178,10 @@ export class HomeComponent implements OnInit {
   upgradeToPro(): void {
     this.router.navigate(['/upgrade']);
   }
+
+  navigateToPrepaTech(): void {
+    this.router.navigate(['/upgrade'], { queryParams: { highlight: 'prepara-tech' } });
+  }
   
   // ✅ CONTROLE DE FAQ
   toggleFaq(index: number): void {

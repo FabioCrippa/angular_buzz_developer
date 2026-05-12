@@ -19,6 +19,7 @@ import { PaymentPendingComponent } from './pages/payment/payment-pending.compone
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProfessorComponent } from './pages/professor/professor.component';
+import { JobQuizComponent } from './pages/job-quiz/job-quiz.component';
 
 // Guards
 import { AuthGuard } from './core/guards/auth.guard';
@@ -84,6 +85,16 @@ const routes: Routes = [
     path: 'area/:id', 
     component: AreaComponent, // ✅ COMPONENT TRADICIONAL
     canActivate: [AuthGuard]
+  },
+
+  {
+    path: 'preparar-vaga',
+    component: JobQuizComponent,
+    canActivate: [PremiumGuard],
+    data: {
+      title: 'Prepara Tech - SOWLFY',
+      description: 'Cole a descrição da vaga e prepare-se com um quiz personalizado'
+    }
   },
 
   { 

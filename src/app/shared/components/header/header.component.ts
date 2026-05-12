@@ -953,6 +953,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.navigate(['/favorites']);
     this.closeMenus();
   }
+
+  navigateToJobQuiz(): void {
+    this.router.navigate(['/preparar-vaga']);
+    this.closeMenus();
+  }
   
   openChangePassword(): void {
     this.router.navigate(['/admin/dashboard'], { queryParams: { action: 'changePassword' } });

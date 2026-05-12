@@ -38,6 +38,7 @@ import { HardPaywallDialogComponent } from './shared/components/hard-paywall-dia
 import { AttemptsLimitDialogComponent } from './shared/components/attempts-limit-dialog/attempts-limit-dialog.component';
 import { TrialAnalyticsDashboardComponent } from './shared/components/trial-analytics-dashboard/trial-analytics-dashboard.component';
 import { ProfessorComponent } from './pages/professor/professor.component';
+import { JobQuizComponent } from './pages/job-quiz/job-quiz.component';
 
 // ✅ GUARDS E SERVICES
 import { PremiumGuard } from './core/guards/premium.guard';
@@ -105,7 +106,8 @@ import { environment } from '../environments/environment';
     HardPaywallDialogComponent,
     AttemptsLimitDialogComponent,
     TrialAnalyticsDashboardComponent,
-    ProfessorComponent
+    ProfessorComponent,
+    JobQuizComponent
   ],
   imports: [
     // ✅ CORE MODULES

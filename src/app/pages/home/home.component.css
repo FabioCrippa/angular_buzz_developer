@@ -2023,17 +2023,53 @@ section {
 
 .quiz-cta-card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 3rem;
   align-items: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
   border-radius: 16px;
-  padding: 3rem;
+  padding: 1.8rem 2.5rem;
   box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
   border: none;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+.prepa-tech-cta-card {
+  margin-bottom: 2rem;
+  cursor: pointer;
+  grid-template-columns: 1fr;
+  padding: 1.8rem 2.5rem;
+}
+
+.prepa-tech-cta-card .quiz-cta-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.prepa-tech-cta-card .quiz-cta-description {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.prepa-tech-cta-card .quiz-cta-benefits {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.88rem;
+}
+
+.prepa-tech-cta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 64px rgba(102, 126, 234, 0.4);
+}
+
+.prepa-tech-btn {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
 }
 
 .quiz-cta-card:hover {
@@ -2048,26 +2084,27 @@ section {
 }
 
 .quiz-cta-title {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 1.3;
 }
 
 .quiz-cta-description {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .quiz-cta-benefits {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.9);
 }
 

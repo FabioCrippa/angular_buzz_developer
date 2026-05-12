@@ -1,0 +1,257 @@
+<div class="job-quiz-page">
+
+  <!-- ═══════════════════════════════════════════
+       STEP 1: INPUT — Cole a descrição da vaga
+       ═══════════════════════════════════════════ -->
+  <div *ngIf="step === 'input'" class="step step-input">
+    <div class="page-hero">
+      <div class="hero-icon">⚡</div>
+      <h1>Prepara Tech</h1>
+      <p>Cole a descrição da vaga e criamos um quiz com exatamente as tecnologias que a empresa exige</p>
+    </div>
+
+    <div class="input-card">
+      <div class="input-label-row">
+        <label class="input-label">📋 Descrição da vaga</label>
+        <span class="char-count">{{ jobText.length }} caracteres</span>
+      </div>
+      <textarea
+        [(ngModel)]="jobText"
+        class="job-textarea"
+        rows="12"
+        placeholder="Cole aqui o texto completo da vaga. Inclua os requisitos, responsabilidades e tecnologias...
+
+Exemplo de requisitos:
+• Experiência com React ou Angular
+• TypeScript obrigatório
+• Conhecimento em Git e metodologias ágeis (Scrum)
+• Docker e CI/CD é um diferencial
+• Noções de testes unitários com Jest"
+      ></textarea>
+
+      <div class="input-actions">
+        <div class="tip-inline">
+          <span class="tip-icon">💡</span>
+          <span>Quanto mais detalhada a vaga, mais preciso o simulado</span>
+        </div>
+        <button
+          class="btn-analyze"
+          [disabled]="jobText.trim().length < 20"
+          (click)="analyzeJob()"
+        >
+          🔍 Analisar Vaga
+        </button>
+      </div>
+    </div>
+
+    <div class="how-it-works">
+      <h3>Como funciona?</h3>
+      <div class="steps-row">
+        <div class="how-step">
+          <span class="how-num">1</span>
+          <strong>Cole a vaga</strong>
+          <span>Copie os requisitos da vaga do LinkedIn, Glassdoor, Gupy...</span>
+        </div>
+        <div class="how-arrow">→</div>
+        <div class="how-step">
+          <span class="how-num">2</span>
+          <strong>Análise automática</strong>
+          <span>Detectamos as tecnologias e temas exigidos</span>
+        </div>
+        <div class="how-arrow">→</div>
+        <div class="how-step">
+          <span class="how-num">3</span>
+          <strong>Simulado sob medida</strong>
+          <span>Quiz com até 20 questões dos temas da vaga</span>
+        </div>
+        <div class="how-arrow">→</div>
+        <div class="how-step">
+          <span class="how-num">4</span>
+          <strong>Resultado e gaps</strong>
+          <span>Veja onde precisa estudar mais antes da entrevista</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       STEP 2: CONFIRM — Tópicos detectados
+       ═══════════════════════════════════════════ -->
+  <div *ngIf="step === 'confirm'" class="step step-confirm">
+    <div class="confirm-header">
+      <button class="btn-back-sm" (click)="step = 'input'">← Editar vaga</button>
+      <div>
+        <h2>🔎 Tecnologias detectadas</h2>
+        <p>{{ detectedTopics.length }} tópico(s) encontrado(s) na vaga. Selecione os que quer incluir no simulado.</p>
+      </div>
+    </div>
+
+    <div class="topics-actions">
+      <button class="btn-text-sm" (click)="selectAll()">✅ Selecionar tudo</button>
+      <button class="btn-text-sm" (click)="deselectAll()">⬜ Desmarcar tudo</button>
+    </div>
+
+    <div class="topics-grid">
+      <div
+        *ngFor="let topic of detectedTopics"
+        class="topic-chip"
+        [class.chip-selected]="topic.selected"
+        [style.--chip-color]="topic.color"
+        (click)="toggleTopic(topic)"
+      >
+        <span class="chip-icon">{{ topic.icon }}</span>
+        <span class="chip-label">{{ topic.label }}</span>
+        <span class="chip-check">{{ topic.selected ? '✓' : '+' }}</span>
+      </div>
+    </div>
+
+    <div *ngIf="detectedTopics.length === 0" class="no-topics">
+      <p>😕 Nenhuma tecnologia específica detectada. O simulado usará questões gerais de ADS.</p>
+    </div>
+
+    <div class="confirm-footer">
+      <div class="confirm-summary">
+        <span class="summary-badge">{{ selectedCount }}</span>
+        <span>tópico(s) selecionado(s) · até <strong>{{ MAX_QUESTIONS }}</strong> questões</span>
+      </div>
+      <button
+        class="btn-start"
+        [disabled]="selectedCount === 0"
+        (click)="startQuiz()"
+      >
+        🚀 Gerar Simulado
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       LOADING
+       ═══════════════════════════════════════════ -->
+  <div *ngIf="step === 'loading'" class="step step-loading">
+    <div class="loading-content">
+      <div class="loading-spinner-lg"></div>
+      <h3>Montando seu simulado...</h3>
+      <p>Selecionando e embaralhando as questões dos temas detectados</p>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       STEP 3: QUIZ
+       ═══════════════════════════════════════════ -->
+  <div *ngIf="step === 'quiz'" class="step step-quiz">
+
+    <!-- Barra de progresso -->
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-track">
+        <div class="quiz-progress-fill" [style.width.%]="progress"></div>
+      </div>
+      <span class="quiz-progress-label">{{ currentIndex + 1 }} / {{ questions.length }}</span>
+    </div>
+
+    <!-- Header da questão -->
+    <div class="quiz-q-header">
+      <span class="topic-badge" [style.background]="'linear-gradient(135deg, ' + currentQuestion.topicIcon + ' 0%, #fff0 0%)'">
+        {{ currentQuestion.topicIcon }} {{ currentQuestion.topicLabel }}
+      </span>
+    </div>
+
+    <!-- Card da questão -->
+    <div class="question-card">
+      <p class="question-text">{{ currentQuestion.question }}</p>
+
+      <div class="options-list">
+        <button
+          *ngFor="let opt of currentQuestion.options"
+          class="option-btn"
+          [class.opt-selected]="isSelected(opt.alias)"
+          [class.opt-correct]="isCorrectOption(opt.alias)"
+          [class.opt-wrong]="isWrongSelected(opt.alias)"
+          [class.opt-dimmed]="isDimmed(opt.alias)"
+          [disabled]="answered"
+          (click)="selectAnswer(opt.alias)"
+        >
+          <span class="option-alias">{{ opt.alias.toUpperCase() }}</span>
+          <span class="option-text">{{ opt.name }}</span>
+          <span *ngIf="isCorrectOption(opt.alias)" class="option-mark">✓</span>
+          <span *ngIf="isWrongSelected(opt.alias)" class="option-mark">✗</span>
+        </button>
+      </div>
+
+      <!-- Explicação -->
+      <div *ngIf="answered" class="explanation-box"
+           [class.exp-correct]="selectedAlias === currentQuestion.correct"
+           [class.exp-wrong]="selectedAlias !== currentQuestion.correct">
+        <div class="exp-label">
+          <strong>{{ selectedAlias === currentQuestion.correct ? '✅ Correto!' : '❌ Incorreto' }}</strong>
+          <span *ngIf="selectedAlias !== currentQuestion.correct" class="exp-hint">
+            Resposta correta: <strong>{{ currentQuestion.correct.toUpperCase() }}</strong>
+          </span>
+        </div>
+        <p class="exp-text">{{ currentQuestion.explanation }}</p>
+      </div>
+
+      <div class="quiz-actions">
+        <button
+          class="btn-next"
+          [disabled]="!answered"
+          (click)="next()"
+        >
+          {{ currentIndex < questions.length - 1 ? 'Próxima questão →' : '🏆 Ver meu resultado' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       STEP 4: RESULTADO
+       ═══════════════════════════════════════════ -->
+  <div *ngIf="step === 'result'" class="step step-result">
+
+    <div class="result-hero">
+      <div class="score-circle" [style.border-color]="getScoreColor()">
+        <span class="score-pct" [style.color]="getScoreColor()">{{ finalScore }}%</span>
+        <span class="score-sub">Score</span>
+      </div>
+      <h2 class="result-title">{{ getScoreLabel() }}</h2>
+      <p class="result-sub">
+        <strong>{{ correctAnswersCount }}</strong> de <strong>{{ answers.length }}</strong> questões corretas
+      </p>
+    </div>
+
+    <!-- Breakdown por tópico -->
+    <div class="topic-breakdown">
+      <h3>Desempenho por tópico</h3>
+      <p class="breakdown-hint">Os tópicos mais fracos aparecem primeiro</p>
+
+      <div class="breakdown-list">
+        <div *ngFor="let tr of topicResults" class="breakdown-card">
+          <div class="bc-header">
+            <span class="bc-icon">{{ tr.icon }}</span>
+            <span class="bc-label">{{ tr.label }}</span>
+            <span class="bc-score" [style.color]="getTopicScoreColor(tr)">
+              {{ tr.correct }}/{{ tr.total }}
+              ({{ (tr.correct / tr.total * 100) | number:'1.0-0' }}%)
+            </span>
+          </div>
+          <div class="bc-bar-bg">
+            <div
+              class="bc-bar-fill"
+              [style.width.%]="(tr.correct / tr.total) * 100"
+              [style.background]="getTopicBarColor(tr)"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-restart" (click)="restart()">🔄 Nova Vaga</button>
+      <button class="btn-area" (click)="goToArea()">📚 Estudar Mais</button>
+    </div>
+  </div>
+
+</div>

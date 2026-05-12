@@ -164,6 +164,39 @@
           <h3 class="action-title">Favoritos</h3>
           <p class="action-description">Suas questões marcadas como favoritas</p>
         </div>
+
+        <!-- Card Preparar Vaga - Premium -->
+        <div class="quick-action-card job-quiz-card" *ngIf="isPremium()" (click)="navigateToJobQuiz()">
+          <div class="action-icon">
+            <mat-icon>work</mat-icon>
+          </div>
+          <h3 class="card-white-title">⚡ Prepara Tech</h3>
+          <p class="card-white-desc">Cole a descrição da vaga e receba um simulado com exatamente as tecnologias exigidas</p>
+          <div class="upgrade-badge">
+            <div class="premium-chip">
+              <mat-icon>bolt</mat-icon>
+              Simulado personalizado
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Prepara Tech - Free (bloqueado) -->
+        <div class="quick-action-card job-quiz-card job-quiz-locked" *ngIf="!isPremium()" (click)="navigateToUpgrade()">
+          <div class="lock-overlay">
+            <mat-icon class="lock-icon">lock</mat-icon>
+          </div>
+          <div class="action-icon">
+            <mat-icon>work</mat-icon>
+          </div>
+          <h3 class="card-white-title">⚡ Prepara Tech</h3>
+          <p class="card-white-desc">Cole a descrição da vaga e receba um simulado com exatamente as tecnologias exigidas</p>
+          <div class="upgrade-badge">
+            <div class="premium-chip">
+              <mat-icon>stars</mat-icon>
+              Apenas Premium
+            </div>
+          </div>
+        </div>
         
         <!-- Upgrade Card - apenas para usuários free -->
         <div class="quick-action-card upgrade-card" *ngIf="!isPremium()" (click)="navigateToUpgrade()">

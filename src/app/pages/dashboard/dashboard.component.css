@@ -760,6 +760,92 @@
 }
 
 /* =============================================== */
+/* 🎯 JOB QUIZ CARD */
+/* =============================================== */
+
+.job-quiz-card {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.job-quiz-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 65%);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.job-quiz-card .action-icon {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.job-quiz-card .action-icon mat-icon {
+  color: white !important;
+}
+
+.job-quiz-card .card-white-title {
+  font-weight: 500;
+}
+
+.job-quiz-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(245, 158, 11, 0.35);
+}
+
+.job-quiz-card .premium-chip {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.job-quiz-card .premium-chip mat-icon {
+  color: white !important;
+  font-size: 1rem;
+}
+
+/* Locked state — free users */
+.job-quiz-locked {
+  cursor: pointer;
+  filter: saturate(0.5) brightness(0.92);
+  opacity: 0.75;
+  position: relative;
+}
+
+.job-quiz-locked:hover {
+  filter: saturate(0.7) brightness(0.96);
+  opacity: 0.9;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.lock-icon {
+  color: white !important;
+  font-size: 1.2rem !important;
+}
+
+/* =============================================== */
 /* 🏫 STUDY AREAS SECTION - PREMIUM CARDS */
 /* =============================================== */
 
