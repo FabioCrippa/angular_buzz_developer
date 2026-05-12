@@ -536,15 +536,22 @@ export const createSchool = onRequest(
         .toString(36)
         .substr(2, 9)}`;
 
-      // Gerar senha única
-      const initials = name
-        .split(" ")
-        .map((word: string) => word[0])
-        .join("")
-        .toUpperCase()
-        .substr(0, 2);
-      const year = new Date().getFullYear().toString().substr(2);
-      const sharedPassword = `${initials}${year}`;
+      // Gerar senha única de 6 caracteres alfanuméricos
+      // Gerar senha: PrimeiroNomeSignificativo + ano2digitos + #
+      // Ex: "E.E. Leticia de Godoy" → "Leticia26#"
+      const prefixes = /^(e\.e\.|emef|emei|escola|colégio|colegio|centro|inst\.|instituto|prof\.?|professor|professora|dr\.?|doutor|doutora|ses|see|eep|eei|cei)\s*/i;
+      const words = name.split(/\s+/);
+      let firstMeaningfulWord = "";
+      for (const word of words) {
+        const cleaned = word.replace(/[^a-záéíóúâêîôûãõàèìòùç]/gi, "");
+        if (cleaned.length > 1 && !prefixes.test(cleaned + " ")) {
+          firstMeaningfulWord = cleaned.charAt(0).toUpperCase() + cleaned.slice(1).toLowerCase();
+          break;
+        }
+      }
+      if (!firstMeaningfulWord) firstMeaningfulWord = "Escola";
+      const rand2 = String(Math.floor(Math.random() * 90) + 10); // 10–99
+      const sharedPassword = `${firstMeaningfulWord}${rand2}#`;
 
       // Calcular data de expiração (30 dias a partir de hoje)
       const expiresAt = new Date();
@@ -1107,6 +1114,50 @@ export const deleteSchool = onRequest(
 );
 
 /**
+ * ✅ Cloud Function: Deletar Turma (Hard Delete)
+ * POST /deleteClass
+ * Body: { schoolId: string, className: string }
+ * Deleta todos os alunos da turma + seus resultados de simulados e tentativas
+ */
+export const deleteClass = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    const { schoolId, className } = req.body;
+    if (!schoolId || !className) {
+      res.status(400).json({ success: false, error: "schoolId e className são obrigatórios" });
+      return;
+    }
+    try {
+      const db = admin.firestore();
+      const studentsSnap = await db
+        .collection(`school_students/${schoolId}/students`)
+        .where("class", "==", className)
+        .get();
+
+      let deletedCount = 0;
+      for (const studentDoc of studentsSnap.docs) {
+        // Deletar resultados de simulados
+        const resultsSnap = await studentDoc.ref.collection("simulado_results").get();
+        const batch = db.batch();
+        for (const r of resultsSnap.docs) batch.delete(r.ref);
+        // Deletar tentativas
+        const attemptsSnap = await studentDoc.ref.collection("attempts").get();
+        for (const a of attemptsSnap.docs) batch.delete(a.ref);
+        // Deletar o aluno
+        batch.delete(studentDoc.ref);
+        await batch.commit();
+        deletedCount++;
+      }
+
+      res.json({ success: true, deletedCount, message: `${deletedCount} aluno(s) da turma "${className}" deletados.` });
+    } catch (error) {
+      console.error("Erro ao deletar turma:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
  * ✅ Cloud Function: Alterar Senha do Admin
  * POST /changeAdminPassword
  * Body: { email: string, currentPassword: string, newPassword: string }
@@ -1178,6 +1229,380 @@ export const changeAdminPassword = onRequest(
 );
 
 /**
+ * ✏️ Cloud Function: Atualizar dados da escola
+ * POST /updateSchool
+ * Body: { schoolId, name, city, state, directorName, email, phone, subscriptionType }
+ */
+export const updateSchool = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    const { schoolId, name, city, state, directorName, email, phone, subscriptionType } = req.body;
+
+    if (!schoolId || !name || !city) {
+      res.status(400).json({ success: false, error: "schoolId, name e city são obrigatórios" });
+      return;
+    }
+
+    try {
+      const schoolRef = admin.firestore().collection("schools").doc(schoolId);
+      const schoolDoc = await schoolRef.get();
+
+      if (!schoolDoc.exists) {
+        res.status(404).json({ success: false, error: "Escola não encontrada" });
+        return;
+      }
+
+      const updateData: any = {
+        name,
+        city,
+        state: state || "",
+        directorName: directorName || "",
+        email: email || "",
+        phone: phone || "",
+        updatedAt: new Date(),
+      };
+
+      if (subscriptionType === "sold" || subscriptionType === "donated") {
+        updateData.subscriptionType = subscriptionType;
+      }
+
+      await schoolRef.update(updateData);
+
+      console.log(`✅ Escola ${schoolId} atualizada`);
+      res.json({ success: true, message: "Escola atualizada com sucesso" });
+    } catch (error) {
+      console.error("Erro ao atualizar escola:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
+ * 🔑 Cloud Function: Gerar nova senha para escola
+ * POST /regenerateSchoolPassword
+ * Body: { schoolId }
+ */
+export const regenerateSchoolPassword = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    const { schoolId } = req.body;
+
+    if (!schoolId) {
+      res.status(400).json({ success: false, error: "schoolId é obrigatório" });
+      return;
+    }
+
+    try {
+      const schoolRef = admin.firestore().collection("schools").doc(schoolId);
+      const schoolDoc = await schoolRef.get();
+
+      if (!schoolDoc.exists) {
+        res.status(404).json({ success: false, error: "Escola não encontrada" });
+        return;
+      }
+
+      const schoolData = schoolDoc.data() as any;
+      const name = schoolData.name || "Escola";
+
+      // Gerar nova senha com o mesmo algoritmo de createSchool
+      const prefixes = /^(e\.e\.|emef|emei|escola|colégio|colegio|centro|inst\.|instituto|prof\.?|professor|professora|dr\.?|doutor|doutora|ses|see|eep|eei|cei)\s*/i;
+      const words = name.split(/\s+/);
+      let firstMeaningfulWord = "";
+      for (const word of words) {
+        const cleaned = word.replace(/[^a-záéíóúâêîôûãõàèìòùç]/gi, "");
+        if (cleaned.length > 1 && !prefixes.test(cleaned + " ")) {
+          firstMeaningfulWord = cleaned.charAt(0).toUpperCase() + cleaned.slice(1).toLowerCase();
+          break;
+        }
+      }
+      if (!firstMeaningfulWord) firstMeaningfulWord = "Escola";
+      const rand2 = String(Math.floor(Math.random() * 90) + 10);
+      const newPassword = `${firstMeaningfulWord}${rand2}#`;
+
+      await schoolRef.update({ sharedPassword: newPassword, passwordUpdatedAt: new Date() });
+
+      console.log(`🔑 Nova senha gerada para escola ${schoolId}: ${newPassword}`);
+      res.json({ success: true, sharedPassword: newPassword, message: "Nova senha gerada com sucesso" });
+    } catch (error) {
+      console.error("Erro ao gerar nova senha:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
+ * 💾 Cloud Function: Salvar resultado de simulado do aluno
+ * POST /saveSimuladoResult
+ */
+export const saveSimuladoResult = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    try {
+      const { schoolId, ra, studentName, className, simuladoId, simuladoName, score, correct, total, timeFormatted, byArea, questionsData } = req.body;
+      if (!schoolId || !ra || !simuladoId) {
+        res.status(400).json({ success: false, error: "schoolId, ra e simuladoId são obrigatórios" });
+        return;
+      }
+      const db = admin.firestore();
+      const resultId = `result_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`;
+      await db
+        .collection(`school_students/${schoolId}/students/${ra}/simulado_results`)
+        .doc(resultId)
+        .set({
+          simuladoId,
+          simuladoName,
+          score,
+          correct,
+          total,
+          timeFormatted: timeFormatted || "",
+          byArea: byArea || [],
+          questionsData: questionsData || [],
+          studentName: studentName || "",
+          className: className || "",
+          ra,
+          schoolId,
+          completedAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+      res.json({ success: true, resultId });
+    } catch (error) {
+      console.error("Erro ao salvar resultado do simulado:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
+ * 👨‍🏫 Cloud Function: Login do Professor/Coordenador
+ * POST /teacherLogin
+ * Body: { email: string, password: string }
+ */
+export const teacherLogin = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    try {
+      const { email, password } = req.body;
+      if (!email || !password) {
+        res.status(400).json({ success: false, error: "Email e senha são obrigatórios" });
+        return;
+      }
+      const db = admin.firestore();
+      // Buscar em todas as escolas por um professor com esse email
+      const schoolsSnap = await db.collection("schools").get();
+      let foundTeacher: any = null;
+      let foundSchool: any = null;
+
+      for (const schoolDoc of schoolsSnap.docs) {
+        const schoolData = schoolDoc.data();
+        // Verificar senha da escola
+        if (schoolData.sharedPassword !== password) continue;
+        // Buscar professor com esse email nesta escola
+        const teacherSnap = await db
+          .collection(`schools/${schoolDoc.id}/teachers`)
+          .where("email", "==", email)
+          .get();
+        if (!teacherSnap.empty) {
+          foundTeacher = { id: teacherSnap.docs[0].id, ...teacherSnap.docs[0].data() };
+          foundSchool = { id: schoolDoc.id, ...schoolData };
+          break;
+        }
+      }
+
+      if (!foundTeacher || !foundSchool) {
+        res.status(401).json({ success: false, error: "Email ou senha incorretos" });
+        return;
+      }
+
+      const token = jwt.sign(
+        {
+          teacherId: foundTeacher.id,
+          email: foundTeacher.email,
+          name: foundTeacher.name,
+          role: foundTeacher.role,
+          schoolId: foundSchool.id,
+          schoolName: foundSchool.name,
+          type: "teacher",
+          exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60)
+        },
+        process.env.JWT_SECRET || "sowlfy_student_secret_key"
+      );
+
+      res.json({
+        success: true,
+        token,
+        teacher: {
+          id: foundTeacher.id,
+          name: foundTeacher.name,
+          email: foundTeacher.email,
+          role: foundTeacher.role,
+          schoolId: foundSchool.id,
+          schoolName: foundSchool.name
+        }
+      });
+    } catch (error) {
+      console.error("Erro no login do professor:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
+ * 👨‍🏫 Cloud Function: Listar professores da escola
+ * POST /getTeachers
+ * Body: { schoolId }
+ */
+export const getTeachers = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    try {
+      const { schoolId } = req.body;
+      if (!schoolId) {
+        res.status(400).json({ success: false, error: "schoolId é obrigatório" });
+        return;
+      }
+      const snap = await admin.firestore().collection(`schools/${schoolId}/teachers`).get();
+      const teachers = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      res.json({ success: true, teachers });
+    } catch (error) {
+      console.error("Erro ao listar professores:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
+ * 👨‍🏫 Cloud Function: Adicionar professor à escola
+ * POST /addTeacher
+ * Body: { schoolId, name, email, role: 'professor'|'coordenador' }
+ */
+export const addTeacher = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    try {
+      const { schoolId, name, email, role } = req.body;
+      if (!schoolId || !name || !email) {
+        res.status(400).json({ success: false, error: "schoolId, name e email são obrigatórios" });
+        return;
+      }
+      const db = admin.firestore();
+      // Verificar se email já existe nessa escola
+      const existing = await db
+        .collection(`schools/${schoolId}/teachers`)
+        .where("email", "==", email)
+        .get();
+      if (!existing.empty) {
+        res.status(409).json({ success: false, error: "Este email já está cadastrado nesta escola" });
+        return;
+      }
+      const teacherRef = db.collection(`schools/${schoolId}/teachers`).doc();
+      await teacherRef.set({
+        name,
+        email,
+        role: role || "professor",
+        createdAt: admin.firestore.FieldValue.serverTimestamp()
+      });
+      res.json({ success: true, teacherId: teacherRef.id });
+    } catch (error) {
+      console.error("Erro ao adicionar professor:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
+ * 👨‍🏫 Cloud Function: Remover professor da escola
+ * POST /removeTeacher
+ * Body: { schoolId, teacherId }
+ */
+export const removeTeacher = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    try {
+      const { schoolId, teacherId } = req.body;
+      if (!schoolId || !teacherId) {
+        res.status(400).json({ success: false, error: "schoolId e teacherId são obrigatórios" });
+        return;
+      }
+      await admin.firestore()
+        .collection(`schools/${schoolId}/teachers`)
+        .doc(teacherId)
+        .delete();
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Erro ao remover professor:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
+ * 📊 Cloud Function: Buscar resultados de simulados da escola (para professor)
+ * POST /getSchoolSimuladoResults
+ * Body: { schoolId, teacherToken }
+ */
+export const getSchoolSimuladoResults = onRequest(
+  { region: "southamerica-east1", cors: true },
+  async (req, res) => {
+    try {
+      const { schoolId, teacherToken } = req.body;
+      if (!schoolId || !teacherToken) {
+        res.status(400).json({ success: false, error: "Dados obrigatórios faltando" });
+        return;
+      }
+      // Verificar token
+      let decoded: any;
+      try {
+        decoded = jwt.verify(teacherToken, process.env.JWT_SECRET || "sowlfy_student_secret_key");
+      } catch {
+        res.status(401).json({ success: false, error: "Token inválido" });
+        return;
+      }
+      if (decoded.type !== "teacher" || decoded.schoolId !== schoolId) {
+        res.status(403).json({ success: false, error: "Acesso negado" });
+        return;
+      }
+
+      const db = admin.firestore();
+      // Buscar todos os alunos da escola
+      const studentsSnap = await db
+        .collection(`school_students/${schoolId}/students`)
+        .get();
+
+      const results: any[] = [];
+      for (const studentDoc of studentsSnap.docs) {
+        const student = studentDoc.data();
+        const resultsSnap = await db
+          .collection(`school_students/${schoolId}/students/${studentDoc.id}/simulado_results`)
+          .orderBy("completedAt", "desc")
+          .get();
+        for (const resultDoc of resultsSnap.docs) {
+          const r = resultDoc.data();
+          results.push({
+            id: resultDoc.id,
+            ra: student.ra || studentDoc.id,
+            studentName: student.name || r.studentName || "",
+            className: student.class || r.className || "",
+            simuladoId: r.simuladoId,
+            simuladoName: r.simuladoName,
+            score: r.score,
+            correct: r.correct,
+            total: r.total,
+            timeFormatted: r.timeFormatted,
+            byArea: r.byArea || [],
+            questionsData: r.questionsData || [],
+            completedAt: r.completedAt ? r.completedAt.toDate().toISOString() : null
+          });
+        }
+      }
+
+      res.json({ success: true, results });
+    } catch (error) {
+      console.error("Erro ao buscar resultados:", error);
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  }
+);
+
+/**
  * ✅ Cloud Function: Login do Estudante
  * POST /studentLogin
  * Body: { ra: string, password: string }
@@ -1199,41 +1624,47 @@ export const studentLogin = onRequest(
     try {
       const db = admin.firestore();
       
-      // Buscar o estudante em todas as escolas
       let studentData: any = null;
       let schoolId: string = "";
       let foundRA: string = "";
 
-      // Varrer todas as escolas para encontrar o estudante
-      const schoolsSnapshot = await db.collection("school_students").get();
+      // Buscar o estudante via collectionGroup para evitar dependência de documento pai
+      const inputRA = String(ra).trim().toLowerCase();
+      const studentsSnapshot = await db.collectionGroup("students").get();
 
-      for (const schoolDoc of schoolsSnapshot.docs) {
-        const studentsCollection = schoolDoc.ref.collection("students");
-        const studentsSnapshot = await studentsCollection.get();
+      for (const studentDoc of studentsSnapshot.docs) {
+        const student = studentDoc.data();
+        const storedRA = String(student.ra || "").trim().toLowerCase();
 
-        for (const studentDoc of studentsSnapshot.docs) {
-          const student = studentDoc.data();
-          
-          // Normalizar RA para comparação (remover espaços, converter para string)
-          const storedRA = String(student.ra || "").trim().toLowerCase();
-          const inputRA = String(ra).trim().toLowerCase();
+        if (storedRA === inputRA) {
+          // Extrair schoolId a partir do caminho: school_students/{schoolId}/students/{ra}
+          const pathSegments = studentDoc.ref.path.split("/");
+          const extractedSchoolId = pathSegments[1]; // índice 1 = schoolId
 
-          // Comparar RA e senha
-          if (storedRA === inputRA && student.sharedPassword === password) {
-            studentData = {
-              ra: student.ra,
-              name: student.name,
-              email: student.email,
-              className: student.className,
-              ...student
-            };
-            schoolId = schoolDoc.id;
-            foundRA = student.ra;
-            break;
+          // Buscar senha da escola
+          const schoolDoc = await db.collection("schools").doc(extractedSchoolId).get();
+          const schoolDocData = schoolDoc.data();
+          const schoolPassword = schoolDocData?.sharedPassword || "";
+
+          if (schoolPassword !== password) {
+            res.status(401).json({
+              success: false,
+              error: "RA ou senha incorretos"
+            });
+            return;
           }
-        }
 
-        if (studentData) break;
+          studentData = {
+            ra: student.ra,
+            name: student.name,
+            email: student.email,
+            className: student.className || student.class,
+            ...student
+          };
+          schoolId = extractedSchoolId;
+          foundRA = student.ra;
+          break;
+        }
       }
 
       if (!studentData) {

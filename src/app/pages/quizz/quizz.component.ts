@@ -35,6 +35,7 @@ interface Question {
   difficulty?: string;
   studyTip?: string;
   examTip?: string;
+  aula_tema?: string;
 }
 
 interface QuestionFile {
@@ -233,6 +234,7 @@ private getNextMidnightISO(): string {
   // Configuração da rota
   area: string = '';
   subject: string = '';
+  simuladoDisplayName: string = ''; // Nome de exibição legível do simulado
   specificQuestionId: string = ''; // ✅ Para modo single
   specificQuestionIds: string[] = []; // ✅ Para modo smart/custom com múltiplas questões específicas
   
@@ -423,6 +425,9 @@ private getNextMidnightISO(): string {
       const questionLimit = queryParams['limit'];
       const premiumParam = queryParams['premium'];
       this.countParam = queryParams['count'] || null;
+      if (queryParams['simuladoDisplayName']) {
+        this.simuladoDisplayName = queryParams['simuladoDisplayName'];
+      }
       
       // ✅ PRIORIZAR QUERY PARAMS
       if (queryArea) {
@@ -470,14 +475,17 @@ private getNextMidnightISO(): string {
       }
       
       // ✅ LÓGICA CORRIGIDA PARA PREMIUM
+      const isAdminOrStudentOrTeacher = !!localStorage.getItem('sowlfy_admin_token') || !!localStorage.getItem('student_token') || !!localStorage.getItem('teacher_token');
+      const savedPremiumStatus = localStorage.getItem('testPremiumStatus');
+
       if (premiumParam === 'true') {
+        this.isFreeTrial = false;
+      } else if (isAdminOrStudentOrTeacher) {
         this.isFreeTrial = false;
       } else if (queryType === 'free-trial' || queryMode === 'mixed') {
         this.isFreeTrial = true;
       } else {
-        const isAdminOrStudent = !!localStorage.getItem('sowlfy_admin_token') || !!localStorage.getItem('student_token');
-        const savedPremiumStatus = localStorage.getItem('testPremiumStatus');
-        this.isFreeTrial = !isAdminOrStudent && savedPremiumStatus !== 'true';
+        this.isFreeTrial = savedPremiumStatus !== 'true';
       }
       
       console.log(`🎯 CONFIGURAÇÃO FINAL:`, {
@@ -1008,6 +1016,7 @@ private getNextMidnightISO(): string {
   }
 
   getSimuladoTitle(): string {
+    if (this.simuladoDisplayName) return this.simuladoDisplayName;
     if (!this.subject) return 'Simulado';
     return this.subject
       .split('-')
@@ -1220,11 +1229,58 @@ private getNextMidnightISO(): string {
       questions
     };
 
-    // Salvar resultado completo para revisão futura
+    // Salvar resultado completo para revisão futura (localStorage)
     this.progressService.saveSimuladoReview(this.subject || '', this.simuladoResult);
+
+    // Salvar no Firestore se for aluno de escola
+    this.saveSimuladoResultToFirestore(this.simuladoResult);
 
     this.setState(QuizState.COMPLETED);
     this.isLoading = false;
+  }
+
+  private saveSimuladoResultToFirestore(result: any): void {
+    const schoolId = localStorage.getItem('student_schoolId');
+    const studentDataRaw = localStorage.getItem('student_data');
+    if (!schoolId || !studentDataRaw) return;
+
+    try {
+      const student = JSON.parse(studentDataRaw);
+      const ra = student.ra || student.id;
+      if (!ra) return;
+
+      const url = 'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/saveSimuladoResult';
+      const payload = {
+        schoolId,
+        ra,
+        studentName: student.name || '',
+        className: student.className || student.class || '',
+        simuladoId: this.subject || '',
+        simuladoName: this.simuladoDisplayName || this.subject || '',
+        score: result.score,
+        correct: result.correct,
+        total: result.total,
+        timeFormatted: result.timeFormatted,
+        byArea: result.byArea,
+        questionsData: (result.questions || []).map((item: any) => ({
+          id: item.q.id,
+          question: item.q.question,
+          options: (item.q.options || []).map((o: any) => ({ alias: o.alias, name: o.name })),
+          correct: item.q.correct,
+          studentAnswer: item.chosen,
+          isCorrect: item.isCorrect,
+          area: (item.q as any).area_conhecimento || (item.q as any).subject || 'Geral',
+          explanation: item.q.explanation || '',
+          aula_tema: (item.q as any).aula_tema || ''
+        }))
+      };
+
+      this.http.post(url, payload).subscribe({
+        error: (e) => console.error('Erro ao salvar resultado do simulado:', e)
+      });
+    } catch (e) {
+      console.error('Erro ao preparar dados do simulado:', e);
+    }
   }
 
   // ✅ CORRIGIR O MÉTODO initializeQuiz PARA EVITAR ERRO LINHA 1236

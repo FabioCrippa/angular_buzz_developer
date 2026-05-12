@@ -59,7 +59,7 @@ export class AreaComponent implements OnInit {
   areaId: string = '';
 
   // ── Simulados ──────────────────────────────────
-  simuladosList: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number }[] = [
+  simuladosList: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number; tags?: string; group: string }[] = [
     {
       id: 'prova-paulista-9ano-2024',
       displayName: 'Prova Paulista',
@@ -68,7 +68,8 @@ export class AreaComponent implements OnInit {
       color: 'linear-gradient(135deg, #e67e22, #f39c12)',
       questionCount: 0,
       duration: 90,
-      year: 2024
+      year: 2024,
+      group: 'Exames Oficiais'
     },
     {
       id: 'enem-2024',
@@ -78,19 +79,74 @@ export class AreaComponent implements OnInit {
       color: 'linear-gradient(135deg, #2980b9, #3498db)',
       questionCount: 0,
       duration: 90,
-      year: 2024
+      year: 2024,
+      group: 'Exames Oficiais'
     },
     {
       id: 'lp-caderno-9ano-1bimestre',
       displayName: 'Língua Portuguesa',
-      subtitle: '9º Ano — 1º Bimestre',
+      subtitle: '9º Ano — Volume 1',
       icon: '📖',
       color: 'linear-gradient(135deg, #27ae60, #2ecc71)',
       questionCount: 0,
       duration: 90,
-      year: 2025
+      year: 2025,
+      tags: 'Aulas 1–3, 6–11, 13–19, 21–22, 24, 26, 28',
+      group: 'Língua Portuguesa'
+    },
+    {
+      id: 'mat-caderno-9ano-1bimestre',
+      displayName: 'Matemática',
+      subtitle: '9º Ano — Volume 1',
+      icon: '📐',
+      color: 'linear-gradient(135deg, #8e44ad, #9b59b6)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 1 a 8',
+      group: 'Matemática'
+    },
+    {
+      id: 'mat-caderno-9ano-vol1-p2',
+      displayName: 'Matemática',
+      subtitle: '9º Ano — Vol. 1 · Parte 2',
+      icon: '📐',
+      color: 'linear-gradient(135deg, #6c3483, #8e44ad)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 11 a 18',
+      group: 'Matemática'
+    },
+    {
+      id: 'mat-caderno-9ano-vol1-p3',
+      displayName: 'Matemática',
+      subtitle: '9º Ano — Vol. 1 · Parte 3',
+      icon: '📐',
+      color: 'linear-gradient(135deg, #1a5276, #2980b9)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 21 a 28',
+      group: 'Matemática'
+    },
+    {
+      id: 'lp-caderno-9ano-vol1-p2',
+      displayName: 'Língua Portuguesa',
+      subtitle: '9º Ano — Vol. 1 · Parte 2',
+      icon: '📖',
+      color: 'linear-gradient(135deg, #1a5276, #2980b9)',
+      questionCount: 0,
+      duration: 90,
+      year: 2025,
+      tags: 'Aulas 1–3, 5–9, 11–28',
+      group: 'Língua Portuguesa'
     }
   ];
+
+  // Propriedade estável — calculada uma vez em loadSimuladosData() para evitar
+  // que o *ngFor destrua/recrie os DOM nodes a cada change detection (hover loop)
+  simuladosGroups: { label: string; icon: string; items: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number; tags?: string; group: string }[] }[] = [];
 
   // Cache de histórico calculado uma vez no init (evita recalcular a cada change detection)
   simuladosHistoryCache: { [id: string]: { attempts: number; bestScore: number } } = {};
@@ -101,7 +157,11 @@ export class AreaComponent implements OnInit {
     const filePaths: { [id: string]: string } = {
       'prova-paulista-9ano-2024': 'assets/data/areas/simulados/prova-paulista/prova-paulista-9ano-2024.json',
       'enem-2024': 'assets/data/areas/simulados/enem/enem-2024.json',
-      'lp-caderno-9ano-1bimestre': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-1bimestre.json'
+      'lp-caderno-9ano-1bimestre': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-1bimestre.json',
+      'mat-caderno-9ano-1bimestre': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-1bimestre.json',
+      'mat-caderno-9ano-vol1-p2': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol1-p2.json',
+      'mat-caderno-9ano-vol1-p3': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol1-p3.json',
+      'lp-caderno-9ano-vol1-p2': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-vol1-p2.json'
     };
 
     for (const sim of this.simuladosList) {
@@ -143,6 +203,20 @@ export class AreaComponent implements OnInit {
     for (const sim of this.simuladosList) {
       this.simuladosReviewAvailable[sim.id] = this.progressService.hasSimuladoReview(sim.id);
     }
+
+    // 4. Calcular grupos uma única vez (referência estável para o *ngFor)
+    const order = ['Exames Oficiais', 'Língua Portuguesa', 'Matemática'];
+    const icons: Record<string, string> = {
+      'Exames Oficiais': '🏆',
+      'Língua Portuguesa': '📖',
+      'Matemática': '📐'
+    };
+    const map = new Map<string, typeof this.simuladosList>();
+    for (const sim of this.simuladosList) {
+      if (!map.has(sim.group)) map.set(sim.group, []);
+      map.get(sim.group)!.push(sim);
+    }
+    this.simuladosGroups = order.filter(g => map.has(g)).map(g => ({ label: g, icon: icons[g] || '📄', items: map.get(g)! }));
   }
 
   getSimuladoHistory(simuladoId: string): { attempts: number; bestScore: number } {
@@ -160,12 +234,13 @@ export class AreaComponent implements OnInit {
     });
   }
 
-  navigateToSimulado(simuladoId: string): void {
+  navigateToSimulado(simuladoId: string, displayName?: string): void {
     this.router.navigate(['/quiz'], {
       queryParams: {
         area: 'simulados',
         mode: 'simulado',
         subject: simuladoId,
+        simuladoDisplayName: displayName || simuladoId,
         count: 'unlimited',
         premium: 'true'
       }
@@ -242,7 +317,9 @@ export class AreaComponent implements OnInit {
   // Monitorar status premium (se o service existir)
   if (this.premiumService && this.premiumService.premiumStatus$) {
     this.premiumService.premiumStatus$.subscribe(status => {
-      this.isPremium = status.isPremium;
+      // Teacher token sempre garante premium, ignorar override do service
+      const isTeacher = !!localStorage.getItem('teacher_token');
+      this.isPremium = isTeacher ? true : status.isPremium;
       this.canTakeQuiz = this.premiumService.canTakeQuiz;
       this.remainingQuizzes = this.premiumService.remainingQuizzes;
     });
@@ -627,6 +704,11 @@ export class AreaComponent implements OnInit {
     }
     // Estudante de escola ativa tem acesso premium
     if (localStorage.getItem('student_token')) {
+      this.isPremium = true;
+      return;
+    }
+    // Professor/coordenador tem acesso premium
+    if (localStorage.getItem('teacher_token')) {
       this.isPremium = true;
       return;
     }

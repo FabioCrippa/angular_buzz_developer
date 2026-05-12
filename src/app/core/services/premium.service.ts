@@ -141,11 +141,12 @@ export class PremiumService {
   
   private getInitialStatus(): UserPremiumStatus {
     try {
-      // Admin e estudante sempre têm acesso premium
+      // Admin, estudante e professor/coordenador sempre têm acesso premium
       if (
         typeof localStorage !== 'undefined' && (
           localStorage.getItem('sowlfy_admin_token') ||
-          localStorage.getItem('student_token')
+          localStorage.getItem('student_token') ||
+          localStorage.getItem('teacher_token')
         )
       ) {
         return {

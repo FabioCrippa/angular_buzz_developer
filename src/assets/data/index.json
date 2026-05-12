@@ -439,11 +439,44 @@
           "topicos": [
             {
               "id": "lp-caderno-9ano-1bimestre",
-              "nome": "LP — Caderno 9º Ano 1º Bimestre",
-              "descricao": "Questões de Língua Portuguesa do caderno de exercícios do 9º Ano, 1º Bimestre",
+              "nome": "LP — Caderno 9º Ano Volume 1",
+              "descricao": "Questões de Língua Portuguesa do caderno de exercícios do 9º Ano, Volume 1",
               "arquivo": "lp-caderno-9ano-1bimestre.json"
+            },
+            {
+              "id": "lp-caderno-9ano-vol1-p2",
+              "nome": "LP — Caderno 9º Ano Volume 1 · Parte 2",
+              "descricao": "Questões de Língua Portuguesa do caderno de exercícios do 9º Ano, Volume 1 Parte 2",
+              "arquivo": "lp-caderno-9ano-vol1-p2.json"
             }
-          ]        }
+          ]
+        },
+        {
+          "id": "matematica",
+          "nome": "Matemática",
+          "descricao": "Caderno de exercícios de Matemática por série e bimestre",
+          "icon": "📐",
+          "topicos": [
+            {
+              "id": "mat-caderno-9ano-1bimestre",
+              "nome": "MAT — Caderno 9º Ano Volume 1",
+              "descricao": "Questões de Matemática do caderno de exercícios do 9º Ano, Volume 1",
+              "arquivo": "mat-caderno-9ano-1bimestre.json"
+            },
+            {
+              "id": "mat-caderno-9ano-vol1-p2",
+              "nome": "MAT — Caderno 9º Ano Volume 1 · Parte 2",
+              "descricao": "Questões de Matemática do caderno de exercícios do 9º Ano, Volume 1 Parte 2",
+              "arquivo": "mat-caderno-9ano-vol1-p2.json"
+            },
+            {
+              "id": "mat-caderno-9ano-vol1-p3",
+              "nome": "MAT — Caderno 9º Ano Volume 1 · Parte 3",
+              "descricao": "Questões de Matemática do caderno de exercícios do 9º Ano, Volume 1 Parte 3",
+              "arquivo": "mat-caderno-9ano-vol1-p3.json"
+            }
+          ]
+        }
       ]
     }
   ],

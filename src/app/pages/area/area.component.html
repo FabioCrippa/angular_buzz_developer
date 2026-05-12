@@ -106,38 +106,49 @@
       <div class="simulados-intro">
         <p class="simulados-intro-text">Escolha a prova que deseja realizar. As questões aparecem em ordem original, sem feedback durante o exame.</p>
       </div>
-      <div class="simulados-cards-grid">
-        <div *ngFor="let sim of simuladosList" class="simulado-card">
-          <div class="simulado-card-header" [style.background]="sim.color">
-            <span class="simulado-card-icon">{{ sim.icon }}</span>
-            <div class="simulado-card-title-block">
-              <h3 class="simulado-card-title">{{ sim.displayName }}</h3>
-              <span class="simulado-card-subtitle">{{ sim.subtitle }}</span>
+
+      <div *ngFor="let group of simuladosGroups" class="simulados-group">
+        <div class="simulados-group-header">
+          <span class="simulados-group-icon">{{ group.icon }}</span>
+          <h3 class="simulados-group-label">{{ group.label }}</h3>
+          <span class="simulados-group-count">{{ group.items.length }}</span>
+        </div>
+        <div class="simulados-cards-grid">
+          <div *ngFor="let sim of group.items" class="simulado-card">
+            <div class="simulado-card-header" [style.background]="sim.color">
+              <span class="simulado-card-icon">{{ sim.icon }}</span>
+              <div class="simulado-card-title-block">
+                <h3 class="simulado-card-title">{{ sim.displayName }}</h3>
+                <span class="simulado-card-subtitle">{{ sim.subtitle }}</span>
+              </div>
             </div>
-          </div>
-          <div class="simulado-card-body">
-            <div class="simulado-card-meta">
-              <span class="sim-meta-item"><i class="fas fa-list-ol"></i> {{ sim.questionCount }} questões</span>
-              <span class="sim-meta-item"><i class="fas fa-clock"></i> {{ sim.duration }} min</span>
-              <span class="sim-meta-item"><i class="fas fa-calendar"></i> {{ sim.year }}</span>
+            <div class="simulado-card-body">
+              <div *ngIf="sim.tags" class="simulado-card-tags">
+                <i class="fas fa-book-open"></i> {{ sim.tags }}
+              </div>
+              <div class="simulado-card-meta">
+                <span class="sim-meta-item"><i class="fas fa-list-ol"></i> {{ sim.questionCount }} questões</span>
+                <span class="sim-meta-item"><i class="fas fa-clock"></i> {{ sim.duration }} min</span>
+                <span class="sim-meta-item"><i class="fas fa-calendar"></i> {{ sim.year }}</span>
+              </div>
+              <div class="simulado-card-history" *ngIf="getSimuladoHistory(sim.id) as hist">
+                <span *ngIf="hist.attempts === 0" class="hist-none">Não realizado</span>
+                <span *ngIf="hist.attempts > 0" class="hist-done">
+                  <i class="fas fa-check-circle"></i>
+                  Melhor: {{ hist.bestScore }}% • {{ hist.attempts }}x realizado
+                </span>
+              </div>
             </div>
-            <div class="simulado-card-history" *ngIf="getSimuladoHistory(sim.id) as hist">
-              <span *ngIf="hist.attempts === 0" class="hist-none">Não realizado</span>
-              <span *ngIf="hist.attempts > 0" class="hist-done">
-                <i class="fas fa-check-circle"></i>
-                Melhor: {{ hist.bestScore }}% • {{ hist.attempts }}x realizado
-              </span>
+            <div class="simulado-card-footer">
+              <button class="btn-start-simulado" (click)="navigateToSimulado(sim.id, sim.displayName + ' — ' + sim.subtitle)">
+                <i class="fas fa-play"></i> Iniciar Simulado
+              </button>
+              <button *ngIf="simuladosReviewAvailable[sim.id]"
+                      class="btn-review-simulado"
+                      (click)="viewSimuladoReview(sim.id)">
+                <i class="fas fa-eye"></i> Ver Revisão
+              </button>
             </div>
-          </div>
-          <div class="simulado-card-footer">
-            <button class="btn-start-simulado" (click)="navigateToSimulado(sim.id)">
-              <i class="fas fa-play"></i> Iniciar Simulado
-            </button>
-            <button *ngIf="simuladosReviewAvailable[sim.id]"
-                    class="btn-review-simulado"
-                    (click)="viewSimuladoReview(sim.id)">
-              <i class="fas fa-eye"></i> Ver Revisão
-            </button>
           </div>
         </div>
       </div>

@@ -132,33 +132,48 @@ export class HeaderComponent implements OnInit, OnDestroy {
           id: 'student',
           name: student.name || 'Estudante',
           email: student.email,
+          className: student.className || student.class || '',
           schoolId: localStorage.getItem('student_schoolId') || undefined,
-          isPremium: false,
-          plan: 'free',
+          isPremium: true,
+          plan: 'premium',
           createdAt: new Date(),
           lastLoginAt: new Date(),
-          stats: {
-            level: 0,
-            xp: 0,
-            streak: 0,
-            totalQuestions: 0,
-            correctAnswers: 0,
-            timeStudied: 0,
-            quizzesCompleted: 0,
-            averageScore: 0
-          },
-          preferences: {
-            soundEnabled: true,
-            darkTheme: false,
-            emailNotifications: true,
-            language: 'pt-BR'
-          }
+          stats: { level: 0, xp: 0, streak: 0, totalQuestions: 0, correctAnswers: 0, timeStudied: 0, quizzesCompleted: 0, averageScore: 0 },
+          preferences: { soundEnabled: true, darkTheme: false, emailNotifications: true, language: 'pt-BR' }
         };
         this.isLoggedIn = true;
+        this.isPremium = true;
         this.cdr.detectChanges();
         return;
       } catch (error) {
         console.error('Erro ao parseizar student data:', error);
+      }
+    }
+
+    // Verificar se professor está logado
+    const teacherToken = localStorage.getItem('teacher_token');
+    const teacherData = localStorage.getItem('teacher_data');
+
+    if (teacherToken && teacherData) {
+      try {
+        const teacher = JSON.parse(teacherData);
+        this.currentUser = {
+          id: 'teacher',
+          name: teacher.name || 'Professor',
+          email: teacher.email,
+          isPremium: true,
+          plan: 'premium',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: { level: 0, xp: 0, streak: 0, totalQuestions: 0, correctAnswers: 0, timeStudied: 0, quizzesCompleted: 0, averageScore: 0 },
+          preferences: { soundEnabled: true, darkTheme: false, emailNotifications: true, language: 'pt-BR' }
+        };
+        this.isLoggedIn = true;
+        this.isPremium = true;
+        this.cdr.detectChanges();
+        return;
+      } catch (error) {
+        console.error('Erro ao parseizar teacher data:', error);
       }
     }
   }
@@ -238,9 +253,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
                   id: 'student',
                   name: student.name || 'Estudante',
                   email: student.email,
+                  className: student.className || student.class || '',
                   schoolId: localStorage.getItem('student_schoolId') || undefined,
-                  isPremium: false,
-                  plan: 'free',
+                  isPremium: true,
+                  plan: 'premium',
                   createdAt: new Date(),
                   lastLoginAt: new Date(),
                   stats: {
@@ -261,6 +277,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
                   }
                 };
                 this.isLoggedIn = true;
+                this.isPremium = true;
               } catch (error) {
                 console.error('Erro ao parseizar student data:', error);
               }
@@ -425,9 +442,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
           id: 'student',
           name: student.name || 'Estudante',
           email: student.email,
+          className: student.className || student.class || '',
           schoolId: localStorage.getItem('student_schoolId') || undefined,
-          isPremium: false,
-          plan: 'free',
+          isPremium: true,
+          plan: 'premium',
           createdAt: new Date(),
           lastLoginAt: new Date(),
           stats: {
@@ -448,6 +466,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
           }
         };
         this.isLoggedIn = true;
+        this.isPremium = true;
         this.cdr.detectChanges();
       } catch (error) {
         console.error('❌ [Header] Erro ao parseizar student data:', error);
@@ -455,8 +474,34 @@ export class HeaderComponent implements OnInit, OnDestroy {
       return;
     }
 
+    // Se há teacher token mas header não reconhece como professor logado
+    const teacherToken = localStorage.getItem('teacher_token');
+    const teacherData = localStorage.getItem('teacher_data');
+    if (teacherToken && teacherData && (!this.currentUser || this.currentUser.id !== 'teacher')) {
+      try {
+        const teacher = JSON.parse(teacherData);
+        this.currentUser = {
+          id: 'teacher',
+          name: teacher.name || 'Professor',
+          email: teacher.email,
+          isPremium: true,
+          plan: 'premium',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: { level: 0, xp: 0, streak: 0, totalQuestions: 0, correctAnswers: 0, timeStudied: 0, quizzesCompleted: 0, averageScore: 0 },
+          preferences: { soundEnabled: true, darkTheme: false, emailNotifications: true, language: 'pt-BR' }
+        };
+        this.isLoggedIn = true;
+        this.isPremium = true;
+        this.cdr.detectChanges();
+      } catch (error) {
+        console.error('❌ [Header] Erro ao parseizar teacher data:', error);
+      }
+      return;
+    }
+
     // Se não há tokens e header estava logado, fazer logout
-    if (!adminToken && !studentToken && !this.authService.isAuthenticated() && this.isLoggedIn) {
+    if (!adminToken && !studentToken && !teacherToken && !this.authService.isAuthenticated() && this.isLoggedIn) {
       this.currentUser = null;
       this.isLoggedIn = false;
       this.isPremium = false;
@@ -561,6 +606,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
       localStorage.removeItem('student_data');
       localStorage.removeItem('student_schoolId');
       localStorage.removeItem('testPremiumStatus');
+
+      // ✅ LIMPAR DADOS DO PROFESSOR
+      localStorage.removeItem('teacher_token');
+      localStorage.removeItem('teacher_data');
       
       this.isLoggedIn = false;
       this.isPremium = false;
@@ -575,6 +624,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   // ✅ PROCESSAR SUCESSO DE AUTENTICAÇÃO
   private handleAuthSuccess(result: any): void {
+    // Normalizar: professor usa result.teacher em vez de result.user
+    if (result?.userType === 'teacher' && result?.teacher && !result?.user) {
+      result = { ...result, user: result.teacher };
+    }
+
     if (result?.user) {
       // ✅ ATUALIZAR ESTADO DO HEADER IMEDIATAMENTE
       if (result.userType === 'admin') {
@@ -610,9 +664,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
           id: 'student',
           name: result.user.name || 'Estudante',
           email: result.user.email,
+          className: result.user.className || result.user.class || '',
           schoolId: result.schoolId,
-          isPremium: false,
-          plan: 'free',
+          isPremium: true,
+          plan: 'premium',
           createdAt: new Date(),
           lastLoginAt: new Date(),
           stats: {
@@ -633,8 +688,22 @@ export class HeaderComponent implements OnInit, OnDestroy {
           }
         };
         this.isLoggedIn = true;
+        this.isPremium = true;
+      } else if (result.userType === 'teacher') {
+        this.currentUser = {
+          id: 'teacher',
+          name: result.user.name || 'Professor',
+          email: result.user.email,
+          isPremium: true,
+          plan: 'premium',
+          createdAt: new Date(),
+          lastLoginAt: new Date(),
+          stats: { level: 0, xp: 0, streak: 0, totalQuestions: 0, correctAnswers: 0, timeStudied: 0, quizzesCompleted: 0, averageScore: 0 },
+          preferences: { soundEnabled: true, darkTheme: false, emailNotifications: true, language: 'pt-BR' }
+        };
+        this.isLoggedIn = true;
+        this.isPremium = true;
       } else {
-        // Usuário individual (Firebase)
         this.currentUser = result.user;
         this.isLoggedIn = true;
         this.isPremium = this.authService.isPremium();
@@ -652,7 +721,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
       if (result.userType === 'admin') {
         targetUrl = '/admin/dashboard';
       } else if (result.userType === 'student') {
-        targetUrl = '/quizz';
+        targetUrl = '/dashboard';
+      } else if (result.userType === 'teacher') {
+        targetUrl = '/professor';
       }
       
       const userName = result.user.name || result.user.email?.split('@')[0] || 'Usuário';
@@ -793,7 +864,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   
       // Atualiza flags baseadas no storage e no usuário atual
       const storedPremium = localStorage.getItem('isPremium');
-      this.isPremium = storedPremium === 'true' || !!this.currentUser?.isPremium;
+      const isStudent = !!localStorage.getItem('student_token');
+      const isTeacher = !!localStorage.getItem('teacher_token');
+      this.isPremium = isStudent || isTeacher || storedPremium === 'true' || !!this.currentUser?.isPremium;
       this.isFreeTrial = !this.isPremium;
     }
     
@@ -825,6 +898,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   navigateToAdminPanel(): void {
     this.router.navigate(['/admin/dashboard']);
+    this.closeMenus();
+  }
+
+  navigateToProfessorPanel(): void {
+    this.router.navigate(['/professor']);
     this.closeMenus();
   }
 

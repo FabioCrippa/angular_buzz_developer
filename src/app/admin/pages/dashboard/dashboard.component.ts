@@ -9,6 +9,9 @@ interface School {
   name: string;
   city: string;
   state?: string;
+  directorName?: string;
+  email?: string;
+  phone?: string;
   totalStudents: number;
   activeStudents: number;
   sharedPassword: string;
@@ -92,6 +95,24 @@ export class AdminDashboardComponent implements OnInit {
   showChangePasswordModal = false;
   changePasswordForm = { currentPassword: '', newPassword: '', confirmPassword: '' };
   isChangingPassword = false;
+
+  // ✏️ Editar Escola
+  showEditSchoolModal = false;
+  editSchoolForm: { name: string; city: string; state: string; directorName: string; email: string; phone: string; subscriptionType?: 'sold' | 'donated' } = { name: '', city: '', state: '', directorName: '', email: '', phone: '' };
+  editingSchool: School | null = null;
+  isSavingSchool = false;
+
+  // 🔑 Gerar nova senha
+  isGeneratingPassword = false;
+
+  // 📚 Turmas expandidas
+  expandedClasses: Set<string> = new Set();
+
+  // 👨‍🏫 Professores
+  teachers: Array<{ id: string; name: string; email: string; role: string }> = [];
+  showAddTeacherForm = false;
+  newTeacher: { name: string; email: string; role: string } = { name: '', email: '', role: 'professor' };
+  isSavingTeacher = false;
 
   constructor(
     private schoolService: SchoolService,
@@ -379,7 +400,10 @@ export class AdminDashboardComponent implements OnInit {
 
   selectSchool(school: School) {
     this.selectedSchool = school;
+    this.teachers = [];
+    this.showAddTeacherForm = false;
     this.loadStudents();
+    this.loadTeachers();
   }
 
   async loadStudents() {
@@ -423,6 +447,8 @@ export class AdminDashboardComponent implements OnInit {
       }
 
       this.calculateStats();
+      // Auto-expandir todas as turmas
+      this.expandedClasses = new Set(this.students.map(s => s.class || '-'));
     } catch (error: any) {
       this.errorMessage = 'Erro ao carregar alunos';
       console.error(error);
@@ -443,7 +469,56 @@ export class AdminDashboardComponent implements OnInit {
     this.participationRate = ((activeStudents / this.students.length) * 100).toFixed(0) + '%';
   }
 
+  get groupedStudents(): { className: string; students: StudentStats[] }[] {
+    const map = new Map<string, StudentStats[]>();
+    for (const s of this.students) {
+      const key = s.class || '-';
+      if (!map.has(key)) map.set(key, []);
+      map.get(key)!.push(s);
+    }
+    return Array.from(map.entries())
+      .sort(([a], [b]) => a.localeCompare(b, 'pt-BR'))
+      .map(([className, students]) => ({
+        className,
+        students: [...students].sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'))
+      }));
+  }
+
+  toggleClass(className: string) {
+    if (this.expandedClasses.has(className)) {
+      this.expandedClasses.delete(className);
+    } else {
+      this.expandedClasses.add(className);
+    }
+  }
+
+  expandAllClasses() {
+    this.expandedClasses = new Set(this.students.map(s => s.class || '-'));
+  }
+
+  collapseAllClasses() {
+    this.expandedClasses = new Set();
+  }
+
+  getClassParticipation(students: StudentStats[]): string {
+    if (students.length === 0) return '-';
+    const active = students.filter(s => s.totalAttempts > 0).length;
+    return ((active / students.length) * 100).toFixed(0) + '%';
+  }
+
+  getClassAvgScore(students: StudentStats[]): string {
+    const withAttempts = students.filter(s => s.totalAttempts > 0);
+    if (withAttempts.length === 0) return '-';
+    const avg = withAttempts.reduce((sum, s) => sum + (s.averageScore || 0), 0) / withAttempts.length;
+    return avg.toFixed(1);
+  }
+
   showPassword() {
+    this.showPasswordModal = true;
+  }
+
+  viewSchoolPassword(school: School) {
+    this.selectedSchool = school;
     this.showPasswordModal = true;
   }
 
@@ -658,6 +733,196 @@ export class AdminDashboardComponent implements OnInit {
           this.successMessage = '';
         }, 2000);
       });
+    }
+  }
+
+  // ✏️ EDITAR ESCOLA
+  openEditSchoolModal(school: School) {
+    this.editingSchool = school;
+    this.editSchoolForm = {
+      name: school.name,
+      city: school.city,
+      state: school.state || '',
+      directorName: school.directorName || '',
+      email: school.email || '',
+      phone: school.phone || '',
+      subscriptionType: school.subscriptionType || 'donated'
+    };
+    this.showEditSchoolModal = true;
+  }
+
+  closeEditSchoolModal() {
+    this.showEditSchoolModal = false;
+    this.editingSchool = null;
+    this.isSavingSchool = false;
+  }
+
+  async saveSchoolEdit() {
+    if (!this.editingSchool) return;
+    if (!this.editSchoolForm.name || !this.editSchoolForm.city) {
+      this.errorMessage = 'Nome e Cidade são obrigatórios!';
+      setTimeout(() => { this.errorMessage = ''; }, 3000);
+      return;
+    }
+    this.isSavingSchool = true;
+    try {
+      const response = await this.http.post<any>(
+        'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/updateSchool',
+        {
+          schoolId: this.editingSchool.id,
+          name: this.editSchoolForm.name,
+          city: this.editSchoolForm.city,
+          state: this.editSchoolForm.state || '',
+          directorName: this.editSchoolForm.directorName || '',
+          email: this.editSchoolForm.email || '',
+          phone: this.editSchoolForm.phone || '',
+          subscriptionType: this.editSchoolForm.subscriptionType
+        },
+        { headers: { 'Content-Type': 'application/json' } }
+      ).toPromise();
+
+      if (response?.success) {
+        // Atualizar localmente
+        this.editingSchool.name = this.editSchoolForm.name;
+        this.editingSchool.city = this.editSchoolForm.city;
+        this.editingSchool.state = this.editSchoolForm.state;
+        this.editingSchool.subscriptionType = this.editSchoolForm.subscriptionType;
+        this.applyFilters();
+        this.successMessage = '✅ Escola atualizada com sucesso!';
+        setTimeout(() => { this.successMessage = ''; }, 3000);
+        this.closeEditSchoolModal();
+      } else {
+        this.errorMessage = response?.error || '❌ Erro ao salvar alterações';
+        setTimeout(() => { this.errorMessage = ''; }, 3000);
+      }
+    } catch (error: any) {
+      this.errorMessage = '❌ Erro ao salvar: ' + error.message;
+      setTimeout(() => { this.errorMessage = ''; }, 3000);
+    } finally {
+      this.isSavingSchool = false;
+    }
+  }
+
+  // 🔑 GERAR NOVA SENHA DA ESCOLA
+  async regenerateSchoolPassword() {
+    if (!this.selectedSchool) return;
+    if (!confirm(`Gerar nova senha para "${this.selectedSchool.name}"?\n\nA senha atual deixará de funcionar imediatamente.`)) return;
+
+    this.isGeneratingPassword = true;
+    try {
+      const response = await this.http.post<any>(
+        'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/regenerateSchoolPassword',
+        { schoolId: this.selectedSchool.id },
+        { headers: { 'Content-Type': 'application/json' } }
+      ).toPromise();
+
+      if (response?.success) {
+        this.selectedSchool.sharedPassword = response.sharedPassword;
+        // Atualizar lista local
+        const school = this.schools.find(s => s.id === this.selectedSchool!.id);
+        if (school) school.sharedPassword = response.sharedPassword;
+        this.successMessage = `🔑 Nova senha gerada: ${response.sharedPassword}`;
+        setTimeout(() => { this.successMessage = ''; }, 5000);
+      } else {
+        this.errorMessage = response?.error || '❌ Erro ao gerar senha';
+        setTimeout(() => { this.errorMessage = ''; }, 3000);
+      }
+    } catch (error: any) {
+      this.errorMessage = '❌ Erro ao gerar senha: ' + error.message;
+      setTimeout(() => { this.errorMessage = ''; }, 3000);
+    } finally {
+      this.isGeneratingPassword = false;
+    }
+  }
+
+  // 👨‍🏫 GESTÃO DE PROFESSORES
+  async loadTeachers() {
+    if (!this.selectedSchool) return;
+    try {
+      const resp: any = await this.http.post(
+        'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/getTeachers',
+        { schoolId: this.selectedSchool.id }
+      ).toPromise();
+      if (resp?.success) {
+        this.teachers = resp.teachers || [];
+      }
+    } catch (e) {
+      console.error('Erro ao carregar professores:', e);
+    }
+  }
+
+  openAddTeacherForm() {
+    this.newTeacher = { name: '', email: '', role: 'professor' };
+    this.showAddTeacherForm = true;
+  }
+
+  closeAddTeacherForm() {
+    this.showAddTeacherForm = false;
+  }
+
+  async addTeacher() {
+    if (!this.selectedSchool || !this.newTeacher.name || !this.newTeacher.email) return;
+    this.isSavingTeacher = true;
+    try {
+      const resp: any = await this.http.post(
+        'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/addTeacher',
+        { schoolId: this.selectedSchool.id, name: this.newTeacher.name, email: this.newTeacher.email, role: this.newTeacher.role }
+      ).toPromise();
+      if (resp?.success) {
+        this.successMessage = 'Professor adicionado!';
+        this.showAddTeacherForm = false;
+        await this.loadTeachers();
+        setTimeout(() => { this.successMessage = ''; }, 3000);
+      } else {
+        this.errorMessage = resp?.error || 'Erro ao adicionar professor';
+        setTimeout(() => { this.errorMessage = ''; }, 4000);
+      }
+    } catch (e: any) {
+      this.errorMessage = e?.error?.error || 'Erro ao adicionar professor';
+      setTimeout(() => { this.errorMessage = ''; }, 4000);
+    }
+    this.isSavingTeacher = false;
+  }
+
+  async removeTeacher(teacher: { id: string; name: string }) {
+    if (!this.selectedSchool) return;
+    if (!confirm(`Remover ${teacher.name}?`)) return;
+    try {
+      await this.http.post(
+        'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/removeTeacher',
+        { schoolId: this.selectedSchool.id, teacherId: teacher.id }
+      ).toPromise();
+      await this.loadTeachers();
+    } catch (e) {
+      console.error('Erro ao remover professor:', e);
+    }
+  }
+
+  async deleteClass(className: string) {
+    if (!this.selectedSchool) return;
+    const studentCount = this.groupedStudents.find(g => g.className === className)?.students.length || 0;
+    const confirmed = confirm(
+      `⚠️ ATENÇÃO — AÇÃO IRREVERSÍVEL!\n\n` +
+      `Deseja deletar a turma "${className}" da escola "${this.selectedSchool.name}"?\n\n` +
+      `Isso irá remover permanentemente:\n` +
+      `• ${studentCount} aluno(s)\n` +
+      `• Todos os resultados de simulados\n` +
+      `• Todo o histórico de tentativas\n\n` +
+      `Digite OK para confirmar.`
+    );
+    if (!confirmed) return;
+    try {
+      const resp: any = await this.http.post(
+        'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/deleteClass',
+        { schoolId: this.selectedSchool.id, className }
+      ).toPromise();
+      if (resp?.success) {
+        this.students = this.students.filter(s => s.class !== className);
+        this.expandedClasses.delete(className);
+        alert(`✅ ${resp.message}`);
+      }
+    } catch (e: any) {
+      alert('Erro ao deletar turma: ' + (e?.error?.error || e?.message || 'Erro desconhecido'));
     }
   }
 
@@ -928,8 +1193,9 @@ export class AdminDashboardComponent implements OnInit {
       const url = 'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/uploadStudentsCsv';
       
       // Converter students para formato esperado (com a classe especificada)
-      const csvContent = 'RA,Nome,Classe,Email\n' + 
-        this.parsedStudents.map(s => `${s.ra},${s.name},${this.uploadClassName},${s.email}`).join('\n');
+      // CF espera: ra, name, email, class
+      const csvContent = 'RA,Nome,Email,Classe\n' + 
+        this.parsedStudents.map(s => `${s.ra},${s.name},${s.email || ''},${this.uploadClassName}`).join('\n');
 
       const payload = {
         schoolId: this.selectedSchool.id,
@@ -974,8 +1240,9 @@ export class AdminDashboardComponent implements OnInit {
         const sheet = this.excelSheets[sheetIndex];
         if (!sheet) continue;
 
-        const csvContent = 'RA,Nome,Classe,Email\n' + 
-          sheet.students.map(s => `${s.ra},${s.name},${sheet.sheetName},${s.email}`).join('\n');
+        // CF espera: ra, name, email, class
+        const csvContent = 'RA,Nome,Email,Classe\n' + 
+          sheet.students.map(s => `${s.ra},${s.name},${s.email || ''},${sheet.sheetName}`).join('\n');
 
         const payload = {
           schoolId: this.selectedSchool!.id,

@@ -37,6 +37,7 @@ import { SoftUpgradeDialogComponent } from './shared/components/soft-upgrade-dia
 import { HardPaywallDialogComponent } from './shared/components/hard-paywall-dialog/hard-paywall-dialog.component';
 import { AttemptsLimitDialogComponent } from './shared/components/attempts-limit-dialog/attempts-limit-dialog.component';
 import { TrialAnalyticsDashboardComponent } from './shared/components/trial-analytics-dashboard/trial-analytics-dashboard.component';
+import { ProfessorComponent } from './pages/professor/professor.component';
 
 // ✅ GUARDS E SERVICES
 import { PremiumGuard } from './core/guards/premium.guard';
@@ -103,7 +104,8 @@ import { environment } from '../environments/environment';
     SoftUpgradeDialogComponent,
     HardPaywallDialogComponent,
     AttemptsLimitDialogComponent,
-    TrialAnalyticsDashboardComponent
+    TrialAnalyticsDashboardComponent,
+    ProfessorComponent
   ],
   imports: [
     // ✅ CORE MODULES

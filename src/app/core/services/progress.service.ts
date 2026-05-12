@@ -17,20 +17,36 @@ export class ProgressService {
 
   // ✅ OBTER CHAVE ESPECÍFICA DO USUÁRIO
   private getStorageKey(): string {
+    // Firebase user
     const user = localStorage.getItem('sowlfy_user');
     if (user) {
       try {
         const userData = JSON.parse(user);
-        const userId = userData.uid || userData.id; // Tentar uid ou id
-        if (userId) {
-          return `${this.STORAGE_KEY_PREFIX}_${userId}`;
-        }
+        const userId = userData.uid || userData.id;
+        if (userId) return `${this.STORAGE_KEY_PREFIX}_${userId}`;
       } catch (e) {
         console.error('Erro ao parsear dados do usuário:', e);
       }
     }
-    console.warn('⚠️ Usando storage key sem userId - dados não serão isolados!');
-    return this.STORAGE_KEY_PREFIX; // Fallback para key antiga
+    // Teacher profile
+    const teacherRaw = localStorage.getItem('teacher_data');
+    if (teacherRaw) {
+      try {
+        const teacher = JSON.parse(teacherRaw);
+        const tid = teacher.id || teacher.email;
+        if (tid) return `${this.STORAGE_KEY_PREFIX}_teacher_${tid}`;
+      } catch { /* ignore */ }
+    }
+    // Student profile
+    const studentRaw = localStorage.getItem('student_data');
+    if (studentRaw) {
+      try {
+        const student = JSON.parse(studentRaw);
+        const sid = student.ra || student.id;
+        if (sid) return `${this.STORAGE_KEY_PREFIX}_student_${sid}`;
+      } catch { /* ignore */ }
+    }
+    return this.STORAGE_KEY_PREFIX; // Fallback genérico
   }
 
   // Carrega o histórico de respostas do usuário

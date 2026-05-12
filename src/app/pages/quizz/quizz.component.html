@@ -572,6 +572,7 @@
           <span *ngIf="!item.chosen" class="rq-status status-blank">
             <i class="fas fa-minus-circle"></i> Não respondida
           </span>
+          <span class="rq-aula-tema" *ngIf="item.q.aula_tema">📚 {{ item.q.aula_tema }}</span>
         </div>
 
         <p class="rq-text">{{ item.q.question }}</p>

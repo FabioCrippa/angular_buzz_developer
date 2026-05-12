@@ -1,0 +1,611 @@
+{
+  "metadata": {
+    "simulado": "Matematica - Caderno de Exercicios",
+    "tipo": "simulado",
+    "disciplina": "Matematica",
+    "serie": "9 Ano",
+    "bimestre": "Volume 1",
+    "parte": "Parte 3",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "mat9-v1p3-001",
+      "question": "Classifique o triângulo de lados 12 cm, 9 cm e 5 cm quanto às medidas dos lados.",
+      "options": [
+        {"alias": "A", "name": "Equilátero"},
+        {"alias": "B", "name": "Isósceles"},
+        {"alias": "C", "name": "Escaleno"},
+        {"alias": "D", "name": "Retângulo"}
+      ],
+      "correct": "C",
+      "explanation": "Triângulo escaleno tem todos os lados com medidas diferentes. Como 12 ≠ 9 ≠ 5, o triângulo é escaleno. Lembrando: equilátero (3 lados iguais), isósceles (2 lados iguais), escaleno (todos diferentes).",
+      "subject": "Classificacao de triangulos quanto aos lados",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 21",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-002",
+      "question": "Um triângulo tem ângulos internos de 120°, 30° e 30°. Como ele é classificado quanto aos ângulos?",
+      "options": [
+        {"alias": "A", "name": "Acutângulo"},
+        {"alias": "B", "name": "Obtusângulo"},
+        {"alias": "C", "name": "Retângulo"},
+        {"alias": "D", "name": "Equilátero"}
+      ],
+      "correct": "B",
+      "explanation": "Obtusângulo é o triângulo que tem um ângulo maior que 90°. Como 120° > 90°, o triângulo é obtusângulo. Verificação: 120° + 30° + 30° = 180° ✓. Acutângulo: todos os ângulos < 90°. Retângulo: um ângulo = 90°.",
+      "subject": "Classificacao de triangulos quanto aos angulos",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 21",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-003",
+      "question": "Duas retas r e s são paralelas, cortadas por duas transversais, formando dois triângulos. Se em um dos triângulos há um ângulo de 110°, como são classificados os dois triângulos quanto aos ângulos?",
+      "options": [
+        {"alias": "A", "name": "Ambos acutângulos"},
+        {"alias": "B", "name": "Ambos obtusângulos"},
+        {"alias": "C", "name": "Um retângulo e um obtusângulo"},
+        {"alias": "D", "name": "Um acutângulo e um obtusângulo"}
+      ],
+      "correct": "B",
+      "explanation": "Pelas propriedades das retas paralelas cortadas por transversais, os ângulos alternos internos são iguais. Isso faz com que ambos os triângulos possuam ângulos correspondentes iguais. Como um tem 110° (obtuso), o outro também terá esse mesmo ângulo de 110°. Logo, ambos são obtusângulos.",
+      "subject": "Classificacao de triangulos e retas paralelas",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 21",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-004",
+      "question": "Um triângulo tem lados 9 cm, 12 cm e 15 cm, e um de seus ângulos é reto. Como ele é classificado quanto aos lados e quanto aos ângulos?",
+      "options": [
+        {"alias": "A", "name": "Isósceles e acutângulo"},
+        {"alias": "B", "name": "Equilátero e retângulo"},
+        {"alias": "C", "name": "Escaleno e retângulo"},
+        {"alias": "D", "name": "Isósceles e retângulo"}
+      ],
+      "correct": "C",
+      "explanation": "Lados: 9, 12 e 15 são todos diferentes → Escaleno. Ângulos: verificando pelo Teorema de Pitágoras: 9² + 12² = 81 + 144 = 225 = 15² ✓. Portanto é retângulo, com 15 cm sendo a hipotenusa. Classificação final: Escaleno e Retângulo.",
+      "subject": "Classificacao de triangulos: lados e angulos",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 21",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-005",
+      "question": "Os triângulos T₁(4, 6, 8) e T₂(6, 9, 12) são semelhantes? Se sim, qual é a razão de semelhança?",
+      "options": [
+        {"alias": "A", "name": "Não são semelhantes"},
+        {"alias": "B", "name": "São semelhantes, com razão 1/2"},
+        {"alias": "C", "name": "São semelhantes, com razão 3/2"},
+        {"alias": "D", "name": "São semelhantes, com razão 2"}
+      ],
+      "correct": "C",
+      "explanation": "Verificando a razão dos lados correspondentes: 6/4 = 1,5; 9/6 = 1,5; 12/8 = 1,5. Como a razão é constante (3/2) para todos os pares, os triângulos são semelhantes pelo critério LLL, com razão de semelhança k = 3/2.",
+      "subject": "Semelhanca de triangulos: verificacao pelo criterio LLL",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 22",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-006",
+      "question": "Um triângulo tem lados 5 cm, 7 cm e 9 cm. Quais são as medidas dos lados de um triângulo semelhante a ele com razão de semelhança 0,5?",
+      "options": [
+        {"alias": "A", "name": "2,5 cm; 3,5 cm; 4,5 cm"},
+        {"alias": "B", "name": "2 cm; 3 cm; 4,5 cm"},
+        {"alias": "C", "name": "5 cm; 7 cm; 9 cm"},
+        {"alias": "D", "name": "10 cm; 14 cm; 18 cm"}
+      ],
+      "correct": "A",
+      "explanation": "Multiplica-se cada lado pela razão de semelhança k = 0,5: 5 × 0,5 = 2,5 cm; 7 × 0,5 = 3,5 cm; 9 × 0,5 = 4,5 cm. A opção D seria para k = 2 (ampliação). A opção C seria o próprio triângulo (k = 1).",
+      "subject": "Semelhanca de triangulos: calculo dos lados",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 22",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-007",
+      "question": "O triângulo T₁ tem lados 6 cm, 8 cm e 10 cm. O triângulo T₂ é uma versão ampliada de T₁ com dois lados medindo 9 cm e 12 cm. Qual é a medida do terceiro lado de T₂?",
+      "options": [
+        {"alias": "A", "name": "10 cm"},
+        {"alias": "B", "name": "12 cm"},
+        {"alias": "C", "name": "15 cm"},
+        {"alias": "D", "name": "18 cm"}
+      ],
+      "correct": "C",
+      "explanation": "Razão de ampliação: k = 9/6 = 12/8 = 3/2 = 1,5. Terceiro lado de T₂ = 10 × 1,5 = 15 cm. Verificação: T₁ é triângulo retângulo (6²+8²=100=10²), logo T₂ também é (9²+12²=81+144=225=15²) ✓.",
+      "subject": "Semelhanca de triangulos: razao e terceiro lado",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 22",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-008",
+      "question": "No triângulo ABC, AB = 24 cm, BC = 30 cm e AC = 18 cm. O ponto D está em AB com AD = 8 cm. A reta por D paralela a AC encontra BC no ponto E. Qual é a medida de BE?",
+      "options": [
+        {"alias": "A", "name": "15 cm"},
+        {"alias": "B", "name": "18 cm"},
+        {"alias": "C", "name": "20 cm"},
+        {"alias": "D", "name": "24 cm"}
+      ],
+      "correct": "C",
+      "explanation": "DB = AB - AD = 24 - 8 = 16 cm. Como DE∥AC, os triângulos BDE e BAC são semelhantes: DB/AB = BE/BC → 16/24 = BE/30 → BE = 30 × 16/24 = 20 cm. (DE = AC × 16/24 = 18 × 2/3 = 12 cm)",
+      "subject": "Semelhanca: reta paralela a um lado do triangulo",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 22",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-009",
+      "question": "Ao ampliar o triângulo ABC pelo fator 2, obtém-se o triângulo A'B'C'. Qual elemento NÃO se altera na ampliação?",
+      "options": [
+        {"alias": "A", "name": "As áreas"},
+        {"alias": "B", "name": "Os perímetros"},
+        {"alias": "C", "name": "Os lados"},
+        {"alias": "D", "name": "Os ângulos"}
+      ],
+      "correct": "D",
+      "explanation": "Em triângulos semelhantes, apenas os ângulos correspondentes são sempre congruentes, independentemente da razão de semelhança. Os lados escalam por k, os perímetros escalam por k e as áreas escalam por k². Com k=2: lados dobram, perímetro dobra, área quadruplica, mas os ângulos são idênticos.",
+      "subject": "Semelhanca de triangulos: invariantes",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 22",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-010",
+      "question": "Uma placa triangular ABC tem AB = 28 cm, AC = 21 cm e BC = 35 cm. O ponto D está em AB com AD = 12 cm. A barra DE, paralela à base BC, encontra AC no ponto E. Qual é o comprimento da barra DE?",
+      "options": [
+        {"alias": "A", "name": "9 cm"},
+        {"alias": "B", "name": "12 cm"},
+        {"alias": "C", "name": "15 cm"},
+        {"alias": "D", "name": "18 cm"}
+      ],
+      "correct": "C",
+      "explanation": "Como DE∥BC, os triângulos ADE e ABC são semelhantes: AD/AB = DE/BC → 12/28 = DE/35 → DE = 35 × 12/28 = 420/28 = 15 cm.",
+      "subject": "Semelhanca: barra paralela a base do triangulo",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 22",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-011",
+      "question": "Sobre triângulos semelhantes, assinale a afirmativa FALSA:",
+      "options": [
+        {"alias": "A", "name": "Os ângulos correspondentes são congruentes."},
+        {"alias": "B", "name": "Se o fator de proporcionalidade é 0,5, cada lado mede metade do correspondente."},
+        {"alias": "C", "name": "Em triângulos semelhantes com razão diferente de 1, as áreas permanecem iguais."},
+        {"alias": "D", "name": "Os perímetros têm a mesma razão de proporcionalidade que os lados."}
+      ],
+      "correct": "C",
+      "explanation": "A afirmativa FALSA é C. Em triângulos semelhantes, as áreas escalam pelo quadrado da razão: Área₂/Área₁ = k². Se k ≠ 1, as áreas são diferentes (ex: k=2 → área quadruplica). A, B e D são verdadeiras: ângulos são iguais, lados escalam por k, perímetros também escalam por k.",
+      "subject": "Semelhanca de triangulos: propriedades verdadeiras e falsas",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 23",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-012",
+      "question": "Dois triângulos semelhantes: o primeiro tem lados 6 cm, 8 cm e 10 cm; o lado do segundo correspondente ao de 6 cm mede 9 cm. Quais são os outros dois lados do segundo triângulo?",
+      "options": [
+        {"alias": "A", "name": "10 cm e 13 cm"},
+        {"alias": "B", "name": "11 cm e 14 cm"},
+        {"alias": "C", "name": "12 cm e 15 cm"},
+        {"alias": "D", "name": "13 cm e 16 cm"}
+      ],
+      "correct": "C",
+      "explanation": "Constante de proporcionalidade: k = 9/6 = 1,5. Segundo lado: 8 × 1,5 = 12 cm. Terceiro lado: 10 × 1,5 = 15 cm. Verificação: k = 9/6 = 12/8 = 15/10 = 1,5 ✓.",
+      "subject": "Semelhanca de triangulos: calculo dos lados pelo fator",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 23",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-013",
+      "question": "No triângulo ABC, AB = 30 cm, AC = 20 cm e BC = 25 cm. O ponto D está em AB com AD = 12 cm. A reta por D paralela a BC encontra AC em E. Quais são as medidas de DE e AE?",
+      "options": [
+        {"alias": "A", "name": "DE = 8 cm e AE = 10 cm"},
+        {"alias": "B", "name": "DE = 10 cm e AE = 8 cm"},
+        {"alias": "C", "name": "DE = 12 cm e AE = 6 cm"},
+        {"alias": "D", "name": "DE = 15 cm e AE = 5 cm"}
+      ],
+      "correct": "B",
+      "explanation": "Razão: AD/AB = 12/30 = 2/5. Como DE∥BC, triângulos ADE e ABC são semelhantes: DE/BC = 2/5 → DE = 25 × 2/5 = 10 cm. AE/AC = 2/5 → AE = 20 × 2/5 = 8 cm. ✓",
+      "subject": "Semelhanca: reta paralela e segmentos proporcionais",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 23",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-014",
+      "question": "No triângulo ABC, D está em AB e E está em BC, com DE∥AC. Por qual critério os triângulos BDE e BAC são semelhantes?",
+      "options": [
+        {"alias": "A", "name": "LLL — os três lados são proporcionais"},
+        {"alias": "B", "name": "LAL — dois lados proporcionais e ângulo entre eles congruente"},
+        {"alias": "C", "name": "AA — dois pares de ângulos correspondentes congruentes"},
+        {"alias": "D", "name": "Não são semelhantes"}
+      ],
+      "correct": "C",
+      "explanation": "Como DE∥AC, pelo teorema das retas paralelas: ∠BDE = ∠BAC (ângulos correspondentes com transversal AB) e ∠BED = ∠BCA (ângulos correspondentes com transversal BC). O ângulo em B é comum a ambos. Dois pares de ângulos iguais → critério AA.",
+      "subject": "Semelhanca de triangulos: criterio AA",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 23",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-015",
+      "question": "(SAEB) A professora amplificou um triângulo 3 vezes e perguntou o que acontece com lados e ângulos. Fernando: 'lados +3 cm, ângulos iguais'. Gisele: 'lados e ângulos ×3'. Marina: 'lados ×3, ângulos iguais'. Roberto: 'base igual, outros lados ×3, ângulos iguais'. Quem acertou?",
+      "options": [
+        {"alias": "A", "name": "Fernando"},
+        {"alias": "B", "name": "Gisele"},
+        {"alias": "C", "name": "Marina"},
+        {"alias": "D", "name": "Roberto"}
+      ],
+      "correct": "C",
+      "explanation": "Em semelhança de triângulos: os lados são multiplicados pela razão de ampliação (k=3), NÃO somados. Os ângulos internos são sempre iguais nos triângulos semelhantes, independentemente da escala. Marina é a única com a resposta completa e correta: lados ×3 e ângulos mantidos.",
+      "subject": "Semelhanca de triangulos: interpretacao da ampliacao",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Facil",
+      "source": "SAEB - Caderno de Exercicios MAT 9 Ano - Aula 23",
+      "aula_tema": "Características dos triângulos e semelhança de triângulos"
+    },
+    {
+      "id": "mat9-v1p3-016",
+      "question": "Um agricultor marcou o ponto D no lado AB (AD = 15 m) e esticou uma cerca DE paralela a BC até encontrar AC em E. AB = 45 m e BC = 30 m. Qual é o comprimento da cerca DE?",
+      "options": [
+        {"alias": "A", "name": "3 m"},
+        {"alias": "B", "name": "10 m"},
+        {"alias": "C", "name": "15 m"},
+        {"alias": "D", "name": "20 m"}
+      ],
+      "correct": "B",
+      "explanation": "Como DE∥BC, os triângulos ADE e ABC são semelhantes: AD/AB = DE/BC → 15/45 = DE/30 → DE = 30 × 1/3 = 10 m.",
+      "subject": "Semelhanca: aplicacao em divisao de terreno",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 24",
+      "aula_tema": "Semelhança de triângulos: aplicações práticas"
+    },
+    {
+      "id": "mat9-v1p3-017",
+      "question": "(VESTIBULINHO ETEC 2015) Em uma ponte estaiada, AB = 75 m (mastro), BC = 100 m (tabuleiro), AD = 6 m (D no mastro a partir do topo A). Os estais AC e DE são paralelos (E no tabuleiro). Qual é a distância EC?",
+      "options": [
+        {"alias": "A", "name": "6 m"},
+        {"alias": "B", "name": "8 m"},
+        {"alias": "C", "name": "10 m"},
+        {"alias": "D", "name": "12 m"}
+      ],
+      "correct": "B",
+      "explanation": "DB = AB - AD = 75 - 6 = 69 m. Como DE∥AC, os triângulos BDE e BAC são semelhantes: DB/AB = BE/BC → 69/75 = BE/100 → BE = 92 m. CE = BC - BE = 100 - 92 = 8 m.",
+      "subject": "Semelhanca de triangulos: ponte estaiada",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Dificil",
+      "source": "Vestibulinho ETEC 2015 - Caderno de Exercicios MAT 9 Ano - Aula 24",
+      "aula_tema": "Semelhança de triângulos: aplicações práticas"
+    },
+    {
+      "id": "mat9-v1p3-018",
+      "question": "(VESTIBULINHO 2017) Fernando posicionou a mão (largura 20 cm) a 0,5 m de uma vela. A sombra na parede tinha 5 vezes a largura da mão (100 cm). Qual era a distância entre a vela e a parede?",
+      "options": [
+        {"alias": "A", "name": "0,5 m"},
+        {"alias": "B", "name": "1,0 m"},
+        {"alias": "C", "name": "2,0 m"},
+        {"alias": "D", "name": "2,5 m"}
+      ],
+      "correct": "D",
+      "explanation": "Usando semelhança de triângulos (vela como vértice): mão/sombra = dist(vela→mão)/dist(vela→parede). 0,20/1,00 = 0,5/d. d = 0,5/0,2 = 2,5 m.",
+      "subject": "Semelhanca de triangulos: sombras e projecoes",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Dificil",
+      "source": "Vestibulinho 2017 - Caderno de Exercicios MAT 9 Ano - Aula 24",
+      "aula_tema": "Semelhança de triângulos: aplicações práticas"
+    },
+    {
+      "id": "mat9-v1p3-019",
+      "question": "Duas tesouras (estruturas triangulares) de um galpão têm o mesmo ângulo no cume. A barra inclinada e a base da maior são o dobro das da menor. Qual critério de semelhança se aplica aos dois triângulos?",
+      "options": [
+        {"alias": "A", "name": "AA — dois ângulos iguais"},
+        {"alias": "B", "name": "LAL — dois lados proporcionais e ângulo entre eles congruente"},
+        {"alias": "C", "name": "LLL — os três lados são proporcionais"},
+        {"alias": "D", "name": "Não são semelhantes"}
+      ],
+      "correct": "B",
+      "explanation": "O ângulo do cume é igual nas duas tesouras (dado). Os dois lados que formam esse ângulo (barra inclinada e base) estão na razão 2:1. Portanto: dois lados proporcionais e o ângulo entre eles congruente → critério LAL (Lado-Ângulo-Lado).",
+      "subject": "Semelhanca de triangulos: criterio LAL",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 24",
+      "aula_tema": "Semelhança de triângulos: aplicações práticas"
+    },
+    {
+      "id": "mat9-v1p3-020",
+      "question": "Os triângulos ABC e DEF são semelhantes (A↔D, B↔E, C↔F). AB = 12 cm, BC = 15 cm, AC = 9 cm, DE = 8 cm e DF = 6 cm. Qual é a medida do segmento EF?",
+      "options": [
+        {"alias": "A", "name": "8 cm"},
+        {"alias": "B", "name": "9 cm"},
+        {"alias": "C", "name": "10 cm"},
+        {"alias": "D", "name": "12 cm"}
+      ],
+      "correct": "C",
+      "explanation": "Razão de semelhança: k = DE/AB = 8/12 = 2/3. Verificação: DF/AC = 6/9 = 2/3 ✓. EF corresponde a BC: EF/BC = k → EF = 15 × 2/3 = 10 cm.",
+      "subject": "Semelhanca de triangulos: calculo de lado faltante",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 24",
+      "aula_tema": "Semelhança de triângulos: aplicações práticas"
+    },
+    {
+      "id": "mat9-v1p3-021",
+      "question": "O triângulo ABC tem lados 12 cm, 16 cm e 20 cm e ângulos 90°, 36,87° e 53,13°. O triângulo DEF é semelhante a ABC com razão de proporcionalidade 0,75. Quais são os lados de DEF?",
+      "options": [
+        {"alias": "A", "name": "9 cm, 12 cm e 15 cm"},
+        {"alias": "B", "name": "10 cm, 14 cm e 18 cm"},
+        {"alias": "C", "name": "8 cm, 12 cm e 16 cm"},
+        {"alias": "D", "name": "12 cm, 16 cm e 20 cm"}
+      ],
+      "correct": "A",
+      "explanation": "Multiplica-se cada lado por k = 0,75: 12 × 0,75 = 9 cm; 16 × 0,75 = 12 cm; 20 × 0,75 = 15 cm. Os ângulos são mantidos (90°, 36,87°, 53,13°). Verificação: 9² + 12² = 81 + 144 = 225 = 15² ✓ (ainda é retângulo).",
+      "subject": "Semelhanca de triangulos: reducao por fator",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 24",
+      "aula_tema": "Semelhança de triângulos: aplicações práticas"
+    },
+    {
+      "id": "mat9-v1p3-022",
+      "question": "No mesmo horário, uma estaca de 1,2 m sobre um caixote de 0,2 m projeta sombra de 1,0 m. Uma árvore próxima projeta sombra de 5,0 m. Qual é a altura da árvore?",
+      "options": [
+        {"alias": "A", "name": "5,0 m"},
+        {"alias": "B", "name": "6,0 m"},
+        {"alias": "C", "name": "7,0 m"},
+        {"alias": "D", "name": "8,0 m"}
+      ],
+      "correct": "C",
+      "explanation": "Altura total do conjunto: 1,2 + 0,2 = 1,4 m; sombra = 1,0 m. Pela semelhança dos triângulos das sombras: 1,4/1,0 = h/5,0. h = 1,4 × 5,0 = 7,0 m.",
+      "subject": "Semelhanca de triangulos: calculo de altura por sombra",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 26",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-023",
+      "question": "A lateral de uma rampa forma um triângulo retângulo com base 9,0 m e altura 3,0 m. Um corrimão paralelo à superfície termina a 6,0 m da base (projeção horizontal). A que altura do piso o término do corrimão será fixado?",
+      "options": [
+        {"alias": "A", "name": "1,0 m"},
+        {"alias": "B", "name": "1,5 m"},
+        {"alias": "C", "name": "2,0 m"},
+        {"alias": "D", "name": "2,5 m"}
+      ],
+      "correct": "C",
+      "explanation": "Pela semelhança dos triângulos (o triângulo menor tem base 6,0 m, o maior tem base 9,0 m): h/3,0 = 6,0/9,0. h = 3,0 × 6,0/9,0 = 18/9 = 2,0 m.",
+      "subject": "Semelhanca de triangulos: altura proporcional na rampa",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 26",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-024",
+      "question": "A fachada triangular de um palco tem vértice no topo. A 1,5 m do vértice superior há a linha do letreiro; da linha do letreiro até a base são 2,5 m. A base do triângulo mede 6,0 m. Qual é o comprimento do letreiro (paralelo à base)?",
+      "options": [
+        {"alias": "A", "name": "1,5 m"},
+        {"alias": "B", "name": "1,8 m"},
+        {"alias": "C", "name": "2,25 m"},
+        {"alias": "D", "name": "3,0 m"}
+      ],
+      "correct": "C",
+      "explanation": "Altura total = 1,5 + 2,5 = 4,0 m. Razão do vértice ao letreiro sobre a altura total: 1,5/4,0 = 3/8. Comprimento do letreiro = base × razão = 6,0 × 3/8 = 2,25 m.",
+      "subject": "Semelhanca: segmento paralelo a base do triangulo",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 27",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-025",
+      "question": "Um poste de 3,0 m projeta sombra de 2,4 m. Um prédio próximo projeta sombra que termina 4,2 m antes de uma árvore a 33,0 m do prédio. Qual é a altura do prédio?",
+      "options": [
+        {"alias": "A", "name": "28,0 m"},
+        {"alias": "B", "name": "32,0 m"},
+        {"alias": "C", "name": "36,0 m"},
+        {"alias": "D", "name": "40,0 m"}
+      ],
+      "correct": "C",
+      "explanation": "Sombra do prédio = 33,0 - 4,2 = 28,8 m. Pela semelhança: altura/sombra = 3,0/2,4. Altura do prédio = 28,8 × (3,0/2,4) = 28,8 × 1,25 = 36,0 m.",
+      "subject": "Semelhanca de triangulos: altura de predio por sombra",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 27",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-026",
+      "question": "No triângulo ABC, D∈AB e E∈BC são tais que DE∥AC. Dados AB = 15 cm, AD = 9 cm e BC = 10 cm. Qual é a medida de BE?",
+      "options": [
+        {"alias": "A", "name": "2 cm"},
+        {"alias": "B", "name": "3 cm"},
+        {"alias": "C", "name": "4 cm"},
+        {"alias": "D", "name": "6 cm"}
+      ],
+      "correct": "C",
+      "explanation": "DB = AB - AD = 15 - 9 = 6 cm. Como DE∥AC, triângulos BDE e BAC são semelhantes: DB/AB = BE/BC → 6/15 = BE/10 → BE = 10 × 6/15 = 4 cm.",
+      "subject": "Teorema de Tales: segmentos proporcionais",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 27",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-027",
+      "question": "Três retas paralelas cortam duas transversais. Na transversal esquerda, os segmentos entre paralelas consecutivas medem 2 m e 3 m. Na transversal direita, o primeiro segmento mede 8 m. Qual é o valor do segundo segmento x?",
+      "options": [
+        {"alias": "A", "name": "6 m"},
+        {"alias": "B", "name": "9 m"},
+        {"alias": "C", "name": "12 m"},
+        {"alias": "D", "name": "16 m"}
+      ],
+      "correct": "C",
+      "explanation": "Pelo Teorema de Tales, os segmentos determinados por retas paralelas em transversais são proporcionais: 2/3 = 8/x → x = 3 × 8/2 = 12 m.",
+      "subject": "Teorema de Tales: tres retas paralelas",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 27",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-028",
+      "question": "(VESTIBULINHO ETEC 2019) O triângulo ABC tem ângulo A = 90° e ângulo B = 45°, com AC = 70 km. O triângulo DEF tem ângulo D = 90°, ângulo E = 45° e DF = 140 km. Qual é a relação entre as áreas de DEF e ABC?",
+      "options": [
+        {"alias": "A", "name": "Área DEF é a metade de ABC"},
+        {"alias": "B", "name": "Área DEF é a quarta parte de ABC"},
+        {"alias": "C", "name": "Área DEF é o dobro de ABC"},
+        {"alias": "D", "name": "Área DEF é o quádruplo de ABC"}
+      ],
+      "correct": "D",
+      "explanation": "Os triângulos são semelhantes (AA: mesmos ângulos 90° e 45°). Razão de semelhança: k = DF/AC = 140/70 = 2. As áreas escalam por k²: Área_DEF/Área_ABC = 2² = 4. A área de DEF é o quádruplo da área de ABC.",
+      "subject": "Semelhanca de triangulos: razao entre areas",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Dificil",
+      "source": "Vestibulinho ETEC 2019 - Caderno de Exercicios MAT 9 Ano - Aula 27",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-029",
+      "question": "Uma passarela tem três travessas paralelas ligadas por duas vigas laterais. Na viga esquerda: 24 cm (topo→meio) e 36 cm (meio→base). Na viga direita: 42 cm (topo→meio) e x cm (meio→base). Qual é o valor de x?",
+      "options": [
+        {"alias": "A", "name": "58,5 cm"},
+        {"alias": "B", "name": "60 cm"},
+        {"alias": "C", "name": "63 cm"},
+        {"alias": "D", "name": "66 cm"}
+      ],
+      "correct": "C",
+      "explanation": "Pelo Teorema de Tales (travessas paralelas cortando as vigas laterais como transversais): 24/36 = 42/x → x = 36 × 42/24 = 1512/24 = 63 cm.",
+      "subject": "Teorema de Tales: aplicacao em estruturas",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 27",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-030",
+      "question": "No triângulo ABC, D∈AB e E∈BC são tais que DE∥AC. Dados AB = 20 cm, DB = 12 cm e AC = 15 cm. Qual é a medida de DE?",
+      "options": [
+        {"alias": "A", "name": "6 cm"},
+        {"alias": "B", "name": "9 cm"},
+        {"alias": "C", "name": "10 cm"},
+        {"alias": "D", "name": "12 cm"}
+      ],
+      "correct": "B",
+      "explanation": "Como DE∥AC, os triângulos BDE e BAC são semelhantes: DE/AC = DB/AB = 12/20 = 3/5. DE = 15 × 3/5 = 9 cm. (AD = AB - DB = 20 - 12 = 8 cm; DB/AB = 12/20 = 3/5).",
+      "subject": "Teorema de Tales: segmentos proporcionais",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 27",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-031",
+      "question": "(VESTIBULINHO ETEC 2016) Para calcular a distância de um parque eólico (A) até uma estação elétrica (C) no continente, usaram-se pontos auxiliares B e D, com CD∥BE, CD = 150 m, CB = 100 m e BE = 200 m. Qual é a distância AC?",
+      "options": [
+        {"alias": "A", "name": "75 m"},
+        {"alias": "B", "name": "100 m"},
+        {"alias": "C", "name": "300 m"},
+        {"alias": "D", "name": "400 m"}
+      ],
+      "correct": "C",
+      "explanation": "Como CD∥BE, pelos triângulos semelhantes ACD e ABE: AC/AB = CD/BE = 150/200 = 3/4. Como AB = AC + CB = AC + 100: AC/(AC+100) = 3/4 → 4·AC = 3·AC + 300 → AC = 300 m.",
+      "subject": "Teorema de Tales: calculo de distancia indireta",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Dificil",
+      "source": "Vestibulinho ETEC 2016 - Caderno de Exercicios MAT 9 Ano - Aula 28",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-032",
+      "question": "No triângulo ABC, D∈AB e E∈BC são tais que DE∥AC. Dados AB = 30 cm, AD = 18 cm e BC = 20 cm. Qual é a medida do segmento BE?",
+      "options": [
+        {"alias": "A", "name": "4 cm"},
+        {"alias": "B", "name": "6 cm"},
+        {"alias": "C", "name": "8 cm"},
+        {"alias": "D", "name": "10 cm"}
+      ],
+      "correct": "C",
+      "explanation": "DB = AB - AD = 30 - 18 = 12 cm. Como DE∥AC, triângulos BDE e BAC são semelhantes: DB/AB = BE/BC → 12/30 = BE/20 → BE = 20 × 12/30 = 8 cm.",
+      "subject": "Teorema de Tales: segmentos proporcionais",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 28",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-033",
+      "question": "Três retas paralelas cortam duas transversais. Na primeira transversal, A, B e C determinam AB = 15 cm e AC = 33 cm. Na segunda, D, E e F determinam DF = 44 cm. Quais são as medidas de DE e EF?",
+      "options": [
+        {"alias": "A", "name": "DE = 15 cm e EF = 29 cm"},
+        {"alias": "B", "name": "DE = 20 cm e EF = 24 cm"},
+        {"alias": "C", "name": "DE = 22 cm e EF = 22 cm"},
+        {"alias": "D", "name": "DE = 24 cm e EF = 20 cm"}
+      ],
+      "correct": "B",
+      "explanation": "BC = AC - AB = 33 - 15 = 18 cm. Pelo Teorema de Tales: AB/BC = DE/EF → 15/18 = DE/EF. Fazendo DE = 15k e EF = 18k: 33k = 44 → k = 4/3. DE = 15 × 4/3 = 20 cm; EF = 18 × 4/3 = 24 cm. ✓",
+      "subject": "Teorema de Tales: tres retas paralelas e proporcionalidade",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 28",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-034",
+      "question": "Duas rampas com a mesma inclinação formam triângulos semelhantes. Na rampa A: avanço horizontal de 2,0 m e subida de 1,5 m. Na rampa B: avanço horizontal de 3,6 m. Qual é a subida da rampa B?",
+      "options": [
+        {"alias": "A", "name": "1,8 m"},
+        {"alias": "B", "name": "2,0 m"},
+        {"alias": "C", "name": "2,5 m"},
+        {"alias": "D", "name": "2,7 m"}
+      ],
+      "correct": "D",
+      "explanation": "Mesma inclinação → triângulos semelhantes com mesma razão altura/base. 1,5/2,0 = h/3,6 → h = 1,5 × 3,6/2,0 = 5,4/2 = 2,7 m.",
+      "subject": "Semelhanca de triangulos: rampas com mesma inclinacao",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 28",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    },
+    {
+      "id": "mat9-v1p3-035",
+      "question": "Um toldo inclinado até o chão tem dois mastros verticais sob ele. O menor mede 2,4 m de altura e fica a 3 m do ponto onde o toldo toca o chão. O maior fica a 5 m desse mesmo ponto. Qual é a altura do mastro maior?",
+      "options": [
+        {"alias": "A", "name": "3,0 m"},
+        {"alias": "B", "name": "3,6 m"},
+        {"alias": "C", "name": "4,0 m"},
+        {"alias": "D", "name": "4,5 m"}
+      ],
+      "correct": "C",
+      "explanation": "Os dois triângulos formados (mastro + chão + toldo) são semelhantes, pois compartilham o mesmo vértice no chão e o toldo é a hipotenusa comum. Proporção: 2,4/3 = h/5 → h = 2,4 × 5/3 = 12/3 = 4,0 m.",
+      "subject": "Semelhanca de triangulos: mastros sob toldo inclinado",
+      "area_conhecimento": "Geometria",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 28",
+      "aula_tema": "Semelhança de triângulos: aplicações e Teorema de Tales"
+    }
+  ]
+}

@@ -1822,9 +1822,47 @@ label {
   line-height: 1.6;
 }
 
+/* Grupo de simulados */
+.simulados-group {
+  margin-bottom: 2rem;
+}
+
+.simulados-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0,0,0,0.07);
+}
+
+.simulados-group-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.simulados-group-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary, #333);
+  margin: 0;
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.simulados-group-count {
+  font-size: 0.72rem;
+  background: rgba(0,0,0,0.07);
+  color: #777;
+  border-radius: 20px;
+  padding: 0.1rem 0.55rem;
+  font-weight: 600;
+}
+
 .simulados-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 
@@ -1832,15 +1870,24 @@ label {
 .simulado-card {
   background: var(--surface, #fff);
   border-radius: 18px;
-  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.09);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+/* Zona buffer abaixo do card para evitar que translateY tire o cursor do hitbox */
+.simulado-card::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -6px;
+  height: 6px;
 }
 .simulado-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16);
 }
 
 /* Header colorido do card */
@@ -1850,6 +1897,8 @@ label {
   gap: 0.9rem;
   padding: 1.1rem 1.3rem;
   color: #fff;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
 }
 .simulado-card-icon {
   font-size: 2rem;
@@ -1871,6 +1920,15 @@ label {
   padding: 1rem 1.3rem;
   flex: 1;
 }
+.simulado-card-tags {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.simulado-card-tags i { font-size: 0.7rem; }
 .simulado-card-meta {
   display: flex;
   flex-wrap: wrap;
@@ -1948,6 +2006,12 @@ label {
 .btn-review-simulado:hover {
   background: #e67e22;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .simulados-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {

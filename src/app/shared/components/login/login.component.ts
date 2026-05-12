@@ -207,7 +207,7 @@ export class LoginComponent implements OnInit {
               schoolId: result.schoolId
             });
           } else {
-            this.router.navigateByUrl('/quizz');
+            this.router.navigateByUrl('/dashboard');
           }
         } else {
           this.isLoading = false;
@@ -262,20 +262,70 @@ export class LoginComponent implements OnInit {
         }
       },
       error: (error) => {
+        // Se Firebase Auth falhar, tentar como professor/coordenador
+        this.tryTeacherLogin(email, password, error);
+      }
+    });
+  }
+
+  /**
+   * 👨‍🏫 Fallback: Login do Professor/Coordenador
+   * Tentado quando Firebase Auth falha para um email com @
+   */
+  private tryTeacherLogin(email: string, password: string, originalError: any): void {
+    this.http.post<any>(
+      'https://southamerica-east1-angular-buzz-developer.cloudfunctions.net/teacherLogin',
+      { email, password },
+      { headers: { 'Content-Type': 'application/json' } }
+    ).subscribe({
+      next: (result) => {
         this.isLoading = false;
-        
-        // Se falhar login individual, mostrar erro genérico
-        if (error?.code === 'auth/user-not-found' || error?.code === 'auth/wrong-password') {
-          this.errorMessage = 'Email ou senha incorretos';
+
+        if (result?.success && result?.token) {
+          localStorage.setItem('teacher_token', result.token);
+          localStorage.setItem('teacher_data', JSON.stringify(result.teacher));
+
+          this.successMessage = `✅ Bem-vindo, ${result.teacher.name}!`;
+          this.snackBar.open(this.successMessage, 'Fechar', {
+            duration: 3000,
+            horizontalPosition: 'end',
+            verticalPosition: 'top',
+            panelClass: ['success-snackbar']
+          });
+
+          if (this.isDialog) {
+            this.dialogRef?.close({ success: true, userType: 'teacher', teacher: result.teacher });
+          } else {
+            this.router.navigateByUrl('/professor');
+          }
         } else {
-          this.errorMessage = error?.message || 'Erro ao fazer login. Tente novamente';
+          // Ambos falharam — mostrar erro genérico
+          this.isLoading = false;
+          this.errorMessage = 'Email ou senha incorretos';
+          this.snackBar.open(this.errorMessage, 'Fechar', {
+            duration: 5000, horizontalPosition: 'end', verticalPosition: 'top', panelClass: ['error-snackbar']
+          });
         }
-        
+      },
+      error: () => {
+        // Ambos falharam
+        this.isLoading = false;
+        const credentialErrors = [
+          'auth/user-not-found',
+          'auth/wrong-password',
+          'auth/invalid-credential', // SDK Firebase moderno unifica os dois acima neste código
+        ];
+        if (credentialErrors.includes(originalError?.code)) {
+          this.errorMessage = 'Email ou senha incorretos';
+        } else if (originalError?.code === 'auth/network-request-failed') {
+          this.errorMessage = 'Erro de conexão. Verifique sua internet';
+        } else if (originalError?.code === 'auth/too-many-requests') {
+          this.errorMessage = 'Muitas tentativas. Tente novamente mais tarde';
+        } else {
+          this.errorMessage = originalError?.message || 'Erro ao fazer login. Tente novamente';
+        }
         this.snackBar.open(this.errorMessage, 'Fechar', {
-          duration: 5000,
-          horizontalPosition: 'end',
-          verticalPosition: 'top',
-          panelClass: ['error-snackbar']
+          duration: 5000, horizontalPosition: 'end', verticalPosition: 'top', panelClass: ['error-snackbar']
         });
       }
     });

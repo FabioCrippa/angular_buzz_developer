@@ -1,0 +1,1030 @@
+{
+  "metadata": {
+    "simulado": "Matematica - Caderno de Exercicios",
+    "tipo": "simulado",
+    "disciplina": "Matematica",
+    "serie": "9 Ano",
+    "bimestre": "Volume 1",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "mat9-1bi-004",
+      "question": "Observe a reta numerica abaixo. Os tracinhos estao igualmente espacados entre 0,5 e 0,6. O numero correspondente ao ponto indicado pela seta, que aponta para o ponto medio do intervalo, e:",
+      "options": [
+        {
+          "alias": "A",
+          "name": "0,9"
+        },
+        {
+          "alias": "B",
+          "name": "0,54"
+        },
+        {
+          "alias": "C",
+          "name": "0,8"
+        },
+        {
+          "alias": "D",
+          "name": "0,55"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O ponto medio entre 0,5 e 0,6 e (0,5 + 0,6) / 2 = 1,1 / 2 = 0,55. As opcoes A (0,9) e C (0,8) estao fora do intervalo. Entre B (0,54) e D (0,55), o ponto medio e 0,55.",
+      "subject": "Numeros racionais: representacao na reta numerica",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 1",
+      "aula_tema": "Números racionais: Comparação, operações fundamentais e potenciação"
+    },
+    {
+      "id": "mat9-1bi-005",
+      "question": "(SAEP 2013) Uma reta numerica possui marcas nos valores 0, 5, 25 e 50. As letras A, B, C, D e T estao posicionadas nessa reta em ordem crescente. A esta logo apos a marca 5, C esta entre 25 e 50 (proximo a 50), e T esta entre 5 e 25. As letras A, C e T correspondem, nessa ordem, aos numeros naturais:",
+      "options": [
+        {
+          "alias": "A",
+          "name": "43, 20 e 6"
+        },
+        {
+          "alias": "B",
+          "name": "20, 43 e 6"
+        },
+        {
+          "alias": "C",
+          "name": "6, 21 e 43"
+        },
+        {
+          "alias": "D",
+          "name": "6, 43 e 20"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Lendo da esquerda para a direita: A esta logo apos a marca 5, sendo aproximadamente 6. C esta entre 25 e 50 proximo de 50, sendo aproximadamente 43. T esta entre 5 e 25, sendo aproximadamente 20. Portanto, A = 6, C = 43, T = 20.",
+      "subject": "Numeros racionais: representacao na reta numerica",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Medio",
+      "source": "SAEP 2013 - Caderno de Exercicios MAT 9 Ano - Aula 1",
+      "aula_tema": "Números racionais: Comparação, operações fundamentais e potenciação"
+    },
+    {
+      "id": "mat9-1bi-006",
+      "question": "(SARESP 2013) Ao pesar 1/4 de quilograma de salame, a balanca mostrou:",
+      "options": [
+        {
+          "alias": "A",
+          "name": "0,250 kg"
+        },
+        {
+          "alias": "B",
+          "name": "0,125 kg"
+        },
+        {
+          "alias": "C",
+          "name": "0,150 kg"
+        },
+        {
+          "alias": "D",
+          "name": "0,500 kg"
+        }
+      ],
+      "correct": "A",
+      "explanation": "1/4 de quilograma = 1 dividido por 4 = 0,25 kg = 0,250 kg. Dividindo 1 por 4 obtemos 0,25, que tambem pode ser escrito como 0,250 kg.",
+      "subject": "Numeros racionais: fracao e representacao decimal",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Facil",
+      "source": "SARESP 2013 - Caderno de Exercicios MAT 9 Ano - Aula 1",
+      "aula_tema": "Números racionais: Comparação, operações fundamentais e potenciação"
+    },
+    {
+      "id": "mat9-1bi-007",
+      "question": "A medida de uma xicara cheia de acucar corresponde a 160 g. Uma receita pede 1/4 dessa xicara de acucar. Isso corresponde a quantos gramas?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "25 g"
+        },
+        {
+          "alias": "B",
+          "name": "30 g"
+        },
+        {
+          "alias": "C",
+          "name": "40 g"
+        },
+        {
+          "alias": "D",
+          "name": "80 g"
+        }
+      ],
+      "correct": "C",
+      "explanation": "1/4 da xicara = 160 / 4 = 40 g. Dividindo 160 por 4 obtemos 40 gramas de acucar.",
+      "subject": "Numeros racionais: operacoes com fracoes",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 2",
+      "aula_tema": "Números racionais: Operações, escala e conversão de unidades"
+    },
+    {
+      "id": "mat9-1bi-008",
+      "question": "Uma receita usa 240 g de acucar e rende 12 pedacos. Considerando que a quantidade de acucar esta igualmente distribuida, quantos gramas de acucar tem cada um dos pedacos?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "10 g"
+        },
+        {
+          "alias": "B",
+          "name": "15 g"
+        },
+        {
+          "alias": "C",
+          "name": "20 g"
+        },
+        {
+          "alias": "D",
+          "name": "40 g"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Quantidade por pedaco = 240 / 12 = 20 g. Dividindo a quantidade total de acucar pelo numero de pedacos, obtemos 20 gramas por pedaco.",
+      "subject": "Numeros racionais: divisao",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 2",
+      "aula_tema": "Números racionais: Operações, escala e conversão de unidades"
+    },
+    {
+      "id": "mat9-1bi-009",
+      "question": "Calcule o resultado de: 0,25 x 0,4",
+      "options": [
+        {
+          "alias": "A",
+          "name": "0,010"
+        },
+        {
+          "alias": "B",
+          "name": "0,100"
+        },
+        {
+          "alias": "C",
+          "name": "0,650"
+        },
+        {
+          "alias": "D",
+          "name": "1,000"
+        }
+      ],
+      "correct": "B",
+      "explanation": "0,25 x 0,4 = (25/100) x (4/10) = 100/1000 = 0,1 = 0,100. Outra forma: 0,25 x 0,4 = (1/4) x (2/5) = 2/20 = 1/10 = 0,1.",
+      "subject": "Numeros racionais: multiplicacao de decimais",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 2",
+      "aula_tema": "Números racionais: Operações, escala e conversão de unidades"
+    },
+    {
+      "id": "mat9-1bi-010",
+      "question": "Um console consome, em media, 0,17 kWh por hora de jogo. Em um mes, Lucas jogou 1,5 h por dia durante 20 dias. Qual e o consumo mensal do console (em kWh)?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "3,4 kWh"
+        },
+        {
+          "alias": "B",
+          "name": "4,0 kWh"
+        },
+        {
+          "alias": "C",
+          "name": "5,1 kWh"
+        },
+        {
+          "alias": "D",
+          "name": "6,2 kWh"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Total de horas jogadas = 1,5 h/dia x 20 dias = 30 h. Consumo mensal = 0,17 kWh/h x 30 h = 5,1 kWh.",
+      "subject": "Numeros racionais: aplicacao pratica",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 2",
+      "aula_tema": "Números racionais: Operações, escala e conversão de unidades"
+    },
+    {
+      "id": "mat9-1bi-011",
+      "question": "Em um mapa na escala 1:25.000, a distancia medida do acampamento ate a cachoeira e de 6,4 cm. O grupo fez o caminho de ida e voltou pelo mesmo trajeto e ainda fez um desvio de 1,2 cm (no mapa) para visitar um mirante. Qual e a distancia real total percorrida (em km)?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "2,8 km"
+        },
+        {
+          "alias": "B",
+          "name": "3,2 km"
+        },
+        {
+          "alias": "C",
+          "name": "3,5 km"
+        },
+        {
+          "alias": "D",
+          "name": "4,0 km"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Distancia total no mapa = 2 x 6,4 + 1,2 = 12,8 + 1,2 = 14,0 cm. Distancia real = 14,0 cm x 25.000 = 350.000 cm = 3.500 m = 3,5 km.",
+      "subject": "Numeros racionais: escala cartografica",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 2",
+      "aula_tema": "Números racionais: Operações, escala e conversão de unidades"
+    },
+    {
+      "id": "mat9-1bi-012",
+      "question": "(SAEB 2011) No supermercado Preco Otimo, a manteiga e vendida em caixinhas de 200 gramas. Para levar para casa 2 quilogramas de manteiga, Marisa precisaria comprar:",
+      "options": [
+        {
+          "alias": "A",
+          "name": "2 caixinhas"
+        },
+        {
+          "alias": "B",
+          "name": "4 caixinhas"
+        },
+        {
+          "alias": "C",
+          "name": "5 caixinhas"
+        },
+        {
+          "alias": "D",
+          "name": "10 caixinhas"
+        }
+      ],
+      "correct": "D",
+      "explanation": "2 kg = 2.000 g. Numero de caixinhas = 2.000 / 200 = 10 caixinhas.",
+      "subject": "Numeros racionais: conversao de unidades de massa",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Facil",
+      "source": "SAEB 2011 - Caderno de Exercicios MAT 9 Ano - Aula 2",
+      "aula_tema": "Números racionais: Operações, escala e conversão de unidades"
+    },
+    {
+      "id": "mat9-1bi-013",
+      "question": "Calcule: (-0,6)²",
+      "options": [
+        {
+          "alias": "A",
+          "name": "-1,20"
+        },
+        {
+          "alias": "B",
+          "name": "-0,36"
+        },
+        {
+          "alias": "C",
+          "name": "0,36"
+        },
+        {
+          "alias": "D",
+          "name": "1,20"
+        }
+      ],
+      "correct": "C",
+      "explanation": "(-0,6)² = (-0,6) x (-0,6) = 0,36. O quadrado de qualquer numero real e sempre nao negativo: negativo x negativo = positivo.",
+      "subject": "Potenciacao: quadrado de numeros racionais negativos",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 3",
+      "aula_tema": "Potenciação: Quadrado, cubo e expressões numéricas"
+    },
+    {
+      "id": "mat9-1bi-014",
+      "question": "Calcule: (1,2)²",
+      "options": [
+        {
+          "alias": "A",
+          "name": "1,04"
+        },
+        {
+          "alias": "B",
+          "name": "1,24"
+        },
+        {
+          "alias": "C",
+          "name": "1,44"
+        },
+        {
+          "alias": "D",
+          "name": "2,40"
+        }
+      ],
+      "correct": "C",
+      "explanation": "(1,2)² = 1,2 x 1,2 = 1,44. Dica: (1,2)² = (12/10)² = 144/100 = 1,44.",
+      "subject": "Potenciacao: quadrado de decimais",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 3",
+      "aula_tema": "Potenciação: Quadrado, cubo e expressões numéricas"
+    },
+    {
+      "id": "mat9-1bi-015",
+      "question": "Calcule o valor da expressao: E = (0,4)² + (3/5)² + (1/2)³",
+      "options": [
+        {
+          "alias": "A",
+          "name": "0,325"
+        },
+        {
+          "alias": "B",
+          "name": "0,520"
+        },
+        {
+          "alias": "C",
+          "name": "0,645"
+        },
+        {
+          "alias": "D",
+          "name": "0,870"
+        }
+      ],
+      "correct": "C",
+      "explanation": "(0,4)² = 0,16; (3/5)² = 9/25 = 0,36; (1/2)³ = 1/8 = 0,125. E = 0,16 + 0,36 + 0,125 = 0,645.",
+      "subject": "Potenciacao: expressoes numericas",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 3",
+      "aula_tema": "Potenciação: Quadrado, cubo e expressões numéricas"
+    },
+    {
+      "id": "mat9-1bi-016",
+      "question": "Uma fabrica produz cubinhos de sabao para amostras. Cada cubo tem aresta de 3,5 cm. Qual e o volume de um cubo em cm³?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "10,5 cm³"
+        },
+        {
+          "alias": "B",
+          "name": "29,75 cm³"
+        },
+        {
+          "alias": "C",
+          "name": "42,875 cm³"
+        },
+        {
+          "alias": "D",
+          "name": "49,000 cm³"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Volume do cubo = aresta³ = (3,5)³ = 3,5 x 3,5 x 3,5 = 12,25 x 3,5 = 42,875 cm³.",
+      "subject": "Potenciacao: volume do cubo",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 3",
+      "aula_tema": "Potenciação: Quadrado, cubo e expressões numéricas"
+    },
+    {
+      "id": "mat9-1bi-017",
+      "question": "Um cartaz retangular mede 0,60 m de largura por 0,40 m de altura. Na grafica, ele sera ampliado em 25% em cada dimensao. Qual sera a area final do cartaz (em m²)?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "0,240 m²"
+        },
+        {
+          "alias": "B",
+          "name": "0,300 m²"
+        },
+        {
+          "alias": "C",
+          "name": "0,350 m²"
+        },
+        {
+          "alias": "D",
+          "name": "0,375 m²"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Nova largura = 0,60 x 1,25 = 0,75 m; nova altura = 0,40 x 1,25 = 0,50 m. Area final = 0,75 x 0,50 = 0,375 m².",
+      "subject": "Potenciacao: area com ampliacao proporcional",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 3",
+      "aula_tema": "Potenciação: Quadrado, cubo e expressões numéricas"
+    },
+    {
+      "id": "mat9-1bi-018",
+      "question": "Calcule o valor da expressao: E = (0,2)³ ÷ (1/5)",
+      "options": [
+        {
+          "alias": "A",
+          "name": "0,001"
+        },
+        {
+          "alias": "B",
+          "name": "0,04"
+        },
+        {
+          "alias": "C",
+          "name": "0,20"
+        },
+        {
+          "alias": "D",
+          "name": "0,40"
+        }
+      ],
+      "correct": "B",
+      "explanation": "(0,2)³ = 0,2 x 0,2 x 0,2 = 0,008. Em seguida, 0,008 ÷ (1/5) = 0,008 x 5 = 0,04.",
+      "subject": "Potenciacao: expressoes com divisao por fracao",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 4",
+      "aula_tema": "Potenciação: Expressões com frações e aplicações práticas"
+    },
+    {
+      "id": "mat9-1bi-019",
+      "question": "Simplifique a expressao: E = (2/3)³ x (81/8)",
+      "options": [
+        {
+          "alias": "A",
+          "name": "-3"
+        },
+        {
+          "alias": "B",
+          "name": "1"
+        },
+        {
+          "alias": "C",
+          "name": "3"
+        },
+        {
+          "alias": "D",
+          "name": "9"
+        }
+      ],
+      "correct": "C",
+      "explanation": "(2/3)³ = 8/27. Entao E = (8/27) x (81/8). Cancelando: 8 cancela com 8, e 81/27 = 3. Portanto E = 3.",
+      "subject": "Potenciacao: simplificacao de expressoes",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 4",
+      "aula_tema": "Potenciação: Expressões com frações e aplicações práticas"
+    },
+    {
+      "id": "mat9-1bi-020",
+      "question": "Determine o valor de A na expressao: A = (3/4)² x (1/2)²",
+      "options": [
+        {
+          "alias": "A",
+          "name": "9/4"
+        },
+        {
+          "alias": "B",
+          "name": "9/16"
+        },
+        {
+          "alias": "C",
+          "name": "9/64"
+        },
+        {
+          "alias": "D",
+          "name": "3/8"
+        }
+      ],
+      "correct": "C",
+      "explanation": "(3/4)² = 9/16 e (1/2)² = 1/4. Entao A = 9/16 x 1/4 = 9/64.",
+      "subject": "Potenciacao: produto de potencias de fracoes",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 4",
+      "aula_tema": "Potenciação: Expressões com frações e aplicações práticas"
+    },
+    {
+      "id": "mat9-1bi-021",
+      "question": "O proprietario de uma chacara decide construir uma piscina de 8 metros de comprimento por 4 metros de largura. A profundidade da piscina e de 1,4 m e o nivel da agua ficara 20 cm abaixo da borda. Qual sera o volume de agua que a piscina comportara?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "32 m³"
+        },
+        {
+          "alias": "B",
+          "name": "38,4 m³"
+        },
+        {
+          "alias": "C",
+          "name": "40 m³"
+        },
+        {
+          "alias": "D",
+          "name": "44,8 m³"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Altura da agua = 1,4 m - 0,2 m = 1,2 m. Volume = comprimento x largura x altura = 8 x 4 x 1,2 = 32 x 1,2 = 38,4 m³.",
+      "subject": "Potenciacao: volume de paralelepipedo",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 4",
+      "aula_tema": "Potenciação: Expressões com frações e aplicações práticas"
+    },
+    {
+      "id": "mat9-1bi-022",
+      "question": "Um aquario tem 2,4 metros de comprimento, 2,0 metros de largura e a agua esta a 1,25 metro de profundidade. A recomendacao e de se colocar 3 peixes por metro cubico. Qual o numero maximo de peixes que podem ser colocados nesse aquario?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "12"
+        },
+        {
+          "alias": "B",
+          "name": "15"
+        },
+        {
+          "alias": "C",
+          "name": "18"
+        },
+        {
+          "alias": "D",
+          "name": "24"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Volume de agua = 2,4 x 2,0 x 1,25 = 6,0 m³. Numero de peixes = 6,0 x 3 = 18 peixes.",
+      "subject": "Potenciacao: volume aplicado",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 4",
+      "aula_tema": "Potenciação: Expressões com frações e aplicações práticas"
+    },
+    {
+      "id": "mat9-1bi-023",
+      "question": "Em um processo de tratamento, a concentracao de um contaminante e reduzida a 80% do valor anterior a cada aplicacao de reagente. Uma amostra comeca com 2,5 mg/L e recebe 3 aplicacoes sucessivas. Qual e a concentracao final (em mg/L)?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "0,64 mg/L"
+        },
+        {
+          "alias": "B",
+          "name": "1,00 mg/L"
+        },
+        {
+          "alias": "C",
+          "name": "1,28 mg/L"
+        },
+        {
+          "alias": "D",
+          "name": "2,00 mg/L"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A cada aplicacao a concentracao e multiplicada por 0,8. Apos 3 aplicacoes: C = 2,5 x (0,8)³ = 2,5 x 0,512 = 1,28 mg/L.",
+      "subject": "Potenciacao: progressao geometrica aplicada",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 4",
+      "aula_tema": "Potenciação: Expressões com frações e aplicações práticas"
+    },
+    {
+      "id": "mat9-1bi-024",
+      "question": "Uma quadra e iluminada por 6 refletores identicos. Cada refletor consome 0,38 kWh quando ligado. Em um mes, a quadra foi usada 1,75 h por noite durante 24 noites. A tarifa e de R$ 0,92 por kWh. Qual e o custo total de energia eletrica desse mes para os refletores?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "R$ 68,40"
+        },
+        {
+          "alias": "B",
+          "name": "R$ 75,20"
+        },
+        {
+          "alias": "C",
+          "name": "R$ 88,10"
+        },
+        {
+          "alias": "D",
+          "name": "R$ 95,76"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Consumo total = 6 x 0,38 x 1,75 x 24 = 6 x 0,38 x 42 = 95,76 kWh. Custo = 95,76 x 0,92 ≈ R$ 88,10.",
+      "subject": "Numeros racionais: custo de energia eletrica",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 4",
+      "aula_tema": "Potenciação: Expressões com frações e aplicações práticas"
+    },
+    {
+      "id": "mat9-1bi-025",
+      "question": "Calcule o valor da expressao: (1/3)² x (1/3)⁵",
+      "options": [
+        {
+          "alias": "A",
+          "name": "1/729"
+        },
+        {
+          "alias": "B",
+          "name": "1/2187"
+        },
+        {
+          "alias": "C",
+          "name": "1/243"
+        },
+        {
+          "alias": "D",
+          "name": "1/81"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Usando a propriedade a^m x a^n = a^(m+n): (1/3)² x (1/3)⁵ = (1/3)^(2+5) = (1/3)^7 = 1/2187.",
+      "subject": "Potenciacao: propriedade do produto de mesma base",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 6",
+      "aula_tema": "Potenciação: Propriedades — produto e quociente de mesma base"
+    },
+    {
+      "id": "mat9-1bi-026",
+      "question": "Calcule o valor da expressao: (5/6)^7 ÷ (5/6)^4",
+      "options": [
+        {
+          "alias": "A",
+          "name": "25/36"
+        },
+        {
+          "alias": "B",
+          "name": "125/216"
+        },
+        {
+          "alias": "C",
+          "name": "5/6"
+        },
+        {
+          "alias": "D",
+          "name": "25/216"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Usando a propriedade a^m ÷ a^n = a^(m-n): (5/6)^7 ÷ (5/6)^4 = (5/6)^(7-4) = (5/6)^3 = 125/216.",
+      "subject": "Potenciacao: propriedade do quociente de mesma base",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 6",
+      "aula_tema": "Potenciação: Propriedades — produto e quociente de mesma base"
+    },
+    {
+      "id": "mat9-1bi-027",
+      "question": "Simplifique a expressao: (1/2)^1 x (1/2)^2 x (1/2)^3",
+      "options": [
+        {
+          "alias": "A",
+          "name": "1/32"
+        },
+        {
+          "alias": "B",
+          "name": "1/64"
+        },
+        {
+          "alias": "C",
+          "name": "1/16"
+        },
+        {
+          "alias": "D",
+          "name": "1/128"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Usando a propriedade do produto de potencias de mesma base: (1/2)^1 x (1/2)^2 x (1/2)^3 = (1/2)^(1+2+3) = (1/2)^6 = 1/64.",
+      "subject": "Potenciacao: propriedade do produto",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 6",
+      "aula_tema": "Potenciação: Propriedades — produto e quociente de mesma base"
+    },
+    {
+      "id": "mat9-1bi-028",
+      "question": "Simplifique a expressao: E = (-3/5)^7 ÷ (-3/5)^4 x (-0,6)²",
+      "options": [
+        {
+          "alias": "A",
+          "name": "243/3125"
+        },
+        {
+          "alias": "B",
+          "name": "-243/3125"
+        },
+        {
+          "alias": "C",
+          "name": "-81/625"
+        },
+        {
+          "alias": "D",
+          "name": "81/3125"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Passo 1: (-3/5)^7 ÷ (-3/5)^4 = (-3/5)^(7-4) = (-3/5)^3 = -27/125. Passo 2: (-0,6)² = (3/5)² = 9/25. Passo 3: (-27/125) x (9/25) = -243/3125.",
+      "subject": "Potenciacao: simplificacao com propriedades combinadas",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 6",
+      "aula_tema": "Potenciação: Propriedades — produto e quociente de mesma base"
+    },
+    {
+      "id": "mat9-1bi-029",
+      "question": "Em um tratamento, a concentracao de um contaminante e multiplicada por 2/3 a cada aplicacao. A amostra comeca com 81 mg/L. No 1° dia sao feitas 2 aplicacoes e no 2° dia mais 2 aplicacoes. Qual e a concentracao final apos as 4 aplicacoes?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "9,0 mg/L"
+        },
+        {
+          "alias": "B",
+          "name": "12,0 mg/L"
+        },
+        {
+          "alias": "C",
+          "name": "16,0 mg/L"
+        },
+        {
+          "alias": "D",
+          "name": "24,0 mg/L"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Apos 4 aplicacoes: C = 81 x (2/3)^4 = 81 x 16/81 = 16,0 mg/L. Calculo: (2/3)^4 = 16/81; 81 x 16/81 = 16.",
+      "subject": "Potenciacao: aplicacao em concentracao",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 6",
+      "aula_tema": "Potenciação: Propriedades — produto e quociente de mesma base"
+    },
+    {
+      "id": "mat9-1bi-030",
+      "question": "Dois copos, A e B, comecam com a mesma quantidade de corante. A cada enxague, a quantidade de corante e multiplicada por 4/5. O copo A passa por 7 enxagues e o copo B por 4 enxagues. Qual e a razao entre a quantidade de corante do copo A e do copo B apos o experimento?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "4/5"
+        },
+        {
+          "alias": "B",
+          "name": "16/25"
+        },
+        {
+          "alias": "C",
+          "name": "64/125"
+        },
+        {
+          "alias": "D",
+          "name": "3/7"
+        }
+      ],
+      "correct": "C",
+      "explanation": "Copo A: C₀ x (4/5)^7. Copo B: C₀ x (4/5)^4. Razao A/B = (4/5)^7 / (4/5)^4 = (4/5)^(7-4) = (4/5)^3 = 64/125.",
+      "subject": "Potenciacao: razao entre potencias",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 6",
+      "aula_tema": "Potenciação: Propriedades — produto e quociente de mesma base"
+    },
+    {
+      "id": "mat9-1bi-031",
+      "question": "Usando a propriedade potencia de potencia, calcule: [(-1/2)^3]^2",
+      "options": [
+        {
+          "alias": "A",
+          "name": "-1/512"
+        },
+        {
+          "alias": "B",
+          "name": "-1/64"
+        },
+        {
+          "alias": "C",
+          "name": "1/512"
+        },
+        {
+          "alias": "D",
+          "name": "1/64"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Passo 1: (-1/2)^3 = -1/8. Passo 2: (-1/8)^2 = 1/64. Usando a propriedade (a^m)^n = a^(m*n): (-1/2)^(3x2) = (-1/2)^6 = 1/64. Potencia de expoente par e sempre positiva.",
+      "subject": "Potenciacao: potencia de potencia",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 7",
+      "aula_tema": "Potenciação: Potência de potência e fator de escala"
+    },
+    {
+      "id": "mat9-1bi-032",
+      "question": "Um logotipo foi reduzido 3 vezes consecutivas, com o comprimento do lado multiplicado por 2/3 a cada reducao. Apos as reducoes, o lado mede 16 cm. Para voltar ao tamanho original com um unico fator, qual fator deve ser aplicado e qual era o comprimento original?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "Fator 27/8 e comprimento original 54 cm"
+        },
+        {
+          "alias": "B",
+          "name": "Fator 3/2 e comprimento original 24 cm"
+        },
+        {
+          "alias": "C",
+          "name": "Fator 9/4 e comprimento original 36 cm"
+        },
+        {
+          "alias": "D",
+          "name": "Fator 8/27 e comprimento original 128/27 cm"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Apos 3 reducoes por 2/3: lado = original x (2/3)^3 = original x 8/27 = 16 cm. Logo original = 16 x 27/8 = 54 cm. O fator de restauracao e o inverso de (2/3)^3, ou seja, (3/2)^3 = 27/8. Verificacao: 16 x 27/8 = 432/8 = 54 cm.",
+      "subject": "Potenciacao: potencia de potencia e fator de escala",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 7",
+      "aula_tema": "Potenciação: Potência de potência e fator de escala"
+    },
+    {
+      "id": "mat9-1bi-033",
+      "question": "Calcule e simplifique: E = (2/3)^5 x (3/2)^3",
+      "options": [
+        {
+          "alias": "A",
+          "name": "2/3"
+        },
+        {
+          "alias": "B",
+          "name": "4/9"
+        },
+        {
+          "alias": "C",
+          "name": "8/27"
+        },
+        {
+          "alias": "D",
+          "name": "16/81"
+        }
+      ],
+      "correct": "B",
+      "explanation": "(2/3)^5 x (3/2)^3 = (2^5/3^5) x (3^3/2^3) = 2^(5-3) / 3^(5-3) = 2^2/3^2 = 4/9. Nota: (3/2)^3 = (2/3)^(-3), entao E = (2/3)^5 x (2/3)^(-3) = (2/3)^(5-3) = (2/3)^2 = 4/9.",
+      "subject": "Potenciacao: propriedades combinadas",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 8",
+      "aula_tema": "Potenciação: Propriedades combinadas e comparação"
+    },
+    {
+      "id": "mat9-1bi-034",
+      "question": "Dados x = [(-1/2)^3]^2, y = (-3/5)^3 e z = (-1/3)^3, assinale a alternativa FALSA:",
+      "options": [
+        {
+          "alias": "A",
+          "name": "x > 0"
+        },
+        {
+          "alias": "B",
+          "name": "y > z"
+        },
+        {
+          "alias": "C",
+          "name": "z < 0"
+        },
+        {
+          "alias": "D",
+          "name": "x * y < 0"
+        }
+      ],
+      "correct": "B",
+      "explanation": "x = [(-1/2)^3]^2 = (-1/8)^2 = 1/64 > 0. y = (-3/5)^3 = -27/125 = -0,216. z = (-1/3)^3 = -1/27 ≈ -0,037. Comparando y e z: -0,216 < -0,037, portanto y < z (NAO y > z). A afirmativa B e FALSA. As demais: x > 0 (verdade), z < 0 (verdade), x*y = (1/64)*(-27/125) < 0 (verdade).",
+      "subject": "Potenciacao: comparacao de valores",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 8",
+      "aula_tema": "Potenciação: Propriedades combinadas e comparação"
+    },
+    {
+      "id": "mat9-1bi-035",
+      "question": "Uma imagem e reduzida em 20% a cada meia hora (o tamanho e multiplicado por 4/5 a cada meia hora). Apos 2 horas, Joao quer restaurar a imagem ao tamanho original aplicando um unico fator de correcao. Qual e esse fator?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "(4/5)^4"
+        },
+        {
+          "alias": "B",
+          "name": "(5/4)^4"
+        },
+        {
+          "alias": "C",
+          "name": "(4/5)^2"
+        },
+        {
+          "alias": "D",
+          "name": "(5/4)^2"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Em 2 horas = 4 meias horas. Apos 4 reducoes: tamanho = original x (4/5)^4. Para restaurar, aplica-se o inverso multiplicativo: fator = (5/4)^4. Verificacao: (4/5)^4 x (5/4)^4 = [(4/5)x(5/4)]^4 = 1^4 = 1 (restaurado ao original).",
+      "subject": "Potenciacao: fator inverso e restauracao",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 7",
+      "aula_tema": "Potenciação: Potência de potência e fator de escala"
+    },
+    {
+      "id": "mat9-1bi-036",
+      "question": "Dados x = [(-2/3)^4]^2, y = (-3/2)^3 e z = (-2/3)^(-2), assinale a alternativa FALSA:",
+      "options": [
+        {
+          "alias": "A",
+          "name": "x = (2/3)^8"
+        },
+        {
+          "alias": "B",
+          "name": "y e o oposto (inverso aditivo) de (3/2)^3"
+        },
+        {
+          "alias": "C",
+          "name": "z e um numero positivo"
+        },
+        {
+          "alias": "D",
+          "name": "x * y = (2/3)^(11)"
+        }
+      ],
+      "correct": "D",
+      "explanation": "x = [(-2/3)^4]^2 = (2/3)^8 (expoente par torna positivo). y = (-3/2)^3 = -27/8 = oposto de (3/2)^3 = 27/8 (verdade). z = (-2/3)^(-2) = (3/2)^2 = 9/4 > 0 (verdade). x*y = (2/3)^8 * (-27/8) = (2/3)^8 * (-(3/2)^3) = -(2/3)^8 / (2/3)^(-3) = -(2/3)^(8-(-3))... Usando (3/2)^3 = (2/3)^(-3): x*y = (2/3)^8 * (2/3)^(-3) * (-1) = -(2/3)^5. Portanto x*y = -(2/3)^5, NAO (2/3)^(11). A afirmativa D e FALSA.",
+      "subject": "Potenciacao: propriedades e comparacao",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 8",
+      "aula_tema": "Potenciação: Propriedades combinadas e comparação"
+    },
+    {
+      "id": "mat9-1bi-037",
+      "question": "Um video de aula tem 24 minutos. Para revisa-lo, Ana acelera o video para 3/2 da velocidade normal (ou seja, cada minuto real dura 2/3 de minuto no video acelerado). Qual o tempo que Ana leva para revisar o video inteiro?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "12 minutos"
+        },
+        {
+          "alias": "B",
+          "name": "16 minutos"
+        },
+        {
+          "alias": "C",
+          "name": "18 minutos"
+        },
+        {
+          "alias": "D",
+          "name": "36 minutos"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Velocidade = 3/2 da normal significa que o video passa 1,5x mais rapido. Tempo de revisao = 24 ÷ (3/2) = 24 x (2/3) = 48/3 = 16 minutos.",
+      "subject": "Numeros racionais: divisao por fracao aplicada",
+      "area_conhecimento": "Numeros Racionais",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 8",
+      "aula_tema": "Potenciação: Propriedades combinadas e comparação"
+    },
+    {
+      "id": "mat9-1bi-038",
+      "question": "Uma calda de acucar tem 640 mL. Durante o cozimento, a cada 10 minutos evapora 1/4 do volume presente (restam 3/4 do volume anterior). Apos 30 minutos, qual e o volume restante de calda?",
+      "options": [
+        {
+          "alias": "A",
+          "name": "160 mL"
+        },
+        {
+          "alias": "B",
+          "name": "270 mL"
+        },
+        {
+          "alias": "C",
+          "name": "360 mL"
+        },
+        {
+          "alias": "D",
+          "name": "480 mL"
+        }
+      ],
+      "correct": "B",
+      "explanation": "30 minutos = 3 intervalos de 10 min. A cada intervalo multiplica-se por 3/4. Volume final = 640 x (3/4)^3 = 640 x 27/64 = (640/64) x 27 = 10 x 27 = 270 mL.",
+      "subject": "Potenciacao: decaimento geometrico aplicado",
+      "area_conhecimento": "Potenciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 8",
+      "aula_tema": "Potenciação: Propriedades combinadas e comparação"
+    }
+  ]
+}

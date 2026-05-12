@@ -1,0 +1,612 @@
+﻿{
+  "metadata": {
+    "simulado": "Lingua Portuguesa - Caderno de Exercicios - Volume 1 Parte 2",
+    "tipo": "simulado",
+    "disciplina": "Lingua Portuguesa",
+    "serie": "9 Ano",
+    "bimestre": "Volume 1",
+    "parte": "Parte 2",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "lp9-v1p2-001",
+      "question": "No trecho de \"Um belo diploma\", de Scholastique Mukasonga: \"Nao era, porem, uma tese de doutorado, dessas que se desenvolvem durante a vida inteira [...]: nao, era apenas um modesto diploma de assistente social.\" O recurso expressivo criado pela repeticao de \"nao, era apenas\" e sua funcao no genero memorias sao:",
+      "options": [
+        {"alias":"A", "name":"Enumeracao de fatos; ampliar as informacoes sobre o diploma buscado."},
+        {"alias":"B", "name":"Contraste e autoironia; diminuir o proprio objetivo e criar proximidade com o leitor, marcas da liberdade estilistica das memorias."},
+        {"alias":"C", "name":"Argumentacao formal; defender a escolha pelo diploma de assistente social frente ao doutorado."},
+        {"alias":"D", "name":"Descricao objetiva; apresentar os tipos de diploma existentes no sistema educacional."}
+      ],
+      "correct": "B",
+      "explanation": "A repeticao de \"nao, era apenas\" cria contraste (tese x diploma modesto) e autoironia — a autora ironiza a propria busca, diminuindo o objetivo. Esse tom confessional e autoironicos sao marcas da liberdade estilistica tipica do genero texto de memorias.",
+      "subject": "Genero texto de memorias — recursos expressivos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 1",
+      "aula_tema": "Generos textuais: memorias, autobiografia, biografia e diario"
+    },
+    {
+      "id": "lp9-v1p2-002",
+      "question": "No trecho: \"Greta Thunberg recebeu reconhecimento global e foi ganhadora de diversos premios [...].\" O uso dos verbos no preterito perfeito contribui para o seguinte efeito de sentido:",
+      "options": [
+        {"alias":"A", "name":"Aponta conquistas em andamento."},
+        {"alias":"B", "name":"Indica acoes recorrentes no passado."},
+        {"alias":"C", "name":"Marca fatos concluidos e reconhecidos publicamente."},
+        {"alias":"D", "name":"Expressa desejo ou expectativa futura."}
+      ],
+      "correct": "C",
+      "explanation": "O preterito perfeito indica acao CONCLUIDA e pontual. \"Recebeu\" e \"foi ganhadora\" apresentam conquistas ja realizadas e oficializadas — fatos encerrados, que nao estao em andamento (A) nem se repetem habitualmente (B). O preterito imperfeito indicaria repeticao/habito.",
+      "subject": "Topico gramatical: preterito perfeito — efeitos de sentido",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 2",
+      "aula_tema": "Topico gramatical: verbos — preterito perfeito e imperfeito"
+    },
+    {
+      "id": "lp9-v1p2-003",
+      "question": "Analise os verbos no texto sobre Greta Thunberg e assinale a analise INCORRETA:\na) \"Greta iniciou um movimento global ao faltar as aulas todas as sextas-feiras.\"\nb) \"Emma e seus colegas organizavam protestos [...]\"\nc) \"Greta recebeu reconhecimento global.\"\nd) \"Greta discursava em conferencias internacionais.\"",
+      "options": [
+        {"alias":"A", "name":"\"iniciou\" expressa acao unica e pontual."},
+        {"alias":"B", "name":"\"organizavam\" indica continuidade e habito."},
+        {"alias":"C", "name":"\"recebeu\" sugere acao repetida."},
+        {"alias":"D", "name":"\"discursava\" mostra persistencia e frequencia."}
+      ],
+      "correct": "C",
+      "explanation": "A analise INCORRETA e C: \"recebeu\" esta no preterito PERFEITO, que indica acao CONCLUIDA e pontual — nao acao repetida. A repeticao/habito seria indicada pelo preterito imperfeito (ex: \"recebia premios regularmente\"). As demais sao corretas: \"iniciou\" (perfeito = pontual), \"organizavam\" (imperfeito = habito continuo), \"discursava\" (imperfeito = frequencia).",
+      "subject": "Topico gramatical: analise comparativa de tempos verbais",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 2",
+      "aula_tema": "Topico gramatical: verbos — preterito perfeito e imperfeito"
+    },
+    {
+      "id": "lp9-v1p2-004",
+      "question": "Sobre o genero biografia, qual das alternativas apresenta uma diferenca correta em relacao a autobiografia?",
+      "options": [
+        {"alias":"A", "name":"A biografia sempre usa linguagem literaria; a autobiografia usa linguagem tecnica."},
+        {"alias":"B", "name":"A biografia e narrada em terceira pessoa por um biógrafo; a autobiografia e narrada em primeira pessoa pelo proprio biografado."},
+        {"alias":"C", "name":"A biografia relata fatos ficcionais; a autobiografia relata apenas fatos historicos."},
+        {"alias":"D", "name":"A autobiografia nao pode incluir sentimentos; a biografia deve incluir reflexoes pessoais do autor."}
+      ],
+      "correct": "B",
+      "explanation": "A diferenca fundamental: a BIOGRAFIA e escrita por uma terceira pessoa (o biografo) sobre a vida de outra pessoa, com narracao em 3a pessoa. A AUTOBIOGRAFIA e o proprio sujeito narrando sua vida, em 1a pessoa. Ambos os generos relatam fatos reais e podem usar linguagem literaria.",
+      "subject": "Genero textual: diferenca entre biografia e autobiografia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 3",
+      "aula_tema": "Generos textuais: memorias, autobiografia, biografia e diario"
+    },
+    {
+      "id": "lp9-v1p2-005",
+      "question": "Com base no trecho de \"Eu sou Malala\" — \"Nasci menina num lugar onde rifles sao disparados em comemoracao a um filho, ao passo que as filhas sao escondidas atras de cortinas [...]\" — e nos estudos sobre autobiografia, assinale a afirmativa FALSA:",
+      "options": [
+        {"alias":"A", "name":"O uso do verbo \"nasci\" indica um fato pessoal e contribui para a construcao da identidade da narradora."},
+        {"alias":"B", "name":"O trecho e narrado em terceira pessoa para garantir maior objetividade no relato."},
+        {"alias":"C", "name":"O tempo presente do verbo \"sao\" reforca a critica social e cultural feita pela autora."},
+        {"alias":"D", "name":"O trecho exemplifica o uso da memoria como base para a construcao da autobiografia."}
+      ],
+      "correct": "B",
+      "explanation": "A afirmativa FALSA e B: o trecho e narrado em PRIMEIRA PESSOA — \"nasci menina\" = eu nasci. A narracao em primeira pessoa e caracteristica essencial da autobiografia e nao indica falta de objetividade, mas sim a perspectiva subjetiva e pessoal da autora. As demais sao verdadeiras.",
+      "subject": "Genero textual: autobiografia — identificacao de afirmativa incorreta",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 5",
+      "aula_tema": "Generos textuais: memorias, autobiografia, biografia e diario"
+    },
+    {
+      "id": "lp9-v1p2-006",
+      "question": "No mesmo trecho de \"Eu sou Malala\": \"ao passo que as filhas sao escondidas atras de cortinas [...]\" — o uso dos verbos no presente do indicativo (\"sao disparados\", \"sao escondidas\") revela que o genero autobiografico:",
+      "options": [
+        {"alias":"A", "name":"Limita-se a registrar acoes do passado da autora, sem referencias ao contexto social."},
+        {"alias":"B", "name":"Usa sempre o presente historico para relatar fatos vividos na infancia."},
+        {"alias":"C", "name":"Pode funcionar como testemunho social, usando o presente para generalizar praticas culturais e ampliar a critica."},
+        {"alias":"D", "name":"Exige que o narrador se abstenha de opinioes para garantir imparcialidade."}
+      ],
+      "correct": "C",
+      "explanation": "Ao usar o presente (\"sao disparados\", \"sao escondidas\"), Malala generaliza uma pratica cultural — vai alem da sua experiencia pessoal e torna o relato um testemunho social. Isso mostra que a autobiografia pode ser veículo de denuncia e critica, nao apenas registro pessoal.",
+      "subject": "Genero textual: autobiografia como testemunho social",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 5",
+      "aula_tema": "Generos textuais: memorias, autobiografia, biografia e diario"
+    },
+    {
+      "id": "lp9-v1p2-007",
+      "question": "No texto autobiografico de Clarice Lispector: \"Tenho que me apressar, o tempo urge [...]\" — o efeito do uso dos verbos \"tenho\" e \"urge\" no presente do indicativo na autobiografia e:",
+      "options": [
+        {"alias":"A", "name":"Situar o leitor em um momento passado especifico da vida da autora."},
+        {"alias":"B", "name":"Indicar acoes habituais que a autora repetia regularmente."},
+        {"alias":"C", "name":"Expressar hipoteses sobre o futuro da narradora."},
+        {"alias":"D", "name":"Criar urgencia e aproximacao com o leitor, marcando o tom confessional e intimo tipico da autobiografia."}
+      ],
+      "correct": "D",
+      "explanation": "\"Tenho que me apressar\" e \"o tempo urge\" expressam urgencia imediata. O presente do indicativo, ao contrastar com o preterito anterior (\"nasci\"), cria a sensacao de que o relato esta acontecendo agora — aproximando a autora do leitor e intensificando o tom confessional da autobiografia.",
+      "subject": "Genero textual: autobiografia — presente do indicativo e tom confessional",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 6",
+      "aula_tema": "Generos textuais: memorias, autobiografia, biografia e diario"
+    },
+    {
+      "id": "lp9-v1p2-008",
+      "question": "Na cancao \"Querido Diario\", de Chico Buarque, o adverbio \"Hoje\" aparece repetidamente no inicio das estrofes (\"Hoje topei com alguns conhecidos meus\", \"Hoje o inimigo veio me espreitar\"). No genero diario, qual e a funcao dessa repeticao?",
+      "options": [
+        {"alias":"A", "name":"Indicar que os fatos aconteceram no mesmo dia de forma coincidente."},
+        {"alias":"B", "name":"Marcar o registro temporal cotidiano — caracteristica central do genero diario, que organiza os relatos por data/dia."},
+        {"alias":"C", "name":"Substituir o uso do preterito, tornando o relato mais formal."},
+        {"alias":"D", "name":"Criar oposicao entre passado e presente para mostrar a evolucao do narrador."}
+      ],
+      "correct": "B",
+      "explanation": "O diario e estruturado por entradas cronologicas — cada registro corresponde a um dia. A repeticao de \"Hoje\" simula essa estrutura: cada estrofe e uma entrada do dia, marcando os fatos que aconteceram naquele momento especifico. Isso e uma caracteristica central e identificadora do genero diario.",
+      "subject": "Genero textual: diario — estrutura e marcas temporais",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 7 (ENEM 2016 - Adaptada)",
+      "aula_tema": "Generos textuais: memorias, autobiografia, biografia e diario"
+    },
+    {
+      "id": "lp9-v1p2-009",
+      "question": "No trecho de Dom Casmurro, de Machado de Assis: \"Minha mae quis saber o que era.\" O verbo \"quis\" no preterito perfeito tem como principal efeito de sentido:",
+      "options": [
+        {"alias":"A", "name":"Expressar uma duvida continua que permanece ate o presente."},
+        {"alias":"B", "name":"Indicar um desejo eventual, ja concluido no momento da fala."},
+        {"alias":"C", "name":"Sugerir uma intencao futura relacionada a um fato habitual."},
+        {"alias":"D", "name":"Demonstrar uma acao progressiva e duradoura."}
+      ],
+      "correct": "B",
+      "explanation": "O preterito perfeito indica acao CONCLUIDA e pontual no passado. \"Quis saber\" = desejo especifico, encerrado naquele momento da narrativa. Nao ha continuidade (A), futuridade (C), nem progressao (D). Se fosse habito, usar-se-ia o preterito imperfeito: \"queria saber\".",
+      "subject": "Topico gramatical: preterito perfeito em contexto narrativo literario",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 8 (IFSP 2023 - Adaptada)",
+      "aula_tema": "Topico gramatical: verbos — efeitos de sentido em contexto literario"
+    },
+    {
+      "id": "lp9-v1p2-010",
+      "question": "De acordo com a noticia sobre a Ponte Pensil (Sao Vicente/SP), qual das seguintes doencas NAO e mencionada no texto como associada a falta de saneamento basico no inicio do seculo XX?",
+      "options": [
+        {"alias":"A", "name":"Febre amarela"},
+        {"alias":"B", "name":"Cólera"},
+        {"alias":"C", "name":"Malaria"},
+        {"alias":"D", "name":"Leptospirose"}
+      ],
+      "correct": "C",
+      "explanation": "O texto menciona explicitamente: febre amarela, colera, leptospirose e peste bubonica como doencas causadas pela ausencia de saneamento basico. A malaria NAO e mencionada no texto, portanto e a alternativa correta.",
+      "subject": "Genero textual: noticia — leitura e interpretacao de informacoes",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 9 (ETEC 2023)",
+      "aula_tema": "Genero textual: noticia"
+    },
+    {
+      "id": "lp9-v1p2-011",
+      "question": "Sobre o uso dos tempos verbais no trecho da reportagem \"Um reporter do outro lado da noticia\" — \"em quase 40 anos vivendo ali, as aguas do igarape nunca tinham nos atingido. Aos poucos essa tranquilidade foi dando lugar a preocupacao\" — assinale a afirmativa INCORRETA:",
+      "options": [
+        {"alias":"A", "name":"\"Tinham nos atingido\" e preterito mais-que-perfeito composto, indicando acao anterior a outro fato passado."},
+        {"alias":"B", "name":"O verbo \"tinham\" esta no preterito imperfeito e indica uma acao concluida no passado."},
+        {"alias":"C", "name":"O uso do preterito mais-que-perfeito contribui para mostrar algo que ainda nao havia acontecido antes da mudanca narrada."},
+        {"alias":"D", "name":"A presenca de verbos no preterito imperfeito e comum em trechos narrativos dentro de reportagens."}
+      ],
+      "correct": "B",
+      "explanation": "A afirmativa INCORRETA e B: \"tinham atingido\" e preterito MAIS-QUE-PERFEITO COMPOSTO (tinha/tinham + participio), NAO preterito imperfeito. Indica acao anterior a outro fato passado — reforcando que, em 40 anos, esse fato nunca acontecera. O preterito imperfeito seria \"atingiam\" (habito/continuidade).",
+      "subject": "Genero textual: reportagem — preterito mais-que-perfeito composto",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 12",
+      "aula_tema": "Genero textual: reportagem e tempos verbais"
+    },
+    {
+      "id": "lp9-v1p2-012",
+      "question": "Sobre o verbo \"invadia\" no trecho da reportagem \"[...] a agua barrenta que invadia todos os comodos de casa\", assinale a afirmativa FALSA:",
+      "options": [
+        {"alias":"A", "name":"O verbo expressa uma acao momentanea, que aconteceu e foi interrompida de forma subita."},
+        {"alias":"B", "name":"A forma verbal indica um estado continuo e anterior a conclusao da acao principal."},
+        {"alias":"C", "name":"O uso do preterito imperfeito cria um ambiente de tensao continua e ainda nao resolvida."},
+        {"alias":"D", "name":"Esse tempo verbal ajuda o leitor a se situar no tempo da narrativa e a imaginar a cena."}
+      ],
+      "correct": "A",
+      "explanation": "A afirmativa FALSA e A: o preterito imperfeito exprime acao CONTINUA e durativa, NAO momentanea. \"Invadia\" indica que a invasao da agua estava em curso de forma prolongada e progressiva — criando cenario de tensao crescente. As demais sao verdadeiras: imperfeito marca estado continuo (B), cria tensao (C) e situa o leitor na cena (D).",
+      "subject": "Genero textual: reportagem — preterito imperfeito e efeitos de sentido",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 12",
+      "aula_tema": "Genero textual: reportagem e tempos verbais"
+    },
+    {
+      "id": "lp9-v1p2-013",
+      "question": "(ETEC 2023) Com base no texto sobre a Ponte Pensil, assinale a afirmativa INCORRETA:",
+      "options": [
+        {"alias":"A", "name":"A construcao da Ponte Pensil visava facilitar o turismo entre Santos e Sao Vicente."},
+        {"alias":"B", "name":"A ponte foi construida para sustentar tubulacoes de esgoto."},
+        {"alias":"C", "name":"O texto informa que doencas estavam ligadas a falta de saneamento."},
+        {"alias":"D", "name":"A proposta de construcao partiu da Comissao de Saneamento de Santos, liderada por Saturnino de Brito."}
+      ],
+      "correct": "A",
+      "explanation": "A afirmativa INCORRETA e A: o proposito da ponte era servir de suporte a tubulacoes de esgoto — NAO facilitar turismo. O texto diz que \"a Comissao de Saneamento sugeriu a construcao com o proposito de servir de suporte a instalacao de uma tubulacao a fim de conduzir o esgoto\". As demais (B, C, D) estao corretas conforme o texto.",
+      "subject": "Genero textual: noticia — identificacao de informacao incorreta",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 9 (ETEC 2023)",
+      "aula_tema": "Genero textual: noticia"
+    },
+    {
+      "id": "lp9-v1p2-014",
+      "question": "No texto \"O valor nutricional do leite: inumeros beneficios!\", o autor cita: \"De acordo com Bill Sears, MD, Professor Clinico Associado de Pediatria na Universidade da California em Irvine, o leite contem muitos nutrientes importantes em um so lugar conveniente.\" Qual recurso persuasivo essa referencia representa?",
+      "options": [
+        {"alias":"A", "name":"Argumento emocional: apela ao sentimento do leitor para convencer sobre o valor do leite."},
+        {"alias":"B", "name":"Argumento empirico: apresenta dados de experimentos para comprovar os beneficios."},
+        {"alias":"C", "name":"Argumento de autoridade: usa as credenciais de um especialista para conferir credibilidade as afirmacoes."},
+        {"alias":"D", "name":"Argumento de popularidade: mostra que a maioria das pessoas consome leite com beneficios."}
+      ],
+      "correct": "C",
+      "explanation": "Citar um medico com titulo (\"MD\") e vinculo a uma universidade reconhecida e um tipico ARGUMENTO DE AUTORIDADE — recurso retorico que usa a credencial de um especialista para validar uma afirmacao e convencer o leitor. Nao e emocional (A), nao apresenta dados de experimento (B) nem argumento de popularidade (D).",
+      "subject": "Genero textual: reportagem — recursos persuasivos (argumento de autoridade)",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 11 (PISA 2018 - Adaptada)",
+      "aula_tema": "Genero textual: noticia e reportagem"
+    },
+    {
+      "id": "lp9-v1p2-015",
+      "question": "(ENEM 2014 – Adaptada) O texto \"Viva a nova TV!\" introduz uma reportagem sobre o futuro da televisao, destacando que as tecnologias a ela incorporadas serao responsaveis por:",
+      "options": [
+        {"alias":"A", "name":"Estimular a substituicao dos antigos aparelhos de TV."},
+        {"alias":"B", "name":"Contemplar os desejos individuais com recursos de ponta."},
+        {"alias":"C", "name":"Transformar a televisao no principal meio de acesso as redes sociais."},
+        {"alias":"D", "name":"Renovar tecnicas de apresentacao de programas e de captacao de imagens."},
+        {"alias":"E", "name":"Minimizar a importancia dessa ferramenta como meio de comunicacao de massa."}
+      ],
+      "correct": "B",
+      "explanation": "A reportagem \"Viva a nova TV!\" destaca que as novas tecnologias incorporadas a TV vao personalizar o consumo, atendendo desejos individuais com recursos de ponta — como interatividade, streaming e conteudo sob demanda. As outras opcoes nao correspondem ao argumento central do texto.",
+      "subject": "Genero textual: reportagem — identificacao do argumento central",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 20 (ENEM 2014 - Adaptada)",
+      "aula_tema": "Genero textual: noticia e reportagem"
+    },
+    {
+      "id": "lp9-v1p2-016",
+      "question": "(ENEM 2014 – Adaptada) Com base na reportagem \"Viva a nova TV!\", assinale a afirmativa FALSA sobre seus recursos linguisticos e estrutura:",
+      "options": [
+        {"alias":"A", "name":"O texto e todo expositivo e tecnico, com foco apenas em dados objetivos."},
+        {"alias":"B", "name":"A linguagem combina informacoes e estrategias de convencimento do leitor."},
+        {"alias":"C", "name":"O autor usa perguntas retoricas para envolver quem le."},
+        {"alias":"D", "name":"A organizacao textual sugere entusiasmo com as novas possibilidades da TV."}
+      ],
+      "correct": "A",
+      "explanation": "A afirmativa FALSA e A: a reportagem NAO e apenas expositiva e tecnica. Ela combina informacoes com estrategias argumentativas e persuasivas (B), usa perguntas retoricas para envolver o leitor (C) e demonstra entusiasmo com o futuro da TV (D). Isso a caracteriza como reportagem de opiniao, nao apenas expositiva.",
+      "subject": "Genero textual: reportagem — analise de recursos linguisticos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 20 (ENEM 2014 - Adaptada)",
+      "aula_tema": "Genero textual: noticia e reportagem"
+    },
+    {
+      "id": "lp9-v1p2-017",
+      "question": "Na entrevista com Felix (atleta refugiado), ele afirma: \"Eu teria ficado dividido sobre qual pais representar.\" A forma verbal \"teria ficado\" expressa:",
+      "options": [
+        {"alias":"A", "name":"Uma acao que aconteceu e foi concluida no passado."},
+        {"alias":"B", "name":"Uma acao habitual que se repetia no passado."},
+        {"alias":"C", "name":"Uma hipotese sobre o passado — o que poderia ter acontecido em uma situacao imaginada."},
+        {"alias":"D", "name":"Uma ordem ou pedido feito pelo entrevistado ao entrevistador."}
+      ],
+      "correct": "C",
+      "explanation": "\"Teria ficado\" e o FUTURO DO PRETERITO COMPOSTO (teria + participio), que indica uma hipotese ou condicao no passado — algo que PODERIA ter acontecido, mas nao necessariamente aconteceu. Felix imagina como teria se sentido se tivesse que escolher. Nao e acao concluida (A), habitual (B), nem imperativa (D).",
+      "subject": "Genero textual: entrevista — futuro do preterito composto",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 13 (PISA 2018 - Adaptada)",
+      "aula_tema": "Genero textual: entrevista"
+    },
+    {
+      "id": "lp9-v1p2-018",
+      "question": "Na entrevista com Maria da Penha: \"Hoje, as mulheres ja conhecem mais sobre a violencia domestica, os tipos de violencia, seus varios aspectos e o que a Lei Maria da Penha pode fazer por elas.\" As virgulas em \"os tipos de violencia, seus varios aspectos\" exercem a funcao de:",
+      "options": [
+        {"alias":"A", "name":"Indicar pausa para respiracao do locutor ao fazer o discurso."},
+        {"alias":"B", "name":"Separar termos numa enumeracao (termos coordenados assindeticos)."},
+        {"alias":"C", "name":"Isolar uma ideia que contradiz o argumento principal."},
+        {"alias":"D", "name":"Substituir o ponto final entre as duas ideias."}
+      ],
+      "correct": "B",
+      "explanation": "As virgulas separam elementos em ENUMERACAO — \"os tipos de violencia\", \"seus varios aspectos\" e \"o que a Lei pode fazer\" sao itens coordenados assindeticos (sem conjuncao entre eles). A virgula substitui a conjuncao \"e\" na lista de temas que as mulheres ja conhecem. Essa e uma das funcoes mais basicas da virgula.",
+      "subject": "Topico gramatical: pontuacao — virgula em enumeracao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 14",
+      "aula_tema": "Topico gramatical: pontuacao"
+    },
+    {
+      "id": "lp9-v1p2-019",
+      "question": "No cartaz instrucional sobre higiene (Secretaria de Saude do Parana), qual elemento tem como principal funcao \"identificar a fonte responsavel pela elaboracao do conteudo\"?",
+      "options": [
+        {"alias":"A", "name":"Frase de destaque no topo (\"LAVE BEM AS MAOS\")."},
+        {"alias":"B", "name":"Ilustracoes dos sintomas."},
+        {"alias":"C", "name":"Instrucoes de prevencao (\"Evite o contato\", \"Cubra a boca\")."},
+        {"alias":"D", "name":"Logotipo da Secretaria da Saude."}
+      ],
+      "correct": "D",
+      "explanation": "O LOGOTIPO identifica a instituicao autora do material — no caso, a Secretaria de Saude do Parana. Isso confere credibilidade e autoria ao conteudo. A frase de destaque (A) atrai atencao; ilustracoes (B) auxiliam visualmente; instrucoes (C) orientam acoes. A identificacao da fonte e funcao especifica do logotipo.",
+      "subject": "Genero textual: cartaz instrucional — funcao do logotipo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 15",
+      "aula_tema": "Genero textual: cartaz instrucional"
+    },
+    {
+      "id": "lp9-v1p2-020",
+      "question": "Na campanha do Ministerio da Saude sobre raiva, o uso do modo imperativo (como em \"Vacine seu animal\") tem como principal funcao no genero campanha de saude:",
+      "options": [
+        {"alias":"A", "name":"Informar o publico sobre as causas da doenca de forma tecnica e imparcial."},
+        {"alias":"B", "name":"Instruir diretamente o publico-alvo a adotar um comportamento especifico de prevencao."},
+        {"alias":"C", "name":"Narrar casos de pessoas atingidas pela doenca para gerar empatia."},
+        {"alias":"D", "name":"Convencer por argumentos logicos os tutores de animais a mudar de comportamento."}
+      ],
+      "correct": "B",
+      "explanation": "O modo imperativo expressa ORDEM ou INSTRUCAO direta. Em campanhas de saude, ele e usado para orientar o publico a agir de forma especifica e imediata (\"Vacine\", \"Evite\", \"Procure um medico\"). Isso e caracteristica central do genero instrucional/campanha: linguagem direta voltada a provocar uma acao.",
+      "subject": "Genero textual: campanha publicitaria — modo imperativo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 17 (UNIFOR 2023)",
+      "aula_tema": "Genero textual: campanha publicitaria"
+    },
+    {
+      "id": "lp9-v1p2-021",
+      "question": "Na oracao \"Havia muitas pessoas em Barcelona durante a festa\", qual e a funcao sintatica de \"muitas pessoas\"?",
+      "options": [
+        {"alias":"A", "name":"Sujeito simples do verbo \"havia\"."},
+        {"alias":"B", "name":"Objeto direto do verbo impessoal \"haver\"."},
+        {"alias":"C", "name":"Predicativo do sujeito."},
+        {"alias":"D", "name":"Adjunto adverbial de quantidade."}
+      ],
+      "correct": "B",
+      "explanation": "Quando o verbo \"haver\" tem sentido de EXISTIR, ele e IMPESSOAL — nao tem sujeito. \"Muitas pessoas\" e, portanto, seu OBJETO DIRETO. Compare: \"Tem pessoas aqui\" (informal) = \"Ha pessoas aqui\" (formal). Essa e a razao pela qual o verbo fica no singular (\"havia\", nao \"haviam\") mesmo com o substantivo no plural.",
+      "subject": "Topico gramatical: sujeito e predicado — verbo haver impessoal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 16 (UNICENTRO 2018)",
+      "aula_tema": "Topico gramatical: sujeito e predicado"
+    },
+    {
+      "id": "lp9-v1p2-022",
+      "question": "Na manchete \"Ate 50% dos alimentos vai estragar com a crise\", por que tanto \"vai\" (singular) quanto \"vao\" (plural) sao aceitos pela norma-padrao da lingua portuguesa?",
+      "options": [
+        {"alias":"A", "name":"Porque \"alimentos\" e um coletivo que sempre exige verbo no singular."},
+        {"alias":"B", "name":"Porque verbos que antecedem o sujeito concordam com o primeiro substantivo."},
+        {"alias":"C", "name":"Porque quando o sujeito e uma expressao partitiva (numeral + de + substantivo), o verbo pode concordar com o numeral (singular) ou com o substantivo (plural)."},
+        {"alias":"D", "name":"Porque a expressao \"Ate 50%\" tem valor de aproximacao e invalida as regras de concordancia."}
+      ],
+      "correct": "C",
+      "explanation": "A regra de concordancia especial: quando o sujeito e uma EXPRESSAO PARTITIVA (numeral percentual + de + substantivo), o verbo pode concordar com: o NUMERAL = singular (\"vai\") ou o SUBSTANTIVO = plural (\"vao\"). Ambas as formas sao gramaticalmente corretas. A opcao A e errada porque \"50% dos alimentos\" nao e coletivo.",
+      "subject": "Topico gramatical: concordancia verbal com sujeito partitivo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 18",
+      "aula_tema": "Topico gramatical: concordancia verbal e nominal"
+    },
+    {
+      "id": "lp9-v1p2-023",
+      "question": "No Texto 2 sobre direitos e deveres na escola: \"O direito a igualdade e um dos pilares fundamentais na escola [...]. Em contrapartida, os alunos tem o dever de respeitar todos os membros da comunidade escolar.\" O conectivo \"em contrapartida\" estabelece entre as duas ideias a seguinte relacao logica:",
+      "options": [
+        {"alias":"A", "name":"Causa: a igualdade e a causa do respeito entre os alunos."},
+        {"alias":"B", "name":"Contraposicao complementar: a segunda ideia apresenta o dever que decorre simetricamente do direito exposto."},
+        {"alias":"C", "name":"Oposicao: direito e dever sao apresentados como ideias contrarias e incompativeis."},
+        {"alias":"D", "name":"Conclusao: a segunda frase resume e finaliza o argumento da primeira."}
+      ],
+      "correct": "B",
+      "explanation": "\"Em contrapartida\" introduz a CONTRAPARTIDA — algo que corresponde, em equilibrio, ao que foi dito antes. Nao e oposicao (os conceitos nao se contradizem), nem causa (um nao causa o outro diretamente), nem conclusao. E uma relacao de COMPLEMENTACAO SIMETRICA: ao direito corresponde o dever, formando um par logico e equivalente.",
+      "subject": "Genero textual: texto normativo — relacoes logicas e conectivos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 19",
+      "aula_tema": "Genero textual: texto normativo"
+    },
+    {
+      "id": "lp9-v1p2-024",
+      "question": "Na ficha catalografica, qual elemento corresponde ao \"numero internacional padrao, identificador unico para o livro\"?",
+      "options": [
+        {"alias":"A", "name":"Autor"},
+        {"alias":"B", "name":"Local de publicacao"},
+        {"alias":"C", "name":"ISBN"},
+        {"alias":"D", "name":"Numero de paginas"}
+      ],
+      "correct": "C",
+      "explanation": "O ISBN (International Standard Book Number) e o codigo numerico unico que identifica cada livro publicado no mundo. E um sistema internacional de catalogacao. O Autor (A) identifica quem escreveu; Local de publicacao (B) e a cidade; Numero de paginas (D) e a quantidade total de paginas.",
+      "subject": "Genero textual: ficha catalografica — elemento ISBN",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 21",
+      "aula_tema": "Genero textual: ficha catalografica"
+    },
+    {
+      "id": "lp9-v1p2-025",
+      "question": "A palavra \"Pro-analise\" usa hifen apos \"pro-\". Qual regra justifica o uso do hifen nesse caso?",
+      "options": [
+        {"alias":"A", "name":"O prefixo \"pro-\" e tonico (possui acento proprio), e prefixos tonicos terminados em vogal exigem hifen antes de qualquer letra."},
+        {"alias":"B", "name":"\"Pro-\" sempre usa hifen, independentemente da letra seguinte."},
+        {"alias":"C", "name":"O hifen e obrigatorio quando o prefixo termina em consoante."},
+        {"alias":"D", "name":"A letra \"a\" de \"analise\" exige hifen apos qualquer prefixo."}
+      ],
+      "correct": "A",
+      "explanation": "O prefixo tonico (acentuado) \"pro-\" SEMPRE exige hifen. Diferente do prefixo atono \"pro\" (sem acento), que nao usa hifen antes de consoante (ex: \"proibir\", \"promover\"). A opcao B e incorreta: nem todo uso de \"pro-\" exige hifen — apenas o tonico. C e errada: hifen apos terminacao em consoante tem outra regra.",
+      "subject": "Topico gramatical: ortografia — uso do hifen com prefixos tonicos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 22 (UFC 2020 - Adaptada)",
+      "aula_tema": "Topico gramatical: ortografia"
+    },
+    {
+      "id": "lp9-v1p2-026",
+      "question": "Analise o motivo da acentuacao da palavra \"jacare\":\na) Jacare e proparoxitona, logo todas as proparoxitonas sao acentuadas.\nb) Jacare e oxitona terminada em -e, por isso recebe acento.\nc) Jacare e paroxitona terminada em ditongo, por isso e acentuada.\nd) Jacare e um monossílabo tonico terminado em -e, e por isso leva acento.",
+      "options": [
+        {"alias":"A", "name":"Jacare e proparoxitona, logo todas as proparoxitonas sao acentuadas."},
+        {"alias":"B", "name":"Jacare e oxitona terminada em -e, por isso recebe acento."},
+        {"alias":"C", "name":"Jacare e paroxitona terminada em ditongo, por isso e acentuada."},
+        {"alias":"D", "name":"Jacare e um monossílabo tonico terminado em -e, e por isso leva acento."}
+      ],
+      "correct": "B",
+      "explanation": "Ja-ca-RE: a silaba tonica e a ultima (-re). Logo, e OXITONA. As oxitonas sao acentuadas quando terminam em -a, -e, -o, seguidos ou nao de -s. \"Jacare\" termina em -e, portanto e acentuada. Nao e proparoxitona (A), nem paroxitona (C), nem monossílabo (D). Outros exemplos: cafe, domino, avos.",
+      "subject": "Topico gramatical: acentuacao — oxitonas terminadas em -e",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 26",
+      "aula_tema": "Topico gramatical: ortografia e acentuacao"
+    },
+    {
+      "id": "lp9-v1p2-027",
+      "question": "Qual das alternativas melhor resume as informacoes principais do texto sobre Machado de Assis?",
+      "options": [
+        {"alias":"A", "name":"Machado de Assis nasceu no Rio de Janeiro, em 1839, e frequentou a universidade. Foi um escritor conhecido por Dom Casmurro e Memorias postumas de Bras Cubas."},
+        {"alias":"B", "name":"Machado de Assis enfrentou dificuldades financeiras na juventude, tornou-se autodidata e aprendeu varias linguas. Fundou a Academia Brasileira de Letras e escreveu Dom Casmurro e Memorias postumas de Bras Cubas."},
+        {"alias":"C", "name":"Nascido no Rio de Janeiro, em 1839, Machado de Assis foi um escritor que retratou a sociedade brasileira do seculo XIX. Ele foi filho de um pintor de paredes e de uma lavadeira."},
+        {"alias":"D", "name":"Machado de Assis, nascido em 1839, foi um dos maiores escritores brasileiros, autodidata em frances e ingles, e fundador da Academia Brasileira de Letras. Escreveu obras como Dom Casmurro e Memorias postumas de Bras Cubas."}
+      ],
+      "correct": "D",
+      "explanation": "A alternativa D e o melhor resumo: inclui as informacoes PRINCIPAIS (maior escritor brasileiro, ano de nascimento, autodidata em linguas, fundador da ABL, principais obras) sem informacao falsa (A diz que frequentou universidade — errado) e sem omitir pontos centrais (B omite que foi o maior escritor; C omite o aprendizado de linguas e a ABL).",
+      "subject": "Genero textual: resumo — identificacao do melhor resumo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 23",
+      "aula_tema": "Genero textual: resumo"
+    },
+    {
+      "id": "lp9-v1p2-028",
+      "question": "Com base no texto sobre Machado de Assis e nos conceitos do genero resumo, assinale a afirmativa FALSA:",
+      "options": [
+        {"alias":"A", "name":"Tema: Machado de Assis como um dos maiores escritores brasileiros e suas contribuicoes a literatura."},
+        {"alias":"B", "name":"Objetivo do texto original: convencer o leitor a ler Dom Casmurro e Memorias postumas de Bras Cubas."},
+        {"alias":"C", "name":"Tese ou ideia central: Machado de Assis se destacou por sua trajetoria autodidata e obras que retratam a sociedade brasileira."},
+        {"alias":"D", "name":"Pontos principais: nascimento, origem humilde, dificuldades financeiras, aprendizado de linguas, fundacao da Academia Brasileira de Letras e principais obras."}
+      ],
+      "correct": "B",
+      "explanation": "A afirmativa FALSA e B: o objetivo do texto e APRESENTAR e INFORMAR sobre a vida e obra de Machado de Assis (texto biografico/enciclopedico) — NAO convencer o leitor a ler os livros. Um texto de divulgacao literaria ou resenha teria esse objetivo. As demais (A, C, D) descrevem corretamente os elementos do texto.",
+      "subject": "Genero textual: resumo — identificacao do objetivo textual",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 23",
+      "aula_tema": "Genero textual: resumo"
+    },
+    {
+      "id": "lp9-v1p2-029",
+      "question": "(IFG 2022 – Adaptada) De acordo com o infografico/esquema estudado, o que e dopamina?",
+      "options": [
+        {"alias":"A", "name":"Medicacao indicada para pacientes em situacao de recaida no quadro de depressao."},
+        {"alias":"B", "name":"Mensageiro quimico que atua no sistema nervoso humano, regulando as emocoes."},
+        {"alias":"C", "name":"Substancia que auxilia a absorcao de proteinas e carboidratos pelo organismo."},
+        {"alias":"D", "name":"Farmaco que atua como neurotransmissor em pacientes depressivos com baixa ingestao de aves, pescados e frutas."}
+      ],
+      "correct": "B",
+      "explanation": "Segundo o infografico, a dopamina e um MENSAGEIRO QUIMICO (neurotransmissor) que atua no sistema nervoso central, relacionado ao prazer, motivacao e regulacao das emocoes. Nao e um farmaco (A, D) nem relacionada a absorcao de nutrientes (C).",
+      "subject": "Genero textual: infografico e esquema — leitura e interpretacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 25 (IFG 2022 - Adaptada)",
+      "aula_tema": "Genero textual: infografico, esquema e resumo"
+    },
+    {
+      "id": "lp9-v1p2-030",
+      "question": "Com base no infografico \"Fake News reduzem credibilidade das midias sociais\", assinale a afirmativa FALSA:",
+      "options": [
+        {"alias":"A", "name":"O esquema organiza os dados de forma visual, facilitando a comparacao entre meios de comunicacao."},
+        {"alias":"B", "name":"O telejornalismo aparece como o meio em que menos pessoas perderam confianca."},
+        {"alias":"C", "name":"Os aplicativos de mensagem e as midias sociais apresentaram indices altos de desconfianca."},
+        {"alias":"D", "name":"Esquemas como esse substituem totalmente a leitura de textos descritivos, dispensando qualquer interpretacao do leitor."}
+      ],
+      "correct": "D",
+      "explanation": "A afirmativa FALSA e D: esquemas e infograficos ORGANIZAM e FACILITAM a compreensao, mas NAO substituem textos descritivos nem dispensam a interpretacao do leitor. O leitor ainda precisa interpretar os dados, comparar valores e tirar conclusoes. As demais (A, B, C) sao corretas conforme o infografico.",
+      "subject": "Genero textual: infografico e esquema — analise critica",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 25",
+      "aula_tema": "Genero textual: infografico, esquema e resumo"
+    },
+    {
+      "id": "lp9-v1p2-031",
+      "question": "Leia as afirmativas sobre o genero textual \"relatorio\" e assinale a alternativa que apresenta apenas as afirmativas CORRETAS:\nI. O relatorio tem como objetivo principal informar sobre fatos ou eventos ocorridos, geralmente de maneira detalhada e organizada.\nII. A estrutura de um relatorio costuma ser dividida em introducao, desenvolvimento e conclusao.\nIII. No relatorio, e comum a utilizacao de uma linguagem subjetiva e informal para cativar o leitor.\nIV. O relatorio pode ser utilizado em contextos academicos, cientificos, empresariais e administrativos.\nV. A conclusao de um relatorio deve apresentar uma opiniao pessoal do autor sobre o tema tratado.",
+      "options": [
+        {"alias":"A", "name":"Somente as afirmativas I, II e IV estao corretas."},
+        {"alias":"B", "name":"Somente as afirmativas I, III e V estao corretas."},
+        {"alias":"C", "name":"Somente as afirmativas II, III e IV estao corretas."},
+        {"alias":"D", "name":"Somente as afirmativas I, II e V estao corretas."}
+      ],
+      "correct": "A",
+      "explanation": "Corretas: I (relatorio informa fatos), II (estrutura: introducao, desenvolvimento e conclusao), IV (multiplos contextos). Incorretas: III — o relatorio usa linguagem OBJETIVA e FORMAL, NAO subjetiva e informal; V — a conclusao do relatorio sintetiza resultados e NENHUMA nao expressa opiniao pessoal do autor.",
+      "subject": "Genero textual: relatorio — caracteristicas e estrutura",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 27",
+      "aula_tema": "Genero textual: relatorio"
+    },
+    {
+      "id": "lp9-v1p2-032",
+      "question": "Com base no trecho do Relatorio Anual da ONU (Marco de Cooperacao 2023-2027), assinale a afirmativa FALSA:",
+      "options": [
+        {"alias":"A", "name":"O Marco de Cooperacao 2023-2027 e o principal instrumento para planejar, implementar e avaliar atividades da ONU no Brasil."},
+        {"alias":"B", "name":"O documento foi elaborado apenas pela ONU, sem participacao do Estado brasileiro."},
+        {"alias":"C", "name":"Entre os principios destacados estao: igualdade de genero, sustentabilidade e transparencia."},
+        {"alias":"D", "name":"A elaboracao do Marco envolveu consultas a mais de 20 mil pessoas e 200 instituicoes da sociedade civil."}
+      ],
+      "correct": "B",
+      "explanation": "A afirmativa FALSA e B: o texto afirma que o Marco foi elaborado CONJUNTAMENTE pela ONU E pelo Estado brasileiro, sob orientacao do Comite Diretivo Conjunto liderado pelo Escritorio de Coordenacao da ONU e pela Agencia Brasileira de Cooperacao (ABC) do Ministerio das Relacoes Exteriores. Portanto, NAO foi feito apenas pela ONU.",
+      "subject": "Genero textual: relatorio — leitura e interpretacao de informacoes",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 27",
+      "aula_tema": "Genero textual: relatorio"
+    },
+    {
+      "id": "lp9-v1p2-033",
+      "question": "No verso \"E preciso que haja qualquer coisa de flor em tudo isso\", do poema \"Receita de mulher\" de Vinicius de Moraes, a forma verbal \"haja\" e:",
+      "options": [
+        {"alias":"A", "name":"Terceira pessoa do singular do presente do indicativo do verbo \"haver\"."},
+        {"alias":"B", "name":"Terceira pessoa do singular do presente do subjuntivo do verbo \"haver\", ativada pela locucao \"e preciso que\"."},
+        {"alias":"C", "name":"Terceira pessoa do plural do preterito imperfeito do indicativo do verbo \"haver\"."},
+        {"alias":"D", "name":"Primeira pessoa do singular do futuro do subjuntivo do verbo \"haver\"."}
+      ],
+      "correct": "B",
+      "explanation": "\"E preciso que\" e uma locucao que exige o PRESENTE DO SUBJUNTIVO na oracao seguinte. \"Haja\" e a 3a pessoa do singular do presente do subjuntivo de \"haver\". No indicativo seria \"ha\". No preterito imperfeito seria \"havia\". No futuro do subjuntivo seria \"houver\".",
+      "subject": "Topico gramatical: modos verbais — presente do subjuntivo de haver",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 24 (FUVEST 2012)",
+      "aula_tema": "Topico gramatical: modos verbais"
+    },
+    {
+      "id": "lp9-v1p2-034",
+      "question": "No texto sobre o Cabo Bojador: \"Nenhum marinheiro desde os antigos cartagineses tinha se aventurado ao sul do Bojador e retornado.\" A forma verbal \"tinha se aventurado\" e:",
+      "options": [
+        {"alias":"A", "name":"Preterito imperfeito do indicativo, indicando habito ou acao continua no passado."},
+        {"alias":"B", "name":"Preterito perfeito composto, indicando acao que aconteceu repetidas vezes ate o presente."},
+        {"alias":"C", "name":"Preterito mais-que-perfeito composto, indicando acao anterior a outro fato passado na narrativa."},
+        {"alias":"D", "name":"Futuro do preterito composto, indicando hipotese sobre o passado."}
+      ],
+      "correct": "C",
+      "explanation": "\"Tinha se aventurado\" = tinha/havia + participio = PRETERITO MAIS-QUE-PERFEITO COMPOSTO. Indica acao que ocorreu ANTES de outro fato passado. No contexto: antes da expedicao de Gil Eanes (passado), nenhum marinheiro havia feito isso (passado mais distante). E a forma mais usada no portugues brasileiro em substituicao ao mais-que-perfeito simples.",
+      "subject": "Topico gramatical: preterito mais-que-perfeito composto",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 28",
+      "aula_tema": "Topico gramatical: transitividade e tempos verbais"
+    },
+    {
+      "id": "lp9-v1p2-035",
+      "question": "No trecho: \"O infante dom Henrique de Portugal enviou catorze expedicoes de navios para circundar o perigoso cabo\" — qual e a classificacao do verbo \"enviou\" quanto a transitividade?",
+      "options": [
+        {"alias":"A", "name":"Verbo Transitivo Direto (VTD) — \"catorze expedicoes\" e o objeto direto (sem preposicao)."},
+        {"alias":"B", "name":"Verbo Transitivo Indireto (VTI) — \"para circundar\" e o objeto indireto."},
+        {"alias":"C", "name":"Verbo Intransitivo (VI) — \"enviou\" nao precisa de complemento para ter sentido completo."},
+        {"alias":"D", "name":"Verbo Transitivo Direto e Indireto (VTDI) — \"expedicoes\" e OD e \"para o cabo\" e OI."}
+      ],
+      "correct": "A",
+      "explanation": "\"Enviou catorze expedicoes\" — \"catorze expedicoes\" e o OBJETO DIRETO (responde \"enviou o que?\", sem preposicao obrigatoria). \"Para circundar o perigoso cabo\" e um adjunto adverbial de finalidade, NAO objeto indireto (o OI exigiria preposicao com valor argumental, como \"gostou de\", \"deu a\"). Portanto, VTD.",
+      "subject": "Topico gramatical: transitividade verbal — VTD vs. adjunto adverbial",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios LP 9 Ano - Aula 28",
+      "aula_tema": "Topico gramatical: transitividade verbal"
+    }
+  ]
+}

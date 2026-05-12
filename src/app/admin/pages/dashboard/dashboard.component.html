@@ -11,9 +11,6 @@
         <button class="btn btn-primary" (click)="openCreateSchoolModal()">
           ➕ Nova Escola
         </button>
-        <button class="btn btn-secondary" (click)="openChangePasswordModal()" title="Alterar senha do admin">
-          🔐 Alterar Senha
-        </button>
       </div>
     </div>
 
@@ -131,6 +128,20 @@
                   {{ school.subscriptionStatus === 'active' ? '🚫 Cancelar' : '✅ Ativar' }}
                 </button>
                 <button
+                  class="btn-action btn-sm"
+                  (click)="viewSchoolPassword(school); $event.stopPropagation()"
+                  title="Ver senha da escola"
+                >
+                  🔑 Senha
+                </button>
+                <button
+                  class="btn-action btn-sm btn-edit"
+                  (click)="openEditSchoolModal(school); $event.stopPropagation()"
+                  title="Editar dados da escola"
+                >
+                  ✏️ Editar
+                </button>
+                <button
                   class="btn-action btn-sm btn-danger"
                   (click)="deleteSchool(school); $event.stopPropagation()"
                   title="Deletar escola"
@@ -178,49 +189,112 @@
         </div>
       </div>
 
-      <!-- Tabela de Alunos -->
+      <!-- Tabela de Alunos por Turma (expansível) -->
       <div class="students-section">
-        <h3>👥 Alunos</h3>
-        <div class="table-container">
-          <table class="students-table">
-            <thead>
-              <tr>
-                <th>RA</th>
-                <th>Nome</th>
-                <th>Classe</th>
-                <th>Tentativas</th>
-                <th>Score Médio</th>
-                <th>Última Tentativa</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let student of students" class="student-row">
-                <td class="ra">{{ student.ra }}</td>
-                <td class="name">{{ student.name }}</td>
-                <td>{{ student.class }}</td>
-                <td>{{ student.totalAttempts }}</td>
-                <td>
-                  <span class="score" *ngIf="student.totalAttempts > 0">
-                    {{ student.averageScore }}
-                  </span>
-                  <span *ngIf="student.totalAttempts === 0" class="no-data">-</span>
-                </td>
-                <td>
-                  {{
-                    student.lastAttempt
-                      ? formatDateTime(student.lastAttempt.timestamp)
-                      : "-"
-                  }}
-                </td>
-                <td>
-                  <span class="status" [class.active]="student.status === 'active'">
-                    {{ student.status === "active" ? "✅ Ativo" : "❌ Bloqueado" }}
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="students-section-header">
+          <h3>👥 Alunos ({{ students.length }})</h3>
+          <div class="expand-actions">
+            <button class="btn-text" (click)="expandAllClasses()">▼ Expandir tudo</button>
+            <button class="btn-text" (click)="collapseAllClasses()">▶ Recolher tudo</button>
+          </div>
+        </div>
+
+        <div *ngFor="let group of groupedStudents" class="class-group">
+          <!-- Cabeçalho da Turma -->
+          <div class="class-header" (click)="toggleClass(group.className)">
+            <span class="class-toggle">{{ expandedClasses.has(group.className) ? '▼' : '▶' }}</span>
+            <span class="class-name">📚 {{ group.className }}</span>
+            <span class="class-count">{{ group.students.length }} alunos</span>
+            <span class="class-stats">
+              Participação: {{ getClassParticipation(group.students) }}&nbsp;&nbsp;|&nbsp;&nbsp;Score médio: {{ getClassAvgScore(group.students) }}
+            </span>
+            <button class="btn-delete-class" (click)="$event.stopPropagation(); deleteClass(group.className)" title="Deletar turma e todos os alunos">
+              🗑️ Deletar Turma
+            </button>
+          </div>
+
+          <!-- Alunos da Turma -->
+          <div *ngIf="expandedClasses.has(group.className)" class="class-students-table">
+            <table class="students-table">
+              <thead>
+                <tr>
+                  <th>RA</th>
+                  <th>Nome</th>
+                  <th>Turma</th>
+                  <th>Tentativas</th>
+                  <th>Score Médio</th>
+                  <th>Última Tentativa</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of group.students" class="student-row">
+                  <td class="ra">{{ student.ra }}</td>
+                  <td class="name">{{ student.name }}</td>
+                  <td class="student-class-badge"><span class="class-badge">{{ student.class }}</span></td>
+                  <td>{{ student.totalAttempts }}</td>
+                  <td>
+                    <span class="score" *ngIf="student.totalAttempts > 0">{{ student.averageScore }}</span>
+                    <span *ngIf="student.totalAttempts === 0" class="no-data">-</span>
+                  </td>
+                  <td>{{ student.lastAttempt ? formatDateTime(student.lastAttempt.timestamp) : '-' }}</td>
+                  <td>
+                    <span class="status" [class.active]="student.status === 'active'">
+                      {{ student.status === 'active' ? '✅ Ativo' : '❌ Bloqueado' }}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div *ngIf="students.length === 0" class="no-data">
+          <p>📭 Nenhum aluno cadastrado</p>
+        </div>
+      </div>
+
+      <!-- Seção de Professores/Coordenadores -->
+      <div class="teachers-section">
+        <div class="teachers-section-header">
+          <h3>👨‍🏫 Professores ({{ teachers.length }})</h3>
+          <button class="btn btn-sm btn-add-teacher" (click)="openAddTeacherForm()">+ Adicionar</button>
+        </div>
+
+        <!-- Formulário adicionar professor -->
+        <div *ngIf="showAddTeacherForm" class="add-teacher-form">
+          <input class="form-input-sm" type="text" placeholder="Nome *" [(ngModel)]="newTeacher.name" />
+          <input class="form-input-sm" type="email" placeholder="Email *" [(ngModel)]="newTeacher.email" />
+          <select class="form-input-sm" [(ngModel)]="newTeacher.role">
+            <option value="professor">Professor</option>
+            <option value="coordenador">Coordenador</option>
+          </select>
+          <div class="add-teacher-actions">
+            <button class="btn btn-sm btn-success" (click)="addTeacher()" [disabled]="isSavingTeacher">
+              {{ isSavingTeacher ? 'Salvando...' : 'Salvar' }}
+            </button>
+            <button class="btn btn-sm btn-secondary" (click)="closeAddTeacherForm()">Cancelar</button>
+          </div>
+        </div>
+
+        <!-- Lista de professores -->
+        <div *ngIf="teachers.length > 0" class="teachers-list">
+          <div *ngFor="let teacher of teachers" class="teacher-item">
+            <div class="teacher-info">
+              <span class="teacher-name">{{ teacher.name }}</span>
+              <span class="teacher-email">{{ teacher.email }}</span>
+            </div>
+            <div class="teacher-actions">
+              <span class="teacher-role-badge" [class.coordenador]="teacher.role === 'coordenador'">
+                {{ teacher.role === 'coordenador' ? '🎓 Coordenador' : '📚 Professor' }}
+              </span>
+              <button class="btn-remove-teacher" (click)="removeTeacher(teacher)" title="Remover">✕</button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="teachers.length === 0 && !showAddTeacherForm" class="no-data-sm">
+          <p>Nenhum professor cadastrado</p>
         </div>
       </div>
     </div>
@@ -259,9 +333,19 @@
           Senha: {{ selectedSchool?.sharedPassword }}
         </p>
 
-        <button class="btn btn-primary" (click)="closePasswordModal()">
-          Fechar
-        </button>
+        <div class="password-modal-actions">
+          <button 
+            class="btn btn-warning" 
+            (click)="regenerateSchoolPassword()"
+            [disabled]="isGeneratingPassword"
+            title="Gera uma nova senha. A senha atual será desativada."
+          >
+            {{ isGeneratingPassword ? '⏳ Gerando...' : '🔄 Gerar Nova Senha' }}
+          </button>
+          <button class="btn btn-primary" (click)="closePasswordModal()">
+            Fechar
+          </button>
+        </div>
       </div>
     </div>
 
@@ -466,10 +550,64 @@
     </div>
 
     <!-- Modal: Criar Nova Escola -->
-    <div *ngIf="showCreateSchoolModal" class="modal-overlay" (click)="closeCreateSchoolModal()">
+
+    <!-- Modal: Editar Escola -->
+    <div *ngIf="showEditSchoolModal" class="modal-overlay" (click)="closeEditSchoolModal()">
+      <div class="modal" (click)="$event.stopPropagation()">
+        <div class="modal-header-with-close">
+          <h3>✏️ Editar Escola</h3>
+          <button class="btn-close-modal" (click)="closeEditSchoolModal()" title="Fechar">✕</button>
+        </div>
+
+        <div class="form-group">
+          <div class="form-field">
+            <label>Nome da Escola *</label>
+            <input type="text" [(ngModel)]="editSchoolForm.name" class="form-input" [disabled]="isSavingSchool" />
+          </div>
+          <div class="form-field">
+            <label>Cidade *</label>
+            <input type="text" [(ngModel)]="editSchoolForm.city" class="form-input" [disabled]="isSavingSchool" />
+          </div>
+          <div class="form-field">
+            <label>Estado</label>
+            <input type="text" [(ngModel)]="editSchoolForm.state" placeholder="Ex: SP" class="form-input" [disabled]="isSavingSchool" />
+          </div>
+          <div class="form-field">
+            <label>Diretor(a)</label>
+            <input type="text" [(ngModel)]="editSchoolForm.directorName" placeholder="Ex: Maria Silva" class="form-input" [disabled]="isSavingSchool" />
+          </div>
+          <div class="form-field">
+            <label>E-mail</label>
+            <input type="email" [(ngModel)]="editSchoolForm.email" placeholder="Ex: escola@email.com" class="form-input" [disabled]="isSavingSchool" />
+          </div>
+          <div class="form-field">
+            <label>Telefone</label>
+            <input type="text" [(ngModel)]="editSchoolForm.phone" placeholder="Ex: (11) 99999-0000" class="form-input" [disabled]="isSavingSchool" />
+          </div>
+          <div class="form-field">
+            <label>Tipo de Assinatura</label>
+            <select [(ngModel)]="editSchoolForm.subscriptionType" class="form-input" [disabled]="isSavingSchool">
+              <option value="donated">🎁 Doado</option>
+              <option value="sold">💰 Vendido</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary" (click)="closeEditSchoolModal()" [disabled]="isSavingSchool">Cancelar</button>
+            <button class="btn btn-primary" (click)="saveSchoolEdit()" [disabled]="isSavingSchool">
+              {{ isSavingSchool ? '⏳ Salvando...' : '✅ Salvar Alterações' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showCreateSchoolModal" class="modal-overlay" (click)="!createdSchoolData && closeCreateSchoolModal()">
       <div class="modal modal-large" (click)="$event.stopPropagation()">
         <h3 *ngIf="!createdSchoolData">➕ Criar Nova Escola</h3>
-        <h3 *ngIf="createdSchoolData">✅ Escola Criada com Sucesso!</h3>
+        <div *ngIf="createdSchoolData" class="modal-header-with-close">
+          <h3>✅ Escola Criada com Sucesso!</h3>
+          <button class="btn-close-modal" (click)="closeCreateSchoolModal()" title="Fechar">✕</button>
+        </div>
 
         <!-- Formulário de Criação -->
         <div *ngIf="!createdSchoolData" class="form-group">

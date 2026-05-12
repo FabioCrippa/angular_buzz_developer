@@ -127,10 +127,11 @@ export class AuthService {
           this.setCurrentUser(user, token);
         }
       } else {
-        // ✅ NÃO limpar se admin ou estudante estiver logado (não usam Firebase Auth)
+        // ✅ NÃO limpar se admin, estudante ou professor estiver logado (não usam Firebase Auth)
         const isAdmin = !!localStorage.getItem('sowlfy_admin_token');
         const isStudent = !!localStorage.getItem('student_token');
-        if (!isAdmin && !isStudent) {
+        const isTeacher = !!localStorage.getItem('teacher_token');
+        if (!isAdmin && !isStudent && !isTeacher) {
           this.clearAllUserData();
         }
       }
@@ -159,8 +160,13 @@ export class AuthService {
         };
       }
       return null;
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erro ao carregar usuário do Firestore:', error);
+      // Repropaga erros de rede para que o login mostre a mensagem correta
+      if (error?.code === 'unavailable' || error?.code === 'failed-precondition' ||
+          error?.code === 'resource-exhausted') {
+        throw { code: 'auth/network-request-failed', message: 'Erro de conexão. Verifique sua internet' };
+      }
       return null;
     }
   }
@@ -319,20 +325,37 @@ export class AuthService {
 
   private handleFirebaseError(error: any): AuthError {
     const errorCode = error.code || 'UNKNOWN_ERROR';
-    
+
     const errorMessages: { [key: string]: string } = {
       'auth/email-already-in-use': 'Este email já está cadastrado',
       'auth/invalid-email': 'Email inválido',
       'auth/weak-password': 'Senha muito fraca. Use no mínimo 6 caracteres',
       'auth/user-not-found': 'Usuário não encontrado',
       'auth/wrong-password': 'Senha incorreta',
+      // Firebase SDK moderno unifica user-not-found + wrong-password neste código
+      'auth/invalid-credential': 'Email ou senha incorretos',
+      'INVALID_LOGIN_CREDENTIALS': 'Email ou senha incorretos', // variante de alguns SDKs
       'auth/too-many-requests': 'Muitas tentativas. Tente novamente mais tarde',
-      'auth/network-request-failed': 'Erro de conexão. Verifique sua internet'
+      'auth/network-request-failed': 'Erro de conexão. Verifique sua internet',
+      'auth/user-disabled': 'Esta conta foi desativada',
+      'auth/operation-not-allowed': 'Operação não permitida',
+      'auth/popup-closed-by-user': 'Login cancelado',
+      'auth/cancelled-popup-request': 'Login cancelado',
+      // Mobile / Safari iOS: localStorage bloqueado por "Prevent Cross-Site Tracking"
+      'auth/web-storage-unsupported': 'Seu navegador está bloqueando o armazenamento necessário. Desative o modo privado ou libere cookies.',
+      'auth/internal-error': 'Erro interno do servidor de autenticação. Tente novamente.',
+      'auth/timeout': 'Tempo de conexão esgotado. Verifique sua internet.',
     };
 
+    // Erros lançados manualmente (sem .code) — usa a mensagem original
+    if (!error.code && error.message) {
+      return { code: 'UNKNOWN_ERROR', message: error.message, details: error };
+    }
+
+    // Inclui o código desconhecido na mensagem para facilitar o diagnóstico
     return {
       code: errorCode,
-      message: errorMessages[errorCode] || 'Erro ao processar autenticação',
+      message: errorMessages[errorCode] || `Erro ao processar autenticação (${errorCode})`,
       details: error
     };
   }
@@ -381,6 +404,11 @@ export class AuthService {
       return true;
     }
 
+    // ✅ VERIFICAR TOKEN DE PROFESSOR
+    if (localStorage.getItem('teacher_token') && localStorage.getItem('teacher_data')) {
+      return true;
+    }
+
     // ✅ VERIFICAR TOKEN DE USUÁRIO INDIVIDUAL (Firebase)
     const token = this.getAuthToken();
     const storedUser = localStorage.getItem(this.STORAGE_KEYS.USER);
@@ -407,6 +435,14 @@ export class AuthService {
   isPremium(): boolean {
     // Admin sempre tem acesso premium
     if (localStorage.getItem('sowlfy_admin_token') && localStorage.getItem('sowlfy_admin_data')) {
+      return true;
+    }
+    // Estudante de escola sempre tem acesso premium
+    if (localStorage.getItem('student_token') && localStorage.getItem('student_data')) {
+      return true;
+    }
+    // Professor/coordenador sempre tem acesso premium
+    if (localStorage.getItem('teacher_token') && localStorage.getItem('teacher_data')) {
       return true;
     }
     const user = this.currentUserSubject.value;
@@ -518,7 +554,9 @@ export class AuthService {
         key === 'sowlfy_admin_data' ||
         key === 'student_token' ||
         key === 'student_data' ||
-        key === 'student_schoolId'
+        key === 'student_schoolId' ||
+        key === 'teacher_token' ||
+        key === 'teacher_data'
       ) {
         return; // Manter essas chaves
       }

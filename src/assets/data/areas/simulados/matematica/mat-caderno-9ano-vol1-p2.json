@@ -1,0 +1,611 @@
+{
+  "metadata": {
+    "simulado": "Matematica - Caderno de Exercicios",
+    "tipo": "simulado",
+    "disciplina": "Matematica",
+    "serie": "9 Ano",
+    "bimestre": "Volume 1",
+    "parte": "Parte 2",
+    "exame": "Caderno de Exercicios",
+    "ano": 2025,
+    "duracao": 90,
+    "totalQuestoes": 35
+  },
+  "questions": [
+    {
+      "id": "mat9-v1p2-001",
+      "question": "Qual é o número que, elevado ao quadrado, resulta em 121?",
+      "options": [
+        {"alias": "A", "name": "9"},
+        {"alias": "B", "name": "10"},
+        {"alias": "C", "name": "11"},
+        {"alias": "D", "name": "12"}
+      ],
+      "correct": "C",
+      "explanation": "Buscamos n tal que n² = 121. Testando: 11² = 11 × 11 = 121. Logo, o número é 11. Definição: a raiz quadrada de 121 é o número positivo cujo quadrado é 121.",
+      "subject": "Radiciacao: raiz quadrada",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-002",
+      "question": "Qual número natural corresponde a √169?",
+      "options": [
+        {"alias": "A", "name": "9"},
+        {"alias": "B", "name": "11"},
+        {"alias": "C", "name": "12"},
+        {"alias": "D", "name": "13"}
+      ],
+      "correct": "D",
+      "explanation": "√169: buscamos n tal que n² = 169. Testando: 13² = 13 × 13 = 169. Logo, √169 = 13.",
+      "subject": "Radiciacao: raiz quadrada de quadrado perfeito",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-003",
+      "question": "Calcule o resultado da operação: ³√343",
+      "options": [
+        {"alias": "A", "name": "4"},
+        {"alias": "B", "name": "5"},
+        {"alias": "C", "name": "6"},
+        {"alias": "D", "name": "7"}
+      ],
+      "correct": "D",
+      "explanation": "Buscamos n tal que n³ = 343. Testando: 7³ = 7 × 7 × 7 = 49 × 7 = 343. Logo, ³√343 = 7.",
+      "subject": "Radiciacao: raiz cubica",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-004",
+      "question": "Joana planeja comprar um terreno com formato quadrado para construir uma área de lazer. Ela deseja que o terreno tenha 400 m². Quais devem ser as medidas dos lados do terreno?",
+      "options": [
+        {"alias": "A", "name": "4 m"},
+        {"alias": "B", "name": "10 m"},
+        {"alias": "C", "name": "20 m"},
+        {"alias": "D", "name": "40 m"}
+      ],
+      "correct": "C",
+      "explanation": "Área do quadrado = lado². Logo: 400 = lado². Aplicando a raiz quadrada: lado = √400 = 20 m. Verificação: 20² = 400 m². ✓",
+      "subject": "Radiciacao: raiz quadrada aplicada a geometria",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-005",
+      "question": "Paulo é jardineiro e precisa encher um vaso com 1 000 cm³ de terra. Quais são as medidas das arestas desse vaso, sabendo que ele tem o formato de um cubo?",
+      "options": [
+        {"alias": "A", "name": "10 cm"},
+        {"alias": "B", "name": "100 cm"},
+        {"alias": "C", "name": "500 cm"},
+        {"alias": "D", "name": "1 000 cm"}
+      ],
+      "correct": "A",
+      "explanation": "Volume do cubo = aresta³. Logo: 1000 = aresta³. Aplicando a raiz cúbica: aresta = ³√1000 = 10 cm. Verificação: 10³ = 1000 cm³. ✓",
+      "subject": "Radiciacao: raiz cubica aplicada ao volume",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-006",
+      "question": "Para confeccionar um dado com formato cúbico, um artesão usou 216 mm³ de resina. Quantos milímetros medem as arestas do cubo que representa esse dado?",
+      "options": [
+        {"alias": "A", "name": "3"},
+        {"alias": "B", "name": "4"},
+        {"alias": "C", "name": "5"},
+        {"alias": "D", "name": "6"}
+      ],
+      "correct": "D",
+      "explanation": "Volume = aresta³ = 216 mm³. Aresta = ³√216 = 6 mm, pois 6³ = 6 × 6 × 6 = 216. ✓",
+      "subject": "Radiciacao: raiz cubica aplicada ao volume",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-007",
+      "question": "O rótulo de uma lata de tinta informa que a quantidade disponível na embalagem tem rendimento de 144 m². Com uma lata de tinta, é possível pintar um quadrado cujos lados medem:",
+      "options": [
+        {"alias": "A", "name": "10 m"},
+        {"alias": "B", "name": "12 m"},
+        {"alias": "C", "name": "140 m"},
+        {"alias": "D", "name": "144 m"}
+      ],
+      "correct": "B",
+      "explanation": "Área do quadrado = lado². Logo: 144 = lado². Aplicando a raiz quadrada: lado = √144 = 12 m. Verificação: 12² = 144 m². ✓",
+      "subject": "Radiciacao: raiz quadrada aplicada",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-008",
+      "question": "(PROVA PARANÁ 2022) Qual é o resultado da expressão: 2 · (1/9)^(1/2)?",
+      "options": [
+        {"alias": "A", "name": "2/81"},
+        {"alias": "B", "name": "2/18"},
+        {"alias": "C", "name": "2/3"},
+        {"alias": "D", "name": "4/9"}
+      ],
+      "correct": "C",
+      "explanation": "(1/9)^(1/2) = √(1/9) = 1/√9 = 1/3. Logo, 2 · (1/9)^(1/2) = 2 · (1/3) = 2/3.",
+      "subject": "Radiciacao: potencia de expoente fracionario",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "PROVA PARANA 2022 - Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-009",
+      "question": "Um forno elétrico foi projetado para funcionar em uma potência de 256 W. Em modo de economia de energia, a nova potência será 256^(1/4) W. Qual a nova potência?",
+      "options": [
+        {"alias": "A", "name": "4 W"},
+        {"alias": "B", "name": "64 W"},
+        {"alias": "C", "name": "128 W"},
+        {"alias": "D", "name": "1 024 W"}
+      ],
+      "correct": "A",
+      "explanation": "256^(1/4) = (2^8)^(1/4) = 2^(8/4) = 2^2 = 4 W. Alternativa: ⁴√256 = ⁴√(4^4) = 4. Verificação: 4^4 = 256. ✓",
+      "subject": "Radiciacao: raiz de indice 4 e potencia fracionaria",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-010",
+      "question": "Um aquário tem formato cúbico e capacidade para 8 000 litros de água. Para um experimento, o novo volume será a raiz cúbica do volume original. Sabendo que 1 m³ equivale a 1 000 litros, qual será a nova medida da aresta do aquário?",
+      "options": [
+        {"alias": "A", "name": "2 m"},
+        {"alias": "B", "name": "2^(1/3) m"},
+        {"alias": "C", "name": "2^(2/3) m"},
+        {"alias": "D", "name": "4 m"}
+      ],
+      "correct": "B",
+      "explanation": "Volume original = 8000 L = 8 m³. Novo volume = ³√8 = 2 m³. Nova aresta: a³ = 2, logo a = ³√2 = 2^(1/3) m ≈ 1,26 m. A opção A (2 m) seria a aresta original (2³=8 m³), não a nova.",
+      "subject": "Radiciacao: raiz cubica e potencia fracionaria",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Dificil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 11",
+      "aula_tema": "Radiciacao: raiz quadrada e raiz cubica"
+    },
+    {
+      "id": "mat9-v1p2-011",
+      "question": "Qual alternativa representa corretamente 32^(1/5) na forma de radical?",
+      "options": [
+        {"alias": "A", "name": "√32"},
+        {"alias": "B", "name": "³√32"},
+        {"alias": "C", "name": "⁴√32"},
+        {"alias": "D", "name": "⁵√32"}
+      ],
+      "correct": "D",
+      "explanation": "A relação entre potência de expoente fracionário e radical é: a^(1/n) = ⁿ√a. Portanto, 32^(1/5) = ⁵√32 (raiz quinta de 32). Verificação: (⁵√32)^5 = 32. ✓",
+      "subject": "Radiciacao: conversao entre radical e potencia fracionaria",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 12",
+      "aula_tema": "Radiciacao: conversao entre radical e potencia fracionaria"
+    },
+    {
+      "id": "mat9-v1p2-012",
+      "question": "Qual alternativa representa corretamente ⁴√16 escrito como potência de expoente fracionário?",
+      "options": [
+        {"alias": "A", "name": "16^4"},
+        {"alias": "B", "name": "16^(1/2)"},
+        {"alias": "C", "name": "16^(1/4)"},
+        {"alias": "D", "name": "16^2"}
+      ],
+      "correct": "C",
+      "explanation": "A relação é: ⁿ√a = a^(1/n). Portanto, ⁴√16 = 16^(1/4). Verificação: 16^(1/4) = (2^4)^(1/4) = 2^1 = 2, e ⁴√16 = 2 pois 2^4 = 16. ✓",
+      "subject": "Radiciacao: conversao entre radical e potencia fracionaria",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 12",
+      "aula_tema": "Radiciacao: conversao entre radical e potencia fracionaria"
+    },
+    {
+      "id": "mat9-v1p2-013",
+      "question": "Calcule o resultado da operação: ³√(2007³)",
+      "options": [
+        {"alias": "A", "name": "2007^3"},
+        {"alias": "B", "name": "2007^(1/3)"},
+        {"alias": "C", "name": "2007"},
+        {"alias": "D", "name": "2007^(1/9)"}
+      ],
+      "correct": "C",
+      "explanation": "Propriedade: ⁿ√(aⁿ) = a, para a ≥ 0. Portanto, ³√(2007³) = (2007³)^(1/3) = 2007^(3/3) = 2007^1 = 2007.",
+      "subject": "Radiciacao: propriedade fundamental",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 13",
+      "aula_tema": "Radiciacao: propriedades dos radicais"
+    },
+    {
+      "id": "mat9-v1p2-014",
+      "question": "Qual é o resultado do produto ³√16 × ³√4?",
+      "options": [
+        {"alias": "A", "name": "4"},
+        {"alias": "B", "name": "8"},
+        {"alias": "C", "name": "12"},
+        {"alias": "D", "name": "20"}
+      ],
+      "correct": "A",
+      "explanation": "Propriedade: ⁿ√a · ⁿ√b = ⁿ√(a·b). Logo: ³√16 × ³√4 = ³√(16 × 4) = ³√64 = 4, pois 4³ = 64. ✓",
+      "subject": "Radiciacao: produto de radicais de mesmo indice",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 13",
+      "aula_tema": "Radiciacao: propriedades dos radicais"
+    },
+    {
+      "id": "mat9-v1p2-015",
+      "question": "Sabendo que 125 = 5³, calcule o resultado de ³√500 ÷ ³√4.",
+      "options": [
+        {"alias": "A", "name": "³√(500³)"},
+        {"alias": "B", "name": "125"},
+        {"alias": "C", "name": "5"},
+        {"alias": "D", "name": "5³"}
+      ],
+      "correct": "C",
+      "explanation": "Propriedade: ⁿ√a ÷ ⁿ√b = ⁿ√(a/b). Logo: ³√500 ÷ ³√4 = ³√(500/4) = ³√125. Como 125 = 5³, temos ³√125 = 5. ✓",
+      "subject": "Radiciacao: quociente de radicais de mesmo indice",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 13",
+      "aula_tema": "Radiciacao: propriedades dos radicais"
+    },
+    {
+      "id": "mat9-v1p2-016",
+      "question": "(EFOMM 2023) Duas caixas cúbicas A e B têm volumes iguais a V e 4V, respectivamente. Qual é a razão entre as áreas das bases das caixas B e A?",
+      "options": [
+        {"alias": "A", "name": "³√2"},
+        {"alias": "B", "name": "³√4"},
+        {"alias": "C", "name": "2"},
+        {"alias": "D", "name": "2·³√2"}
+      ],
+      "correct": "D",
+      "explanation": "Aresta_A = V^(1/3); Aresta_B = (4V)^(1/3) = 4^(1/3)·V^(1/3). Área base_A = V^(2/3); Área base_B = 4^(2/3)·V^(2/3). Razão = 4^(2/3) = (2²)^(2/3) = 2^(4/3) = 2·2^(1/3) = 2·³√2.",
+      "subject": "Radiciacao: potencia fracionaria e razao de areas",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Dificil",
+      "source": "EFOMM 2023 - Caderno de Exercicios MAT 9 Ano - Aula 13",
+      "aula_tema": "Radiciacao: propriedades dos radicais"
+    },
+    {
+      "id": "mat9-v1p2-017",
+      "question": "(COLÉGIO PEDRO II 2018) Um professor criou o seguinte problema dos quatro 'quatros': x = 4⁴ ÷ ⁴√4. Qual o valor de x?",
+      "options": [
+        {"alias": "A", "name": "16"},
+        {"alias": "B", "name": "128"},
+        {"alias": "C", "name": "128√2"},
+        {"alias": "D", "name": "256√2"}
+      ],
+      "correct": "C",
+      "explanation": "4⁴ = 256. ⁴√4 = 4^(1/4) = (2²)^(1/4) = 2^(1/2) = √2. x = 256 ÷ √2 = 256/√2 · (√2/√2) = 256√2/2 = 128√2.",
+      "subject": "Radiciacao: operacoes com potencias e radicais",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Dificil",
+      "source": "Colegio Pedro II 2018 - Caderno de Exercicios MAT 9 Ano - Aula 13",
+      "aula_tema": "Radiciacao: propriedades dos radicais"
+    },
+    {
+      "id": "mat9-v1p2-018",
+      "question": "(MapBiomas 2024) A perda média de vegetação nativa no Brasil foi de cerca de 1,44 km² por hora. Supondo que essa área tivesse formato quadrado, qual seria a medida do lado desse quadrado?",
+      "options": [
+        {"alias": "A", "name": "1,0 km"},
+        {"alias": "B", "name": "1,2 km"},
+        {"alias": "C", "name": "1,4 km"},
+        {"alias": "D", "name": "1,44 km"}
+      ],
+      "correct": "B",
+      "explanation": "Área = lado². Logo: 1,44 = lado². lado = √1,44 = 1,2 km. Verificação: 1,2² = 1,44. ✓",
+      "subject": "Radiciacao: raiz quadrada em contexto ambiental",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "MapBiomas 2024 - Caderno de Exercicios MAT 9 Ano - Aula 14",
+      "aula_tema": "Radiciacao: operacoes com expoentes fracionarios"
+    },
+    {
+      "id": "mat9-v1p2-019",
+      "question": "Uma empresa fabrica caixas cúbicas com volume de 512 cm³. Qual é a medida da aresta da caixa?",
+      "options": [
+        {"alias": "A", "name": "8 cm"},
+        {"alias": "B", "name": "16 cm"},
+        {"alias": "C", "name": "32 cm"},
+        {"alias": "D", "name": "4 cm"}
+      ],
+      "correct": "A",
+      "explanation": "Volume = aresta³ = 512 cm³. aresta = ³√512 = 8 cm. Verificação: 8³ = 8 × 8 × 8 = 512. ✓",
+      "subject": "Radiciacao: raiz cubica aplicada",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 14",
+      "aula_tema": "Radiciacao: operacoes com expoentes fracionarios"
+    },
+    {
+      "id": "mat9-v1p2-020",
+      "question": "Uma cidade que ocupa um território em forma de quadrado possui 22 500 habitantes e tem densidade populacional de 2 500 hab./km². Qual é a medida do lado dessa cidade?",
+      "options": [
+        {"alias": "A", "name": "3 km"},
+        {"alias": "B", "name": "10 km"},
+        {"alias": "C", "name": "15 km"},
+        {"alias": "D", "name": "30 km"}
+      ],
+      "correct": "A",
+      "explanation": "Área = população / densidade = 22500 / 2500 = 9 km². Lado = √9 = 3 km. Verificação: 3² = 9 km². ✓",
+      "subject": "Radiciacao: raiz quadrada em contexto demografico",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 14",
+      "aula_tema": "Radiciacao: operacoes com expoentes fracionarios"
+    },
+    {
+      "id": "mat9-v1p2-021",
+      "question": "Uma calculadora foi programada para resolver a expressão x^(4/3). O estudante digitou x = 27. Qual foi o resultado exibido no visor?",
+      "options": [
+        {"alias": "A", "name": "9"},
+        {"alias": "B", "name": "27"},
+        {"alias": "C", "name": "81"},
+        {"alias": "D", "name": "243"}
+      ],
+      "correct": "C",
+      "explanation": "27^(4/3) = (27^(1/3))^4 = (³√27)^4 = 3^4 = 81. Passo a passo: ³√27 = 3 (pois 3³=27); depois 3^4 = 81.",
+      "subject": "Radiciacao: potencia de expoente fracionario",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 14",
+      "aula_tema": "Radiciacao: operacoes com expoentes fracionarios"
+    },
+    {
+      "id": "mat9-v1p2-022",
+      "question": "Assinale a alternativa que apresenta uma representação do número 34.",
+      "options": [
+        {"alias": "A", "name": "2 · 2 · 5 · 7"},
+        {"alias": "B", "name": "2 · 17"},
+        {"alias": "C", "name": "2² · 5 · 7"},
+        {"alias": "D", "name": "2 · 5"}
+      ],
+      "correct": "B",
+      "explanation": "34 ÷ 2 = 17. Como 17 é número primo, a decomposição em fatores primos de 34 é: 34 = 2 × 17. Verificação: 2 × 17 = 34. ✓",
+      "subject": "Fatoracao prima",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 16",
+      "aula_tema": "Fatoracao prima e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-023",
+      "question": "Qual dos números abaixo é o maior?",
+      "options": [
+        {"alias": "A", "name": "2 · 3 · 7 = 42"},
+        {"alias": "B", "name": "2 · 2 · 2 · 2 · 2 = 32"},
+        {"alias": "C", "name": "3 · 5 · 7 = 105"},
+        {"alias": "D", "name": "3 · 3 · 3 · 3 = 81"}
+      ],
+      "correct": "C",
+      "explanation": "Calculando cada opção: A) 2·3·7 = 42. B) 2^5 = 32. C) 3·5·7 = 105. D) 3^4 = 81. O maior é 105 = 3·5·7.",
+      "subject": "Fatoracao prima: comparacao de valores",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 16",
+      "aula_tema": "Fatoracao prima e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-024",
+      "question": "Qual é a raiz cúbica do número 216?",
+      "options": [
+        {"alias": "A", "name": "4"},
+        {"alias": "B", "name": "5"},
+        {"alias": "C", "name": "6"},
+        {"alias": "D", "name": "7"}
+      ],
+      "correct": "C",
+      "explanation": "³√216: buscamos n tal que n³ = 216. 6³ = 6 × 6 × 6 = 36 × 6 = 216. Logo, ³√216 = 6. Dica: fatorando 216 = 2³ × 3³ = 6³.",
+      "subject": "Radiciacao: raiz cubica usando fatoracao",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 16",
+      "aula_tema": "Fatoracao prima e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-025",
+      "question": "(SAEB 2009 – Adaptada) Carlos atravessou uma pista retangular pela diagonal para tomar água. O comprimento dessa diagonal pode ser representado por √625 metros. Essa medida é equivalente a:",
+      "options": [
+        {"alias": "A", "name": "7√5"},
+        {"alias": "B", "name": "17"},
+        {"alias": "C", "name": "15√2"},
+        {"alias": "D", "name": "25"}
+      ],
+      "correct": "D",
+      "explanation": "√625 = 25, pois 25² = 625. Verificando as outras opções: 7√5 ≈ 15,65; 17² = 289 ≠ 625; (15√2)² = 450 ≠ 625. Apenas 25² = 625. ✓",
+      "subject": "Radiciacao: raiz quadrada de quadrado perfeito",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "SAEB 2009 - Caderno de Exercicios MAT 9 Ano - Aula 16",
+      "aula_tema": "Fatoracao prima e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-026",
+      "question": "Qual é o valor de √2500?",
+      "options": [
+        {"alias": "A", "name": "34"},
+        {"alias": "B", "name": "50"},
+        {"alias": "C", "name": "62"},
+        {"alias": "D", "name": "118"}
+      ],
+      "correct": "B",
+      "explanation": "√2500 = √(25 × 100) = √25 × √100 = 5 × 10 = 50. Verificação: 50² = 2500. ✓",
+      "subject": "Radiciacao: raiz quadrada com fatoracao",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 16",
+      "aula_tema": "Fatoracao prima e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-027",
+      "question": "Simplifique a expressão √45.",
+      "options": [
+        {"alias": "A", "name": "3√3"},
+        {"alias": "B", "name": "3√5"},
+        {"alias": "C", "name": "5√3"},
+        {"alias": "D", "name": "9√5"}
+      ],
+      "correct": "B",
+      "explanation": "45 = 9 × 5. Portanto: √45 = √(9 × 5) = √9 × √5 = 3√5. Verificação: (3√5)² = 9 × 5 = 45. ✓",
+      "subject": "Radiciacao: simplificacao de radicais",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 17",
+      "aula_tema": "Radiciacao: simplificacao de radicais"
+    },
+    {
+      "id": "mat9-v1p2-028",
+      "question": "Simplifique a expressão √80.",
+      "options": [
+        {"alias": "A", "name": "2√20"},
+        {"alias": "B", "name": "4√5"},
+        {"alias": "C", "name": "8√10"},
+        {"alias": "D", "name": "2√40"}
+      ],
+      "correct": "B",
+      "explanation": "80 = 16 × 5. Portanto: √80 = √(16 × 5) = √16 × √5 = 4√5. Verificação: (4√5)² = 16 × 5 = 80. ✓ Nota: 2√20 = 2·2√5 = 4√5, mas a forma mais simplificada é 4√5.",
+      "subject": "Radiciacao: simplificacao de radicais",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 17",
+      "aula_tema": "Radiciacao: simplificacao de radicais"
+    },
+    {
+      "id": "mat9-v1p2-029",
+      "question": "Qual dos números abaixo é o maior: 3√2 ou 2√6?",
+      "options": [
+        {"alias": "A", "name": "3√2, pois (3√2)² = 18 > (2√6)² = 24"},
+        {"alias": "B", "name": "2√6, pois (2√6)² = 24 > (3√2)² = 18"},
+        {"alias": "C", "name": "São iguais"},
+        {"alias": "D", "name": "Não é possível comparar sem calculadora"}
+      ],
+      "correct": "B",
+      "explanation": "Comparar elevando ao quadrado: (3√2)² = 9·2 = 18. (2√6)² = 4·6 = 24. Como 24 > 18, temos 2√6 > 3√2. Equivalente: 3√2 = √18 e 2√6 = √24, e √24 > √18.",
+      "subject": "Radiciacao: comparacao de radicais",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 17",
+      "aula_tema": "Radiciacao: simplificacao de radicais"
+    },
+    {
+      "id": "mat9-v1p2-030",
+      "question": "Calcule √(135 ÷ 3).",
+      "options": [
+        {"alias": "A", "name": "√5"},
+        {"alias": "B", "name": "3√5"},
+        {"alias": "C", "name": "5√3"},
+        {"alias": "D", "name": "9"}
+      ],
+      "correct": "B",
+      "explanation": "135 ÷ 3 = 45. Logo: √(135÷3) = √45. Simplificando: 45 = 9·5, então √45 = √9·√5 = 3√5.",
+      "subject": "Radiciacao: simplificacao de radicais",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 17",
+      "aula_tema": "Radiciacao: simplificacao de radicais"
+    },
+    {
+      "id": "mat9-v1p2-031",
+      "question": "Qual é o valor da diagonal de um retângulo, sabendo que ela corresponde a √1156?",
+      "options": [
+        {"alias": "A", "name": "34"},
+        {"alias": "B", "name": "50"},
+        {"alias": "C", "name": "62"},
+        {"alias": "D", "name": "118"}
+      ],
+      "correct": "A",
+      "explanation": "√1156: fatorando 1156 = 4 × 289 = 4 × 17² = (2 × 17)² = 34². Logo √1156 = 34. Verificação: 34² = 1156. ✓",
+      "subject": "Radiciacao: raiz quadrada com fatoracao",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 17",
+      "aula_tema": "Radiciacao: simplificacao de radicais"
+    },
+    {
+      "id": "mat9-v1p2-032",
+      "question": "Calcule a raiz quadrada do número 1 764.",
+      "options": [
+        {"alias": "A", "name": "32"},
+        {"alias": "B", "name": "42"},
+        {"alias": "C", "name": "52"},
+        {"alias": "D", "name": "62"}
+      ],
+      "correct": "B",
+      "explanation": "√1764: fatorando 1764 = 4 × 441 = 4 × 21² = (2 × 21)² = 42². Logo √1764 = 42. Verificação: 42² = 1764. ✓",
+      "subject": "Radiciacao: raiz quadrada com fatoracao prima",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 18",
+      "aula_tema": "Radiciacao: aplicacoes e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-033",
+      "question": "Um cubo possui volume igual a 1 728 cm³. Qual é o valor da medida da aresta desse cubo?",
+      "options": [
+        {"alias": "A", "name": "8 cm"},
+        {"alias": "B", "name": "10 cm"},
+        {"alias": "C", "name": "12 cm"},
+        {"alias": "D", "name": "16 cm"}
+      ],
+      "correct": "C",
+      "explanation": "Volume = aresta³ = 1728 cm³. aresta = ³√1728 = 12 cm. Verificação: 12³ = 12 × 12 × 12 = 144 × 12 = 1728. ✓ Dica: 1728 = 12³ (fatorando: 1728 = 2⁶ × 3³ = 8 × 216 = (2²·3)³ = 12³).",
+      "subject": "Radiciacao: raiz cubica aplicada",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 18",
+      "aula_tema": "Radiciacao: aplicacoes e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-034",
+      "question": "Um terreno quadrado tem 900 m² de área. Qual a medida do lado desse terreno?",
+      "options": [
+        {"alias": "A", "name": "15 m"},
+        {"alias": "B", "name": "20 m"},
+        {"alias": "C", "name": "30 m"},
+        {"alias": "D", "name": "45 m"}
+      ],
+      "correct": "C",
+      "explanation": "Área = lado² = 900 m². Lado = √900 = 30 m. Verificação: 30² = 900. ✓ Dica: 900 = 9 × 100 = 3² × 10², então √900 = 3 × 10 = 30.",
+      "subject": "Radiciacao: raiz quadrada aplicada a geometria",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Facil",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 18",
+      "aula_tema": "Radiciacao: aplicacoes e calculo de raizes"
+    },
+    {
+      "id": "mat9-v1p2-035",
+      "question": "Helena empilhou duas caixas cúbicas de papelão com volumes de 64 000 cm³ e 125 000 cm³, com uma face da menor sobre uma face da maior. Qual a altura total da pilha?",
+      "options": [
+        {"alias": "A", "name": "70 cm"},
+        {"alias": "B", "name": "80 cm"},
+        {"alias": "C", "name": "90 cm"},
+        {"alias": "D", "name": "100 cm"}
+      ],
+      "correct": "C",
+      "explanation": "Aresta da caixa menor: ³√64000 = 40 cm (pois 40³ = 64000). Aresta da caixa maior: ³√125000 = 50 cm (pois 50³ = 125000). Altura total = 40 + 50 = 90 cm.",
+      "subject": "Radiciacao: raiz cubica em contexto pratico",
+      "area_conhecimento": "Radiciacao",
+      "difficulty": "Medio",
+      "source": "Caderno de Exercicios MAT 9 Ano - Aula 18",
+      "aula_tema": "Radiciacao: aplicacoes e calculo de raizes"
+    }
+  ]
+}

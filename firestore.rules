@@ -50,10 +50,12 @@ service cloud.firestore {
       allow delete: if isOwner(userId);
       
       // ===============================================
-      // 📊 SUBCOLEÇÃO: PROGRESSO
+      // 📊 SUBCOLEÇÃO: PROGRESSO (gamificação)
       // ===============================================
       match /progress/{areaId} {
-        allow read: if isOwner(userId);
+        // Leitura: dono do documento OU não autenticado (estudantes escola via custom token)
+        allow read: if isOwner(userId) || !isAuthenticated();
+        // Escrita: apenas dono (usuário Firebase autenticado)
         allow write: if isOwner(userId);
       }
       
@@ -161,6 +163,29 @@ service cloud.firestore {
         || !isAuthenticated();
       
       // Escrita: apenas backend
+      allow write: if false;
+    }
+
+    // ===============================================
+    // 📊 SUBCOLEÇÃO: RESULTADOS DE SIMULADOS DO ALUNO
+    // ===============================================
+    match /school_students/{schoolId}/students/{ra}/simulado_results/{resultId} {
+      allow read: if
+        (isAuthenticated() && exists(/databases/$(database)/documents/schools/$(schoolId))
+          && get(/databases/$(database)/documents/schools/$(schoolId)).data.adminUid == request.auth.uid)
+        || (isAuthenticated() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)))
+        || !isAuthenticated();
+      allow write: if false;
+    }
+
+    // ===============================================
+    // 👨‍🏫 SUBCOLEÇÃO: PROFESSORES DA ESCOLA
+    // ===============================================
+    match /schools/{schoolId}/teachers/{teacherId} {
+      allow read: if
+        (isAuthenticated() && get(/databases/$(database)/documents/schools/$(schoolId)).data.adminUid == request.auth.uid)
+        || (isAuthenticated() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)))
+        || !isAuthenticated();
       allow write: if false;
     }
 

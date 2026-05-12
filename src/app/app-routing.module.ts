@@ -18,6 +18,7 @@ import { PaymentFailureComponent } from './pages/payment/payment-failure.compone
 import { PaymentPendingComponent } from './pages/payment/payment-pending.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { ProfessorComponent } from './pages/professor/professor.component';
 
 // Guards
 import { AuthGuard } from './core/guards/auth.guard';
@@ -218,6 +219,13 @@ const routes: Routes = [
     path: 'home', 
     redirectTo: '', 
     pathMatch: 'full' 
+  },
+
+  // ✅ PAINEL DO PROFESSOR
+  {
+    path: 'professor',
+    component: ProfessorComponent,
+    data: { title: 'Painel do Professor - SOWLFY' }
   },
 
   // ===============================================

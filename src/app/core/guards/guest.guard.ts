@@ -29,7 +29,7 @@ export class GuestGuard implements CanActivate {
     const studentToken = localStorage.getItem('student_token');
     if (studentToken) {
       console.log('🚫 GuestGuard: Estudante autenticado, redirecionando para quizz');
-      this.router.navigate(['/quizz']);
+      this.router.navigate(['/dashboard']);
       return false;
     }
     

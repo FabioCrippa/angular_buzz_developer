@@ -1,0 +1,186 @@
+<div class="professor-page">
+
+  <!-- LOGIN -->
+  <div *ngIf="!isLoggedIn" class="login-container">
+    <div class="login-card">
+      <div class="login-logo">🦉</div>
+      <h1 class="login-title">Painel do Professor</h1>
+      <p class="login-subtitle">Acesse com seu email e a senha da escola</p>
+
+      <div class="login-form">
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-input"
+            placeholder="seu@email.com"
+            [(ngModel)]="loginForm.email"
+            (keyup.enter)="login()"
+          />
+        </div>
+        <div class="form-group">
+          <label>Senha da escola</label>
+          <input
+            type="password"
+            class="form-input"
+            placeholder="Senha fornecida pela escola"
+            [(ngModel)]="loginForm.password"
+            (keyup.enter)="login()"
+          />
+        </div>
+
+        <div *ngIf="loginError" class="login-error">{{ loginError }}</div>
+
+        <button class="btn-login" (click)="login()" [disabled]="isLoggingIn">
+          {{ isLoggingIn ? 'Entrando...' : 'Entrar' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAINEL PRINCIPAL -->
+  <div *ngIf="isLoggedIn" class="panel-container">
+
+    <!-- Header -->
+    <div class="panel-header">
+      <div class="header-left">
+        <span class="header-logo">🦉</span>
+        <div>
+          <h1 class="header-title">Resultados de Simulados</h1>
+          <p class="header-school">{{ teacher?.schoolName }}</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="teacher-info">
+          <span class="teacher-role">{{ teacher?.role === 'coordenador' ? '🎓 Coordenador' : '📚 Professor' }}</span>
+          {{ teacher?.name }}
+        </span>
+        <button class="btn-logout" (click)="logout()">Sair</button>
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters-bar">
+      <div class="filter-group">
+        <label>Simulado</label>
+        <select class="filter-select" [(ngModel)]="filterSimulado">
+          <option value="">Todos os simulados</option>
+          <option *ngFor="let s of simuladoOptions" [value]="s">{{ s }}</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Turma</label>
+        <select class="filter-select" [(ngModel)]="filterClass">
+          <option value="">Todas as turmas</option>
+          <option *ngFor="let c of classOptions" [value]="c">{{ c }}</option>
+        </select>
+      </div>
+      <button class="btn-refresh" (click)="loadResults()" [disabled]="isLoadingResults">
+        {{ isLoadingResults ? '⏳' : '🔄' }} Atualizar
+      </button>
+    </div>
+
+    <!-- Loading -->
+    <div *ngIf="isLoadingResults" class="loading-state">
+      <p>Carregando resultados...</p>
+    </div>
+
+    <!-- Tabela de resultados -->
+    <div *ngIf="!isLoadingResults && filteredResults.length > 0" class="results-table-wrapper">
+      <div class="results-count">{{ filteredResults.length }} resultado(s)</div>
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Aluno</th>
+            <th>RA</th>
+            <th>Turma</th>
+            <th>Simulado</th>
+            <th>Acertos</th>
+            <th>%</th>
+            <th class="nota-col">Nota</th>
+            <th>Tempo</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let r of filteredResults">
+            <!-- Linha principal clicável -->
+            <tr class="result-row" [class.row-expanded]="expandedRowId === r.id" (click)="toggleRow(r.id)">
+              <td class="student-name">
+                <span class="expand-icon">{{ expandedRowId === r.id ? '▼' : '▶' }}</span>
+                {{ r.studentName }}
+              </td>
+              <td class="ra-col">{{ r.ra }}</td>
+              <td><span class="class-badge">{{ r.className }}</span></td>
+              <td class="simulado-name">{{ r.simuladoName || r.simuladoId }}</td>
+              <td class="acertos-col">{{ r.correct }}/{{ r.total }}</td>
+              <td class="score-col">{{ r.score }}%</td>
+              <td class="nota-col">
+                <span class="nota-badge" [ngClass]="notaClass(r.nota)">{{ r.nota }}</span>
+              </td>
+              <td class="time-col">{{ r.timeFormatted || '-' }}</td>
+              <td class="date-col">{{ formatDate(r.completedAt) }}</td>
+            </tr>
+            <!-- Linha de detalhe (expansível) -->
+            <tr *ngIf="expandedRowId === r.id" class="detail-row">
+              <td colspan="9">
+                <div class="detail-panel">
+
+                  <!-- Questões da prova -->
+                  <div *ngIf="r.questionsData && r.questionsData.length > 0" class="exam-questions">
+                    <h4 class="breakdown-title">
+                      📝 Prova de {{ r.studentName }} — {{ r.simuladoName || r.simuladoId }}
+                      <span class="exam-summary">{{ r.correct }}/{{ r.total }} acertos ({{ r.score }}%)</span>
+                    </h4>
+                    <div class="question-list">
+                      <div class="question-card" *ngFor="let qd of r.questionsData; let i = index"
+                           [ngClass]="qd.isCorrect ? 'q-correct' : 'q-wrong'">
+                        <div class="question-header">
+                          <span class="question-num">Q{{ i + 1 }}</span>
+                          <span class="question-result-icon">{{ qd.isCorrect ? '✅' : '❌' }}</span>
+                          <span class="question-area-tag">{{ areaLabel(qd.area) }}</span>
+                          <span class="question-aula-tag" *ngIf="qd.aula_tema">📚 {{ qd.aula_tema }}</span>
+                        </div>
+                        <p class="question-text">{{ qd.question }}</p>
+                        <div class="options-list">
+                          <div class="option-item"
+                               *ngFor="let opt of qd.options"
+                               [ngClass]="{
+                                 'opt-correct': opt.alias === qd.correct,
+                                 'opt-wrong': opt.alias === qd.studentAnswer && !qd.isCorrect,
+                                 'opt-student': opt.alias === qd.studentAnswer
+                               }">
+                            <span class="opt-alias">{{ opt.alias.toUpperCase() }}</span>
+                            <span class="opt-text">{{ opt.name }}</span>
+                            <span class="opt-flag" *ngIf="opt.alias === qd.correct && !qd.isCorrect">← correta</span>
+                            <span class="opt-flag student-flag" *ngIf="opt.alias === qd.studentAnswer && !qd.isCorrect">← aluno respondeu</span>
+                          </div>
+                        </div>
+                        <div class="rq-explanation" *ngIf="qd.explanation">
+                          <i class="fas fa-lightbulb"></i> {{ qd.explanation }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div *ngIf="!r.questionsData || r.questionsData.length === 0" class="no-breakdown">
+                    Detalhes das questões não disponíveis. Apenas novos simulados realizados terão a prova registrada.
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sem resultados -->
+    <div *ngIf="!isLoadingResults && filteredResults.length === 0" class="empty-state">
+      <div class="empty-icon">📊</div>
+      <p>Nenhum resultado encontrado</p>
+      <span *ngIf="filterSimulado || filterClass">Tente remover os filtros</span>
+      <span *ngIf="!filterSimulado && !filterClass">Os alunos ainda não realizaram nenhum simulado</span>
+    </div>
+
+  </div>
+</div>

@@ -2011,6 +2011,16 @@
 .status-correct { color: #27ae60; }
 .status-wrong   { color: #e74c3c; }
 .status-blank   { color: #95a5a6; }
+.rq-aula-tema {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6c5ce7;
+  background: #f0eeff;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
 .rq-text {
   font-size: 0.95rem;
   font-weight: 500;
