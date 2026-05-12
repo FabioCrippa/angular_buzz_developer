@@ -125,41 +125,46 @@
   <section class="anonymous-quiz-section">
     <div class="container">
 
-      <!-- ⚡ PREPARA TECH CARD -->
-      <div class="quiz-cta-card prepa-tech-cta-card" (click)="navigateToPrepaTech()">
-        <div class="quiz-cta-content">
-          <h2 class="quiz-cta-title">Prepara Tech</h2>
-          <p class="quiz-cta-description">
-            Cole a descrição de qualquer vaga e receba um simulado personalizado com exatamente as tecnologias exigidas. Treine o que será cobrado na entrevista.
-          </p>
-          <div class="quiz-cta-benefits">
-            <span class="benefit">⚡ Análise automática de tecnologias</span>
-            <span class="benefit">📋 Até 20 questões personalizadas</span>
-            <span class="benefit">📊 Resultado detalhado por tópico</span>
-            <span class="benefit">🔒 Exclusivo para assinantes Pro</span>
-          </div>
-          <button class="btn btn-quiz-primary prepa-tech-btn" (click)="navigateToPrepaTech(); $event.stopPropagation()">
-            Experimente com Pro →
-          </button>
-        </div>
-      </div>
+      <div class="cta-cards-row">
 
-      <div class="quiz-cta-card">
-        <div class="quiz-cta-content">
-          <h2 class="quiz-cta-title">Quer Testar seus Conhecimentos?</h2>
-          <p class="quiz-cta-description">
-            Faça um quiz rápido de 10 questões aleatórias sem criar conta. Descubra seu nível em segundos!
-          </p>
-          <div class="quiz-cta-benefits">
-            <span class="benefit">✓ Sem login necessário</span>
-            <span class="benefit">✓ 10 questões aleatórias</span>
-            <span class="benefit">✓ Resultado imediato</span>
-            <span class="benefit">✓ Compartilhável</span>
+        <!-- ⚡ PREPARA TECH CARD -->
+        <div class="quiz-cta-card prepa-tech-cta-card" (click)="navigateToPrepaTech()">
+          <div class="quiz-cta-content">
+            <h2 class="quiz-cta-title">Prepara Tech</h2>
+            <p class="quiz-cta-description">
+              Cole a descrição de qualquer vaga e receba um simulado personalizado com exatamente as tecnologias exigidas. Treine o que será cobrado na entrevista.
+            </p>
+            <div class="quiz-cta-benefits">
+              <span class="benefit">⚡ Análise automática de tecnologias</span>
+              <span class="benefit">📋 Até 20 questões personalizadas</span>
+              <span class="benefit">📊 Resultado detalhado por tópico</span>
+              <span class="benefit">🔒 Exclusivo para assinantes Pro</span>
+            </div>
+            <button class="btn btn-quiz-primary prepa-tech-btn" (click)="navigateToPrepaTech(); $event.stopPropagation()">
+              Experimente com Pro →
+            </button>
           </div>
-          <button class="btn btn-quiz-primary" (click)="startAnonymousQuiz()">
-            Começar Quiz →
-          </button>
         </div>
+
+        <!-- 🎯 QUIZ ANÔNIMO CARD -->
+        <div class="quiz-cta-card">
+          <div class="quiz-cta-content">
+            <h2 class="quiz-cta-title">Quer Testar seus Conhecimentos?</h2>
+            <p class="quiz-cta-description">
+              Faça um quiz rápido de 10 questões aleatórias sem criar conta. Descubra seu nível em segundos!
+            </p>
+            <div class="quiz-cta-benefits">
+              <span class="benefit">✓ Sem login necessário</span>
+              <span class="benefit">✓ 10 questões aleatórias</span>
+              <span class="benefit">✓ Resultado imediato</span>
+              <span class="benefit">✓ Compartilhável</span>
+            </div>
+            <button class="btn btn-quiz-primary" (click)="startAnonymousQuiz()">
+              Começar Quiz →
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

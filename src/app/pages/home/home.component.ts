@@ -116,6 +116,22 @@ export class HomeComponent implements OnInit {
     {
       question: 'O SOWLFY funciona no celular?',
       answer: 'Perfeitamente! Nossa plataforma é <strong>100% responsiva</strong> e funciona em qualquer dispositivo - celular, tablet ou computador.'
+    },
+    {
+      question: 'O que é o Prepara Tech e como ele funciona?',
+      answer: 'O <strong>Prepara Tech</strong> é uma funcionalidade exclusiva Pro que gera um simulado personalizado a partir da descrição de uma vaga de emprego. Você cola o texto da vaga (do LinkedIn, Gupy, etc.), o sistema analisa automaticamente as tecnologias e requisitos mencionados, e monta um quiz com até <strong>20 questões focadas exatamente no que será cobrado na entrevista</strong>.'
+    },
+    {
+      question: 'Como funciona a análise da vaga no Prepara Tech?',
+      answer: 'O sistema lê o texto da vaga e identifica palavras-chave de tecnologias como JavaScript, React, Angular, Python, SQL, Docker, entre outras. Cada tecnologia detectada é mapeada para um banco de questões específico. Quanto mais tecnologias a vaga mencionar, mais variadas e abrangentes serão as questões do simulado.'
+    },
+    {
+      question: 'As 20 questões são sempre as mesmas no Prepara Tech?',
+      answer: 'Não! As questões são <strong>selecionadas e embaralhadas aleatoriamente</strong> a cada novo simulado. Mesmo colando a mesma descrição de vaga duas vezes, você receberá uma combinação diferente de questões. Isso garante que você treine diferentes aspectos de cada tecnologia a cada tentativa.'
+    },
+    {
+      question: 'O que aparece no resultado detalhado por tópico?',
+      answer: 'Ao finalizar o quiz, você vê um <strong>relatório por tecnologia</strong>: para cada tópico avaliado (ex: React, TypeScript, Git) aparece quantas questões foram respondidas, quantas você acertou e a sua taxa de aproveitamento. Assim você sabe exatamente onde está forte e onde precisa estudar mais antes da entrevista.'
     }
   ];
   

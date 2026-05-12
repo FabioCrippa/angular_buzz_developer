@@ -2036,8 +2036,20 @@ section {
   overflow: hidden;
 }
 
+.cta-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .cta-cards-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .prepa-tech-cta-card {
-  margin-bottom: 2rem;
   cursor: pointer;
   grid-template-columns: 1fr;
   padding: 1.8rem 2.5rem;
