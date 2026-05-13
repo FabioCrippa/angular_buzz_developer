@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "desenvolvimento-web",
                      "subject":  "angular",
@@ -6,7 +6,7 @@
                      "description":  "Framework Angular, componentes, services, RxJS e arquitetura de SPAs.",
                      "difficulty":  "fundamental",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  24,
+                     "questionCount":  72,
                      "tags":  [
                                   "framework",
                                   "spa",
@@ -590,6 +590,1206 @@
                           "correct":  "a",
                           "explanation":  "Angular Universal permite renderizar aplicações Angular no servidor, melhorando SEO e performance.",
                           "category":  "angular"
+                      },
+                      {
+                          "id":  "ana-ent1002",
+                          "question":  "Explique o ciclo de vida de um componente Angular.",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Inclui fases como ngOnInit, ngOnChanges e ngOnDestroy",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "É composto apenas por ngCreate e ngDelete",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Não possui ciclo de vida definido",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O ciclo de vida do Angular inclui hooks como ngOnInit, ngOnChanges, ngAfterViewInit e ngOnDestroy.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: O Angular possui hooks de ciclo de vida que permitem executar código em momentos específicos. Uso ngOnInit para inicialização, ngOnChanges para reagir a mudanças de @Input, ngAfterViewInit quando preciso acessar elementos DOM, e ngOnDestroy para cleanup de subscriptions e evitar memory leaks. É fundamental implementar OnDestroy ao trabalhar com Observables."
+                      },
+                      {
+                          "id":  "ana-ent1025",
+                          "question":  "O que é um Observable no contexto do RxJS?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma função que retorna um valor síncrono",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma abstração que representa um fluxo de dados assíncronos",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de variável global",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Observables representam fluxos de dados que podem emitir valores ao longo do tempo.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Observable é como uma mangueira de dados - pode emitir múltiplos valores ao longo do tempo. Diferente de Promise que resolve uma vez, Observable pode emitir 0, 1 ou N valores. Uso para HTTP requests, eventos de formulário, WebSocket connections. É lazy - só executa quando subscribe. RxJS operators como map, filter, switchMap tornam o código declarativo."
+                      },
+                      {
+                          "id":  "ana-ent1026",
+                          "question":  "Qual operador RxJS é usado para transformar os valores emitidos por um Observable?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "map",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "filter",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "subscribe",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O operador map transforma cada valor emitido aplicando uma função de transformação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: O operador map é como Array.map(), mas para Observables. Transformo cada valor emitido: userObservable.pipe(map(user =\u003e user.name)) extrai apenas o nome. É pipeable operator, então posso encadear: .pipe(map(toUpperCase), filter(isValid)). Diferente de subscribe, map retorna novo Observable, mantendo a cadeia reativa funcional."
+                      },
+                      {
+                          "id":  "ana-ent1027",
+                          "question":  "O que o operador \u0027switchMap\u0027 faz em RxJS?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Cancela o Observable anterior e substitui por um novo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Combina múltiplos Observables em paralelo",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Executa todos os Observables em sequência",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "switchMap cancela a subscription anterior quando um novo valor é emitido, evitando race conditions.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: switchMap é essencial para evitar race conditions. Quando usuario digita no search input, cada keystroke dispara nova requisição. switchMap cancela requisição anterior e executa apenas a mais recente. Perfeito para autocomplete: searchInput.pipe(switchMap(term =\u003e this.api.search(term))). Evita respostas fora de ordem que confundiriam o usuário."
+                      },
+                      {
+                          "id":  "ana-ent1028",
+                          "question":  "Qual é a função do método \u0027subscribe\u0027 em um Observable?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Encerrar o Observable",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Iniciar a execução e receber os valores emitidos",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Transformar os dados em JSON",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "subscribe inicia a execução do Observable e permite receber os valores emitidos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: subscribe é onde \u0027consumo\u0027 o Observable. Sem subscribe, Observable é lazy - não executa. É como ligar a torneira: observable.subscribe(data =\u003e console.log(data)). Sempre implemento error handling: .subscribe({next: data =\u003e {}, error: err =\u003e {}}). Importante: sempre unsubscribe para evitar memory leaks, uso takeUntil(destroy$) ou async pipe no template."
+                      },
+                      {
+                          "id":  "ana-ent1029",
+                          "question":  "Qual operador RxJS é ideal para executar múltiplos Observables em paralelo e aguardar todos os resultados?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "mergeMap",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "forkJoin",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "concatMap",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "forkJoin aguarda que todos os Observables completem e retorna um array com todos os resultados.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: forkJoin é como Promise.all() para Observables. Executa múltiplas operações em paralelo e aguarda todas completarem: forkJoin([getUser(), getPosts(), getProfile()]).subscribe(([user, posts, profile]) =\u003e {}). Só emite quando TODOS completam. Diferente de combineLatest que emite sempre que qualquer um muda. Ideal para carregar dados independentes simultaneamente."
+                      },
+                      {
+                          "id":  "ana-ent1030",
+                          "question":  "Qual operador RxJS é usado para filtrar valores emitidos por um Observable?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "filter",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "map",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "take",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O operador filter permite que apenas valores que atendem a uma condição passem pelo stream.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: filter funciona como Array.filter(), mas para streams. Só deixa passar valores que atendem condição: numbers$.pipe(filter(n =\u003e n \u003e 5)). Muito útil para eventos: clicks$.pipe(filter(event =\u003e event.target.classList.contains(\u0027valid\u0027))). Combino com outros operadores: searchInput.pipe(filter(term =\u003e term.length \u003e 2), switchMap(term =\u003e search(term))). Evita requisições desnecessárias."
+                      },
+                      {
+                          "id":  "ana-ent1031",
+                          "question":  "O que é um Subject em RxJS?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Um tipo especial de Observable que permite multicasting",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um operador para transformar valores",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma função que cancela Observables",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Subject é um tipo especial de Observable que pode ter múltiplos observers e permite emitir valores.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Subject é Observable que posso controlar - posso emitir valores com next(), complete(), error(). É multicast: vários subscribers recebem o mesmo valor. Uso para comunicação entre componentes: private messageSubject = new Subject(); sendMessage(msg) { this.messageSubject.next(msg); }. Diferente de Observable comum que é unicast e cold."
+                      },
+                      {
+                          "id":  "ana-ent1032",
+                          "question":  "Qual a diferença entre Subject e BehaviorSubject?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "BehaviorSubject armazena o último valor emitido e o envia aos novos inscritos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Subject é síncrono e BehaviorSubject é assíncrono",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Subject é usado apenas em testes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "BehaviorSubject mantém o último valor emitido e o envia imediatamente para novos subscribers.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: BehaviorSubject guarda o último valor emitido. Novo subscriber recebe imediatamente o valor atual. Ideal para estados: private userSubject = new BehaviorSubject(null); get currentUser() { return this.userSubject.value; }. Subject comum não guarda nada - subscriber só recebe valores futuros. BehaviorSubject requer valor inicial, Subject não."
+                      },
+                      {
+                          "id":  "ana-ent1033",
+                          "question":  "Qual operador RxJS é usado para limitar a quantidade de valores emitidos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "take",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "merge",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "scan",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O operador take limita a quantidade de valores que o Observable pode emitir.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: take(n) pega apenas os primeiros n valores e completa o Observable automaticamente. Exemplo: interval(1000).pipe(take(3)) emite 0, 1, 2 e para. Muito útil: take(1) para single value como getCurrentUser(), takeUntil(destroy$) para auto-unsubscribe em componentes. takeWhile(condition) para parar baseado em condição."
+                      },
+                      {
+                          "id":  "ana-ent1034",
+                          "question":  "Por que usar RxJS em aplicações Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Para manipular fluxos assíncronos como eventos, requisições HTTP e formulários reativos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Para substituir o roteamento padrão",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Para estilizar componentes com CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "RxJS facilita o manejo de operações assíncronas e fluxos de dados complexos em Angular.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: RxJS é coração do Angular - HttpClient retorna Observables, Reactive Forms usam Observables, eventos são streams. Permite programação declarativa: combino streams, transformo dados, reajo a mudanças. Exemplo: combineLatest([searchTerm$, filters$]).pipe(switchMap(([term, filters]) =\u003e search(term, filters))). Gerencia estado complexo, evita callback hell, facilita cancelamento de operações."
+                      },
+                      {
+                          "id":  "ana-ent1035",
+                          "question":  "Qual é o principal benefício do lazy loading em aplicações Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Reduz o tempo de carregamento inicial da aplicação",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Aumenta o tamanho do bundle principal",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Impede a reutilização de componentes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Lazy loading reduz o bundle inicial carregando módulos apenas quando necessário.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Lazy loading melhora drasticamente Time to Interactive (TTI). Bundle inicial menor significa carregamento mais rápido, especialmente em redes 3G. Usuário vê a página principal rapidamente, módulos de admin/settings carregam só quando necessário. Implemento code splitting automático: { path: \u0027admin\u0027, loadChildren: () =\u003e import(\u0027./admin/admin.module\u0027).then(m =\u003e m.AdminModule) }. Estratégia essencial para Progressive Web Apps."
+                      },
+                      {
+                          "id":  "ana-ent1036",
+                          "question":  "Como o lazy loading é implementado em Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Utilizando o operador \u0027subscribe\u0027 em Observables",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Configurando rotas com \u0027loadChildren\u0027 no módulo de roteamento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Importando todos os módulos no AppModule",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Lazy loading em Angular é configurado nas rotas usando a propriedade loadChildren.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Uso loadChildren nas rotas para carregar módulos sob demanda. Sintaxe moderna: loadChildren: () =\u003e import(\u0027./feature/feature.module\u0027).then(m =\u003e m.FeatureModule). Angular automaticamente cria chunk separado para cada módulo lazy. Posso usar preloading strategies para otimizar: RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}) pré-carrega módulos em background após carregamento inicial."
+                      },
+                      {
+                          "id":  "ana-ent1037",
+                          "question":  "Lazy loading pode ser aplicado a quais tipos de recursos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Imagens, módulos, componentes e scripts",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas arquivos de áudio",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Somente estilos CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Lazy loading pode ser aplicado a diversos tipos de recursos para otimizar performance.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Implemento lazy loading em múltiplas camadas: 1) Módulos Angular com loadChildren, 2) Imagens com Intersection Observer API ou loading=\u0027lazy\u0027, 3) Componentes standalone com dynamic imports, 4) Scripts externos carregados condicionalmente. Exemplo: só carrego Google Maps SDK quando usuário abre mapa. Estratégia holística reduz bundle inicial e melhora Core Web Vitals."
+                      },
+                      {
+                          "id":  "ana-ent1038",
+                          "question":  "Qual prática pode complementar o lazy loading para melhorar a performance?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Pré-carregamento seletivo (preloading)",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Desativar cache do navegador",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Carregar todos os scripts no head",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Preloading strategies permitem carregar módulos em background após o carregamento inicial.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Combino lazy loading com preloading inteligente. PreloadAllModules carrega módulos em background após inicial load. Ou implemento custom strategy: só pré-carrego módulos que usuário provavelmente acessará baseado em analytics. Uso service worker para cache inteligente. Resource hints como \u003clink rel=\u0027prefetch\u0027\u003e para recursos futuros. Estratégia balanceada entre performance inicial e UX fluida."
+                      },
+                      {
+                          "id":  "ana-ent1039",
+                          "question":  "O que significa uma arquitetura modular em projetos de software?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Separar o código em partes independentes e reutilizáveis",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Agrupar todo o código em um único arquivo",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Evitar o uso de componentes reutilizáveis",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Arquitetura modular divide o sistema em módulos independentes com responsabilidades bem definidas.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Arquitetura modular é como LEGO - peças independentes que se conectam. Cada módulo tem responsabilidade única, interface clara, baixo acoplamento. No Angular: Core module (singleton services), Shared module (componentes reutilizáveis), Feature modules (funcionalidades específicas). Benefícios: facilita testes, manutenção, trabalho em equipe, lazy loading. Exemplo: AuthModule, ProductModule, OrderModule - cada um independente mas interconectado via interfaces."
+                      },
+                      {
+                          "id":  "ana-ent1040",
+                          "question":  "Qual é uma vantagem de organizar um projeto Angular em módulos feature-based?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Facilita o lazy loading e a manutenção do código",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Aumenta o tempo de build",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Impede a reutilização de componentes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Módulos feature-based permitem lazy loading e melhor organização do código por funcionalidades.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Feature-based modules organizam código por funcionalidade de negócio, não por tipo técnico. Em vez de \u0027components/\u0027, \u0027services/\u0027, tenho \u0027user-management/\u0027, \u0027product-catalog/\u0027. Cada feature é mini-aplicação: seus componentes, services, models. Facilita lazy loading, onboarding de novos devs, manutenção. Time de produtos trabalha só no ProductModule sem afetar UserModule. Escalabilidade real."
+                      },
+                      {
+                          "id":  "ana-ent1041",
+                          "question":  "Como a separação de responsabilidades contribui para a escalabilidade de um projeto?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permite que diferentes partes do sistema evoluam de forma independente",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Centraliza toda a lógica em um único módulo",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Reduz a necessidade de testes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Separação de responsabilidades reduz acoplamento, facilitando evolução independente de módulos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Separação de responsabilidades é chave para escalabilidade. Cada módulo/component tem função clara, reduzindo dependências. Exemplo: AuthService só cuida de autenticação, UserService só de dados do usuário. Se preciso mudar lógica de autenticação, faço no AuthService sem afetar UserService. Facilita trabalho em equipe - múltiplos devs podem trabalhar em módulos diferentes simultaneamente. Testes unitários mais simples e eficazes."
+                      },
+                      {
+                          "id":  "ana-ent1042",
+                          "question":  "Qual prática ajuda a manter um projeto escalável ao longo do tempo?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Evitar documentação e testes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adotar padrões consistentes de arquitetura e modularização",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Manter todos os arquivos em uma única pasta",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Padrões consistentes facilitam manutenção, onboarding e evolução do projeto.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Adotar padrões consistentes é crucial para a escalabilidade. Isso inclui convenções de nomenclatura, estrutura de pastas e práticas de codificação. Por exemplo, usar sempre \u0027feature/\u0027 para módulos de recursos e \u0027shared/\u0027 para módulos compartilhados. Isso ajuda novos desenvolvedores a entenderem rapidamente a estrutura do projeto e reduz a curva de aprendizado."
+                      },
+                      {
+                          "id":  "ana-ent1043",
+                          "question":  "Em projetos escaláveis, o que é recomendado ao lidar com dependências entre módulos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Evitar acoplamento excessivo e usar interfaces ou serviços compartilhados",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Importar diretamente componentes de outros módulos",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Duplicar código para evitar dependências",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Reduzir acoplamento entre módulos facilita manutenção e evolução independente.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Para lidar com dependências entre módulos, é importante evitar acoplamento excessivo. Isso pode ser feito usando interfaces ou serviços compartilhados. Por exemplo, em vez de um módulo importar diretamente componentes de outro, ele pode se comunicar através de um serviço. Isso torna os módulos mais independentes e facilita a manutenção."
+                      },
+                      {
+                          "id":  "ana-ent1047",
+                          "question":  "O que é Progressive Web App (PWA) e suas principais características?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "App web que funciona offline e pode ser instalada como app nativo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca para desenvolvimento web",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de banco de dados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "PWAs combinam o melhor da web e apps nativos com service workers, manifests e design responsivo.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: PWA combina web e mobile nativo. Características principais: 1) Service Worker para cache e funcionamento offline, 2) Web App Manifest para instalação no device, 3) HTTPS obrigatório para segurança, 4) Design responsivo e touch-friendly, 5) Push notifications para engagement. Vantagens: sem app store, updates automáticos, menor tamanho que apps nativos. Desenvolvo PWAs usando Angular Service Worker que automatiza cache strategies."
+                      },
+                      {
+                          "id":  "ana-ent1050",
+                          "question":  "Como você implementaria um sistema de estado global sem Redux/NgRx?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando Context API no React ou Services com BehaviorSubject no Angular",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas com variáveis globais",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Usando apenas localStorage",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Context API e Services com RxJS fornecem state management simples sem bibliotecas externas.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Para estado global simples, uso ferramentas nativas: Context API no React ou Services singleton no Angular. Crio UserService com BehaviorSubject para estado reativo: private userSubject = new BehaviorSubject(null); get user$() { return this.userSubject.asObservable(); }. Para estado complexo, avalio se realmente preciso de Redux/NgRx ou se padrão simples resolve. Às vezes, lift state up ou prop drilling é mais simples que over-engineering."
+                      },
+                      {
+                          "id":  "ana-ent1053",
+                          "question":  "O que é Server-Side Rendering (SSR) e suas vantagens?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Renderização no servidor que melhora SEO e tempo de carregamento inicial",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma técnica apenas para aplicações mobile",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de banco de dados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "SSR renderiza páginas no servidor, enviando HTML completo para o cliente, melhorando SEO e performance inicial.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: SSR renderiza HTML no servidor antes de enviar para cliente. Vantagens: 1) SEO melhorado - crawlers veem conteúdo completo, 2) First Contentful Paint mais rápido, 3) Melhor performance em dispositivos lentos. Desafios: complexidade do setup, hydration mismatches, maior carga no servidor. No Angular uso Angular Universal, no React uso Next.js. Para apps com muito conteúdo dinâmico, avalio se SSG (Static Site Generation) não seria melhor."
+                      },
+                      {
+                          "id":  "ana-ent1065",
+                          "question":  "O que são Custom Hooks no React ou Custom Decorators no Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Funcionalidades reutilizáveis que encapsulam lógica complexa",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas funções normais de JavaScript",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Componentes visuais customizados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Custom Hooks/Decorators permitem reutilizar lógica stateful entre componentes de forma elegante.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Custom Hooks (React) ou Custom Decorators (Angular) extraem lógica reutilizável. React Hook exemplo: useLocalStorage que synca state com localStorage automaticamente. Angular Decorator exemplo: @Debounce que adiciona debouncing a qualquer método. Benefícios: 1) DRY principle, 2) Separation of concerns, 3) Easy testing, 4) Better composition. Sempre penso: \u0027essa lógica pode ser útil em outros componentes?\u0027 Se sim, extraio para custom hook/decorator."
+                      },
+                      {
+                          "id":  "ana-ent1002",
+                          "question":  "Explique o ciclo de vida de um componente Angular.",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Inclui fases como ngOnInit, ngOnChanges e ngOnDestroy",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "É composto apenas por ngCreate e ngDelete",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Não possui ciclo de vida definido",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O ciclo de vida do Angular inclui hooks como ngOnInit, ngOnChanges, ngAfterViewInit e ngOnDestroy.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: O Angular possui hooks de ciclo de vida que permitem executar código em momentos específicos. Uso ngOnInit para inicialização, ngOnChanges para reagir a mudanças de @Input, ngAfterViewInit quando preciso acessar elementos DOM, e ngOnDestroy para cleanup de subscriptions e evitar memory leaks. É fundamental implementar OnDestroy ao trabalhar com Observables."
+                      },
+                      {
+                          "id":  "ana-ent1025",
+                          "question":  "O que é um Observable no contexto do RxJS?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma função que retorna um valor síncrono",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma abstração que representa um fluxo de dados assíncronos",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de variável global",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Observables representam fluxos de dados que podem emitir valores ao longo do tempo.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Observable é como uma mangueira de dados - pode emitir múltiplos valores ao longo do tempo. Diferente de Promise que resolve uma vez, Observable pode emitir 0, 1 ou N valores. Uso para HTTP requests, eventos de formulário, WebSocket connections. É lazy - só executa quando subscribe. RxJS operators como map, filter, switchMap tornam o código declarativo."
+                      },
+                      {
+                          "id":  "ana-ent1026",
+                          "question":  "Qual operador RxJS é usado para transformar os valores emitidos por um Observable?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "map",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "filter",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "subscribe",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O operador map transforma cada valor emitido aplicando uma função de transformação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: O operador map é como Array.map(), mas para Observables. Transformo cada valor emitido: userObservable.pipe(map(user =\u003e user.name)) extrai apenas o nome. É pipeable operator, então posso encadear: .pipe(map(toUpperCase), filter(isValid)). Diferente de subscribe, map retorna novo Observable, mantendo a cadeia reativa funcional."
+                      },
+                      {
+                          "id":  "ana-ent1027",
+                          "question":  "O que o operador \u0027switchMap\u0027 faz em RxJS?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Cancela o Observable anterior e substitui por um novo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Combina múltiplos Observables em paralelo",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Executa todos os Observables em sequência",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "switchMap cancela a subscription anterior quando um novo valor é emitido, evitando race conditions.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: switchMap é essencial para evitar race conditions. Quando usuario digita no search input, cada keystroke dispara nova requisição. switchMap cancela requisição anterior e executa apenas a mais recente. Perfeito para autocomplete: searchInput.pipe(switchMap(term =\u003e this.api.search(term))). Evita respostas fora de ordem que confundiriam o usuário."
+                      },
+                      {
+                          "id":  "ana-ent1028",
+                          "question":  "Qual é a função do método \u0027subscribe\u0027 em um Observable?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Encerrar o Observable",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Iniciar a execução e receber os valores emitidos",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Transformar os dados em JSON",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "subscribe inicia a execução do Observable e permite receber os valores emitidos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: subscribe é onde \u0027consumo\u0027 o Observable. Sem subscribe, Observable é lazy - não executa. É como ligar a torneira: observable.subscribe(data =\u003e console.log(data)). Sempre implemento error handling: .subscribe({next: data =\u003e {}, error: err =\u003e {}}). Importante: sempre unsubscribe para evitar memory leaks, uso takeUntil(destroy$) ou async pipe no template."
+                      },
+                      {
+                          "id":  "ana-ent1029",
+                          "question":  "Qual operador RxJS é ideal para executar múltiplos Observables em paralelo e aguardar todos os resultados?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "mergeMap",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "forkJoin",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "concatMap",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "forkJoin aguarda que todos os Observables completem e retorna um array com todos os resultados.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: forkJoin é como Promise.all() para Observables. Executa múltiplas operações em paralelo e aguarda todas completarem: forkJoin([getUser(), getPosts(), getProfile()]).subscribe(([user, posts, profile]) =\u003e {}). Só emite quando TODOS completam. Diferente de combineLatest que emite sempre que qualquer um muda. Ideal para carregar dados independentes simultaneamente."
+                      },
+                      {
+                          "id":  "ana-ent1030",
+                          "question":  "Qual operador RxJS é usado para filtrar valores emitidos por um Observable?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "filter",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "map",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "take",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O operador filter permite que apenas valores que atendem a uma condição passem pelo stream.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: filter funciona como Array.filter(), mas para streams. Só deixa passar valores que atendem condição: numbers$.pipe(filter(n =\u003e n \u003e 5)). Muito útil para eventos: clicks$.pipe(filter(event =\u003e event.target.classList.contains(\u0027valid\u0027))). Combino com outros operadores: searchInput.pipe(filter(term =\u003e term.length \u003e 2), switchMap(term =\u003e search(term))). Evita requisições desnecessárias."
+                      },
+                      {
+                          "id":  "ana-ent1031",
+                          "question":  "O que é um Subject em RxJS?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Um tipo especial de Observable que permite multicasting",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um operador para transformar valores",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma função que cancela Observables",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Subject é um tipo especial de Observable que pode ter múltiplos observers e permite emitir valores.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Subject é Observable que posso controlar - posso emitir valores com next(), complete(), error(). É multicast: vários subscribers recebem o mesmo valor. Uso para comunicação entre componentes: private messageSubject = new Subject(); sendMessage(msg) { this.messageSubject.next(msg); }. Diferente de Observable comum que é unicast e cold."
+                      },
+                      {
+                          "id":  "ana-ent1032",
+                          "question":  "Qual a diferença entre Subject e BehaviorSubject?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "BehaviorSubject armazena o último valor emitido e o envia aos novos inscritos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Subject é síncrono e BehaviorSubject é assíncrono",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Subject é usado apenas em testes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "BehaviorSubject mantém o último valor emitido e o envia imediatamente para novos subscribers.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: BehaviorSubject guarda o último valor emitido. Novo subscriber recebe imediatamente o valor atual. Ideal para estados: private userSubject = new BehaviorSubject(null); get currentUser() { return this.userSubject.value; }. Subject comum não guarda nada - subscriber só recebe valores futuros. BehaviorSubject requer valor inicial, Subject não."
+                      },
+                      {
+                          "id":  "ana-ent1033",
+                          "question":  "Qual operador RxJS é usado para limitar a quantidade de valores emitidos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "take",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "merge",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "scan",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "O operador take limita a quantidade de valores que o Observable pode emitir.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: take(n) pega apenas os primeiros n valores e completa o Observable automaticamente. Exemplo: interval(1000).pipe(take(3)) emite 0, 1, 2 e para. Muito útil: take(1) para single value como getCurrentUser(), takeUntil(destroy$) para auto-unsubscribe em componentes. takeWhile(condition) para parar baseado em condição."
+                      },
+                      {
+                          "id":  "ana-ent1034",
+                          "question":  "Por que usar RxJS em aplicações Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Para manipular fluxos assíncronos como eventos, requisições HTTP e formulários reativos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Para substituir o roteamento padrão",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Para estilizar componentes com CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "RxJS facilita o manejo de operações assíncronas e fluxos de dados complexos em Angular.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: RxJS é coração do Angular - HttpClient retorna Observables, Reactive Forms usam Observables, eventos são streams. Permite programação declarativa: combino streams, transformo dados, reajo a mudanças. Exemplo: combineLatest([searchTerm$, filters$]).pipe(switchMap(([term, filters]) =\u003e search(term, filters))). Gerencia estado complexo, evita callback hell, facilita cancelamento de operações."
+                      },
+                      {
+                          "id":  "ana-ent1035",
+                          "question":  "Qual é o principal benefício do lazy loading em aplicações Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Reduz o tempo de carregamento inicial da aplicação",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Aumenta o tamanho do bundle principal",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Impede a reutilização de componentes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Lazy loading reduz o bundle inicial carregando módulos apenas quando necessário.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Lazy loading melhora drasticamente Time to Interactive (TTI). Bundle inicial menor significa carregamento mais rápido, especialmente em redes 3G. Usuário vê a página principal rapidamente, módulos de admin/settings carregam só quando necessário. Implemento code splitting automático: { path: \u0027admin\u0027, loadChildren: () =\u003e import(\u0027./admin/admin.module\u0027).then(m =\u003e m.AdminModule) }. Estratégia essencial para Progressive Web Apps."
+                      },
+                      {
+                          "id":  "ana-ent1036",
+                          "question":  "Como o lazy loading é implementado em Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Utilizando o operador \u0027subscribe\u0027 em Observables",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Configurando rotas com \u0027loadChildren\u0027 no módulo de roteamento",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Importando todos os módulos no AppModule",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Lazy loading em Angular é configurado nas rotas usando a propriedade loadChildren.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Uso loadChildren nas rotas para carregar módulos sob demanda. Sintaxe moderna: loadChildren: () =\u003e import(\u0027./feature/feature.module\u0027).then(m =\u003e m.FeatureModule). Angular automaticamente cria chunk separado para cada módulo lazy. Posso usar preloading strategies para otimizar: RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}) pré-carrega módulos em background após carregamento inicial."
+                      },
+                      {
+                          "id":  "ana-ent1037",
+                          "question":  "Lazy loading pode ser aplicado a quais tipos de recursos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Imagens, módulos, componentes e scripts",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas arquivos de áudio",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Somente estilos CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Lazy loading pode ser aplicado a diversos tipos de recursos para otimizar performance.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Implemento lazy loading em múltiplas camadas: 1) Módulos Angular com loadChildren, 2) Imagens com Intersection Observer API ou loading=\u0027lazy\u0027, 3) Componentes standalone com dynamic imports, 4) Scripts externos carregados condicionalmente. Exemplo: só carrego Google Maps SDK quando usuário abre mapa. Estratégia holística reduz bundle inicial e melhora Core Web Vitals."
+                      },
+                      {
+                          "id":  "ana-ent1038",
+                          "question":  "Qual prática pode complementar o lazy loading para melhorar a performance?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Pré-carregamento seletivo (preloading)",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Desativar cache do navegador",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Carregar todos os scripts no head",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Preloading strategies permitem carregar módulos em background após o carregamento inicial.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Combino lazy loading com preloading inteligente. PreloadAllModules carrega módulos em background após inicial load. Ou implemento custom strategy: só pré-carrego módulos que usuário provavelmente acessará baseado em analytics. Uso service worker para cache inteligente. Resource hints como \u003clink rel=\u0027prefetch\u0027\u003e para recursos futuros. Estratégia balanceada entre performance inicial e UX fluida."
+                      },
+                      {
+                          "id":  "ana-ent1039",
+                          "question":  "O que significa uma arquitetura modular em projetos de software?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Separar o código em partes independentes e reutilizáveis",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Agrupar todo o código em um único arquivo",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Evitar o uso de componentes reutilizáveis",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Arquitetura modular divide o sistema em módulos independentes com responsabilidades bem definidas.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Arquitetura modular é como LEGO - peças independentes que se conectam. Cada módulo tem responsabilidade única, interface clara, baixo acoplamento. No Angular: Core module (singleton services), Shared module (componentes reutilizáveis), Feature modules (funcionalidades específicas). Benefícios: facilita testes, manutenção, trabalho em equipe, lazy loading. Exemplo: AuthModule, ProductModule, OrderModule - cada um independente mas interconectado via interfaces."
+                      },
+                      {
+                          "id":  "ana-ent1040",
+                          "question":  "Qual é uma vantagem de organizar um projeto Angular em módulos feature-based?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Facilita o lazy loading e a manutenção do código",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Aumenta o tempo de build",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Impede a reutilização de componentes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Módulos feature-based permitem lazy loading e melhor organização do código por funcionalidades.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Feature-based modules organizam código por funcionalidade de negócio, não por tipo técnico. Em vez de \u0027components/\u0027, \u0027services/\u0027, tenho \u0027user-management/\u0027, \u0027product-catalog/\u0027. Cada feature é mini-aplicação: seus componentes, services, models. Facilita lazy loading, onboarding de novos devs, manutenção. Time de produtos trabalha só no ProductModule sem afetar UserModule. Escalabilidade real."
+                      },
+                      {
+                          "id":  "ana-ent1041",
+                          "question":  "Como a separação de responsabilidades contribui para a escalabilidade de um projeto?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permite que diferentes partes do sistema evoluam de forma independente",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Centraliza toda a lógica em um único módulo",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Reduz a necessidade de testes",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Separação de responsabilidades reduz acoplamento, facilitando evolução independente de módulos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Separação de responsabilidades é chave para escalabilidade. Cada módulo/component tem função clara, reduzindo dependências. Exemplo: AuthService só cuida de autenticação, UserService só de dados do usuário. Se preciso mudar lógica de autenticação, faço no AuthService sem afetar UserService. Facilita trabalho em equipe - múltiplos devs podem trabalhar em módulos diferentes simultaneamente. Testes unitários mais simples e eficazes."
+                      },
+                      {
+                          "id":  "ana-ent1042",
+                          "question":  "Qual prática ajuda a manter um projeto escalável ao longo do tempo?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Evitar documentação e testes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Adotar padrões consistentes de arquitetura e modularização",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Manter todos os arquivos em uma única pasta",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Padrões consistentes facilitam manutenção, onboarding e evolução do projeto.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Adotar padrões consistentes é crucial para a escalabilidade. Isso inclui convenções de nomenclatura, estrutura de pastas e práticas de codificação. Por exemplo, usar sempre \u0027feature/\u0027 para módulos de recursos e \u0027shared/\u0027 para módulos compartilhados. Isso ajuda novos desenvolvedores a entenderem rapidamente a estrutura do projeto e reduz a curva de aprendizado."
+                      },
+                      {
+                          "id":  "ana-ent1043",
+                          "question":  "Em projetos escaláveis, o que é recomendado ao lidar com dependências entre módulos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Evitar acoplamento excessivo e usar interfaces ou serviços compartilhados",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Importar diretamente componentes de outros módulos",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Duplicar código para evitar dependências",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Reduzir acoplamento entre módulos facilita manutenção e evolução independente.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Para lidar com dependências entre módulos, é importante evitar acoplamento excessivo. Isso pode ser feito usando interfaces ou serviços compartilhados. Por exemplo, em vez de um módulo importar diretamente componentes de outro, ele pode se comunicar através de um serviço. Isso torna os módulos mais independentes e facilita a manutenção."
+                      },
+                      {
+                          "id":  "ana-ent1047",
+                          "question":  "O que é Progressive Web App (PWA) e suas principais características?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "App web que funciona offline e pode ser instalada como app nativo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca para desenvolvimento web",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de banco de dados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "PWAs combinam o melhor da web e apps nativos com service workers, manifests e design responsivo.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: PWA combina web e mobile nativo. Características principais: 1) Service Worker para cache e funcionamento offline, 2) Web App Manifest para instalação no device, 3) HTTPS obrigatório para segurança, 4) Design responsivo e touch-friendly, 5) Push notifications para engagement. Vantagens: sem app store, updates automáticos, menor tamanho que apps nativos. Desenvolvo PWAs usando Angular Service Worker que automatiza cache strategies."
+                      },
+                      {
+                          "id":  "ana-ent1050",
+                          "question":  "Como você implementaria um sistema de estado global sem Redux/NgRx?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando Context API no React ou Services com BehaviorSubject no Angular",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas com variáveis globais",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Usando apenas localStorage",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Context API e Services com RxJS fornecem state management simples sem bibliotecas externas.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Para estado global simples, uso ferramentas nativas: Context API no React ou Services singleton no Angular. Crio UserService com BehaviorSubject para estado reativo: private userSubject = new BehaviorSubject(null); get user$() { return this.userSubject.asObservable(); }. Para estado complexo, avalio se realmente preciso de Redux/NgRx ou se padrão simples resolve. Às vezes, lift state up ou prop drilling é mais simples que over-engineering."
+                      },
+                      {
+                          "id":  "ana-ent1053",
+                          "question":  "O que é Server-Side Rendering (SSR) e suas vantagens?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Renderização no servidor que melhora SEO e tempo de carregamento inicial",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma técnica apenas para aplicações mobile",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de banco de dados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "SSR renderiza páginas no servidor, enviando HTML completo para o cliente, melhorando SEO e performance inicial.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: SSR renderiza HTML no servidor antes de enviar para cliente. Vantagens: 1) SEO melhorado - crawlers veem conteúdo completo, 2) First Contentful Paint mais rápido, 3) Melhor performance em dispositivos lentos. Desafios: complexidade do setup, hydration mismatches, maior carga no servidor. No Angular uso Angular Universal, no React uso Next.js. Para apps com muito conteúdo dinâmico, avalio se SSG (Static Site Generation) não seria melhor."
+                      },
+                      {
+                          "id":  "ana-ent1065",
+                          "question":  "O que são Custom Hooks no React ou Custom Decorators no Angular?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Funcionalidades reutilizáveis que encapsulam lógica complexa",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas funções normais de JavaScript",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Componentes visuais customizados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Custom Hooks/Decorators permitem reutilizar lógica stateful entre componentes de forma elegante.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Custom Hooks (React) ou Custom Decorators (Angular) extraem lógica reutilizável. React Hook exemplo: useLocalStorage que synca state com localStorage automaticamente. Angular Decorator exemplo: @Debounce que adiciona debouncing a qualquer método. Benefícios: 1) DRY principle, 2) Separation of concerns, 3) Easy testing, 4) Better composition. Sempre penso: \u0027essa lógica pode ser útil em outros componentes?\u0027 Se sim, extraio para custom hook/decorator."
                       }
                   ]
 }

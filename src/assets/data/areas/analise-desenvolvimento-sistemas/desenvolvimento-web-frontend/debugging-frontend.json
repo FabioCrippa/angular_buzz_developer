@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "desenvolvimento-web",
                      "subject":  "debugging-frontend",
@@ -6,7 +6,7 @@
                      "description":  "Erros comuns, debugging e troubleshooting em JavaScript/Frontend, performance e boas práticas",
                      "difficulty":  "intermediate",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  29,
                      "tags":  [
                                   "debugging",
                                   "performance",
@@ -614,6 +614,106 @@
                           "correct":  "a",
                           "explanation":  "Tree shaking analisa o código e remove partes não utilizadas, reduzindo o tamanho do bundle final.",
                           "category":  "front-end"
+                      },
+                      {
+                          "id":  "ana-ent1048",
+                          "question":  "Como você otimizaria a performance de uma aplicação web?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Code splitting, lazy loading, otimização de imagens e cache strategies",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas usando CDN para assets",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Minificando apenas o CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Performance requer abordagem holística: code splitting, lazy loading, otimização de assets e cache inteligente.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Performance é multi-layered: 1) Bundle optimization com code splitting e tree shaking, 2) Lazy loading de módulos e imagens, 3) Otimização de assets (WebP images, minificação), 4) HTTP/2 e preload critical resources, 5) Service Worker para cache strategies, 6) Database optimization e CDN para assets. Uso Lighthouse para medir Core Web Vitals. Monitoro com ferramentas como New Relic ou DataDog em produção."
+                      },
+                      {
+                          "id":  "ana-ent1056",
+                          "question":  "Como você debuggaria problemas de performance em uma aplicação web?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando DevTools, Lighthouse, profiling e monitoring em produção",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas adicionando console.log no código",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Reescrevendo toda a aplicação",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Debug de performance requer ferramentas específicas para identificar gargalos e métricas de user experience.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Debug performance é sistemático: 1) Chrome DevTools Performance tab para identificar long tasks e layout thrashing, 2) Lighthouse para Core Web Vitals e sugestões automatizadas, 3) Network tab para analisar waterfall de requests, 4) Memory tab para detectar memory leaks, 5) Angular DevTools ou React Profiler para component re-renders, 6) Real User Monitoring (RUM) em produção. Foco em métricas que impactam UX: FCP, LCP, FID, CLS."
+                      },
+                      {
+                          "id":  "ana-ent1048",
+                          "question":  "Como você otimizaria a performance de uma aplicação web?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Code splitting, lazy loading, otimização de imagens e cache strategies",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas usando CDN para assets",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Minificando apenas o CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Performance requer abordagem holística: code splitting, lazy loading, otimização de assets e cache inteligente.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Performance é multi-layered: 1) Bundle optimization com code splitting e tree shaking, 2) Lazy loading de módulos e imagens, 3) Otimização de assets (WebP images, minificação), 4) HTTP/2 e preload critical resources, 5) Service Worker para cache strategies, 6) Database optimization e CDN para assets. Uso Lighthouse para medir Core Web Vitals. Monitoro com ferramentas como New Relic ou DataDog em produção."
+                      },
+                      {
+                          "id":  "ana-ent1056",
+                          "question":  "Como você debuggaria problemas de performance em uma aplicação web?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando DevTools, Lighthouse, profiling e monitoring em produção",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas adicionando console.log no código",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Reescrevendo toda a aplicação",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Debug de performance requer ferramentas específicas para identificar gargalos e métricas de user experience.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Debug performance é sistemático: 1) Chrome DevTools Performance tab para identificar long tasks e layout thrashing, 2) Lighthouse para Core Web Vitals e sugestões automatizadas, 3) Network tab para analisar waterfall de requests, 4) Memory tab para detectar memory leaks, 5) Angular DevTools ou React Profiler para component re-renders, 6) Real User Monitoring (RUM) em produção. Foco em métricas que impactam UX: FCP, LCP, FID, CLS."
                       }
                   ]
 }

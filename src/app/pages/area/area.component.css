@@ -2008,6 +2008,23 @@ label {
   color: #fff;
 }
 
+/* ── SIMULADOS ADAPTADOS ── */
+.simulado-card-adaptado {
+  border: 2px solid #1565c0;
+}
+
+.simulado-card-tema {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.18);
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
 @media (max-width: 768px) {
   .simulados-cards-grid {
     grid-template-columns: repeat(2, 1fr);

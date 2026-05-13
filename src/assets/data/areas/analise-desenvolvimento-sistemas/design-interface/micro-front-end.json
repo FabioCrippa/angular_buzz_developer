@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "design",
                      "subject":  "micro-front-end",
@@ -6,7 +6,7 @@
                      "description":  "Arquitetura microfrontend, modularização e desenvolvimento distribuído.",
                      "difficulty":  "advanced",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  27,
                      "tags":  [
                                   "arquitetura",
                                   "modular",
@@ -614,6 +614,56 @@
                           "correct":  "a",
                           "explanation":  "O shell application deve coordenar SSR e meta tags dinâmicas baseadas no microfrontend ativo.",
                           "category":  "micro-front-end"
+                      },
+                      {
+                          "id":  "ana-ent1051",
+                          "question":  "O que são microfrontends e quando você os recomendaria?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Arquitetura que divide frontend em módulos independentes desenvolvidos por times diferentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma nova versão do Angular",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de componente React",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Microfrontends aplicam conceitos de microservices ao frontend, permitindo desenvolvimento independente por múltiplos times.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Microfrontends estendem microservices para frontend. Cada time desenvolve parte da aplicação independentemente - diferentes frameworks, deploy cycles, ownership. Recomendo para: 1) Times grandes (50+ devs), 2) Produtos complexos com domínios bem definidos, 3) Legacy migration gradual. Desafios: state sharing, styling consistency, bundle size. Uso Module Federation ou Single-SPA para implementar. Não recomendo para apps pequenas - overhead não compensa."
+                      },
+                      {
+                          "id":  "ana-ent1051",
+                          "question":  "O que são microfrontends e quando você os recomendaria?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Arquitetura que divide frontend em módulos independentes desenvolvidos por times diferentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma nova versão do Angular",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de componente React",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Microfrontends aplicam conceitos de microservices ao frontend, permitindo desenvolvimento independente por múltiplos times.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Microfrontends estendem microservices para frontend. Cada time desenvolve parte da aplicação independentemente - diferentes frameworks, deploy cycles, ownership. Recomendo para: 1) Times grandes (50+ devs), 2) Produtos complexos com domínios bem definidos, 3) Legacy migration gradual. Desafios: state sharing, styling consistency, bundle size. Uso Module Federation ou Single-SPA para implementar. Não recomendo para apps pequenas - overhead não compensa."
                       }
                   ]
 }

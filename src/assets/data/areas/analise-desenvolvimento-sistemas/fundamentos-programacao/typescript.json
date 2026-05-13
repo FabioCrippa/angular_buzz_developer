@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "desenvolvimento-web",
                      "subject":  "typescript",
@@ -6,7 +6,7 @@
                      "description":  "TypeScript, tipagem estática, interfaces, generics e desenvolvimento escalável.",
                      "difficulty":  "fundamental",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  27,
                      "tags":  [
                                   "tipagem",
                                   "interfaces",
@@ -614,6 +614,56 @@
                           "correct":  "a",
                           "explanation":  "Project references e incremental builds aceleram drasticamente compilação em monorepos e projetos grandes.",
                           "category":  "typescript"
+                      },
+                      {
+                          "id":  "ana-ent1044",
+                          "question":  "O que é TypeScript e quais suas principais vantagens?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "É um superset do JavaScript que adiciona tipagem estática",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "É um framework para desenvolvimento web",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "É uma biblioteca para manipulação do DOM",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e IntelliSense.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: TypeScript é JavaScript com superpoderes. Adiciona tipagem estática que detecta erros em tempo de compilação, não runtime. Melhora drasticamente a experiência de desenvolvimento com IntelliSense, refactoring seguro e documentação self-describing. Em projetos grandes, reduz bugs significativamente. É transpilado para JavaScript puro, então roda em qualquer lugar que JS roda."
+                      },
+                      {
+                          "id":  "ana-ent1044",
+                          "question":  "O que é TypeScript e quais suas principais vantagens?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "É um superset do JavaScript que adiciona tipagem estática",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "É um framework para desenvolvimento web",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "É uma biblioteca para manipulação do DOM",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "TypeScript adiciona tipagem estática ao JavaScript, melhorando detecção de erros e IntelliSense.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: TypeScript é JavaScript com superpoderes. Adiciona tipagem estática que detecta erros em tempo de compilação, não runtime. Melhora drasticamente a experiência de desenvolvimento com IntelliSense, refactoring seguro e documentação self-describing. Em projetos grandes, reduz bugs significativamente. É transpilado para JavaScript puro, então roda em qualquer lugar que JS roda."
                       }
                   ]
 }

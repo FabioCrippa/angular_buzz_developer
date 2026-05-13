@@ -2092,3 +2092,58 @@
   .simulado-progress-row { flex-wrap: wrap; }
   .by-area-name { width: 110px; }
 }
+
+
+/* ----------------------------------------------
+   MODO BAIXA VISAO — zoom via [style.zoom]
+   Estetica extra (bordas) mantida aqui
+   ---------------------------------------------- */
+.quiz-baixa-visao .simulado-option,
+.quiz-baixa-visao .option-btn {
+  border: 2px solid #555;
+  line-height: 1.7;
+}
+
+/* CONTROLES DE ZOOM */
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.zoom-controls-result {
+  margin: 0.8rem auto 0;
+  justify-content: center;
+}
+
+.zoom-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.zoom-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.zoom-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.zoom-level {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  min-width: 36px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}

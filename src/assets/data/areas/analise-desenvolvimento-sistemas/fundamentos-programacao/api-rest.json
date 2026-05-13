@@ -1,0 +1,702 @@
+﻿{
+    "metadata":  {
+                     "area":  "analise-desenvolvimento-sistemas",
+                     "subject":  "api-rest",
+                     "name":  "APIs RESTful e Microserviços",
+                     "description":  "HTTP methods, status codes, REST principles, microservices, Swagger/OpenAPI e boas práticas de API.",
+                     "difficulty":  "fundamental",
+                     "lastUpdated":  "2026-05-13",
+                     "questionCount":  24,
+                     "tags":  [
+                                  "rest",
+                                  "api",
+                                  "http",
+                                  "microservicos",
+                                  "swagger",
+                                  "openapi",
+                                  "entrevista"
+                              ]
+                 },
+    "questions":  [
+                      {
+                          "id":  "ana-api1001",
+                          "question":  "Quais são os métodos HTTP mais comuns em uma API RESTful e suas funções?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "GET (ler), POST (criar), PUT/PATCH (atualizar), DELETE (remover)",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "GET (criar), POST (ler), PUT (deletar), DELETE (atualizar)",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "FETCH (ler), SEND (criar), UPDATE (atualizar), REMOVE (remover)",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "GET e POST são suficientes para todas as operações REST",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "category":  "api-rest",
+                          "explanation":  "REST mapeia operações CRUD aos métodos HTTP: GET lê sem alterar estado, POST cria recursos, PUT substitui completamente, PATCH atualiza parcialmente e DELETE remove o recurso."
+                      },
+                      {
+                          "id":  "ana-api1002",
+                          "question":  "O que significa o status HTTP 404?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Requisição bem-sucedida",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Recurso não encontrado no servidor",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Erro interno do servidor",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Requisição não autorizada por falta de credenciais",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "404 Not Found indica que o servidor não encontrou o recurso solicitado na URL especificada. É diferente do 401 (não autenticado) e 403 (proibido mesmo com autenticação)."
+                      },
+                      {
+                          "id":  "ana-api1003",
+                          "question":  "Qual é a diferença entre os status HTTP 401 e 403?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "São equivalentes, ambos indicam falta de permissão",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "401 = não autenticado (sem credenciais); 403 = autenticado mas sem permissão para aquele recurso",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "401 = servidor indisponível; 403 = recurso não encontrado",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "401 é para APIs públicas; 403 é para APIs privadas",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "401 Unauthorized significa que a requisição não contém credenciais válidas e o usuário deve autenticar. 403 Forbidden significa que o usuário está autenticado mas não tem permissão para acessar aquele recurso específico."
+                      },
+                      {
+                          "id":  "ana-api1004",
+                          "question":  "Quais são as principais constraints (restrições) que definem uma API como RESTful?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Deve usar JSON obrigatoriamente e ter autenticação JWT",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Stateless, Client-Server, Cacheable, Uniform Interface, Layered System e Code on Demand (opcional)",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Deve usar HTTPS e ter versionamento na URL",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Deve responder em menos de 200ms e ter documentação Swagger",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Roy Fielding definiu REST com 6 constraints: Stateless (sem estado entre requisições), Client-Server (separação), Cacheable (respostas cacheáveis), Uniform Interface (interface consistente), Layered System (camadas) e Code on Demand (opcional)."
+                      },
+                      {
+                          "id":  "ana-api1005",
+                          "question":  "O que significa \u0027stateless\u0027 em uma API REST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "A API não retorna dados de estado, apenas mensagens de sucesso ou erro",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Cada requisição contém todas as informações necessárias; o servidor não guarda estado de sessão entre requisições",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "A API nunca armazena dados no banco de dados",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "A API não tem variáveis de estado no código",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Stateless é uma constraint fundamental do REST: o servidor não mantém estado de sessão entre chamadas. Cada request deve ser autossuficiente, incluindo token de autenticação, parâmetros e contexto necessários."
+                      },
+                      {
+                          "id":  "ana-api1006",
+                          "question":  "Qual status HTTP deve ser retornado ao criar um recurso com sucesso via POST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "200 OK",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "201 Created",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "204 No Content",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "202 Accepted",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "201 Created indica que a requisição POST foi bem-sucedida e um novo recurso foi criado. O header Location deve indicar a URL do recurso criado. 200 é para operações de leitura/atualização bem-sucedidas."
+                      },
+                      {
+                          "id":  "ana-api1007",
+                          "question":  "O que é CORS (Cross-Origin Resource Sharing) e por que ele importa em APIs?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Um protocolo de criptografia para APIs REST",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um mecanismo de segurança do browser que controla quais origens podem acessar a API",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma estratégia de cache para respostas de API",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Um formato alternativo ao JSON para respostas de API",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "CORS é uma política de segurança implementada pelos browsers que bloqueia requisições cross-origin por padrão. O servidor precisa incluir headers como Access-Control-Allow-Origin para permitir que frontends em outros domínios acessem a API."
+                      },
+                      {
+                          "id":  "ana-api1008",
+                          "question":  "O que é Swagger / OpenAPI Specification?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma biblioteca JavaScript para fazer chamadas HTTP",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um padrão para documentar APIs REST de forma legível por humanos e máquinas",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework para criar APIs RESTful em Node.js",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Uma ferramenta de teste de carga para APIs",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "OpenAPI (anteriormente Swagger) é uma especificação para descrever APIs REST em formato YAML/JSON. Gera documentação interativa, permite testar endpoints no browser e pode gerar código cliente automaticamente."
+                      },
+                      {
+                          "id":  "ana-api1009",
+                          "question":  "Qual é a diferença entre PUT e PATCH em APIs REST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "PUT e PATCH são idênticos e podem ser usados de forma intercambiável",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "PUT substitui o recurso inteiro; PATCH aplica uma atualização parcial",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "PUT é para criar; PATCH é para deletar",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "PUT é idempotente; PATCH nunca é idempotente",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "PUT envia o recurso completo, substituindo tudo. PATCH envia apenas os campos a serem modificados. Exemplo: atualizar só o email do usuário usa PATCH; substituir todos os dados do usuário usa PUT."
+                      },
+                      {
+                          "id":  "ana-api1010",
+                          "question":  "O que é idempotência no contexto de métodos HTTP?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "A capacidade de uma API responder sem autenticação",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "A propriedade de que múltiplas chamadas idênticas produzem o mesmo resultado que uma única chamada",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "A velocidade de resposta consistente independente da carga",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "A capacidade de reverter uma operação após executá-la",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "GET, PUT, DELETE e HEAD são idempotentes: executar N vezes tem o mesmo efeito que executar uma vez. POST não é idempotente (múltiplos POSTs criam múltiplos recursos). Idempotência é crucial para retry seguro em falhas de rede."
+                      },
+                      {
+                          "id":  "ana-api1011",
+                          "question":  "O que são microserviços e qual vantagem oferecem em relação à arquitetura monolítica?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Microserviços são APIs menores que 100 linhas de código",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Serviços independentes por domínio de negócio, permitindo deploy, escala e tecnologia independentes por serviço",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um padrão que elimina a necessidade de banco de dados",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Microserviços são sempre mais simples e rápidos que monolitos",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Microserviços decompõem a aplicação em serviços coesos por domínio (ex: usuários, pedidos, pagamentos). Cada um pode ser deployado, escalado e desenvolvido de forma independente. Trazem complexidade operacional mas maior resiliência e flexibilidade."
+                      },
+                      {
+                          "id":  "ana-api1012",
+                          "question":  "O que é um API Gateway no contexto de microserviços?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Um banco de dados centralizado compartilhado entre microserviços",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um ponto de entrada único que roteia requisições para os microserviços corretos, centralizando auth, rate limiting e logging",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um serviço que sincroniza dados entre microserviços em tempo real",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Uma ferramenta de monitoramento exclusiva para microserviços",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "O API Gateway atua como proxy reverso e ponto de entrada único, roteando requisições aos serviços apropriados. Centraliza autenticação, autorização, rate limiting, logging e transformações de request/response. Exemplos: Kong, AWS API Gateway, Nginx."
+                      },
+                      {
+                          "id":  "ana-api1013",
+                          "question":  "Qual status HTTP indica que a requisição foi bem-sucedida mas não há conteúdo para retornar?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "200 OK",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "204 No Content",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "304 Not Modified",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "202 Accepted",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "204 No Content é tipicamente retornado em operações DELETE bem-sucedidas ou PUT quando o servidor não precisa enviar o recurso de volta. O cliente sabe que a operação funcionou sem precisar processar um body de resposta."
+                      },
+                      {
+                          "id":  "ana-api1014",
+                          "question":  "Como funciona a autenticação com JWT (JSON Web Token) em APIs REST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "O JWT é armazenado no banco de dados e verificado a cada requisição",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "O cliente recebe um token assinado no login e o envia no header Authorization em cada requisição",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "JWT usa cookies de sessão para manter o usuário logado",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "JWT é um protocolo que substitui completamente o HTTPS",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "JWT tem 3 partes: header (algoritmo), payload (claims/dados) e signature (verificação). O servidor assina o token no login. O cliente envia Authorization: Bearer \u003ctoken\u003e em cada request. O servidor valida a assinatura sem consultar banco de dados."
+                      },
+                      {
+                          "id":  "ana-api1015",
+                          "question":  "O que é versionamento de API e por que é importante?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "É o processo de fazer backup das respostas da API",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Permite evoluir a API sem quebrar clientes existentes, através de /v1/, /v2/ ou headers de versão",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "É o controle de acesso por versão do cliente",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "É obrigatório apenas para APIs públicas",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Versionar APIs (ex: /api/v1/users vs /api/v2/users) permite introduzir breaking changes sem quebrar clientes que usam versões antigas. Estratégias incluem versão na URL, header Accept-Version ou query string ?version=2."
+                      },
+                      {
+                          "id":  "ana-api1016",
+                          "question":  "O que é rate limiting em APIs e por que é utilizado?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma técnica para aumentar a velocidade das respostas da API",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Limitar o número de requisições por cliente em um período de tempo, protegendo contra abuso e DDoS",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um padrão para limitar o tamanho do payload JSON aceito",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Uma estratégia de paginação para grandes conjuntos de dados",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Rate limiting protege a API contra abuso, ataques de DDoS e uso excessivo por um único cliente. Tipicamente retorna 429 Too Many Requests com headers indicando quando o limite será resetado (Retry-After, X-RateLimit-Reset)."
+                      },
+                      {
+                          "id":  "ana-api1017",
+                          "question":  "Qual é a diferença entre comunicação síncrona e assíncrona em microserviços?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Síncrona é mais rápida; assíncrona é mais lenta",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Síncrona (REST/gRPC) aguarda resposta imediata; assíncrona (mensageria/eventos) não bloqueia, usa filas como RabbitMQ ou Kafka",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Síncrona usa HTTP; assíncrona usa WebSocket exclusivamente",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Síncrona é para dados; assíncrona é apenas para logs",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Na comunicação síncrona (REST, gRPC), o serviço espera a resposta antes de continuar. Na assíncrona (Kafka, RabbitMQ), publica eventos e continua sem aguardar. A assíncrona aumenta resiliência e desacoplamento mas adiciona complexidade."
+                      },
+                      {
+                          "id":  "ana-api1018",
+                          "question":  "O que é um webhook e como ele difere de uma chamada REST comum?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Webhook é o mesmo que REST, apenas com outro nome",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Webhook é uma notificação HTTP que o servidor envia proativamente ao cliente quando um evento ocorre (push vs pull)",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Webhook é um método HTTP especial para grandes payloads",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "Webhook só funciona em APIs GraphQL",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Em REST o cliente faz pull (requisita dados quando precisa). Com webhooks, o servidor faz push: quando um evento ocorre (ex: pagamento confirmado), o servidor chama automaticamente uma URL do cliente com os dados do evento. Usado por Stripe, GitHub, PayPal."
+                      },
+                      {
+                          "id":  "ana-api1019",
+                          "question":  "O que é paginação em APIs REST e qual padrão é mais recomendado?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Paginação é a divisão da API em múltiplas versões",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Técnica de retornar dados em partes usando limit/offset ou cursor-based pagination para grandes coleções",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um método de compressão de respostas JSON grandes",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "A divisão do código da API em múltiplos arquivos",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Paginação evita retornar milhares de registros de uma vez. Limit/Offset (ex: ?page=2\u0026limit=20) é simples mas ineficiente em grandes volumes. Cursor-based (ex: ?after=id_ultimo) é mais eficiente e estável para dados em constante mudança."
+                      },
+                      {
+                          "id":  "ana-api1020",
+                          "question":  "O que indica o status HTTP 500 Internal Server Error?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "O cliente enviou uma requisição mal formada",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "O servidor encontrou uma condição inesperada que impediu de cumprir a requisição",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "O recurso foi movido permanentemente para outra URL",
+                                              "alias":  "c"
+                                          },
+                                          {
+                                              "id":  4,
+                                              "name":  "A requisição está correta mas o processamento está pendente",
+                                              "alias":  "d"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "category":  "api-rest",
+                          "explanation":  "Erros 5xx são do lado do servidor. 500 é o código genérico para erros não tratados no servidor (ex: exceção não capturada, falha de banco). Para o cliente, significa que a requisição estava correta mas o servidor falhou ao processá-la."
+                      },
+                      {
+                          "id":  "ana-ent1004",
+                          "question":  "Quais são os principais métodos HTTP usados em APIs REST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "GET, POST, PUT, PATCH, DELETE",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "SEND, RECEIVE, UPDATE, REMOVE",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "CONNECT, TRACE, OPTIONS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "GET recupera dados, POST cria, PUT substitui completamente, PATCH atualiza parcialmente, DELETE remove recursos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Uso cada método com seu propósito específico: GET para consultas (idempotente e cacheable), POST para criar recursos únicos, PUT para substituição completa (idempotente), PATCH para atualizações parciais, DELETE para remoção. Sempre implemento status codes adequados: 200 para sucesso, 201 para criação, 404 para não encontrado. Isso garante uma API RESTful bem estruturada."
+                      },
+                      {
+                          "id":  "ana-ent1061",
+                          "question":  "O que é GraphQL e quando você escolheria sobre REST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Query language que permite requisitar dados específicos, ideal para clientes com necessidades diferentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um banco de dados NoSQL",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma biblioteca para animações",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "GraphQL permite queries flexíveis e tipadas, reduzindo over-fetching e under-fetching de dados.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: GraphQL resolve problemas de REST: over-fetching (dados desnecessários) e under-fetching (múltiplas requests). Com GraphQL, client especifica exatamente quais dados quer: { user { name posts { title } } }. Vantagens: 1) Strong typing com schema, 2) Single endpoint, 3) Real-time com subscriptions, 4) Great developer experience. Escolho GraphQL para: mobile apps (bandwidth limitado), complex relationships, rapid iteration. Uso Apollo Client para caching inteligente e state management."
+                      },
+                      {
+                          "id":  "ana-ent1004",
+                          "question":  "Quais são os principais métodos HTTP usados em APIs REST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "GET, POST, PUT, PATCH, DELETE",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "SEND, RECEIVE, UPDATE, REMOVE",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "CONNECT, TRACE, OPTIONS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "GET recupera dados, POST cria, PUT substitui completamente, PATCH atualiza parcialmente, DELETE remove recursos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Uso cada método com seu propósito específico: GET para consultas (idempotente e cacheable), POST para criar recursos únicos, PUT para substituição completa (idempotente), PATCH para atualizações parciais, DELETE para remoção. Sempre implemento status codes adequados: 200 para sucesso, 201 para criação, 404 para não encontrado. Isso garante uma API RESTful bem estruturada."
+                      },
+                      {
+                          "id":  "ana-ent1061",
+                          "question":  "O que é GraphQL e quando você escolheria sobre REST?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Query language que permite requisitar dados específicos, ideal para clientes com necessidades diferentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um banco de dados NoSQL",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma biblioteca para animações",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "GraphQL permite queries flexíveis e tipadas, reduzindo over-fetching e under-fetching de dados.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: GraphQL resolve problemas de REST: over-fetching (dados desnecessários) e under-fetching (múltiplas requests). Com GraphQL, client especifica exatamente quais dados quer: { user { name posts { title } } }. Vantagens: 1) Strong typing com schema, 2) Single endpoint, 3) Real-time com subscriptions, 4) Great developer experience. Escolho GraphQL para: mobile apps (bandwidth limitado), complex relationships, rapid iteration. Uso Apollo Client para caching inteligente e state management."
+                      }
+                  ]
+}

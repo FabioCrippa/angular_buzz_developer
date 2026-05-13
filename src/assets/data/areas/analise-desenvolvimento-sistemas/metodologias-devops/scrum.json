@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "metodologias",
                      "subject":  "scrum",
@@ -6,7 +6,7 @@
                      "description":  "Metodologia Scrum, práticas ágeis, sprints e gestão de projetos.",
                      "difficulty":  "intermediate",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  37,
                      "tags":  [
                                   "agil",
                                   "sprints",
@@ -614,6 +614,306 @@
                           "correct":  "a",
                           "explanation":  "Spikes são timeboxed para investigar tecnologias, arquiteturas ou soluções antes da implementação.",
                           "category":  "scrum"
+                      },
+                      {
+                          "id":  "ana-ent1018",
+                          "question":  "Qual é o principal objetivo da reunião diária (daily stand-up) em metodologias ágeis?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir metas de longo prazo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Compartilhar o progresso, identificar impedimentos e alinhar o time",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Apresentar o produto ao cliente",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Daily visa sincronização rápida do time e identificação precoce de bloqueios.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Daily é sobre transparência e colaboração. Cada membro responde: \u0027O que fiz ontem?\u0027, \u0027O que farei hoje?\u0027, \u0027Tenho impedimentos?\u0027. Máximo 15 minutos, foco em sincronização, não relatório detalhado. Quando identifico impedimento, busco ajuda do time. Se alguém está trabalhando em algo similar, nos sincronizamos depois. Mantém o time alinhado e produtivo."
+                      },
+                      {
+                          "id":  "ana-ent1019",
+                          "question":  "O que acontece na reunião de planning (planejamento) em Scrum?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "O time define quais tarefas serão executadas no próximo sprint",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Os stakeholders aprovam o deploy em produção",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Os desenvolvedores revisam o código uns dos outros",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Sprint Planning define o escopo e objetivos do próximo sprint.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Sprint Planning é dividido em duas partes: \u0027O que faremos?\u0027 e \u0027Como faremos?\u0027. Product Owner apresenta prioridades do backlog, time estima complexidade usando planning poker ou t-shirt sizes. Consideramos velocity histórica para definir capacidade realista. Quebramos User Stories em tarefas técnicas menores. Definimos Definition of Done clara. Planning bem feito garante sprint focado e produtivo."
+                      },
+                      {
+                          "id":  "ana-ent1020",
+                          "question":  "Qual é o propósito da reunião de review (revisão de sprint)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Apresentar o que foi desenvolvido e coletar feedback dos stakeholders",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Revisar os testes automatizados",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Planejar o próximo trimestre",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Sprint Review demonstra o incremento desenvolvido e coleta feedback.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Sprint Review é demo das funcionalidades entregues para stakeholders. Mostro o produto funcionando, não slides ou teorias. Coleto feedback real dos usuários, identifico ajustes necessários. PO atualiza o backlog baseado no feedback. É transparência total: mostro o que funcionou e o que não funcionou. Essa validação contínua garante que construímos o produto certo."
+                      },
+                      {
+                          "id":  "ana-ent1021",
+                          "question":  "O que é uma retrospectiva em metodologias ágeis?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma reunião para revisar o código-fonte",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma reunião para refletir sobre o processo e buscar melhorias",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma análise de desempenho individual",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Retrospectiva foca em melhorar o processo de trabalho do time.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Retrospectiva é momento de melhoria contínua do processo. Usamos formato \u0027Start, Stop, Continue\u0027: o que começar a fazer, parar de fazer, continuar fazendo. Discutimos impedimentos recorrentes, celebramos sucessos, definimos ações concretas para o próximo sprint. Exemplo: identificamos que code review estava atrasando entregas, então definimos SLA de 24h para reviews. Foco sempre no processo, não nas pessoas."
+                      },
+                      {
+                          "id":  "ana-ent1022",
+                          "question":  "Qual é uma vantagem das metodologias ágeis em relação aos modelos tradicionais?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Maior flexibilidade para mudanças e entregas incrementais",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Documentação extensa antes do início do projeto",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Execução linear e sem revisões",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Agilidade permite adaptação rápida a mudanças e entrega contínua de valor.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Metodologias ágeis respondem a mudanças ao invés de seguir plano rígido. Entregamos valor incremental a cada sprint, permitindo validação contínua com usuários. Se mercado muda ou surgem novas necessidades, pivotamos rapidamente. Feedback loops curtos evitam desperdício de tempo construindo features desnecessárias. Foco em individuals e interactions over processes and tools."
+                      },
+                      {
+                          "id":  "ana-ent1023",
+                          "question":  "Qual é a principal diferença entre Scrum e Kanban?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Scrum usa sprints com duração fixa; Kanban é contínuo e baseado em fluxo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Kanban exige reuniões diárias obrigatórias",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Scrum não possui papéis definidos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Scrum trabalha em sprints timeboxed, enquanto Kanban é um fluxo contínuo baseado em limites WIP.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Trabalhei com ambos. Scrum é ideal quando precisa de entregas regulares e planejamento estruturado - sprints de 2 semanas com planning, daily, review e retrospectiva. Kanban uso para suporte ou manutenção, onde demandas chegam continuamente. O board Kanban limita WIP (work in progress) para evitar multitasking excessivo. Cada abordagem serve contextos diferentes."
+                      },
+                      {
+                          "id":  "ana-ent1018",
+                          "question":  "Qual é o principal objetivo da reunião diária (daily stand-up) em metodologias ágeis?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definir metas de longo prazo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Compartilhar o progresso, identificar impedimentos e alinhar o time",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Apresentar o produto ao cliente",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Daily visa sincronização rápida do time e identificação precoce de bloqueios.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Daily é sobre transparência e colaboração. Cada membro responde: \u0027O que fiz ontem?\u0027, \u0027O que farei hoje?\u0027, \u0027Tenho impedimentos?\u0027. Máximo 15 minutos, foco em sincronização, não relatório detalhado. Quando identifico impedimento, busco ajuda do time. Se alguém está trabalhando em algo similar, nos sincronizamos depois. Mantém o time alinhado e produtivo."
+                      },
+                      {
+                          "id":  "ana-ent1019",
+                          "question":  "O que acontece na reunião de planning (planejamento) em Scrum?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "O time define quais tarefas serão executadas no próximo sprint",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Os stakeholders aprovam o deploy em produção",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Os desenvolvedores revisam o código uns dos outros",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Sprint Planning define o escopo e objetivos do próximo sprint.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Sprint Planning é dividido em duas partes: \u0027O que faremos?\u0027 e \u0027Como faremos?\u0027. Product Owner apresenta prioridades do backlog, time estima complexidade usando planning poker ou t-shirt sizes. Consideramos velocity histórica para definir capacidade realista. Quebramos User Stories em tarefas técnicas menores. Definimos Definition of Done clara. Planning bem feito garante sprint focado e produtivo."
+                      },
+                      {
+                          "id":  "ana-ent1020",
+                          "question":  "Qual é o propósito da reunião de review (revisão de sprint)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Apresentar o que foi desenvolvido e coletar feedback dos stakeholders",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Revisar os testes automatizados",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Planejar o próximo trimestre",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Sprint Review demonstra o incremento desenvolvido e coleta feedback.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Sprint Review é demo das funcionalidades entregues para stakeholders. Mostro o produto funcionando, não slides ou teorias. Coleto feedback real dos usuários, identifico ajustes necessários. PO atualiza o backlog baseado no feedback. É transparência total: mostro o que funcionou e o que não funcionou. Essa validação contínua garante que construímos o produto certo."
+                      },
+                      {
+                          "id":  "ana-ent1021",
+                          "question":  "O que é uma retrospectiva em metodologias ágeis?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma reunião para revisar o código-fonte",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma reunião para refletir sobre o processo e buscar melhorias",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Uma análise de desempenho individual",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Retrospectiva foca em melhorar o processo de trabalho do time.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Retrospectiva é momento de melhoria contínua do processo. Usamos formato \u0027Start, Stop, Continue\u0027: o que começar a fazer, parar de fazer, continuar fazendo. Discutimos impedimentos recorrentes, celebramos sucessos, definimos ações concretas para o próximo sprint. Exemplo: identificamos que code review estava atrasando entregas, então definimos SLA de 24h para reviews. Foco sempre no processo, não nas pessoas."
+                      },
+                      {
+                          "id":  "ana-ent1022",
+                          "question":  "Qual é uma vantagem das metodologias ágeis em relação aos modelos tradicionais?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Maior flexibilidade para mudanças e entregas incrementais",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Documentação extensa antes do início do projeto",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Execução linear e sem revisões",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Agilidade permite adaptação rápida a mudanças e entrega contínua de valor.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Metodologias ágeis respondem a mudanças ao invés de seguir plano rígido. Entregamos valor incremental a cada sprint, permitindo validação contínua com usuários. Se mercado muda ou surgem novas necessidades, pivotamos rapidamente. Feedback loops curtos evitam desperdício de tempo construindo features desnecessárias. Foco em individuals e interactions over processes and tools."
+                      },
+                      {
+                          "id":  "ana-ent1023",
+                          "question":  "Qual é a principal diferença entre Scrum e Kanban?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Scrum usa sprints com duração fixa; Kanban é contínuo e baseado em fluxo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Kanban exige reuniões diárias obrigatórias",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Scrum não possui papéis definidos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Scrum trabalha em sprints timeboxed, enquanto Kanban é um fluxo contínuo baseado em limites WIP.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Trabalhei com ambos. Scrum é ideal quando precisa de entregas regulares e planejamento estruturado - sprints de 2 semanas com planning, daily, review e retrospectiva. Kanban uso para suporte ou manutenção, onde demandas chegam continuamente. O board Kanban limita WIP (work in progress) para evitar multitasking excessivo. Cada abordagem serve contextos diferentes."
                       }
                   ]
 }

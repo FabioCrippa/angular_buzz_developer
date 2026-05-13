@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "metodologias",
                      "subject":  "devops",
@@ -6,7 +6,7 @@
                      "description":  "DevOps, automação, infraestrutura como código e integração contínua.",
                      "difficulty":  "intermediate",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  27,
                      "tags":  [
                                   "automacao",
                                   "infraestrutura",
@@ -614,6 +614,56 @@
                           "correct":  "a",
                           "explanation":  "Observability vai além do monitoramento, permitindo fazer perguntas sobre o comportamento do sistema.",
                           "category":  "devops"
+                      },
+                      {
+                          "id":  "ana-ent1049",
+                          "question":  "O que é Docker e como você o usaria em desenvolvimento front-end?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Plataforma de containerização para padronizar ambientes de desenvolvimento",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma linguagem de programação para backend",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework JavaScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Docker containeriza aplicações garantindo consistência entre ambientes de desenvolvimento, teste e produção.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Docker resolve o problema \u0027funciona na minha máquina\u0027. Crio Dockerfile que define ambiente padronizado com Node.js, dependências e configurações. docker-compose orquestra múltiplos containers (frontend, backend, banco). Vantagens: 1) Ambiente consistente entre devs, 2) Onboarding rápido de novos membros, 3) Deploy idêntico em staging/produção, 4) Isolamento de dependências. Uso multi-stage builds para otimizar imagens de produção."
+                      },
+                      {
+                          "id":  "ana-ent1049",
+                          "question":  "O que é Docker e como você o usaria em desenvolvimento front-end?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Plataforma de containerização para padronizar ambientes de desenvolvimento",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma linguagem de programação para backend",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework JavaScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Docker containeriza aplicações garantindo consistência entre ambientes de desenvolvimento, teste e produção.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Docker resolve o problema \u0027funciona na minha máquina\u0027. Crio Dockerfile que define ambiente padronizado com Node.js, dependências e configurações. docker-compose orquestra múltiplos containers (frontend, backend, banco). Vantagens: 1) Ambiente consistente entre devs, 2) Onboarding rápido de novos membros, 3) Deploy idêntico em staging/produção, 4) Isolamento de dependências. Uso multi-stage builds para otimizar imagens de produção."
                       }
                   ]
 }

@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "desenvolvimento-web",
                      "subject":  "html",
@@ -6,7 +6,7 @@
                      "description":  "Questões sobre HTML5, semântica, acessibilidade e estruturação de páginas web modernas.",
                      "difficulty":  "fundamental",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  33,
                      "tags":  [
                                   "html5",
                                   "semantica",
@@ -614,6 +614,206 @@
                           "correct":  "a",
                           "explanation":  "O atributo aria-live informa leitores de tela sobre mudanças dinâmicas em áreas específicas da página.",
                           "category":  "html"
+                      },
+                      {
+                          "id":  "ana-ent1045",
+                          "question":  "O que são Web Components e qual sua importância?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Conjunto de tecnologias para criar elementos HTML personalizados e reutilizáveis",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca JavaScript para animações",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework para desenvolvimento backend",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Web Components permitem criar elementos HTML customizados usando Custom Elements, Shadow DOM e HTML Templates.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Web Components são padrão web nativo para criar componentes reutilizáveis sem frameworks. Uso Custom Elements para definir tags personalizadas, Shadow DOM para encapsular estilos e funcionalidade, HTML Templates para markup reutilizável. Exemplo: \u003cmy-button disabled\u003eClick me\u003c/my-button\u003e. Funciona em todos os browsers modernos e é framework-agnostic. Ideal para design systems e componentes compartilhados entre diferentes projetos."
+                      },
+                      {
+                          "id":  "ana-ent1052",
+                          "question":  "Como você garantiria acessibilidade (a11y) em suas aplicações?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando ARIA labels, navegação por teclado, contraste adequado e testes automatizados",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas testando em diferentes navegadores",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Usando apenas cores para indicar estados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Acessibilidade requer ARIA, navegação por teclado, contraste visual adequado e testes com screen readers.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Acessibilidade é responsabilidade, não opcional. Implemento: 1) ARIA labels e roles para screen readers, 2) Navegação completa por teclado (tab order lógico), 3) Contraste mínimo 4.5:1 para texto, 4) Focus indicators visíveis, 5) Alt text em imagens, 6) Formulários com labels associadas. Uso ferramentas como axe-core para testes automatizados e testo com NVDA/JAWS. Objetivo: app usável por todos, independente de limitações."
+                      },
+                      {
+                          "id":  "ana-ent1071",
+                          "question":  "O que são Web Standards e por que são importantes?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Especificações técnicas que garantem interoperabilidade entre browsers e plataformas",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Padrões visuais para design",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Bibliotecas JavaScript obrigatórias",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Web Standards (W3C, WHATWG) definem como tecnologias web devem funcionar, garantindo consistência cross-browser.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Web Standards garantem que web funcione igual everywhere. W3C e WHATWG definem HTML, CSS, JavaScript APIs. Importância: 1) Cross-browser compatibility, 2) Future-proof code, 3) Accessibility compliance, 4) Performance optimization. Sempre prefiro soluções standards-based: Custom Elements over proprietary widgets, CSS Grid over framework-specific layouts, Fetch API over jQuery.ajax. Progressive enhancement com feature detection quando preciso usar features cutting-edge."
+                      },
+                      {
+                          "id":  "ana-ent1079",
+                          "question":  "O que é a Shadow DOM e como ela melhora o encapsulamento?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Parte do DOM isolada que encapsula estilos e markup de componentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma nova API para manipulação DOM",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework JavaScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Shadow DOM cria um escopo isolado para componentes, prevenindo conflitos de estilo e comportamento.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Shadow DOM isola component internals do global DOM. Cada web component tem seu próprio shadow root com styles e markup encapsulados. Benefícios: 1) No style leakage - estilos globais não afetam o componente e vice-versa, 2) Scoped CSS - use classes/id sem medo de conflitos, 3) Encapsulation of behavior - eventos e state são locais. Uso em Custom Elements nativos ou frameworks como Angular (ViewEncapsulation) e Stencil. Considerações: performance overhead, debugging challenges."
+                      },
+                      {
+                          "id":  "ana-ent1045",
+                          "question":  "O que são Web Components e qual sua importância?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Conjunto de tecnologias para criar elementos HTML personalizados e reutilizáveis",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca JavaScript para animações",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework para desenvolvimento backend",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Web Components permitem criar elementos HTML customizados usando Custom Elements, Shadow DOM e HTML Templates.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Web Components são padrão web nativo para criar componentes reutilizáveis sem frameworks. Uso Custom Elements para definir tags personalizadas, Shadow DOM para encapsular estilos e funcionalidade, HTML Templates para markup reutilizável. Exemplo: \u003cmy-button disabled\u003eClick me\u003c/my-button\u003e. Funciona em todos os browsers modernos e é framework-agnostic. Ideal para design systems e componentes compartilhados entre diferentes projetos."
+                      },
+                      {
+                          "id":  "ana-ent1052",
+                          "question":  "Como você garantiria acessibilidade (a11y) em suas aplicações?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando ARIA labels, navegação por teclado, contraste adequado e testes automatizados",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas testando em diferentes navegadores",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Usando apenas cores para indicar estados",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Acessibilidade requer ARIA, navegação por teclado, contraste visual adequado e testes com screen readers.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Acessibilidade é responsabilidade, não opcional. Implemento: 1) ARIA labels e roles para screen readers, 2) Navegação completa por teclado (tab order lógico), 3) Contraste mínimo 4.5:1 para texto, 4) Focus indicators visíveis, 5) Alt text em imagens, 6) Formulários com labels associadas. Uso ferramentas como axe-core para testes automatizados e testo com NVDA/JAWS. Objetivo: app usável por todos, independente de limitações."
+                      },
+                      {
+                          "id":  "ana-ent1071",
+                          "question":  "O que são Web Standards e por que são importantes?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Especificações técnicas que garantem interoperabilidade entre browsers e plataformas",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Padrões visuais para design",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Bibliotecas JavaScript obrigatórias",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Web Standards (W3C, WHATWG) definem como tecnologias web devem funcionar, garantindo consistência cross-browser.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Web Standards garantem que web funcione igual everywhere. W3C e WHATWG definem HTML, CSS, JavaScript APIs. Importância: 1) Cross-browser compatibility, 2) Future-proof code, 3) Accessibility compliance, 4) Performance optimization. Sempre prefiro soluções standards-based: Custom Elements over proprietary widgets, CSS Grid over framework-specific layouts, Fetch API over jQuery.ajax. Progressive enhancement com feature detection quando preciso usar features cutting-edge."
+                      },
+                      {
+                          "id":  "ana-ent1079",
+                          "question":  "O que é a Shadow DOM e como ela melhora o encapsulamento?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Parte do DOM isolada que encapsula estilos e markup de componentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma nova API para manipulação DOM",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework JavaScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Shadow DOM cria um escopo isolado para componentes, prevenindo conflitos de estilo e comportamento.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Shadow DOM isola component internals do global DOM. Cada web component tem seu próprio shadow root com styles e markup encapsulados. Benefícios: 1) No style leakage - estilos globais não afetam o componente e vice-versa, 2) Scoped CSS - use classes/id sem medo de conflitos, 3) Encapsulation of behavior - eventos e state são locais. Uso em Custom Elements nativos ou frameworks como Angular (ViewEncapsulation) e Stencil. Considerações: performance overhead, debugging challenges."
                       }
                   ]
 }

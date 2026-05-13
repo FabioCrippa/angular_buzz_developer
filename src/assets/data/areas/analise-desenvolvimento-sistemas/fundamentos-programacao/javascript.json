@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "desenvolvimento-web",
                      "subject":  "javascript",
@@ -6,7 +6,7 @@
                      "description":  "JavaScript ES6+, programação assíncrona, manipulação DOM e conceitos fundamentais.",
                      "difficulty":  "fundamental",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  35,
                      "tags":  [
                                   "es6",
                                   "assincrono",
@@ -617,6 +617,256 @@
                           "correct":  "a",
                           "explanation":  "Modules (ES6) permitem dividir código em arquivos separados, exportando e importando funcionalidades conforme necessário.",
                           "category":  "javascript"
+                      },
+                      {
+                          "id":  "ana-ent1001",
+                          "question":  "Qual é a diferença entre \u0027==\u0027 e \u0027===\u0027 em JavaScript?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "\u0027==\u0027 compara apenas valores, enquanto \u0027===\u0027 compara valor e tipo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Ambos são iguais e podem ser usados indistintamente",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "\u0027===\u0027 é usado apenas em TypeScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "\u0027==\u0027 permite coerção de tipos, enquanto \u0027===\u0027 é uma comparação estrita.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Sempre uso \u0027===\u0027 (strict equality) porque é mais previsível. O \u0027==\u0027 faz coerção de tipos que pode causar bugs sutis. Por exemplo, \u00270\u0027 == false retorna true, mas \u00270\u0027 === false retorna false. Em produção, prefiro ser explícito e evitar comportamentos inesperados."
+                      },
+                      {
+                          "id":  "ana-ent1014",
+                          "question":  "O que caracteriza uma função assíncrona em JavaScript?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Ela é executada em paralelo com outras funções",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Ela retorna uma Promise e pode usar \u0027await\u0027 para esperar resultados",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ela bloqueia a execução do restante do código",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Funções async retornam Promises automaticamente e permitem uso de await.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Funções async/await facilitam código assíncrono legível. Em vez de .then().catch(), uso try/catch com await. Exemplo: async function getUser() { try { const user = await api.fetchUser(); return user; } catch (error) { handleError(error); }}. Isso evita callback hell e torna o código mais limpo. Sempre implemento error handling adequado."
+                      },
+                      {
+                          "id":  "ana-ent1015",
+                          "question":  "Qual é a vantagem de usar \u0027await\u0027 dentro de uma função assíncrona?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permite que o código continue sem esperar a resposta",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Faz com que a função retorne imediatamente",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Suspende a execução até que a Promise seja resolvida",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "c",
+                          "explanation":  "await pausa a execução da função até que a Promise seja resolvida ou rejeitada.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: await torna código assíncrono similar ao síncrono, melhorando legibilidade. Posso aguardar múltiplas operações sequenciais: const user = await getUser(); const profile = await getProfile(user.id); const posts = await getPosts(user.id). Ou paralelas com Promise.all: const [user, posts] = await Promise.all([getUser(), getPosts()]). Sempre uso try/catch para tratamento de erros."
+                      },
+                      {
+                          "id":  "ana-ent1016",
+                          "question":  "O que significa o termo \u0027assíncrono\u0027 na programação?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Que as operações ocorrem em tempo real e simultaneamente",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Que as operações podem ocorrer de forma independente, sem bloquear o fluxo principal",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Que o código é executado apenas após o carregamento completo da página",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Programação assíncrona permite que operações executem sem bloquear o thread principal.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Programação assíncrona é essencial para UX responsiva. Enquanto faço requisição à API, a interface continua interativa. Uso Promises/async-await para operações demoradas: requisições HTTP, leitura de arquivos, timers. No Angular, Observables facilitam isso: this.http.get().subscribe() não trava a UI. Event Loop do JavaScript gerencia a execução, mantendo a aplicação fluida."
+                      },
+                      {
+                          "id":  "ana-ent1017",
+                          "question":  "Qual é a principal vantagem de usar programação assíncrona?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permite que múltiplas tarefas sejam executadas sem travar o sistema",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Evita o uso de funções",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Garante que todas as tarefas sejam executadas em ordem",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Programação assíncrona melhora responsividade e performance da aplicação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Assíncrono evita blocking operations que travam a UI. Sem ele, uma requisição de 2 segundos congelaria toda a aplicação. Com async, posso mostrar loading spinner enquanto busco dados. Também permite paralelização: carregar dados do usuário E seus posts simultaneamente com Promise.all(). Isso melhora drasticamente a experiência do usuário."
+                      },
+                      {
+                          "id":  "ana-ent1001",
+                          "question":  "Qual é a diferença entre \u0027==\u0027 e \u0027===\u0027 em JavaScript?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "\u0027==\u0027 compara apenas valores, enquanto \u0027===\u0027 compara valor e tipo",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Ambos são iguais e podem ser usados indistintamente",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "\u0027===\u0027 é usado apenas em TypeScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "\u0027==\u0027 permite coerção de tipos, enquanto \u0027===\u0027 é uma comparação estrita.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Sempre uso \u0027===\u0027 (strict equality) porque é mais previsível. O \u0027==\u0027 faz coerção de tipos que pode causar bugs sutis. Por exemplo, \u00270\u0027 == false retorna true, mas \u00270\u0027 === false retorna false. Em produção, prefiro ser explícito e evitar comportamentos inesperados."
+                      },
+                      {
+                          "id":  "ana-ent1014",
+                          "question":  "O que caracteriza uma função assíncrona em JavaScript?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Ela é executada em paralelo com outras funções",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Ela retorna uma Promise e pode usar \u0027await\u0027 para esperar resultados",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ela bloqueia a execução do restante do código",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Funções async retornam Promises automaticamente e permitem uso de await.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Funções async/await facilitam código assíncrono legível. Em vez de .then().catch(), uso try/catch com await. Exemplo: async function getUser() { try { const user = await api.fetchUser(); return user; } catch (error) { handleError(error); }}. Isso evita callback hell e torna o código mais limpo. Sempre implemento error handling adequado."
+                      },
+                      {
+                          "id":  "ana-ent1015",
+                          "question":  "Qual é a vantagem de usar \u0027await\u0027 dentro de uma função assíncrona?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permite que o código continue sem esperar a resposta",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Faz com que a função retorne imediatamente",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Suspende a execução até que a Promise seja resolvida",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "c",
+                          "explanation":  "await pausa a execução da função até que a Promise seja resolvida ou rejeitada.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: await torna código assíncrono similar ao síncrono, melhorando legibilidade. Posso aguardar múltiplas operações sequenciais: const user = await getUser(); const profile = await getProfile(user.id); const posts = await getPosts(user.id). Ou paralelas com Promise.all: const [user, posts] = await Promise.all([getUser(), getPosts()]). Sempre uso try/catch para tratamento de erros."
+                      },
+                      {
+                          "id":  "ana-ent1016",
+                          "question":  "O que significa o termo \u0027assíncrono\u0027 na programação?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Que as operações ocorrem em tempo real e simultaneamente",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Que as operações podem ocorrer de forma independente, sem bloquear o fluxo principal",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Que o código é executado apenas após o carregamento completo da página",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Programação assíncrona permite que operações executem sem bloquear o thread principal.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Programação assíncrona é essencial para UX responsiva. Enquanto faço requisição à API, a interface continua interativa. Uso Promises/async-await para operações demoradas: requisições HTTP, leitura de arquivos, timers. No Angular, Observables facilitam isso: this.http.get().subscribe() não trava a UI. Event Loop do JavaScript gerencia a execução, mantendo a aplicação fluida."
+                      },
+                      {
+                          "id":  "ana-ent1017",
+                          "question":  "Qual é a principal vantagem de usar programação assíncrona?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Permite que múltiplas tarefas sejam executadas sem travar o sistema",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Evita o uso de funções",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Garante que todas as tarefas sejam executadas em ordem",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Programação assíncrona melhora responsividade e performance da aplicação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Assíncrono evita blocking operations que travam a UI. Sem ele, uma requisição de 2 segundos congelaria toda a aplicação. Com async, posso mostrar loading spinner enquanto busco dados. Também permite paralelização: carregar dados do usuário E seus posts simultaneamente com Promise.all(). Isso melhora drasticamente a experiência do usuário."
                       }
                   ]
 }

@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "desenvolvimento-web",
                      "subject":  "css",
@@ -6,7 +6,7 @@
                      "description":  "CSS3, Flexbox, Grid, animações, responsividade e técnicas avançadas de estilização.",
                      "difficulty":  "fundamental",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  35,
+                     "questionCount":  41,
                      "tags":  [
                                   "css3",
                                   "flexbox",
@@ -855,6 +855,156 @@
                           "correct":  "a",
                           "explanation":  "object-fit: cover; faz a imagem preencher o contêiner sem distorcer, cortando se necessário.",
                           "category":  "css"
+                      },
+                      {
+                          "id":  "ana-ent1055",
+                          "question":  "O que são Design Tokens e como implementá-los?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Valores de design armazenados como dados estruturados para consistência visual",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca de componentes UI",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de animação CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Design Tokens são valores de design (cores, tipografia, espaçamentos) armazenados como dados para garantir consistência.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Design Tokens centralizam decisões de design como dados estruturados. Define cores, tipografia, spacing, shadows em JSON/YAML, depois gero variáveis CSS, SCSS, JS automaticamente. Benefícios: 1) Single source of truth para design, 2) Consistência entre plataformas (web, mobile, desktop), 3) Facilita temas e white-labeling, 4) Integração design-dev mais fluida. Uso tools como Style Dictionary ou Figma Tokens Studio para automatizar pipeline."
+                      },
+                      {
+                          "id":  "ana-ent1069",
+                          "question":  "O que é Atomic Design e como aplicá-lo no desenvolvimento?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Metodologia que organiza componentes UI em hierarquia: átomos, moléculas, organismos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca de animações CSS",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework JavaScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Atomic Design estrutura design systems em componentes hierárquicos, facilitando reutilização e consistência.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Atomic Design organiza UI components sistematicamente. Átomos: button, input, label (básicos). Moléculas: search form (átomos combinados). Organismos: header, product list (moléculas + átomos). Templates: page layouts sem conteúdo. Pages: templates com dados reais. Benefícios: 1) Reusabilidade máxima, 2) Consistency across app, 3) Better developer handoff, 4) Easier testing. Uso Storybook para documentar cada nível e visualizar todas as variações."
+                      },
+                      {
+                          "id":  "ana-ent1074",
+                          "question":  "Como você estruturaria CSS/SCSS em um projeto grande?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Metodologias como BEM, ITCSS ou CSS Modules com arquitetura por componentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um único arquivo CSS global",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Estilos inline em todos os elementos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Projetos grandes requerem arquitetura CSS organizada para evitar conflitos e facilitar manutenção.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: CSS architecture é crucial em projetos grandes para evitar specificity wars e side effects. ITCSS organiza por especificidade: Settings → Tools → Generic → Elements → Objects → Components → Utilities. BEM naming evita conflitos: .card__title--highlighted. CSS Modules ou styled-components fazem scoping automático. Estrutura: abstracts/ (variables, mixins), base/ (resets, typography), components/ (UI components), utilities/ (helper classes). Always mobile-first approach."
+                      },
+                      {
+                          "id":  "ana-ent1055",
+                          "question":  "O que são Design Tokens e como implementá-los?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Valores de design armazenados como dados estruturados para consistência visual",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca de componentes UI",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de animação CSS",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Design Tokens são valores de design (cores, tipografia, espaçamentos) armazenados como dados para garantir consistência.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Design Tokens centralizam decisões de design como dados estruturados. Define cores, tipografia, spacing, shadows em JSON/YAML, depois gero variáveis CSS, SCSS, JS automaticamente. Benefícios: 1) Single source of truth para design, 2) Consistência entre plataformas (web, mobile, desktop), 3) Facilita temas e white-labeling, 4) Integração design-dev mais fluida. Uso tools como Style Dictionary ou Figma Tokens Studio para automatizar pipeline."
+                      },
+                      {
+                          "id":  "ana-ent1069",
+                          "question":  "O que é Atomic Design e como aplicá-lo no desenvolvimento?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Metodologia que organiza componentes UI em hierarquia: átomos, moléculas, organismos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma biblioteca de animações CSS",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um framework JavaScript",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Atomic Design estrutura design systems em componentes hierárquicos, facilitando reutilização e consistência.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Atomic Design organiza UI components sistematicamente. Átomos: button, input, label (básicos). Moléculas: search form (átomos combinados). Organismos: header, product list (moléculas + átomos). Templates: page layouts sem conteúdo. Pages: templates com dados reais. Benefícios: 1) Reusabilidade máxima, 2) Consistency across app, 3) Better developer handoff, 4) Easier testing. Uso Storybook para documentar cada nível e visualizar todas as variações."
+                      },
+                      {
+                          "id":  "ana-ent1074",
+                          "question":  "Como você estruturaria CSS/SCSS em um projeto grande?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Metodologias como BEM, ITCSS ou CSS Modules com arquitetura por componentes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Um único arquivo CSS global",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Estilos inline em todos os elementos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Projetos grandes requerem arquitetura CSS organizada para evitar conflitos e facilitar manutenção.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: CSS architecture é crucial em projetos grandes para evitar specificity wars e side effects. ITCSS organiza por especificidade: Settings → Tools → Generic → Elements → Objects → Components → Utilities. BEM naming evita conflitos: .card__title--highlighted. CSS Modules ou styled-components fazem scoping automático. Estrutura: abstracts/ (variables, mixins), base/ (resets, typography), components/ (UI components), utilities/ (helper classes). Always mobile-first approach."
                       }
                   ]
 }

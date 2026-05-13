@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "metodologias",
                      "subject":  "ci-cd",
@@ -6,7 +6,7 @@
                      "description":  "Integração e entrega contínua, pipelines automatizados e deploy.",
                      "difficulty":  "intermediate",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  29,
                      "tags":  [
                                   "pipeline",
                                   "automacao",
@@ -614,6 +614,106 @@
                           "correct":  "a",
                           "explanation":  "GitFlow define como branches (feature, develop, release) devem triggerar diferentes pipelines.",
                           "category":  "ci-cd"
+                      },
+                      {
+                          "id":  "ana-ent1005",
+                          "question":  "Qual é a diferença entre integração contínua (CI) e entrega contínua (CD)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "CI foca em integrar código frequentemente; CD automatiza o deploy após testes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "CI é usado apenas em projetos mobile; CD em projetos web",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ambos significam a mesma coisa",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "CI automatiza integração e testes; CD automatiza o processo de deployment.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: CI é sobre integrar código frequentemente - cada commit dispara build e testes automatizados. CD vai além: automatiza o deployment para diferentes ambientes. Na prática, uso GitHub Actions onde CI roda testes a cada PR, e CD faz deploy automático para staging quando merge na main, mas deploy para produção requer aprovação manual. Isso garante qualidade e agilidade com segurança."
+                      },
+                      {
+                          "id":  "ana-ent1067",
+                          "question":  "O que é Continuous Integration e como implementá-la?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Prática de integrar código frequentemente com testes automatizados",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Deploy manual em produção",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Backup diário do código",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "CI automatiza integração de código com execução de testes, build e verificações de qualidade a cada commit.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: CI automatiza quality gates para cada commit. Pipeline típico: 1) Code push triggers build, 2) Install dependencies, 3) Run linting/formatting checks, 4) Execute unit tests com coverage, 5) Run integration tests, 6) Build for production, 7) Deploy to staging environment. Uso GitHub Actions ou GitLab CI com cache para speed up builds. Fail fast principle - se qualquer step falha, pipeline para. Team nunca deveria quebrar main branch."
+                      },
+                      {
+                          "id":  "ana-ent1005",
+                          "question":  "Qual é a diferença entre integração contínua (CI) e entrega contínua (CD)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "CI foca em integrar código frequentemente; CD automatiza o deploy após testes",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "CI é usado apenas em projetos mobile; CD em projetos web",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Ambos significam a mesma coisa",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "CI automatiza integração e testes; CD automatiza o processo de deployment.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: CI é sobre integrar código frequentemente - cada commit dispara build e testes automatizados. CD vai além: automatiza o deployment para diferentes ambientes. Na prática, uso GitHub Actions onde CI roda testes a cada PR, e CD faz deploy automático para staging quando merge na main, mas deploy para produção requer aprovação manual. Isso garante qualidade e agilidade com segurança."
+                      },
+                      {
+                          "id":  "ana-ent1067",
+                          "question":  "O que é Continuous Integration e como implementá-la?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Prática de integrar código frequentemente com testes automatizados",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Deploy manual em produção",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Backup diário do código",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "CI automatiza integração de código com execução de testes, build e verificações de qualidade a cada commit.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: CI automatiza quality gates para cada commit. Pipeline típico: 1) Code push triggers build, 2) Install dependencies, 3) Run linting/formatting checks, 4) Execute unit tests com coverage, 5) Run integration tests, 6) Build for production, 7) Deploy to staging environment. Uso GitHub Actions ou GitLab CI com cache para speed up builds. Fail fast principle - se qualquer step falha, pipeline para. Team nunca deveria quebrar main branch."
                       }
                   ]
 }

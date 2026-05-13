@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "seguranca",
                      "subject":  "autenticacao",
@@ -6,7 +6,7 @@
                      "description":  "Autenticação de usuários, senhas seguras, antivírus, proteção contra ameaças e boas práticas de segurança",
                      "difficulty":  "fundamental",
                      "lastUpdated":  "2025-10-20",
-                     "questionCount":  20,
+                     "questionCount":  26,
                      "tags":  [
 
                               ]
@@ -631,6 +631,156 @@
                           "id":  "ana-aut1020",
                           "category":  "informatica-seguranca-da-informacao",
                           "difficulty":  "fundamental"
+                      },
+                      {
+                          "id":  "ana-ent1046",
+                          "question":  "Como você implementaria autenticação em uma SPA (Single Page Application)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando JWT tokens e guards de rota",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas com cookies de sessão",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Armazenando senhas no localStorage",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "JWT tokens com guards de rota fornecem autenticação stateless e segura em SPAs.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Implemento autenticação com JWT tokens: 1) Login envia credenciais para API que retorna access token + refresh token, 2) Armazeno tokens de forma segura (httpOnly cookies ou memória), 3) AuthGuard intercepta rotas protegidas verificando token válido, 4) AuthInterceptor adiciona token automaticamente às requisições HTTP, 5) Refresh token strategy para renovar tokens expirados. Para segurança extra, uso HTTPS always e implemento logout automático."
+                      },
+                      {
+                          "id":  "ana-ent1070",
+                          "question":  "Como você implementaria autenticação com OAuth 2.0/OpenID Connect?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Redirecionando para provider, recebendo authorization code e trocando por tokens",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Enviando credenciais diretamente para o provider",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Armazenando senhas no banco de dados local",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "OAuth 2.0 flow envolve redirecionamento para authorization server, code exchange e token management.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: OAuth 2.0 é delegation protocol - user autoriza app a acessar recursos sem compartilhar senha. Authorization Code Flow: 1) Redirect user para authorization server (Google, Auth0), 2) User consente e retorna com authorization code, 3) Exchange code por access_token + refresh_token, 4) Use tokens para API calls. PKCE (Proof Key for Code Exchange) para SPAs. OpenID Connect adiciona ID token com user info. Implemento com libraries como oauth2-client ou auth0-js."
+                      },
+                      {
+                          "id":  "ana-ent1080",
+                          "question":  "Como você implementaria um sistema de permissões baseado em funções (RBAC) no frontend?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definindo roles e permissions, controlando acesso via guards e componentes protegidos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas escondendo botões no UI",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Armazenando permissões no localStorage",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "RBAC envolve definição clara de roles/permissions e controle de acesso tanto na UI quanto na lógica de navegação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: RBAC estrutura acesso baseado em roles (admin, user, guest) e permissions (read, write). Implemento: 1) Centralized role/permission definitions, 2) Route guards (Angular CanActivate, React PrivateRoute) para proteger rotas, 3) Conditional rendering de componentes/botões baseado em permissions, 4) Middleware para API calls que checa tokens/roles. Nunca confio apenas no frontend - backend deve validar permissions também. Uso JWT claims para transportar roles/permissions com segurança."
+                      },
+                      {
+                          "id":  "ana-ent1046",
+                          "question":  "Como você implementaria autenticação em uma SPA (Single Page Application)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando JWT tokens e guards de rota",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas com cookies de sessão",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Armazenando senhas no localStorage",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "JWT tokens com guards de rota fornecem autenticação stateless e segura em SPAs.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Implemento autenticação com JWT tokens: 1) Login envia credenciais para API que retorna access token + refresh token, 2) Armazeno tokens de forma segura (httpOnly cookies ou memória), 3) AuthGuard intercepta rotas protegidas verificando token válido, 4) AuthInterceptor adiciona token automaticamente às requisições HTTP, 5) Refresh token strategy para renovar tokens expirados. Para segurança extra, uso HTTPS always e implemento logout automático."
+                      },
+                      {
+                          "id":  "ana-ent1070",
+                          "question":  "Como você implementaria autenticação com OAuth 2.0/OpenID Connect?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Redirecionando para provider, recebendo authorization code e trocando por tokens",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Enviando credenciais diretamente para o provider",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Armazenando senhas no banco de dados local",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "OAuth 2.0 flow envolve redirecionamento para authorization server, code exchange e token management.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: OAuth 2.0 é delegation protocol - user autoriza app a acessar recursos sem compartilhar senha. Authorization Code Flow: 1) Redirect user para authorization server (Google, Auth0), 2) User consente e retorna com authorization code, 3) Exchange code por access_token + refresh_token, 4) Use tokens para API calls. PKCE (Proof Key for Code Exchange) para SPAs. OpenID Connect adiciona ID token com user info. Implemento com libraries como oauth2-client ou auth0-js."
+                      },
+                      {
+                          "id":  "ana-ent1080",
+                          "question":  "Como você implementaria um sistema de permissões baseado em funções (RBAC) no frontend?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Definindo roles e permissions, controlando acesso via guards e componentes protegidos",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas escondendo botões no UI",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Armazenando permissões no localStorage",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "RBAC envolve definição clara de roles/permissions e controle de acesso tanto na UI quanto na lógica de navegação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: RBAC estrutura acesso baseado em roles (admin, user, guest) e permissions (read, write). Implemento: 1) Centralized role/permission definitions, 2) Route guards (Angular CanActivate, React PrivateRoute) para proteger rotas, 3) Conditional rendering de componentes/botões baseado em permissions, 4) Middleware para API calls que checa tokens/roles. Nunca confio apenas no frontend - backend deve validar permissions também. Uso JWT claims para transportar roles/permissions com segurança."
                       }
                   ]
 }

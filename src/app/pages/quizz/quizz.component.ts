@@ -309,6 +309,12 @@ private getNextMidnightISO(): string {
   // 📝 PROPRIEDADES MODO SIMULADO
   // ===============================================
   isSimulado: boolean = false;
+  adaptacaoTipo: string = ''; // 'baixa-visao' | 'hiperfoco' | ''
+  zoomLevel: number = 100; // zoom em %, controlado pelo usuario
+
+  increaseZoom(): void { if (this.zoomLevel < 160) this.zoomLevel += 10; }
+  decreaseZoom(): void { if (this.zoomLevel > 80) this.zoomLevel -= 10; }
+  resetZoom(): void { this.zoomLevel = this.adaptacaoTipo === 'baixa-visao' ? 120 : 100; }
   // Respostas registradas sem feedback: chave = question.id, valor = alias escolhido
   simuladoAnswers: { [key: string]: string } = {};
   // Navegação livre: perguntas "marcadas para revisar"
@@ -3033,6 +3039,10 @@ private getNextMidnightISO(): string {
 
       const fileData = await response.json();
       if (!fileData.questions || !Array.isArray(fileData.questions)) throw new Error('Formato de arquivo inválido');
+
+      // Detectar tipo de adaptação para aplicar CSS
+      this.adaptacaoTipo = fileData.metadata?.adaptacao?.tipo ?? '';
+      this.zoomLevel = this.adaptacaoTipo === 'baixa-visao' ? 120 : 100;
 
       const questionsWithMeta = fileData.questions.map((q: any) => ({
         ...q, area: this.area, subject: this.subject, category: this.area

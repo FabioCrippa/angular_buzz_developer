@@ -184,9 +184,18 @@ export class JobQuizComponent {
         'module federation', 'monorepo', 'nx workspace', 'web components']
     },
     {
-      id: 'entrevista', label: 'Entrevista Técnica', icon: '💬', color: '#ec4899',
-      file: 'analise-desenvolvimento-sistemas/prep-entrevista/entrevista-tecnica',
-      keywords: [] // Always included
+      id: 'banco-de-dados', label: 'Banco de Dados', icon: '🗄️', color: '#0369a1',
+      file: 'analise-desenvolvimento-sistemas/fundamentos-programacao/banco-de-dados',
+      keywords: ['sql', 'mysql', 'postgresql', 'postgres', 'nosql', 'mongodb', 'banco de dados',
+        'database', 'orm', 'query', 'relacional', 'redis', 'sqlite', 'oracle', 'mariadb',
+        'cassandra', 'dynamodb', 'índice', 'normalização', 'transação', 'join']
+    },
+    {
+      id: 'api-rest', label: 'APIs RESTful', icon: '🔌', color: '#059669',
+      file: 'analise-desenvolvimento-sistemas/fundamentos-programacao/api-rest',
+      keywords: ['api', 'rest', 'restful', 'http', 'endpoint', 'microserviço', 'microservice',
+        'microsserviço', 'swagger', 'openapi', 'json api', 'graphql', 'grpc', 'webhook',
+        'api gateway', 'autenticação api', 'jwt', 'oauth', 'cors', 'backend api']
     }
   ];
 

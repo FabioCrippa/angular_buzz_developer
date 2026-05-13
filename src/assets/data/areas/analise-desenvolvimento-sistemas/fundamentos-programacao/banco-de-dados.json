@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "area": "analise-desenvolvimento-sistemas",
+    "subject": "banco-de-dados",
+    "name": "Banco de Dados (SQL e NoSQL)",
+    "description": "SQL, MySQL, PostgreSQL, MongoDB, modelagem relacional, índices e transações.",
+    "difficulty": "fundamental",
+    "lastUpdated": "2026-05-13",
+    "questionCount": 20,
+    "tags": ["sql", "mysql", "postgresql", "mongodb", "nosql", "banco-de-dados", "entrevista"]
+  },
+  "questions": [
+    {
+      "id": "ana-bdc1001",
+      "question": "Qual é a diferença entre os comandos SQL 'WHERE' e 'HAVING'?",
+      "options": [
+        { "id": 1, "name": "WHERE filtra linhas antes da agregação; HAVING filtra grupos após a agregação", "alias": "a" },
+        { "id": 2, "name": "WHERE filtra após a agregação; HAVING filtra antes", "alias": "b" },
+        { "id": 3, "name": "São sinônimos e podem ser usados de forma intercambiável", "alias": "c" },
+        { "id": 4, "name": "WHERE só funciona com JOIN; HAVING funciona com GROUP BY", "alias": "d" }
+      ],
+      "correct": "a",
+      "category": "banco-de-dados",
+      "explanation": "WHERE é aplicado antes do GROUP BY, filtrando linhas individuais. HAVING é aplicado após o GROUP BY, filtrando os grupos resultantes da agregação."
+    },
+    {
+      "id": "ana-bdc1002",
+      "question": "O que significa a propriedade ACID em banco de dados transacionais?",
+      "options": [
+        { "id": 1, "name": "Atomicidade, Consistência, Isolamento e Durabilidade", "alias": "a" },
+        { "id": 2, "name": "Agilidade, Capacidade, Integridade e Disponibilidade", "alias": "b" },
+        { "id": 3, "name": "Autenticação, Criptografia, Indexação e Desempenho", "alias": "c" },
+        { "id": 4, "name": "Acesso, Controle, Integridade e Dados", "alias": "d" }
+      ],
+      "correct": "a",
+      "category": "banco-de-dados",
+      "explanation": "ACID garante que transações sejam Atômicas (tudo ou nada), Consistentes (estado válido), Isoladas (não interferem entre si) e Duráveis (persistem após commit)."
+    },
+    {
+      "id": "ana-bdc1003",
+      "question": "Qual tipo de JOIN retorna apenas os registros que possuem correspondência em AMBAS as tabelas?",
+      "options": [
+        { "id": 1, "name": "LEFT JOIN", "alias": "a" },
+        { "id": 2, "name": "INNER JOIN", "alias": "b" },
+        { "id": 3, "name": "FULL OUTER JOIN", "alias": "c" },
+        { "id": 4, "name": "CROSS JOIN", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "INNER JOIN retorna somente as linhas que têm correspondência nos dois lados do relacionamento. LEFT JOIN inclui todos da esquerda, FULL OUTER JOIN inclui todos de ambos."
+    },
+    {
+      "id": "ana-bdc1004",
+      "question": "O que é uma chave estrangeira (Foreign Key) em bancos relacionais?",
+      "options": [
+        { "id": 1, "name": "Uma coluna que garante unicidade dentro de uma tabela", "alias": "a" },
+        { "id": 2, "name": "Uma coluna que referencia a chave primária de outra tabela, garantindo integridade referencial", "alias": "b" },
+        { "id": 3, "name": "Um índice criado automaticamente em toda tabela", "alias": "c" },
+        { "id": 4, "name": "Uma restrição que impede valores nulos em uma coluna", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "A Foreign Key cria um vínculo entre tabelas, garantindo que o valor referenciado exista na tabela pai. Isso mantém a integridade referencial do banco de dados."
+    },
+    {
+      "id": "ana-bdc1005",
+      "question": "Qual é a principal vantagem de criar um índice em uma coluna de banco de dados?",
+      "options": [
+        { "id": 1, "name": "Reduzir o espaço em disco utilizado pela tabela", "alias": "a" },
+        { "id": 2, "name": "Acelerar consultas de leitura naquela coluna, ao custo de escrita mais lenta", "alias": "b" },
+        { "id": 3, "name": "Garantir que a coluna não terá valores duplicados", "alias": "c" },
+        { "id": 4, "name": "Permitir que a coluna aceite valores nulos", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "Índices criam uma estrutura auxiliar (como B-Tree) que acelera buscas e ordenações, mas aumentam o tempo de INSERT/UPDATE/DELETE pois o índice também precisa ser atualizado."
+    },
+    {
+      "id": "ana-bdc1006",
+      "question": "No contexto NoSQL, o MongoDB armazena dados em qual formato?",
+      "options": [
+        { "id": 1, "name": "Tabelas com linhas e colunas fixas", "alias": "a" },
+        { "id": 2, "name": "Documentos no formato BSON (similar ao JSON)", "alias": "b" },
+        { "id": 3, "name": "Grafos de nós e arestas", "alias": "c" },
+        { "id": 4, "name": "Pares chave-valor simples sem estrutura", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "MongoDB usa BSON (Binary JSON), um formato de documento flexível que permite campos aninhados e arrays. Os documentos são agrupados em coleções, análogo às tabelas do SQL."
+    },
+    {
+      "id": "ana-bdc1007",
+      "question": "Qual é a diferença fundamental entre bancos relacionais (SQL) e NoSQL?",
+      "options": [
+        { "id": 1, "name": "SQL é sempre mais rápido; NoSQL é sempre mais lento", "alias": "a" },
+        { "id": 2, "name": "SQL usa esquema fixo e relacionamentos; NoSQL oferece esquema flexível e escalabilidade horizontal", "alias": "b" },
+        { "id": 3, "name": "NoSQL não suporta nenhum tipo de consulta estruturada", "alias": "c" },
+        { "id": 4, "name": "SQL só funciona em servidores locais; NoSQL só em cloud", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "Bancos relacionais impõem esquema rígido com tabelas e FK, garantindo consistência (ACID). NoSQL sacrifica parte da consistência por flexibilidade de esquema e escalabilidade horizontal (sharding)."
+    },
+    {
+      "id": "ana-bdc1008",
+      "question": "O que faz o comando SQL 'GROUP BY'?",
+      "options": [
+        { "id": 1, "name": "Ordena os resultados em ordem crescente ou decrescente", "alias": "a" },
+        { "id": 2, "name": "Agrupa linhas com valores iguais em uma coluna para uso com funções de agregação", "alias": "b" },
+        { "id": 3, "name": "Junta duas ou mais tabelas por uma coluna em comum", "alias": "c" },
+        { "id": 4, "name": "Filtra registros com base em uma condição lógica", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "GROUP BY agrupa linhas com o mesmo valor em uma ou mais colunas, permitindo aplicar funções de agregação como COUNT(), SUM(), AVG(), MAX() e MIN() por grupo."
+    },
+    {
+      "id": "ana-bdc1009",
+      "question": "Qual é a diferença entre DELETE, TRUNCATE e DROP em SQL?",
+      "options": [
+        { "id": 1, "name": "São sinônimos e fazem exatamente a mesma coisa", "alias": "a" },
+        { "id": 2, "name": "DELETE remove linhas com condição; TRUNCATE remove todas as linhas; DROP remove a tabela inteira", "alias": "b" },
+        { "id": 3, "name": "DELETE remove colunas; TRUNCATE remove linhas; DROP remove o banco de dados", "alias": "c" },
+        { "id": 4, "name": "Apenas DELETE pode ser revertido com ROLLBACK", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "DELETE remove linhas específicas e pode ter WHERE; é transacional (ROLLBACK possível). TRUNCATE remove todas as linhas rapidamente sem log por linha. DROP remove a estrutura da tabela completamente."
+    },
+    {
+      "id": "ana-bdc1010",
+      "question": "O que é normalização de banco de dados e qual seu objetivo principal?",
+      "options": [
+        { "id": 1, "name": "Processo de criptografar os dados sensíveis do banco", "alias": "a" },
+        { "id": 2, "name": "Processo de organizar tabelas para eliminar redundância e dependências problemáticas", "alias": "b" },
+        { "id": 3, "name": "Processo de otimizar queries SQL para melhor desempenho", "alias": "c" },
+        { "id": 4, "name": "Processo de padronizar o formato das datas e strings", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "A normalização organiza o banco em formas normais (1FN, 2FN, 3FN, BCNF) para eliminar redundância de dados, dependências parciais e transitivas, garantindo consistência e integridade."
+    },
+    {
+      "id": "ana-bdc1011",
+      "question": "Em MongoDB, o que é uma 'Collection'?",
+      "options": [
+        { "id": 1, "name": "Um tipo especial de índice para buscas textuais", "alias": "a" },
+        { "id": 2, "name": "Um agrupamento de documentos, análogo a uma tabela no SQL", "alias": "b" },
+        { "id": 3, "name": "Uma função de agregação nativa do MongoDB", "alias": "c" },
+        { "id": 4, "name": "O esquema obrigatório de um documento", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "No MongoDB, documentos (análogos a linhas) são agrupados em Collections (análogos a tabelas), que por sua vez fazem parte de um Database. Collections não impõem esquema fixo aos documentos."
+    },
+    {
+      "id": "ana-bdc1012",
+      "question": "O que é uma transação em banco de dados e por que ela é importante?",
+      "options": [
+        { "id": 1, "name": "É uma consulta SELECT que retorna múltiplos resultados", "alias": "a" },
+        { "id": 2, "name": "É um conjunto de operações tratadas como unidade atômica — ou todas ocorrem, ou nenhuma", "alias": "b" },
+        { "id": 3, "name": "É o processo de fazer backup do banco de dados", "alias": "c" },
+        { "id": 4, "name": "É um relatório gerado pelo banco sobre o uso de recursos", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "Transações garantem que operações interdependentes (como débito + crédito em um sistema financeiro) sejam executadas completamente ou revertidas em caso de falha, usando COMMIT e ROLLBACK."
+    },
+    {
+      "id": "ana-bdc1013",
+      "question": "Qual função SQL retorna o número total de registros que satisfazem uma condição?",
+      "options": [
+        { "id": 1, "name": "SUM()", "alias": "a" },
+        { "id": 2, "name": "COUNT()", "alias": "b" },
+        { "id": 3, "name": "TOTAL()", "alias": "c" },
+        { "id": 4, "name": "NUMBER()", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "COUNT() é uma função de agregação que conta o número de linhas. COUNT(*) conta todas as linhas; COUNT(coluna) conta apenas as linhas onde aquela coluna não é NULL."
+    },
+    {
+      "id": "ana-bdc1014",
+      "question": "O que diferencia PostgreSQL do MySQL em termos de recursos avançados?",
+      "options": [
+        { "id": 1, "name": "MySQL suporta transações; PostgreSQL não suporta", "alias": "a" },
+        { "id": 2, "name": "PostgreSQL oferece suporte mais completo ao padrão SQL, tipos avançados (JSON, arrays, enums) e extensibilidade", "alias": "b" },
+        { "id": 3, "name": "PostgreSQL só funciona em sistemas Linux", "alias": "c" },
+        { "id": 4, "name": "MySQL é orientado a objetos; PostgreSQL é somente relacional", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "PostgreSQL é conhecido por maior conformidade com o padrão SQL, suporte nativo a JSON/JSONB, arrays, tipos personalizados, full-text search e extensões como PostGIS. MySQL é mais simples e amplamente usado em aplicações web."
+    },
+    {
+      "id": "ana-bdc1015",
+      "question": "O que é um índice composto (composite index) em SQL?",
+      "options": [
+        { "id": 1, "name": "Um índice que abrange múltiplas colunas ao mesmo tempo", "alias": "a" },
+        { "id": 2, "name": "Um índice que só pode ser criado em chaves primárias", "alias": "b" },
+        { "id": 3, "name": "Um índice que comprime os dados para economizar espaço", "alias": "c" },
+        { "id": 4, "name": "Um índice criado automaticamente em colunas com UNIQUE", "alias": "d" }
+      ],
+      "correct": "a",
+      "category": "banco-de-dados",
+      "explanation": "Índice composto cobre duas ou mais colunas. É eficiente para queries que filtram por múltiplas colunas juntas. A ordem das colunas importa: o índice é útil quando a query usa as colunas da esquerda para a direita."
+    },
+    {
+      "id": "ana-bdc1016",
+      "question": "O que é o comando SQL 'EXPLAIN' (ou EXPLAIN ANALYZE)?",
+      "options": [
+        { "id": 1, "name": "Um comando que gera documentação automática da tabela", "alias": "a" },
+        { "id": 2, "name": "Um comando que mostra o plano de execução da query, revelando se índices estão sendo usados", "alias": "b" },
+        { "id": 3, "name": "Um comando que desfaz a última operação executada", "alias": "c" },
+        { "id": 4, "name": "Um comando exclusivo do Oracle Database", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "EXPLAIN mostra como o banco de dados planeja executar uma query, incluindo quais índices serão usados, tipo de scan (sequential ou index scan), custo estimado e número de linhas. Fundamental para otimização de performance."
+    },
+    {
+      "id": "ana-bdc1017",
+      "question": "Em qual situação é mais adequado usar um banco NoSQL em vez de um banco relacional?",
+      "options": [
+        { "id": 1, "name": "Quando os dados têm relacionamentos complexos e consistência forte é obrigatória", "alias": "a" },
+        { "id": 2, "name": "Quando o volume é massivo, o esquema é variável e escalabilidade horizontal é prioritária", "alias": "b" },
+        { "id": 3, "name": "Quando se precisa de transações financeiras com ACID completo", "alias": "c" },
+        { "id": 4, "name": "NoSQL é sempre a melhor escolha independentemente do cenário", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "NoSQL brilha em cenários de big data, esquemas flexíveis (catálogos de produtos, redes sociais, IoT), alta carga de escrita e necessidade de escalabilidade horizontal. Para dados transacionais com relacionamentos e consistência forte, SQL geralmente é melhor."
+    },
+    {
+      "id": "ana-bdc1018",
+      "question": "O que é uma 'subquery' (subconsulta) em SQL?",
+      "options": [
+        { "id": 1, "name": "Um query que só pode ser executado por administradores do banco", "alias": "a" },
+        { "id": 2, "name": "Um SELECT aninhado dentro de outro SELECT, WHERE ou FROM", "alias": "b" },
+        { "id": 3, "name": "Um tipo especial de JOIN para tabelas grandes", "alias": "c" },
+        { "id": 4, "name": "Um procedimento armazenado que executa múltiplas queries", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "Subqueries permitem usar o resultado de um SELECT dentro de outro. Exemplos: WHERE id IN (SELECT id FROM tabela), ou no FROM como tabela derivada. CTE (WITH) é uma alternativa mais legível para subqueries complexas."
+    },
+    {
+      "id": "ana-bdc1019",
+      "question": "O que significa ORM (Object-Relational Mapping)?",
+      "options": [
+        { "id": 1, "name": "Um protocolo de comunicação entre bancos de dados distintos", "alias": "a" },
+        { "id": 2, "name": "Uma técnica que mapeia objetos do código para tabelas do banco, abstraindo o SQL manual", "alias": "b" },
+        { "id": 3, "name": "Um tipo de banco de dados orientado a objetos", "alias": "c" },
+        { "id": 4, "name": "Uma ferramenta de backup automático do banco de dados", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "ORMs como Hibernate (Java), TypeORM (TypeScript/Node), Sequelize (Node) ou Prisma permitem interagir com o banco usando objetos e métodos, gerando SQL automaticamente. Reduzem boilerplate mas podem gerar queries ineficientes se mal usados."
+    },
+    {
+      "id": "ana-bdc1020",
+      "question": "O que é sharding em bancos de dados?",
+      "options": [
+        { "id": 1, "name": "Um processo de fragmentação de queries para execução paralela", "alias": "a" },
+        { "id": 2, "name": "Técnica de particionamento horizontal que distribui dados em múltiplos servidores para escalabilidade", "alias": "b" },
+        { "id": 3, "name": "Um tipo de backup incremental dos dados", "alias": "c" },
+        { "id": 4, "name": "A criptografia de colunas sensíveis no banco de dados", "alias": "d" }
+      ],
+      "correct": "b",
+      "category": "banco-de-dados",
+      "explanation": "Sharding divide os dados em 'shards' distribuídos em diferentes nós/servidores. Por exemplo, usuários A-M em um servidor e N-Z em outro. É usado por bancos como MongoDB e Cassandra para suportar grandes volumes com escalabilidade horizontal."
+    }
+  ]
+}

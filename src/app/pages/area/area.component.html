@@ -114,12 +114,13 @@
           <span class="simulados-group-count">{{ group.items.length }}</span>
         </div>
         <div class="simulados-cards-grid">
-          <div *ngFor="let sim of group.items" class="simulado-card">
+          <div *ngFor="let sim of group.items" class="simulado-card" [class.simulado-card-adaptado]="sim.group === 'Simulados Adaptados'">
             <div class="simulado-card-header" [style.background]="sim.color">
               <span class="simulado-card-icon">{{ sim.icon }}</span>
               <div class="simulado-card-title-block">
                 <h3 class="simulado-card-title">{{ sim.displayName }}</h3>
                 <span class="simulado-card-subtitle">{{ sim.subtitle }}</span>
+                <span *ngIf="sim.tema" class="simulado-card-tema">{{ sim.tema }}</span>
               </div>
             </div>
             <div class="simulado-card-body">

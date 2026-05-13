@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "metodologias",
                      "subject":  "testes-unitarios",
@@ -6,7 +6,7 @@
                      "description":  "Testes automatizados, TDD, BDD e garantia de qualidade.",
                      "difficulty":  "advanced",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  27,
                      "tags":  [
                                   "tdd",
                                   "bdd",
@@ -614,6 +614,56 @@
                           "correct":  "a",
                           "explanation":  "Snapshot tests capturam a saída de componentes e alertam quando há mudanças, ajudando a detectar regressões visuais.",
                           "category":  "testes-unitarios"
+                      },
+                      {
+                          "id":  "ana-ent1062",
+                          "question":  "Como você implementaria testes end-to-end (E2E) em uma aplicação?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando ferramentas como Cypress ou Playwright para simular interações do usuário",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas com testes unitários",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Testando manualmente toda a aplicação",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Testes E2E automatizam fluxos de usuário completos, validando integração entre todos os componentes.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: E2E tests validam user journeys completos - login, navegação, forms, checkout. Uso Cypress para sintaxe simples e debugging visual, ou Playwright para cross-browser testing. Estratégia: 1) Test critical paths primeiro (happy flows), 2) Page Object Model para maintainability, 3) Data setup/teardown automático, 4) Screenshots/videos para debug, 5) Parallel execution para speed. Integro no CI/CD pipeline mas com cuidado - E2E tests são mais flaky que unit tests."
+                      },
+                      {
+                          "id":  "ana-ent1062",
+                          "question":  "Como você implementaria testes end-to-end (E2E) em uma aplicação?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Usando ferramentas como Cypress ou Playwright para simular interações do usuário",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Apenas com testes unitários",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Testando manualmente toda a aplicação",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Testes E2E automatizam fluxos de usuário completos, validando integração entre todos os componentes.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: E2E tests validam user journeys completos - login, navegação, forms, checkout. Uso Cypress para sintaxe simples e debugging visual, ou Playwright para cross-browser testing. Estratégia: 1) Test critical paths primeiro (happy flows), 2) Page Object Model para maintainability, 3) Data setup/teardown automático, 4) Screenshots/videos para debug, 5) Parallel execution para speed. Integro no CI/CD pipeline mas com cuidado - E2E tests são mais flaky que unit tests."
                       }
                   ]
 }

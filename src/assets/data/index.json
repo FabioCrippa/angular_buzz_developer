@@ -506,6 +506,40 @@
               "arquivo": "mat-caderno-9ano-vol2-p3.json"
             }
           ]
+        },
+        {
+          "id": "adaptados",
+          "nome": "Simulados Adaptados",
+          "descricao": "Simulados com as mesmas competências do currículo, adaptados para alunos com necessidades educacionais especiais",
+          "icon": "🦔",
+          "topicos": [
+            {
+              "id": "lp-adaptado-hiperfoco-sonic-9ano",
+              "nome": "LP 9º Ano — Hiperfoco: Sonic 🦔",
+              "descricao": "Língua Portuguesa do 9º Ano adaptada para alunos com hiperfoco em Sonic. Mesmas competências, contextos com personagens da saga Sonic.",
+              "arquivo": "lp-adaptado-hiperfoco-sonic-9ano.json",
+              "adaptacao": {
+                "tipo": "hiperfoco",
+                "tema": "Sonic the Hedgehog",
+                "cor": "#1565c0",
+                "icone": "🦔"
+              }
+            },
+            {
+              "id": "lp-adaptado-hiperfoco-homem-aranha-9ano",
+              "nome": "LP 9º Ano — Hiperfoco: Homem-Aranha 🕷️",
+              "descricao": "Língua Portuguesa do 9º Ano adaptada para alunos com hiperfoco em Homem-Aranha.",
+              "arquivo": "lp-adaptado-hiperfoco-homem-aranha-9ano.json",
+              "adaptacao": { "tipo": "hiperfoco", "tema": "Homem-Aranha", "cor": "#c62828", "icone": "🕷️" }
+            },
+            {
+              "id": "lp-adaptado-baixa-visao-9ano",
+              "nome": "LP 9º Ano — Baixa Visão 👁️",
+              "descricao": "Língua Portuguesa do 9º Ano adaptada para alunos com baixa visao. Textos curtos, linguagem direta, sem dependencia de imagens. Interface com fonte ampliada e alto contraste.",
+              "arquivo": "lp-adaptado-baixa-visao-9ano.json",
+              "adaptacao": { "tipo": "baixa-visao", "cor": "#1b5e20", "icone": "👁️" }
+            }
+          ]
         }
       ]
     }
@@ -513,15 +547,15 @@
   
   "stats": {
     "totalCursos": 5,
-    "totalDisciplinas": 14,
-    "totalTopicos": 53,
-    "totalQuestoes": 925,
+    "totalDisciplinas": 15,
+    "totalTopicos": 54,
+    "totalQuestoes": 935,
     "byArea": {
       "analise-desenvolvimento-sistemas": 600,
       "informatica-geral": 75,
       "matematica": 80,
       "portugues": 140,
-      "simulados": 55
+      "simulados": 85
     }
   }
 }

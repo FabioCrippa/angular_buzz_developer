@@ -1,7 +1,7 @@
 <!--
   Container principal do quiz. Utiliza uma classe para facilitar a estilização e garantir responsividade.
 -->
-<div class="quiz-container">
+<div class="quiz-container" [class.quiz-baixa-visao]="adaptacaoTipo === 'baixa-visao'" [style.zoom]="zoomLevel / 100">
 
   <!-- 🔒 VIOLATION MODAL (simulado anti-cheat) -->
   <div *ngIf="showViolationModal" class="violation-overlay">
@@ -440,6 +440,12 @@
         <span class="simulado-badge">📝 Simulado</span>
         <h1 class="simulado-name">{{ getSimuladoTitle() }}</h1>
         <div class="simulado-timer">⏱ {{ getTimeSpentFormatted() }}</div>
+        <!-- CONTROLE DE ZOOM -->
+        <div class="zoom-controls">
+          <button class="zoom-btn" (click)="decreaseZoom()" [disabled]="zoomLevel <= 80" title="Diminuir fonte">A−</button>
+          <span class="zoom-level">{{ zoomLevel }}%</span>
+          <button class="zoom-btn" (click)="increaseZoom()" [disabled]="zoomLevel >= 160" title="Aumentar fonte">A+</button>
+        </div>
       </div>
       <div class="simulado-progress-row">
         <span class="simulado-count">{{ simuladoAnsweredCount }}/{{ questions.length }} respondidas</span>
@@ -523,6 +529,12 @@
       <div class="result-meta">
         <span><i class="fas fa-clock"></i> {{ simuladoResult.timeFormatted }}</span>
         <span><i class="fas fa-list"></i> {{ simuladoResult.total }} questões</span>
+      </div>
+      <!-- CONTROLE DE ZOOM -->
+      <div class="zoom-controls zoom-controls-result">
+        <button class="zoom-btn" (click)="decreaseZoom()" [disabled]="zoomLevel <= 80" title="Diminuir fonte">A−</button>
+        <span class="zoom-level">{{ zoomLevel }}%</span>
+        <button class="zoom-btn" (click)="increaseZoom()" [disabled]="zoomLevel >= 160" title="Aumentar fonte">A+</button>
       </div>
     </div>
 

@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "simulado": "LP Adaptado — Hiperfoco Sonic — 9º Ano",
+    "tipo": "simulado-adaptado",
+    "disciplina": "Lingua Portuguesa",
+    "serie": "9 Ano",
+    "area": "simulados",
+    "subject": "lp-adaptado-hiperfoco-sonic-9ano",
+    "name": "LP Adaptado — Hiperfoco: Sonic 🦔",
+    "description": "Simulado de Lingua Portuguesa do 9 Ano adaptado para alunos com hiperfoco em Sonic. As mesmas competencias do curriculo, com textos e contextos usando personagens da saga Sonic.",
+    "questionCount": 10,
+    "adaptacao": {
+      "tipo": "hiperfoco",
+      "tema": "Sonic the Hedgehog",
+      "cor": "#1565c0",
+      "icone": "🦔",
+      "descricao": "Questoes contextualizadas com a saga Sonic para engajar alunos com hiperfoco no tema. Competencias identicas ao curriculo regular do 9 Ano."
+    },
+    "duracao": 60,
+    "ano": 2025,
+    "exame": "Simulado Adaptado"
+  },
+  "questions": [
+    {
+      "id": "lp-sonic-001",
+      "question": "Sonic escreveu em seu diario: \"Hoje corri pelo Green Hill Zone e fiquei pensando: por que o Eggman nunca desiste? Ja o venci tantas vezes... Mas eu tambem nunca desisto. Acho que isso nos une, de um jeito estranho.\"\n\nEsse texto pertence ao genero:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Noticia, pois relata um fato recente de forma objetiva e impessoal." },
+        { "id": 1, "alias": "B", "name": "Diario intimo, pois apresenta reflexoes pessoais em primeira pessoa, com tom subjetivo e informal." },
+        { "id": 2, "alias": "C", "name": "Cronica, pois mistura humor e critica social de forma leve e cotidiana." },
+        { "id": 3, "alias": "D", "name": "Texto expositivo, pois organiza informacoes de forma didatica e neutra." }
+      ],
+      "correct": "B",
+      "explanation": "O texto de diario intimo se caracteriza por relatos em primeira pessoa, com tom pessoal, subjetivo e informal. O trecho de Sonic usa 'hoje corri', 'fiquei pensando' e reflexoes sobre sentimentos — marcas tipicas do genero.",
+      "subject": "Genero textual: diario intimo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Generos textuais: diario intimo e autobiografia"
+    },
+    {
+      "id": "lp-sonic-002",
+      "question": "Leia o dialogo:\n\nTails disse para Sonic: \"Voce foi mais rapido que nunca hoje.\"\nSonic respondeu com um sorriso, mas seus olhos olhavam para o horizonte, sem brilho. \"Sim. Fui.\"\n\nO que e possivel inferir sobre o estado emocional de Sonic nesse trecho?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Sonic esta feliz e orgulhoso de sua velocidade." },
+        { "id": 1, "alias": "B", "name": "Sonic esta com raiva de Tails por fazer essa pergunta." },
+        { "id": 2, "alias": "C", "name": "Sonic esconde uma tristeza ou preocupacao, apesar de tentar aparentar normalidade." },
+        { "id": 3, "alias": "D", "name": "Sonic esta com pressa para completar uma nova fase." }
+      ],
+      "correct": "C",
+      "explanation": "A inferencia e uma habilidade de leitura que vai alem do que esta escrito. O sorriso de Sonic combinado com 'olhos sem brilho' e a resposta curta 'Sim. Fui.' sao sinais de que ele esta dissimulando um sentimento negativo — tipica pista implicita no texto.",
+      "subject": "Interpretacao de texto: inferencia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Leitura e interpretacao: inferencias e subentendidos"
+    },
+    {
+      "id": "lp-sonic-003",
+      "question": "Amy Rose disse para Sonic: \"Voce e sempre uma luz no fim do tunel!\"\n\nA expressao sublinhada 'luz no fim do tunel' esta empregada em sentido:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Denotativo, descrevendo literalmente uma lampada no interior de um tunel escuro." },
+        { "id": 1, "alias": "B", "name": "Conotativo, indicando que Sonic representa esperanca e solucao nos momentos dificeis." },
+        { "id": 2, "alias": "C", "name": "Denotativo, pois Amy estava descrevendo o cenario de uma fase do jogo." },
+        { "id": 3, "alias": "D", "name": "Conotativo, indicando apenas que Sonic corre mais rapido do que a luz." }
+      ],
+      "correct": "B",
+      "explanation": "Sentido conotativo e o sentido figurado, nao literal. 'Luz no fim do tunel' e uma expressao idiomatica que significa esperanca em situacao dificil. Amy nao esta falando de uma luz real — ela esta expressando que Sonic representa uma saida, uma esperanca.",
+      "subject": "Conotacao e denotacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Sentido literal e figurado: conotacao e denotacao"
+    },
+    {
+      "id": "lp-sonic-004",
+      "question": "Knuckles disse: \"Sonic nao e um corredor — ele E o proprio vento!\"\n\nA expressao em destaque e um exemplo de qual figura de linguagem?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Comparacao, pois usa a palavra 'como' para comparar Sonic ao vento." },
+        { "id": 1, "alias": "B", "name": "Metafora, pois identifica Sonic diretamente com o vento, sem usar termos comparativos como 'como' ou 'tal qual'." },
+        { "id": 2, "alias": "C", "name": "Hiperbole, pois exagera de forma proposital uma caracteristica do personagem." },
+        { "id": 3, "alias": "D", "name": "Personificacao, pois atribui caracteristicas humanas ao elemento vento." }
+      ],
+      "correct": "B",
+      "explanation": "A metafora identifica dois elementos diretamente, sem palavras de comparacao ('como', 'tal qual', 'parece'). 'Ele E o vento' e uma identificacao direta. Se fosse 'Ele corre COMO o vento', seria comparacao (simile). A ausencia do 'como' e a marca da metafora.",
+      "subject": "Figuras de linguagem: metafora",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Figuras de linguagem: metafora e comparacao"
+    },
+    {
+      "id": "lp-sonic-005",
+      "question": "Tails mandou mensagem para Sonic: \"Ei, rolou uma parada loca aqui na base do Eggman, ta? Fui la e fiz umas gambiarras e deu certo kkkk. Avisa Knuckles ai!\"\n\nA linguagem usada por Tails nessa mensagem e classificada como:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Formal culta, adequada para comunicados e documentos oficiais." },
+        { "id": 1, "alias": "B", "name": "Tecnica, propria de relatorios cientificos e manuais especializados." },
+        { "id": 2, "alias": "C", "name": "Coloquial informal, tipica de conversas entre jovens em ambiente digital." },
+        { "id": 3, "alias": "D", "name": "Literaria, com uso elaborado de figuras de linguagem e recursos esteticos." }
+      ],
+      "correct": "C",
+      "explanation": "A variante coloquial informal e usada em situacoes do cotidiano, especialmente em mensagens digitais. Caracteriza-se por girias ('parada loca', 'gambiarras'), abreviacoes ('ta?', 'kkkk'), ausencia de formalidade e pontuacao informal. A variante linguistica escolhida depende do contexto e do interlocutor.",
+      "subject": "Variacao linguistica: registro informal e formal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Variedades linguisticas e adequacao ao contexto"
+    },
+    {
+      "id": "lp-sonic-006",
+      "question": "\"Eu nunca escolhi ser heroi. As coisas simplesmente aconteceram — a Esmeralda do Caos, o Eggman, o mundo que precisava de mim. Mas aprendi que velocidade sem proposito nao e heroismo. E so fuga.\"\n\nEsse trecho usa qual tipo de narrador?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Narrador em terceira pessoa onisciente, que sabe tudo sobre todos os personagens." },
+        { "id": 1, "alias": "B", "name": "Narrador em terceira pessoa observador, que so descreve o que ve externamente." },
+        { "id": 2, "alias": "C", "name": "Narrador em primeira pessoa, que e o proprio personagem relatando sua perspectiva." },
+        { "id": 3, "alias": "D", "name": "Narrador em segunda pessoa, que se dirige diretamente ao leitor." }
+      ],
+      "correct": "C",
+      "explanation": "O narrador em primeira pessoa usa pronomes como 'eu', 'mim', 'me' e relata os fatos de dentro da historia — e o proprio personagem. No trecho, 'Eu nunca escolhi', 'aprendi' e 'precisava de mim' sao marcas inequivocas da primeira pessoa. Esse tipo de narrador so tem acesso aos proprios sentimentos.",
+      "subject": "Narrador: tipos e perspectivas",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Generos narrativos: narrador e ponto de vista"
+    },
+    {
+      "id": "lp-sonic-007",
+      "question": "\"Sonic avancou em direcao ao Eggman. Ele gargalhou e ativou seu robo mais poderoso.\"\n\nA quem se refere o pronome 'Ele' nesse trecho?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "A Sonic, por ser o primeiro sujeito mencionado na frase." },
+        { "id": 1, "alias": "B", "name": "Ao robo, por ser o elemento mais proximo do pronome no texto." },
+        { "id": 2, "alias": "C", "name": "A Eggman, pois gargalhar e ativar robos e coerente com seu perfil de vilao." },
+        { "id": 3, "alias": "D", "name": "A um terceiro personagem que nao foi mencionado anteriormente." }
+      ],
+      "correct": "C",
+      "explanation": "A coesao referencial e a forma como os pronomes retomam elementos anteriores no texto. Embora a regra gramatical aponte para o sujeito mais proximo, a coerencia semantica e essencial: gargalhar com maldade e ativar robos sao acoes tipicas do Eggman (vilao), nao do Sonic (heroi). O contexto narrativo define a referencia correta.",
+      "subject": "Coesao textual: referencia pronominal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Coesao e coerencia: pronomes e referencias"
+    },
+    {
+      "id": "lp-sonic-008",
+      "question": "Dr. Eggman declarou: \"Desta vez... ninguem vai me parar.\"\n\nAs reticencias na fala do vilao tem a funcao de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Indicar que o personagem cometeu um erro gramatical na fala." },
+        { "id": 1, "alias": "B", "name": "Mostrar que o texto foi cortado e que falta informacao." },
+        { "id": 2, "alias": "C", "name": "Indicar uma pausa dramatica, criando suspense e dando peso a afirmacao do vilao." },
+        { "id": 3, "alias": "D", "name": "Substituir palavras improprias que foram censuradas." }
+      ],
+      "correct": "C",
+      "explanation": "As reticencias (...) tem varios usos: podem indicar continuacao implicita, hesitacao, interrupcao ou pausa dramatica. Nesse contexto narrativo, 'Desta vez...' cria suspense antes da conclusao da frase — e um recurso expressivo para intensificar a ameaca do vilao, dar ritmo e criar tensao no leitor.",
+      "subject": "Pontuacao: funcoes expressivas das reticencias",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Pontuacao e seus efeitos de sentido"
+    },
+    {
+      "id": "lp-sonic-009",
+      "question": "Em uma HQ do Sonic, o narrador diz: \"Um unico individuo, com determinacao suficiente, pode mudar o rumo de toda uma guerra.\" Essa ideia aparece em inumeras historias — de herois, de guerras reais, de livros classicos.\n\nQuando um texto retoma, cita ou dialoga com ideias presentes em outras obras, esse recurso chama-se:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Parodia, quando o texto imita de forma humoristica e critica uma obra conhecida." },
+        { "id": 1, "alias": "B", "name": "Plagio, quando o texto copia outro sem dar credito ao autor original." },
+        { "id": 2, "alias": "C", "name": "Intertextualidade, pois o texto dialoga com e faz referencia a outros textos e obras da cultura." },
+        { "id": 3, "alias": "D", "name": "Ironia, quando o texto diz o contrario do que pretende significar." }
+      ],
+      "correct": "C",
+      "explanation": "Intertextualidade e a relacao entre textos: quando um texto retoma, cita, alude ou dialoga com outro. Nao e plagio (que e copia nao autorizada) nem parodia (que deforma humoristicamente). A HQ do Sonic ao trazer uma ideia presente em muitas outras narrativas esta praticando intertextualidade — algo muito comum em obras de cultura popular.",
+      "subject": "Intertextualidade",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Dificil",
+      "aula_tema": "Intertextualidade: tipos e funcoes"
+    },
+    {
+      "id": "lp-sonic-010",
+      "question": "O jogo Sonic the Hedgehog apresenta a seguinte organizacao:\n\n1. Apresentacao: Sonic vive em paz no Green Hill Zone.\n2. Conflito: Dr. Eggman captura os animais e ameaca o mundo.\n3. Desenvolvimento: Sonic percorre zonas perigosas enfrentando obstaculos.\n4. Desfecho: Sonic derrota Eggman e liberta os animais.\n\nEssa estrutura corresponde ao modelo tipico de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Texto argumentativo, com tese, argumentos e conclusao defendendo um ponto de vista." },
+        { "id": 1, "alias": "B", "name": "Texto instrucional, que orienta como realizar uma tarefa passo a passo." },
+        { "id": 2, "alias": "C", "name": "Narrativa com sequencia: apresentacao, conflito, desenvolvimento e desfecho." },
+        { "id": 3, "alias": "D", "name": "Texto expositivo, que descreve caracteristicas de um tema de forma objetiva." }
+      ],
+      "correct": "C",
+      "explanation": "A estrutura narrativa classica (tambem chamada de esquema quinario ou piramide de Freytag adaptada) e composta por: apresentacao (contexto inicial), conflito ou complicacao (o problema), desenvolvimento (os obstaculos), climax e desfecho (resolucao). Praticamente toda historia — jogo, filme, livro ou HQ — segue essa estrutura basica.",
+      "subject": "Estrutura narrativa",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Generos narrativos: estrutura e elementos"
+    }
+  ]
+}

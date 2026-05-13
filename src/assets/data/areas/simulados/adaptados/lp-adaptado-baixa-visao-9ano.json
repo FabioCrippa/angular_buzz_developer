@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "simulado": "LP Adaptado — Baixa Visao — 9º Ano",
+    "tipo": "simulado-adaptado",
+    "disciplina": "Lingua Portuguesa",
+    "serie": "9 Ano",
+    "area": "simulados",
+    "subject": "lp-adaptado-baixa-visao-9ano",
+    "name": "LP Adaptado — Baixa Visao 👁️",
+    "description": "Simulado de Lingua Portuguesa do 9 Ano adaptado para alunos com baixa visao. Textos curtos, linguagem direta, sem dependencia de elementos visuais. Interface carregada com fonte ampliada e alto contraste.",
+    "questionCount": 10,
+    "adaptacao": {
+      "tipo": "baixa-visao",
+      "cor": "#1b5e20",
+      "icone": "👁️",
+      "descricao": "Simulado com textos curtos e objetivos, linguagem clara e direta, sem questoes que dependam de imagens ou formatacao visual complexa. O quiz e carregado automaticamente com fonte ampliada e alto contraste."
+    },
+    "duracao": 60,
+    "ano": 2025,
+    "exame": "Simulado Adaptado"
+  },
+  "questions": [
+    {
+      "id": "lp-bv-001",
+      "question": "Leia o texto abaixo com atencao:\n\n\"Eu acordei cedo, tomei cafe e fui para a escola. No caminho, encontrei minha amiga Ana. Ela estava triste. Perguntei o motivo. Ela disse que tinha perdido o caderno de anotacoes. Ficamos procurando juntas ate achar.\"\n\nEsse texto conta uma historia com personagens, acoes e uma solucao no final. Ele pertence ao tipo de texto chamado:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Texto narrativo, pois conta uma historia com personagens, acoes e um desfecho." },
+        { "id": 1, "alias": "B", "name": "Texto argumentativo, pois defende uma opiniao com argumentos." },
+        { "id": 2, "alias": "C", "name": "Texto instrucional, pois ensina como fazer algo passo a passo." },
+        { "id": 3, "alias": "D", "name": "Texto expositivo, pois explica um tema de forma objetiva e neutra." }
+      ],
+      "correct": "A",
+      "explanation": "O texto narrativo conta uma historia. Ele tem: personagens (eu e Ana), acoes (acordar, ir para a escola, encontrar a amiga), um problema (caderno perdido) e uma solucao (encontrar juntas). Esses sao os elementos basicos da narrativa. Diferente do argumentativo, que defende ideias, ou do instrucional, que ensina como fazer algo.",
+      "subject": "Tipos de texto: narrativo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Tipos e generos textuais"
+    },
+    {
+      "id": "lp-bv-002",
+      "question": "Leia a frase:\n\n\"A noticia caiu como uma bomba.\"\n\nNessa frase, a palavra 'bomba' esta usada no sentido:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Literal, descrevendo um explosivo real que caiu sobre algo." },
+        { "id": 1, "alias": "B", "name": "Figurado, indicando que a noticia causou grande impacto ou surpresa." },
+        { "id": 2, "alias": "C", "name": "Literal, pois bombas realmente podem cair em situacoes de guerra." },
+        { "id": 3, "alias": "D", "name": "Figurado, indicando que a noticia foi ruim e sem importancia." }
+      ],
+      "correct": "B",
+      "explanation": "Quando uma palavra e usada em sentido figurado (conotativo), ela nao tem o significado literal do dicionario. 'Caiu como uma bomba' nao fala de um explosivo real — significa que a noticia causou grande espanto ou impacto emocional. Esse e o sentido conotativo: o sentido simbolico, expressivo, nao o fisico.",
+      "subject": "Conotacao e denotacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Sentido literal e figurado: conotacao e denotacao"
+    },
+    {
+      "id": "lp-bv-003",
+      "question": "Leia o texto:\n\n\"Voce deve lavar as maos antes de comer.\nDepois, seque-as com uma toalha limpa.\nEm seguida, descarte o papel utilizado.\"\n\nEsse texto tem o objetivo de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Contar uma historia sobre higiene pessoal." },
+        { "id": 1, "alias": "B", "name": "Dar instrucoes sobre como realizar uma acao corretamente." },
+        { "id": 2, "alias": "C", "name": "Defender a ideia de que higiene e importante." },
+        { "id": 3, "alias": "D", "name": "Descrever os habitos de uma pessoa especifica." }
+      ],
+      "correct": "B",
+      "explanation": "O texto instrucional (ou prescritivo) tem o objetivo de orientar como realizar uma acao. Suas marcas principais sao: uso de verbos no imperativo ('Voce deve', 'seque', 'descarte'), organizacao em passos sequenciais e linguagem objetiva. Outros exemplos: receitas culinarias, manuais, bulas de remedio, normas de seguranca.",
+      "subject": "Genero textual: texto instrucional",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Tipos e generos textuais: texto instrucional"
+    },
+    {
+      "id": "lp-bv-004",
+      "question": "Leia as duas frases:\n\nFrase 1: \"Joao disse que ia chegar cedo.\"\nFrase 2: \"Joao disse: 'Vou chegar cedo.'\"\n\nQual e a diferenca entre elas?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "A Frase 1 usa discurso direto (fala exata), a Frase 2 usa discurso indireto (fala resumida)." },
+        { "id": 1, "alias": "B", "name": "A Frase 1 usa discurso indireto (resume a fala), a Frase 2 usa discurso direto (fala exata entre aspas)." },
+        { "id": 2, "alias": "C", "name": "As duas frases sao iguais e nao ha diferenca entre elas." },
+        { "id": 3, "alias": "D", "name": "A Frase 2 esta errada porque nao se usa aspas na escrita." }
+      ],
+      "correct": "B",
+      "explanation": "O discurso direto reproduz exatamente o que a pessoa disse, usando travessao ou aspas: 'Vou chegar cedo.' O discurso indireto resume ou adapta a fala do personagem sem aspas, integrando ao texto do narrador: 'que ia chegar cedo'. Reconhecer essa diferenca e fundamental para interpretar textos narrativos e jornalisticos.",
+      "subject": "Discurso direto e indireto",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Discurso direto e indireto: formas de relatar a fala"
+    },
+    {
+      "id": "lp-bv-005",
+      "question": "Leia o texto:\n\n\"A escola deve ter mais areas verdes. Em primeiro lugar, as plantas melhoram o ar. Alem disso, os alunos ficam mais tranquilos em ambientes com natureza. Portanto, investir em jardins escolares e uma decisao inteligente.\"\n\nEsse texto e um exemplo de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Texto narrativo, pois conta uma historia sobre alunos em uma escola." },
+        { "id": 1, "alias": "B", "name": "Texto argumentativo, pois defende uma ideia usando argumentos e conclui com uma tese." },
+        { "id": 2, "alias": "C", "name": "Texto instrucional, pois ensina como plantar arvores na escola." },
+        { "id": 3, "alias": "D", "name": "Texto expositivo, pois apenas descreve o que existe em uma escola." }
+      ],
+      "correct": "B",
+      "explanation": "O texto argumentativo tem o objetivo de convencer o leitor sobre uma ideia. Ele apresenta: uma tese (a escola deve ter mais areas verdes), argumentos que a sustentam (plantas melhoram o ar; alunos ficam mais tranquilos) e uma conclusao (investir em jardins e decisao inteligente). Os conectivos 'Em primeiro lugar', 'Alem disso' e 'Portanto' organizam essa logica argumentativa.",
+      "subject": "Texto argumentativo: tese e argumentos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Texto argumentativo: estrutura e recursos"
+    },
+    {
+      "id": "lp-bv-006",
+      "question": "Leia a frase:\n\n\"Eu comi tanto que poderia explodir!\"\n\nEssa frase usa uma figura de linguagem chamada hiperbole. O que e hiperbole?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Uma comparacao usando a palavra 'como'." },
+        { "id": 1, "alias": "B", "name": "Um exagero proposital para dar enfase a uma ideia ou sentimento." },
+        { "id": 2, "alias": "C", "name": "Atribuir sentimentos humanos a objetos ou animais." },
+        { "id": 3, "alias": "D", "name": "Usar uma palavra no sentido oposto ao seu significado real." }
+      ],
+      "correct": "B",
+      "explanation": "A hiperbole e um exagero intencional usado para intensificar uma ideia. 'Poderia explodir' nao e literal — ninguem realmente explode de tanto comer. E uma forma expressiva de dizer que comeu muito. Outros exemplos: 'Estou morrendo de fome', 'Ja te falei mil vezes', 'Aquela mochila pesa uma tonelada'. A hiperbole e muito comum na linguagem cotidiana.",
+      "subject": "Figuras de linguagem: hiperbole",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Figuras de linguagem: hiperbole e outras"
+    },
+    {
+      "id": "lp-bv-007",
+      "question": "Leia o texto:\n\n\"Querida Camila,\nEstou com saudades de voce. O verao aqui esta lindo. Espero que voce venha nos visitar em breve. Mande noticias!\nBeijos, Beatriz\"\n\nEsse texto pertence ao genero:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Noticia, pois informa um fato recente de forma objetiva." },
+        { "id": 1, "alias": "B", "name": "Carta pessoal, pois e uma comunicacao informal entre duas pessoas conhecidas." },
+        { "id": 2, "alias": "C", "name": "Relatorio, pois descreve uma situacao de forma tecnica e formal." },
+        { "id": 3, "alias": "D", "name": "Diario intimo, pois relata os sentimentos da autora para si mesma." }
+      ],
+      "correct": "B",
+      "explanation": "A carta pessoal e um genero textual de comunicacao direta entre pessoas conhecidas. Suas marcas sao: vocativo com nome do destinatario ('Querida Camila'), linguagem informal e afetiva, conteudo pessoal (saudades, noticias) e despedida com nome do remetente ('Beijos, Beatriz'). O diario seria escrito para si mesmo, nao para outra pessoa.",
+      "subject": "Genero textual: carta pessoal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Generos textuais: carta pessoal e correspondencia"
+    },
+    {
+      "id": "lp-bv-008",
+      "question": "Leia as duas formas de falar a mesma coisa:\n\nForma 1: \"Cara, nao acredito que voce fez isso, tao brabo contigo hein!\"\nForma 2: \"Informo que fiquei descontente com a sua atitude.\"\n\nA diferenca entre as duas formas mostra que:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "A Forma 1 esta errada porque usa girias." },
+        { "id": 1, "alias": "B", "name": "A Forma 2 esta errada porque e muito formal." },
+        { "id": 2, "alias": "C", "name": "A lingua se adapta ao contexto: a Forma 1 e adequada para conversa informal, a Forma 2 para situacoes formais." },
+        { "id": 3, "alias": "D", "name": "Apenas a Forma 2 esta correta porque usa a norma culta." }
+      ],
+      "correct": "C",
+      "explanation": "Nao existe falar 'certo' ou 'errado' de forma absoluta — existe falar adequado ao contexto. A Forma 1 e natural em conversa com amigos (linguagem informal). A Forma 2 e adequada em e-mails profissionais ou situacoes formais (linguagem formal). Saber usar as duas formas conforme a situacao e uma competencia importante chamada adequacao linguistica.",
+      "subject": "Variacao linguistica: registro formal e informal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Variedades linguisticas e adequacao ao contexto"
+    },
+    {
+      "id": "lp-bv-009",
+      "question": "Leia o trecho:\n\n\"Marina chegou atrasada. A menina entrou na sala em silencio. A aluna sentou no fundo.\"\n\nAs expressoes 'A menina' e 'A aluna' tem a funcao de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Indicar que sao tres pessoas diferentes na sala de aula." },
+        { "id": 1, "alias": "B", "name": "Retomar o nome 'Marina' sem repeti-lo, mantendo o texto fluido e coeso." },
+        { "id": 2, "alias": "C", "name": "Introduzir personagens novos para enriquecer a narrativa." },
+        { "id": 3, "alias": "D", "name": "Substituir o verbo principal para dar mais dinamismo ao texto." }
+      ],
+      "correct": "B",
+      "explanation": "Quando um texto usa expressoes ou palavras diferentes para se referir ao mesmo elemento, chamamos isso de substituicao lexical — um recurso de coesao textual. 'A menina' e 'A aluna' retomam 'Marina' sem repeti-la, tornando o texto mais fluido. Se o texto repetisse 'Marina' tres vezes seguidas, ficaria pesado. A coesao e o que une as partes do texto de forma elegante.",
+      "subject": "Coesao textual: substituicao lexical",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Coesao e coerencia: substituicao e referencia"
+    },
+    {
+      "id": "lp-bv-010",
+      "question": "Leia o texto:\n\n\"O leite e importante para os ossos. Ele contem calcio, um mineral essencial para o crescimento. Por isso, medicos recomendam o consumo diario de laticinios.\"\n\nEsse texto tem o objetivo de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Contar uma historia sobre uma pessoa que toma leite todos os dias." },
+        { "id": 1, "alias": "B", "name": "Dar instrucoes sobre como preparar um alimento." },
+        { "id": 2, "alias": "C", "name": "Explicar informacoes sobre um tema de forma clara e objetiva." },
+        { "id": 3, "alias": "D", "name": "Convencer o leitor a consumir leite usando argumentos emocionais." }
+      ],
+      "correct": "C",
+      "explanation": "O texto expositivo tem o objetivo de informar ou explicar sobre um tema de forma clara, objetiva e neutra. Ele nao conta uma historia (narrativo), nao ensina a fazer algo (instrucional) e nao defende uma opiniao de forma argumentativa. O trecho apresenta fatos sobre o leite ('contem calcio', 'mineral essencial') de forma direta — essa e a funcao expositiva.",
+      "subject": "Texto expositivo: caracteristicas e funcao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Tipos textuais: expositivo, narrativo, argumentativo, instrucional"
+    }
+  ]
+}

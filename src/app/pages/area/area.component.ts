@@ -59,7 +59,7 @@ export class AreaComponent implements OnInit {
   areaId: string = '';
 
   // ── Simulados ──────────────────────────────────
-  simuladosList: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number; tags?: string; group: string }[] = [
+  simuladosList: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number; tags?: string; group: string; tema?: string }[] = [
     {
       id: 'prova-paulista-9ano-2024',
       displayName: 'Prova Paulista',
@@ -201,12 +201,51 @@ export class AreaComponent implements OnInit {
       year: 2025,
       tags: 'Aulas 22–28',
       group: 'Matemática'
+    },
+    {
+      id: 'lp-adaptado-hiperfoco-sonic-9ano',
+      displayName: 'Língua Portuguesa',
+      subtitle: '9º Ano · Hiperfoco',
+      icon: '🦔',
+      color: 'linear-gradient(135deg, #1565c0, #1976d2)',
+      questionCount: 0,
+      duration: 60,
+      year: 2025,
+      tags: 'Gênero textual, Interpretação, Figuras de linguagem, Narrador, Coesão',
+      tema: '🦔 Sonic',
+      group: 'Simulados Adaptados'
+    },
+    {
+      id: 'lp-adaptado-hiperfoco-homem-aranha-9ano',
+      displayName: 'Língua Portuguesa',
+      subtitle: '9º Ano · Hiperfoco',
+      icon: '🕷️',
+      color: 'linear-gradient(135deg, #c62828, #e53935)',
+      questionCount: 0,
+      duration: 60,
+      year: 2025,
+      tags: 'Intertextualidade, Diário íntimo, Metafora, Narrador, Variação linguística',
+      tema: '🕷️ Homem-Aranha',
+      group: 'Simulados Adaptados'
+    },
+    {
+      id: 'lp-adaptado-baixa-visao-9ano',
+      displayName: 'Língua Portuguesa',
+      subtitle: '9º Ano · Inclusão',
+      icon: '👁️',
+      color: 'linear-gradient(135deg, #1b5e20, #2e7d32)',
+      questionCount: 0,
+      duration: 60,
+      year: 2025,
+      tags: 'Tipos textuais, Conotacao, Generos, Figuras de linguagem, Coesao',
+      tema: '👁️ Baixa Visao',
+      group: 'Simulados Adaptados'
     }
   ];
 
   // Propriedade estável — calculada uma vez em loadSimuladosData() para evitar
   // que o *ngFor destrua/recrie os DOM nodes a cada change detection (hover loop)
-  simuladosGroups: { label: string; icon: string; items: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number; tags?: string; group: string }[] }[] = [];
+  simuladosGroups: { label: string; icon: string; items: { id: string; displayName: string; subtitle: string; icon: string; color: string; questionCount: number; duration: number; year: number; tags?: string; group: string; tema?: string }[] }[] = [];
 
   // Cache de histórico calculado uma vez no init (evita recalcular a cada change detection)
   simuladosHistoryCache: { [id: string]: { attempts: number; bestScore: number } } = {};
@@ -226,7 +265,10 @@ export class AreaComponent implements OnInit {
       'lp-caderno-9ano-vol2-p2': 'assets/data/areas/simulados/lingua-portuguesa/lp-caderno-9ano-vol2-p2.json',
       'mat-caderno-9ano-vol2-p1': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol2-p1.json',
       'mat-caderno-9ano-vol2-p2': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol2-p2.json',
-      'mat-caderno-9ano-vol2-p3': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol2-p3.json'
+      'mat-caderno-9ano-vol2-p3': 'assets/data/areas/simulados/matematica/mat-caderno-9ano-vol2-p3.json',
+      'lp-adaptado-hiperfoco-sonic-9ano': 'assets/data/areas/simulados/adaptados/lp-adaptado-hiperfoco-sonic-9ano.json',
+      'lp-adaptado-hiperfoco-homem-aranha-9ano': 'assets/data/areas/simulados/adaptados/lp-adaptado-hiperfoco-homem-aranha-9ano.json',
+      'lp-adaptado-baixa-visao-9ano': 'assets/data/areas/simulados/adaptados/lp-adaptado-baixa-visao-9ano.json'
     };
 
     for (const sim of this.simuladosList) {
@@ -270,11 +312,12 @@ export class AreaComponent implements OnInit {
     }
 
     // 4. Calcular grupos uma única vez (referência estável para o *ngFor)
-    const order = ['Exames Oficiais', 'Língua Portuguesa', 'Matemática'];
+    const order = ['Exames Oficiais', 'Língua Portuguesa', 'Matemática', 'Simulados Adaptados'];
     const icons: Record<string, string> = {
       'Exames Oficiais': '🏆',
       'Língua Portuguesa': '📖',
-      'Matemática': '📐'
+      'Matemática': '📐',
+      'Simulados Adaptados': '🦔'
     };
     const map = new Map<string, typeof this.simuladosList>();
     for (const sim of this.simuladosList) {

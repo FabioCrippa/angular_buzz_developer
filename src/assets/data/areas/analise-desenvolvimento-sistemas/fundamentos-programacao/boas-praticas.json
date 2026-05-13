@@ -1,4 +1,4 @@
-{
+﻿{
     "metadata":  {
                      "area":  "desenvolvimento-web",
                      "subject":  "boas-praticas",
@@ -6,7 +6,7 @@
                      "description":  "Clean code, SOLID, padrões de desenvolvimento e qualidade de software.",
                      "difficulty":  "intermediate",
                      "lastUpdated":  "2025-10-21",
-                     "questionCount":  25,
+                     "questionCount":  47,
                      "tags":  [
                                   "clean-code",
                                   "solid",
@@ -614,6 +614,556 @@
                           "correct":  "a",
                           "explanation":  "Ambientes separados permitem desenvolvimento seguro, testes realistas e deployments controlados sem afetar produção.",
                           "category":  "boas-praticas"
+                      },
+                      {
+                          "id":  "ana-ent1003",
+                          "question":  "Como você garantiria qualidade de código em um projeto colaborativo?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Utilizando code reviews, testes automatizados e linters",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Aprovando todos os pull requests automaticamente",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Editando diretamente na branch principal",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "A qualidade é garantida através de múltiplas camadas: revisão de código, testes e ferramentas automatizadas.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Implemento uma estratégia em camadas: 1) Linters (ESLint, Prettier) para padronização automática, 2) Testes unitários com cobertura mínima de 80%, 3) Code reviews obrigatórios com pelo menos 2 aprovações, 4) Pipeline CI/CD que bloqueia merge se testes falharem, 5) SonarQube para análise de qualidade. Também promovo pair programming para compartilhar conhecimento."
+                      },
+                      {
+                          "id":  "ana-ent1006",
+                          "question":  "O que representa o \u0027S\u0027 no acrônimo SOLID?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Single Responsibility Principle",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Simple Routing Protocol",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Secure Resource Policy",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Single Responsibility Principle: cada classe deve ter apenas uma razão para mudar.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: O Single Responsibility Principle determina que cada classe deve ter apenas uma responsabilidade. Por exemplo, divido UserService em UserRepository (acesso a dados), UserValidator (validações) e UserNotifier (notificações). Isso facilita testes, manutenção e reduz acoplamento. Quando preciso modificar a validação, só altero UserValidator sem impactar outras funcionalidades."
+                      },
+                      {
+                          "id":  "ana-ent1007",
+                          "question":  "Qual é a ideia central do princípio Open/Closed (O de SOLID)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "O código deve estar aberto para modificação e fechado para extensão",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "O código deve estar aberto para extensão e fechado para modificação",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "O código deve ser sempre público",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Classes devem estar abertas para extensão mas fechadas para modificação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Open/Closed significa que posso adicionar novas funcionalidades sem alterar código existente. Uso interfaces e herança: criando PaymentProcessor interface, posso implementar CreditCardPayment, PayPalPayment sem modificar o código original. Quando surge novo método de pagamento, apenas crio nova implementação. Isso reduz bugs e facilita manutenção em sistemas legados."
+                      },
+                      {
+                          "id":  "ana-ent1008",
+                          "question":  "O que o princípio Liskov Substitution garante?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Que subclasses possam substituir suas superclasses sem alterar o comportamento esperado",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Que todas as classes sejam abstratas",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Que métodos sejam sempre públicos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Objetos de subclasses devem poder substituir objetos da classe pai sem quebrar a funcionalidade.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Liskov Substitution garante que qualquer instância da classe pai pode ser substituída por instância da subclasse. Se tenho Animal e Bird extends Animal, posso usar Bird onde espero Animal. Mas se Bird sobrescreve fly() e Penguin extends Bird, Penguin não deveria ter fly() funcional. Prefiro criar Flying interface apenas para aves que voam. Isso evita quebras no polimorfismo."
+                      },
+                      {
+                          "id":  "ana-ent1009",
+                          "question":  "O que o princípio Interface Segregation recomenda?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Criar interfaces grandes e genéricas",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Dividir interfaces em partes menores e mais específicas",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Evitar o uso de interfaces",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Clientes não devem depender de interfaces que não usam.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Interface Segregation evita que classes implementem métodos desnecessários. Ao invés de uma interface Worker gigante com work(), eat(), sleep(), crio interfaces específicas: Workable, Eatable, Sleepable. Robot implementa apenas Workable, Human implementa todas. Assim cada classe depende apenas do que realmente precisa, tornando o código mais flexível e fácil de manter."
+                      },
+                      {
+                          "id":  "ana-ent1010",
+                          "question":  "Qual é o foco do princípio Dependency Inversion?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Depender de implementações concretas",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Depender de abstrações e não de implementações",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Evitar o uso de dependências externas",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Dependency Inversion inverte a dependência tradicional. Em vez de UserService depender diretamente de MySQLDatabase, ambos dependem de DatabaseInterface. UserService recebe a implementação via injeção de dependência. Isso permite trocar MySQL por PostgreSQL sem alterar UserService. No Angular, uso injeção de dependência nativamente: constructor(@Inject(DATABASE_TOKEN) private db: DatabaseInterface)."
+                      },
+                      {
+                          "id":  "ana-ent1011",
+                          "question":  "O que significa o acrônimo SOLID na programação orientada a objetos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Simple Object, Logic Integration, Data",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "System Optimization, Layer Isolation, Design",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "SOLID são 5 princípios fundamentais para design de software orientado a objetos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: SOLID são princípios que aplico diariamente para criar código maintível. Single Responsibility (uma razão para mudar), Open/Closed (extensível sem modificação), Liskov Substitution (subclasses substituem pais), Interface Segregation (interfaces específicas), Dependency Inversion (depender de abstrações). Exemplo prático: ao criar UserManager, separo responsabilidades (UserValidator, UserRepository), uso interfaces para extensibilidade e injeto dependências."
+                      },
+                      {
+                          "id":  "ana-ent1012",
+                          "question":  "Por que o princípio Single Responsibility é importante?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Porque permite que uma classe tenha múltiplas responsabilidades",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Porque facilita testes, manutenção e reutilização do código",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Porque reduz o número de arquivos no projeto",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Classes com única responsabilidade são mais fáceis de testar, manter e reutilizar.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Single Responsibility torna o código previsível e maintível. Uma classe OrderProcessor que processa pedidos, envia emails E calcula impostos é difícil de testar e modificar. Separando em OrderProcessor, EmailService e TaxCalculator, posso testar cada um isoladamente, reutilizar TaxCalculator em outros contextos e modificar cálculo de impostos sem afetar processamento de pedidos."
+                      },
+                      {
+                          "id":  "ana-ent1013",
+                          "question":  "Como o princípio Interface Segregation melhora o design de software?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Evita que classes sejam forçadas a implementar métodos que não usam",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Permite que interfaces tenham apenas métodos privados",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Garante que todas as interfaces sejam genéricas",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Clientes não devem ser forçados a depender de interfaces que não utilizam.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Interface Segregation evita \u0027fat interfaces\u0027 que forçam implementações desnecessárias. Em vez de Vehicle com fly(), swim(), drive(), crio interfaces específicas: Flyable, Swimmable, Driveable. Airplane implementa Flyable e Driveable, Boat implementa Swimmable e Driveable. Isso reduz acoplamento e torna implementações mais coesas e flexíveis."
+                      },
+                      {
+                          "id":  "ana-ent1024",
+                          "question":  "O que é um Design Pattern no contexto de desenvolvimento de software?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma biblioteca de componentes visuais",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma solução reutilizável para problemas recorrentes de projeto",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de teste automatizado",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Design Patterns são soluções testadas e documentadas para problemas comuns de design de software.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Design Patterns são como receitas de bolo - soluções comprovadas para problemas recorrentes. Por exemplo, uso Singleton para serviços que devem ter única instância (como AuthService), Observer para notificações entre componentes, Strategy para diferentes algoritmos de pagamento. Não são código, mas conceitos que tornam o sistema mais flexível e mantível. É importante não forçar padrões onde não são necessários."
+                      },
+                      {
+                          "id":  "ana-ent1063",
+                          "question":  "O que é Clean Code e quais são seus princípios fundamentais?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Código legível, simples e facilmente mantível seguindo princípios como DRY, YAGNI e KISS",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Código sem comentários",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Código com máxima performance",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Clean Code prioriza legibilidade, simplicidade e manutenibilidade sobre cleverness ou performance prematura.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Clean Code é sobre comunicação entre desenvolvedores. Princípios: 1) Meaningful names (getUserById vs get), 2) Functions should be small and do one thing, 3) Comments explain WHY, not WHAT, 4) DRY (Don\u0027t Repeat Yourself), 5) YAGNI (You Aren\u0027t Gonna Need It), 6) Consistent formatting. Refactoro constantemente: Extract Method, Rename Variable, Remove Dead Code. Código limpo é investimento - tempo inicial extra, mas economia gigante na manutenção."
+                      },
+                      {
+                          "id":  "ana-ent1003",
+                          "question":  "Como você garantiria qualidade de código em um projeto colaborativo?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Utilizando code reviews, testes automatizados e linters",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Aprovando todos os pull requests automaticamente",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Editando diretamente na branch principal",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "A qualidade é garantida através de múltiplas camadas: revisão de código, testes e ferramentas automatizadas.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Implemento uma estratégia em camadas: 1) Linters (ESLint, Prettier) para padronização automática, 2) Testes unitários com cobertura mínima de 80%, 3) Code reviews obrigatórios com pelo menos 2 aprovações, 4) Pipeline CI/CD que bloqueia merge se testes falharem, 5) SonarQube para análise de qualidade. Também promovo pair programming para compartilhar conhecimento."
+                      },
+                      {
+                          "id":  "ana-ent1006",
+                          "question":  "O que representa o \u0027S\u0027 no acrônimo SOLID?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Single Responsibility Principle",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Simple Routing Protocol",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Secure Resource Policy",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Single Responsibility Principle: cada classe deve ter apenas uma razão para mudar.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: O Single Responsibility Principle determina que cada classe deve ter apenas uma responsabilidade. Por exemplo, divido UserService em UserRepository (acesso a dados), UserValidator (validações) e UserNotifier (notificações). Isso facilita testes, manutenção e reduz acoplamento. Quando preciso modificar a validação, só altero UserValidator sem impactar outras funcionalidades."
+                      },
+                      {
+                          "id":  "ana-ent1007",
+                          "question":  "Qual é a ideia central do princípio Open/Closed (O de SOLID)?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "O código deve estar aberto para modificação e fechado para extensão",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "O código deve estar aberto para extensão e fechado para modificação",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "O código deve ser sempre público",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Classes devem estar abertas para extensão mas fechadas para modificação.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Open/Closed significa que posso adicionar novas funcionalidades sem alterar código existente. Uso interfaces e herança: criando PaymentProcessor interface, posso implementar CreditCardPayment, PayPalPayment sem modificar o código original. Quando surge novo método de pagamento, apenas crio nova implementação. Isso reduz bugs e facilita manutenção em sistemas legados."
+                      },
+                      {
+                          "id":  "ana-ent1008",
+                          "question":  "O que o princípio Liskov Substitution garante?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Que subclasses possam substituir suas superclasses sem alterar o comportamento esperado",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Que todas as classes sejam abstratas",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Que métodos sejam sempre públicos",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Objetos de subclasses devem poder substituir objetos da classe pai sem quebrar a funcionalidade.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Liskov Substitution garante que qualquer instância da classe pai pode ser substituída por instância da subclasse. Se tenho Animal e Bird extends Animal, posso usar Bird onde espero Animal. Mas se Bird sobrescreve fly() e Penguin extends Bird, Penguin não deveria ter fly() funcional. Prefiro criar Flying interface apenas para aves que voam. Isso evita quebras no polimorfismo."
+                      },
+                      {
+                          "id":  "ana-ent1009",
+                          "question":  "O que o princípio Interface Segregation recomenda?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Criar interfaces grandes e genéricas",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Dividir interfaces em partes menores e mais específicas",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Evitar o uso de interfaces",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Clientes não devem depender de interfaces que não usam.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Interface Segregation evita que classes implementem métodos desnecessários. Ao invés de uma interface Worker gigante com work(), eat(), sleep(), crio interfaces específicas: Workable, Eatable, Sleepable. Robot implementa apenas Workable, Human implementa todas. Assim cada classe depende apenas do que realmente precisa, tornando o código mais flexível e fácil de manter."
+                      },
+                      {
+                          "id":  "ana-ent1010",
+                          "question":  "Qual é o foco do princípio Dependency Inversion?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Depender de implementações concretas",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Depender de abstrações e não de implementações",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Evitar o uso de dependências externas",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Dependency Inversion inverte a dependência tradicional. Em vez de UserService depender diretamente de MySQLDatabase, ambos dependem de DatabaseInterface. UserService recebe a implementação via injeção de dependência. Isso permite trocar MySQL por PostgreSQL sem alterar UserService. No Angular, uso injeção de dependência nativamente: constructor(@Inject(DATABASE_TOKEN) private db: DatabaseInterface)."
+                      },
+                      {
+                          "id":  "ana-ent1011",
+                          "question":  "O que significa o acrônimo SOLID na programação orientada a objetos?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Simple Object, Logic Integration, Data",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "System Optimization, Layer Isolation, Design",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "SOLID são 5 princípios fundamentais para design de software orientado a objetos.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: SOLID são princípios que aplico diariamente para criar código maintível. Single Responsibility (uma razão para mudar), Open/Closed (extensível sem modificação), Liskov Substitution (subclasses substituem pais), Interface Segregation (interfaces específicas), Dependency Inversion (depender de abstrações). Exemplo prático: ao criar UserManager, separo responsabilidades (UserValidator, UserRepository), uso interfaces para extensibilidade e injeto dependências."
+                      },
+                      {
+                          "id":  "ana-ent1012",
+                          "question":  "Por que o princípio Single Responsibility é importante?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Porque permite que uma classe tenha múltiplas responsabilidades",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Porque facilita testes, manutenção e reutilização do código",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Porque reduz o número de arquivos no projeto",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Classes com única responsabilidade são mais fáceis de testar, manter e reutilizar.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Single Responsibility torna o código previsível e maintível. Uma classe OrderProcessor que processa pedidos, envia emails E calcula impostos é difícil de testar e modificar. Separando em OrderProcessor, EmailService e TaxCalculator, posso testar cada um isoladamente, reutilizar TaxCalculator em outros contextos e modificar cálculo de impostos sem afetar processamento de pedidos."
+                      },
+                      {
+                          "id":  "ana-ent1013",
+                          "question":  "Como o princípio Interface Segregation melhora o design de software?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Evita que classes sejam forçadas a implementar métodos que não usam",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Permite que interfaces tenham apenas métodos privados",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Garante que todas as interfaces sejam genéricas",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Clientes não devem ser forçados a depender de interfaces que não utilizam.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Interface Segregation evita \u0027fat interfaces\u0027 que forçam implementações desnecessárias. Em vez de Vehicle com fly(), swim(), drive(), crio interfaces específicas: Flyable, Swimmable, Driveable. Airplane implementa Flyable e Driveable, Boat implementa Swimmable e Driveable. Isso reduz acoplamento e torna implementações mais coesas e flexíveis."
+                      },
+                      {
+                          "id":  "ana-ent1024",
+                          "question":  "O que é um Design Pattern no contexto de desenvolvimento de software?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Uma biblioteca de componentes visuais",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Uma solução reutilizável para problemas recorrentes de projeto",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Um tipo de teste automatizado",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "b",
+                          "explanation":  "Design Patterns são soluções testadas e documentadas para problemas comuns de design de software.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Design Patterns são como receitas de bolo - soluções comprovadas para problemas recorrentes. Por exemplo, uso Singleton para serviços que devem ter única instância (como AuthService), Observer para notificações entre componentes, Strategy para diferentes algoritmos de pagamento. Não são código, mas conceitos que tornam o sistema mais flexível e mantível. É importante não forçar padrões onde não são necessários."
+                      },
+                      {
+                          "id":  "ana-ent1063",
+                          "question":  "O que é Clean Code e quais são seus princípios fundamentais?",
+                          "options":  [
+                                          {
+                                              "id":  1,
+                                              "name":  "Código legível, simples e facilmente mantível seguindo princípios como DRY, YAGNI e KISS",
+                                              "alias":  "a"
+                                          },
+                                          {
+                                              "id":  2,
+                                              "name":  "Código sem comentários",
+                                              "alias":  "b"
+                                          },
+                                          {
+                                              "id":  3,
+                                              "name":  "Código com máxima performance",
+                                              "alias":  "c"
+                                          }
+                                      ],
+                          "correct":  "a",
+                          "explanation":  "Clean Code prioriza legibilidade, simplicidade e manutenibilidade sobre cleverness ou performance prematura.",
+                          "category":  "entrevista",
+                          "interviewTip":  "Como explicar na entrevista: Clean Code é sobre comunicação entre desenvolvedores. Princípios: 1) Meaningful names (getUserById vs get), 2) Functions should be small and do one thing, 3) Comments explain WHY, not WHAT, 4) DRY (Don\u0027t Repeat Yourself), 5) YAGNI (You Aren\u0027t Gonna Need It), 6) Consistent formatting. Refactoro constantemente: Extract Method, Rename Variable, Remove Dead Code. Código limpo é investimento - tempo inicial extra, mas economia gigante na manutenção."
                       }
                   ]
 }

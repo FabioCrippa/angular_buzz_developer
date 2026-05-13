@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "simulado": "LP Adaptado — Hiperfoco Homem-Aranha — 9º Ano",
+    "tipo": "simulado-adaptado",
+    "disciplina": "Lingua Portuguesa",
+    "serie": "9 Ano",
+    "area": "simulados",
+    "subject": "lp-adaptado-hiperfoco-homem-aranha-9ano",
+    "name": "LP Adaptado — Hiperfoco: Homem-Aranha 🕷️",
+    "description": "Simulado de Lingua Portuguesa do 9 Ano adaptado para alunos com hiperfoco em Homem-Aranha. As mesmas competencias do curriculo, com textos e contextos usando personagens do universo Spider-Man.",
+    "questionCount": 10,
+    "adaptacao": {
+      "tipo": "hiperfoco",
+      "tema": "Homem-Aranha",
+      "cor": "#c62828",
+      "icone": "🕷️",
+      "descricao": "Questoes contextualizadas com o universo do Homem-Aranha para engajar alunos com hiperfoco no tema. Competencias identicas ao curriculo regular do 9 Ano."
+    },
+    "duracao": 60,
+    "ano": 2025,
+    "exame": "Simulado Adaptado"
+  },
+  "questions": [
+    {
+      "id": "lp-aranha-001",
+      "question": "Leia o trecho a seguir:\n\n\"Com grandes poderes vem grandes responsabilidades.\"\n— Tio Ben para Peter Parker\n\nEssa frase, dita por Tio Ben, tornou-se conhecida em filmes, livros, discursos e diversos outros contextos culturais. Quando uma obra retoma, cita ou dialoga com uma ideia presente em outras obras, chamamos esse recurso de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Plagio, pois a frase foi retirada de uma obra sem autorizacao." },
+        { "id": 1, "alias": "B", "name": "Intertextualidade, pois a frase dialoga com e e retomada em diversas outras obras e contextos." },
+        { "id": 2, "alias": "C", "name": "Parodia, pois o texto imita de forma humoristica uma obra conhecida." },
+        { "id": 3, "alias": "D", "name": "Ironia, pois o texto diz o contrario do que realmente pretende comunicar." }
+      ],
+      "correct": "B",
+      "explanation": "Intertextualidade e a relacao entre textos: quando um texto retoma, cita, alude ou dialoga com outro. A frase de Tio Ben e amplamente retomada em discursos, filmes, livros e textos politicos, criando uma rede de referencias que e exatamente o que caracteriza a intertextualidade. Nao e plagio porque nao ha apropriacao indevida, e sim citacao e referencia cultural.",
+      "subject": "Intertextualidade",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Intertextualidade: tipos e funcoes"
+    },
+    {
+      "id": "lp-aranha-002",
+      "question": "Peter Parker escreveu em seu diario:\n\n\"Hoje salvei tres pessoas na ponte. A cidade nao sabe que foi eu. Talvez seja melhor assim. Quando sou Peter, sou invisivel. Quando sou o Aranha, sou um simbolo. Mas quem sou eu de verdade?\"\n\nO texto pertence ao genero diario intimo. Qual alternativa indica corretamente as caracteristicas desse genero presentes no trecho?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Uso de linguagem tecnica, estrutura objetiva e ausencia de marcas pessoais." },
+        { "id": 1, "alias": "B", "name": "Narracao em terceira pessoa com foco em informacoes verificaveis sobre o personagem." },
+        { "id": 2, "alias": "C", "name": "Narracao em primeira pessoa, tom subjetivo, reflexoes intimas e registro de experiencias pessoais." },
+        { "id": 3, "alias": "D", "name": "Linguagem formal, impessoal e sem uso de pronomes de primeira pessoa." }
+      ],
+      "correct": "C",
+      "explanation": "O diario intimo caracteriza-se pela narracao em primeira pessoa ('hoje salvei', 'sou Peter', 'quem sou eu'), pelo tom subjetivo e introspectivo, pelo registro de experiencias e sentimentos pessoais. O trecho de Peter reflete duvidas internas, algo tipico do genero, que valoriza a perspectiva individual e emocional do narrador.",
+      "subject": "Genero textual: diario intimo",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Generos textuais: diario intimo e autobiografia"
+    },
+    {
+      "id": "lp-aranha-003",
+      "question": "Em uma HQ do Homem-Aranha, o narrador descreve:\n\n\"Peter era um homem partido ao meio — de um lado, o cientifico genial; do outro, o heroi solitario. Sua vida era uma balanca que nunca encontrava o equilibrio.\"\n\nA expressao 'vida era uma balanca que nunca encontrava o equilibrio' e um exemplo de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Comparacao, pois usa 'como' para aproximar dois elementos distintos." },
+        { "id": 1, "alias": "B", "name": "Hiperbole, pois exagera de forma proposital uma caracteristica do personagem." },
+        { "id": 2, "alias": "C", "name": "Personificacao, pois atribui caracteristicas humanas a um objeto inanimado." },
+        { "id": 3, "alias": "D", "name": "Metafora, pois identifica diretamente a vida de Peter com uma balanca sem usar termos comparativos." }
+      ],
+      "correct": "D",
+      "explanation": "A metafora e uma figura de linguagem que identifica dois elementos diretamente, sem palavras de comparacao ('como', 'tal qual', 'parece'). Dizer 'a vida ERA uma balanca' e uma identificacao direta — a vida nao e comparada a uma balanca, ela e identificada como uma balanca. Isso e metafora. Se fosse 'a vida ERA COMO uma balanca', seria comparacao (simile).",
+      "subject": "Figuras de linguagem: metafora",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Figuras de linguagem: metafora e comparacao"
+    },
+    {
+      "id": "lp-aranha-004",
+      "question": "O Duende Verde disse ao Homem-Aranha: \"Voce nao e um heroi — e apenas uma ARANHA!\"\nO Homem-Aranha respondeu em silencio, olhando fixamente para o vilao.\n\nO que podemos inferir sobre o Homem-Aranha a partir da descricao 'respondeu em silencio, olhando fixamente'?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "O Homem-Aranha concordou com o Duende e sentiu vergonha." },
+        { "id": 1, "alias": "B", "name": "O Homem-Aranha nao entendeu o que o Duende disse." },
+        { "id": 2, "alias": "C", "name": "O Homem-Aranha demonstra determinacao ou contencao emocional: o silencio e o olhar fixo indicam que ele nao se deixou abater pela provocacao." },
+        { "id": 3, "alias": "D", "name": "O Homem-Aranha estava com medo e nao sabia o que responder." }
+      ],
+      "correct": "C",
+      "explanation": "A inferencia e a leitura do que nao esta escrito explicitamente. O silencio do Homem-Aranha combinado com o 'olhar fixo' sao pistas que indicam determinacao, autocontrole e recusa a se abater — nao fraqueza. Em narrativas de herois, esse tipo de descricao e um recurso para mostrar maturidade emocional sem palavras. A inferencia correta vai alem do texto literal.",
+      "subject": "Interpretacao de texto: inferencia",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Leitura e interpretacao: inferencias e subentendidos"
+    },
+    {
+      "id": "lp-aranha-005",
+      "question": "Peter Parker enviou uma mensagem ao Ned:\n\"cara me ajuda esse laboratorio ta me matando, provavelmente vou pirar se o homem aranha precisar aparecer hj kkkk\"\n\nNo dia seguinte, entregou ao professor o relatorio:\n\"Conforme solicitado, apresento os resultados do experimento realizado em laboratorio, com analise dos dados obtidos.\"\n\nA diferenca entre as duas formas de escrever ilustra:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Um erro gramatical na mensagem enviada ao Ned, que deve ser corrigido." },
+        { "id": 1, "alias": "B", "name": "A adequacao linguistica ao contexto: uso de linguagem informal com amigos e formal em situacoes academicas." },
+        { "id": 2, "alias": "C", "name": "O fato de que Peter fala errado no cotidiano e so escreve correto quando obrigado." },
+        { "id": 3, "alias": "D", "name": "A superioridade da linguagem formal sobre a informal em todas as situacoes." }
+      ],
+      "correct": "B",
+      "explanation": "A variacao linguistica mostra que nao existe falar 'certo' ou 'errado' — existe falar adequado ou inadequado ao contexto. Com amigos, a linguagem informal e natural e apropriada. Em contextos academicos ou profissionais, a norma culta e esperada. Peter domina as duas variedades e as usa conforme a situacao — isso e competencia comunicativa, nao erro.",
+      "subject": "Variacao linguistica: registro informal e formal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Variedades linguisticas e adequacao ao contexto"
+    },
+    {
+      "id": "lp-aranha-006",
+      "question": "Leia o trecho:\n\n\"O Homem-Aranha saltou entre os predios. Ele havia treinado durante anos para chegar a esse momento. Sabia exatamente o que sentia — o peso da responsabilidade, o medo de falhar, a chama da esperanca. E, mesmo assim, seguiu em frente.\"\n\nQual tipo de narrador esta presente no trecho?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Narrador em primeira pessoa, que e o proprio personagem contando a historia." },
+        { "id": 1, "alias": "B", "name": "Narrador em terceira pessoa observador, que apenas descreve as acoes externas sem acessar pensamentos." },
+        { "id": 2, "alias": "C", "name": "Narrador em segunda pessoa, que se dirige diretamente ao leitor." },
+        { "id": 3, "alias": "D", "name": "Narrador em terceira pessoa onisciente, que conhece as acoes e os sentimentos internos do personagem." }
+      ],
+      "correct": "D",
+      "explanation": "O narrador onisciente (que tudo sabe) narra em terceira pessoa ('Ele', 'O Homem-Aranha') e tem acesso aos pensamentos e sentimentos internos do personagem: 'sabia exatamente o que sentia', 'o medo de falhar', 'a chama da esperanca'. Isso diferencia o onisciente do observador — o observador so ve o que e externo, nao acessa o interior do personagem.",
+      "subject": "Narrador: tipos e perspectivas",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Generos narrativos: narrador e ponto de vista"
+    },
+    {
+      "id": "lp-aranha-007",
+      "question": "Tia May escreveu uma carta a Peter:\n\n\"Querido Peter,\nSei que voce carrega um peso que nao me conta. Mas saiba: qualquer que seja esse fardo, voce nao esta sozinho. Estou aqui.\nCom amor, Tia May\"\n\nA expressao 'carrega um peso' e empregada em sentido:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Denotativo, descrevendo literalmente que Peter carrega objetos pesados." },
+        { "id": 1, "alias": "B", "name": "Conotativo, indicando que Peter tem responsabilidades ou sofrimentos emocionais dificeis de suportar." },
+        { "id": 2, "alias": "C", "name": "Denotativo, pois May estava descrevendo o equipamento do Homem-Aranha." },
+        { "id": 3, "alias": "D", "name": "Conotativo, indicando que Peter literalmente levanta pesos na academia." }
+      ],
+      "correct": "B",
+      "explanation": "Sentido conotativo e o sentido figurado, nao literal. 'Carregar um peso' e uma expressao idiomatica que significa lidar com um problema, responsabilidade ou sofrimento emocional — nao ha peso fisico real na frase. May percebe que Peter guarda um segredo dificil (sua identidade como Homem-Aranha) e usa essa metafora para demonstrar que esta disposta a apoiar. A denotacao seria o significado fisico literal da palavra.",
+      "subject": "Conotacao e denotacao",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Sentido literal e figurado: conotacao e denotacao"
+    },
+    {
+      "id": "lp-aranha-008",
+      "question": "Leia o trecho:\n\n\"O Homem-Aranha correu em direcao ao edificio. Ele estava em chamas.\"\n\nA quem se refere o pronome 'Ele' nessa frase?",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Ao Homem-Aranha, pois e o sujeito da primeira oracao." },
+        { "id": 1, "alias": "B", "name": "Ao edificio, pois e o elemento semanticamente coerente — um edificio pode estar em chamas, nao uma pessoa correndo." },
+        { "id": 2, "alias": "C", "name": "A um personagem nao mencionado no trecho." },
+        { "id": 3, "alias": "D", "name": "Tanto ao Homem-Aranha quanto ao edificio, pois o texto e ambiguo sem solucao." }
+      ],
+      "correct": "B",
+      "explanation": "A coesao referencial exige atencao ao contexto semantico. Embora a regra gramatical indique que o pronome retoma o sujeito mais proximo, a coerencia logica e determinante: um edificio pode estar em chamas; uma pessoa correndo nao. Portanto, 'Ele' se refere ao edificio. Esse tipo de ambiguidade e um problema de coesao — e por isso que textos bem escritos devem organizar as referencias de forma clara para evitar duplo sentido.",
+      "subject": "Coesao textual: referencia pronominal",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Coesao e coerencia: pronomes e referencias"
+    },
+    {
+      "id": "lp-aranha-009",
+      "question": "Em um artigo de opiniao, um jornalista escreveu:\n\n\"O Homem-Aranha nao deve ser tratado como criminoso. Em primeiro lugar, todas as suas acoes visaram proteger os inocentes. Alem disso, nenhuma evidencia concreta prova que ele agiu de ma-fe. Portanto, a populacao deve reconhecer sua contribuicao.\"\n\nAs expressoes 'Em primeiro lugar', 'Alem disso' e 'Portanto' tem a funcao de:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Substituir pronomes para evitar repeticoes no texto." },
+        { "id": 1, "alias": "B", "name": "Organizar a progressao das ideias: os dois primeiros introduzem argumentos e o terceiro indica a conclusao." },
+        { "id": 2, "alias": "C", "name": "Adicionar informacoes sobre o tempo e o lugar dos eventos narrados." },
+        { "id": 3, "alias": "D", "name": "Indicar que o jornalista esta em duvida sobre sua propria opini" }
+      ],
+      "correct": "B",
+      "explanation": "Essas expressoes sao conectivos ou operadores argumentativos. 'Em primeiro lugar' e 'Alem disso' introduzem argumentos em sequencia logica, organizando o raciocinio. 'Portanto' introduz a conclusao que se deriva dos argumentos anteriores. Esses conectivos sao fundamentais para a coesao textual e para a progressao logica de um texto argumentativo, sinalizando ao leitor como as ideias se relacionam.",
+      "subject": "Coesao textual: conectivos e operadores argumentativos",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Medio",
+      "aula_tema": "Coesao e coerencia: articuladores textuais"
+    },
+    {
+      "id": "lp-aranha-010",
+      "question": "A historia do Homem-Aranha segue esta sequencia:\n\n1. Apresentacao: Peter Parker e um adolescente comum, nerd e solitario em Nova York.\n2. Conflito: e picado por uma aranha radioativa e descobre que tem poderes extraordinarios.\n3. Desenvolvimento: aprende a usar os poderes enquanto enfrenta desafios pessoais e viloes.\n4. Climax: enfrenta sua maior perda (morte do Tio Ben) e compreende o peso da responsabilidade.\n5. Desfecho: decide usar seus poderes para proteger as pessoas, tornando-se um heroi.\n\nEssa estrutura e denominada:",
+      "options": [
+        { "id": 0, "alias": "A", "name": "Texto argumentativo, organizado em tese, argumentos e conclusao." },
+        { "id": 1, "alias": "B", "name": "Texto instrucional, que ensina como realizar uma acao passo a passo." },
+        { "id": 2, "alias": "C", "name": "Sequencia narrativa, com apresentacao, conflito, desenvolvimento, climax e desfecho." },
+        { "id": 3, "alias": "D", "name": "Texto expositivo, que descreve caracteristicas de um tema de forma neutra e objetiva." }
+      ],
+      "correct": "C",
+      "explanation": "A estrutura narrativa classica e composta por apresentacao (contexto inicial e personagens), conflito (o problema ou ruptura), desenvolvimento (as tentativas de solucao, os obstaculos), climax (o ponto mais tenso, a virada) e desfecho (a resolucao). Praticamente toda historia — jogo, filme, livro, HQ ou serie — segue essa estrutura. O Homem-Aranha e um exemplo classico e didatico dessa progressao narrativa.",
+      "subject": "Estrutura narrativa",
+      "area_conhecimento": "Linguagens e Codigos",
+      "difficulty": "Facil",
+      "aula_tema": "Generos narrativos: estrutura e elementos"
+    }
+  ]
+}
