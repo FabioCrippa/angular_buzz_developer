@@ -119,8 +119,10 @@
               <span class="simulado-card-icon">{{ sim.icon }}</span>
               <div class="simulado-card-title-block">
                 <h3 class="simulado-card-title">{{ sim.displayName }}</h3>
-                <span class="simulado-card-subtitle">{{ sim.subtitle }}</span>
-                <span *ngIf="sim.tema" class="simulado-card-tema">{{ sim.tema }}</span>
+                <div class="simulado-card-subtitle-row">
+                  <span class="simulado-card-subtitle">{{ sim.subtitle }}</span>
+                  <span *ngIf="sim.tema" class="simulado-card-tema">{{ sim.tema }}</span>
+                </div>
               </div>
             </div>
             <div class="simulado-card-body">
@@ -141,7 +143,7 @@
               </div>
             </div>
             <div class="simulado-card-footer">
-              <button class="btn-start-simulado" (click)="navigateToSimulado(sim.id, sim.displayName + ' — ' + sim.subtitle)">
+              <button class="btn-start-simulado" (click)="navigateToSimulado(sim.id, sim.displayName)">
                 <i class="fas fa-play"></i> Iniciar Simulado
               </button>
               <button *ngIf="simuladosReviewAvailable[sim.id]"

@@ -205,7 +205,7 @@ export class AreaComponent implements OnInit {
     {
       id: 'lp-adaptado-hiperfoco-sonic-9ano',
       displayName: 'Língua Portuguesa',
-      subtitle: '9º Ano · Hiperfoco',
+      subtitle: '9º Ano',
       icon: '🦔',
       color: 'linear-gradient(135deg, #1565c0, #1976d2)',
       questionCount: 0,
@@ -218,7 +218,7 @@ export class AreaComponent implements OnInit {
     {
       id: 'lp-adaptado-hiperfoco-homem-aranha-9ano',
       displayName: 'Língua Portuguesa',
-      subtitle: '9º Ano · Hiperfoco',
+      subtitle: '9º Ano',
       icon: '🕷️',
       color: 'linear-gradient(135deg, #c62828, #e53935)',
       questionCount: 0,
@@ -231,7 +231,7 @@ export class AreaComponent implements OnInit {
     {
       id: 'lp-adaptado-baixa-visao-9ano',
       displayName: 'Língua Portuguesa',
-      subtitle: '9º Ano · Inclusão',
+      subtitle: '9º Ano',
       icon: '👁️',
       color: 'linear-gradient(135deg, #1b5e20, #2e7d32)',
       questionCount: 0,

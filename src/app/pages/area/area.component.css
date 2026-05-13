@@ -1914,6 +1914,12 @@ label {
   font-size: 0.78rem;
   opacity: 0.88;
 }
+.simulado-card-subtitle-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
 
 /* Body do card */
 .simulado-card-body {
@@ -2015,7 +2021,6 @@ label {
 
 .simulado-card-tema {
   display: inline-block;
-  margin-top: 4px;
   font-size: 0.75rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.85);
