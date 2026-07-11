@@ -241,6 +241,13 @@ export class DashboardComponent implements OnInit {
             icon: '📝',
             questionCount: getCount('simulados'),
             subjects: getSubjects('simulados', 'simulados')
+          },
+          {
+            key: 'pss-2027-lingua-portuguesa',
+            displayName: 'PSS 2027 - Professores de Língua Portuguesa',
+            icon: '📖',
+            questionCount: getCount('pss-2027-lingua-portuguesa'),
+            subjects: getSubjects('pss-2027-lingua-portuguesa', 'pss-2027-lingua-portuguesa')
           }
         ];
         

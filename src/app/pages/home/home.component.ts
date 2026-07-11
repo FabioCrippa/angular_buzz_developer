@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   // ✅ STATS DINÂMICOS DA HERO SECTION
   heroStats = {
     totalQuestions: 2500,
-    totalAreas: 4,
+    totalAreas: 5,
     successRate: 92
   };
   
@@ -92,6 +92,25 @@ export class HomeComponent implements OnInit {
       badge: 'ATUALIZADO',
       badgeClass: 'updated',
       difficulty: 'Básico/Intermediário'
+    },
+    {
+      name: 'pss-2027-lingua-portuguesa',
+      displayName: 'PSS 2027 - Professores de Língua Portuguesa',
+      icon: '📖',
+      description: 'Preparação completa para o Processo Seletivo Simplificado 2027 - Professores de Língua Portuguesa (Anos Finais e Ensino Médio)',
+      questionCount: 50,
+      subjects: ['Leitura e Interpretação', 'Gramática', 'Produção Textual', 'Literatura Brasileira', 'Legislação', 'Didática'],
+      features: [
+        'Leitura e interpretação de textos',
+        'Gramática normativa',
+        'Produção textual e coesão',
+        'Literatura brasileira',
+        'Legislação educacional',
+        'Metodologias de ensino'
+      ],
+      badge: 'PSS 2027',
+      badgeClass: 'pss-2027',
+      difficulty: 'Avançado'
     }
   ];
   
