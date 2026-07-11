@@ -1,0 +1,331 @@
+{
+  "metadata": {
+    "area": "pss-2027-lingua-portuguesa",
+    "subject": "literatura-brasileira",
+    "name": "Literatura Brasileira",
+    "description": "Questões sobre escolas literárias, autores, obras representativas, contexto histórico-social e análise de textos literários",
+    "difficulty": "advanced",
+    "lastUpdated": "2026-07-11",
+    "questionCount": 10,
+    "tags": [
+      "pss-2027",
+      "língua-portuguesa",
+      "literatura-brasileira",
+      "autores",
+      "escolas-literárias",
+      "concurso"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual é a principal característica do Modernismo Brasileiro de 1ª fase?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Valorização da tradição e da estrutura clássica",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ruptura com as formas tradicionais, valorização da brasilidade e experimentação formal",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Foco exclusivo no sofrimento e na melancolia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Descrição detalhada da natureza brasileira",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A 1ª fase do Modernismo (1922-1930) buscou romper com as regras clássicas, valorizou a identidade brasileira, explorou temas e formas inovadoras. A Semana de Arte Moderna de 1922 foi seu marco inicial.",
+      "studyTip": "Modernismo 1ª fase: Ruptura, Inovação, Brasilidade. Principais autores: Mário de Andrade, Oswald de Andrade.",
+      "id": "pss2027-lb001",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a obra mais representativa de Machado de Assis?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Dom Casmurro",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Memórias Póstumas de Brás Cubas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Grande Sertão: Veredas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Capitães da Areia",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Memórias Póstumas de Brás Cubas (1881) é considerada a obra-prima de Machado de Assis. É um romance inovador que mistura humor, crítica social e reflexões sobre a vida.",
+      "studyTip": "Machado de Assis: Realismo com profundidade psicológica. Obras: Brás Cubas, Dom Casmurro, Quincas Borba.",
+      "id": "pss2027-lb002",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que caracteriza a escola literária do Romantismo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Objetividade, análise crítica e retrato social",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Emoção, imaginação, idealização da natureza e culto do 'eu'",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Formalismo e perfeição de forma",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Representação fotográfica da realidade",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O Romantismo valoriza emoção, imaginação e subjetividade. Há idealização da natureza, exaltação de sentimentos (especialmente amor) e foco no indivíduo.",
+      "studyTip": "Romantismo: Emoção x Razão. Natureza Idealizada. Culto do 'Eu'. Autores: Gonçalves Dias, Castro Alves, José de Alencar.",
+      "id": "pss2027-lb003",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a obra que marca o início do Realismo Brasileiro?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Iracema, de José de Alencar",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Memórias de um Sargento de Milícias, de Manuel Antonio de Almeida",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Quincas Borba, de Machado de Assis",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Memórias Póstumas de Brás Cubas, de Machado de Assis",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "Memórias Póstumas de Brás Cubas (1881) marca o início do Realismo Brasileiro com sua abordagem crítica da sociedade, linguagem inovadora e profundidade psicológica.",
+      "studyTip": "Realismo: Crítica social, representação objetiva, personagens complexos. Data: 1881.",
+      "id": "pss2027-lb004",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o tema central em 'Capitães da Areia', de Jorge Amado?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A luta pela independência do Brasil",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A vida de meninos de rua em Salvador e a denúncia da exclusão social",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A história de um amor impossível",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A importância da educação formal",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Capitães da Areia retrata a vida de meninos que vivem nas ruas de Salvador, denunciando a pobreza e a exclusão social. É um romance de denúncia social com forte crítica ao abandono infantil.",
+      "studyTip": "Jorge Amado: Realismo social. Contexto: Bahia. Temas: Pobreza, exclusão, humanidade.",
+      "id": "pss2027-lb005",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o principal recurso poético usado por Carlos Drummond de Andrade em sua poesia?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Métrica regular e rimas perfeitas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Coloquialismo, ironia e reflexão sobre o cotidiano",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Descrição minuciosa da natureza",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Valorização exclusiva da forma clássica",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Drummond usa coloquialismo (linguagem do dia-a-dia), ironia, humor e reflexão sobre temas cotidianos. Sua poesia é moderna, inovadora e altamente lírica.",
+      "studyTip": "Drummond: Poesia moderna, cotidiano, reflexão, ironia. Obra representativa: Claro Enigma.",
+      "id": "pss2027-lb006",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a característica do Parnasianismo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Foco na emoção e na subjetividade",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Perfeição de forma, linguagem culta e distanciamento do eu lírico",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Crítica social e denúncia",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Experimentação radical das formas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O Parnasianismo valoriza a perfeição formal, a linguagem culta e a objetividade. O poeta busca criar 'arte pela arte', distanciando-se do eu lírico. Autores: Olavo Bilac, Raimundo Correia.",
+      "studyTip": "Parnasianismo: Forma Perfeita, Arte pela Arte, Objetividade. Lema: 'A vida é uma luta pela sobrevivência da forma.'",
+      "id": "pss2027-lb007",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o estilo de Clarice Lispector em seus romances?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Narrativa linear e objetiva",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Introspecção, fluxo de consciência e questionamento existencial",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Foco exclusivo em eventos históricos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Narrativa épica e tradicional",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Clarice Lispector usa introspecção profunda, fluxo de consciência e questionamento sobre identidade, existência e significado. Sua prosa é lírica e psicológica.",
+      "studyTip": "Clarice Lispector: Modernismo (3ª fase). Obras: A Hora da Estrela, A Paixão Segundo G.H.",
+      "id": "pss2027-lb008",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que é 'Grande Sertão: Veredas' de Guimarães Rosa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Uma coletânea de contos sobre a vida urbana",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Um romance que combina narrativa épica com reflexão metafísica, ambientado no sertão mineiro",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Uma peça de teatro modernista",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um poema épico em versos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Grande Sertão: Veredas é um romance epocal de Guimarães Rosa que combina a narrativa de Riobaldo com reflexões sobre amor, identidade, bem e mal, ambientado no sertão de Minas Gerais.",
+      "studyTip": "Guimarães Rosa: Inovação linguistic, Sertão, Complexidade narrativa. Obra: Grande Sertão: Veredas.",
+      "id": "pss2027-lb009",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o tema central da poesia de Manuel Bandeira?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Glorificação da guerra e da violência",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Simplicidade, morte, fugacidade da vida e lirismo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Análise políticos e econômicos complexos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Descrição técnica de máquinas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Manuel Bandeira trata de temas simples com profundidade lírica. Aborda a morte, a fugacidade da vida, o cotidiano e a saudade. Seus poemas são musicais e emocionantes.",
+      "studyTip": "Bandeira: Modernismo, lirismo, simplicidade formal, profundidade temática. Poema: Evocação do Recife.",
+      "id": "pss2027-lb010",
+      "category": "literatura-brasileira",
+      "difficulty": "advanced"
+    }
+  ]
+}

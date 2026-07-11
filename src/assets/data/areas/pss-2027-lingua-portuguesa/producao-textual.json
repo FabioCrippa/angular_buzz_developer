@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "area": "pss-2027-lingua-portuguesa",
+    "subject": "producao-textual",
+    "name": "Produção Textual e Escrita",
+    "description": "Questões sobre coesão, coerência, argumentação, adequação ao gênero e à situação comunicativa, desenvolvimento de ideias",
+    "difficulty": "advanced",
+    "lastUpdated": "2026-07-11",
+    "questionCount": 8,
+    "tags": [
+      "pss-2027",
+      "língua-portuguesa",
+      "produção-textual",
+      "redação",
+      "coesão-coerência",
+      "concurso"
+    ]
+  },
+  "questions": [
+    {
+      "question": "O que é coesão textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A qualidade de um texto ser agradável ao leitor",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A conexão entre as palavras e expressões que formam uma sequência lógica",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O uso correto de palavras e normas gramaticais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "A apresentação de argumentos sem evidências",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Coesão textual refere-se aos mecanismos linguísticos que ligam as partes do texto, como pronomes, conjunções e conectivos, criando uma continuidade semântica.",
+      "studyTip": "Mecanismos de coesão: pronomes, sinônimos, elipse, repetição, conjunções e conectivos.",
+      "id": "pss2027-pt001",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a diferença entre coesão e coerência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não há diferença; são sinônimos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Coesão é a ligação formal entre as partes; coerência é a lógica do sentido",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Coerência é mais importante que coesão",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Coesão envolve significado; coerência envolve palavras",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Coesão trabalha a conexão superficial (ligação entre as palavras). Coerência trabalha a conexão profunda (sentido global do texto). Ambas são essenciais.",
+      "studyTip": "Um texto pode ter boa coesão mas falta coerência. Ex: 'A casa é azul. Meu avô gosta de bolo.' Coeso, mas sem coerência lógica.",
+      "id": "pss2027-pt002",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual dessas orações demonstra FALTA de coesão?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O gato subiu no telhado. O animal observava a rua lá de cima.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Maria chegou à escola. Ela estava atrasada.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O professor explicou o conteúdo. Os alunos dormiam.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Comprei um livro ontem. O livro é muito bom.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "A oração C não apresenta conectivo ou estrutura que une logicamente as duas informações. Não há coesão entre 'professor explicava' e 'alunos dormiam'. Faltaria um conectivo como 'Porém' ou 'Enquanto isso'.",
+      "studyTip": "Falta de coesão = falta de conexão formal entre as partes do texto.",
+      "id": "pss2027-pt003",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a função de um parágrafo introdutório em um texto argumentativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apresentar a tese e contextualizar o tema",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Desenvolver todos os argumentos do texto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas contar uma história relacionada ao tema",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Refutar argumentos contrários",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "O parágrafo introdutório deve apresentar o tema, contextualizá-lo e formular a tese (posição central do texto). Ele prepara o leitor para os argumentos que virão.",
+      "studyTip": "Introdução: Tema + Tese. Desenvolvimento: Argumentos. Conclusão: Reafirmação da Tese.",
+      "id": "pss2027-pt004",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual tipo de argumento é mais convincente em um texto argumentativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Argumento baseado em opinião pessoal apenas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Argumento respaldado por dados, estatísticas ou exemplos concretos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Argumento baseado em sentimentos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Argumento que repete a tese várias vezes",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Argumentos respaldados por dados, estatísticas, exemplos reais ou autoridades são mais convincentes e mais adequados para textos formais e acadêmicos.",
+      "studyTip": "Use PROVE, não apenas DIGA. Cite fontes, dados, exemplos.",
+      "id": "pss2027-pt005",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que significa adequação ao gênero e situação comunicativa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Usar sempre a linguagem mais formal possível",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Adaptar a linguagem, tom e estrutura de acordo com o gênero textual e o contexto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Escrever da mesma maneira para todos os leitores",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Usar o máximo de vocabulário avançado possível",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Cada gênero textual (notícia, carta, editorial, ensaio) tem características próprias. A linguagem deve ser adequada ao contexto: formal para textos acadêmicos, informal para mensagens, etc.",
+      "studyTip": "Considere: Quem escreve? Para quem? Com qual objetivo? Em qual suporte?",
+      "id": "pss2027-pt006",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a importância da revisão e reescrita em um processo de produção textual?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Nenhuma. O primeiro rascunho é sempre perfeito",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "A revisão permite identificar erros, melhorar a clareza e polir o texto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "É apenas um desperdício de tempo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Serve apenas para mudar palavras difíceis",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A revisão é etapa crucial do processo de escrita. Permite verificar concordância, coesão, clareza de ideias, coerência e adequação ao gênero.",
+      "studyTip": "Sempre revise: leia em voz alta, procure por erros gramaticais, verifique se o texto faz sentido.",
+      "id": "pss2027-pt007",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Como estruturar um parágrafo de desenvolvimento em um texto argumentativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tópico frasal + Desenvolvimento + Exemplos + Conclusão parcial",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Somente dados estatísticos",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas citações de autores",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uma frase longa com várias ideias",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Um parágrafo bem estruturado tem: Tópico Frasal (ideia principal), Desenvolvimento (explicação), Exemplos ou Evidências (prova), Conclusão Parcial (retomada do tópico frasal).",
+      "studyTip": "Estrutura forte = Texto claro e convincente.",
+      "id": "pss2027-pt008",
+      "category": "producao-textual",
+      "difficulty": "advanced"
+    }
+  ]
+}

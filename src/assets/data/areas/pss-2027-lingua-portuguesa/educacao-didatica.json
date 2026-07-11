@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "area": "pss-2027-lingua-portuguesa",
+    "subject": "educacao-didatica",
+    "name": "Educação e Didática",
+    "description": "Questões sobre princípios pedagógicos, avaliação da aprendizagem, metodologias de ensino, inclusão e diversidade",
+    "difficulty": "advanced",
+    "lastUpdated": "2026-07-11",
+    "questionCount": 8,
+    "tags": [
+      "pss-2027",
+      "educação",
+      "didática",
+      "pedagogia",
+      "avaliação",
+      "inclusão"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual é o princípio pedagógico fundamental que respeita as diferenças individuais dos alunos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Padronização de todos os alunos em um único modelo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Educação para a diversidade, considerando ritmos e estilos de aprendizagem diferentes",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Ensino competitivo que seleciona apenas os melhores",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Rejeição de alunos com dificuldades",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Um princípio fundamental da educação moderna é reconhecer que cada aluno tem ritmo, estilo e necessidades de aprendizagem diferentes. A didática deve ser inclusiva e diversa.",
+      "studyTip": "Educação para Todos: Respeitar diversidade é reconhecer que não há um único jeito certo de aprender.",
+      "id": "pss2027-ed001",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que é avaliação formativa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas provas e notas no final do período",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Processo contínuo de acompanhamento que fornece feedback para melhorar a aprendizagem",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Avaliação que serve apenas para reprovar alunos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Um tipo de teste padronizado nacional",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Avaliação formativa é contínua e tem caráter diagnóstico. Fornece informações sobre o progresso do aluno para que professor e aluno possam ajustar estratégias de ensino e aprendizagem.",
+      "studyTip": "Formativa: Contínua, com feedback, para melhorar. Somativa: Final, com notas, para certificar.",
+      "id": "pss2027-ed002",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a diferença entre metodologia tradicional e construtivista?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não há diferença significativa",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Tradicional: professor como transmissor. Construtivista: aluno como construtor ativo do conhecimento",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Construtivista é mais fácil e menos exigente",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Tradicional é sempre superior",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Método Tradicional: Professor transmite conhecimento pronto. Construtivismo: Aluno constrói seu próprio conhecimento através de experiências e reflexão. Ambas têm aplicações, mas construtivismo alinha-se mais com educação moderna.",
+      "studyTip": "Construtivismo = Aprendizagem ativa. Aluno participa, questiona, constrói significado.",
+      "id": "pss2027-ed003",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que significa Educação Inclusiva?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Colocar alunos com deficiência em classes separadas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Sistema educacional que acolhe TODOS os alunos, com ou sem deficiência, adaptando-se às necessidades de cada um",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas integração superficial sem suporte",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Educação que exclui alunos com dificuldades de aprendizagem",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Inclusão significa que a escola deve se adaptar para acolher todos. Não é o aluno que deve se encaixar no sistema, mas o sistema que deve ser flexível para incluir todos.",
+      "studyTip": "Inclusão ≠ Integração. Inclusão: Sistema se adapta. Integração: Aluno se adapta.",
+      "id": "pss2027-ed004",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que é Aprendizagem Significativa segundo David Ausubel?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas memorização de fatos e conceitos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Processo em que o novo conhecimento se relaciona com conhecimentos prévios do aluno",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Aprendizagem que ocorre por acaso",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Aprendizagem sem envolvimento emocional",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Aprendizagem Significativa ocorre quando o novo conhecimento se relaciona com estruturas mentais já existentes do aluno. Requer ativação de conhecimentos prévios e sentido pessoal.",
+      "studyTip": "Significativa: Conectada a conhecimentos anteriores. Memorística: Desconectada, sem sentido.",
+      "id": "pss2027-ed005",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o papel do educador em uma perspectiva de educação inclusiva?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas repassar conteúdo sem considerar diferenças",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ser facilitador que adapta estratégias, respeita ritmos e promove acessibilidade",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Rejeitar alunos que não acompanham",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Apenas trabalhar com alunos considerados normais",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Em educação inclusiva, o professor é um facilitador que adapta metodologias, cria estratégias diversas, trabalha em colaboração com especialistas e promove acessibilidade para todos.",
+      "studyTip": "Professor inclusivo: Planejador, criativo, reflexivo, colaborativo.",
+      "id": "pss2027-ed006",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que são Estratégias de Diferenciação Pedagógica?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ensinar conteúdos diferentes para alunos diferentes",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Recursos, estratégias e adaptações para que todos alcancem objetivos comuns considerando suas diferenças",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Separação de alunos em níveis diferentes",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ensino sem qualquer adaptação",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Diferenciação pedagógica mantém os objetivos de aprendizagem para todos, mas varia os processos, recursos e estratégias de acordo com características e necessidades de cada aluno.",
+      "studyTip": "Objetivo comum, caminhos diferentes. Cada aluno chega lá de seu jeito.",
+      "id": "pss2027-ed007",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Como devemos abordar a Educação para Diversidade em Língua Portuguesa?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ensinar apenas norma culta sem considerar variações linguísticas",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Reconhecer variações linguísticas, valorizar a língua do aluno enquanto ensina norma culta",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Rejeitar dialetos e variações regionais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Não ensinar gramática",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A educação em LP deve respeitar variações linguísticas como patrimônio cultural, valorizar a língua materna do aluno, e ensinar norma culta como uma variedade, não como 'a única correta'.",
+      "studyTip": "Linguística: Nenhuma variante é 'errada', mas cada uma tem seu contexto apropriado.",
+      "id": "pss2027-ed008",
+      "category": "educacao-didatica",
+      "difficulty": "advanced"
+    }
+  ]
+}

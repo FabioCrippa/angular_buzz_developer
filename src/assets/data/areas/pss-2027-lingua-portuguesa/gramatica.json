@@ -1,0 +1,331 @@
+{
+  "metadata": {
+    "area": "pss-2027-lingua-portuguesa",
+    "subject": "gramatica",
+    "name": "Gramática e Análise Sintático-Semântica",
+    "description": "Questões de morfologia, sintaxe, concordância, regência verbal e nominal, colocação pronominal, e figuras de linguagem",
+    "difficulty": "advanced",
+    "lastUpdated": "2026-07-11",
+    "questionCount": 10,
+    "tags": [
+      "pss-2027",
+      "língua-portuguesa",
+      "gramática",
+      "sintaxe",
+      "morfologia",
+      "concurso"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual alternativa apresenta uma oração com erro de concordância verbal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "A maioria dos professores concordam com a reforma.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Mais de um aluno foi aprovado no concurso.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Existem várias propostas de melhorias.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fazem dois anos que trabalho aqui.",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A expressão 'a maioria' pode concordar tanto com o verbo no singular quanto no plural. Porém, a forma mais adequada é no singular: 'A maioria dos professores concorda'. A alternativa A está incorreta porque usa o verbo no plural.",
+      "studyTip": "Observe que 'a maioria de' tem concordância flexível, mas prefira o singular em contextos formais.",
+      "id": "pss2027-gr001",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Identifique o termo que exerce função de aposto na frase: 'Machado de Assis, grande escritor brasileiro, criou Brás Cubas.'",
+      "options": [
+        {
+          "id": 1,
+          "name": "Machado de Assis",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "grande escritor brasileiro",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "criou",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Brás Cubas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O aposto é um termo que explica, esclarece ou complementa outro termo. 'Grande escritor brasileiro' é um aposto que caracteriza 'Machado de Assis'.",
+      "studyTip": "Aposto é um termo nominativo que se refere a outro termo para esclarecer ou complementar seu significado.",
+      "id": "pss2027-gr002",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual alternativa apresenta regência verbal incorreta?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele insistiu em participar do evento.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Nós consentimos a saída dos alunos.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Eles assistiram ao filme com atenção.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ela renunciou ao cargo de diretora.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O verbo 'consentir' exige preposição 'em'. O correto é 'consentimos em a saída' ou 'consentimos na saída', não 'consentimos a saída'.",
+      "studyTip": "Verbos que exigem preposição são chamados de verbos preposicionais. Consulte um dicionário quando tiver dúvidas.",
+      "id": "pss2027-gr003",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Em qual frase há erro de colocação pronominal?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não o conheci antes.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Se você o visse, conversaria com ele.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Sempre o admiro muito.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Diremos-lhe a verdade em breve.",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "A ênclise ('Diremos-lhe') é incorreta neste contexto. O correto é a próclise: 'Lhe diremos a verdade'. A próclise ocorre após advérbios de negação, interrogativos e em situações de futura.",
+      "studyTip": "Lembre as regras: Próclise (pronome antes do verbo) é obrigatória com negações, interrogativos e advérbios.",
+      "id": "pss2027-gr004",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a classificação do sujeito em: 'Não havia dúvidas quanto ao resultado'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sujeito simples",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Sujeito composto",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Sujeito indeterminado",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Oração sem sujeito",
+          "alias": "D"
+        }
+      ],
+      "correct": "D",
+      "explanation": "O verbo 'haver' (no sentido de existir) é impessoal e não possui sujeito. A oração é classificada como oração sem sujeito ou com sujeito inexistente.",
+      "studyTip": "Verbos impessoais: haver (existir), fazer (tempo), estar (clima). Eles não têm sujeito.",
+      "id": "pss2027-gr005",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Identifique a figura de linguagem presente em: 'Aquele aluno é um leão em sala de aula.'",
+      "options": [
+        {
+          "id": 1,
+          "name": "Metáfora",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Metonímia",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Hipérbole",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ironia",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Metáfora é uma comparação implícita entre dois elementos. Aqui, 'leão' é usado metaforicamente para representar coragem, força e domínio (características do leão) que o aluno demonstra.",
+      "studyTip": "Metáfora: comparação sem 'como'. Símile: comparação com 'como'.",
+      "id": "pss2027-gr006",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual alternativa contém uma regência nominal incorreta?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ele é grato aos amigos.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Ela é contrária aos novos regulamentos.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Somos indifferente de valores morais.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Eles são habituados ao trabalho intenso.",
+          "alias": "D"
+        }
+      ],
+      "correct": "C",
+      "explanation": "O adjetivo 'indiferente' exige a preposição 'a' ou 'ante', não 'de'. O correto é 'indifferente a valores morais' ou 'indifferente ante valores morais'.",
+      "studyTip": "Regência nominal: nome + preposição. Alguns adjetivos exigem preposições específicas.",
+      "id": "pss2027-gr007",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual das orações apresenta uma oração subordinada adverbial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Eu comprei um livro que é muito bom.",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Estudamos muito para que passássemos no concurso.",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O professor disse que a prova seria fácil.",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Reconheço que você tem razão.",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A oração 'para que passássemos no concurso' é uma oração subordinada adverbial final, pois indica finalidade. Começa com a conjunção subordinativa final 'para que'.",
+      "studyTip": "Orações adverbiais podem ser: causal, final, condicional, concessiva, temporal, modal, comparativa e consecutiva.",
+      "id": "pss2027-gr008",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o tipo de período em: 'Comprei livros, revistas e jornais na livraria.'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Período simples",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Período composto por coordenação",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Período composto por subordinação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Período composto misto",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "Período simples possui uma única oração. Aqui temos apenas uma oração: 'Comprei livros, revistas e jornais na livraria'. Os itens separados por vírgulas pertencem ao mesmo predicado.",
+      "studyTip": "Conte as orações (quantos verbos conjugados tem o período). Uma oração = período simples.",
+      "id": "pss2027-gr009",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a classe gramatical do termo destacado em: 'Aqueles alunos estão muito felizes.'?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Adjetivo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Advérbio",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Preposição",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Conjunção",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O termo 'muito' é um advérbio de intensidade que modifica o adjetivo 'felizes'. Advérbios modificam verbos, adjetivos ou outros advérbios.",
+      "studyTip": "Advérbios terminam frequentemente em '-mente' e modificam outros elementos da oração.",
+      "id": "pss2027-gr010",
+      "category": "gramatica",
+      "difficulty": "advanced"
+    }
+  ]
+}

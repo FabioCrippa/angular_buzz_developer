@@ -542,20 +542,98 @@
           ]
         }
       ]
+    },
+    {
+      "id": "pss-2027-lingua-portuguesa",
+      "nome": "PSS 2027 - Língua Portuguesa",
+      "displayName": "PSS 2027 - Professores de Língua Portuguesa",
+      "icon": "📖",
+      "cor": "#c62828",
+      "descricao": "Preparação completa para o Processo Seletivo Simplificado 2027 - Professores de Língua Portuguesa (Anos Finais e Ensino Médio)",
+      "totalQuestoes": 50,
+      "disciplinas": [
+        {
+          "id": "conteudo-especifico-linguagem",
+          "nome": "Conteúdo Específico - Linguagem e Texto",
+          "descricao": "Leitura, interpretação, gramática e análise de textos",
+          "icon": "📚",
+          "topicos": [
+            {
+              "id": "leitura-interpretacao",
+              "nome": "Leitura e Interpretação de Textos",
+              "descricao": "Textos literários e não literários, gêneros textuais, compreensão e análise",
+              "arquivo": "leitura-interpretacao.json"
+            },
+            {
+              "id": "gramatica",
+              "nome": "Gramática e Análise Sintático-Semântica",
+              "descricao": "Morfologia, sintaxe, concordância, regência, colocação pronominal e figuras de linguagem",
+              "arquivo": "gramatica.json"
+            }
+          ]
+        },
+        {
+          "id": "conteudo-especifico-producao",
+          "nome": "Conteúdo Específico - Produção Textual",
+          "descricao": "Produção de textos, coesão, coerência e argumentação",
+          "icon": "✍️",
+          "topicos": [
+            {
+              "id": "producao-textual",
+              "nome": "Produção Textual e Escrita",
+              "descricao": "Coesão, coerência, argumentação, adequação ao gênero e situação comunicativa",
+              "arquivo": "producao-textual.json"
+            },
+            {
+              "id": "literatura-brasileira",
+              "nome": "Literatura Brasileira",
+              "descricao": "Escolas literárias, autores, obras representativas e contexto histórico-social",
+              "arquivo": "literatura-brasileira.json"
+            }
+          ]
+        },
+        {
+          "id": "conteudo-geral-educacao",
+          "nome": "Conteúdo Geral - Educação",
+          "descricao": "Legislação educacional, didática, pedagogia e metodologias",
+          "icon": "🎓",
+          "topicos": [
+            {
+              "id": "legislacao-educacional",
+              "nome": "Legislação Educacional",
+              "descricao": "LDB, ECA, Lei Brasileira de Inclusão, BNCC, Currículo Paulista e educação especial",
+              "arquivo": "legislacao-educacional.json"
+            },
+            {
+              "id": "educacao-didatica",
+              "nome": "Educação e Didática",
+              "descricao": "Princípios pedagógicos, avaliação, metodologias de ensino, inclusão e diversidade",
+              "arquivo": "educacao-didatica.json"
+            },
+            {
+              "id": "atualidades",
+              "nome": "Atualidades em Educação e Sociedade",
+              "descricao": "Questões sociais, culturais, políticas, educacionais contemporâneas, ética e cidadania",
+              "arquivo": "atualidades.json"
+            }
+          ]
+        }
+      ]
     }
   ],
   
   "stats": {
-    "totalCursos": 5,
-    "totalDisciplinas": 15,
-    "totalTopicos": 54,
-    "totalQuestoes": 935,
+    "totalCursos": 6,
+    "totalDisciplinas": 18,
+    "totalTopicos": 59,
+    "totalQuestoes": 985,
     "byArea": {
       "analise-desenvolvimento-sistemas": 600,
       "informatica-geral": 75,
       "matematica": 80,
       "portugues": 140,
-      "simulados": 85
+      "simulados": 85,
+      "pss-2027-lingua-portuguesa": 50
     }
   }
 }

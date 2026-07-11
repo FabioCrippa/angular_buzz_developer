@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "area": "pss-2027-lingua-portuguesa",
+    "subject": "leitura-interpretacao",
+    "name": "Leitura e Interpretação de Textos",
+    "description": "Questões sobre leitura, interpretação de textos literários e não literários, gêneros textuais e compreensão textual",
+    "difficulty": "advanced",
+    "lastUpdated": "2026-07-11",
+    "questionCount": 8,
+    "tags": [
+      "pss-2027",
+      "língua-portuguesa",
+      "leitura-interpretação",
+      "gêneros-textuais",
+      "concurso"
+    ]
+  },
+  "questions": [
+    {
+      "question": "No texto narrativo, qual elemento é responsável por propulsionar a ação na trama?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O espaço onde a história ocorre",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O conflito ou o clímax da narrativa",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "A linguagem utilizada pelo narrador",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O ponto de vista do leitor",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O conflito e o clímax são elementos essenciais que movem a narrativa para frente. Eles criam tensão e envolvem o leitor na história.",
+      "studyTip": "Identifique sempre qual é o problema central (conflito) que os personagens enfrentam. Isso é a força motriz da narrativa.",
+      "id": "pss2027-li001",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a principal diferença entre um texto descritivo e um texto narrativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "O descritivo apresenta ações ordenadas no tempo, enquanto o narrativo apenas caracteriza elementos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O narrativo conta uma história com ações e conflitos, enquanto o descritivo apresenta características estáticas",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O descritivo sempre usa tempos verbais no pretérito perfeito",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Não há diferença significativa entre eles",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto narrativo possui ação, movimento e conflito. O texto descritivo trabalha com características, detalhes e uma visão estática de algo ou alguém.",
+      "studyTip": "Para diferenciar: se há uma sequência de ações com início, meio e fim, é narrativa. Se há apenas caracterização de elementos, é descritiva.",
+      "id": "pss2027-li002",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Em um texto argumentativo, qual estrutura é fundamental para a construção da argumentação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Tese - Argumentos - Conclusão",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Introdução - Descrição - Encerramento",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Prólogo - Diálogo - Epílogo",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Problema - Solução - Reflexão",
+          "alias": "D"
+        }
+      ],
+      "correct": "A",
+      "explanation": "A estrutura Tese - Argumentos - Conclusão é a base clássica do texto argumentativo. A tese é a ideia principal, os argumentos a sustentam, e a conclusão reafirma a posição.",
+      "studyTip": "Lembre-se: Tese é OPINIÃO, não fato. Os argumentos são as PROVAS dessa opinião.",
+      "id": "pss2027-li003",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual gênero textual tem como objetivo informar o leitor sobre um fato real e recente?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Crônica",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Notícia",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Resenha",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ensaio",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A notícia é o gênero jornalístico que informa sobre fatos reais, atuais e de interesse público. Segue estrutura de lead, corpo do texto e conclusão.",
+      "studyTip": "Notícia responde às perguntas: O quê? Quem? Quando? Onde? Por quê? Como?",
+      "id": "pss2027-li004",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que caracteriza um texto publicitário em relação à sua função?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Relatar eventos históricos de maneira objetiva",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Persuadir o leitor a comprar um produto ou serviço",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Descrever características técnicas de forma impessoal",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Explicar conceitos científicos de maneira didática",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto publicitário tem função persuasiva. Busca convencer o leitor/consumidor sobre as vantagens de um produto ou serviço, utilizando linguagem atrativa e emocional.",
+      "studyTip": "Observe em publicidades como elas apelam às emoções e criam necessidades no consumidor.",
+      "id": "pss2027-li005",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o papel do narrador em um texto narrativo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas descrever os personagens e os espaços",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Contar a história, podendo estar dentro ou fora dela",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Somente questionar as ações dos personagens",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Criticar os pensamentos dos personagens",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O narrador é aquele que conta a história. Pode ser onisciente (3ª pessoa, sabe de tudo), observador (3ª pessoa, vê de fora) ou participante (1ª pessoa, vive a história).",
+      "studyTip": "Identifique o tipo de narrador: 1ª pessoa (participante) ou 3ª pessoa (observador/onisciente).",
+      "id": "pss2027-li006",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Como se diferencia a intenção comunicativa de um texto informativo de um texto persuasivo?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Não há diferença; ambos informam sobre o mesmo tema",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "O informativo comunica fatos de forma objetiva; o persuasivo busca convencer o leitor",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "O persuasivo é sempre mais longo e detalhado",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "O informativo usa sempre terceira pessoa",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O texto informativo busca transmitir conhecimento de forma neutra e objetiva. O persuasivo tenta influenciar a opinião ou ação do leitor através de argumentos e recursos emocionais.",
+      "studyTip": "Notícia = informativo. Publicidade = persuasivo.",
+      "id": "pss2027-li007",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a estratégia mais importante ao fazer uma leitura analítica de um texto?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ler rapidamente para ganhar tempo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Identificar o tema central e analisar como ele é desenvolvido",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Memorizar todas as palavras do texto",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ler apenas o primeira e último parágrafo",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Uma leitura analítica requer compreensão profunda. Deve-se identificar a ideia central, os argumentos que a sustentam, o contexto e as intenções do autor.",
+      "studyTip": "Leia atentamente, anote palavras-chave, questione o texto e relacione com seu conhecimento prévio.",
+      "id": "pss2027-li008",
+      "category": "leitura-interpretacao",
+      "difficulty": "advanced"
+    }
+  ]
+}

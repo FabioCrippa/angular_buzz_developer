@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "area": "pss-2027-lingua-portuguesa",
+    "subject": "legislacao-educacional",
+    "name": "Legislação Educacional",
+    "description": "Questões sobre LDB, ECA, Lei Brasileira de Inclusão, Currículo Paulista, BNCC e normas sobre Educação Especial",
+    "difficulty": "advanced",
+    "lastUpdated": "2026-07-11",
+    "questionCount": 8,
+    "tags": [
+      "pss-2027",
+      "legislação-educacional",
+      "LDB",
+      "ECA",
+      "BNCC",
+      "educação-especial"
+    ]
+  },
+  "questions": [
+    {
+      "question": "O que estabelece a Lei de Diretrizes e Bases da Educação Nacional (LDB)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas diretrizes para educação superior",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Os fundamentos e objetivos da educação nacional, direitos e deveres de alunos, pais e professores",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas critérios de avaliação estudantil",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Normas exclusivas para educação técnica",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A LDB (Lei 9.394/1996) estabelece os fundamentos da educação nacional, objetivos, direitos e deveres de todos os envolvidos, estrutura do ensino em vários níveis.",
+      "studyTip": "LDB é a lei fundamental da educação brasileira. Conhecer seus artigos principais é essencial para professores.",
+      "id": "pss2027-le001",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o principal objetivo do Estatuto da Criança e do Adolescente (ECA)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Estabelecer punições severas para menores infratores",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Proteger os direitos e garantir o bem-estar de crianças e adolescentes",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Regulamentar apenas a educação escolar",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Proibir trabalho infantil sem exceções",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O ECA (Lei 8.069/1990) é um instrumento de proteção à infância. Garante direitos como educação, saúde, lazer e proteção contra violência. Estabelece também medidas socioeducativas.",
+      "studyTip": "ECA: Proteção Integral. Direitos: Educação, Saúde, Lazer, Dignidade.",
+      "id": "pss2027-le002",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "A Lei Brasileira de Inclusão (Lei 13.146/2015) garante quais direitos para pessoas com deficiência?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas assistência social e benefícios financeiros",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Educação inclusive, acessibilidade, trabalho e participação social",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas educação em instituições especiais segregadas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Direito de não participar de atividades escolares",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A Lei Brasileira de Inclusão garante o direito a educação inclusiva, acessibilidade, trabalho, cultura e participação social. Proíbe discriminação e promove autonomia.",
+      "studyTip": "Inclusão: Educação no ensino regular com apoios necessários. Acessibilidade em todos os ambientes.",
+      "id": "pss2027-le003",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que é a Base Nacional Comum Curricular (BNCC)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um documento que padroniza completamente o currículo em todas as escolas do Brasil",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Um documento que define competências e habilidades essenciais que todos os alunos devem desenvolver",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um livro didático único para todas as disciplinas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uma avaliação nacional obrigatória",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A BNCC é um documento normativo que define o conjunto de conhecimentos, competências e habilidades essenciais que os alunos devem alcançar em cada etapa da educação básica.",
+      "studyTip": "BNCC: Competências, não apenas conteúdos. Flexível em relação a metodologias.",
+      "id": "pss2027-le004",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que estabelece o Currículo Paulista em relação à educação especial?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Exclusão de alunos com deficiência do ensino regular",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Educação inclusiva com adaptações e suportes necessários no ensino regular",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas atendimento em escolas especiais segregadas",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Nenhuma orientação sobre educação especial",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O Currículo Paulista propõe educação inclusiva. Alunos com deficiência devem estar no ensino regular com adaptações, recursos de acessibilidade e apoio multidisciplinar.",
+      "studyTip": "Currículo Paulista: Inclusão como princípio. Todas as crianças na escola regular.",
+      "id": "pss2027-le005",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que é um Plano Educacional Individualizado (PEI)?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Um documento que registra apenas as deficiências do aluno",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Um plano que define objetivos, estratégias e adaptações específicas para alunos com deficiência ou necessidades educacionais especiais",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Um documento preparado apenas pelo professor",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Uma avaliação somativa do aluno",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O PEI é um documento colaborativo (professores, pais, alunos, especialmente) que define objetivos, adaptações curriculares e estratégias específicas para alunos com necessidades especiais.",
+      "studyTip": "PEI: Participativo, Individualizado, Colaborativo. Deve ser revisto periodicamente.",
+      "id": "pss2027-le006",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é a faixa etária coberta pela educação obrigatória segundo a LDB?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas 7 a 14 anos (ensino fundamental)",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "De 4 a 17 anos (pré-escolar ao ensino médio)",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas 6 a 14 anos",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Não há faixa etária definida",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A LDB, com atualizações, estabelece educação obrigatória de 4 a 17 anos (educação infantil, fundamental e médio). A educação infantil é direito, não obrigação; fundamental e médio são obrigatórios.",
+      "studyTip": "Mudança importante: Educação infantil agora é direito, iniciando aos 4 anos.",
+      "id": "pss2027-le007",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que estabelece a Lei de Acessibilidade em espaços educacionais?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas espaços para cadeirantes",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Acesso de pessoas com deficiência a edifícios, salas, tecnologias e materiais didáticos de forma segura e independente",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Educação apenas para pessoas sem deficiência",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Acesso apenas a determinadas salas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Acessibilidade inclui rampas, elevadores, tecnologias assistivas, materiais em Braille, audiodescrição e todas as adaptações necessárias para que pessoas com deficiência participem plenamente.",
+      "studyTip": "Acessibilidade = Oportunidade igual de acesso e participação para TODOS.",
+      "id": "pss2027-le008",
+      "category": "legislacao-educacional",
+      "difficulty": "advanced"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "area": "pss-2027-lingua-portuguesa",
+    "subject": "atualidades",
+    "name": "Atualidades em Educação e Sociedade",
+    "description": "Questões sobre questões sociais, culturais, políticas e educacionais contemporâneas, ética e cidadania",
+    "difficulty": "advanced",
+    "lastUpdated": "2026-07-11",
+    "questionCount": 8,
+    "tags": [
+      "pss-2027",
+      "atualidades",
+      "sociedade",
+      "educação",
+      "ética",
+      "cidadania"
+    ]
+  },
+  "questions": [
+    {
+      "question": "Qual é um dos principais desafios da educação brasileira contemporânea?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Excesso de investimento em educação pública",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Reduzir desigualdades de acesso, qualidade e permanência na escola",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Muito poucos alunos frequentam a escola",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Professores ganham salários muito altos",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O Brasil enfrenta desafios significativos: desigualdade de acesso (zona rural vs urbana), qualidade educacional variable, evasão escolar e falta de recursos adequados.",
+      "studyTip": "Desigualdade educacional reflete e reproduz desigualdade social no Brasil.",
+      "id": "pss2027-at001",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Como a tecnologia tem impactado a educação nos últimos anos?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Sem impacto significativo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Possibilita educação digital, aprendizagem remota, mas requer letramento digital e acesso equitativo",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas prejudica a educação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Substitui completamente os professores",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Tecnologia oferece possibilidades como educação a distância e recursos interativos, mas também cria desafios de acesso ('exclusão digital'), dependência de internet e necessidade de formação docente.",
+      "studyTip": "Tecnologia é ferramenta. Seu uso deve ser crítico e intencional na educação.",
+      "id": "pss2027-at002",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que é letramento digital?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas saber usar computadores",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Capacidade de usar, entender e criar conteúdo digital de forma crítica e ética",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Jogar videogames na internet",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Apenas usar redes sociais",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Letramento Digital vai além de habilidades técnicas. Inclui pensamento crítico sobre informações online, segurança digital, ética na internet e criação responsável de conteúdo.",
+      "studyTip": "Cidadão digital: Critica, questiona, verifica fontes, age eticamente online.",
+      "id": "pss2027-at003",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Como a educação pode promover ética e cidadania?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas ensinando regras de comportamento",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Desenvolvendo pensamento crítico, responsabilidade social e participação democrática",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Impondo moral religiosa",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Não é função da educação",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Educação para cidadania desenvolve capacidades de análise, argumentação, reconhecimento de direitos e deveres, e participação ativa na transformação social.",
+      "studyTip": "Cidadania: Direitos E deveres. Participação ativa na sociedade.",
+      "id": "pss2027-at004",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Qual é o impacto da pandemia de COVID-19 na educação brasileira?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Nenhum impacto significativo",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Distúrbios no aprendizado, desigualdade no acesso remoto, impactos psicossociais e saúde mental afetada",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Apenas benefícios para educação",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Fechamento permanente de todas as escolas",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "A pandemia causou interrupção de aprendizagem, exclusão digital (nem todos têm internet), isolamento social, impactos emocionais e aprofundamento de desigualdades educacionais.",
+      "studyTip": "Pós-pandemia: Recuperação de aprendizagem, atenção à saúde mental, inclusão digital.",
+      "id": "pss2027-at005",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Como a educação pode combater o preconceito e discriminação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Ignorando diferenças entre grupos",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Promovendo educação antirracista, abordando história afro-brasileira, indígena e valorizando diversidade",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Separando grupos diferentes",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Ensinando que há grupos superiores e inferiores",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Educação antirracista, história afro-brasileira e indígena no currículo, e discussão de questões de gênero, orientação sexual e classe social são essenciais para combater discriminação.",
+      "studyTip": "Currículo inclusivo: Vozes plurais, histórias diversas, protagonismo de grupos marginalizados.",
+      "id": "pss2027-at006",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "O que significa Desenvolvimento Sustentável aplicado à educação?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas ensinar sobre meio ambiente",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Educar para desenvolvimento com responsabilidade ambiental, social e econômica",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não abordar questões ambientais",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Apenas economia, ignorando meio ambiente",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "Educação para Desenvolvimento Sustentável integra conhecimento ambiental, responsabilidade social, e viabilidade econômica. Alunos aprendem a pensar globalmente e agir localmente.",
+      "studyTip": "ODS (Objetivos de Desenvolvimento Sustentável): Integrar no currículo escolar.",
+      "id": "pss2027-at007",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Como a educação pode preparar alunos para o mercado de trabalho do futuro?",
+      "options": [
+        {
+          "id": 1,
+          "name": "Apenas ensinando profissões tradicionais",
+          "alias": "A"
+        },
+        {
+          "id": 2,
+          "name": "Desenvolvendo habilidades para o século XXI: criatividade, colaboração, pensamento crítico e adaptabilidade",
+          "alias": "B"
+        },
+        {
+          "id": 3,
+          "name": "Não preparar para trabalho",
+          "alias": "C"
+        },
+        {
+          "id": 4,
+          "name": "Apenas treinamento técnico sem reflexão",
+          "alias": "D"
+        }
+      ],
+      "correct": "B",
+      "explanation": "O mercado futuro requer criatividade, colaboração, comunicação, pensamento crítico, liderança e capacidade de aprender continuamente. A educação deve desenvolver essas competências transversais.",
+      "studyTip": "Habilidades do Século XXI: Essenciais para qualquer profissão futura.",
+      "id": "pss2027-at008",
+      "category": "atualidades",
+      "difficulty": "advanced"
+    }
+  ]
+}
