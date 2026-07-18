@@ -591,6 +591,7 @@ export class AreaComponent implements OnInit {
             'informatica-geral': ['informatica-geral'],
             'matematica': ['matematica'],
             'portugues': ['portugues'],
+            'pss-2027-lingua-portuguesa': ['pss-2027-lingua-portuguesa'],
           };
           const targetIds = legacyMap[this.areaName] || [this.areaName];
           // Coletar todos os caminhos de arquivo do novo formato
@@ -614,6 +615,7 @@ export class AreaComponent implements OnInit {
             console.error('❌ Área não encontrada no index:', this.areaName);
             throw new Error(`Área ${this.areaName} não encontrada`);
           }
+          console.log('📂 Arquivos encontrados:', filePaths);
           const requests2 = filePaths.map(fp =>
             this.http.get<any>(fp.path).pipe(
               catchError(() => of(null)),
@@ -2143,6 +2145,17 @@ Clique em "Upgrade Premium" para desbloquear!`);
         totalQuestions: 30,
         subjects: ['prova-paulista-9ano-2024', 'enem-2024', 'lp-caderno-9ano-1bimestre'],
         difficulty: { easy: 10, medium: 15, hard: 5 },
+        userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
+      },
+      'pss-2027-lingua-portuguesa': {
+        name: 'pss-2027-lingua-portuguesa',
+        displayName: 'PSS 2027 - Professores de Língua Portuguesa',
+        description: 'Preparação completa para o Processo Seletivo Simplificado 2027 - Professores de Língua Portuguesa',
+        icon: '📖',
+        color: '#9c27b0',
+        totalQuestions: 50,
+        subjects: ['Leitura e Interpretação', 'Gramática', 'Produção Textual', 'Literatura Brasileira', 'Legislação Educacional', 'Didática', 'Atualidades'],
+        difficulty: { easy: 15, medium: 25, hard: 10 },
         userProgress: { completed: 0, accuracy: 0, timeSpent: '0min' }
       }
     };
