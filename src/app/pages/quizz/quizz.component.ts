@@ -752,7 +752,7 @@ private getNextMidnightISO(): string {
     }
     
     // ✅ VALIDAR SE A ÁREA É VÁLIDA
-    const validAreas = ['analise-desenvolvimento-sistemas', 'portugues', 'matematica', 'informatica-geral', 'desenvolvimento-web', 'informatica', 'simulados'];
+    const validAreas = ['analise-desenvolvimento-sistemas', 'portugues', 'matematica', 'informatica-geral', 'desenvolvimento-web', 'informatica', 'simulados', 'pss-2027-lingua-portuguesa'];
     if (!validAreas.includes(this.area)) {
       this.showError(`Área inválida: ${this.area}. Áreas válidas: ${validAreas.join(', ')}`);
       return;
