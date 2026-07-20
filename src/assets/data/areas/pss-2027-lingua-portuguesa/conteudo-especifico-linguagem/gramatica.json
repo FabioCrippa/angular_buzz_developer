@@ -4,9 +4,9 @@
     "subject": "gramatica",
     "name": "Gramática e Análise Sintático-Semântica",
     "description": "Questões de morfologia, sintaxe, concordância, regência verbal e nominal, colocação pronominal, e figuras de linguagem",
-    "difficulty": "advanced",
-    "lastUpdated": "2026-07-11",
-    "questionCount": 10,
+    "difficulty": "mista",
+    "lastUpdated": "2026-07-20",
+    "questionCount": 18,
     "tags": [
       "pss-2027",
       "língua-portuguesa",
@@ -326,6 +326,126 @@
       "id": "pss2027-gr010",
       "category": "gramatica",
       "difficulty": "advanced"
+    },
+    {
+      "question": "Em 'O professor corrigiu as provas rapidamente', a palavra 'rapidamente' pertence a qual classe gramatical?",
+      "options": [
+        { "id": 1, "name": "Substantivo", "alias": "A" },
+        { "id": 2, "name": "Advérbio", "alias": "B" },
+        { "id": 3, "name": "Adjetivo", "alias": "C" },
+        { "id": 4, "name": "Pronome", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O termo 'rapidamente' é um advérbio de modo, pois modifica o verbo 'corrigiu', indicando a maneira como a ação ocorreu.",
+      "studyTip": "Advérbios frequentemente terminam em '-mente' e modificam verbos, adjetivos ou outros advérbios.",
+      "id": "pss2027-gr011",
+      "category": "gramatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Assinale a alternativa em que todas as palavras estão grafadas corretamente:",
+      "options": [
+        { "id": 1, "name": "excesso, ascensão, previlégio", "alias": "A" },
+        { "id": 2, "name": "exceção, ascensão, privilégio", "alias": "B" },
+        { "id": 3, "name": "excessão, ascenção, privilégio", "alias": "C" },
+        { "id": 4, "name": "exceção, ascenção, previlégio", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "As formas corretas são 'exceção', 'ascensão' e 'privilégio'. As demais alternativas contêm erros de grafia comuns em concursos.",
+      "studyTip": "Memorize palavras com grafias parecidas mas distintas: exceção (não 'excessão'), privilégio (não 'previlégio'), ascensão (não 'ascenção').",
+      "id": "pss2027-gr012",
+      "category": "gramatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A palavra 'manga' apresenta significados diferentes nas frases 'Comi uma manga madura' e 'A manga da camisa estava rasgada'. Por se tratar de palavras com mesma grafia e pronúncia, mas origens e significados diferentes, esse fenômeno é classificado como:",
+      "options": [
+        { "id": 1, "name": "Polissemia", "alias": "A" },
+        { "id": 2, "name": "Homonímia perfeita", "alias": "B" },
+        { "id": 3, "name": "Paronímia", "alias": "C" },
+        { "id": 4, "name": "Sinonímia", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Homônimos perfeitos são palavras com mesma grafia e pronúncia, mas etimologia e significado diferentes. 'Manga' (fruta) e 'manga' (parte da roupa) têm origens distintas, sendo por isso homônimos, e não caso de polissemia.",
+      "studyTip": "Polissemia = mesma palavra (mesma origem), sentidos relacionados. Homonímia = palavras diferentes (origens diferentes) que coincidem na forma.",
+      "id": "pss2027-gr013",
+      "category": "gramatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Assinale a alternativa com concordância nominal correta:",
+      "options": [
+        { "id": 1, "name": "Ela mesma resolveu o problema, mas ficou meia cansada.", "alias": "A" },
+        { "id": 2, "name": "Ela mesma resolveu o problema, mas ficou meio cansada.", "alias": "B" },
+        { "id": 3, "name": "Ela mesmo resolveu o problema, mas ficou meia cansada.", "alias": "C" },
+        { "id": 4, "name": "Ela mesmo resolveu o problema, mas ficou meio cansada.", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "'Mesma' concorda em gênero com 'ela' (reforço pronominal). 'Meio', quando usado antes de adjetivo, é advérbio e permanece invariável: 'meio cansada', nunca 'meia cansada'.",
+      "studyTip": "'Mesmo(a)' como reforço concorda com o termo a que se refere; 'meio' antes de adjetivo é advérbio (invariável).",
+      "id": "pss2027-gr014",
+      "category": "gramatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Identifique a figura de linguagem presente em: 'O silêncio gritava naquela sala vazia.'",
+      "options": [
+        { "id": 1, "name": "Metáfora", "alias": "A" },
+        { "id": 2, "name": "Paradoxo", "alias": "B" },
+        { "id": 3, "name": "Hipérbole", "alias": "C" },
+        { "id": 4, "name": "Eufemismo", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O paradoxo (contradição aparente) ocorre quando se unem ideias contraditórias: 'silêncio' (ausência de som) e 'gritava' (som intenso). Quando condensado em poucas palavras, esse recurso também é chamado de oxímoro.",
+      "studyTip": "Paradoxo une termos logicamente contraditórios para produzir um efeito expressivo forte.",
+      "id": "pss2027-gr015",
+      "category": "gramatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Assinale a alternativa em que a regência nominal está de acordo com a norma-padrão:",
+      "options": [
+        { "id": 1, "name": "Ela é imune de qualquer crítica.", "alias": "A" },
+        { "id": 2, "name": "Ele está apto para assumir o cargo.", "alias": "B" },
+        { "id": 3, "name": "Somos favoráveis com a proposta apresentada.", "alias": "C" },
+        { "id": 4, "name": "Estamos ansiosos com a resposta.", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A norma-padrão exige: imune A (não 'de'); apto A ou PARA; favorável A (não 'com'); ansioso POR (não 'com'). Apenas a alternativa B respeita a regência nominal culta.",
+      "studyTip": "Memorize as regências nominais mais cobradas: apto a/para, imune a, favorável a, ansioso por, propício a, acessível a.",
+      "id": "pss2027-gr016",
+      "category": "gramatica",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "Na frase 'Considero o projeto viável', o termo 'viável' exerce a função sintática de:",
+      "options": [
+        { "id": 1, "name": "Objeto direto", "alias": "A" },
+        { "id": 2, "name": "Predicativo do objeto", "alias": "B" },
+        { "id": 3, "name": "Complemento nominal", "alias": "C" },
+        { "id": 4, "name": "Adjunto adnominal", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "'Viável' caracteriza 'o projeto' (objeto direto) por meio do verbo de sentido incompleto 'considero', configurando um predicativo do objeto. Isso ocorre com verbos como considerar, achar, julgar, chamar, eleger.",
+      "studyTip": "Verbos como 'considerar', 'achar', 'julgar', 'eleger' e 'chamar' geram predicativo do objeto quando seguidos de termo que caracteriza o objeto direto.",
+      "id": "pss2027-gr017",
+      "category": "gramatica",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "Assinale a alternativa em que a colocação pronominal está INCORRETA segundo a norma-padrão:",
+      "options": [
+        { "id": 1, "name": "Quem me disse isso foi o diretor.", "alias": "A" },
+        { "id": 2, "name": "Jamais lhe faltarei com a verdade.", "alias": "B" },
+        { "id": 3, "name": "Telefonei-lhe ontem à noite.", "alias": "C" },
+        { "id": 4, "name": "Se explicará melhor na próxima aula.", "alias": "D" }
+      ],
+      "correct": "D",
+      "explanation": "O pronome oblíquo átono não pode iniciar oração em português-padrão. O correto seria 'Explicar-se-á melhor' (mesóclise) ou 'Ele se explicará melhor', com sujeito explícito antes do pronome.",
+      "studyTip": "Regra de ouro: pronome oblíquo átono nunca inicia frase. Use ênclise ou reformule com sujeito explícito antes do pronome.",
+      "id": "pss2027-gr018",
+      "category": "gramatica",
+      "difficulty": "dificil"
     }
   ]
 }

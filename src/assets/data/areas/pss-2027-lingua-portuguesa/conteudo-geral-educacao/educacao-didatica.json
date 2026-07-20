@@ -4,9 +4,9 @@
     "subject": "educacao-didatica",
     "name": "Educação e Didática",
     "description": "Questões sobre princípios pedagógicos, avaliação da aprendizagem, metodologias de ensino, inclusão e diversidade",
-    "difficulty": "advanced",
-    "lastUpdated": "2026-07-11",
-    "questionCount": 8,
+    "difficulty": "mista",
+    "lastUpdated": "2026-07-20",
+    "questionCount": 15,
     "tags": [
       "pss-2027",
       "educação",
@@ -264,6 +264,111 @@
       "id": "pss2027-ed008",
       "category": "educacao-didatica",
       "difficulty": "advanced"
+    },
+    {
+      "question": "A avaliação formativa, diferentemente da avaliação somativa, tem como principal característica:",
+      "options": [
+        { "id": 1, "name": "Ocorrer apenas ao final do bimestre para atribuir nota", "alias": "A" },
+        { "id": 2, "name": "Acompanhar o processo de aprendizagem, oferecendo feedback contínuo para ajustes pedagógicos", "alias": "B" },
+        { "id": 3, "name": "Servir exclusivamente para classificar e ranquear alunos", "alias": "C" },
+        { "id": 4, "name": "Ser aplicada uma única vez no ano", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A avaliação formativa é processual e contínua, servindo para diagnosticar dificuldades e orientar intervenções pedagógicas ao longo do processo de ensino-aprendizagem, e não apenas para atribuir notas finais.",
+      "studyTip": "Avaliação formativa = processo contínuo com foco em melhoria da aprendizagem; somativa = resultado final, geralmente classificatório.",
+      "id": "pss2027-ed009",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Segundo a perspectiva construtivista de aprendizagem, o conhecimento é:",
+      "options": [
+        { "id": 1, "name": "Transmitido passivamente do professor para o aluno", "alias": "A" },
+        { "id": 2, "name": "Construído ativamente pelo aluno em interação com o meio e com o objeto de conhecimento", "alias": "B" },
+        { "id": 3, "name": "Fixo e imutável desde o nascimento", "alias": "C" },
+        { "id": 4, "name": "Adquirido exclusivamente por memorização mecânica", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Na perspectiva construtivista (Piaget), o conhecimento é construído pelo sujeito por meio da interação ativa com o meio, e não simplesmente transmitido ou memorizado passivamente.",
+      "studyTip": "Construtivismo (Piaget): aprendizagem ativa, construção do conhecimento pela interação sujeito-objeto.",
+      "id": "pss2027-ed010",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "As metodologias ativas de aprendizagem, como sala de aula invertida e aprendizagem baseada em problemas, têm como característica central:",
+      "options": [
+        { "id": 1, "name": "Centralizar o processo no professor como único transmissor de conteúdo", "alias": "A" },
+        { "id": 2, "name": "Tornar o aluno protagonista do seu próprio aprendizado, de forma ativa e participativa", "alias": "B" },
+        { "id": 3, "name": "Eliminar completamente a mediação do professor", "alias": "C" },
+        { "id": 4, "name": "Priorizar exclusivamente avaliações escritas tradicionais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Metodologias ativas colocam o aluno no centro do processo de aprendizagem, estimulando protagonismo, autonomia e participação ativa, com o professor atuando como mediador/facilitador.",
+      "studyTip": "Metodologias ativas = aluno protagonista; professor = mediador/facilitador do processo, não mero transmissor.",
+      "id": "pss2027-ed011",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O Plano Educacional Individualizado (PEI) é um instrumento pedagógico voltado a:",
+      "options": [
+        { "id": 1, "name": "Padronizar o ensino de forma idêntica para toda a turma", "alias": "A" },
+        { "id": 2, "name": "Planejar adaptações e estratégias específicas para atender às necessidades individuais de alunos com deficiência ou dificuldades específicas", "alias": "B" },
+        { "id": 3, "name": "Substituir totalmente o currículo comum da escola", "alias": "C" },
+        { "id": 4, "name": "Ser utilizado exclusivamente por psicólogos, sem participação do professor", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O PEI é elaborado para planejar adaptações curriculares e estratégias pedagógicas específicas, respeitando o ritmo e as necessidades individuais do aluno, geralmente em colaboração entre professor, equipe pedagógica e família.",
+      "studyTip": "PEI = planejamento individualizado, com participação do professor, equipe pedagógica e família — não substitui o currículo comum, mas o adapta.",
+      "id": "pss2027-ed012",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Dentre os instrumentos avaliativos, os portifólios e os registros de observação são especialmente valorizados por permitirem:",
+      "options": [
+        { "id": 1, "name": "Uma avaliação pontual e restrita a uma única prova", "alias": "A" },
+        { "id": 2, "name": "O acompanhamento processual e qualitativo do desenvolvimento do aluno ao longo do tempo", "alias": "B" },
+        { "id": 3, "name": "A eliminação de qualquer subjetividade na avaliação", "alias": "C" },
+        { "id": 4, "name": "A comparação exclusivamente numérica entre alunos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Instrumentos como portifólios e registros de observação permitem uma avaliação processual, qualitativa e contínua, capturando a evolução do aluno de forma mais completa do que uma única prova pontual.",
+      "studyTip": "Instrumentos avaliativos diversificados (portifólio, observação, autoavaliação) complementam provas tradicionais, dando visão processual do desenvolvimento.",
+      "id": "pss2027-ed013",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O conceito de Zona de Desenvolvimento Proximal (ZDP), formulado por Vygotsky, refere-se à:",
+      "options": [
+        { "id": 1, "name": "Distância entre o que o aluno já sabe fazer sozinho e o que consegue fazer com auxílio de outra pessoa mais experiente", "alias": "A" },
+        { "id": 2, "name": "Idade cronológica exata em que uma criança deve aprender determinado conteúdo", "alias": "B" },
+        { "id": 3, "name": "Espaço físico da sala de aula", "alias": "C" },
+        { "id": 4, "name": "Limite máximo de conteúdo que pode ser ensinado em um bimestre", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "A ZDP é a distância entre o nível de desenvolvimento real (o que o aluno faz sozinho) e o nível de desenvolvimento potencial (o que consegue fazer com mediação de alguém mais experiente), sendo essencial para o planejamento pedagógico segundo Vygotsky.",
+      "studyTip": "Vygotsky: ZDP = distância entre desenvolvimento real e potencial, mediada pela interação social/professor (andaimento).",
+      "id": "pss2027-ed014",
+      "category": "educacao-didatica",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A avaliação por competências, alinhada à BNCC, exige do professor que:",
+      "options": [
+        { "id": 1, "name": "Avalie apenas a memorização de conteúdos factuais", "alias": "A" },
+        { "id": 2, "name": "Considere a mobilização integrada de conhecimentos, habilidades, atitudes e valores na resolução de situaões reais", "alias": "B" },
+        { "id": 3, "name": "Elimine completamente as avaliações escritas", "alias": "C" },
+        { "id": 4, "name": "Foque exclusivamente em conteúdos disciplinares isolados", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A avaliação por competências, conforme a BNCC, avalia a capacidade do aluno de mobilizar conhecimentos, habilidades, atitudes e valores de forma integrada para resolver situações da vida real, indo além da mera memorização.",
+      "studyTip": "BNCC define competência como mobilização integrada de conhecimentos, habilidades, atitudes e valores para resolver demandas da vida.",
+      "id": "pss2027-ed015",
+      "category": "educacao-didatica",
+      "difficulty": "dificil"
     }
   ]
 }

@@ -4,9 +4,9 @@
     "subject": "producao-textual",
     "name": "Produção Textual e Escrita",
     "description": "Questões sobre coesão, coerência, argumentação, adequação ao gênero e à situação comunicativa, desenvolvimento de ideias",
-    "difficulty": "advanced",
-    "lastUpdated": "2026-07-11",
-    "questionCount": 8,
+    "difficulty": "mista",
+    "lastUpdated": "2026-07-20",
+    "questionCount": 15,
     "tags": [
       "pss-2027",
       "língua-portuguesa",
@@ -264,6 +264,111 @@
       "id": "pss2027-pt008",
       "category": "producao-textual",
       "difficulty": "advanced"
+    },
+    {
+      "question": "Em 'Maria comprou um carro novo. O veículo custou caro', o termo 'o veículo' retoma 'um carro novo' por meio de:",
+      "options": [
+        { "id": 1, "name": "Coesão referencial por sinonímia/hiperonimia", "alias": "A" },
+        { "id": 2, "name": "Coesão sequencial", "alias": "B" },
+        { "id": 3, "name": "Elipse", "alias": "C" },
+        { "id": 4, "name": "Ambiguidade proposital", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "'Veículo' é hiperônimo de 'carro', retomando o termo anterior sem repetição, o que caracteriza coesão referencial (por substituição léxica/hiperonimia), evitando a repetição desnecessária da palavra.",
+      "studyTip": "Coesão referencial: substituição por pronomes, sinônimos, hiperônimos ou expressões equivalentes para evitar repetição.",
+      "id": "pss2027-pt009",
+      "category": "producao-textual",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Assinale o conectivo que estabelece relação de OPOSIÇÃO/CONTRASTE entre as orações:",
+      "options": [
+        { "id": 1, "name": "Portanto", "alias": "A" },
+        { "id": 2, "name": "Contudo", "alias": "B" },
+        { "id": 3, "name": "Porque", "alias": "C" },
+        { "id": 4, "name": "Ademais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "'Contudo' é conjunção adversativa, indicando contraste/oposição entre ideias. 'Portanto' indica conclusão, 'porque' indica causa e 'ademais' indica adição.",
+      "studyTip": "Classifique conectivos por relação lógica: adversátivos (mas, contudo, porém), causais (porque, pois), conclusivos (portanto, logo), aditivos (além disso, ademais).",
+      "id": "pss2027-pt010",
+      "category": "producao-textual",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Ao citar dados de uma pesquisa da universidade renomada para sustentar sua tese em uma redação dissertativa, o autor está utilizando o argumento de:",
+      "options": [
+        { "id": 1, "name": "Autoridade", "alias": "A" },
+        { "id": 2, "name": "Senso comum", "alias": "B" },
+        { "id": 3, "name": "Exemplificação pessoal", "alias": "C" },
+        { "id": 4, "name": "Falso consenso", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "O argumento de autoridade consiste em citar uma fonte confiável e reconhecida (pesquisas, especialistas, instituições) para dar credibilidade e reforçar a tese defendida no texto.",
+      "studyTip": "Tipos comuns de argumento: autoridade (citação de fontes confiáveis), exemplificação, dados estatísticos, causa e consequência.",
+      "id": "pss2027-pt011",
+      "category": "producao-textual",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Um texto é considerado coerente quando:",
+      "options": [
+        { "id": 1, "name": "Utiliza apenas frases curtas", "alias": "A" },
+        { "id": 2, "name": "Apresenta relação lógica entre as ideias, sem contradições internas, permitindo compreensão global do sentido", "alias": "B" },
+        { "id": 3, "name": "Repete a mesma palavra em todos os parágrafos", "alias": "C" },
+        { "id": 4, "name": "Usa exclusivamente conectivos aditivos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Coerência textual refere-se à organização lógica das ideias e ao sentido global do texto, evitando contradições e garantindo que as partes se relacionem de forma compreensível.",
+      "studyTip": "Coesão = conexão gramatical entre elementos; coerência = lógica de sentido entre as ideias do texto.",
+      "id": "pss2027-pt012",
+      "category": "producao-textual",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Ao redigir um ofício administrativo, é fundamental que o candidato observe qual critério relacionado à adequação textual?",
+      "options": [
+        { "id": 1, "name": "Uso de linguagem coloquial e gírias", "alias": "A" },
+        { "id": 2, "name": "Uso de linguagem formal, objetiva e conforme as convenções do gênero administrativo", "alias": "B" },
+        { "id": 3, "name": "Emprego de figuras de linguagem poéticas", "alias": "C" },
+        { "id": 4, "name": "Uso de linguagem subjetiva e emocional", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A adequação ao gênero exige que o texto respeite o registro e a estrutura esperados: documentos administrativos, como ofícios, exigem linguagem formal, clara e objetiva.",
+      "studyTip": "Cada gênero textual tem convenções próprias de registro, estrutura e finalidade — adequação é respeitar essas convenções.",
+      "id": "pss2027-pt013",
+      "category": "producao-textual",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A repetição proposital de uma estrutura sintática ou de conectivos ao longo de um parágrafo, com o objetivo de dar ritmo e reforçar uma ideia, caracteriza um tipo de coesão chamada:",
+      "options": [
+        { "id": 1, "name": "Coesão referencial", "alias": "A" },
+        { "id": 2, "name": "Coesão sequencial", "alias": "B" },
+        { "id": 3, "name": "Elipse total", "alias": "C" },
+        { "id": 4, "name": "Anacoluto", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A coesão sequencial garante a progressão das ideias no texto por meio de conectores e estruturas sintáticas que organizam a sequência lógica ou rítmica das informações.",
+      "studyTip": "Coesão sequencial = progressão textual via conectivos e organização sintática; coesão referencial = retomada de termos já citados.",
+      "id": "pss2027-pt014",
+      "category": "producao-textual",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A afirmação 'Se permitirmos que os alunos usem calculadora numa prova, em breve eles não saberão nem somar' exemplifica uma falha argumentativa conhecida como:",
+      "options": [
+        { "id": 1, "name": "Argumento de autoridade", "alias": "A" },
+        { "id": 2, "name": "Falácia do efeito dominó (slippery slope)", "alias": "B" },
+        { "id": 3, "name": "Comparação válida", "alias": "C" },
+        { "id": 4, "name": "Generalização estatística correta", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A falácia do efeito dominó (slippery slope) prevê, sem evidências reais, uma sequência catastrófica de consequências a partir de um evento inicial pequeno, sem justificativa lógica sólida.",
+      "studyTip": "Reconheça falácias argumentativas: efeito dominó (consequências exageradas encadeadas), generalização apressada, ataque pessoal (ad hominem).",
+      "id": "pss2027-pt015",
+      "category": "producao-textual",
+      "difficulty": "dificil"
     }
   ]
 }

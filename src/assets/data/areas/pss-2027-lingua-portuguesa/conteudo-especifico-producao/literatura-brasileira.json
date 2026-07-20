@@ -4,9 +4,9 @@
     "subject": "literatura-brasileira",
     "name": "Literatura Brasileira",
     "description": "Questões sobre escolas literárias, autores, obras representativas, contexto histórico-social e análise de textos literários",
-    "difficulty": "advanced",
-    "lastUpdated": "2026-07-11",
-    "questionCount": 10,
+    "difficulty": "mista",
+    "lastUpdated": "2026-07-20",
+    "questionCount": 18,
     "tags": [
       "pss-2027",
       "língua-portuguesa",
@@ -326,6 +326,126 @@
       "id": "pss2027-lb010",
       "category": "literatura-brasileira",
       "difficulty": "advanced"
+    },
+    {
+      "question": "José de Alencar, autor de 'Iracema' e 'O Guarani', é um dos principais representantes de qual escola literária brasileira?",
+      "options": [
+        { "id": 1, "name": "Barroco", "alias": "A" },
+        { "id": 2, "name": "Romantismo", "alias": "B" },
+        { "id": 3, "name": "Parnasianismo", "alias": "C" },
+        { "id": 4, "name": "Modernismo", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "José de Alencar é um dos maiores representantes do Romantismo brasileiro, especialmente da vertente indianista, que valorizava a identidade nacional e o índio como símbolo de brasilidade.",
+      "studyTip": "Romantismo brasileiro: fases indianista, urbana (byroniana) e regionalista/social — José de Alencar é o principal nome da vertente indianista.",
+      "id": "pss2027-lb011",
+      "category": "literatura-brasileira",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Semana de Arte Moderna, realizada em 1922 em São Paulo, é considerada o marco inicial de qual movimento literário?",
+      "options": [
+        { "id": 1, "name": "Simbolismo", "alias": "A" },
+        { "id": 2, "name": "Modernismo", "alias": "B" },
+        { "id": 3, "name": "Parnasianismo", "alias": "C" },
+        { "id": 4, "name": "Realismo", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Semana de Arte Moderna de 1922 é o evento simbólico que inaugura o Modernismo no Brasil, rompendo com padrões estéticos tradicionais e valorizando a experimentação e o nacionalismo crítico.",
+      "studyTip": "1922 = Semana de Arte Moderna = marco inicial do Modernismo (1ª fase).",
+      "id": "pss2027-lb012",
+      "category": "literatura-brasileira",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A obra 'Memórias Póstumas de Brás Cubas', de Machado de Assis, é narrada por um defunto-autor e rompe com as convenções realistas ao utilizar, entre outros recursos:",
+      "options": [
+        { "id": 1, "name": "Narrador linear e onisciente tradicional", "alias": "A" },
+        { "id": 2, "name": "Metalinguagem, digressões e diálogo direto com o leitor", "alias": "B" },
+        { "id": 3, "name": "Ausência total de ironia", "alias": "C" },
+        { "id": 4, "name": "Estrutura estritamente cronológica sem interrupções", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Machado de Assis inova ao criar um narrador defunto que dialoga diretamente com o leitor, usa digressões, metalinguagem e ironia, indo além do Realismo europeu convencional.",
+      "studyTip": "Machado de Assis é conhecido pelo narrador não confiável, ironia fina e análise psicológica profunda dos personagens.",
+      "id": "pss2027-lb013",
+      "category": "literatura-brasileira",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Castro Alves, conhecido como 'o poeta dos escravos', pertenceu à terceira geração do Romantismo brasileiro e é autor da obra:",
+      "options": [
+        { "id": 1, "name": "'Os Lusíadas'", "alias": "A" },
+        { "id": 2, "name": "'Navio Negreiro'", "alias": "B" },
+        { "id": 3, "name": "'Dom Casmurro'", "alias": "C" },
+        { "id": 4, "name": "'Vidas Secas'", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "'O Navio Negreiro' é um dos poemas mais famosos de Castro Alves, com forte conteúdo social e denúncia da escravidão, característico da poesia condoreira da terceira geração romântica.",
+      "studyTip": "Castro Alves = poesia social/condoreira = terceira geração do Romantismo, com forte crítica à escravidão.",
+      "id": "pss2027-lb014",
+      "category": "literatura-brasileira",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Enquanto o Parnasianismo valorizava a forma perfeita, o rigor métrico e a objetividade descritiva, o Simbolismo, seu contemporâneo, caracterizava-se principalmente por:",
+      "options": [
+        { "id": 1, "name": "Linguagem objetiva e cientificista", "alias": "A" },
+        { "id": 2, "name": "Musicalidade, subjetivismo e sugestão, com forte presença de sinestesias", "alias": "B" },
+        { "id": 3, "name": "Foco exclusivo em temas sociais urbanos", "alias": "C" },
+        { "id": 4, "name": "Narrativas longas em prosa realista", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Simbolismo valorizava a musicalidade dos versos, a subjetividade, o misticismo e o uso de sinestesias e sugestões, em contraste com a objetividade e o rigor formal do Parnasianismo.",
+      "studyTip": "Parnasianismo = 'arte pela arte', forma perfeita; Simbolismo = musicalidade, subjetividade, sugestão e misticismo.",
+      "id": "pss2027-lb015",
+      "category": "literatura-brasileira",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Carlos Drummond de Andrade, um dos principais poetas da segunda fase do Modernismo brasileiro (Geração de 30), é reconhecido por uma poesia marcada, entre outros aspectos, por:",
+      "options": [
+        { "id": 1, "name": "Rigor formal parnasiano e temas exclusivamente amorosos", "alias": "A" },
+        { "id": 2, "name": "Reflexão existencial, ironia e um olhar crítico sobre a condição humana e social", "alias": "B" },
+        { "id": 3, "name": "Ausência completa de temas sociais", "alias": "C" },
+        { "id": 4, "name": "Repetição estrita dos modelos poéticos do Simbolismo", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Drummond é conhecido por uma poesia que combina reflexão existencial, ironia e crítica social/política, sendo um dos nomes mais importantes e versáteis da poesia brasileira do século XX.",
+      "studyTip": "Geração de 30 (2ª fase modernista): maior maturidade estética, poesia introspectiva e socialmente engajada (Drummond, Vinícius, Murilo Mendes, Cecília Meireles).",
+      "id": "pss2027-lb016",
+      "category": "literatura-brasileira",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "Guimarães Rosa, autor de 'Grande Sertão: Veredas', é reconhecido pela crítica por sua inovação linguística, que inclui:",
+      "options": [
+        { "id": 1, "name": "Uso estritamente da norma padrão, sem neologismos", "alias": "A" },
+        { "id": 2, "name": "Criação de neologismos, regionalismos e uma sintaxe experimental que renova a prosa brasileira", "alias": "B" },
+        { "id": 3, "name": "Ausência de qualquer influência do sertão nordestino", "alias": "C" },
+        { "id": 4, "name": "Simplicidade vocabular extrema, sem inovações estilísticas", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Guimarães Rosa é famoso por criar neologismos, incorporar regionalismos do sertão e experimentar com a sintaxe, resultando em uma prosa poética e inovadora, associada à 3ª fase do Modernismo.",
+      "studyTip": "Guimarães Rosa é associado à 3ª fase do Modernismo (prosa), com forte experimentação linguística e regionalismo universalizado.",
+      "id": "pss2027-lb017",
+      "category": "literatura-brasileira",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A obra de Clarice Lispector, como em 'A Hora da Estrela' e 'Laços de Família', é caracterizada principalmente por:",
+      "options": [
+        { "id": 1, "name": "Foco em enredos de aventura e ação", "alias": "A" },
+        { "id": 2, "name": "Introspecção psicológica profunda e fluxo de consciência dos personagens", "alias": "B" },
+        { "id": 3, "name": "Linguagem estritamente objetiva e descritiva, sem análise interior", "alias": "C" },
+        { "id": 4, "name": "Ausência de qualquer inovação estilística", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Clarice Lispector é reconhecida pela intensa introspecção psicológica, uso do fluxo de consciência e exploração de conflitos existenciais dos personagens, sendo uma das vozes mais originais da prosa brasileira do século XX.",
+      "studyTip": "Clarice Lispector: prosa introspectiva, fluxo de consciência, foco na vida interior e existencial dos personagens.",
+      "id": "pss2027-lb018",
+      "category": "literatura-brasileira",
+      "difficulty": "dificil"
     }
   ]
 }

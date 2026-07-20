@@ -4,9 +4,9 @@
     "subject": "atualidades",
     "name": "Atualidades em Educação e Sociedade",
     "description": "Questões sobre questões sociais, culturais, políticas e educacionais contemporâneas, ética e cidadania",
-    "difficulty": "advanced",
-    "lastUpdated": "2026-07-11",
-    "questionCount": 8,
+    "difficulty": "mista",
+    "lastUpdated": "2026-07-20",
+    "questionCount": 15,
     "tags": [
       "pss-2027",
       "atualidades",
@@ -264,6 +264,111 @@
       "id": "pss2027-at008",
       "category": "atualidades",
       "difficulty": "advanced"
+    },
+    {
+      "question": "A prática da cidadania na escola contemporânea envolve, principalmente:",
+      "options": [
+        { "id": 1, "name": "Apenas o ensino formal de conteúdos curriculares", "alias": "A" },
+        { "id": 2, "name": "Participação ativa, respeito à diversidade e exercício de direitos e deveres em convívio democrático", "alias": "B" },
+        { "id": 3, "name": "Obediência irrestrita às regras sem questioná-las", "alias": "C" },
+        { "id": 4, "name": "Isolamento dos alunos de questões sociais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A cidadania na escola envolve formar sujeitos participativos, críticos, respeitosos à diversidade e conscientes de seus direitos e deveres em um convívio democrático.",
+      "studyTip": "Educação para a cidadania = formar sujeitos críticos, participativos e respeitosos à diversidade.",
+      "id": "pss2027-at009",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A ética docente pressupõe, entre outras responsabilidades:",
+      "options": [
+        { "id": 1, "name": "Favorecimento de alunos com melhor desempenho", "alias": "A" },
+        { "id": 2, "name": "Imparcialidade, respeito e compromisso com a aprendizagem de todos os alunos", "alias": "B" },
+        { "id": 3, "name": "Exposição pública de dificuldades individuais dos alunos", "alias": "C" },
+        { "id": 4, "name": "Priorização de interesses pessoais em detrimento da turma", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A ética profissional docente exige imparcialidade, respeito à individualidade dos alunos e compromisso genuíno com a aprendizagem de todos, sem favoritismos ou exposições indevidas.",
+      "studyTip": "Ética docente = imparcialidade + respeito + compromisso com a aprendizagem de todos os estudantes.",
+      "id": "pss2027-at010",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A cultura digital na educação contemporânea exige que a escola:",
+      "options": [
+        { "id": 1, "name": "Proiba totalmente o uso de tecnologias", "alias": "A" },
+        { "id": 2, "name": "Promova o uso crítico e consciente das tecnologias digitais como ferramentas de aprendizagem", "alias": "B" },
+        { "id": 3, "name": "Ignore completamente as mudanças tecnológicas", "alias": "C" },
+        { "id": 4, "name": "Substitua integralmente o professor por sistemas automatizados", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A cultura digital na educação busca integrar tecnologias de forma crítica e pedagógica, desenvolvendo competências digitais sem substituir o papel humano e mediador do professor.",
+      "studyTip": "Cultura digital na BNCC é uma das 10 competências gerais: uso crítico, reflexivo e ético das tecnologias digitais.",
+      "id": "pss2027-at011",
+      "category": "atualidades",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A inclusão escolar de alunos com deficiência, transtornos globais do desenvolvimento e altas habilidades pressupõe:",
+      "options": [
+        { "id": 1, "name": "Encaminhamento exclusivo para escolas especiais", "alias": "A" },
+        { "id": 2, "name": "Adaptações curriculares, recursos de acessibilidade e Atendimento Educacional Especializado na escola regular", "alias": "B" },
+        { "id": 3, "name": "Ausência de qualquer adaptação pedagógica", "alias": "C" },
+        { "id": 4, "name": "Segregação em salas separadas dentro da mesma escola", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A política de educação inclusiva no Brasil preconiza a matrícula na rede regular de ensino, com adaptações curriculares, acessibilidade e Atendimento Educacional Especializado (AEE) como apoio complementar.",
+      "studyTip": "Inclusão ≠ exclusão em salas separadas: a diretriz é a matrícula na rede regular com apoio especializado complementar (AEE).",
+      "id": "pss2027-at012",
+      "category": "atualidades",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A valorização do trabalho docente na atualidade é discutida frequentemente em relação a:",
+      "options": [
+        { "id": 1, "name": "Redução da carga horária de formação continuada", "alias": "A" },
+        { "id": 2, "name": "Salários, formação continuada, condições de trabalho e reconhecimento social da profissão", "alias": "B" },
+        { "id": 3, "name": "Eliminação do piso salarial nacional", "alias": "C" },
+        { "id": 4, "name": "Restrição do acesso à formação inicial", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A valorização docente envolve múltiplas dimensões: remuneração adequada (piso salarial), formação continuada, condições dignas de trabalho e reconhecimento social da profissão.",
+      "studyTip": "Valorização docente = salário digno + formação continuada + condições de trabalho + reconhecimento social.",
+      "id": "pss2027-at013",
+      "category": "atualidades",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O combate à desinformação ('fake news') no ambiente escolar deve ser trabalhado principalmente por meio do desenvolvimento de:",
+      "options": [
+        { "id": 1, "name": "Memorização de fatos históricos isolados", "alias": "A" },
+        { "id": 2, "name": "Letramento midiático e pensamento crítico para análise de fontes e informações", "alias": "B" },
+        { "id": 3, "name": "Proibição total do acesso à internet", "alias": "C" },
+        { "id": 4, "name": "Confiança automática em qualquer fonte compartilhada em redes sociais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O letramento midiático e informacional desenvolve a capacidade crítica de verificar fontes, identificar viés e reconhecer desinformação, sendo fundamental para a formação cidadã na era digital.",
+      "studyTip": "Letramento midiático = capacidade de analisar criticamente fontes e informações, essencial no combate às fake news.",
+      "id": "pss2027-at014",
+      "category": "atualidades",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A educação ambiental na escola, conforme preconizada pelas diretrizes atuais, deve ser abordada:",
+      "options": [
+        { "id": 1, "name": "Apenas em uma disciplina específica isolada", "alias": "A" },
+        { "id": 2, "name": "De forma transversal e interdisciplinar, integrada ao currículo", "alias": "B" },
+        { "id": 3, "name": "Somente em eventos pontuais, sem continuidade", "alias": "C" },
+        { "id": 4, "name": "Exclusivamente por meio de teorias, sem prática", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Política Nacional de Educação Ambiental preconiza uma abordagem transversal e interdisciplinar, integrada a todas as áreas do currículo, e não restrita a uma única disciplina ou evento isolado.",
+      "studyTip": "Educação ambiental = tema transversal, presente em todas as disciplinas, com continuidade ao longo do ano letivo.",
+      "id": "pss2027-at015",
+      "category": "atualidades",
+      "difficulty": "dificil"
     }
   ]
 }

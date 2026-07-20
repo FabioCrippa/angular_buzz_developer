@@ -4,9 +4,9 @@
     "subject": "leitura-interpretacao",
     "name": "Leitura e Interpretação de Textos",
     "description": "Questões sobre leitura, interpretação de textos literários e não literários, gêneros textuais e compreensão textual",
-    "difficulty": "advanced",
-    "lastUpdated": "2026-07-11",
-    "questionCount": 8,
+    "difficulty": "mista",
+    "lastUpdated": "2026-07-20",
+    "questionCount": 15,
     "tags": [
       "pss-2027",
       "língua-portuguesa",
@@ -263,6 +263,111 @@
       "id": "pss2027-li008",
       "category": "leitura-interpretacao",
       "difficulty": "advanced"
+    },
+    {
+      "question": "Um texto que tem como objetivo persuadir o leitor a comprar um produto, geralmente utilizando linguagem apelativa e imagens, pertence ao gênero:",
+      "options": [
+        { "id": 1, "name": "Narrativo", "alias": "A" },
+        { "id": 2, "name": "Publicitário", "alias": "B" },
+        { "id": 3, "name": "Dissertativo", "alias": "C" },
+        { "id": 4, "name": "Descritivo", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O gênero publicitário tem finalidade persuasiva/comercial, buscando convencer o público a consumir um produto ou serviço, usando recursos verbais e visuais apelativos.",
+      "studyTip": "Identifique a finalidade do texto: narrar, descrever, dissertar, argumentar ou persuadir comercialmente (publicitário).",
+      "id": "pss2027-li009",
+      "category": "leitura-interpretacao",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Uma bula de remédio, um manual de instruções e uma receita culinária são exemplos de textos:",
+      "options": [
+        { "id": 1, "name": "Literários", "alias": "A" },
+        { "id": 2, "name": "Não literários (informativos/instrucionais)", "alias": "B" },
+        { "id": 3, "name": "Poéticos", "alias": "C" },
+        { "id": 4, "name": "Ficcionais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Textos não literários têm função primordialmente informativa/prática/instrucional, sem intenção estética ou ficcional, diferentemente dos textos literários.",
+      "studyTip": "Textos literários priorizam a função estética (poética) da linguagem; os não literários priorizam a função referencial/informativa.",
+      "id": "pss2027-li010",
+      "category": "leitura-interpretacao",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Uma notícia publicada em jornal, que relata um fato com data, local e fontes, seguindo a estrutura da pirâmide invertida (do mais importante para o menos importante), pertence ao gênero textual:",
+      "options": [
+        { "id": 1, "name": "Crônica", "alias": "A" },
+        { "id": 2, "name": "Reportagem", "alias": "B" },
+        { "id": 3, "name": "Notícia", "alias": "C" },
+        { "id": 4, "name": "Editorial", "alias": "D" }
+      ],
+      "correct": "C",
+      "explanation": "A notícia é o gênero jornalístico caracterizado pela objetividade, pela estrutura da pirâmide invertida e pela apresentação factual do acontecimento (quem, quando, onde, como, por quê).",
+      "studyTip": "Diferencie: notícia (objetiva), reportagem (mais aprofundada, com entrevistas), editorial (opinião do veículo), crônica (híbrida, reflexiva).",
+      "id": "pss2027-li011",
+      "category": "leitura-interpretacao",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Leia o trecho: 'Depois de anos de seca, a primeira chuva trouxe aos moradores da pequena cidade não apenas água, mas também esperança.' A palavra 'esperança', nesse contexto, sugere que a chuva representa, além do recurso hídrico, um(a):",
+      "options": [
+        { "id": 1, "name": "Ameaça iminente", "alias": "A" },
+        { "id": 2, "name": "Renovação simbólica de expectativas positivas", "alias": "B" },
+        { "id": 3, "name": "Motivo de tristeza", "alias": "C" },
+        { "id": 4, "name": "Fato irrelevante para os moradores", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O texto associa a chuva a um sentido simbólico de renovação e otimismo, superando seu valor literal de recurso natural.",
+      "studyTip": "Em questões de interpretação, atente-se a palavras com carga emocional/simbólica, que indicam sentidos além do literal.",
+      "id": "pss2027-li012",
+      "category": "leitura-interpretacao",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A principal diferença entre um texto dissertativo-expositivo e um texto dissertativo-argumentativo é que o segundo:",
+      "options": [
+        { "id": 1, "name": "Apenas narra fatos em ordem cronológica", "alias": "A" },
+        { "id": 2, "name": "Expõe informações sem defender nenhum ponto de vista", "alias": "B" },
+        { "id": 3, "name": "Defende um ponto de vista, buscando convencer o leitor por meio de argumentos", "alias": "C" },
+        { "id": 4, "name": "Tem como única finalidade descrever características de um objeto", "alias": "D" }
+      ],
+      "correct": "C",
+      "explanation": "O texto dissertativo-argumentativo apresenta uma tese e a defende com argumentos, buscando persuadir o leitor, diferentemente do dissertativo-expositivo, que apenas expõe/explica um tema de forma mais neutra.",
+      "studyTip": "Dissertação expositiva expõe/explica (mais neutra); dissertação argumentativa defende uma tese (mais persuasiva).",
+      "id": "pss2027-li013",
+      "category": "leitura-interpretacao",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Em um texto em que o autor elogia excessivamente um governo por 'sua eficiência em não resolver problema algum em décadas', a estratégia discursiva empregada é:",
+      "options": [
+        { "id": 1, "name": "Comparação direta", "alias": "A" },
+        { "id": 2, "name": "Ironia", "alias": "B" },
+        { "id": 3, "name": "Descrição neutra", "alias": "C" },
+        { "id": 4, "name": "Narração linear", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A ironia consiste em dizer o contrário do que se pensa, gerando um efeito crítico. Ao 'elogiar' a ineficiência governamental, o autor está, na verdade, criticando-a.",
+      "studyTip": "Ironia é identificada quando há incoerência entre o que é dito literalmente e a intenção real do autor — geralmente um tom crítico disfarçado de elogio.",
+      "id": "pss2027-li014",
+      "category": "leitura-interpretacao",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "No verso de Manuel Bandeira 'Vou-me embora pra Pasárgada', a repetição de estruturas semelhantes ao longo do poema, com finalidade estética e expressiva, é um exemplo do predomínio da função:",
+      "options": [
+        { "id": 1, "name": "Referencial da linguagem", "alias": "A" },
+        { "id": 2, "name": "Metalinguística da linguagem", "alias": "B" },
+        { "id": 3, "name": "Poética da linguagem", "alias": "C" },
+        { "id": 4, "name": "Conativa/apelativa da linguagem", "alias": "D" }
+      ],
+      "correct": "C",
+      "explanation": "A função poética prioriza a forma da mensagem em si (sonoridade, ritmo, repetições), sendo típica dos textos literários, especialmente da poesia, como no poema de Manuel Bandeira.",
+      "studyTip": "Função poética = foco na forma (literatura); referencial = foco na informação; conativa = foco no receptor; metalinguística = a linguagem fala de si mesma.",
+      "id": "pss2027-li015",
+      "category": "leitura-interpretacao",
+      "difficulty": "dificil"
     }
   ]
 }

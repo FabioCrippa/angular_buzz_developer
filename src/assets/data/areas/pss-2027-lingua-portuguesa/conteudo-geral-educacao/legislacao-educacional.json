@@ -4,9 +4,9 @@
     "subject": "legislacao-educacional",
     "name": "Legislação Educacional",
     "description": "Questões sobre LDB, ECA, Lei Brasileira de Inclusão, Currículo Paulista, BNCC e normas sobre Educação Especial",
-    "difficulty": "advanced",
-    "lastUpdated": "2026-07-11",
-    "questionCount": 8,
+    "difficulty": "mista",
+    "lastUpdated": "2026-07-20",
+    "questionCount": 14,
     "tags": [
       "pss-2027",
       "legislação-educacional",
@@ -264,6 +264,96 @@
       "id": "pss2027-le008",
       "category": "legislacao-educacional",
       "difficulty": "advanced"
+    },
+    {
+      "question": "A Lei de Diretrizes e Bases da Educação Nacional (LDB, Lei nº 9.394/1996) organiza a educação escolar brasileira em quais níveis?",
+      "options": [
+        { "id": 1, "name": "Apenas educação infantil e ensino superior", "alias": "A" },
+        { "id": 2, "name": "Educação básica (infantil, fundamental e médio) e educação superior", "alias": "B" },
+        { "id": 3, "name": "Somente ensino fundamental", "alias": "C" },
+        { "id": 4, "name": "Apenas modalidades de educação de jovens e adultos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A LDB organiza a educação nacional em dois níveis: educação básica (compreendendo educação infantil, ensino fundamental e ensino médio) e educação superior.",
+      "studyTip": "LDB (Lei 9.394/96): educação básica (infantil + fundamental + médio) e educação superior, além das modalidades (EJA, EAD, educação especial etc.).",
+      "id": "pss2027-le009",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O Estatuto da Criança e do Adolescente (ECA, Lei nº 8.069/1990) estabelece que crianças e adolescentes são sujeitos de direitos, tendo como princípio fundamental:",
+      "options": [
+        { "id": 1, "name": "A prioridade absoluta em relação aos direitos de crianças e adolescentes", "alias": "A" },
+        { "id": 2, "name": "A responsabilidade exclusiva da família, sem envolvimento do Estado", "alias": "B" },
+        { "id": 3, "name": "A ausência de qualquer proteção legal específica", "alias": "C" },
+        { "id": 4, "name": "A subordinação total dos direitos da criança aos interesses adultos", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "O ECA consagra o princípio da prioridade absoluta, segundo o qual crianças e adolescentes devem ter seus direitos garantidos com precedeência por família, sociedade e Estado (art. 4º).",
+      "studyTip": "ECA: princípio da prioridade absoluta (art. 4º) — dever compartilhado de família, sociedade e Estado.",
+      "id": "pss2027-le010",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Lei Brasileira de Inclusão da Pessoa com Deficiência (Lei nº 13.146/2015) assegura, entre outros direitos, que:",
+      "options": [
+        { "id": 1, "name": "Pessoas com deficiência devem ser matriculadas apenas em escolas especiais", "alias": "A" },
+        { "id": 2, "name": "A educação inclusiva deve ocorrer, prioritariamente, no sistema regular de ensino, em todos os níveis", "alias": "B" },
+        { "id": 3, "name": "A matrícula pode ser negada por escolas particulares sem justificativa", "alias": "C" },
+        { "id": 4, "name": "Escolas não precisam oferecer nenhuma adaptação razoável", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei Brasileira de Inclusão (Estatuto da Pessoa com Deficiência) garante o direito à educação inclusiva no sistema regular de ensino, proibindo qualquer forma de recusa de matrícula por motivo de deficiência.",
+      "studyTip": "Lei 13.146/2015: proibida a recusa de matrícula por deficiência; sistema educacional inclusivo em todos os níveis e modalidades.",
+      "id": "pss2027-le011",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "As dez competências gerais da Base Nacional Comum Curricular (BNCC) têm como objetivo principal:",
+      "options": [
+        { "id": 1, "name": "Padronizar exclusivamente o conteúdo programático de cada disciplina", "alias": "A" },
+        { "id": 2, "name": "Definir aprendizagens essenciais que articulam conhecimentos, habilidades, atitudes e valores para o desenvolvimento integral do estudante", "alias": "B" },
+        { "id": 3, "name": "Restringir a autonomia pedagógica das escolas", "alias": "C" },
+        { "id": 4, "name": "Substituir totalmente os currículos estaduais e municipais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "As competências gerais da BNCC articulam conhecimentos, habilidades, atitudes e valores necessários para a formação integral do estudante, servindo de referência nacional sem substituir os currículos locais, que devem se adequar a ela.",
+      "studyTip": "BNCC = 10 competências gerais + referência nacional para os currículos; não elimina a autonomia curricular local.",
+      "id": "pss2027-le012",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O Atendimento Educacional Especializado (AEE), previsto na legislação de educação especial, caracteriza-se por ser:",
+      "options": [
+        { "id": 1, "name": "Substitutivo à escolarização comum", "alias": "A" },
+        { "id": 2, "name": "Complementar ou suplementar à escolarização, oferecido preferencialmente na rede regular de ensino", "alias": "B" },
+        { "id": 3, "name": "Restrito a instituições privadas especializadas", "alias": "C" },
+        { "id": 4, "name": "Oferecido apenas fora do horário escolar em outra cidade", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O AEE tem caráter complementar ou suplementar (não substitutivo) à escolarização comum, devendo ser oferecido preferencialmente na própria rede regular de ensino, geralmente em salas de recursos multifuncionais.",
+      "studyTip": "AEE = complementa (não substitui) a escolarização comum; oferecido preferencialmente na rede regular, em salas de recursos multifuncionais.",
+      "id": "pss2027-le013",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "Segundo a LDB, a formação de docentes para atuar na educação básica deve ocorrer, como regra geral, em:",
+      "options": [
+        { "id": 1, "name": "Curso normal de nível médio, exclusivamente", "alias": "A" },
+        { "id": 2, "name": "Nível superior, em curso de licenciatura, admitida como mínimo a oferecida em nível médio na modalidade normal para educação infantil e anos iniciais", "alias": "B" },
+        { "id": 3, "name": "Qualquer curso superior, independentemente da área", "alias": "C" },
+        { "id": 4, "name": "Curso técnico profissionalizante não relacionado à educação", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A LDB estabelece que a formação de docentes deve ocorrer preferencialmente em nível superior (licenciatura), admitindo como formação mínima o curso normal em nível médio para atuação na educação infantil e nos anos iniciais do ensino fundamental.",
+      "studyTip": "LDB art. 62: formação docente preferencialmente em licenciatura (nível superior); mínimo admitido = curso normal médio (infantil/anos iniciais).",
+      "id": "pss2027-le014",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
     }
   ]
 }
