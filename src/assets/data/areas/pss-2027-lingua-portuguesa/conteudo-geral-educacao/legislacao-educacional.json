@@ -6,7 +6,7 @@
     "description": "Questões sobre LDB, ECA, Lei Brasileira de Inclusão, Currículo Paulista, BNCC e normas sobre Educação Especial",
     "difficulty": "mista",
     "lastUpdated": "2026-07-25",
-    "questionCount": 34,
+    "questionCount": 54,
     "tags": [
       "pss-2027",
       "legislação-educacional",
@@ -654,6 +654,306 @@
       "id": "pss2027-le034",
       "category": "legislacao-educacional",
       "difficulty": "medio"
+    },
+    {
+      "question": "A LDB (Lei de Diretrizes e Bases da Educação Nacional, Lei nº 9.394/1996) é organizada em quantos títulos e artigos?",
+      "options": [
+        { "id": 1, "name": "5 títulos e 50 artigos", "alias": "A" },
+        { "id": 2, "name": "9 títulos e 92 artigos", "alias": "B" },
+        { "id": 3, "name": "12 títulos e 120 artigos", "alias": "C" },
+        { "id": 4, "name": "3 títulos e 267 artigos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A LDB (Lei nº 9.394/1996) é composta por 92 artigos, distribuídos em 9 títulos, que organizam desde a definição de educação até as disposições transitórias.",
+      "studyTip": "LDB = Lei 9.394/1996, 9 títulos, 92 artigos. Considerada a 'espinha dorsal' da educação brasileira.",
+      "id": "pss2027-le035",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A base constitucional da LDB está prevista em qual artigo da Constituição Federal de 1988?",
+      "options": [
+        { "id": 1, "name": "Art. 5º da CF", "alias": "A" },
+        { "id": 2, "name": "Art. 205 da CF", "alias": "B" },
+        { "id": 3, "name": "Art. 227 da CF", "alias": "C" },
+        { "id": 4, "name": "Art. 6º da CF", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 205 da Constituição Federal estabelece que a educação é direito de todos e dever do Estado e da família, sendo promovida e incentivada com a colaboração da sociedade. A LDB detalha como esse direito será garantido.",
+      "studyTip": "Art. 205 da CF = fundamento constitucional da LDB. Não confundir com o Art. 227 da CF, que trata da proteção à criança e ao adolescente (base do ECA).",
+      "id": "pss2027-le036",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "De acordo com o Art. 1º, §1º da LDB, o que exatamente essa lei disciplina?",
+      "options": [
+        { "id": 1, "name": "Toda e qualquer forma de educação, inclusive a familiar e informal", "alias": "A" },
+        { "id": 2, "name": "Apenas a educação escolar, que se desenvolve predominantemente por meio do ensino em instituições próprias", "alias": "B" },
+        { "id": 3, "name": "Somente a educação superior", "alias": "C" },
+        { "id": 4, "name": "Exclusivamente a educação oferecida por instituições privadas", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Embora o caput do Art. 1º reconheça que a educação abrange processos formativos na vida familiar, no trabalho e na convivência social, o §1º delimita que a LDB disciplina apenas a educação escolar, desenvolvida predominantemente em instituições de ensino reconhecidas.",
+      "studyTip": "Pegadinha clássica: a LDB NÃO regula toda forma de educação, apenas a educação escolar (Art. 1º, §1º).",
+      "id": "pss2027-le037",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Segundo o Art. 2º da LDB, quais são as três finalidades da educação nacional?",
+      "options": [
+        { "id": 1, "name": "Alfabetização, aprovação e certificação", "alias": "A" },
+        { "id": 2, "name": "Pleno desenvolvimento do educando, preparo para o exercício da cidadania e qualificação para o trabalho", "alias": "B" },
+        { "id": 3, "name": "Apenas a preparação para o mercado de trabalho", "alias": "C" },
+        { "id": 4, "name": "Somente a formação religiosa e moral do educando", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 2º da LDB estabelece que a educação, dever da família e do Estado, tem por finalidade o pleno desenvolvimento do educando, seu preparo para o exercício da cidadania e sua qualificação para o trabalho.",
+      "studyTip": "Art. 2º da LDB: 3 finalidades = desenvolvimento pleno + cidadania + qualificação para o trabalho. Base: liberdade e solidariedade humana.",
+      "id": "pss2027-le038",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O Art. 3º, inciso VII, da LDB estabelece como princípio do ensino nacional a:",
+      "options": [
+        { "id": 1, "name": "Centralização das decisões escolares na Secretaria de Educação", "alias": "A" },
+        { "id": 2, "name": "Gestão democrática do ensino público, na forma da lei e da legislação dos sistemas de ensino", "alias": "B" },
+        { "id": 3, "name": "Uniformidade obrigatória de métodos pedagógicos em todas as escolas", "alias": "C" },
+        { "id": 4, "name": "Exclusão dos pais das decisões escolares", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O princípio da gestão democrática do ensino público (Art. 3º, inciso VII) incentiva a participação da comunidade escolar (professores, alunos, pais e funcionários) na gestão da escola, por meio de conselhos escolares e processos eletivos.",
+      "studyTip": "Art. 3º da LDB lista 13 princípios do ensino; gestão democrática (inciso VII) é um dos mais cobrados em concursos.",
+      "id": "pss2027-le039",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Conforme o Art. 4º, inciso I, da LDB, a educação básica obrigatória e gratuita deve ser garantida pelo Estado para a faixa etária de:",
+      "options": [
+        { "id": 1, "name": "6 a 14 anos", "alias": "A" },
+        { "id": 2, "name": "4 a 17 anos", "alias": "B" },
+        { "id": 3, "name": "0 a 18 anos", "alias": "C" },
+        { "id": 4, "name": "7 a 18 anos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Desde a Emenda Constitucional nº 59/2009 e a Lei nº 12.796/2013, a educação básica obrigatória e gratuita passou a abranger a faixa etária dos 4 aos 17 anos, incluindo educação infantil, ensino fundamental e ensino médio.",
+      "studyTip": "Art. 4º, I, da LDB: educação básica obrigatória e gratuita = dos 4 aos 17 anos (não confundir com a antiga faixa de 6 a 14 anos, já superada).",
+      "id": "pss2027-le040",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O Art. 5º da LDB afirma que o acesso ao ensino obrigatório e gratuito é 'direito público subjetivo'. Isso significa que:",
+      "options": [
+        { "id": 1, "name": "O cidadão pode recorrer à Justiça para exigir esse direito quando ele for violado, inclusive por ação do Ministério Público", "alias": "A" },
+        { "id": 2, "name": "O direito à educação é apenas uma recomendação do Estado, sem força jurídica", "alias": "B" },
+        { "id": 3, "name": "Somente o próprio aluno pode buscar a Justiça, sem participação do Ministério Público", "alias": "C" },
+        { "id": 4, "name": "O direito se aplica exclusivamente ao ensino superior", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "Direito público subjetivo significa que o cidadão pode exigir judicialmente esse direito quando violado (por exemplo, se não conseguir vaga escolar). O §3º do Art. 5º prevê expressamente que compete ao Ministério Público atuar na defesa desse direito, promovendo ação judicial quando necessário.",
+      "studyTip": "Art. 5º da LDB: educação obrigatória = direito público subjetivo, exigível judicialmente; MP pode agir na defesa desse direito.",
+      "id": "pss2027-le041",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Segundo o Art. 6º da LDB, é dever dos pais ou responsáveis efetuar a matrícula das crianças na educação básica a partir de qual idade?",
+      "options": [
+        { "id": 1, "name": "6 anos de idade", "alias": "A" },
+        { "id": 2, "name": "4 anos de idade", "alias": "B" },
+        { "id": 3, "name": "3 anos de idade", "alias": "C" },
+        { "id": 4, "name": "7 anos de idade", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 6º da LDB estabelece que é dever dos pais ou responsáveis matricular as crianças na educação básica a partir dos 4 anos de idade, em consonância com a obrigatoriedade prevista no Art. 4º.",
+      "studyTip": "Art. 6º da LDB: dever da família de matricular a partir dos 4 anos. Descumprimento pode gerar notificação ao Conselho Tutelar.",
+      "id": "pss2027-le042",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O 'regime de colaboração', previsto no Art. 8º da LDB, refere-se a:",
+      "options": [
+        { "id": 1, "name": "Uma hierarquia rígida em que os Municípios devem obedecer diretamente à União em tudo", "alias": "A" },
+        { "id": 2, "name": "A organização descentralizada e cooperativa entre União, Estados, Distrito Federal e Municípios na estruturação de seus sistemas de ensino", "alias": "B" },
+        { "id": 3, "name": "A total independência entre os entes federativos, sem qualquer cooperação", "alias": "C" },
+        { "id": 4, "name": "A exclusão dos Municípios da organização do ensino", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O regime de colaboração (Art. 8º) determina que União, Estados, DF e Municípios organizem, de forma descentralizada mas cooperativa, seus respectivos sistemas de ensino, com a União coordenando, os Estados organizando os sistemas regionais e os Municípios executando políticas locais.",
+      "studyTip": "Regime de colaboração (Art. 8º): descentralização + cooperação entre entes federativos, cada um com autonomia mas atuando de forma articulada.",
+      "id": "pss2027-le043",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Entre as competências da União previstas no Art. 9º da LDB, está:",
+      "options": [
+        { "id": 1, "name": "Executar diretamente a matrícula de todos os alunos do Brasil", "alias": "A" },
+        { "id": 2, "name": "Elaborar o Plano Nacional de Educação (PNE) e estabelecer normas gerais da educação nacional", "alias": "B" },
+        { "id": 3, "name": "Substituir os Estados na oferta direta do ensino médio", "alias": "C" },
+        { "id": 4, "name": "Definir o calário escolar de cada município individualmente", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Entre as competências da União (Art. 9º), destacam-se elaborar o Plano Nacional de Educação (PNE), organizar o sistema federal de ensino, estabelecer as normas gerais da educação nacional e avaliar a qualidade do ensino em todo o país.",
+      "studyTip": "União (Art. 9º): coordena, normatiza e avalia o sistema educacional nacional; elabora o PNE.",
+      "id": "pss2027-le044",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Conforme o Art. 10 da LDB, os Estados e o Distrito Federal devem exercer, em relação às redes municipais de ensino, função:",
+      "options": [
+        { "id": 1, "name": "Punitiva e fiscalizadora exclusiva", "alias": "A" },
+        { "id": 2, "name": "Redistributiva e supletiva, assegurando prioritariamente o ensino fundamental e médio", "alias": "B" },
+        { "id": 3, "name": "Nenhuma função, pois os Municípios são totalmente independentes", "alias": "C" },
+        { "id": 4, "name": "Apenas administrativa, sem qualquer responsabilidade pedagógica", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 10 da LDB determina que os Estados e o DF exerçam função redistributiva (alocando recursos onde há maior necessidade) e supletiva (suprindo deficiências dos Municípios) em relação às redes municipais, assegurando com prioridade o ensino fundamental e o médio.",
+      "studyTip": "Estados/DF (Art. 10): função redistributiva + supletiva junto aos Municípios; prioridade = ensino fundamental e médio.",
+      "id": "pss2027-le045",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "Segundo o Art. 11 da LDB, os Municípios devem atuar prioritariamente em quais etapas da educação?",
+      "options": [
+        { "id": 1, "name": "Ensino médio e educação superior", "alias": "A" },
+        { "id": 2, "name": "Educação infantil e ensino fundamental", "alias": "B" },
+        { "id": 3, "name": "Somente educação de jovens e adultos", "alias": "C" },
+        { "id": 4, "name": "Exclusivamente educação profissional e tecnológica", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 11 da LDB estabelece que os Municípios atuam prioritariamente na educação infantil (creche e pré-escola) e no ensino fundamental, especialmente nos anos iniciais, organizando, mantendo e desenvolvendo seus próprios sistemas de ensino.",
+      "studyTip": "Municípios (Art. 11): prioridade = educação infantil + ensino fundamental (anos iniciais).",
+      "id": "pss2027-le046",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Lei nº 13.803/2019 alterou o inciso VIII do Art. 12 da LDB, que trata da notificação ao Conselho Tutelar sobre faltas escolares. Qual foi a principal mudança?",
+      "options": [
+        { "id": 1, "name": "O percentual de faltas para notificação subiu de 30% para 50%", "alias": "A" },
+        { "id": 2, "name": "O percentual de faltas para notificação caiu de 50% para 30% do permitido em lei", "alias": "B" },
+        { "id": 3, "name": "A notificação ao Conselho Tutelar foi extinta", "alias": "C" },
+        { "id": 4, "name": "A notificação passou a ser feita apenas ao Ministério Público", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei nº 13.803/2019 reduziu o percentual de faltas que obriga a escola a notificar o Conselho Tutelar: antes era necessário atingir 50% do percentual de faltas permitido em lei; com a alteração, esse limite caiu para 30%, tornando a notificação mais precoce.",
+      "studyTip": "Pegadinha frequente: Lei 13.803/2019 mudou o limite de notificação de faltas ao Conselho Tutelar de 50% para 30% (reduziu, não aumentou).",
+      "id": "pss2027-le047",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A Lei nº 13.796/2019, que incluiu o Art. 7º-A na LDB, assegura ao aluno o direito de:",
+      "options": [
+        { "id": 1, "name": "Faltar livremente a qualquer prova, sem necessidade de justificativa", "alias": "A" },
+        { "id": 2, "name": "Ausentar-se de prova ou aula marcada para dia vedado por sua religião, mediante requerimento prévio, com direito a prestação alternativa sem custos", "alias": "B" },
+        { "id": 3, "name": "Ser dispensado definitivamente da disciplina, sem qualquer atividade substitutiva", "alias": "C" },
+        { "id": 4, "name": "Escolher livremente a data de todas as suas provas no ano", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 7º-A, incluído pela Lei nº 13.796/2019, garante ao aluno, no exercício da liberdade de conciência e crença, o direito de se ausentar de provas ou aulas em dias vedados por sua religião, mediante requerimento prévio e motivado, com direito a prestação alternativa (prova de reposição ou trabalho escrito) sem custos, exceto no ensino militar.",
+      "studyTip": "Art. 7º-A (Lei 13.796/2019): ausência por motivo religioso + prestação alternativa sem custo; não se aplica ao ensino militar (Art. 83).",
+      "id": "pss2027-le048",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Lei nº 14.191/2021 incluiu na LDB o capítulo sobre educação bilíngue de surdos (Art. 60-A). Segundo essa lei, a educação bilíngue de surdos é oferecida em:",
+      "options": [
+        { "id": 1, "name": "Libras como primeira língua e português escrito como segunda língua", "alias": "A" },
+        { "id": 2, "name": "Apenas em português oral, sem uso de Libras", "alias": "B" },
+        { "id": 3, "name": "Somente em inglês, como língua estrangeira obrigatória", "alias": "C" },
+        { "id": 4, "name": "Exclusivamente em instituições privadas especializadas", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "O Art. 60-A, incluído pela Lei nº 14.191/2021, define a educação bilíngue de surdos como a modalidade de educação escolar oferecida em Libras (Língua Brasileira de Sinais) como primeira língua, e em português escrito, como segunda língua, podendo ocorrer em escolas bilíngues, classes bilíngues ou escolas comuns.",
+      "studyTip": "Lei 14.191/2021: educação bilíngue de surdos = Libras (1ª língua) + português escrito (2ª língua); início na educação infantil.",
+      "id": "pss2027-le049",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Lei nº 14.333/2022 alterou o Art. 4º, inciso IX, da LDB para definir 'padrões mínimos de qualidade do ensino'. O que passou a ser exigido nesse contexto?",
+      "options": [
+        { "id": 1, "name": "Apenas a contratação de mais professores, sem qualquer outra exigência", "alias": "A" },
+        { "id": 2, "name": "Mobiliário, equipamentos e materiais pedagógicos adequados à idade e às necessidades específicas de cada estudante, inclusive com deficiência", "alias": "B" },
+        { "id": 3, "name": "A eliminação de qualquer padrão mínimo de qualidade", "alias": "C" },
+        { "id": 4, "name": "A restrição de acesso a alunos com deficiência", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei nº 14.333/2022 detalhou o conceito de 'padrões mínimos de qualidade do ensino' (Art. 4º, IX), exigindo insumos indispensáveis ao processo de ensino-aprendizagem, incluindo mobiliário, equipamentos e materiais pedagógicos apropriados à idade e às necessidades específicas de cada estudante, inclusive os com deficiência.",
+      "studyTip": "Lei 14.333/2022: padrões mínimos de qualidade = insumos adequados à idade e às necessidades específicas (inclusive deficiência).",
+      "id": "pss2027-le050",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Lei nº 14.533/2023 incluiu o inciso XII no Art. 4º da LDB, tratando da 'educação digital'. Essa alteração garante:",
+      "options": [
+        { "id": 1, "name": "Conectividade à internet em alta velocidade para todas as instituições públicas de educação básica e superior, com foco no letramento digital", "alias": "A" },
+        { "id": 2, "name": "A proibição do uso de tecnologia nas escolas públicas", "alias": "B" },
+        { "id": 3, "name": "A substituição total das aulas presenciais por aulas digitais", "alias": "C" },
+        { "id": 4, "name": "O acesso à internet apenas para instituições privadas", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "O inciso XII do Art. 4º, incluído pela Lei nº 14.533/2023, garante a educação digital por meio da conectividade de todas as instituições públicas de educação básica e superior à internet em alta velocidade, adequada ao uso pedagógico, desenvolvendo competências de letramento digital, criação de conteúdos, comunicação, colaboração e segurança.",
+      "studyTip": "Lei 14.533/2023 (Art. 4º, XII): educação digital = conectividade + letramento digital para escolas públicas.",
+      "id": "pss2027-le051",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Lei nº 14.945/2024, que reformulou as diretrizes do ensino médio na LDB, estabeleceu que a formação geral básica (Art. 35-C) deve ter carga horária mínima total de:",
+      "options": [
+        { "id": 1, "name": "600 horas", "alias": "A" },
+        { "id": 2, "name": "1.000 horas", "alias": "B" },
+        { "id": 3, "name": "2.400 horas", "alias": "C" },
+        { "id": 4, "name": "4.000 horas", "alias": "D" }
+      ],
+      "correct": "C",
+      "explanation": "O Art. 35-C, com redação dada pela Lei nº 14.945/2024, estabelece que a formação geral básica do ensino médio terá carga horária mínima total de 2.400 horas, articulada com a Base Nacional Comum Curricular. Os itinerários formativos (Art. 36), por sua vez, terão carga horária mínima de 600 horas.",
+      "studyTip": "Lei 14.945/2024: formação geral básica = 2.400h mínimas; itinerários formativos = 600h mínimas. Não confundir os dois valores.",
+      "id": "pss2027-le052",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A Lei nº 15.231/2025 alterou o Art. 12, inciso VIII, da LDB para ampliar as obrigações de notificação ao Conselho Tutelar pelas escolas. Além das faltas excessivas, o que mais passou a ser notificado?",
+      "options": [
+        { "id": 1, "name": "Apenas o desempenho acadêmico insuficiente dos alunos", "alias": "A" },
+        { "id": 2, "name": "Ocorrências e dados relativos a casos de violência envolvendo os alunos, especialmente automutilação, tentativas de suícidio e suícidíos consumados", "alias": "B" },
+        { "id": 3, "name": "O uso de uniforme escolar inadequado", "alias": "C" },
+        { "id": 4, "name": "A participação em atividades extracurriculares", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei nº 15.231/2025 acrescentou à obrigação de notificação ao Conselho Tutelar (Art. 12, VIII, alínea b) a comunicação de ocorrências e dados relativos a casos de violência envolvendo os alunos, especialmente automutilações, tentativas de suícidio e suícidíos consumados, além da já prevista notificação por excesso de faltas.",
+      "studyTip": "Lei 15.231/2025: escolas devem notificar o Conselho Tutelar também sobre violência, automutilação e suícidio (não apenas faltas).",
+      "id": "pss2027-le053",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Lei nº 15.326/2026, uma das alterações mais recentes da LDB, trouxe qual novidade em relação aos professores da educação infantil?",
+      "options": [
+        { "id": 1, "name": "Passaram a ser reconhecidos formalmente como profissionais do magistério, independentemente da designação do cargo que ocupam", "alias": "A" },
+        { "id": 2, "name": "Deixaram de precisar de formação mínima para atuar", "alias": "B" },
+        { "id": 3, "name": "Foram excluídos do Plano de Carreira do Magistério", "alias": "C" },
+        { "id": 4, "name": "Passaram a atuar exclusivamente em instituições privadas", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "A Lei nº 15.326/2026 alterou a Lei nº 11.738/2008 e o Art. 61 da LDB para reconhecer expressamente os professores da educação infantil como profissionais do magistério, respeitando o princípio da integralidade entre cuidar, brincar e educar, exigindo formação no magistério ou em curso de nível superior e aprovação em concurso público.",
+      "studyTip": "Lei 15.326/2026: professores da educação infantil = reconhecidos como profissionais do magistério (Art. 61 da LDB), exigida formação mínima e concurso público.",
+      "id": "pss2027-le054",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
     }
   ]
 }
