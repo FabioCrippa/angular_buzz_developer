@@ -5,8 +5,8 @@
     "name": "Legislação Educacional",
     "description": "Questões sobre LDB, ECA, Lei Brasileira de Inclusão, Currículo Paulista, BNCC e normas sobre Educação Especial",
     "difficulty": "mista",
-    "lastUpdated": "2026-07-20",
-    "questionCount": 14,
+    "lastUpdated": "2026-07-25",
+    "questionCount": 34,
     "tags": [
       "pss-2027",
       "legislação-educacional",
@@ -354,6 +354,306 @@
       "id": "pss2027-le014",
       "category": "legislacao-educacional",
       "difficulty": "dificil"
+    },
+    {
+      "question": "O ECA (Estatuto da Criança e do Adolescente) foi sancionado em 13 de julho de 1990, substituindo qual legislação anterior?",
+      "options": [
+        { "id": 1, "name": "O Código Civil de 1916", "alias": "A" },
+        { "id": 2, "name": "O Código de Menores", "alias": "B" },
+        { "id": 3, "name": "A Lei de Diretrizes e Bases", "alias": "C" },
+        { "id": 4, "name": "A Consolidação das Leis do Trabalho", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O ECA (Lei nº 8.069/1990) substituiu o antigo Código de Menores, trazendo uma mudança de paradigma: a criança e o adolescente passaram a ser vistos como sujeitos de direitos, e não apenas como objetos de proteção/tutela do Estado.",
+      "studyTip": "ECA = Lei 8.069/1990, sancionado em 13/07/1990, substitui o Código de Menores. Paradigma: sujeitos de direitos (não mais objetos de tutela).",
+      "id": "pss2027-le015",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O ECA é composto por quantos artigos e está fundamentado em quais artigos da Constituição Federal de 1988?",
+      "options": [
+        { "id": 1, "name": "150 artigos; Art. 5º e 6º da CF", "alias": "A" },
+        { "id": 2, "name": "267 artigos; Art. 227 e 228 da CF", "alias": "B" },
+        { "id": 3, "name": "100 artigos; Art. 205 e 206 da CF", "alias": "C" },
+        { "id": 4, "name": "300 artigos; Art. 1º e 3º da CF", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O ECA é composto por 267 artigos e tem como base os Artigos 227 e 228 da Constituição Federal de 1988, que asseguram a proteção integral da criança e do adolescente como direito humano básico.",
+      "studyTip": "ECA = 267 artigos; base constitucional = Art. 227 e 228 da CF/88.",
+      "id": "pss2027-le016",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Segundo o Art. 2º do ECA, qual é o critério que diferencia criança de adolescente?",
+      "options": [
+        { "id": 1, "name": "Criança: até 10 anos; Adolescente: 11 a 18 anos", "alias": "A" },
+        { "id": 2, "name": "Criança: até 12 anos incompletos; Adolescente: 12 a 18 anos", "alias": "B" },
+        { "id": 3, "name": "Criança: até 14 anos; Adolescente: 14 a 21 anos", "alias": "C" },
+        { "id": 4, "name": "Não há distinção etária no ECA", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Conforme o Art. 2º do ECA, é considerada criança a pessoa até 12 anos de idade incompletos, e adolescente aquela entre 12 e 18 anos de idade.",
+      "studyTip": "Art. 2º do ECA: criança = até 12 anos incompletos; adolescente = 12 a 18 anos.",
+      "id": "pss2027-le017",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O princípio da proteção integral, um dos pilares do ECA, estabelece que:",
+      "options": [
+        { "id": 1, "name": "Apenas o Estado é responsável pela proteção de crianças e adolescentes", "alias": "A" },
+        { "id": 2, "name": "Crianças e adolescentes devem ter proteção completa garantida pelo Estado, pela família e pela sociedade", "alias": "B" },
+        { "id": 3, "name": "A proteção se limita apenas à esfera educacional", "alias": "C" },
+        { "id": 4, "name": "A proteção é responsabilidade exclusiva da família", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O princípio da proteção integral estabelece que a proteção de crianças e adolescentes é dever compartilhado entre Estado, família e sociedade, abrangendo todas as áreas da vida do menor (educação, saúde, segurança, convivência familiar e dignidade).",
+      "studyTip": "Proteção integral = responsabilidade compartilhada (Estado + família + sociedade), em todas as esferas da vida da criança/adolescente.",
+      "id": "pss2027-le018",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O princípio da prioridade absoluta, previsto no ECA, determina que:",
+      "options": [
+        { "id": 1, "name": "As demandas de crianças e adolescentes devem ser atendidas com urgência e precedência nas ações do Estado e da sociedade", "alias": "A" },
+        { "id": 2, "name": "Adultos idosos têm precedência sobre crianças em qualquer política pública", "alias": "B" },
+        { "id": 3, "name": "A prioridade se aplica apenas em situações de calamidade pública", "alias": "C" },
+        { "id": 4, "name": "Apenas o Judiciário deve observar esse princípio", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "O princípio da prioridade absoluta (Art. 4º do ECA) determina que, em todas as ações do Estado e da sociedade nas áreas de educação, saúde, segurança e assistência social, os direitos das crianças e adolescentes devem ser tratados com precedência e urgência.",
+      "studyTip": "Prioridade absoluta (Art. 4º do ECA): precedência de atendimento, preferência na formulação de políticas públicas e destinação privilegiada de recursos para infância e juventude.",
+      "id": "pss2027-le019",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "De acordo com o ECA, quando o Estado pode intervir na família, retirando temporariamente a criança ou o adolescente de sua convivência?",
+      "options": [
+        { "id": 1, "name": "Sempre que a família for de baixa renda", "alias": "A" },
+        { "id": 2, "name": "Em situações extremas de risco à vida ou à saúde, ou quando a família não puder cumprir suas responsabilidades (Art. 98 do ECA)", "alias": "B" },
+        { "id": 3, "name": "Nunca, pois a família tem autoridade absoluta sobre os filhos", "alias": "C" },
+        { "id": 4, "name": "Apenas por decisão de vizinhos ou terceiros, sem necessidade de análise técnica", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 98 do ECA prevê a intervenção do Estado quando há risco de vida ou de saúde para a criança/adolescente, ou quando a família não consegue cumprir suas responsabilidades, sempre priorizando, quando possível, a reintegração familiar.",
+      "studyTip": "Art. 98 do ECA: intervenção estatal apenas em situações de risco comprovado, nunca por critério de renda familiar.",
+      "id": "pss2027-le020",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O Conselho Tutelar, órgão previsto no ECA, é composto por:",
+      "options": [
+        { "id": 1, "name": "Três membros nomeados pelo prefeito", "alias": "A" },
+        { "id": 2, "name": "Cinco conselheiros eleitos pela comunidade, com mandato renovado a cada quatro anos", "alias": "B" },
+        { "id": 3, "name": "Sete membros indicados pelo Ministério Público", "alias": "C" },
+        { "id": 4, "name": "Um único conselheiro nomeado pelo juiz da infância", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Conselho Tutelar é composto por 5 conselheiros, eleitos de forma democrática e direta pela comunidade, com mandato de 4 anos, visando representar de forma plural os interesses da sociedade local.",
+      "studyTip": "Conselho Tutelar = 5 conselheiros, eleitos pela comunidade, mandato de 4 anos.",
+      "id": "pss2027-le021",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Assinale a alternativa que apresenta corretamente uma atribuição do Conselho Tutelar prevista no ECA:",
+      "options": [
+        { "id": 1, "name": "Julgar e sentenciar adolescentes infratores", "alias": "A" },
+        { "id": 2, "name": "Aplicar medidas protetivas e encaminhar casos graves ao Ministério Público ou Judiciário", "alias": "B" },
+        { "id": 3, "name": "Substituir integralmente a atuação da família", "alias": "C" },
+        { "id": 4, "name": "Determinar penas de internação sem participação do Judiciário", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Conselho Tutelar atende casos de violação de direitos e aplica medidas protetivas (como acolhimento institucional ou encaminhamento a serviços de saúde), mas não tem poder jurisdicional: casos mais graves devem ser encaminhados ao Ministério Público ou ao Judiciário.",
+      "studyTip": "Conselho Tutelar aplica medidas protetivas administrativas, mas NÃO julga nem sentencia — isso é atribuição do Judiciário.",
+      "id": "pss2027-le022",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "No Sistema de Justiça da Infância e Juventude previsto no ECA, qual órgão é responsável por oferecer assistência jurídica gratuita a crianças e adolescentes em situação de vulnerabilidade que não podem pagar advogado particular?",
+      "options": [
+        { "id": 1, "name": "Conselho Tutelar", "alias": "A" },
+        { "id": 2, "name": "Defensoria Pública", "alias": "B" },
+        { "id": 3, "name": "Secretaria de Assistência Social", "alias": "C" },
+        { "id": 4, "name": "Polícia Civil", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Defensoria Pública é o órgão responsável por garantir assistência jurídica gratuita a crianças e adolescentes em situação de vulnerabilidade social, assegurando o acesso à justiça e o acompanhamento de processos como adoção e medidas protetivas.",
+      "studyTip": "Sistema de Justiça: Judiciário (decide), Ministério Público (fiscaliza e defende direitos), Defensoria Pública (assistência jurídica gratuita).",
+      "id": "pss2027-le023",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "As medidas socioeducativas previstas no ECA (Art. 112 a 118), aplicáveis a adolescentes que cometem atos infracionais, têm como principal finalidade:",
+      "options": [
+        { "id": 1, "name": "Punir de forma equivalente ao sistema penal de adultos", "alias": "A" },
+        { "id": 2, "name": "Promover a ressocialização do adolescente, considerando a gravidade do ato e sua capacidade de recuperação", "alias": "B" },
+        { "id": 3, "name": "Excluir definitivamente o adolescente do convívio social", "alias": "C" },
+        { "id": 4, "name": "Transferir a responsabilidade da família para o Estado de forma permanente", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "As medidas socioeducativas não são penas equivalentes às do sistema penal adulto; têm caráter pedagógico e visam à ressocialização do adolescente, levando em conta a gravidade da infração, a idade e a possibilidade de recuperação.",
+      "studyTip": "Medidas socioeducativas (Art. 112-118 do ECA) = caráter educativo/ressocializador, não punitivo no sentido penal tradicional.",
+      "id": "pss2027-le024",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Assinale a alternativa que apresenta, em ordem crescente de gravidade, medidas socioeducativas previstas no ECA:",
+      "options": [
+        { "id": 1, "name": "Internação, liberdade assistida, advertência", "alias": "A" },
+        { "id": 2, "name": "Advertência, liberdade assistida, semiliberdade, internação", "alias": "B" },
+        { "id": 3, "name": "Semiliberdade, advertência, internação, liberdade assistida", "alias": "C" },
+        { "id": 4, "name": "Internação, semiliberdade, advertência, liberdade assistida", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "As medidas socioeducativas vão da mais leve para a mais grave: advertência (repreensão formal), liberdade assistida (acompanhamento por profissional), prestação de serviços à comunidade, semiliberdade (regime intermediário) e internação (privação de liberdade, medida mais grave).",
+      "studyTip": "Ordem de gravidade: advertência < liberdade assistida < prestação de serviços < semiliberdade < internação.",
+      "id": "pss2027-le025",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "O direito à convivência familiar e comunitária, previsto no Art. 19 do ECA, estabelece que:",
+      "options": [
+        { "id": 1, "name": "A criança deve ser sempre encaminhada a instituições de acolhimento, independentemente da situação familiar", "alias": "A" },
+        { "id": 2, "name": "A convivência com a família é prioridade, sendo o afastamento uma medida excepcional e temporária", "alias": "B" },
+        { "id": 3, "name": "A comunidade não tem responsabilidade nesse direito", "alias": "C" },
+        { "id": 4, "name": "Esse direito se aplica apenas a crianças, não a adolescentes", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O Art. 19 do ECA estabelece a convivência familiar como prioridade absoluta; o afastamento da família só deve ocorrer em situações excepcionais de risco, e de forma temporária, sempre buscando a reintegração familiar quando possível.",
+      "studyTip": "Art. 19 do ECA: convivência familiar é regra; afastamento é excepcional, temporário e visa à reintegração.",
+      "id": "pss2027-le026",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "No contexto do ECA, a exploração sexual de crianças e adolescentes se diferencia do abuso sexual principalmente porque:",
+      "options": [
+        { "id": 1, "name": "A exploração sexual envolve necessariamente interesse financeiro ou econômico na utilização do corpo da vítima", "alias": "A" },
+        { "id": 2, "name": "O abuso sexual só pode ocorrer fora do ambiente familiar", "alias": "B" },
+        { "id": 3, "name": "A exploração sexual não é considerada crime pelo ECA", "alias": "C" },
+        { "id": 4, "name": "Não há diferença entre os dois conceitos", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "A exploração sexual envolve a utilização do corpo da criança ou adolescente para fins sexuais com interesse financeiro/econômico (pornografia infantil, prostituição), enquanto o abuso sexual consiste em forçar ou coagir a vítima a atos sexuais, podendo ocorrer sem finalidade comercial, muitas vezes por pessoa de confiança.",
+      "studyTip": "Exploração sexual = interesse financeiro/econômico; abuso sexual = coação a atos sexuais, sem necessariamente envolver lucro.",
+      "id": "pss2027-le027",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "Segundo o ECA, o trabalho de adolescentes a partir de 14 anos, em atividades como estágio e aprendizagem, é permitido desde que:",
+      "options": [
+        { "id": 1, "name": "Não haja qualquer tipo de fiscalização", "alias": "A" },
+        { "id": 2, "name": "Sejam atividades leves, educativas, com horário reduzido e que não comprometam o direito à educação", "alias": "B" },
+        { "id": 3, "name": "O adolescente trabalhe em jornada integral, sem restrições", "alias": "C" },
+        { "id": 4, "name": "Substitua totalmente a frequência escolar", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O ECA permite, a partir dos 14 anos, o trabalho na condição de aprendiz ou estágio, desde que sejam atividades leves, com horário compatível e que não prejudiquem a frequência e o desempenho escolar do adolescente.",
+      "studyTip": "Trabalho de adolescentes (14+): apenas aprendizagem/estágio, sem comprometer a educação — nunca jornada integral que substitua a escola.",
+      "id": "pss2027-le028",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Crianças e adolescentes em situação de rua, segundo o ECA, mantêm seus direitos fundamentais garantidos. A prioridade das medidas de proteção nesses casos é:",
+      "options": [
+        { "id": 1, "name": "O encaminhamento imediato e definitivo para adoção, sem análise prévia", "alias": "A" },
+        { "id": 2, "name": "A reintegração familiar quando possível, ou o encaminhamento a programas de acolhimento e acompanhamento social e psicológico", "alias": "B" },
+        { "id": 3, "name": "A responsabilização penal do menor pela situação de rua", "alias": "C" },
+        { "id": 4, "name": "A retirada da criança do território, sem análise de vínculos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O ECA prioriza a reintegração familiar sempre que possível; quando isso não é viável, prevê o encaminhamento a programas de acolhimento institucional, com acompanhamento social e psicológico, buscando reverter a situação de vulnerabilidade.",
+      "studyTip": "Situação de rua: prioridade é sempre a reintegração familiar; acolhimento institucional é medida complementar, não punitiva.",
+      "id": "pss2027-le029",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A chamada 'ECA Digital' (Lei nº 15.211/2025), com vigência e fiscalização a partir de março de 2026, tem como principal finalidade:",
+      "options": [
+        { "id": 1, "name": "Revogar integralmente o ECA tradicional (Lei nº 8.069/1990)", "alias": "A" },
+        { "id": 2, "name": "Complementar o ECA, estabelecendo regras específicas de proteção de crianças e adolescentes no ambiente digital", "alias": "B" },
+        { "id": 3, "name": "Regular exclusivamente o uso de celulares dentro das escolas", "alias": "C" },
+        { "id": 4, "name": "Substituir a LGPD para todos os usuários da internet", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A ECA Digital (Lei nº 15.211/2025) não substitui nem revoga o ECA tradicional; ela o complementa, estabelecendo deveres específicos para plataformas digitais, redes sociais, jogos on-line e aplicativos acessados por crianças e adolescentes.",
+      "studyTip": "Pegadinha clássica: 'ECA Digital revogou o ECA' é FALSO. A base legal continua sendo a Lei 8.069/1990; a nova lei apenas complementa para o ambiente digital.",
+      "id": "pss2027-le030",
+      "category": "legislacao-educacional",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Segundo a ECA Digital, no que se refere à verificação de idade dos usuários menores em plataformas digitais, é correto afirmar que:",
+      "options": [
+        { "id": 1, "name": "Basta que o usuário declare, por autodeclaração, que é maior de idade", "alias": "A" },
+        { "id": 2, "name": "As plataformas devem utilizar mecanismos razoáveis e proporcionais de verificação de idade, não podendo confiar apenas na autodeclaração", "alias": "B" },
+        { "id": 3, "name": "A verificação de idade é de responsabilidade exclusiva dos pais, sem qualquer dever da plataforma", "alias": "C" },
+        { "id": 4, "name": "A lei não trata desse tema", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A ECA Digital exige que as plataformas adotem mecanismos razoáveis e proporcionais para verificar a idade dos usuários, sendo insuficiente a mera autodeclaração de maioridade, prática comum antes da nova legislação.",
+      "studyTip": "Pegadinha comum: 'basta o usuário declarar que é maior de idade' — ERRADO segundo a ECA Digital.",
+      "id": "pss2027-le031",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "De acordo com a ECA Digital, as ferramentas de supervisão e controle parental em plataformas digitais devem ser oferecidas:",
+      "options": [
+        { "id": 1, "name": "Apenas se solicitadas judicialmente pelos pais", "alias": "A" },
+        { "id": 2, "name": "Como dever das próprias plataformas digitais, e não apenas como responsabilidade exclusiva dos pais", "alias": "B" },
+        { "id": 3, "name": "Somente para adolescentes maiores de 16 anos", "alias": "C" },
+        { "id": 4, "name": "Exclusivamente por meio de aplicativos de terceiros pagos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A ECA Digital atribui às próprias plataformas o dever de oferecer ferramentas de supervisão parental, contas vinculadas a responsáveis e controle de tempo/conteúdo/interações, e não apenas transfere essa responsabilidade integralmente aos pais.",
+      "studyTip": "Pegadinha: 'só os pais são responsáveis' — ERRADO. O controle parental é dever também das plataformas, segundo a ECA Digital.",
+      "id": "pss2027-le032",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Segundo a ECA Digital, plataformas digitais com mais de um milhão de usuários menores de idade têm, entre outras, a obrigação de:",
+      "options": [
+        { "id": 1, "name": "Publicar relatórios de transparência e manter canais acessíveis de denúncia", "alias": "A" },
+        { "id": 2, "name": "Restringir o acesso de todos os usuários adultos", "alias": "B" },
+        { "id": 3, "name": "Ficar isentas de qualquer fiscalização por parte de órgãos públicos", "alias": "C" },
+        { "id": 4, "name": "Eliminar totalmente a coleta de qualquer tipo de dado", "alias": "D" }
+      ],
+      "correct": "A",
+      "explanation": "Plataformas com grande número de usuários menores devem adotar políticas específicas de proteção, publicar relatórios de transparência e manter canais acessíveis de denúncia, sendo fiscalizadas por órgãos competentes, incluindo a ANPD.",
+      "studyTip": "Plataformas com +1 milhão de usuários menores: políticas de proteção + relatórios de transparência + canais de denúncia + fiscalização pela ANPD.",
+      "id": "pss2027-le033",
+      "category": "legislacao-educacional",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A afirmação 'a ECA Digital vale apenas para redes sociais' está:",
+      "options": [
+        { "id": 1, "name": "Correta, pois a lei se restringe exclusivamente às redes sociais", "alias": "A" },
+        { "id": 2, "name": "Incorreta, pois a lei vale para qualquer serviço digital acessado por menores (redes sociais, jogos, aplicativos, plataformas em geral)", "alias": "B" },
+        { "id": 3, "name": "Correta, pois jogos on-line não são abrangidos pela lei", "alias": "C" },
+        { "id": 4, "name": "Incorreta, pois a lei vale apenas para aplicativos de mensagens", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A ECA Digital não se limita às redes sociais: ela se aplica a qualquer serviço digital acessado por crianças e adolescentes, incluindo jogos on-line, aplicativos e plataformas digitais em geral.",
+      "studyTip": "Pegadinha: 'a lei vale só para redes sociais' — ERRADO. Abrange qualquer serviço digital acessado por menores.",
+      "id": "pss2027-le034",
+      "category": "legislacao-educacional",
+      "difficulty": "medio"
     }
   ]
 }
