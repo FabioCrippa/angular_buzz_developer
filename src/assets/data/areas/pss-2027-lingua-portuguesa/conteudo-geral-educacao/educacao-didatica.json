@@ -5,8 +5,8 @@
     "name": "Educação e Didática",
     "description": "Questões sobre princípios pedagógicos, avaliação da aprendizagem, metodologias de ensino, inclusão e diversidade",
     "difficulty": "mista",
-    "lastUpdated": "2026-07-20",
-    "questionCount": 15,
+    "lastUpdated": "2026-08-02",
+    "questionCount": 40,
     "tags": [
       "pss-2027",
       "educação",
@@ -369,6 +369,381 @@
       "id": "pss2027-ed015",
       "category": "educacao-didatica",
       "difficulty": "dificil"
+    },
+    {
+      "question": "A Teoria das Inteligências Múltiplas de Howard Gardner propõe que:",
+      "options": [
+        { "id": 1, "name": "Existe apenas um tipo de inteligência, medida por testes de QI", "alias": "A" },
+        { "id": 2, "name": "As pessoas possuem múltiplas formas de inteligência, como inteligência linguística, lógico-matemática, musical, etc.", "alias": "B" },
+        { "id": 3, "name": "A inteligência é totalmente determinada pela genética", "alias": "C" },
+        { "id": 4, "name": "Alguns alunos são naturalmente incapazes de aprender", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Gardner propôs que a inteligência não é unitária, mas múltipla: inteligência linguística, lógico-matemática, espacial, corporal-cinestésica, musical, interpessoal, intrapessoal e naturística. Isso revolucionou a educação ao valorizar diferentes formas de talento.",
+      "studyTip": "Implicações pedagógicas: diversificar estratégias e reconhecer talentos variados; nem todos aprendem do mesmo jeito.",
+      "id": "pss2027-ed016",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Pedagogia de Paulo Freire enfatiza qual aspecto fundamental no processo educativo?",
+      "options": [
+        { "id": 1, "name": "Educação bancária: professor deposita conhecimento passivamente no aluno", "alias": "A" },
+        { "id": 2, "name": "Conscientização e libertação: aluno como sujeito ativo que reflete criticamente sobre realidade e transforma-a", "alias": "B" },
+        { "id": 3, "name": "Mera transmissão de conteúdo desconectado da realidade", "alias": "C" },
+        { "id": 4, "name": "Educação excludente para apenas alguns grupos sociais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Paulo Freire critica a 'educação bancária' (professor deposita, aluno recebe passivamente) e propõe educação para a conscientização, onde aluno é sujeito, reflete criticamente sobre sua realidade e atua para transformá-la.",
+      "studyTip": "Freire: educação como prática da liberdade; diálogo entre educador e educando; reflexão crítica sobre a realidade.",
+      "id": "pss2027-ed017",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Pedagogia Histórico-Crítica, defendida por Dermeval Saviani, tem como fundamento:",
+      "options": [
+        { "id": 1, "name": "Educação desconectada da histórica social", "alias": "A" },
+        { "id": 2, "name": "Transmissão crítica do conhecimento científico acumulado historicamente, considerando a contradição social", "alias": "B" },
+        { "id": 3, "name": "Apenas adaptação do aluno ao status quo", "alias": "C" },
+        { "id": 4, "name": "Educação baseada unicamente em conteúdos formais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Saviani defende que a educação deve possibilitar ao aluno apropriação dos conhecimentos científicos historicamente acumulados, considerando as contradições sociais e capacitando-o para transformar a realidade.",
+      "studyTip": "Pedagogia Histórico-Crítica: conhecimento científico + contexto histórico-social + transformação da realidade.",
+      "id": "pss2027-ed018",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O modelo de Piaget sobre estágios de desenvolvimento cognitivo estabelece que as crianças passam por períodos qualitativamente diferentes. O período pré-operatório (2-7 anos) caracteriza-se por:",
+      "options": [
+        { "id": 1, "name": "Pensamento exclusivamente lógico e abstrato", "alias": "A" },
+        { "id": 2, "name": "Pensamento egocêntrico, uso de símbolos e linguagem, mas ainda sem lógica operatória", "alias": "B" },
+        { "id": 3, "name": "Pensamento completamente concreto", "alias": "C" },
+        { "id": 4, "name": "Ausência total de pensamento", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "No período pré-operatório (2-7 anos), a criança usa representação simbólica (falar, desenhar), mas seu pensamento é egocêntrico (vê mundo do seu ponto de vista), não reversível e centrado em uma característica por vez.",
+      "studyTip": "Piaget: sensório-motor (0-2) → pré-operatório (2-7) → operatório concreto (7-11) → operatório formal (11+).",
+      "id": "pss2027-ed019",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "No contexto da educação inclusiva, qual é a diferença entre 'integração' e 'inclusão'?",
+      "options": [
+        { "id": 1, "name": "Não há diferença; os termos são sinônimos", "alias": "A" },
+        { "id": 2, "name": "Integração: aluno se adapta ao sistema existente. Inclusão: sistema se adapta para acolher e respeitar diferenças", "alias": "B" },
+        { "id": 3, "name": "Integração é mais moderna que inclusão", "alias": "C" },
+        { "id": 4, "name": "Inclusão significa remover todos os desafios", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Integração é inserção do aluno em um sistema que não muda; inclusão é a modificação do sistema para acolher e respeitar a diversidade. A inclusão é o conceito mais avançado e humanizado.",
+      "studyTip": "Integração: 'saia da sua diferença e entre em nosso sistema'. Inclusão: 'nós mudamos para recebê-lo com sua diferença'.",
+      "id": "pss2027-ed020",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O conceito de 'andaimento' (scaffolding) no ensino refere-se ao:",
+      "options": [
+        { "id": 1, "name": "Estrutura física da escola", "alias": "A" },
+        { "id": 2, "name": "Suporte oferecido temporariamente pelo professor para que o aluno realize uma tarefa, reduzindo esse suporte gradualmente conforme o aluno progride", "alias": "B" },
+        { "id": 3, "name": "Avaliação somativa ao final do período", "alias": "C" },
+        { "id": 4, "name": "Punição de alunos com baixo desempenho", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Andaimento é uma estratégia de mediação: o professor oferece suporte adequado (dicas, modelagem, questões) que é gradualmente reduzido conforme o aluno desenvolve autonomia, movendo-o da zona de desenvolvimento proximal ao desenvolvimento real.",
+      "studyTip": "Andaimento (Vygotsky): suporte temporário e graduado; reduz-se conforme o aluno progride; move o aluno de dependência para autonomia.",
+      "id": "pss2027-ed021",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "Qual é a importância da Autoavaliação no processo de ensino-aprendizagem inclusivo?",
+      "options": [
+        { "id": 1, "name": "A autoavaliação não é importante; apenas o professor deve avaliar", "alias": "A" },
+        { "id": 2, "name": "Promove autonomia, metacognição e responsabilidade do aluno sobre seu próprio processo de aprendizagem", "alias": "B" },
+        { "id": 3, "name": "Substitui completamente a avaliação do professor", "alias": "C" },
+        { "id": 4, "name": "É usada apenas para punir alunos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A autoavaliação desenvolve em o aluno a capacidade de refletir sobre sua aprendizagem, reconhecer avanços e dificuldades, tomar decisões sobre seu processo e desenvolver autonomia — essencial em educação inclusiva.",
+      "studyTip": "Autoavaliação: ferramenta pedagógica para autonomia e metacognição; deve ser orientada pelo professor; complementa a avaliação externa.",
+      "id": "pss2027-ed022",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Educação Étnico-Racial, conforme as Leis nº 10.639/2003 e 11.645/2008, obriga o ensino de:",
+      "options": [
+        { "id": 1, "name": "Apenas a história dos povos indígenas", "alias": "A" },
+        { "id": 2, "name": "História e cultura afro-brasileira, indígena e a luta contra preconceitos raciais em toda a educação básica", "alias": "B" },
+        { "id": 3, "name": "Apenas para alunos de determinadas raças", "alias": "C" },
+        { "id": 4, "name": "Nenhum conteúdo relacionado à diversidade", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "As Leis nº 10.639/2003 e 11.645/2008 obrigam o ensino de história e cultura afro-brasileira e indígena em toda a educação básica (especialmente em Língua Portuguesa, História, Artes), promovendo identidade positiva e combatendo preconceitos.",
+      "studyTip": "Lei 10.639/2003 (história e cultura afro-brasileira) + Lei 11.645/2008 (história e cultura indígena) = obrigatoriedade em toda educação básica.",
+      "id": "pss2027-ed023",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "Na perspectiva de educação para relações étnico-raciais, qual é o papel do professor?",
+      "options": [
+        { "id": 1, "name": "Ignorar questões de raça e etnia para 'tratar todos igual'", "alias": "A" },
+        { "id": 2, "name": "Desconstruir estereótipos, valorizar narrativas plurais, afirmar identidades positivas e combater racismo e preconceitos", "alias": "B" },
+        { "id": 3, "name": "Ensinar que uma raça é superior a outras", "alias": "C" },
+        { "id": 4, "name": "Apenas cumprir calendário de datas comemorativas", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A educação para relações étnico-raciais exige que o professor seja mediador ativo: questione estereótipos, reconheça contribuições de diferentes povos, afirme identidades positivas, e trabalhe explicitamente contra discriminação e racismo estrutural.",
+      "studyTip": "Educação para relações étnico-raciais ≠ 'colorblindness' (ignorar raça); deve ser intencional, crítica e antirracista.",
+      "id": "pss2027-ed024",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Pedagogia de Projetos como metodologia de ensino caracteriza-se por:",
+      "options": [
+        { "id": 1, "name": "Aulas expositivas do professor sem participação do aluno", "alias": "A" },
+        { "id": 2, "name": "Investigações colaborativas em torno de questões/problemas significativos que resultam em produtos concretos", "alias": "B" },
+        { "id": 3, "name": "Apenas atividades pontuais desconectadas", "alias": "C" },
+        { "id": 4, "name": "Projeto que é feito exclusivamente pelo professor", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Pedagogia de Projetos envolve investigações aprofundadas sobre temas significativos, onde alunos colaboram, pesquisam, discutem e geram produtos tangíveis, desenvolvendo autonomia, pensamento crítico e habilidades transversais.",
+      "studyTip": "Pedagogia de Projetos: questão-problema + investigação colaborativa + produto + reflexão = aprendizagem profunda e significativa.",
+      "id": "pss2027-ed025",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Aprendizagem Baseada em Problemas (ABP/PBL) diferencia-se da Pedagogia de Projetos principalmente porque:",
+      "options": [
+        { "id": 1, "name": "São metodologias idênticas, sem qualquer diferença", "alias": "A" },
+        { "id": 2, "name": "ABP começa com um problema bem definido; Pedagogia de Projetos começa com uma questão ampla e gera produto palpável", "alias": "B" },
+        { "id": 3, "name": "ABP é obsoleta e não é mais usada", "alias": "C" },
+        { "id": 4, "name": "Pedagogia de Projetos não desenvolve pensamento crítico", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "ABP usa problema específico como ponto de partida para aprendizagem de conteúdos. Pedagogia de Projetos parte de questões amplas e resulta em produto concreto visível. Ambas são ativas, mas com nuances diferentes.",
+      "studyTip": "ABP = foco em resolver problema específico e aprender conteúdos. Projetos = foco em criar produto/entender fenômeno amplo.",
+      "id": "pss2027-ed026",
+      "category": "educacao-didatica",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "O uso de Rubricas como instrumento avaliativo oferece qual vantagem pedagógica?",
+      "options": [
+        { "id": 1, "name": "Nenhuma; rubricas são apenas perda de tempo", "alias": "A" },
+        { "id": 2, "name": "Clarifica critérios, oferece feedback específico e promove consistência nas avaliações", "alias": "B" },
+        { "id": 3, "name": "Substitui integralmente todas as outras formas de avaliação", "alias": "C" },
+        { "id": 4, "name": "Aumenta arbitrariedade nas notas", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Rubricas especificam critérios e níveis de desempenho de forma clara e mensurável. Isso promove avaliação mais justa, transparente e oferece feedback específico ao aluno sobre o que precisa melhorar.",
+      "studyTip": "Rubrica = descrição clara de critérios × níveis de desempenho; ferramenta para avaliação formativa e sumativa; aumenta qualidade do feedback.",
+      "id": "pss2027-ed027",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A gestão democrática da escola, conforme a BNCC e legislação educacional, implica:",
+      "options": [
+        { "id": 1, "name": "Poder centralizado no diretor, sem participação de ninguém", "alias": "A" },
+        { "id": 2, "name": "Participação colaborativa de professores, alunos, pais e funcionários nas decisões escolares via conselhos e processos participativos", "alias": "B" },
+        { "id": 3, "name": "Decisões tomadas exclusivamente por professores", "alias": "C" },
+        { "id": 4, "name": "Ausência total de liderança na escola", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Gestão democrática envolve criação e atuação de Conselho Escolar/Administrativo, participação de comunidade em decisões orçamentárias e pedagógicas, respeito a direitos de alunos e transparência nas ações da escola.",
+      "studyTip": "Gestão democrática ≠ ausência de liderança; é liderança colaborativa com participação de múltiplas vozes.",
+      "id": "pss2027-ed028",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Educação Socioemocional, crescentemente valorizada pela BNCC e em concursos, visa ao desenvolvimento de:",
+      "options": [
+        { "id": 1, "name": "Apenas conteúdos cognitivos, sem qualquer aspecto afetivo", "alias": "A" },
+        { "id": 2, "name": "Competências como autoconhecimento, autorregulação, empatia, colaboração e responsabilidade pessoal e social", "alias": "B" },
+        { "id": 3, "name": "Apenas preparação para o trabalho", "alias": "C" },
+        { "id": 4, "name": "Substituição completa de disciplinas tradicionais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Educação Socioemocional trabalha habilidades como autoconhecimento, regulação emocional, empatia, resolução colaborativa de problemas e responsabilidade. A BNCC inclui essas competências nas dez competências gerais.",
+      "studyTip": "Educação Socioemocional: integrada ao currículo, não substitui disciplinas; desenvolve CASEL (autoconhecimento, autorregulação, consciência social, relacionamentos, tomada responsável de decisão).",
+      "id": "pss2027-ed029",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "O princípio da Equidade na educação diferencia-se do princípio de Igualdade porque:",
+      "options": [
+        { "id": 1, "name": "Equidade e igualdade significam exatamente a mesma coisa", "alias": "A" },
+        { "id": 2, "name": "Igualdade = mesmo tratamento para todos; Equidade = tratamentos diferenciados para que todos alcancem objetivos comuns", "alias": "B" },
+        { "id": 3, "name": "Equidade favorece sempre os melhores alunos", "alias": "C" },
+        { "id": 4, "name": "Equidade elimina qualquer forma de avaliação", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Igualdade é tratar todos da mesma forma. Equidade reconhece que alguns alunos precisam de mais apoio; oferece recursos e estratégias diferenciadas para que TODOS alcancem objetivos. É mais justa que igualdade formal.",
+      "studyTip": "Equidade ≠ Igualdade. Equidade é dar a cada um o que precisa; igualdade é tratar todos igual (o que pode perpetuar desigualdade).",
+      "id": "pss2027-ed030",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "No contexto do ensino remoto/híbrido, qual é um desafio pedagógico central para manter inclusão?",
+      "options": [
+        { "id": 1, "name": "A inclusão é automaticamente garantida apenas por usar tecnologia", "alias": "A" },
+        { "id": 2, "name": "Garantir acesso equitativo à internet/tecnologia, adaptar metodologias para engajamento remoto e manter contato humano", "alias": "B" },
+        { "id": 3, "name": "Usar apenas videoaulas sem qualquer interação", "alias": "C" },
+        { "id": 4, "name": "Excluir alunos sem acesso a tecnologia", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Educação remota/híbrida só é inclusiva se houver: acesso equitativo (internet/dispositivos), metodologias que favoreçam engajamento e interação, suporte emocional/técnico e reconhecimento de que nem todos têm mesmos recursos.",
+      "studyTip": "Tecnologia ≠ Inclusão automática. Educação remota inclusiva requer planejamento intencional, múltiplos acessos e apoio diferenciado.",
+      "id": "pss2027-ed031",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A Neurociência cognitiva em educação evidencia que para aprender de forma eficaz, o aluno precisa de:",
+      "options": [
+        { "id": 1, "name": "Apenas repetição mecânica de conteúdos", "alias": "A" },
+        { "id": 2, "name": "Significado/contexto, emoção positiva, e consolidação através de prática espaçada e variada", "alias": "B" },
+        { "id": 3, "name": "Aprender tudo de uma vez, sem intervalo", "alias": "C" },
+        { "id": 4, "name": "Ensino sem qualquer conexão com experiências prévias", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Pesquisas em neurociência mostram que aprendizado eficaz envolve: significado/contexto (não memorização pura), emoção positiva (afeta consolidação de memória), prática espaçada (repetição com intervalo) e variação de contextos.",
+      "studyTip": "Neurociência para educação: significado + emoção + prática espaçada + variação = aprendizado eficaz e duradouro.",
+      "id": "pss2027-ed032",
+      "category": "educacao-didatica",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "O conceito de 'Aprendizagem Colaborativa' diferencia-se de 'trabalho em grupo' porque:",
+      "options": [
+        { "id": 1, "name": "Não há diferença; são termos sinônimos", "alias": "A" },
+        { "id": 2, "name": "Colaborativa envolve interdependência positiva, divisão de responsabilidades e objetivos comuns bem definidos; trabalho em grupo pode ser apenas coexistência passiva", "alias": "B" },
+        { "id": 3, "name": "Aprendizagem colaborativa dispensa o professor", "alias": "C" },
+        { "id": 4, "name": "Trabalho em grupo é mais eficaz pedagogicamente", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Aprendizagem Colaborativa tem estrutura intencional: interdependência positiva, responsabilidades individuais, interação cara-a-cara, habilidades sociais explícitas e avaliação de processo. Trabalho em grupo pode ser desorganizado.",
+      "studyTip": "Aprendizagem Colaborativa = estruturada; Trabalho em Grupo = pode ser informal e menos efetivo. A qualidade da interação define.",
+      "id": "pss2027-ed033",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "No que se refere a 'Educação para Gênero', qual é uma abordagem pedagógica inclusiva?",
+      "options": [
+        { "id": 1, "name": "Ignorar discussões sobre gênero para 'não ofender ninguém'", "alias": "A" },
+        { "id": 2, "name": "Desconstruir estereótipos, valorizar identidades de gênero plurais e combater discriminação sexista/LGBTfóbica no ambiente escolar", "alias": "B" },
+        { "id": 3, "name": "Ensinar que existe apenas um único modo de ser homem ou mulher", "alias": "C" },
+        { "id": 4, "name": "Exclusão de alunos trans ou não-binários", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Educação inclusiva para gênero questiona binarismo de gênero, reconhece múltiplas identidades (cis, trans, não-binário), desconstrui papéis estereotipados e garante ambiente seguro e respeitoso para TODOS.",
+      "studyTip": "Educação para gênero: não é ideologia, é direito humano. Respeito a identidades e combate a discriminação no espaço escolar.",
+      "id": "pss2027-ed034",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Avaliação Diagnóstica no início de uma unidade temática ou ano letivo tem como principal finalidade:",
+      "options": [
+        { "id": 1, "name": "Apenas atribuir notas aos alunos", "alias": "A" },
+        { "id": 2, "name": "Identificar conhecimentos prévios, dificuldades e necessidades específicas para planejar intervenções pedagógicas adequadas", "alias": "B" },
+        { "id": 3, "name": "Classificar alunos em categorias fixas", "alias": "C" },
+        { "id": 4, "name": "Punir alunos que não sabem", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Avaliação diagnóstica coleta informações sobre conhecimentos prévios, concepções, dificuldades e recursos dos alunos. Permite planejamento pedagógico diferenciado e ajustes nas estratégias de ensino.",
+      "studyTip": "Diagnóstica = conhecer onde o aluno está; Formativa = acompanhar progresso; Somativa = resultado final. Usadas juntas para educação de qualidade.",
+      "id": "pss2027-ed035",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A 'Aula Invertida' (Flipped Classroom) caracteriza-se por:",
+      "options": [
+        { "id": 1, "name": "Apenas exposição do professor em sala de aula", "alias": "A" },
+        { "id": 2, "name": "Aluno estuda conteúdo básico (vídeos/leituras) em casa e usa tempo em sala para atividades interativas, discussões e aplicação com apoio do professor", "alias": "B" },
+        { "id": 3, "name": "Eliminação completa de tecnologia", "alias": "C" },
+        { "id": 4, "name": "Aulas apenas online, sem encontros presenciais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Aula Invertida inverte o modelo tradicional: exposição de conteúdos é feita fora da aula (assíncrono), e o tempo presencial é usado para atividades ativas, dúvidas, aplicação. Requer responsabilidade do aluno e suporte tecnológico.",
+      "studyTip": "Aula Invertida: conteúdo básico fora da aula; aula dedicada a práticas, dúvidas e aplicação. Mais engajadora e alinhada ao aprendizado ativo.",
+      "id": "pss2027-ed036",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O Transtorno do Espectro Autista (TEA) exige adaptações pedagógicas específicas, como:",
+      "options": [
+        { "id": 1, "name": "Nenhuma adaptação é necessária; autistas devem aprender como os demais", "alias": "A" },
+        { "id": 2, "name": "Rotina previsível, comunicação clara, redução de estímulos sensoriais, interesses como motivação e apoio sensorial/social", "alias": "B" },
+        { "id": 3, "name": "Isolamento do aluno com TEA das atividades coletivas", "alias": "C" },
+        { "id": 4, "name": "Apenas medicação, sem intervção pedagógica", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Alunos com TEA se beneficiam de: estrutura e previsibilidade, comunicação explícita, redução de sobrecarga sensorial, exploração de interesses como gancho para aprendizagem, e suportes sociais/sensoriais quando necessário.",
+      "studyTip": "TEA na escola: diagnóstico + planejamento individualizado + ambiente sensorial respeitoso + flexibilização + protagonismo do aluno.",
+      "id": "pss2027-ed037",
+      "category": "educacao-didatica",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A Educação Ambiental, como tema transversal na educação básica, deve ser abordada através de:",
+      "options": [
+        { "id": 1, "name": "Apenas disciplinas de Ciências ou Geografia", "alias": "A" },
+        { "id": 2, "name": "Transversalidade: articulação com todas as disciplinas, buscando formar consciência ecológica e cidadania ambiental", "alias": "B" },
+        { "id": 3, "name": "Conteúdo opcional, sem obrigatoriedade", "alias": "C" },
+        { "id": 4, "name": "Apenas atividades pontuais no Dia do Meio Ambiente", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Educação Ambiental é tema transversal (BNCC): deve integrar todas as disciplinas. Não é apenas conteúdo de Ciências, mas consciência ecológica desenvolvida em Português (análise de textos sobre meio ambiente), História, Matemática, etc.",
+      "studyTip": "Educação Ambiental: transversal, não meramente disciplinar; objetivo = formar cidadãos ambientalmente conscientes e participativos.",
+      "id": "pss2027-ed038",
+      "category": "educacao-didatica",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Síndrome de Burnout em Educadores caracteriza-se por:",
+      "options": [
+        { "id": 1, "name": "Apenas cansaço físico passageiro", "alias": "A" },
+        { "id": 2, "name": "Esgotamento emocional crônico, despersonalização profissional e diminuição de realização pessoal, decorrente de estresse ocupacional prolongado", "alias": "B" },
+        { "id": 3, "name": "Problema apenas de professores ruins ou preguiçosos", "alias": "C" },
+        { "id": 4, "name": "Situação sem qualquer solução", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Burnout em educadores é síndrome de esgotamento profissional com três dimensões: exaustão emocional, cinismo/despersonalização, redução de eficácia. Resulta de fatores como carga de trabalho excessiva, falta de reconhecimento e recursos inadequados.",
+      "studyTip": "Burnout ≠ cansaço temporário; é condição crônica que exige intervenção. Importância de bem-estar docente para educação de qualidade.",
+      "id": "pss2027-ed039",
+      "category": "educacao-didatica",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A Educação Patrimonial, como prática educativa, visa a:",
+      "options": [
+        { "id": 1, "name": "Memorização de datas e nomes de patrimônios históricos", "alias": "A" },
+        { "id": 2, "name": "Desenvolvimento de práticas reflexivas sobre patrimônio cultural (material e imaterial) e apropriação crítica do aluno sobre identidade e memória coletiva", "alias": "B" },
+        { "id": 3, "name": "Apenas visitas escolares pontuais a museus", "alias": "C" },
+        { "id": 4, "name": "Exclusão de patrimônios de grupos minoritários", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Educação Patrimonial envolve práticas educativas de reflexão crítica sobre patrimônio (museus, arquivos, sítios arqueológicos, arte, tradições). Objetivo: desenvolver consciência de pertencimento, identidade cultural plural e respeito.",
+      "studyTip": "Educação Patrimonial: não é turismo; é processo reflexivo sobre memória, identidade e diversidade cultural. Inclui patrimônios de todos os grupos, não apenas hegemônicos.",
+      "id": "pss2027-ed040",
+      "category": "educacao-didatica",
+      "difficulty": "medio"
     }
   ]
 }

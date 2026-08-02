@@ -5,8 +5,8 @@
     "name": "Atualidades em Educação e Sociedade",
     "description": "Questões sobre questões sociais, culturais, políticas e educacionais contemporâneas, ética e cidadania",
     "difficulty": "mista",
-    "lastUpdated": "2026-07-20",
-    "questionCount": 15,
+    "lastUpdated": "2026-08-02",
+    "questionCount": 30,
     "tags": [
       "pss-2027",
       "atualidades",
@@ -369,6 +369,231 @@
       "id": "pss2027-at015",
       "category": "atualidades",
       "difficulty": "dificil"
+    },
+    {
+      "question": "A Lei nº 15.231/2025 exigiu que as escolas notifiquem o Conselho Tutelar não apenas sobre faltas, mas também sobre casos de:",
+      "options": [
+        { "id": 1, "name": "Apenas desempenho acadêmico baixo", "alias": "A" },
+        { "id": 2, "name": "Violência, automutilação, tentativas de suícidio e suícidios consumados envolvendo alunos", "alias": "B" },
+        { "id": 3, "name": "Não participação em atividades extracurriculares", "alias": "C" },
+        { "id": 4, "name": "Uso de uniforme inadequado", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei nº 15.231/2025 ampliou as obrigações de notificação das escolas ao Conselho Tutelar, agora incluindo ocorrências de violência e casos de automutilação/suicídio, refletindo preocupação crescente com saúde mental de estudantes.",
+      "studyTip": "Lei 15.231/2025: escolas como espaço de proteção integral, com dever de comunicar riscos psicossociais ao Conselho Tutelar.",
+      "id": "pss2027-at016",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A educação para saúde mental de alunos ganhou centralidade na atualidade porque:",
+      "options": [
+        { "id": 1, "name": "Saúde mental não é relevante para educação", "alias": "A" },
+        { "id": 2, "name": "Índices de depressão, ansiedade e comportamentos suicidas em adolescentes aumentaram significativamente", "alias": "B" },
+        { "id": 3, "name": "Todos os alunos têm problemas de saúde mental", "alias": "C" },
+        { "id": 4, "name": "Escolas devem substituir psicólogos", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Organizações como OMS e UNICEF relatam crescimento preocupante de transtornos mentais em adolescentes. A escola, como espaço frequente, é local crucial para identificação de riscos e promoção de saúde mental.",
+      "studyTip": "Saúde mental na escola: prevenção, identificação de riscos, acolhimento e encaminhamento a profissionais especializados.",
+      "id": "pss2027-at017",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Lei nº 14.533/2023, que garantiu educação digital na LDB, reflete qual necessidade contemporânea?",
+      "options": [
+        { "id": 1, "name": "Tecnologia não é importante para educação", "alias": "A" },
+        { "id": 2, "name": "Acesso à internet e desenvolvimento de competências digitais como direito educacional indispensável", "alias": "B" },
+        { "id": 3, "name": "Apenas os alunos ricos precisam de educação digital", "alias": "C" },
+        { "id": 4, "name": "Computadores substituem completamente professores", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei nº 14.533/2023 reconhece que conectividade digital é infraestrutura educacional essencial. Representa avanço na inclusão digital, exigindo que Estado garanta internet em escolas públicas.",
+      "studyTip": "Lei 14.533/2023: educação digital é direito; Estado responsável por conectividade nas escolas públicas.",
+      "id": "pss2027-at018",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A reforma do Ensino Médio (Lei nº 14.945/2024) no Brasil ampliou qual estrutura curricular?",
+      "options": [
+        { "id": 1, "name": "Apenas disciplinas tradicionais obrigatórias", "alias": "A" },
+        { "id": 2, "name": "Itinerários formativos, permitindo que alunos escolham trilhas de aprofundamento em áreas específicas", "alias": "B" },
+        { "id": 3, "name": "Eliminação de qualquer escolha curricular", "alias": "C" },
+        { "id": 4, "name": "Redução total das disciplinas", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei nº 14.945/2024 reafirmou e ajustou a estrutura de itinerários formativos: formação geral básica (2.400h) + itinerários de aprofundamento (600h), permitindo maior flexibilidade e escolha dos alunos.",
+      "studyTip": "Lei 14.945/2024: itinerários formativos em áreas como Linguagens, Matemática, Ciências, Sociais e Formação Técnica.",
+      "id": "pss2027-at019",
+      "category": "atualidades",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A educação para relações de gênero e orientação sexual deve ser abordada na escola através de:",
+      "options": [
+        { "id": 1, "name": "Imposição de um único modelo de sexualidade e gênero", "alias": "A" },
+        { "id": 2, "name": "Respeito a identidades plurais e combate a discriminação LGBTfóbica e sexista", "alias": "B" },
+        { "id": 3, "name": "Exclusão de estudantes LGBTQIA+ das aulas", "alias": "C" },
+        { "id": 4, "name": "Não abordar questões de gênero e sexualidade", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A educação inclusiva reconhece e valoriza identidades de gênero e orientações sexuais plurais. Escolas devem garantir ambiente seguro, sem discriminação, e abordar essas questões de forma respeitosa e científica.",
+      "studyTip": "Educação para gênero e sexualidade = respeito, segurança e combate a violência; não é doutrinação, mas direito humano.",
+      "id": "pss2027-at020",
+      "category": "atualidades",
+      "difficulty": "medio"
+    },
+    {
+      "question": "O Plano Nacional de Educação (PNE) 2024-2034 traz qual enfoque em relação às desigualdades educacionais?",
+      "options": [
+        { "id": 1, "name": "Ignora desigualdades", "alias": "A" },
+        { "id": 2, "name": "Busca superar desigualdades de acesso e qualidade entre zonas urbanas e rurais, e entre grupos sociais", "alias": "B" },
+        { "id": 3, "name": "Aprofunda desigualdades propositalmente", "alias": "C" },
+        { "id": 4, "name": "Não existe PNE atual", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "O PNE 2024-2034 tem como metas reduzir desigualdades de acesso à educação, melhorar a qualidade do ensino, valorizar professores e promover inclusão educacional em todos os níveis e modalidades.",
+      "studyTip": "PNE = política educacional de Estado, com metas para 10 anos e monitoramento contínuo.",
+      "id": "pss2027-at021",
+      "category": "atualidades",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A inteligência artificial (IA) na educação contemporânea apresenta oportunidades e desafios, como:",
+      "options": [
+        { "id": 1, "name": "Apenas oportunidades, sem qualquer risco", "alias": "A" },
+        { "id": 2, "name": "Personalização de ensino, mas com riscos de viés algorítmico, privacidade e dependência tecnológica", "alias": "B" },
+        { "id": 3, "name": "Apenas perigos, sem benefícios", "alias": "C" },
+        { "id": 4, "name": "IA não impacta educação", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "IA oferece potencial de adaptar ensino a ritmos individuais, mas levanta questões: viés algorítmico, dependência de dados, segurança de informações e papel do professor. Requer uso crítico e ético.",
+      "studyTip": "IA na educação: oportunidade + responsabilidade. Professores como orientadores, não substituídos.",
+      "id": "pss2027-at022",
+      "category": "atualidades",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "A Lei nº 10.639/2003 e Lei nº 11.645/2008 têm em comum que ambas:",
+      "options": [
+        { "id": 1, "name": "Tratam exclusivamente de história africana e indígena", "alias": "A" },
+        { "id": 2, "name": "Obrigam o ensino de histórias e culturas afro-brasileira e indígena em toda educação básica", "alias": "B" },
+        { "id": 3, "name": "Permitem que escolas ignorem essas histórias se desejarem", "alias": "C" },
+        { "id": 4, "name": "Tratam apenas de educação superior", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "As Leis 10.639/2003 (história e cultura afro-brasileira) e 11.645/2008 (história e cultura indígena) são obrigatórias em toda educação básica, especialmente em Português, História e Artes, combatendo apagamento histórico.",
+      "studyTip": "Educação antirracista legal: obrigatória nas escolas; não é 'complemento', mas parte central do currículo.",
+      "id": "pss2027-at023",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A educação para direitos humanos, conforme diretrizes internacionais, deve preparar alunos para:",
+      "options": [
+        { "id": 1, "name": "Apenas memorizar artigos de constituições", "alias": "A" },
+        { "id": 2, "name": "Conhecer seus direitos, reconhecer violações e atuar como agentes de transformação social", "alias": "B" },
+        { "id": 3, "name": "Aceitar violações de direitos passivamente", "alias": "C" },
+        { "id": 4, "name": "Não interferir em questões sociais", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Educação para Direitos Humanos é formativa: alunos compreendem seus direitos, identificam violações, e aprendem a participar ativamente na sua defesa, desenvolvendo consciência crítica e responsabilidade cívica.",
+      "studyTip": "Educação para Direitos Humanos = capacitação para ação; estudantes como sujeitos, não espectadores.",
+      "id": "pss2027-at024",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A educação digital pós-pandemia revela qual aprendizado importante?",
+      "options": [
+        { "id": 1, "name": "Educação remota é sempre superior à presencial", "alias": "A" },
+        { "id": 2, "name": "Uso de tecnologia requer infraestrutura equitativa, letramento digital e mediação docente reflexiva", "alias": "B" },
+        { "id": 3, "name": "Tecnologia não faz diferença na educação", "alias": "C" },
+        { "id": 4, "name": "Educação presencial é obsoleta", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A pandemia mostrou que educação digital requer mais que tecnologia: precisa de acesso equitativo, habilidades digitais, e presença docente significativa. Não é meramente pôr aula online.",
+      "studyTip": "Pós-pandemia: educação híbrida, intencional e humana; tecnologia como ferramenta, não fim em si.",
+      "id": "pss2027-at025",
+      "category": "atualidades",
+      "difficulty": "dificil"
+    },
+    {
+      "question": "As políticas públicas de educação nos últimos anos têm focado em qual aspecto emergente?",
+      "options": [
+        { "id": 1, "name": "Redução de investimentos em educação pública", "alias": "A" },
+        { "id": 2, "name": "Acesso, permanência, qualidade e equidade, com ênfase em grupos historicamente excluídos", "alias": "B" },
+        { "id": 3, "name": "Apenas educação de elite", "alias": "C" },
+        { "id": 4, "name": "Educação não é política pública", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Políticas educacionais 2023-2026 enfatizam redução de desigualdades: acesso para povos indígenas/quilombolas, inclusão de deficientes, equidade de gênero, educação profissional e permanência escolar.",
+      "studyTip": "Políticas públicas contemporâneas: inclusão, equidade, qualidade e acesso como direitos humanos.",
+      "id": "pss2027-at026",
+      "category": "atualidades",
+      "difficulty": "medio"
+    },
+    {
+      "question": "A violência escolar (bullying, violência sexual, conflitos) é atualmente considerada:",
+      "options": [
+        { "id": 1, "name": "Parte normal da infância e adolescência, sem necessidade de intervenção", "alias": "A" },
+        { "id": 2, "name": "Violação de direitos que prejudica aprendizagem e desenvolvimento; requer prevenção, identificação e intervenção", "alias": "B" },
+        { "id": 3, "name": "Responsabilidade exclusiva das famílias", "alias": "C" },
+        { "id": 4, "name": "Tema que não deve ser discutido nas escolas", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Violência escolar é reconhecida como obstáculo ao direito à educação. Escolas têm papel ativo em prevenção, criando ambientes seguros, acolhedores e trabalhando resolução não-violenta de conflitos.",
+      "studyTip": "Combate à violência escolar = responsabilidade compartilhada (escola, família, Estado, comunidade); envolve educação emocional e cultura de paz.",
+      "id": "pss2027-at027",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A educação continuada de professores, em pauta nas políticas atuais, é importante porque:",
+      "options": [
+        { "id": 1, "name": "Professores aprendem tudo na formação inicial", "alias": "A" },
+        { "id": 2, "name": "Educação e sociedade mudam; formação continuada atualiza práticas pedagógicas e conhecimentos docentes", "alias": "B" },
+        { "id": 3, "name": "Formação continuada não é importante", "alias": "C" },
+        { "id": 4, "name": "Apenas professores com baixo desempenho precisam de formação", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Formação continuada é direito e dever docente: sociedade, conhecimentos e metodologias evoluem. Escolas devem oferecer tempo, recursos e incentivos para que professores aprendam ao longo da carreira.",
+      "studyTip": "Formação continuada = investimento em qualidade educacional; beneficia alunos, professores e instituições escolares.",
+      "id": "pss2027-at028",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A educação em tempo integral, proposta em políticas recentes, busca principalmente:",
+      "options": [
+        { "id": 1, "name": "Aumentar carga de disciplinas acadêmicas tradicionais", "alias": "A" },
+        { "id": 2, "name": "Ampliar oportunidades educacionais com artes, esportes, tecnologia e complementação alimentar", "alias": "B" },
+        { "id": 3, "name": "Explorar trabalho infantil", "alias": "C" },
+        { "id": 4, "name": "Substituir pais e família", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "Educação em tempo integral visa formação integral do aluno: além de disciplinas, oferece artes, esportes, cultura, tecnologia e alimentação adequada, reduzindo desigualdades e promovendo desenvolvimento holístico.",
+      "studyTip": "Educação integral = maior tempo na escola para desenvolvimento pleno; especialmente importante para populações economicamente vulneráveis.",
+      "id": "pss2027-at029",
+      "category": "atualidades",
+      "difficulty": "facil"
+    },
+    {
+      "question": "A Lei nº 15.326/2026, que alterou a LDB sobre professores de educação infantil, representa qual avanço?",
+      "options": [
+        { "id": 1, "name": "Redução de requisitos de formação para educação infantil", "alias": "A" },
+        { "id": 2, "name": "Reconhecimento formal de professores de infantil como profissionais do magistério, com exigência de formação e concurso", "alias": "B" },
+        { "id": 3, "name": "Eliminação de exigência de formação para atuar com crianças", "alias": "C" },
+        { "id": 4, "name": "Educação infantil deixou de existir", "alias": "D" }
+      ],
+      "correct": "B",
+      "explanation": "A Lei nº 15.326/2026 reconhece explicitamente professores de educação infantil como profissionais do magistério, exigindo formação mínima (curso superior ou normal médio) e aprovação em concurso público.",
+      "studyTip": "Lei 15.326/2026: professores de infantil = profissionais reconhecidos, com direitos e responsabilidades como qualquer docente; não são meros 'cuidadores'.",
+      "id": "pss2027-at030",
+      "category": "atualidades",
+      "difficulty": "medio"
     }
   ]
 }
